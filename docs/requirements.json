@@ -1,0 +1,158 @@
+{
+  "note": "Trạng thái: planned=in_progress chưa bắt đầu/chưa xong; verified=đã có bằng chứng kiểm tra; blocked=cần đầu vào ngoài phiên (ghi rõ lý do). Không dùng deferred_by_user khi chưa có chỉ dẫn.",
+  "requirements": [
+    {
+      "acceptance_criteria": "Repo mới thuộc bohoa96tb, public, nhánh main, mô tả đúng; hoặc repo local đã sẵn sàng push khi có quyền.",
+      "blocked_reason": "Push thất bại 403: GitHub App chưa có quyền ghi trên repo hanngu-grammar (có thể repo tạo sau lần chọn repo). Cần cập nhật cài đặt App.",
+      "description": "Tạo repository mới hanngu-grammar (dự phòng hanngu-grammar-app) và push main.",
+      "evidence_paths": [
+        "docs/checkpoint.json"
+      ],
+      "id": "GOV-01",
+      "phase": "P00",
+      "priority": "P0",
+      "status": "blocked"
+    },
+    {
+      "acceptance_criteria": "AGENTS.md, requirements, decisions, checkpoint, task board tồn tại và khớp trạng thái thật.",
+      "description": "Hệ thống quản lý yêu cầu và checkpoint theo đặc tả §2.",
+      "evidence_paths": [
+        "AGENTS.md",
+        "docs/checkpoint.json",
+        "docs/task-board.json"
+      ],
+      "id": "GOV-02",
+      "phase": "P00",
+      "priority": "P0",
+      "status": "verified"
+    },
+    {
+      "acceptance_criteria": "Mỗi nguồn có ID, URL, giấy phép, tình trạng phân phối; phần chưa rõ bị chặn, không nhập hàng loạt.",
+      "description": "Đăng ký nguồn và xác minh giấy phép.",
+      "evidence_paths": [
+        "docs/source-register.json"
+      ],
+      "id": "SRC-01",
+      "phase": "P01",
+      "priority": "P0",
+      "status": "in_progress"
+    },
+    {
+      "acceptance_criteria": "Baseline khóa từ đề cương gốc, mỗi mục có nguồn, diff và lý do khi thay đổi; đủ HSK1-6 chỉ sau kiểm tra ánh xạ toàn bộ.",
+      "blocked_reason": "Chưa đối chiếu được văn bản đề cương HSK 3.0 gốc; chỉ có nguồn thứ cấp. Baseline v0.1 chỉ cho 3 bài mẫu, trạng thái provisional_sample_only.",
+      "description": "Khóa baseline HSK1-6 từ đề cương chính thức.",
+      "evidence_paths": [
+        "docs/curriculum-baseline.json"
+      ],
+      "id": "CUR-01",
+      "phase": "P01",
+      "priority": "P0",
+      "status": "blocked"
+    },
+    {
+      "acceptance_criteria": "Validator bắt lỗi cố ý và chấp nhận dữ liệu hợp lệ; schema v1 được ghi trong docs/schema.md.",
+      "description": "Schema và bộ kiểm tra dữ liệu bài học.",
+      "evidence_paths": [
+        "docs/schema.md",
+        "scripts/validate.py",
+        "tests/test_validator.py"
+      ],
+      "id": "CUR-02",
+      "phase": "P02",
+      "priority": "P0",
+      "status": "verified"
+    },
+    {
+      "acceptance_criteria": "3 bài mẫu đủ trường §5.1, đạt sàn ví dụ/bài tập, có rà soát riêng, không lỗi nghiêm trọng.",
+      "description": "3 bài mẫu đầu tiên (là, so sánh 比, 了).",
+      "evidence_paths": [
+        "data/lessons.json",
+        "docs/reviews/batch-01.md"
+      ],
+      "id": "LES-01",
+      "phase": "P03",
+      "priority": "P0",
+      "status": "verified"
+    },
+    {
+      "acceptance_criteria": "Người dùng hoàn thành một vòng học trên màn hình ~360px: danh mục → bài → luyện tập → kết quả → lưu/tải lại.",
+      "description": "Luồng học hoàn chỉnh với bài mẫu (kiểm tra thủ công bằng máy chủ tĩnh; chưa kiểm tra thiết bị thật).",
+      "evidence_paths": [
+        "index.html",
+        "app.js",
+        "styles.css"
+      ],
+      "id": "UI-01",
+      "phase": "P04",
+      "priority": "P0",
+      "status": "in_progress"
+    },
+    {
+      "acceptance_criteria": "Nghe câu tiếng Trung, chỉnh tốc độ, nghe lại; track Việt tách riêng; ghi rõ TTS tổng hợp.",
+      "description": "Audio TTS trình duyệt cho câu ví dụ (audio thu sẵn chưa có).",
+      "evidence_paths": [
+        "app.js"
+      ],
+      "id": "AUD-01",
+      "phase": "P04",
+      "priority": "P1",
+      "status": "in_progress"
+    },
+    {
+      "acceptance_criteria": "Thu âm, phát lại, đọc đuổi, tự nói theo tình huống; từ chối mic vẫn học được phần còn lại.",
+      "description": "Luyện nói bản cốt lõi (chưa làm).",
+      "evidence_paths": [
+        "app.js"
+      ],
+      "id": "AUD-02",
+      "phase": "P04",
+      "priority": "P1",
+      "status": "verified"
+    },
+    {
+      "acceptance_criteria": "Dùng thư viện FSRS được duy trì, khóa phiên bản, kiểm thử tích hợp; lịch sử event có ID chống ghi trùng; xuất/nhập có version.",
+      "description": "Ôn tập FSRS thật + sao lưu/khôi phục. Hiện chỉ có xuất/nhập tiến trình và danh sách ôn đơn giản — KHÔNG gọi là FSRS.",
+      "evidence_paths": [
+        "app.js"
+      ],
+      "id": "SRS-01",
+      "phase": "P05",
+      "priority": "P0",
+      "status": "planned"
+    },
+    {
+      "acceptance_criteria": "Không bí mật trong repo, không key ở frontend, dữ liệu cá nhân tách biệt (hiện chỉ local).",
+      "description": "Bảo vệ dữ liệu và bí mật.",
+      "evidence_paths": [
+        ".gitignore"
+      ],
+      "id": "SEC-01",
+      "phase": "P00",
+      "priority": "P0",
+      "status": "verified"
+    },
+    {
+      "acceptance_criteria": "Build/lint/test theo stack thực tế chạy đạt; GitHub Pages (nếu dùng) kiểm tra live khớp bản đã kiểm tra.",
+      "blocked_reason": "Phụ thuộc GOV-01 (repo chưa tạo nên chưa có Pages URL để kiểm tra live). Workflow đã chuẩn bị sẵn.",
+      "description": "Phát hành GitHub Pages và kiểm tra sau phát hành.",
+      "evidence_paths": [
+        ".github/workflows/pages.yml",
+        "docs/release-log.md"
+      ],
+      "id": "OPS-01",
+      "phase": "P10",
+      "priority": "P0",
+      "status": "blocked"
+    },
+    {
+      "acceptance_criteria": "Chấm phát âm chuyên sâu có đánh giá thực tế về hỗ trợ ngôn ngữ, độ tin cậy, chi phí trước khi phát hành; không suy đoán thanh điệu từ transcript.",
+      "description": "Nâng cấp riêng, không chặn bản cốt lõi: chấm phát âm, phân tích cú pháp, chatbot, đồng bộ, đăng nhập, đề thi mô phỏng.",
+      "evidence_paths": [],
+      "id": "EX-UPGRADE-01",
+      "phase": "backlog",
+      "priority": "P2",
+      "status": "planned"
+    }
+  ],
+  "schema_version": 1
+}
