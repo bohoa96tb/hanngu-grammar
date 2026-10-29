@@ -45,26 +45,69 @@ function saveProgress() { localStorage.setItem(LS_KEY, JSON.stringify(progress))
 function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
 function norm(s) { return String(s).replace(/[\s。，、；：？！·…「」『』（）《》"'.?!]/g, ""); }
 
-// Cảnh báo thiếu giọng zh: chỉ hiện một lần mỗi lần tải trang, khi danh
-// sách giọng đã tải xong và không có giọng zh nào. Không âm thầm coi
-// giọng mặc định là phát âm mẫu chuẩn (xem D22).
+// Xác định giọng zh (xem D24): danh sách giọng của trình duyệt tải bất
+// đồng bộ; getVoices() lúc đầu thường trả về rỗng ngay cả khi sau đó có
+// giọng. Vì vậy không được kết luận "không có giọng zh" từ một danh
+// sách rỗng chưa sẵn sàng. voicesReady chỉ bật khi sự kiện
+// voiceschanged đã kích hoạt hoặc danh sách đã có phần tử.
+// Cảnh báo thiếu giọng: (1) dòng chữ bền vững trong bài học khi đã xác
+// định không có giọng zh; (2) hộp thoại một lần mỗi lần tải trang khi
+// bấm Nghe mẫu mà không có giọng zh. Không âm thầm coi giọng mặc định
+// là phát âm mẫu chuẩn (xem D22).
 let voiceWarned = false;
-function speak(text) {
+let voicesReady = false;
+let zhVoicesList = [];
+function refreshVoices() {
+  if (!("speechSynthesis" in window)) return;
+  const vs = window.speechSynthesis.getVoices();
+  zhVoicesList = vs.filter((v) => (v.lang || "").toLowerCase().startsWith("zh"));
+  if (vs.length > 0) voicesReady = true;
+}
+function updateVoiceNote() {
+  const el = document.getElementById("voiceNote");
+  if (!el) return;
+  el.textContent = (voicesReady && zhVoicesList.length === 0)
+    ? "Trình duyệt này chưa có giọng tiếng Trung. Âm thanh phát ra (nếu có) dùng giọng mặc định của trình duyệt và không được coi là phát âm mẫu chuẩn."
+    : "";
+}
+function ensureVoices(timeoutMs) {
+  if (voicesReady) return Promise.resolve();
+  return new Promise((res) => {
+    const t0 = Date.now();
+    const tick = () => {
+      refreshVoices();
+      if (voicesReady || Date.now() - t0 >= (timeoutMs || 1000)) res();
+      else setTimeout(tick, 100);
+    };
+    tick();
+  });
+}
+if ("speechSynthesis" in window) {
+  refreshVoices();
+  window.speechSynthesis.onvoiceschanged = () => {
+    voicesReady = true;
+    refreshVoices();
+    updateVoiceNote();
+    if (window.__updateDebugVoices) window.__updateDebugVoices();
+  };
+}
+async function speak(text) {
   if (!("speechSynthesis" in window)) { alert("Trình duyệt này không hỗ trợ đọc giọng tổng hợp."); return; }
   window.speechSynthesis.cancel();
+  // Chờ danh sách giọng sẵn sàng (tối đa ~1 giây) rồi mới kết luận có
+  // hay không có giọng zh; nếu hết thời gian chờ mà vẫn chưa có sự
+  // kiện voiceschanged thì coi như không xác định được giọng zh và vẫn
+  // cảnh báo, thay vì đọc lặng bằng giọng mặc định.
+  await ensureVoices(1000);
   const u = new SpeechSynthesisUtterance(text);
   u.lang = "zh-CN"; u.rate = speechRate;
-  const voices = window.speechSynthesis.getVoices();
-  const zhVoice = voices.find((v) => (v.lang || "").toLowerCase().startsWith("zh"));
+  const zhVoice = zhVoicesList[0];
   if (zhVoice) {
     u.voice = zhVoice;
-  } else if (voices.length > 0 && !voiceWarned) {
+  } else if (!voiceWarned) {
     voiceWarned = true;
     alert("Trình duyệt này chưa có giọng tiếng Trung. Âm thanh phát ra (nếu có) dùng giọng mặc định của trình duyệt và không được coi là phát âm mẫu chuẩn. Bạn vẫn có thể đọc phần chữ Hán và phiên âm để tự luyện.");
   }
-  // Trường hợp danh sách giọng chưa tải xong (voices rỗng): chưa xác định
-  // được giọng zh, vẫn thử đọc theo lang zh-CN; bảng chẩn đoán ?debug=1
-  // ghi rõ danh sách giọng zh tìm thấy để kiểm tra sau.
   window.speechSynthesis.speak(u);
 }
 function stopSpeak() { if ("speechSynthesis" in window) window.speechSynthesis.cancel(); }
@@ -169,6 +212,7 @@ function renderLesson(id) {
       <h3>Ví dụ <button class="secondary" id="pinyinBtn">${showPinyin ? "Ẩn Pinyin" : "Hiện Pinyin"}</button>
       <label>Tốc độ đọc <select id="rateSel"><option value="0.7">0.7×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option></select></label></h3>
       <p class="note">Âm thanh tiếng Trung chỉ đọc câu tiếng Trung; phần giảng tiếng Việt không trộn vào track này. Giọng đọc là giọng tổng hợp của trình duyệt.</p>
+      <p id="voiceNote" aria-live="polite"></p>
       ${les.examples.map((e) => `<div class="card">
         <p class="zh">${esc(e.zh)} <button data-speak="${esc(e.zh)}" aria-label="Nghe câu tiếng Trung">▶ Nghe</button> <button class="secondary" data-stop>■ Dừng</button></p>
         ${showPinyin ? `<p class="pinyin">${esc(e.pinyin || "")}</p>` : ""}
@@ -203,6 +247,7 @@ function renderLesson(id) {
   document.getElementById("pinyinBtn").onclick = () => { showPinyin = !showPinyin; render(); };
   document.getElementById("rateSel").value = String(speechRate);
   document.getElementById("rateSel").onchange = (e) => { speechRate = parseFloat(e.target.value); };
+  updateVoiceNote();
   document.querySelectorAll("[data-speak]").forEach((b) => { b.onclick = () => speak(b.dataset.speak); });
   document.querySelectorAll("[data-stop]").forEach((b) => { b.onclick = stopSpeak; });
   // Luyện nói P04-02: thu âm bằng MediaRecorder của trình duyệt, phát lại bằng
@@ -394,7 +439,7 @@ function render() {
 // bản cũ từ bộ nhớ đệm sau khi app.js mới đã chạy. Lưu ý: tham số này chỉ
 // có tác dụng khi app.js mới đã được tải; nó không chữa được app.js cũ
 // còn trong bộ nhớ đệm (xem docs/decisions.md D20).
-const BUILD_VERSION = "20261029-voicewarn";
+const BUILD_VERSION = "20261029-voicewarn2";
 const DEBUG = new URLSearchParams(location.search).get("debug") === "1";
 let debugInfo = null;
 
@@ -426,13 +471,18 @@ function renderDebug() {
   }
   const updateVoices = () => {
     if (!("speechSynthesis" in window)) return;
-    const zh = window.speechSynthesis.getVoices().filter((v) => (v.lang || "").toLowerCase().startsWith("zh")).map((v) => v.name + " (" + v.lang + ")");
     const el = sec.querySelector("p");
-    if (el) el.textContent = el.textContent.replace(/Giọng zh-CN: [^·]*/, "Giọng zh-CN: " + (zh.length ? zh.join(", ") : "không tìm thấy giọng zh"));
+    if (!el) return;
+    // Phân biệt "chưa tải xong danh sách giọng" với "đã tải xong nhưng
+    // không có giọng zh": danh sách rỗng lúc đầu chưa kết luận được gì.
+    const txt = !voicesReady
+      ? "đang tải danh sách giọng…"
+      : (zhVoicesList.length ? zhVoicesList.map((v) => v.name + " (" + v.lang + ")").join(", ") : "không tìm thấy giọng zh");
+    el.textContent = el.textContent.replace(/Giọng zh-CN: [^·]*/, "Giọng zh-CN: " + txt);
   };
   if ("speechSynthesis" in window) {
     updateVoices();
-    window.speechSynthesis.onvoiceschanged = updateVoices;
+    window.__updateDebugVoices = updateVoices;
   }
 }
 
