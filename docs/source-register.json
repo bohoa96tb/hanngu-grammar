@@ -9,12 +9,22 @@
       "id": "hsk-official",
       "license": "Chưa xác minh — không sao chép danh sách đề cương gốc vào repo",
       "name": "HSK — Chinese Testing International",
-      "notes": "Nghiên cứu 29/10/2026 (nguồn thứ cấp, chưa đối chiếu văn bản gốc): chuẩn năng lực 2021 GF 0025-2021 (hiệu lực 01/07/2021, 9 cấp, cấp 1: 500 từ, 48 điểm ngữ pháp gộp); đề cương thi HSK 3.0 công bố 11/2025 (thi toàn cầu đầu tiên 13/12/2026 theo nguồn thứ cấp; một nguồn nói hiệu lực 01/07/2026 — cần xác minh), cấp 1: 300 từ, 70 điểm ngữ pháp theo 7 nhóm; số tích lũy cấp 1–6 theo nguồn thứ cấp: 70/148/244/339/409/459. KHÔNG tìm được bản PDF chính thức miễn phí từ chinesetest.cn trong phiên này; vẫn cần văn bản gốc để khóa.",
+      "notes": "Phạm vi đã xác minh theo tài liệu gốc; quyền phân phối chưa xác minh (xem scope/distribution verification). Số liệu 70/148/244/339/409/459 là cách đếm của nguồn thứ cấp, không phải số thứ tự trong tài liệu gốc.",
       "owner": "Chinese Testing International",
       "scope": "Xác định phạm vi và phân cấp HSK1-6 cho baseline toàn diện",
       "url": "https://www.chinesetest.cn/HSK",
-      "verification_status": "blocked_official_text_not_checked",
-      "version_checked": "Chưa đối chiếu văn bản gốc; phiên bản mục tiêu đã chốt là đề cương thi 11/2025 (D15), trạng thái làm việc"
+      "verification_status": "scope_verified_distribution_not_verified",
+      "version_checked": "新版HSK考试大纲, 2025-11 发布, 2026-07 实施, 中外语言交流合作中心",
+      "scope_verification": {
+        "status": "verified",
+        "method": "Text fetch toàn văn PDF từ link Examination Syllabus trên chinesetest.cn, 2026-10-29",
+        "evidence": "Bìa: 2025-11 发布, 中外语言交流合作中心 发布, 2026-07 实施; mục lục 语法大纲 tr.382–400; đã đọc 语法大纲 HSK1–6 (dòng 12970 tới cuối tài liệu)."
+      },
+      "distribution_verification": {
+        "status": "not_verified",
+        "method": "Chưa tìm thấy tuyên bố giấy phép cho phép sao chép trong tài liệu",
+        "consequence": "Repo KHÔNG chứa PDF gốc, KHÔNG chứa bảng gốc nguyên văn, KHÔNG sao chép câu ví dụ của đề cương; baseline là diễn đạt lại bằng tiếng Việt kèm tham chiếu."
+      }
     },
     {
       "accessed_at": "2026-10-29",
