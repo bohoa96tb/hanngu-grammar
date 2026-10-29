@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "modal-xiang-yao",
+      "title_vi": "Muốn làm gì với 想 và 要",
+      "pattern": "想/要 + Động từ",
+      "hsk_level": 1,
+      "difficulty": "medium",
+      "objective": "Sau bài này, người học dùng 想/要 + động từ để nói muốn làm gì và phân biệt 想 (muốn, nhẹ hơn) với 要 (muốn/cần, quyết tâm hơn).",
+      "when_to_use": "Khi nói mong muốn hoặc dự định làm một việc, chưa phải lúc xin phép (xin phép dùng 可以).",
+      "formula_notes": "想/要 đứng trước động từ. 想 nhẹ hơn, thiên về mong muốn; 要 mạnh hơn, gần với quyết tâm hoặc nhu cầu, và còn dùng khi việc sắp xảy ra. 想 + người thường hiểu là 'nhớ', không phải 'muốn làm gì'.",
+      "examples": [
+        {
+          "zh": "我想喝水。",
+          "vi": "Tôi muốn uống nước.",
+          "pinyin": "Wǒ xiǎng hē shuǐ.",
+          "tokens": [
+            "我",
+            "想",
+            "喝",
+            "水"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "我要去学校。",
+          "vi": "Tôi muốn đi học.",
+          "pinyin": "Wǒ yào qù xuéxiào.",
+          "tokens": [
+            "我",
+            "要",
+            "去",
+            "学校"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "他想学中文。",
+          "vi": "Anh ấy muốn học tiếng Trung.",
+          "pinyin": "Tā xiǎng xué Zhōngwén.",
+          "tokens": [
+            "他",
+            "想",
+            "学",
+            "中文"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "xiangyao-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn câu đúng để nói 'Tôi muốn uống nước.'",
+          "payload": {
+            "options": [
+              "我想喝水。",
+              "我喝想水。",
+              "我想水喝。",
+              "我不想喝水。"
+            ]
+          },
+          "accepted_answers": [
+            "我想喝水。"
+          ],
+          "explanation": "想 đứng trước động từ: 我 + 想 + 喝水。"
+        },
+        {
+          "id": "xiangyao-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy muốn học tiếng Trung.'",
+          "payload": {
+            "prompt_zh": "他___学中文。",
+            "hint_vi": "Dùng 想。"
+          },
+          "accepted_answers": [
+            "他想学中文。",
+            "他想学中文"
+          ],
+          "explanation": "他 + 想 + 学中文。"
+        },
+        {
+          "id": "xiangyao-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành câu: 'Tôi muốn đi học.'",
+          "payload": {
+            "tokens": [
+              "去",
+              "我",
+              "学校",
+              "要"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "我",
+              "要",
+              "去",
+              "学校"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → 想/要 → động từ → nơi chốn."
+        },
+        {
+          "id": "xiangyao-ex4",
+          "type": "error_spot",
+          "prompt_vi": "Câu sau sai ở khối nào? 我要喝水想。",
+          "payload": {
+            "sentence_zh": "我要喝水想。",
+            "options": [
+              "我",
+              "要",
+              "喝",
+              "水",
+              "想"
+            ]
+          },
+          "accepted_answers": [
+            "想"
+          ],
+          "explanation": "想 phải đứng trước động từ, không đứng cuối câu."
+        },
+        {
+          "id": "xiangyao-ex5",
+          "type": "fill",
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tôi muốn xem phim' (viết bằng chữ Hán)",
+          "payload": {
+            "prompt_zh": null,
+            "hint_vi": "Bắt đầu bằng 我。"
+          },
+          "accepted_answers": [
+            "我想看电影。",
+            "我想看电影",
+            "我要看电影。",
+            "我要看电影"
+          ],
+          "explanation": "Tôi muốn xem phim: 我 + 想/要 + 看电影。"
+        }
+      ],
+      "confusions": [
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我喝想水。",
+          "explanation": "想 đứng trước động từ, không đứng sau động từ."
+        },
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我想妈妈。(khi muốn nói 'Tôi muốn đi học')",
+          "explanation": "想 + người thường hiểu là 'nhớ' (nhớ mẹ); muốn làm gì thì dùng 想 + động từ."
+        },
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "Dùng 要 để xin phép trong mọi trường hợp",
+          "explanation": "Xin phép dùng 可以 (ví dụ 这里可以拍照吗？); 想/要 dùng để nói mong muốn của mình."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "hsk-official",
+          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí."
+      }
+    }
+  ]
+}
