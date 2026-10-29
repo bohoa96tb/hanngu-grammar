@@ -22,18 +22,20 @@ Trạng thái dùng trong tài liệu này:
 - Không cần sửa cấp độ cho 24 bài hiện có: kiểm tra từng bài với đề
   cương, cấp độ HSK1/HSK2 của cả 24 bài đều khớp (kể cả 了 ở HSK1,
   在/正在 ở HSK1, 比/过/着/是……的/补语 ở HSK2).
-- HSK1 còn thiếu ở mức thành bài riêng: phương vị danh từ, ly hợp từ,
-  số từ và cách nói số/tiền/thời gian, 不要, 对, 呢/吧, 喂, 存现句1 dạng
-  chuẩn, 连动句1, 正反问句, 祈使句, 感叹句, và các mục cấu trúc câu
-  (loại cụm, thành phần câu) chưa thành bài riêng.
-- HSK2 còn thiếu ở mức thành bài riêng: 为什么, 自己, 指示 mở rộng,
-  tính từ trùng điệp, lượng từ mở rộng, phó từ mở rộng (多/好/最,
+- Cập nhật sau lô 08 (28 bài): phương vị danh từ, 想/要, 为什么 và
+  一……就…… đã có bài; HSK1 còn thiếu ở mức thành bài riêng: ly hợp
+  từ, số từ và cách nói số/tiền/thời gian, 不要, 对, 呢/吧, 喂,
+  存现句1 dạng chuẩn, 连动句1, 正反问句, 祈使句, 感叹句, và các mục
+  cấu trúc câu (loại cụm, thành phần câu) chưa thành bài riêng.
+- HSK2 còn thiếu ở mức thành bài riêng: 自己, 指示 mở rộng, tính từ
+  trùng điệp, lượng từ mở rộng, phó từ mở rộng (多/好/最,
   已经/有时/快/快要/正/常/经常, 别, 就), giới từ 从/往/跟, 兼语句,
-  存现句2, 是字句2, 有字句2, 状态补语, 数量补语2, 紧缩复句 一……就……,
-  概数, 序数 dạng 数词+量词, và A了A trong động từ trùng điệp.
-- Bài mới chọn đợt này (từ phần thiếu đã xác minh, đủ điều kiện rà
-  soát đầy đủ): 想/要 (HSK1), phương vị danh từ (HSK1), 为什么 (HSK2),
-  一……就…… (HSK2). Các mục thiếu còn lại vào danh sách chọn đợt sau.
+  存现句2, 是字句2, 有字句2, 状态补语, 数量补语2, 概数, 序数 dạng
+  数词+量词, và A了A trong động từ trùng điệp.
+- Nhắc lại theo yêu cầu đối chiếu: số mục nhóm trong tài liệu này là
+  cách chia của dự án để đối chiếu, KHÔNG phải số mục chính thức
+  trong đề cương (đề cương không đánh số từng điểm vi mô) và KHÔNG
+  được dùng thay cho số mục chính thức.
 
 ## 2. HSK1 — đối chiếu từng mục
 ### Từ loại và ngữ tố
@@ -183,15 +185,14 @@ Trạng thái dùng trong tài liệu này:
 - 序数 dạng 数词 + 量词: THIẾU.
 
 ## 4. Danh sách chọn đợt sau (theo thứ tự ưu tiên sư phạm, không phải thứ tự đề cương)
-1. 不要 (HSK1, cầu khiến phủ định) — có thể gộp với 别 (HSK2) thành
-   bài đối chiếu hai cấp chỉ khi ghi rõ cấp độ từng dạng; mặc định
-   tách riêng theo cấp.
-2. Ly hợp từ (HSK1) — nhóm từ dùng nhiều, dễ kiểm chứng.
-3. 怎么/怎么样 (HSK1) — mở rộng question-words hoặc bài riêng.
+Lô 09 chọn 6 mục đầu tiên (đủ điều kiện rà soát đầy đủ trong phiên):
+1. 不要 (HSK1, cầu khiến phủ định) — tách riêng theo cấp, không gộp
+   với 别 (HSK2).
+2. Ly hợp từ (HSK1).
+3. 怎么/怎么样 (HSK1).
 4. 兼语句 请/叫/让 (HSK2).
 5. 存现句2 (HSK2).
 6. Trạng thái bổ ngữ 得 (HSK2).
-7. Tính từ trùng điệp (HSK2).
-8. Lượng từ mở rộng + động lượng 次 (HSK2).
-9. Phó từ mở rộng: 已经/有时/快/快要/正/常/经常, 多/好/最 (HSK2).
-10. Giới từ 从/往/跟 và liên từ 但/那 (HSK2).
+Các mục còn lại cho đợt sau: tính từ trùng điệp (HSK2), lượng từ mở
+rộng + động lượng 次 (HSK2), phó từ mở rộng (HSK2), giới từ 从/往/跟
+và liên từ 但/那 (HSK2).

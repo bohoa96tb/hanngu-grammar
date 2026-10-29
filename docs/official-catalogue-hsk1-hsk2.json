@@ -27,9 +27,11 @@
     {
       "id": "OFF-H1-03",
       "title_vi": "Phương vị danh từ 上/下/里/外/前/后",
-      "status": "missing",
-      "lesson_ids": [],
-      "note": "Bài mới đợt này: location-nouns."
+      "status": "covered",
+      "lesson_ids": [
+        "location-nouns"
+      ],
+      "note": "Bài mới lô 08, đã rà soát nội bộ."
     },
     {
       "id": "OFF-H1-04",
@@ -42,9 +44,11 @@
     {
       "id": "OFF-H1-05",
       "title_vi": "Năng nguyện 想/要",
-      "status": "missing",
-      "lesson_ids": [],
-      "note": "Bài mới đợt này: modal-xiang-yao."
+      "status": "covered",
+      "lesson_ids": [
+        "modal-xiang-yao"
+      ],
+      "note": "Bài mới lô 08, đã rà soát nội bộ."
     },
     {
       "id": "OFF-H1-06",
@@ -430,9 +434,11 @@
     {
       "id": "OFF-H2-06",
       "title_vi": "Nghi vấn 为什么",
-      "status": "missing",
-      "lesson_ids": [],
-      "note": "Bài mới đợt này: why-question."
+      "status": "covered",
+      "lesson_ids": [
+        "why-question"
+      ],
+      "note": "Bài mới lô 08, đã rà soát nội bộ."
     },
     {
       "id": "OFF-H2-07",
@@ -786,9 +792,11 @@
     {
       "id": "OFF-H2-56",
       "title_vi": "紧缩复句 一……就……",
-      "status": "missing",
-      "lesson_ids": [],
-      "note": "Bài mới đợt này: yi-jiu-tight."
+      "status": "covered",
+      "lesson_ids": [
+        "yi-jiu-tight"
+      ],
+      "note": "Bài mới lô 08, đã rà soát nội bộ."
     },
     {
       "id": "OFF-H2-57",

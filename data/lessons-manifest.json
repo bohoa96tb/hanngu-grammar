@@ -17,6 +17,9 @@
     "data/lessons/adverbs-du-ye.json",
     "data/lessons/modal-xiang-yao.json",
     "data/lessons/location-nouns.json",
+    "data/lessons/bu-yao-prohibition.json",
+    "data/lessons/separable-verbs.json",
+    "data/lessons/zenme-question.json",
     "data/lessons/bi-comparison.json",
     "data/lessons/guo-experience.json",
     "data/lessons/zhe-continuation.json",
@@ -28,6 +31,9 @@
     "data/lessons/verb-reduplication.json",
     "data/lessons/gei-double-object.json",
     "data/lessons/why-question.json",
-    "data/lessons/yi-jiu-tight.json"
+    "data/lessons/yi-jiu-tight.json",
+    "data/lessons/jianyu-qing-jiao-rang.json",
+    "data/lessons/cunxian-chu.json",
+    "data/lessons/state-complement-de.json"
   ]
 }

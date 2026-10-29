@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "cunxian-chu",
+      "title_vi": "Câu存现 dạng nơi chốn + động từ + 着 + danh từ",
+      "pattern": "Nơi chốn + Động từ + 着 + (Số lượng +) Danh từ",
+      "hsk_level": 2,
+      "difficulty": "medium",
+      "objective": "Sau bài này, người học dùng mẫu存现 dạng nơi chốn + động từ + 着 + danh từ để nói ở một nơi có vật hoặc người nào đang ở trạng thái đó.",
+      "when_to_use": "Khi mô tả một nơi và nêu vật hoặc người đang hiện diện ở đó trong một trạng thái (đặt, đứng, treo, trồng...).",
+      "formula_notes": "着 đứng ngay sau động từ chỉ trạng thái (放, 站, 种, 挂...), không đứng cuối câu và mẫu này không dùng 有. Danh từ ở cuối thường kèm số lượng (一本书, 一个人); nói trơ danh từ nghe cụt. Khác với mẫu存现 dùng 有 (处所 + 有 + 数量 + 名词) và khác với 着 chỉ trạng thái nói chung.",
+      "examples": [
+        {
+          "zh": "桌子上放着一本书。",
+          "vi": "Trên bàn đặt một quyển sách.",
+          "pinyin": "Zhuōzi shang fàng zhe yì běn shū.",
+          "tokens": [
+            "桌子",
+            "上",
+            "放",
+            "着",
+            "一",
+            "本",
+            "书"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "门口站着一个人。",
+          "vi": "Trước cửa đứng một người.",
+          "pinyin": "Ménkǒu zhàn zhe yí gè rén.",
+          "tokens": [
+            "门口",
+            "站",
+            "着",
+            "一",
+            "个",
+            "人"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "院子里种着很多花。",
+          "vi": "Trong sân trồng rất nhiều hoa.",
+          "pinyin": "Yuànzi lǐ zhòng zhe hěn duō huā.",
+          "tokens": [
+            "院子",
+            "里",
+            "种",
+            "着",
+            "很",
+            "多",
+            "花"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "cunxian-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn câu đúng để nói 'Trên bàn đặt một quyển sách.'",
+          "payload": {
+            "options": [
+              "桌子上放着一本书。",
+              "桌子上放一本书着。",
+              "桌子放着上一本书。",
+              "桌子上放着书一本。"
+            ]
+          },
+          "accepted_answers": [
+            "桌子上放着一本书。"
+          ],
+          "explanation": "桌子 + 上 + 放 + 着 + 一本书。"
+        },
+        {
+          "id": "cunxian-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Trước cửa đứng một người.'",
+          "payload": {
+            "prompt_zh": "门口站着___人。",
+            "hint_vi": "Dùng 一个。"
+          },
+          "accepted_answers": [
+            "门口站着一个人。",
+            "门口站着一个人"
+          ],
+          "explanation": "门口 + 站 + 着 + 一个人。"
+        },
+        {
+          "id": "cunxian-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành câu: 'Trên bàn đặt một quyển sách.'",
+          "payload": {
+            "tokens": [
+              "书",
+              "桌子",
+              "上",
+              "放",
+              "着",
+              "一",
+              "本"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "桌子",
+              "上",
+              "放",
+              "着",
+              "一",
+              "本",
+              "书"
+            ]
+          ],
+          "explanation": "Thứ tự: nơi chốn + 上 → động từ → 着 → số lượng + danh từ."
+        },
+        {
+          "id": "cunxian-ex4",
+          "type": "error_spot",
+          "prompt_vi": "Câu sau sai ở khối nào? 桌子上放一本书着。",
+          "payload": {
+            "sentence_zh": "桌子上放一本书着。",
+            "options": [
+              "桌子",
+              "上",
+              "放",
+              "一",
+              "本",
+              "书",
+              "着"
+            ]
+          },
+          "accepted_answers": [
+            "着"
+          ],
+          "explanation": "着 phải đứng ngay sau động từ 放, không đứng cuối câu."
+        },
+        {
+          "id": "cunxian-ex5",
+          "type": "fill",
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Trong phòng ngồi một người' (viết bằng chữ Hán)",
+          "payload": {
+            "prompt_zh": null,
+            "hint_vi": "Bắt đầu bằng 房间里。"
+          },
+          "accepted_answers": [
+            "房间里坐着一个人。",
+            "房间里坐着一个人"
+          ],
+          "explanation": "Trong phòng ngồi một người: 房间里 + 坐 + 着 + 一个人。"
+        }
+      ],
+      "confusions": [
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "桌子上放一本书着。",
+          "explanation": "着 đứng ngay sau động từ 放, không đứng cuối câu."
+        },
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "桌子上有放着一本书。",
+          "explanation": "Mẫu này không dùng 有; hoặc dùng 桌子上有一本书, hoặc 桌子上放着一本书。"
+        },
+        {
+          "verdict": "kem_tu_nhien",
+          "wrong_or_risky": "桌子上放着书。",
+          "explanation": "Danh từ trong câu存现 thường kèm số lượng (一本书); nói trơ 书 nghe cụt."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "hsk-official",
+          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 09 từ danh mục HSK1–2 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí."
+      }
+    }
+  ]
+}

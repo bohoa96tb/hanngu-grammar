@@ -66,3 +66,14 @@ Chưa có bản phát hành nào.
   không sửa cấp độ 24 bài cũ) và 4 bài mới (想/要, phương vị từ,
   为什么, 一……就……) — tổng 28 bài, 131 bài tập. Cảnh báo thiếu giọng
   zh một lần mỗi lần tải trang (D22). TTS vẫn tạm thời.
+
+- 2026-10-29 — Lô 09: 6 bài mới từ danh mục HSK1–2 đã xác minh
+  (不要, ly hợp từ, 怎么/怎么样, 兼语句, 存现2, bổ ngữ 得) — tổng
+  34 bài, 161 bài tập. Đối chiếu P01-02 cập nhật cho 28 bài. Các bài
+  mới là đã rà soát nội bộ, chưa đạt toàn bộ tiêu chí vì audio chưa
+  nghiệm thu.
+
+- 2026-10-29 — Sửa lỗi cảnh báo giọng (D24, build voicewarn2): chờ
+  voiceschanged, dòng cảnh báo bền vững trong bài học, bảng chẩn đoán
+  phân biệt chưa tải xong với không có giọng. Nghiệm thu qa-06 xác
+  nhận build voicewarn live đủ 28 bài ở profile mới.
