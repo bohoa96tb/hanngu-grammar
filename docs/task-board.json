@@ -169,7 +169,7 @@
       "depends_on": [
         "P05-01"
       ],
-      "evidence": "Lô 1: 9 bài HSK1–2 mới đã phát hành, tổng 12 bài; baseline 1.0 đã khóa phạm vi. Lô 2 (HSK2: 在/正在, 着, 是……的, bổ ngữ kết quả, bổ ngữ phương hướng, câu phức) chưa biên soạn — sẽ làm sau vòng trình duyệt bản mới.",
+      "evidence": "Lô 1: 9 bài; lô 2: 6 bài mới (在, 着, 是……的, bổ ngữ kết quả, bổ ngữ phương hướng, câu phức 虽然/因为), tổng 18 bài, 83 bài tập, validator ĐẠT. Vòng trình duyệt qa-02 xác minh live 12 bài trước lô 2 và lịch sử ôn cập nhật tức thì; live 18 bài chờ xác minh sau push lô 2. Các nhóm HSK1–2 còn lại vẫn partial/not_started.",
       "files": [],
       "id": "P06-01",
       "inputs": "Baseline khóa",
@@ -214,7 +214,7 @@
       "depends_on": [
         "P08-01"
       ],
-      "evidence": "PHẠM VI BẢN THỬ NGHIỆM (3 bài lúc kiểm tra), commit live đã kiểm tra 0e9a9904; tương tác trình duyệt 6/6 bước chức năng đạt; lỗi console = not_run; hiệu năng = not_run; bản sửa lịch sử ôn 8fe1c7c5 chưa qua vòng trình duyệt thứ hai. P09 toàn dự án chưa hoàn thành (xem P09-02).",
+      "evidence": "PHẠM VI BẢN THỬ NGHIỆM. Vòng qa-01 (commit 0e9a9904, 3 bài) và vòng qa-02 (bản 12 bài, 29/10/2026): chức năng đạt, lịch sử ôn cập nhật tức thì đã xác minh, FSRS Good thứ hai cho hạn 2 ngày đúng cấu hình thư viện; lỗi console = not_run; hiệu năng = not_run. P09 toàn dự án chưa hoàn thành (xem P09-02).",
       "files": [],
       "id": "P09-01",
       "inputs": "Toàn bộ app + nội dung",
