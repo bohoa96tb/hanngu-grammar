@@ -37,8 +37,9 @@ python3 -m unittest discover -s tests -v
 - Chấm phát âm chuyên sâu, phân tích cú pháp câu bất kỳ, chatbot gia sư,
   đồng bộ đa thiết bị, đăng nhập: xem backlog trong `docs/task-board.json`
   (P05 trở đi, trạng thái `planned`/`blocked`).
-- Ôn tập FSRS thật: hiện chỉ có danh sách ôn đơn giản theo ngày làm bài;
-  **không gọi là FSRS**. Tích hợp thư viện `ts-fsrs` đã khóa phiên bản là task P05.
+- Ôn tập FSRS thật: đã có từ P05 — thư viện `ts-fsrs` 5.4.2 (vendored ở
+  `vendor/`), một thẻ cho mỗi bài đã hoàn thành, 4 mức tự đánh giá, lịch sử
+  event có event_id chống ghi trùng, xuất/nhập tiến trình phiên bản 2.
 - Audio thu sẵn: hiện dùng TTS của trình duyệt (giọng tổng hợp, không phải
   người bản ngữ). Audio thu sẵn/Edge-TTS chỉ dùng sau khi xác minh giấy phép
   và điều kiện phân phối.
