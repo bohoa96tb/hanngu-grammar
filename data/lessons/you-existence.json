@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "you-existence",
+      "title_vi": "有: có và tồn tại",
+      "pattern": "Nơi chốn + 有 + Người/Vật • Ai + 有 + Vật",
+      "hsk_level": 1,
+      "difficulty": "easy",
+      "objective": "Sau bài này, người học nói được ai có cái gì và ở đâu có cái gì bằng 有, phân biệt 有 với 在.",
+      "when_to_use": "Khi muốn nói ai sở hữu cái gì, hoặc ở một nơi có người/vật nào. Phủ định của 有 là 没有, không phải 不有.",
+      "formula_notes": "Hai công thức: (1) Ai + 有 + Vật (sở hữu): 我有一个哥哥. (2) Nơi chốn + 有 + Người/Vật (tồn tại): 教室里有很多学生. Người nói ở đâu thì dùng 在 (我在教室), còn nói ở đó có gì thì dùng 有.",
+      "examples": [
+        {
+          "zh": "我有一个哥哥。",
+          "vi": "Tôi có một anh trai.",
+          "pinyin": "Wǒ yǒu yí gè gēge.",
+          "tokens": [
+            "我",
+            "有",
+            "一",
+            "个",
+            "哥哥"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "教室里有很多学生。",
+          "vi": "Trong lớp có rất nhiều học sinh.",
+          "pinyin": "Jiàoshì li yǒu hěn duō xuésheng.",
+          "tokens": [
+            "教室",
+            "里",
+            "有",
+            "很多",
+            "学生"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "你有时间吗？",
+          "vi": "Bạn có thời gian không?",
+          "pinyin": "Nǐ yǒu shíjiān ma?",
+          "tokens": [
+            "你",
+            "有",
+            "时间",
+            "吗"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "confusions": [
+        {
+          "wrong_or_risky": "我在教室有很多学生。 (muốn nói 'Trong lớp có rất nhiều học sinh')",
+          "verdict": "doi_nghia",
+          "explanation": "我在教室 nói người nói ở trong lớp. Nói ở đó có gì, dùng cấu trúc tồn tại: 教室里有很多学生."
+        },
+        {
+          "wrong_or_risky": "我不有哥哥。",
+          "verdict": "sai_ngu_phap",
+          "explanation": "Phủ định của 有 là 没有: 我没有哥哥 mới đúng."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "you-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn câu đúng để nói 'Tôi có một anh trai'.",
+          "payload": {
+            "options": [
+              "我有一个哥哥。",
+              "我在有一个哥哥。",
+              "我是一个哥哥。",
+              "我没有一个哥哥。"
+            ]
+          },
+          "accepted_answers": [
+            "我有一个哥哥。"
+          ],
+          "explanation": "Sở hữu: 我 + 有 + 一个哥哥."
+        },
+        {
+          "id": "you-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Tôi không có chị gái.'",
+          "prompt_zh": "我___姐姐。",
+          "payload": {
+            "hint_vi": "Phủ định của 有."
+          },
+          "accepted_answers": [
+            "我没有姐姐。",
+            "我没有姐姐"
+          ],
+          "explanation": "Phủ định của 有 là 没有."
+        },
+        {
+          "id": "you-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành câu: 'Trong lớp có rất nhiều học sinh.'",
+          "payload": {
+            "tokens": [
+              "里",
+              "教室",
+              "有",
+              "很多",
+              "学生"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "教室",
+              "里",
+              "有",
+              "很多",
+              "学生"
+            ]
+          ],
+          "explanation": "Thứ tự: nơi chốn 教室里 + 有 + 很多学生."
+        },
+        {
+          "id": "you-ex4",
+          "type": "fill",
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Bạn có thời gian không?' (viết bằng chữ Hán)",
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 你."
+          },
+          "accepted_answers": [
+            "你有时间吗？",
+            "你有时间吗"
+          ],
+          "explanation": "Từ ý muốn nói 'Bạn có thời gian không?': 你 + 有 + 时间 + 吗."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "cgw",
+          "note": "Chủ đề A1/A2 theo Chinese Grammar Wiki; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
+      }
+    }
+  ]
+}

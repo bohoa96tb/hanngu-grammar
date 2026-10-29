@@ -55,3 +55,9 @@ Chưa có bản phát hành nào.
   hợp, app/validator đọc qua manifest. Lô 3: thêm 6 bài (tiền tố/hậu tố,
   đại từ, phó từ, 还是, trùng điệp, câu hai tân ngữ 给), tổng 24 bài,
   111 bài tập. Audio TTS phát thực tế vẫn not_run cho cả 24 bài.
+
+- 2026-10-29 — Chẩn đoán 24 bài: shard theo bài (24 file) thay shard theo
+  cấp, chế độ ?debug=1 (build, nguồn, số bài từng nguồn, lỗi tải, SW,
+  Cache Storage, giọng zh), versioning BUILD_VERSION. App không có
+  service worker. TTS là phương án tạm thời (AUD-TTS-01), chưa nghiệm
+  thu nghe thực tế.

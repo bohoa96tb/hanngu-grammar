@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "shi-de-emphasis",
+      "title_vi": "是……的: nhấn mạnh thông tin đã biết",
+      "pattern": "是 + (thời gian/nơi chốn/cách thức) + Động từ + 的",
+      "hsk_level": 2,
+      "difficulty": "medium",
+      "objective": "Sau bài này, người học dùng được 是……的 để nhấn mạnh thời gian, nơi chốn, cách thức hoặc người thực hiện của một việc đã xảy ra, không dùng cho việc tương lai.",
+      "when_to_use": "Khi cả người nói và người nghe đều biết việc đã xảy ra, và muốn nhấn mạnh một chi tiết (khi nào, ở đâu, bằng cách nào, ai làm). Không dùng cho việc chưa xảy ra.",
+      "formula_notes": "是 + chi tiết được nhấn mạnh + Động từ (+ tân ngữ) + 的. Câu hỏi: 是……的吗? Phủ định: 不是……的. Chi tiết được nhấn mạnh đứng giữa 是 và động từ.",
+      "examples": [
+        {
+          "zh": "我是昨天来的。",
+          "vi": "Tôi đến hôm qua.",
+          "pinyin": "Wǒ shì zuótiān lái de.",
+          "tokens": [
+            "我",
+            "是",
+            "昨天",
+            "来",
+            "的"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "他是坐飞机去的。",
+          "vi": "Anh ấy đi bằng máy bay.",
+          "pinyin": "Tā shì zuò fēijī qù de.",
+          "tokens": [
+            "他",
+            "是",
+            "坐",
+            "飞机",
+            "去",
+            "的"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "这本书是你买的吗？",
+          "vi": "Cuốn sách này là bạn mua phải không?",
+          "pinyin": "Zhè běn shū shì nǐ mǎi de ma?",
+          "tokens": [
+            "这本书",
+            "是",
+            "你",
+            "买",
+            "的",
+            "吗"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "shide-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn câu đúng để nói 'Tôi đến hôm qua' (nhấn mạnh thời gian).",
+          "payload": {
+            "options": [
+              "我是昨天来的。",
+              "我昨天来了。",
+              "我是昨天来。",
+              "我昨天是来的。"
+            ]
+          },
+          "accepted_answers": [
+            "我是昨天来的。"
+          ],
+          "explanation": "Nhấn mạnh thời gian: 是 + 昨天 + 来 + 的. 我昨天来了 chỉ nói việc đã xảy ra, không nhấn mạnh."
+        },
+        {
+          "id": "shide-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy đi bằng máy bay.' (nhấn mạnh cách thức)",
+          "payload": {
+            "prompt_zh": "他是___去的。",
+            "hint_vi": "Đặt 坐飞机 giữa 是 và 去."
+          },
+          "accepted_answers": [
+            "他是坐飞机去的。",
+            "他是坐飞机去的"
+          ],
+          "explanation": "Nhấn mạnh cách thức: 是 + 坐飞机 + 去 + 的."
+        },
+        {
+          "id": "shide-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành câu hỏi: 'Cuốn sách này là bạn mua phải không?'",
+          "payload": {
+            "tokens": [
+              "吗",
+              "这本书",
+              "是",
+              "你",
+              "买",
+              "的"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "这本书",
+              "是",
+              "你",
+              "买",
+              "的",
+              "吗"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → 是 → người thực hiện → động từ → 的 → 吗."
+        },
+        {
+          "id": "shide-ex4",
+          "type": "error_spot",
+          "prompt_vi": "Câu sau sai ở khối nào? 我是明天来的。",
+          "payload": {
+            "sentence_zh": "我是明天来的。",
+            "options": [
+              "我",
+              "是",
+              "明天",
+              "来",
+              "的"
+            ]
+          },
+          "accepted_answers": [
+            "明天"
+          ],
+          "explanation": "是……的 chỉ dùng cho việc đã xảy ra và đã biết; việc ngày mai chưa xảy ra nên không dùng mẫu này."
+        },
+        {
+          "id": "shide-ex5",
+          "type": "fill",
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tôi đi bằng xe buýt.' (nhấn mạnh cách thức, viết bằng chữ Hán)",
+          "payload": {
+            "prompt_zh": null,
+            "hint_vi": "Bắt đầu bằng 我是."
+          },
+          "accepted_answers": [
+            "我是坐公共汽车去的。",
+            "我是坐公共汽车去的"
+          ],
+          "explanation": "Từ ý muốn nói 'Tôi đi bằng xe buýt': 我 + 是 + 坐公共汽车 + 去 + 的. (公共汽车 là cách nói xe buýt.)"
+        }
+      ],
+      "confusions": [
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我是老师。 (muốn nhấn mạnh 'Tôi đến hôm qua')",
+          "explanation": "我是老师 là câu 是 nối danh từ ('Tôi là giáo viên'), không phải câu nhấn mạnh 是……的; câu nhấn mạnh cần có động từ và 的 cuối câu."
+        },
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我是明天来的。",
+          "explanation": "是……的 chỉ dùng cho việc đã xảy ra; việc tương lai không dùng mẫu này."
+        },
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我不昨天来的。 (muốn phủ định câu nhấn mạnh)",
+          "explanation": "Phủ định của câu nhấn mạnh là 不是……的: 我不是昨天来的 mới đúng; không dùng 不 trước chi tiết được nhấn mạnh."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "cgw",
+          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
+      }
+    }
+  ]
+}

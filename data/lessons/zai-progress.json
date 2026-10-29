@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "zai-progress",
+      "title_vi": "在: ở đâu và đang làm gì",
+      "pattern": "在 + Nơi chốn • 在/正在 + Động từ",
+      "hsk_level": 1,
+      "difficulty": "medium",
+      "objective": "Sau bài này, người học nói được ai ở đâu bằng 在 và nói được hành động đang diễn ra bằng 在/正在, không nhầm với 是.",
+      "when_to_use": "Khi muốn nói vị trí (ai ở đâu) hoặc hành động đang diễn ra ngay lúc nói. Không dùng 在 để nói 'là ai/cái gì' và không dùng để nói thói quen.",
+      "formula_notes": "Vị trí: Chủ ngữ + 在 + Nơi chốn. Tiến hành: Chủ ngữ + 在/正在 + Động từ (+ 呢 cuối câu để nhấn mạnh đang diễn ra). 正在 nhấn mạnh 'đang' hơn 在; 在 còn có thể chỉ vị trí nên ngữ cảnh quyết định.",
+      "examples": [
+        {
+          "zh": "他在学校。",
+          "vi": "Anh ấy ở trường.",
+          "pinyin": "Tā zài xuéxiào.",
+          "tokens": [
+            "他",
+            "在",
+            "学校"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "他在看书。",
+          "vi": "Anh ấy đang đọc sách.",
+          "pinyin": "Tā zài kàn shū.",
+          "tokens": [
+            "他",
+            "在",
+            "看书"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "他正在吃饭呢。",
+          "vi": "Anh ấy đang ăn cơm.",
+          "pinyin": "Tā zhèngzài chī fàn ne.",
+          "tokens": [
+            "他",
+            "正在",
+            "吃饭",
+            "呢"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "zai-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn câu đúng để nói 'Anh ấy ở trường'.",
+          "payload": {
+            "options": [
+              "他在学校。",
+              "他是学校。",
+              "他在是学校。",
+              "他学校在。"
+            ]
+          },
+          "accepted_answers": [
+            "他在学校。"
+          ],
+          "explanation": "Vị trí dùng 在: 他 + 在 + 学校. 是 nói 'là ai/cái gì', không nói vị trí."
+        },
+        {
+          "id": "zai-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy đang đọc sách.'",
+          "payload": {
+            "prompt_zh": "他在___。",
+            "hint_vi": "Dùng 在 trước động từ."
+          },
+          "accepted_answers": [
+            "他在看书。",
+            "他在看书"
+          ],
+          "explanation": "Tiến hành: 在 + 看书."
+        },
+        {
+          "id": "zai-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy đang ăn cơm.'",
+          "payload": {
+            "tokens": [
+              "正在",
+              "他",
+              "吃饭"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "他",
+              "正在",
+              "吃饭"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → 正在 → động từ."
+        },
+        {
+          "id": "zai-ex4",
+          "type": "error_spot",
+          "prompt_vi": "Câu sau sai ở khối nào? 他是学校。",
+          "payload": {
+            "sentence_zh": "他是学校。",
+            "options": [
+              "他",
+              "是",
+              "学校"
+            ]
+          },
+          "accepted_answers": [
+            "是"
+          ],
+          "explanation": "Lỗi ở 是: nói vị trí phải dùng 在, sửa thành 他在学校。"
+        },
+        {
+          "id": "zai-ex5",
+          "type": "fill",
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Cô ấy đang uống trà.' (viết bằng chữ Hán)",
+          "payload": {
+            "prompt_zh": null,
+            "hint_vi": "Bắt đầu bằng 她."
+          },
+          "accepted_answers": [
+            "她在喝茶。",
+            "她在喝茶"
+          ],
+          "explanation": "Từ ý muốn nói 'Cô ấy đang uống trà': 她 + 在 + 喝茶."
+        }
+      ],
+      "confusions": [
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他是学校。 (muốn nói 'Anh ấy ở trường')",
+          "explanation": "是 nói 'là ai/cái gì', 在 nói 'ở đâu'. Nói vị trí phải dùng 在."
+        },
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我看书。 (muốn nói 'Tôi đang đọc sách')",
+          "explanation": "Không có 在/正在, câu chỉ nói thói quen hoặc sự việc chung, không nhấn mạnh đang diễn ra ngay lúc nói."
+        },
+        {
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "Dùng 在 thay 正在 trong mọi câu tiến hành",
+          "explanation": "Trong nhiều ngữ cảnh 在 và 正在 thay được cho nhau, nhưng 正在 nhấn mạnh 'đang' hơn và không chỉ vị trí; khi cần rõ nghĩa đang diễn ra thì dùng 正在."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "cgw",
+          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
+      }
+    }
+  ]
+}

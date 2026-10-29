@@ -50,6 +50,12 @@ function speak(text) {
   window.speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(text);
   u.lang = "zh-CN"; u.rate = speechRate;
+  // Ưu tiên giọng zh nếu trình duyệt đã tải danh sách giọng; nếu chưa có
+  // giọng zh, vẫn thử đọc bằng giọng mặc định (trình duyệt có thể tự chọn
+  // giọng zh-CN theo lang) và bảng chẩn đoán ?debug=1 sẽ ghi rõ danh sách
+  // giọng zh tìm thấy. Không coi TTS là audio thu sẵn (xem D21).
+  const zhVoice = window.speechSynthesis.getVoices().find((v) => (v.lang || "").toLowerCase().startsWith("zh"));
+  if (zhVoice) u.voice = zhVoice;
   window.speechSynthesis.speak(u);
 }
 function stopSpeak() { if ("speechSynthesis" in window) window.speechSynthesis.cancel(); }
@@ -375,13 +381,102 @@ function render() {
   else renderHome();
 }
 
-fetch("data/lessons-manifest.json").then((r) => r.json()).then((m) =>
-  Promise.all(m.shards.map((s) => fetch(s).then((r) => r.json())))
-).then((shards) => {
-  const d = { lessons: shards.flatMap((s) => s.lessons) };
-  lessons = d.lessons.filter((l) => l.status === "published");
-  window.addEventListener("hashchange", render);
+// Phiên bản build: đổi mỗi lần phát hành để URL dữ liệu không bị dùng lại
+// bản cũ từ bộ nhớ đệm sau khi app.js mới đã chạy. Lưu ý: tham số này chỉ
+// có tác dụng khi app.js mới đã được tải; nó không chữa được app.js cũ
+// còn trong bộ nhớ đệm (xem docs/decisions.md D20).
+const BUILD_VERSION = "20261029-pl24";
+const DEBUG = new URLSearchParams(location.search).get("debug") === "1";
+let debugInfo = null;
+
+function renderDebug() {
+  if (!DEBUG || !debugInfo) return;
+  const app = document.getElementById("app");
+  if (!app || document.getElementById("debug-panel")) return;
+  const sec = document.createElement("section");
+  sec.id = "debug-panel";
+  const rows = debugInfo.sources.map((s) =>
+    `<li>${esc(s.url)} — trạng thái: ${esc(String(s.status))}, số bài: ${s.count ?? "—"}${s.error ? `, lỗi: ${esc(s.error)}` : ""}</li>`).join("");
+  sec.innerHTML = `<h2>Chẩn đoán tải dữ liệu (chỉ hiện khi ?debug=1)</h2>
+    <p>Phiên bản build: ${esc(debugInfo.build)} · Script: ${esc(debugInfo.scriptUrl)} · Service worker: ${esc(debugInfo.swState)} · Cache Storage: ${esc(debugInfo.cacheNames)} · Giọng zh-CN: ${esc(debugInfo.zhVoices)}</p>
+    <p>Tổng số bài đã tải: ${debugInfo.totalLoaded} · Sau khi lọc published: ${debugInfo.publishedCount} · Số bài đã hoàn thành (chỉ số lượng): ${debugInfo.completedCount}</p>
+    <ul>${rows}</ul>
+    <p>Không hiển thị bí mật hay dữ liệu cá nhân trong bảng này.</p>`;
+  app.prepend(sec);
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.getRegistration().then((r) => {
+      const el = sec.querySelector("p");
+      if (el && r) el.textContent += " · SW đã đăng ký.";
+    }).catch(() => {});
+    if ("caches" in window) {
+      caches.keys().then((names) => {
+        const el = sec.querySelector("p");
+        if (el) el.textContent = el.textContent.replace(/Cache Storage: [^·]*/, "Cache Storage: " + (names.length ? names.join(", ") : "trống"));
+      }).catch(() => {});
+    }
+  }
+  const updateVoices = () => {
+    if (!("speechSynthesis" in window)) return;
+    const zh = window.speechSynthesis.getVoices().filter((v) => (v.lang || "").toLowerCase().startsWith("zh")).map((v) => v.name + " (" + v.lang + ")");
+    const el = sec.querySelector("p");
+    if (el) el.textContent = el.textContent.replace(/Giọng zh-CN: [^·]*/, "Giọng zh-CN: " + (zh.length ? zh.join(", ") : "không tìm thấy giọng zh"));
+  };
+  if ("speechSynthesis" in window) {
+    updateVoices();
+    window.speechSynthesis.onvoiceschanged = updateVoices;
+  }
+}
+
+async function loadLessons() {
+  const sources = [];
+  const manifestUrl = `data/lessons-manifest.json?v=${BUILD_VERSION}`;
+  try {
+    const mr = await fetch(manifestUrl);
+    if (!mr.ok) throw new Error("HTTP " + mr.status);
+    const m = await mr.json();
+    sources.push({ url: manifestUrl, status: mr.status, count: (m.shards || []).length, error: null });
+    const all = [];
+    for (const s of (m.shards || [])) {
+      const url = `${s}?v=${BUILD_VERSION}`;
+      try {
+        const r = await fetch(url);
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        const shard = await r.json();
+        sources.push({ url, status: r.status, count: (shard.lessons || []).length, error: null });
+        all.push(...(shard.lessons || []));
+      } catch (e) {
+        sources.push({ url, status: "lỗi", count: null, error: String(e && e.message ? e.message : e) });
+      }
+    }
+    const scriptEl = document.querySelector('script[src*="app.js"]');
+    debugInfo = {
+      build: BUILD_VERSION,
+      scriptUrl: scriptEl ? scriptEl.getAttribute("src") : "app.js",
+      swState: ("serviceWorker" in navigator) ? (navigator.serviceWorker.controller ? "đang điều khiển trang" : "không điều khiển trang") : "trình duyệt không hỗ trợ",
+      cacheNames: ("caches" in window) ? "đang kiểm tra…" : "không hỗ trợ",
+      zhVoices: ("speechSynthesis" in window) ? "đang kiểm tra…" : "không hỗ trợ TTS",
+      totalLoaded: all.length,
+      publishedCount: all.filter((l) => l.status === "published").length,
+      completedCount: progress.completedLessons.length,
+      sources,
+    };
+    lessons = all.filter((l) => l.status === "published");
+  } catch (e) {
+    debugInfo = {
+      build: BUILD_VERSION, scriptUrl: "app.js", swState: "không rõ", cacheNames: "không rõ", zhVoices: "không rõ",
+      totalLoaded: 0, publishedCount: 0, completedCount: progress.completedLessons.length,
+      sources: [{ url: manifestUrl, status: "lỗi", count: null, error: String(e && e.message ? e.message : e) }],
+    };
+    throw e;
+  }
+}
+
+loadLessons().then(() => {
+  window.addEventListener("hashchange", () => { render(); renderDebug(); });
   render();
-}).catch((e) => {
-  document.getElementById("app").innerHTML = "<p>Không tải được dữ liệu bài học. Hãy chạy qua máy chủ tĩnh (ví dụ: <code>python3 -m http.server 8000</code>) thay vì mở file trực tiếp trong một số trình duyệt, rồi tải lại trang.</p>";
+  renderDebug();
+}).catch(() => {
+  const app = document.getElementById("app");
+  app.innerHTML = "<p>Không tải được dữ liệu bài học. Hãy chạy qua máy chủ tĩnh (ví dụ: <code>python3 -m http.server 8000</code>) thay vì mở file trực tiếp trong một số trình duyệt, rồi tải lại trang.</p>";
+  renderDebug();
 });

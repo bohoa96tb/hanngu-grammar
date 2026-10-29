@@ -1,8 +1,8 @@
 # Schema dữ liệu bài học (v1)
 
-Tệp chạy: các shard theo cấp trong `data/lessons/` (ví dụ `hsk1.json`,
-`hsk2.json`), mỗi shard là một object có `schema_version: 1`,
-`hsk_level` và `lessons: [...]`, liệt kê theo thứ tự trong
+Tệp chạy: các shard theo bài trong `data/lessons/` (ví dụ `shi-noun-link.json`),
+mỗi shard là một object có `schema_version: 1` và `lessons: [...]`
+(giới hạn một bài mỗi file để file không lớn dần theo lô), liệt kê theo thứ tự trong
 `data/lessons-manifest.json`. Shard là nguồn duy nhất; không còn file
 tổng hợp `data/lessons.json`. ID bài học ổn định qua các shard, nên
 tiến trình học trong localStorage (lưu theo ID bài) không bị ảnh hưởng

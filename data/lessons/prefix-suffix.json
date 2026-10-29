@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "prefix-suffix",
+      "title_vi": "Tiền tố, hậu tố: 第/小/们/边",
+      "pattern": "第 + Số • 小 + Họ • Danh từ + 们 • Danh từ + 边",
+      "hsk_level": 1,
+      "difficulty": "easy",
+      "objective": "Sau bài này, người học dùng được 第 nói thứ tự, 小 trước họ để gọi thân mật, 们 nói số nhiều người và 边 nói phía/vị trí tương đối.",
+      "when_to_use": "Khi nói thứ tự (bài thứ ba), gọi tên thân mật (Tiểu Vương), nói nhóm người (chúng tôi, các bạn) hoặc nói phía (phía trước trường).",
+      "formula_notes": "Thứ tự: 第 + Số từ (+ Lượng từ + Danh từ). Gọi thân mật: 小 + Họ. Số nhiều người: Đại từ/Danh từ chỉ người + 们 (không dùng sau số từ). Phía: Danh từ + 边 (前边/后边/左边/右边).",
+      "examples": [
+        {
+          "zh": "这是第三课。",
+          "vi": "Đây là bài thứ ba.",
+          "pinyin": "Zhè shì dì sān kè.",
+          "tokens": [
+            "这",
+            "是",
+            "第三",
+            "课"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "他是小王。",
+          "vi": "Anh ấy là Tiểu Vương.",
+          "pinyin": "Tā shì Xiǎo Wáng.",
+          "tokens": [
+            "他",
+            "是",
+            "小王"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "我们是学生。",
+          "vi": "Chúng tôi là học sinh.",
+          "pinyin": "Wǒmen shì xuésheng.",
+          "tokens": [
+            "我们",
+            "是",
+            "学生"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "我的家在学校前边。",
+          "vi": "Nhà tôi ở phía trước trường.",
+          "pinyin": "Wǒ de jiā zài xuéxiào qiánbiān.",
+          "tokens": [
+            "我",
+            "的",
+            "家",
+            "在",
+            "学校",
+            "前边"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "prefix-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn câu đúng để nói 'Đây là bài thứ ba'.",
+          "payload": {
+            "options": [
+              "这是第三课。",
+              "这是三课。",
+              "这是第课三。",
+              "这是课三。"
+            ]
+          },
+          "accepted_answers": [
+            "这是第三课。"
+          ],
+          "explanation": "Thứ tự dùng 第 + số: 第三课."
+        },
+        {
+          "id": "prefix-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Chúng tôi là học sinh.'",
+          "payload": {
+            "prompt_zh": "___是学生。",
+            "hint_vi": "Dùng 我们."
+          },
+          "accepted_answers": [
+            "我们是学生。",
+            "我们是学生"
+          ],
+          "explanation": "Số nhiều người nói: 我们 + 是 + 学生."
+        },
+        {
+          "id": "prefix-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy là Tiểu Vương.'",
+          "payload": {
+            "tokens": [
+              "小王",
+              "他",
+              "是"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "他",
+              "是",
+              "小王"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → 是 → 小王."
+        },
+        {
+          "id": "prefix-ex4",
+          "type": "fill",
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Các bạn là giáo viên.' (viết bằng chữ Hán)",
+          "payload": {
+            "prompt_zh": null,
+            "hint_vi": "Bắt đầu bằng 你们."
+          },
+          "accepted_answers": [
+            "你们是老师。",
+            "你们是老师"
+          ],
+          "explanation": "Từ ý muốn nói 'Các bạn là giáo viên': 你们 + 是 + 老师."
+        }
+      ],
+      "confusions": [
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "这是三课。 (muốn nói 'Đây là bài thứ ba')",
+          "explanation": "三课 chỉ nói số lượng ba bài; nói thứ tự phải dùng 第: 第三课."
+        },
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "三个人们。",
+          "explanation": "们 không dùng sau số từ; nói ba người chỉ cần 三个人."
+        },
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "小王 = 'Vương nhỏ' theo nghĩa đen",
+          "explanation": "小 + họ là cách gọi thân mật, không có nghĩa 'nhỏ' theo kích thước."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "cgw",
+          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
+      }
+    }
+  ]
+}

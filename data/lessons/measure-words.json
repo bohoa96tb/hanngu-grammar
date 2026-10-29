@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "measure-words",
+      "title_vi": "Lượng từ: số + lượng từ + danh từ",
+      "pattern": "Số + Lượng từ + Danh từ",
+      "hsk_level": 1,
+      "difficulty": "medium",
+      "objective": "Sau bài này, người học đếm được người, sách, quần áo bằng lượng từ đúng và dùng 两 thay 二 trước lượng từ.",
+      "when_to_use": "Khi đếm hoặc nói số lượng của một danh từ đếm được. Lượng từ đứng giữa số và danh từ, không được bỏ và phải hợp với loại danh từ.",
+      "formula_notes": "Công thức: Số + Lượng từ + Danh từ. 个 dùng chung cho người/vật; 本 cho sách/vở; 件 cho quần áo. Trước lượng từ, số 2 đọc là 两, không dùng 二. Hỏi số lượng: 几 + lượng từ (số nhỏ, dưới 10) hoặc 多少.",
+      "examples": [
+        {
+          "zh": "我买了三本书。",
+          "vi": "Tôi đã mua ba cuốn sách.",
+          "pinyin": "Wǒ mǎi le sān běn shū.",
+          "tokens": [
+            "我",
+            "买",
+            "了",
+            "三",
+            "本",
+            "书"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "三本书。",
+          "vi": "Ba cuốn sách.",
+          "pinyin": "Sān běn shū.",
+          "tokens": [
+            "三",
+            "本",
+            "书"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "两件衣服。",
+          "vi": "Hai bộ quần áo.",
+          "pinyin": "Liǎng jiàn yīfu.",
+          "tokens": [
+            "两",
+            "件",
+            "衣服"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "confusions": [
+        {
+          "wrong_or_risky": "二个人。",
+          "verdict": "sai_ngu_phap",
+          "explanation": "Trước lượng từ, số 2 dùng 两: 两个人 mới đúng."
+        },
+        {
+          "wrong_or_risky": "三书。",
+          "verdict": "sai_ngu_phap",
+          "explanation": "Không bỏ lượng từ giữa số và danh từ: 三本书 mới đúng."
+        },
+        {
+          "wrong_or_risky": "三个书。",
+          "verdict": "kem_tu_nhien",
+          "explanation": "Nghe hiểu được nhưng kém chuẩn; sách dùng 本: 三本书."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "mw-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn cụm đúng để nói 'ba cuốn sách'.",
+          "payload": {
+            "options": [
+              "三本书",
+              "三书",
+              "三个书",
+              "三本子书"
+            ]
+          },
+          "accepted_answers": [
+            "三本书"
+          ],
+          "explanation": "Số 三 + lượng từ 本 (cho sách) + 书."
+        },
+        {
+          "id": "mw-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền cụm hoàn chỉnh: 'hai người'.",
+          "prompt_zh": "___人。",
+          "payload": {
+            "hint_vi": "Số 2 trước lượng từ."
+          },
+          "accepted_answers": [
+            "两个人。",
+            "两个人"
+          ],
+          "explanation": "两 + 个 + 人."
+        },
+        {
+          "id": "mw-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành cụm: 'hai bộ quần áo'.",
+          "payload": {
+            "tokens": [
+              "两",
+              "件",
+              "衣服"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "两",
+              "件",
+              "衣服"
+            ]
+          ],
+          "explanation": "Thứ tự: số → lượng từ → danh từ."
+        },
+        {
+          "id": "mw-ex4",
+          "type": "error_spot",
+          "prompt_vi": "Cụm sau sai ở khối nào? 二个学生。",
+          "payload": {
+            "sentence_zh": "二个学生。",
+            "options": [
+              "二",
+              "个",
+              "学生"
+            ]
+          },
+          "accepted_answers": [
+            "二"
+          ],
+          "explanation": "Lỗi ở 二: trước lượng từ phải dùng 两. Sửa thành: 两个学生。"
+        },
+        {
+          "id": "mw-ex5",
+          "type": "fill",
+          "prompt_vi": "Tự đặt cụm cho tình huống mới: 'một cuốn sách'.",
+          "payload": {
+            "hint_vi": "Sách dùng 本."
+          },
+          "accepted_answers": [
+            "一本书。",
+            "一本书"
+          ],
+          "explanation": "Từ ý muốn nói 'một cuốn sách': 一 + 本 + 书."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "cgw",
+          "note": "Chủ đề A1/A2 theo Chinese Grammar Wiki; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
+      }
+    }
+  ]
+}

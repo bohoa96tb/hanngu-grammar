@@ -1,7 +1,29 @@
 {
   "schema_version": 1,
   "shards": [
-    "data/lessons/hsk1.json",
-    "data/lessons/hsk2.json"
+    "data/lessons/shi-noun-link.json",
+    "data/lessons/le-completion-change.json",
+    "data/lessons/hen-adj-predicate.json",
+    "data/lessons/ma-question.json",
+    "data/lessons/de-possessive.json",
+    "data/lessons/you-existence.json",
+    "data/lessons/bu-mei-negation.json",
+    "data/lessons/measure-words.json",
+    "data/lessons/question-words.json",
+    "data/lessons/modal-hui-neng-keyi.json",
+    "data/lessons/zai-progress.json",
+    "data/lessons/prefix-suffix.json",
+    "data/lessons/pronouns.json",
+    "data/lessons/adverbs-du-ye.json",
+    "data/lessons/bi-comparison.json",
+    "data/lessons/guo-experience.json",
+    "data/lessons/zhe-continuation.json",
+    "data/lessons/shi-de-emphasis.json",
+    "data/lessons/result-complement.json",
+    "data/lessons/direction-complement.json",
+    "data/lessons/complex-suiran-yinwei.json",
+    "data/lessons/hai-shi-choice.json",
+    "data/lessons/verb-reduplication.json",
+    "data/lessons/gei-double-object.json"
   ]
 }

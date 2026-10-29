@@ -165,3 +165,29 @@ một merge commit). Nếu merge không thực hiện được, phương án d�
 xóa file cũ cuối cùng, và báo cáo rõ là không đạt được một commit hợp
 nhất. Git commit–push trực tiếp không khả thi ở đây vì workspace không
 phải là git repo và không có thông tin đăng nhập git để đẩy.
+
+## D20 — Chẩn đoán cache bằng tầng bằng chứng và versioning có giới hạn (29/10/2026)
+Lý do: giao diện 3 lần vẫn 18 bài trong khi manifest/shard/app.js mới
+đều lấy về được trên Pages. App không có service worker, webmanifest hay
+Cache Storage (kiểm tra mã nguồn) nên cache còn lại là HTTP cache của
+trình duyệt/CDN Pages đối với URL đã thay đổi; URL mới chưa bị cache nên
+mới ngay. Không kết luận cache chỉ từ một file mới truy cập được, và
+không chuyển việc xác minh sang người dùng khi chưa kiểm tra hết bằng
+công cụ sẵn có — vì vậy thêm chế độ ?debug=1 hiển thị phiên bản build,
+nguồn dữ liệu, số bài từng nguồn, tổng số bài và lỗi tải.
+Ảnh hưởng: versioning bằng BUILD_VERSION cho dữ liệu và ?v= cho app.js
+chỉ có hiệu lực khi app.js mới đã chạy; không xóa localStorage để chữa
+lỗi hiển thị; không coi query ở URL trang là bằng chứng mọi tài nguyên
+mới. Trạng thái deployment của Pages không xem được qua công cụ GitHub
+hiện có (không workflow, triển khai từ nhánh) nên xác minh bằng file
+thực tế phục vụ trên Pages và commit nguồn của main.
+
+## D21 — TTS trình duyệt là phương án tạm thời, chưa đáp ứng audio tạo trước (29/10/2026)
+Lý do: đặc tả yêu cầu tạo/kiểm tra audio; app hiện chỉ dùng
+speechSynthesis zh-CN theo yêu cầu, không có file audio thu sẵn, chưa
+kiểm tra nghe thực tế, chưa kiểm tra giọng zh-CN có mặt, thao tác
+phát/dừng và trường hợp thiếu giọng trên thiết bị thật.
+Ảnh hưởng: TTS được ghi là tạm thời trong task board (AUD-TTS-01); không
+đánh dấu bài đạt toàn bộ tiêu chí khi audio bắt buộc chưa được nghiệm
+thu; bảng ?debug=1 hiển thị danh sách giọng zh tìm thấy để kiểm tra
+giọng; chỉ ghi "đã nghe và xác minh âm thanh" khi thực sự nghe được.

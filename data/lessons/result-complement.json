@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "result-complement",
+      "title_vi": "Bổ ngữ kết quả: làm xong, hiểu được, làm sai",
+      "pattern": "Động từ + 完/好/懂/错 + (tân ngữ)",
+      "hsk_level": 2,
+      "difficulty": "medium",
+      "objective": "Sau bài này, người học dùng được bổ ngữ kết quả để nói kết quả của hành động (hiểu được, làm xong, làm sai), không nhầm với động từ gốc.",
+      "when_to_use": "Khi muốn nói hành động đạt kết quả gì (nghe hiểu, làm xong, nhìn nhầm). Bổ ngữ kết quả đứng ngay sau động từ, trước tân ngữ nếu có.",
+      "formula_notes": "Động từ + Bổ ngữ kết quả (+ 了) (+ tân ngữ). Hành động đã hoàn thành: Động từ + 完/好/懂/错 + 了. Phủ định kết quả: 没 + Động từ + Bổ ngữ (không có 了).",
+      "examples": [
+        {
+          "zh": "我听懂了。",
+          "vi": "Tôi nghe hiểu rồi.",
+          "pinyin": "Wǒ tīng dǒng le.",
+          "tokens": [
+            "我",
+            "听懂",
+            "了"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "他做完了作业。",
+          "vi": "Anh ấy làm xong bài tập rồi.",
+          "pinyin": "Tā zuò wán le zuòyè.",
+          "tokens": [
+            "他",
+            "做完",
+            "了",
+            "作业"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "我看错了。",
+          "vi": "Tôi nhìn nhầm rồi.",
+          "pinyin": "Wǒ kàn cuò le.",
+          "tokens": [
+            "我",
+            "看错",
+            "了"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "result-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn câu đúng để nói 'Tôi nghe hiểu rồi'.",
+          "payload": {
+            "options": [
+              "我听懂了。",
+              "我听了懂。",
+              "我懂听了。",
+              "我听懂。"
+            ]
+          },
+          "accepted_answers": [
+            "我听懂了。"
+          ],
+          "explanation": "Bổ ngữ kết quả 懂 đứng ngay sau 听, rồi mới đến 了."
+        },
+        {
+          "id": "result-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy làm xong bài tập rồi.'",
+          "payload": {
+            "prompt_zh": "他___作业。",
+            "hint_vi": "Dùng 做完了."
+          },
+          "accepted_answers": [
+            "他做完了作业。",
+            "他做完了作业"
+          ],
+          "explanation": "Kết quả + hoàn thành: 做完 + 了 + 作业."
+        },
+        {
+          "id": "result-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành câu: 'Tôi nhìn nhầm rồi.'",
+          "payload": {
+            "tokens": [
+              "了",
+              "我",
+              "看错"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "我",
+              "看错",
+              "了"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → động từ + bổ ngữ → 了."
+        },
+        {
+          "id": "result-ex4",
+          "type": "error_spot",
+          "prompt_vi": "Câu sau sai ở khối nào? 我懂听了。",
+          "payload": {
+            "sentence_zh": "我懂听了。",
+            "options": [
+              "我",
+              "懂",
+              "听",
+              "了"
+            ]
+          },
+          "accepted_answers": [
+            "懂"
+          ],
+          "explanation": "Bổ ngữ kết quả phải đứng sau động từ: 听懂, không phải 懂听."
+        },
+        {
+          "id": "result-ex5",
+          "type": "fill",
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tôi đọc xong cuốn sách này rồi.' (viết bằng chữ Hán)",
+          "payload": {
+            "prompt_zh": null,
+            "hint_vi": "Bắt đầu bằng 我."
+          },
+          "accepted_answers": [
+            "我看完了这本书。",
+            "我看完了这本书"
+          ],
+          "explanation": "Từ ý muốn nói 'Tôi đọc xong cuốn sách này rồi': 我 + 看完 + 了 + 这本书."
+        }
+      ],
+      "confusions": [
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我听了。 (muốn nói 'Tôi nghe hiểu rồi')",
+          "explanation": "听了 chỉ nói hành động nghe đã xảy ra; nghe có hiểu hay không cần 听懂."
+        },
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我不做完作业。 (muốn nói 'Tôi chưa làm xong bài tập')",
+          "explanation": "Phủ định kết quả chưa đạt dùng 没: 我没做完作业 mới đúng; 不做完 không nói kết quả chưa đạt."
+        },
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我会中文。 (muốn nói 'Tôi hiểu tiếng Trung khi nghe')",
+          "explanation": "会 nói kỹ năng đã học; nghe hiểu một câu cụ thể thì dùng 听懂."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "cgw",
+          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
+      }
+    }
+  ]
+}

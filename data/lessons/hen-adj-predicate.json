@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "hen-adj-predicate",
+      "title_vi": "很: tính từ làm vị ngữ (không dùng 是)",
+      "pattern": "Chủ ngữ + (很) + Tính từ",
+      "hsk_level": 1,
+      "difficulty": "easy",
+      "objective": "Sau bài này, người học nói được tính chất bằng tính từ làm vị ngữ và không dùng nhầm 是 trước tính từ.",
+      "when_to_use": "Khi muốn nói ai/cái gì có tính chất nào (bận, nóng, cao, mệt). Tính từ đứng làm vị ngữ, thường có 很 đi kèm để câu hoàn chỉnh; không dùng 是 ở đây.",
+      "formula_notes": "Công thức: Chủ ngữ + 很 + Tính từ. Phủ định: 不 + Tính từ (ví dụ: 我不忙). 很 trong cấu trúc này không nhất thiết nghĩa là 'rất'; muốn nhấn mạnh mức độ, dùng 非常 hoặc 太.",
+      "examples": [
+        {
+          "zh": "我很忙。",
+          "vi": "Tôi bận.",
+          "pinyin": "Wǒ hěn máng.",
+          "tokens": [
+            "我",
+            "很",
+            "忙"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "今天很热。",
+          "vi": "Hôm nay nóng.",
+          "pinyin": "Jīntiān hěn rè.",
+          "tokens": [
+            "今天",
+            "很",
+            "热"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "他很高。",
+          "vi": "Anh ấy cao.",
+          "pinyin": "Tā hěn gāo.",
+          "tokens": [
+            "他",
+            "很",
+            "高"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "confusions": [
+        {
+          "wrong_or_risky": "我是忙。 (muốn nói 'Tôi bận')",
+          "verdict": "sai_ngu_phap",
+          "explanation": "是 chỉ nối hai danh từ. Nói tính chất dùng tính từ làm vị ngữ: 我很忙 mới đúng."
+        },
+        {
+          "wrong_or_risky": "Dịch mọi câu có 很 đều thành 'rất'.",
+          "verdict": "doi_nghia",
+          "explanation": "很 trong '我很忙' thường chỉ làm câu hoàn chỉnh, không nhấn mạnh mức độ. Muốn nói 'rất bận' rõ ràng hơn, dùng 我非常忙."
+        }
+      ],
+      "exercises": [
+        {
+          "id": "hen-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn câu đúng để nói 'Hôm nay nóng'.",
+          "payload": {
+            "options": [
+              "今天很热。",
+              "今天是热。",
+              "今天在热。",
+              "今天热是。"
+            ]
+          },
+          "accepted_answers": [
+            "今天很热。"
+          ],
+          "explanation": "Tính từ 热 làm vị ngữ, có 很 đi kèm: 今天很热。 Không dùng 是 trước tính từ."
+        },
+        {
+          "id": "hen-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy cao.'",
+          "prompt_zh": "他___高。",
+          "payload": {
+            "hint_vi": "Dùng 很."
+          },
+          "accepted_answers": [
+            "他很高。",
+            "他很高"
+          ],
+          "explanation": "Chủ ngữ 他 + 很 + tính từ 高."
+        },
+        {
+          "id": "hen-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành câu: 'Tôi bận.'",
+          "payload": {
+            "tokens": [
+              "很",
+              "我",
+              "忙"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "我",
+              "很",
+              "忙"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → 很 → tính từ."
+        },
+        {
+          "id": "hen-ex4",
+          "type": "fill",
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Cô ấy mệt.' (viết bằng chữ Hán)",
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 她."
+          },
+          "accepted_answers": [
+            "她很累。",
+            "她很累"
+          ],
+          "explanation": "Từ ý muốn nói 'Cô ấy mệt': chủ ngữ 她 + 很 + tính từ 累."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "cgw",
+          "note": "Chủ đề A1/A2 theo Chinese Grammar Wiki; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
+      }
+    }
+  ]
+}
