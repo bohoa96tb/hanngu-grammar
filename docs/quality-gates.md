@@ -5,6 +5,7 @@
 ```bash
 python3 scripts/validate.py
 python3 -m unittest discover -s tests -v
+node --test tests/test_fsrs.mjs
 python3 -m http.server 8000   # kiểm tra thủ công: mở http://localhost:8000/
 ```
 
