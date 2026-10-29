@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "shards": [
+    "data/lessons/hsk1.json",
+    "data/lessons/hsk2.json"
+  ]
+}
