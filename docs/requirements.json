@@ -3,7 +3,6 @@
   "requirements": [
     {
       "acceptance_criteria": "Repo mới thuộc bohoa96tb, public, nhánh main, mô tả đúng; hoặc repo local đã sẵn sàng push khi có quyền.",
-      "blocked_reason": "Push thất bại 403: GitHub App chưa có quyền ghi trên repo hanngu-grammar (có thể repo tạo sau lần chọn repo). Cần cập nhật cài đặt App.",
       "description": "Tạo repository mới hanngu-grammar (dự phòng hanngu-grammar-app) và push main.",
       "evidence_paths": [
         "docs/checkpoint.json"
@@ -11,7 +10,7 @@
       "id": "GOV-01",
       "phase": "P00",
       "priority": "P0",
-      "status": "blocked"
+      "status": "verified"
     },
     {
       "acceptance_criteria": "AGENTS.md, requirements, decisions, checkpoint, task board tồn tại và khớp trạng thái thật.",
@@ -133,7 +132,7 @@
     },
     {
       "acceptance_criteria": "Build/lint/test theo stack thực tế chạy đạt; GitHub Pages (nếu dùng) kiểm tra live khớp bản đã kiểm tra.",
-      "blocked_reason": "Phụ thuộc GOV-01 (repo chưa tạo nên chưa có Pages URL để kiểm tra live). Workflow đã chuẩn bị sẵn.",
+      "blocked_reason": "Workflow Pages bị 403 qua API; cần bật Pages từ nhánh main hoặc thêm workflow qua web.",
       "description": "Phát hành GitHub Pages và kiểm tra sau phát hành.",
       "evidence_paths": [
         ".github/workflows/pages.yml",
