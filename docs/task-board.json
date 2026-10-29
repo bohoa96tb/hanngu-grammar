@@ -230,7 +230,7 @@
         "P00-02",
         "P09-01"
       ],
-      "evidence": "Workflow Pages bị 403 qua API; Pages chưa bật, chưa có URL live đã xác minh.",
+      "evidence": "Pages live đã xác minh qua text fetch index + lessons.json (04:52 UTC 2026-10-29); chưa kiểm tra tương tác JS live bằng trình duyệt thật.",
       "files": [
         ".github/workflows/pages.yml",
         "docs/release-log.md"
@@ -241,7 +241,7 @@
       "related_requirements": [
         "OPS-01"
       ],
-      "status": "blocked",
+      "status": "done",
       "title": "Phát hành và kiểm tra live"
     }
   ]
