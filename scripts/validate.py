@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Validator cho data/lessons.json theo docs/schema.md (schema v1).
+"""Validator cho dữ liệu bài học theo docs/schema.md (schema v1).
 
-Chạy: python3 scripts/validate.py [đường_dẫn_json]
-Mặc định kiểm tra data/lessons.json. Trả về 0 khi đạt, 1 khi có lỗi.
+Nguồn dữ liệu là các shard theo cấp trong data/lessons/, liệt kê theo thứ
+tự trong data/lessons-manifest.json (shard là nguồn duy nhất; không còn
+file data/lessons.json tổng hợp). Chạy: python3 scripts/validate.py
+Trả về 0 khi đạt, 1 khi có lỗi.
 Lưu ý: validator kiểm tra cấu trúc/liên kết, KHÔNG chứng minh tiếng Trung đúng.
 """
 import json
@@ -11,7 +13,19 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT = ROOT / "data" / "lessons.json"
+DEFAULT = ROOT / "data" / "lessons-manifest.json"
+
+
+def load_data(manifest_path=DEFAULT):
+    """Đọc manifest và gộp các shard theo thứ tự, trả về dict schema v1."""
+    manifest = json.loads(Path(manifest_path).read_text(encoding="utf-8"))
+    lessons = []
+    for rel in manifest["shards"]:
+        shard = json.loads((ROOT / rel).read_text(encoding="utf-8"))
+        if shard.get("schema_version") != 1:
+            raise ValueError(f"{rel}: schema_version phải bằng 1")
+        lessons.extend(shard["lessons"])
+    return {"schema_version": 1, "lessons": lessons}
 
 PLACEHOLDERS = ("TODO", "Lorem", "XXX", "TBD")
 # Một số ký tự phồn thể phổ biến để cảnh báo (không phải kiểm tra toàn diện).
@@ -106,7 +120,7 @@ def check(data, path) -> list[str]:
 def main(argv) -> int:
     path = Path(argv[1]) if len(argv) > 1 else DEFAULT
     try:
-        data = json.loads(path.read_text(encoding="utf-8"))
+        data = load_data(path)
     except Exception as exc:  # noqa: BLE001 - báo lỗi đọc file cho người dùng
         print(f"LỖI: không đọc được {path}: {exc}")
         return 1
