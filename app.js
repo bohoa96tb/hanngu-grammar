@@ -375,7 +375,10 @@ function render() {
   else renderHome();
 }
 
-fetch("data/lessons.json").then((r) => r.json()).then((d) => {
+fetch("data/lessons-manifest.json").then((r) => r.json()).then((m) =>
+  Promise.all(m.shards.map((s) => fetch(s).then((r) => r.json())))
+).then((shards) => {
+  const d = { lessons: shards.flatMap((s) => s.lessons) };
   lessons = d.lessons.filter((l) => l.status === "published");
   window.addEventListener("hashchange", render);
   render();
