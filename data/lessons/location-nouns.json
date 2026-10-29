@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "location-nouns",
+      "title_vi": "Phương vị từ chỉ vị trí: 上/下/里/外/前/后",
+      "pattern": "Danh từ + 上/下/里/外/前/后 • 在 + Nơi chốn + Phương vị từ",
+      "hsk_level": 1,
+      "difficulty": "medium",
+      "objective": "Sau bài này, người học dùng phương vị từ sau danh từ chỉ nơi chốn để nói vật hoặc người ở đâu một cách chính xác.",
+      "when_to_use": "Khi cần nói rõ vị trí: trên, dưới, trong, ngoài, trước, sau một nơi chốn cụ thể.",
+      "formula_notes": "Phương vị từ đứng SAU danh từ chỉ nơi chốn: 桌子上 (trên bàn), 学校里 (trong trường). Có thể thêm 在 ở trước: 在桌子上. 里 nhấn mạnh 'bên trong', 外 là 'bên ngoài'.",
+      "examples": [
+        {
+          "zh": "书在桌子上。",
+          "vi": "Quyển sách ở trên bàn.",
+          "pinyin": "Shū zài zhuōzi shang.",
+          "tokens": [
+            "书",
+            "在",
+            "桌子",
+            "上"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "他在学校里。",
+          "vi": "Anh ấy ở trong trường.",
+          "pinyin": "Tā zài xuéxiào lǐ.",
+          "tokens": [
+            "他",
+            "在",
+            "学校",
+            "里"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "猫在门外。",
+          "vi": "Con mèo ở ngoài cửa.",
+          "pinyin": "Māo zài mén wài.",
+          "tokens": [
+            "猫",
+            "在",
+            "门",
+            "外"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "locnoun-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn câu đúng để nói 'Quyển sách ở trên bàn.'",
+          "payload": {
+            "options": [
+              "书在桌子上。",
+              "书上在桌子。",
+              "书在上桌子。",
+              "书桌子上在。"
+            ]
+          },
+          "accepted_answers": [
+            "书在桌子上。"
+          ],
+          "explanation": "Phương vị từ 上 đứng sau 桌子: 桌子上。"
+        },
+        {
+          "id": "locnoun-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy ở trong trường.'",
+          "payload": {
+            "prompt_zh": "他在学校___。",
+            "hint_vi": "Dùng 里。"
+          },
+          "accepted_answers": [
+            "他在学校里。",
+            "他在学校里"
+          ],
+          "explanation": "他在学校里: 在 + 学校 + 里。"
+        },
+        {
+          "id": "locnoun-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành câu: 'Con mèo ở ngoài cửa.'",
+          "payload": {
+            "tokens": [
+              "门外",
+              "猫",
+              "在"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "猫",
+              "在",
+              "门外"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → 在 → nơi chốn + phương vị từ."
+        },
+        {
+          "id": "locnoun-ex4",
+          "type": "error_spot",
+          "prompt_vi": "Câu sau sai ở khối nào? 书上在桌子。",
+          "payload": {
+            "sentence_zh": "书上在桌子。",
+            "options": [
+              "书",
+              "上",
+              "在",
+              "桌子"
+            ]
+          },
+          "accepted_answers": [
+            "上"
+          ],
+          "explanation": "上 đặt sai chỗ: phương vị từ phải đứng sau danh từ chỉ nơi chốn, thành 桌子上。"
+        },
+        {
+          "id": "locnoun-ex5",
+          "type": "fill",
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Con chó ở trước cửa' (viết bằng chữ Hán)",
+          "payload": {
+            "prompt_zh": null,
+            "hint_vi": "Bắt đầu bằng 狗。"
+          },
+          "accepted_answers": [
+            "狗在门前。",
+            "狗在门前"
+          ],
+          "explanation": "Con chó ở trước cửa: 狗 + 在 + 门 + 前。"
+        }
+      ],
+      "confusions": [
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "书上在桌子。",
+          "explanation": "Phương vị từ đứng sau danh từ chỉ nơi chốn: 桌子上, không phải 上在桌子。"
+        },
+        {
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "他在学校。(khi muốn nhấn mạnh đang ở bên trong trường)",
+          "explanation": "Câu đúng nhưng chưa nhấn mạnh 'trong'; muốn nhấn mạnh bên trong thì dùng 他在学校里。"
+        },
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "猫在门里。(khi muốn nói 'ngoài cửa')",
+          "explanation": "里 = trong, 外 = ngoài; ngoài cửa phải dùng 门外。"
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "hsk-official",
+          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí."
+      }
+    }
+  ]
+}

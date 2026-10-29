@@ -15,6 +15,8 @@
     "data/lessons/prefix-suffix.json",
     "data/lessons/pronouns.json",
     "data/lessons/adverbs-du-ye.json",
+    "data/lessons/modal-xiang-yao.json",
+    "data/lessons/location-nouns.json",
     "data/lessons/bi-comparison.json",
     "data/lessons/guo-experience.json",
     "data/lessons/zhe-continuation.json",
@@ -24,6 +26,8 @@
     "data/lessons/complex-suiran-yinwei.json",
     "data/lessons/hai-shi-choice.json",
     "data/lessons/verb-reduplication.json",
-    "data/lessons/gei-double-object.json"
+    "data/lessons/gei-double-object.json",
+    "data/lessons/why-question.json",
+    "data/lessons/yi-jiu-tight.json"
   ]
 }

@@ -62,7 +62,7 @@
       "depends_on": [
         "P01-01"
       ],
-      "evidence": "Phạm vi nhóm đã khóa (50 nhóm, docs/baseline-evidence.md); xác minh đầy đủ danh mục chính thức CHƯA xong: điểm vi mô chưa đối chiếu, trích xuất bảng bị xáo trộn, bản đọc là crawl 25/09/2026 chưa ghi hash, quyền phân phối chưa xác minh. Không gọi baseline là đã khóa toàn bộ.",
+      "evidence": "HSK1–2 ĐÃ ĐỐI CHIẾU: docs/baseline-hsk1-hsk2-mapping.md + docs/official-catalogue-hsk1-hsk2.json (HSK1 52 mục nhóm: 20 có/10 một phần/22 thiếu; HSK2 62 mục nhóm: 14 có/14 một phần/34 thiếu; số mục nhóm do dự án chia, không phải số chính thức). Không cần sửa cấp độ cho 24 bài cũ. HSK3–6 CHƯA đối chiếu nên task vẫn in_progress. Bản trích dùng ngày 2026-09-25, chưa ghi hash file gốc.",
       "files": [
         "docs/curriculum-baseline.json"
       ],
@@ -169,7 +169,7 @@
       "depends_on": [
         "P05-01"
       ],
-      "evidence": "24 bài, 111 bài tập, validator ĐẠT. Shard theo bài + ?debug=1 + versioning (merge PR #2, 8b9e6d49). LIVE ĐÃ NGHIỆM THU (qa-04, 06:52 UTC): phiên mới và phiên cũ đều hiện 24 bài, mở hai-shi-choice được, trắc nghiệm đúng, tiến trình giữ sau tải lại. Nguyên nhân vụ 18 bài: app.js cũ trong HTTP cache của hồ sơ kiểm tra (không service worker, không Cache Storage).",
+      "evidence": "28 bài, 131 bài tập, validator ĐẠT. Lô 8 thêm 4 bài từ phần thiếu HSK1–2 đã xác minh: modal-xiang-yao, location-nouns (HSK1), why-question, yi-jiu-tight (HSK2). 4 bài mới là đã rà soát nội bộ, CHƯA đạt toàn bộ tiêu chí vì audio chưa nghiệm thu. Live 28 bài chưa nghiệm thu (chờ vòng sau merge).",
       "files": [],
       "id": "P06-01",
       "inputs": "Baseline khóa",
@@ -254,7 +254,7 @@
       "id": "AUD-TTS-01",
       "title": "Nghiệm thu audio TTS: giọng zh-CN, phát/dừng, thiếu giọng",
       "status": "in_progress",
-      "evidence": "TTS trình duyệt là phương án TẠM THỜI, chưa mặc nhiên đáp ứng yêu cầu audio tạo trước trong đặc tả. Đã có: nút Nghe mẫu theo câu, tốc độ đọc, ưu tiên giọng zh, nút dừng, bảng ?debug=1 liệt kê giọng zh. PHÁT HIỆN qa-04: cả hai môi trường trình duyệt kiểm tra đều báo \"không tìm thấy giọng zh\" — trường hợp thiếu giọng là có thật; code sẽ thử đọc theo lang zh-CN bằng giọng mặc định. Chưa có: nghe thực tế, phát/dừng và thiếu giọng trên thiết bị thật (not_run cho cả 24 bài). Không đánh dấu bài đạt toàn bộ tiêu chí khi audio chưa nghiệm thu."
+      "evidence": "TTS trình duyệt là phương án TẠM THỜI, chưa mặc nhiên đáp ứng yêu cầu audio tạo trước trong đặc tả. Đã có: nút Nghe mẫu theo câu, tốc độ đọc, ưu tiên giọng zh, nút dừng, bảng ?debug=1 liệt kê giọng zh, và cảnh báo thiếu giọng zh một lần mỗi lần tải trang (D22) thay vì âm thầm dùng giọng mặc định làm mẫu chuẩn. PHÁT HIỆN qa-04: cả hai môi trường kiểm tra đều báo \"không tìm thấy giọng zh\". Chưa có: nghe thực tế, phát/dừng và thiếu giọng trên thiết bị thật (not_run cho cả 28 bài). Không đánh dấu bài đạt toàn bộ tiêu chí khi audio chưa nghiệm thu. Biên soạn không bị chặn vì môi trường không nghe được audio."
     }
   ]
 }

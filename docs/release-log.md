@@ -61,3 +61,8 @@ Chưa có bản phát hành nào.
   Cache Storage, giọng zh), versioning BUILD_VERSION. App không có
   service worker. TTS là phương án tạm thời (AUD-TTS-01), chưa nghiệm
   thu nghe thực tế.
+
+- 2026-10-29 — Lô 08: đối chiếu chính thức HSK1–2 (52 + 62 mục nhóm;
+  không sửa cấp độ 24 bài cũ) và 4 bài mới (想/要, phương vị từ,
+  为什么, 一……就……) — tổng 28 bài, 131 bài tập. Cảnh báo thiếu giọng
+  zh một lần mỗi lần tải trang (D22). TTS vẫn tạm thời.

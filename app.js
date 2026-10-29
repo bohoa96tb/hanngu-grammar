@@ -45,17 +45,26 @@ function saveProgress() { localStorage.setItem(LS_KEY, JSON.stringify(progress))
 function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
 function norm(s) { return String(s).replace(/[\s。，、；：？！·…「」『』（）《》"'.?!]/g, ""); }
 
+// Cảnh báo thiếu giọng zh: chỉ hiện một lần mỗi lần tải trang, khi danh
+// sách giọng đã tải xong và không có giọng zh nào. Không âm thầm coi
+// giọng mặc định là phát âm mẫu chuẩn (xem D22).
+let voiceWarned = false;
 function speak(text) {
   if (!("speechSynthesis" in window)) { alert("Trình duyệt này không hỗ trợ đọc giọng tổng hợp."); return; }
   window.speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(text);
   u.lang = "zh-CN"; u.rate = speechRate;
-  // Ưu tiên giọng zh nếu trình duyệt đã tải danh sách giọng; nếu chưa có
-  // giọng zh, vẫn thử đọc bằng giọng mặc định (trình duyệt có thể tự chọn
-  // giọng zh-CN theo lang) và bảng chẩn đoán ?debug=1 sẽ ghi rõ danh sách
-  // giọng zh tìm thấy. Không coi TTS là audio thu sẵn (xem D21).
-  const zhVoice = window.speechSynthesis.getVoices().find((v) => (v.lang || "").toLowerCase().startsWith("zh"));
-  if (zhVoice) u.voice = zhVoice;
+  const voices = window.speechSynthesis.getVoices();
+  const zhVoice = voices.find((v) => (v.lang || "").toLowerCase().startsWith("zh"));
+  if (zhVoice) {
+    u.voice = zhVoice;
+  } else if (voices.length > 0 && !voiceWarned) {
+    voiceWarned = true;
+    alert("Trình duyệt này chưa có giọng tiếng Trung. Âm thanh phát ra (nếu có) dùng giọng mặc định của trình duyệt và không được coi là phát âm mẫu chuẩn. Bạn vẫn có thể đọc phần chữ Hán và phiên âm để tự luyện.");
+  }
+  // Trường hợp danh sách giọng chưa tải xong (voices rỗng): chưa xác định
+  // được giọng zh, vẫn thử đọc theo lang zh-CN; bảng chẩn đoán ?debug=1
+  // ghi rõ danh sách giọng zh tìm thấy để kiểm tra sau.
   window.speechSynthesis.speak(u);
 }
 function stopSpeak() { if ("speechSynthesis" in window) window.speechSynthesis.cancel(); }
@@ -385,7 +394,7 @@ function render() {
 // bản cũ từ bộ nhớ đệm sau khi app.js mới đã chạy. Lưu ý: tham số này chỉ
 // có tác dụng khi app.js mới đã được tải; nó không chữa được app.js cũ
 // còn trong bộ nhớ đệm (xem docs/decisions.md D20).
-const BUILD_VERSION = "20261029-pl24";
+const BUILD_VERSION = "20261029-voicewarn";
 const DEBUG = new URLSearchParams(location.search).get("debug") === "1";
 let debugInfo = null;
 

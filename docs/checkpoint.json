@@ -74,13 +74,14 @@
   ],
   "latest_verified_commit": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
   "next_actions": [
-    "Đẩy qa-04 + checkpoint + task-board lên main qua nhánh/PR (đang chạy).",
-    "Sau đó mới làm P06 lô tiếp theo; P01-02 xác minh danh mục đầy đủ vẫn in_progress; AUD-TTS-01 nghiệm thu audio trên thiết bị thật."
+    "Đẩy lô 08 qua nhánh/PR/merge (gồm dòng checkpoint local từ qa-04).",
+    "Nghiệm thu live 28 bài sau merge (không chạy lại qa-04 nếu không có thay đổi liên quan).",
+    "P01-02: đối chiếu HSK3–6, rồi chọn bài mới từ phần thiếu; AUD-TTS-01: nghiệm thu audio trên thiết bị thật."
   ],
   "pending_review_ids": [],
   "phase": "P06",
   "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "LIVE 24 BÀI ĐÃ NGHIỆM THU (qa-04, 06:52 UTC, cả phiên mới và phiên cũ): build 20261029-pl24, 24/24 published, hai-shi-choice mở được, trắc nghiệm đúng, tiến trình giữ sau tải lại. Nguyên nhân vụ 18 bài: app.js cũ trong HTTP cache (không SW, không Cache Storage). Cả hai môi trường kiểm tra đều không có giọng zh (AUD-TTS-01). TTS tạm thời; audio thực tế not_run.",
+  "resume_notes": "28 bài (131 bài tập) sau lô 08: thêm modal-xiang-yao, location-nouns, why-question, yi-jiu-tight. P01-02 HSK1–2 xong (52+62 mục nhóm), HSK3–6 chưa. Cảnh báo thiếu giọng zh đã có (D22). TTS tạm thời; audio thực tế not_run. Không chạy lại qa-04 nếu không có thay đổi liên quan.",
   "schema_version": 1,
   "spec_version": "1.0",
   "updated_at": "2026-10-29",
@@ -158,5 +159,5 @@
       "result": "Main và cây file Pages: 24 bài đúng. Giao diện: 18 bài sau cả cache-bust và hard refresh tới 06:10 UTC. Live 24 bài CHƯA xác minh."
     }
   ],
-  "working_tree_state": "qa04_and_checkpoint_local_only_pending_push"
+  "working_tree_state": "batch08_ready_for_branch_pr_includes_local_checkpoint_line_from_qa04"
 }
