@@ -1,1 +1,225 @@
-{"baseline_version":"0.1-provisional-sample-only","coverage_counts":{"baseline_items_total":null,"baseline_items_with_published_lesson":3,"note":"Tổng số mục baseline chưa biết vì baseline chưa khóa; không tính phần trăm bao phủ."},"edition":{"id":null,"note":"Chưa xác định được phiên bản đề cương khóa: phân biệt chuẩn 2021, đề cương thi 2025 và HSK cũ (đặc tả §4.1). Task P01-full vẫn blocked.","source":"hsk-official"},"items":[{"coverage_status":"published_sample","id":"CUR-SHI-01","lesson_ids":["shi-noun-link"],"level_basis":"Chinese Grammar Wiki mức A1; từ 是 ở HSK 2.0 L1 và HSK 3.0 L1 theo nguồn thứ cấp. Tạm thời, chờ baseline khóa.","provisional_hsk_level":1,"source_id":"cgw","source_text":"Noun 1 + 是 + Noun 2","title_vi":"Nối hai danh từ bằng 是"},{"coverage_status":"published_sample","id":"CUR-BI-01","lesson_ids":["bi-comparison"],"level_basis":"Chinese Grammar Wiki liệt kê 'Basic comparisons with bi' ở HSK 2 (A2). Tạm thời, chờ baseline khóa.","provisional_hsk_level":2,"source_id":"cgw","source_text":"Noun 1 + 比 + Noun 2 + Adj.","title_vi":"So sánh hơn bằng 比"},{"coverage_status":"published_sample","id":"CUR-LE-01","lesson_ids":["le-completion-change"],"level_basis":"Chinese Grammar Wiki liệt kê các cách dùng 了 ở mức A2; 了 xuất hiện từ rất sớm nhưng bài này gộp 2 cách dùng nên xếp tạm HSK2. Tạm thời, chờ baseline khóa.","provisional_hsk_level":2,"source_id":"cgw","source_text":"Subj. + Verb + 了 (hoàn thành); Subj. + Adj. + 了 (đổi trạng thái)","title_vi":"了: hoàn thành và đổi trạng thái"}],"schema_version":1,"status":"provisional_sample_only","updated_at":"2026-10-29","warning":"Baseline toàn diện HSK1-6 CHƯA khóa. Chỉ 3 mục mẫu dưới đây có ánh xạ bài học. Không dùng số bài để suy ra độ bao phủ HSK1-6."}
+{
+  "schema_version": 1,
+  "baseline_version": "0.2-working-provisional",
+  "status": "provisional_working_not_locked",
+  "edition": {
+    "id": "hsk-exam-syllabus-2025-11",
+    "source": "hsk-official",
+    "note": "Phiên bản mục tiêu đã chốt (D15): đề cương thi HSK 3.0 công bố 11/2025, KHÔNG phải chuẩn năng lực 2021 (GF 0025-2021) và KHÔNG phải HSK cũ 2.0. Trạng thái vẫn là làm việc, chưa khóa vì chưa đối chiếu văn bản gốc."
+  },
+  "coverage_counts": {
+    "baseline_items_total": null,
+    "baseline_items_with_published_lesson": 12,
+    "working_catalogue_items": 18,
+    "planned_items": 6,
+    "note": "Tổng số mục baseline CHƯA BIẾT vì chưa có văn bản gốc; không tính phần trăm bao phủ. Danh mục làm việc này chỉ chứa 12 mục đã có bài + 6 mục HSK2 đang lên kế hoạch; HSK3–6 chưa được lập danh mục."
+  },
+  "items": [
+    {
+      "id": "CUR-SHI-01",
+      "title_vi": "Nối hai danh từ bằng 是",
+      "provisional_hsk_level": 1,
+      "source_id": "cgw",
+      "source_text": "Noun 1 + 是 + Noun 2",
+      "source_position": "Hanzio (nguồn thứ cấp, theo đề cương thi): câu 是 xếp #52 trong danh sách HSK1; số thứ tự gốc chưa đối chiếu",
+      "lesson_ids": [
+        "shi-noun-link"
+      ],
+      "coverage_status": "published_sample"
+    },
+    {
+      "id": "CUR-HEN-01",
+      "title_vi": "Tính từ làm vị ngữ với 很",
+      "provisional_hsk_level": 1,
+      "source_id": "cgw",
+      "source_text": "Chủ ngữ + 很 + Tính từ",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi",
+      "lesson_ids": [
+        "hen-adj-predicate"
+      ],
+      "coverage_status": "published_sample"
+    },
+    {
+      "id": "CUR-MA-01",
+      "title_vi": "Câu hỏi có/không với 吗",
+      "provisional_hsk_level": 1,
+      "source_id": "cgw",
+      "source_text": "Câu trần thuật + 吗",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi",
+      "lesson_ids": [
+        "ma-question"
+      ],
+      "coverage_status": "published_sample"
+    },
+    {
+      "id": "CUR-DE-01",
+      "title_vi": "Sở hữu/định ngữ với 的",
+      "provisional_hsk_level": 1,
+      "source_id": "cgw",
+      "source_text": "Định ngữ + 的 + Danh từ",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi",
+      "lesson_ids": [
+        "de-possessive"
+      ],
+      "coverage_status": "published_sample"
+    },
+    {
+      "id": "CUR-YOU-01",
+      "title_vi": "Có/tồn tại với 有",
+      "provisional_hsk_level": 1,
+      "source_id": "cgw",
+      "source_text": "Ai + 有 + Vật; Nơi chốn + 有 + Người/Vật",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi",
+      "lesson_ids": [
+        "you-existence"
+      ],
+      "coverage_status": "published_sample"
+    },
+    {
+      "id": "CUR-BUMEI-01",
+      "title_vi": "Phủ định 不 và 没",
+      "provisional_hsk_level": 1,
+      "source_id": "cgw",
+      "source_text": "不 + Động từ/Tính từ; 没(有) + Động từ/Danh từ",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi",
+      "lesson_ids": [
+        "bu-mei-negation"
+      ],
+      "coverage_status": "published_sample"
+    },
+    {
+      "id": "CUR-MW-01",
+      "title_vi": "Lượng từ",
+      "provisional_hsk_level": 1,
+      "source_id": "cgw",
+      "source_text": "Số + Lượng từ + Danh từ",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi",
+      "lesson_ids": [
+        "measure-words"
+      ],
+      "coverage_status": "published_sample"
+    },
+    {
+      "id": "CUR-QW-01",
+      "title_vi": "Từ để hỏi",
+      "provisional_hsk_level": 1,
+      "source_id": "cgw",
+      "source_text": "Từ để hỏi đứng đúng vị trí thành phần bị hỏi",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi",
+      "lesson_ids": [
+        "question-words"
+      ],
+      "coverage_status": "published_sample"
+    },
+    {
+      "id": "CUR-MODAL-01",
+      "title_vi": "Động từ năng nguyện 会/能/可以",
+      "provisional_hsk_level": 1,
+      "source_id": "cgw",
+      "source_text": "会/能/可以 + Động từ",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi (nguồn thứ cấp ioChinese: các điểm 4–6 trong danh sách HSK1)",
+      "lesson_ids": [
+        "modal-hui-neng-keyi"
+      ],
+      "coverage_status": "published_sample"
+    },
+    {
+      "id": "CUR-BI-01",
+      "title_vi": "So sánh hơn bằng 比",
+      "provisional_hsk_level": 2,
+      "source_id": "cgw",
+      "source_text": "Noun 1 + 比 + Noun 2 + Adj.",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi",
+      "lesson_ids": [
+        "bi-comparison"
+      ],
+      "coverage_status": "published_sample"
+    },
+    {
+      "id": "CUR-LE-01",
+      "title_vi": "了: hoàn thành và đổi trạng thái",
+      "provisional_hsk_level": 2,
+      "source_id": "cgw",
+      "source_text": "Subj. + Verb + 了; Subj. + Adj. + 了",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi (nguồn thứ cấp: 了 xuất hiện ở 4 điểm trong danh sách HSK1 theo Hanzio — bài này xếp tạm HSK2 vì gộp 2 cách dùng)",
+      "lesson_ids": [
+        "le-completion-change"
+      ],
+      "coverage_status": "published_sample"
+    },
+    {
+      "id": "CUR-GUO-01",
+      "title_vi": "Kinh nghiệm với 过",
+      "provisional_hsk_level": 2,
+      "source_id": "cgw",
+      "source_text": "Động từ + 过 + Tân ngữ",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi",
+      "lesson_ids": [
+        "guo-experience"
+      ],
+      "coverage_status": "published_sample"
+    },
+    {
+      "id": "CUR-ZAI-01",
+      "title_vi": "在: vị trí và đang diễn ra",
+      "provisional_hsk_level": 2,
+      "source_id": "cgw",
+      "source_text": "在 + Nơi chốn; 在/正在 + Động từ",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi",
+      "lesson_ids": [],
+      "coverage_status": "planned"
+    },
+    {
+      "id": "CUR-ZHE-01",
+      "title_vi": "Trạng thái tiếp diễn với 着",
+      "provisional_hsk_level": 2,
+      "source_id": "cgw",
+      "source_text": "Động từ + 着",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi",
+      "lesson_ids": [],
+      "coverage_status": "planned"
+    },
+    {
+      "id": "CUR-SHIDE-01",
+      "title_vi": "Nhấn mạnh với 是……的",
+      "provisional_hsk_level": 2,
+      "source_id": "cgw",
+      "source_text": "是 + (thời gian/nơi chốn/cách thức) + Động từ + 的",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi",
+      "lesson_ids": [],
+      "coverage_status": "planned"
+    },
+    {
+      "id": "CUR-RESULT-01",
+      "title_vi": "Bổ ngữ kết quả",
+      "provisional_hsk_level": 2,
+      "source_id": "cgw",
+      "source_text": "Động từ + 完/好/懂/错 + Tân ngữ",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi",
+      "lesson_ids": [],
+      "coverage_status": "planned"
+    },
+    {
+      "id": "CUR-DIR-01",
+      "title_vi": "Bổ ngữ phương hướng",
+      "provisional_hsk_level": 2,
+      "source_id": "cgw",
+      "source_text": "Động từ + 来/去/上/下/进/出",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi",
+      "lesson_ids": [],
+      "coverage_status": "planned"
+    },
+    {
+      "id": "CUR-COMPLEX-01",
+      "title_vi": "Câu phức 虽然……但是 và 因为……所以",
+      "provisional_hsk_level": 2,
+      "source_id": "cgw",
+      "source_text": "虽然……但是……; 因为……所以……",
+      "source_position": "Chưa xác minh số thứ tự trong đề cương thi",
+      "lesson_ids": [],
+      "coverage_status": "planned"
+    }
+  ],
+  "warning": "Baseline toàn diện HSK1–6 CHƯA khóa. Danh mục này là danh mục làm việc tạm thời, không phải baseline hoàn chỉnh. Không dùng số bài để suy ra độ bao phủ HSK1–6.",
+  "updated_at": "2026-10-29"
+}
