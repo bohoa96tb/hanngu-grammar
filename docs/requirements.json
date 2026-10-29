@@ -112,12 +112,14 @@
       "acceptance_criteria": "Dùng thư viện FSRS được duy trì, khóa phiên bản, kiểm thử tích hợp; lịch sử event có ID chống ghi trùng; xuất/nhập có version.",
       "description": "Ôn tập FSRS thật + sao lưu/khôi phục. Hiện chỉ có xuất/nhập tiến trình và danh sách ôn đơn giản — KHÔNG gọi là FSRS.",
       "evidence_paths": [
-        "app.js"
+        "srs.mjs",
+        "tests/test_fsrs.mjs",
+        "docs/reviews/batch-02.md"
       ],
       "id": "SRS-01",
       "phase": "P05",
       "priority": "P0",
-      "status": "planned"
+      "status": "verified"
     },
     {
       "acceptance_criteria": "Không bí mật trong repo, không key ở frontend, dữ liệu cá nhân tách biệt (hiện chỉ local).",
