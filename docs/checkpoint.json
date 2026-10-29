@@ -74,14 +74,14 @@
   ],
   "latest_verified_commit": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
   "next_actions": [
-    "Merge nhánh migration-shards-lot3 rồi xác minh live 24 bài (đếm bài, chân trang/Giới thiệu, một bài mới hoạt động).",
-    "P06 lô tiếp theo: các nhóm HSK1–2 còn lại theo từng lô nhỏ có rà soát.",
-    "Xác minh danh mục chính thức đầy đủ (P01-02): đối chiếu điểm vi mô, bản PDF trực quan, hash file, quyền phân phối."
+    "Nghiệm thu bản 24 bài bằng ?debug=1: giao diện đủ 24 bài, mở bài hai-shi-choice bằng ID thật, làm trắc nghiệm, tải lại giữ tiến trình; kiểm tra cả phiên cũ (18 bài) và phiên mới nếu công cụ cho phép.",
+    "Sau nghiệm thu mới đẩy docs qa-03/batch-07 + checkpoint lên main.",
+    "P06 lô tiếp theo (sau nghiệm thu) và P01-02 xác minh danh mục đầy đủ; AUD-TTS-01 nghiệm thu audio."
   ],
   "pending_review_ids": [],
   "phase": "P06",
   "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "24 bài published (111 bài tập) sau lô 3. Dữ liệu đã tách shard theo cấp; baseline sửa trạng thái: khóa phạm vi nhóm, chưa xác minh đầy đủ danh mục (baseline-evidence.md). Audio TTS phát thực tế = not_run cho cả 24 bài. Chờ merge nhánh rồi xác minh live 24 bài.",
+  "resume_notes": "Shard theo bài (24 file) + debug ?debug=1 + versioning đã xong, chờ đẩy qua nhánh/PR. App không có service worker/Cache Storage. TTS là tạm thời (AUD-TTS-01). Live 24 bài chưa nghiệm thu xong; mở bài 还是 bằng ID thật hai-shi-choice (không đoán haishi-choice).",
   "schema_version": 1,
   "spec_version": "1.0",
   "updated_at": "2026-10-29",
@@ -153,7 +153,11 @@
     {
       "command": "python3 scripts/validate.py; python3 -m unittest; node --check app.js",
       "result": "ĐẠT 24 bài, 111 bài tập; unittest 5 passed; JS_OK. FSRS không chạy lại vì không có thay đổi liên quan."
+    },
+    {
+      "command": "API main (manifest/shards/app.js) + text fetch Pages (manifest, hsk2) + 3 vòng trình duyệt",
+      "result": "Main và cây file Pages: 24 bài đúng. Giao diện: 18 bài sau cả cache-bust và hard refresh tới 06:10 UTC. Live 24 bài CHƯA xác minh."
     }
   ],
-  "working_tree_state": "migration_and_lot3_ready_for_branch_pr"
+  "working_tree_state": "debug_and_per_lesson_shards_ready_for_branch_pr"
 }
