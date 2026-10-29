@@ -362,7 +362,7 @@ function renderAbout() {
     <p><strong>Luyện nói bản cốt lõi đã có trong mỗi bài:</strong> nghe mẫu, thu âm, nghe lại, đọc đuổi và tự nói theo tình huống. Bản thu chỉ ở trong trang, không lưu, không gửi đi và <strong>không được chấm điểm tự động</strong>.</p>
     <p><strong>Ôn tập FSRS đã có:</strong> trang Ôn lại dùng thư viện ts-fsrs 5.4.2, một thẻ cho mỗi bài đã hoàn thành, 4 mức tự đánh giá (Quên rồi / Khó / Nhớ được / Dễ dàng), lịch sử event có event_id chống ghi trùng, xuất/nhập tiến trình phiên bản 2.</p>
     <p><strong>Chưa có:</strong> chấm phát âm chuyên sâu, phân tích cú pháp câu bất kỳ, chatbot gia sư, đồng bộ đa thiết bị, đăng nhập, đề thi mô phỏng đầy đủ, audio thu sẵn. Những mục này nằm trong backlog, không có nút giả vờ đã làm.</p>
-    <p><strong>Nguồn:</strong> bài mẫu tham khảo Chinese Grammar Wiki (CC BY-NC-SA 3.0) và ghi nguồn trong từng bài. Baseline HSK1–6 toàn diện chưa khóa vì chưa đối chiếu được văn bản đề cương gốc — xem <code>docs/curriculum-baseline.json</code> và <code>docs/decisions.md</code> (D04).</p>
+    <p><strong>Nguồn:</strong> bài mẫu tham khảo Chinese Grammar Wiki (CC BY-NC-SA 3.0) và ghi nguồn trong từng bài. Baseline phạm vi HSK1–6 (1.0-official-scope) đã khóa theo đề cương thi HSK 11/2025; ánh xạ điểm vi mô tiếp tục đối chiếu theo từng lô. Quyền phân phối tài liệu gốc chưa xác minh nên app không sao chép tài liệu gốc — xem <code>docs/curriculum-baseline.json</code> và <code>docs/decisions.md</code> (D15, D16).</p>
     <p><strong>Riêng tư:</strong> không tài khoản, không gửi tiến trình lên máy chủ. Dữ liệu chỉ ở localStorage trên thiết bị của bạn và có thể xuất/nhập.</p></div>`;
 }
 
