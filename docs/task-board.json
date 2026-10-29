@@ -169,7 +169,7 @@
       "depends_on": [
         "P05-01"
       ],
-      "evidence": "24 bài, 111 bài tập, validator ĐẠT. Dữ liệu đã chuyển từ shard theo cấp sang shard theo bài (24 file, manifest liệt kê thứ tự) + chế độ ?debug=1 + versioning BUILD_VERSION. Live 24 bài: nội dung main và file Pages đã đúng; giao diện kiểm tra 3 lần tới 06:10 UTC vẫn 18 bài (nghi HTTP cache của file cũ) — chờ nghiệm thu lại sau khi app.js mới thực sự chạy (xem qa-03, batch-07).",
+      "evidence": "24 bài, 111 bài tập, validator ĐẠT. Shard theo bài + ?debug=1 + versioning (merge PR #2, 8b9e6d49). LIVE ĐÃ NGHIỆM THU (qa-04, 06:52 UTC): phiên mới và phiên cũ đều hiện 24 bài, mở hai-shi-choice được, trắc nghiệm đúng, tiến trình giữ sau tải lại. Nguyên nhân vụ 18 bài: app.js cũ trong HTTP cache của hồ sơ kiểm tra (không service worker, không Cache Storage).",
       "files": [],
       "id": "P06-01",
       "inputs": "Baseline khóa",
@@ -254,7 +254,7 @@
       "id": "AUD-TTS-01",
       "title": "Nghiệm thu audio TTS: giọng zh-CN, phát/dừng, thiếu giọng",
       "status": "in_progress",
-      "evidence": "TTS trình duyệt là phương án TẠM THỜI, chưa mặc nhiên đáp ứng yêu cầu audio tạo trước trong đặc tả. Đã có: nút Nghe mẫu theo câu, tốc độ đọc, ưu tiên giọng zh, nút dừng (stopSpeak), bảng ?debug=1 liệt kê giọng zh. Chưa có: nghe thực tế và xác minh âm thanh trên thiết bị thật (not_run cho cả 24 bài); kiểm tra trường hợp thiếu giọng zh. Không đánh dấu bài đạt toàn bộ tiêu chí khi audio chưa được nghiệm thu."
+      "evidence": "TTS trình duyệt là phương án TẠM THỜI, chưa mặc nhiên đáp ứng yêu cầu audio tạo trước trong đặc tả. Đã có: nút Nghe mẫu theo câu, tốc độ đọc, ưu tiên giọng zh, nút dừng, bảng ?debug=1 liệt kê giọng zh. PHÁT HIỆN qa-04: cả hai môi trường trình duyệt kiểm tra đều báo \"không tìm thấy giọng zh\" — trường hợp thiếu giọng là có thật; code sẽ thử đọc theo lang zh-CN bằng giọng mặc định. Chưa có: nghe thực tế, phát/dừng và thiếu giọng trên thiết bị thật (not_run cho cả 24 bài). Không đánh dấu bài đạt toàn bộ tiêu chí khi audio chưa nghiệm thu."
     }
   ]
 }
