@@ -29,3 +29,9 @@ Chưa có bản phát hành nào.
   sửa lỗi nhỏ lịch sử ôn chỉ cập nhật sau khi tải lại trang (nay render lại
   ngay sau khi ghi). Hạn chế còn lại: chưa kiểm tra Android/iOS thật, mic
   thật, tiếp cận 200% bằng công cụ chuyên dụng, E2E tự động.
+
+- 2026-10-29 — P03 mẫu đủ 12 bài (53 bài tập), P06 lô 1: thêm 9 bài HSK1–2
+  (很, 吗, 的, 有, 不/没, lượng từ, từ để hỏi, 会/能/可以, 过). Baseline
+  0.2-working: chốt phiên bản mục tiêu là đề cương thi 11/2025, nhưng CHƯA
+  khóa vì chưa có văn bản gốc để đối chiếu. P09-01 chỉ công nhận phạm vi
+  bản thử nghiệm; lỗi console và hiệu năng ghi not_run.
