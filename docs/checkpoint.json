@@ -74,14 +74,14 @@
   ],
   "latest_verified_commit": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
   "next_actions": [
-    "Đẩy lô 08 qua nhánh/PR/merge (gồm dòng checkpoint local từ qa-04).",
-    "Nghiệm thu live 28 bài sau merge (không chạy lại qa-04 nếu không có thay đổi liên quan).",
-    "P01-02: đối chiếu HSK3–6, rồi chọn bài mới từ phần thiếu; AUD-TTS-01: nghiệm thu audio trên thiết bị thật."
+    "Đẩy lô 09 + sửa giọng (voicewarn2) + qa-05/qa-06 + checkpoint qua nhánh/PR/merge.",
+    "Nghiệm thu live 34 bài ở profile mới, trọng tâm: cảnh báo giọng (hộp thoại và/hoặc dòng cảnh báo) khi bấm Nghe mẫu, đếm 34 bài, mở 1 bài mới.",
+    "P01-02: đối chiếu HSK3–6; AUD-TTS-01: nghiệm thu audio trên thiết bị thật."
   ],
   "pending_review_ids": [],
   "phase": "P06",
   "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "28 bài (131 bài tập) sau lô 08: thêm modal-xiang-yao, location-nouns, why-question, yi-jiu-tight. P01-02 HSK1–2 xong (52+62 mục nhóm), HSK3–6 chưa. Cảnh báo thiếu giọng zh đã có (D22). TTS tạm thời; audio thực tế not_run. Không chạy lại qa-04 nếu không có thay đổi liên quan.",
+  "resume_notes": "34 bài (161 bài tập) lô 09 + sửa lỗi cảnh báo giọng (D24, build voicewarn2) chờ đẩy. Build voicewarn 28 bài đã nghiệm thu live ở profile mới (qa-06); lỗi cảnh báo giọng đã tìm ra nguyên nhân (getVoices rỗng lúc bấm) và đã sửa. P01-02 HSK1–2 cập nhật cho 28 bài. TTS tạm thời; audio thực tế not_run.",
   "schema_version": 1,
   "spec_version": "1.0",
   "updated_at": "2026-10-29",
@@ -159,5 +159,5 @@
       "result": "Main và cây file Pages: 24 bài đúng. Giao diện: 18 bài sau cả cache-bust và hard refresh tới 06:10 UTC. Live 24 bài CHƯA xác minh."
     }
   ],
-  "working_tree_state": "batch08_ready_for_branch_pr_includes_local_checkpoint_line_from_qa04"
+  "working_tree_state": "batch09_plus_voicefix_ready_for_branch_pr"
 }
