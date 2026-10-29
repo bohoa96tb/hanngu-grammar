@@ -62,7 +62,7 @@
       "depends_on": [
         "P01-01"
       ],
-      "evidence": "Cần văn bản đề cương gốc",
+      "evidence": "Baseline phạm vi 1.0-official-scope đã khóa theo tài liệu gốc (50 nhóm, 语法大纲 tr.382–400, bìa 2025-11/2026-07); quyền phân phối vẫn chưa xác minh nên repo chỉ diễn đạt lại, không sao chép tài liệu gốc. Ánh xạ điểm vi mô tiếp tục đối chiếu theo từng lô.",
       "files": [
         "docs/curriculum-baseline.json"
       ],
@@ -72,7 +72,7 @@
       "related_requirements": [
         "CUR-01"
       ],
-      "status": "blocked",
+      "status": "done",
       "title": "Khóa baseline HSK1-6"
     },
     {
@@ -169,7 +169,7 @@
       "depends_on": [
         "P05-01"
       ],
-      "evidence": "Lô 1 (cũng là lô mẫu P03): 9 bài HSK1–2 mới đã phát hành, tổng 12 bài; danh mục làm việc 0.2 có thêm 6 mục HSK2 đang lên kế hoạch (zai, zhe, shi-de, result, direction, complex) chưa biên soạn. Bao phủ HSK1–2 đầy đủ CHƯA đạt vì baseline gốc chưa khóa.",
+      "evidence": "Lô 1: 9 bài HSK1–2 mới đã phát hành, tổng 12 bài; baseline 1.0 đã khóa phạm vi. Lô 2 (HSK2: 在/正在, 着, 是……的, bổ ngữ kết quả, bổ ngữ phương hướng, câu phức) chưa biên soạn — sẽ làm sau vòng trình duyệt bản mới.",
       "files": [],
       "id": "P06-01",
       "inputs": "Baseline khóa",
