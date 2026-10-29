@@ -1,0 +1,139 @@
+{
+  "active_task_ids": [
+    "P00-02"
+  ],
+  "blocked_items": [
+    {
+      "action_needed_by_user": "Cung cấp hoặc xác nhận văn bản đề cương HSK 3.0 gốc (hoặc link chính thức tới danh sách điểm ngữ pháp theo cấp) để đối chiếu trước khi khóa baseline.",
+      "blocker": "Chưa đối chiếu được văn bản đề cương gốc; chỉ có nguồn thứ cấp về số điểm ngữ pháp HSK 3.0.",
+      "id": "BASELINE-OFFICIAL",
+      "task_ids": [
+        "P01-02",
+        "P06-01"
+      ]
+    },
+    {
+      "action_needed_by_user": "Cập nhật cài đặt GitHub App của Muse để bao gồm repository hanngu-grammar (repo này được tạo sau lần chọn repo trước đó nên có thể chưa nằm trong danh sách cài đặt). Mở link cài đặt, chọn hanngu-grammar, lưu, rồi nhắn 'Tiếp tục'.",
+      "blocker": "Push snapshot thất bại: POST git/trees trả 403 'Resource not accessible by integration'. Đọc (get_me, search, list_commits) vẫn được, nhưng ghi nội dung bị từ chối — dấu hiệu App chưa được cài trên repo này hoặc chưa có quyền Contents ghi. Head remote vẫn là 86f65bbe, chưa có commit mới.",
+      "id": "GH-WRITE-ACCESS",
+      "task_ids": [
+        "P00-02",
+        "P10-01"
+      ]
+    }
+  ],
+  "changed_files": [
+    ".github/workflows/pages.yml",
+    ".gitignore",
+    "AGENTS.md",
+    "LICENSE",
+    "README.md",
+    "app.js",
+    "data/lessons.json",
+    "docs/AGENT_SPEC_CHINESE_GRAMMAR_HSK1-6.md",
+    "docs/checkpoint.json",
+    "docs/curriculum-baseline.json",
+    "docs/decisions.md",
+    "docs/quality-gates.md",
+    "docs/release-log.md",
+    "docs/requirements.json",
+    "docs/reviews/batch-01.md",
+    "docs/schema.md",
+    "docs/source-register.json",
+    "docs/task-board.json",
+    "index.html",
+    "scripts/validate.py",
+    "styles.css",
+    "tests/test_validator.py"
+  ],
+  "code_base_commit": null,
+  "completed_task_ids": [
+    "P00-01",
+    "P01-01",
+    "P02-01",
+    "P03-01",
+    "P04-01",
+    "P04-02"
+  ],
+  "content_counts": {
+    "baseline_items": 3,
+    "baseline_items_note": "Chỉ 3 mục mẫu, baseline toàn diện chưa khóa nên không tính phần trăm bao phủ.",
+    "draft_lessons": 0,
+    "published_lessons": 3,
+    "reviewed_lessons": 3
+  },
+  "github": {
+    "connect_url": "https://agent.meta.ai/connectors/connect/github",
+    "initial_commit": "86f65bbe639c7af96afe316eb8a26b228092a0eb",
+    "owner": "bohoa96tb",
+    "preferred_repo": "hanngu-grammar",
+    "pushed": "partial_via_create_or_update_file",
+    "repo_created_by": "user_via_web_initial_commit",
+    "repo_exists": true,
+    "repo_fallback": "hanngu-grammar-app",
+    "repo_url": "https://github.com/bohoa96tb/hanngu-grammar",
+    "status": "connected",
+    "push_last_error": "push_files vẫn 403 git/trees; create_or_update_file từng file đã thành công cho README + 10 file (head 2e05854e). Đang đẩy nốt docs còn lại.",
+    "head_after_batch2": "2e05854eda4df84fb60926a6125bdd26aec1799b"
+  },
+  "known_limitations": [
+    "Chưa kiểm tra trên Android Chrome / Safari iOS thật.",
+    "Chưa kiểm tra thủ công toàn bộ luồng trên màn hình 360px thật.",
+    "Bài 了 gộp 2 cách dùng; phiên mở rộng nên tách bài nhỏ.",
+    "TTS trình duyệt chưa được gắn nhãn audio đã duyệt.",
+    "Ôn tập FSRS thật, luyện nói, chấm phát âm, đồng bộ, đăng nhập chưa làm (backlog).",
+    "Luyện nói P04-02 chưa kiểm tra mic/thu âm trên trình duyệt thật."
+  ],
+  "latest_verified_commit": null,
+  "next_actions": [
+    "Người dùng cập nhật cài đặt GitHub App để bao gồm hanngu-grammar, rồi nhắn 'Tiếp tục' để thử push lại.",
+    "Không thử push lại bằng gh/PAT/token khác (theo hướng dẫn connector).",
+    "Sau khi push thành công: xác minh head SHA, cập nhật checkpoint, kiểm tra Pages."
+  ],
+  "pending_review_ids": [],
+  "phase": "P05",
+  "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
+  "resume_notes": "P00-P04 xong, gồm P04-02 luyện nói. Repo bohoa96tb/hanngu-grammar đã tồn tại (initial commit 86f65bbe, chỉ README placeholder) nhưng PUSH CHƯA THÀNH CÔNG do 403 App chưa có quyền ghi trên repo này. Toàn bộ code vẫn ở local ~/workspace/hanngu-grammar, chưa có commit mới remote.",
+  "schema_version": 1,
+  "spec_version": "1.0",
+  "updated_at": "2026-10-29",
+  "verification_results": [
+    {
+      "command": "python3 scripts/validate.py",
+      "result": "ĐẠT: 3 bài, 3 bài published, 14 bài tập."
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -v",
+      "result": "5 tests passed."
+    },
+    {
+      "command": "node --check app.js",
+      "result": "Đạt (không lỗi)."
+    },
+    {
+      "command": "python3 -m http.server 8123 + curl",
+      "result": "index.html 200, data/lessons.json 200."
+    },
+    {
+      "command": "/opt/hatch/bin/github status; gh auth status",
+      "result": "not_connected; gh chưa đăng nhập. Chưa xác minh được quyền ghi."
+    },
+    {
+      "command": "/opt/hatch/bin/github get_me + search_repositories + list_commits",
+      "result": "login bohoa96tb (id 70761745); repo bohoa96tb/hanngu-grammar public, default main, created 2026-10-29T04:08:36Z, head 86f65bbe Initial commit (web-flow). get_file_contents cho index.html/app.js/data/lessons.json/docs/checkpoint.json: không tồn tại remote; README.md chỉ có '# hanngu-grammar'."
+    },
+    {
+      "command": "github push-files main (22 files)",
+      "result": "THẤT BẠI: failed to create tree: POST git/trees 403 Resource not accessible by integration. Head remote kiểm tra lại vẫn là 86f65bbe."
+    },
+    {
+      "command": "github push-files main (22 files) — thử lại sau khi người dùng nhắn 'Tiếp tục'",
+      "result": "THẤT BẠI LẠI: failed to create tree: POST git/trees 403 Resource not accessible by integration. Head remote kiểm tra lại vẫn là 86f65bbe."
+    },
+    {
+      "command": "create_or_update_file từng file (đợt 1+2)",
+      "result": "Thành công 11/11 file: README (952ea8f), index.html, styles.css, app.js, data/lessons.json, .gitignore (head 77225052), AGENTS, LICENSE, scripts/validate.py, tests/test_validator.py, docs spec (head 2e05854e)."
+    }
+  ],
+  "working_tree_state": "pushing_individually_batch2_done"
+}
