@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "direction-complement",
+      "title_vi": "Bổ ngữ phương hướng: đi vào, đi ra, đi lên",
+      "pattern": "Động từ + 上/下/进/出/回/过 + 来/去",
+      "hsk_level": 2,
+      "difficulty": "medium",
+      "objective": "Sau bài này, người học dùng được bổ ngữ phương hướng để nói hướng di chuyển so với người nói, không nhầm 来 và 去.",
+      "when_to_use": "Khi muốn nói hướng di chuyển (vào/ra, lên/xuống, về/lại) và hướng đó tính từ vị trí người nói: 来 là về phía người nói, 去 là rời xa người nói.",
+      "formula_notes": "Động từ + Phương hướng đơn (上/下/进/出/回/过) + 来/去 (+ 了). Chỉ có 来/去 thì gọi là bổ ngữ phương hướng đơn giản: 进来, 出去, 上来, 下去.",
+      "examples": [
+        {
+          "zh": "他进来了。",
+          "vi": "Anh ấy đi vào đây rồi.",
+          "pinyin": "Tā jìn lái le.",
+          "tokens": [
+            "他",
+            "进来",
+            "了"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "请坐下来。",
+          "vi": "Mời ngồi xuống.",
+          "pinyin": "Qǐng zuò xià lai.",
+          "tokens": [
+            "请",
+            "坐",
+            "下来"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "他跑上去了。",
+          "vi": "Anh ấy chạy lên trên kia rồi.",
+          "pinyin": "Tā pǎo shàng qu le.",
+          "tokens": [
+            "他",
+            "跑",
+            "上去",
+            "了"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "dir-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn câu đúng để nói 'Anh ấy đi vào đây rồi' (người nói đang ở trong).",
+          "payload": {
+            "options": [
+              "他进来了。",
+              "他进去了。",
+              "他来进了。",
+              "他进了来。"
+            ]
+          },
+          "accepted_answers": [
+            "他进来了。"
+          ],
+          "explanation": "Về phía người nói dùng 来: 进来. 进去 là đi vào chỗ khác, rời xa người nói."
+        },
+        {
+          "id": "dir-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Mời ngồi xuống.'",
+          "payload": {
+            "prompt_zh": "请___。",
+            "hint_vi": "Dùng 坐下来."
+          },
+          "accepted_answers": [
+            "请坐下来。",
+            "请坐下来"
+          ],
+          "explanation": "Ngồi xuống: 坐 + 下来."
+        },
+        {
+          "id": "dir-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy chạy lên trên kia rồi.'",
+          "payload": {
+            "tokens": [
+              "了",
+              "他",
+              "跑",
+              "上去"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "他",
+              "跑",
+              "上去",
+              "了"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → động từ → bổ ngữ phương hướng → 了."
+        },
+        {
+          "id": "dir-ex4",
+          "type": "error_spot",
+          "prompt_vi": "Câu sau sai ở khối nào? 他来进了。",
+          "payload": {
+            "sentence_zh": "他来进了。",
+            "options": [
+              "他",
+              "来",
+              "进",
+              "了"
+            ]
+          },
+          "accepted_answers": [
+            "来"
+          ],
+          "explanation": "Bổ ngữ phương hướng đứng sau động từ: 进来, không phải 来进."
+        },
+        {
+          "id": "dir-ex5",
+          "type": "fill",
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Anh ấy đi ra ngoài kia rồi.' (viết bằng chữ Hán)",
+          "payload": {
+            "prompt_zh": null,
+            "hint_vi": "Bắt đầu bằng 他."
+          },
+          "accepted_answers": [
+            "他出去了。",
+            "他出去了"
+          ],
+          "explanation": "Từ ý muốn nói 'Anh ấy đi ra ngoài kia rồi': 他 + 出去 + 了."
+        }
+      ],
+      "confusions": [
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他进去了。 (muốn nói 'Anh ấy đi vào đây rồi' khi người nói đang ở trong)",
+          "explanation": "进去 là đi vào một chỗ khác, rời xa người nói; về phía người nói phải dùng 进来."
+        },
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他上来了。 (muốn nói 'Anh ấy đi lên trên kia')",
+          "explanation": "上来 là đi lên về phía người nói; đi lên rời xa người nói thì dùng 上去."
+        },
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他来进了。",
+          "explanation": "Bổ ngữ phương hướng đứng sau động từ: 进来 mới đúng."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "cgw",
+          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
+      }
+    }
+  ]
+}
