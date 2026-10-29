@@ -99,3 +99,22 @@ trực tiếp trên GitHub Pages tĩnh mà không cần build.
 Một thẻ cho mỗi bài đã hoàn thành (chưa tách thẻ theo kỹ năng) để tránh quá
 tải ở giai đoạn mẫu; bài chưa hoàn thành không vào hàng đợi, học mới không bị
 khóa. Mốc thời gian lưu UTC (ISO), hiển thị theo múi giờ thiết bị.
+
+## D15 — Chốt phiên bản baseline mục tiêu: đề cương thi HSK 3.0 công bố 11/2025, trạng thái làm việc (29/10/2026)
+Lý do: dự án hướng tới HSK1–6 như người học gặp hiện nay. Phân biệt rõ:
+- Chuẩn năng lực 2021 (GF 0025-2021, hiệu lực 01/07/2021, 9 cấp): cấp 1 có
+  500 từ và 48 điểm ngữ pháp gộp lớn — KHÔNG phải đề cương thi.
+- Đề cương thi HSK 3.0 (新版HSK考试大纲, công bố 11/2025, thi toàn cầu đầu
+  tiên 13/12/2026 theo nguồn thứ cấp): cấp 1 có 300 từ và 70 điểm ngữ pháp
+  theo 7 nhóm; số tích lũy cấp 1–6 theo nguồn thứ cấp là 70/148/244/339/
+  409/459 — vẫn là số liệu nguồn thứ cấp, chưa đối chiếu văn bản gốc.
+- HSK cũ 2.0 (6 cấp, cấp 1 chỉ 150 từ) không dùng làm baseline.
+Ảnh hưởng: phiên bản mục tiêu đã chốt là đề cương thi 11/2025, nhưng trạng
+thái baseline vẫn là "provisional_working" (làm việc, chưa khóa) vì chưa có
+văn bản gốc trong tay để đối chiếu từng mục, chưa có danh sách đầy đủ cấp
+2–6 theo số thứ tự gốc, và chưa xác minh điều kiện sử dụng lại danh sách
+gốc. Danh mục làm việc trong docs/curriculum-baseline.json chỉ chứa các mục
+đã có bài hoặc đang lên kế hoạch mẫu, KHÔNG tự nhận là baseline hoàn chỉnh.
+Để khóa cần: văn bản gốc (sách/PDF chính thức từ CTI/CLEC) hoặc xác nhận
+của trung tâm thi, đối chiếu từng mục theo số thứ tự gốc, và ghi giấy phép
+sử dụng (repo chỉ diễn đạt lại, không sao chép danh sách gốc).
