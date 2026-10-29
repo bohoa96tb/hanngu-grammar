@@ -330,7 +330,7 @@
           "wrong_or_risky": "Dịch mọi câu có 了 sang thì quá khứ tiếng Việt mà không xem ngữ cảnh."
         }
       ],
-      "content_version": 1,
+      "content_version": 2,
       "difficulty": "medium",
       "examples": [
         {
@@ -476,13 +476,13 @@
         }
       ],
       "formula_notes": "Hai cách dùng chính trong bài này, tách riêng, đừng gộp: (1) Hoàn thành — Động từ + 了 (+ tân ngữ): 我买了这本书. (2) Đổi trạng thái — Tính từ/động từ + 了 cuối câu: 我饿了, 我会说中文了. Khi có cả hai, 了 có thể xuất hiện hai lần với hai vai trò khác nhau, ví dụ 我去了公司了 — bài mở rộng sau sẽ tách riêng.",
-      "hsk_level": 2,
+      "hsk_level": 1,
       "id": "le-completion-change",
       "objective": "Sau bài này, người học phân biệt được 了 sau động từ (hoàn thành) với 了 cuối câu (tình huống đã đổi), và không đọc nhầm 了解.",
       "pattern": "Động từ + 了  •  Tính từ + 了 (cuối câu)",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki (Expressing completion with le; Change of state with le) và Wiktionary về đa âm 了 le/liǎo. Bài này cố ý gộp 2 cách dùng để làm mẫu 'đa cách dùng'; phiên mở rộng nên tách thành bài nhỏ theo đặc tả §5.1. Không khẳng định có giáo viên/người bản ngữ duyệt.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki (Expressing completion with le; Change of state with le) và Wiktionary về đa âm 了 le/liǎo. Bài này cố ý gộp 2 cách dùng để làm mẫu 'đa cách dùng'; phiên mở rộng nên tách thành bài nhỏ theo đặc tả §5.1. Không khẳng định có giáo viên/người bản ngữ duyệt. 29/10/2026 đối chiếu đề cương chính thức: chuyển cấp từ HSK2 tạm thời sang HSK1 vì 完成态 và 变化态 đều thuộc HSK（一级）trong 语法大纲; độ khó sư phạm giữ medium.",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [
