@@ -62,7 +62,7 @@
       "depends_on": [
         "P01-01"
       ],
-      "evidence": "Baseline phạm vi 1.0-official-scope đã khóa theo tài liệu gốc (50 nhóm, 语法大纲 tr.382–400, bìa 2025-11/2026-07); quyền phân phối vẫn chưa xác minh nên repo chỉ diễn đạt lại, không sao chép tài liệu gốc. Ánh xạ điểm vi mô tiếp tục đối chiếu theo từng lô.",
+      "evidence": "Phạm vi nhóm đã khóa (50 nhóm, docs/baseline-evidence.md); xác minh đầy đủ danh mục chính thức CHƯA xong: điểm vi mô chưa đối chiếu, trích xuất bảng bị xáo trộn, bản đọc là crawl 25/09/2026 chưa ghi hash, quyền phân phối chưa xác minh. Không gọi baseline là đã khóa toàn bộ.",
       "files": [
         "docs/curriculum-baseline.json"
       ],
@@ -72,7 +72,7 @@
       "related_requirements": [
         "CUR-01"
       ],
-      "status": "done",
+      "status": "in_progress",
       "title": "Khóa baseline HSK1-6"
     },
     {
@@ -169,7 +169,7 @@
       "depends_on": [
         "P05-01"
       ],
-      "evidence": "Lô 1: 9 bài; lô 2: 6 bài mới (在, 着, 是……的, bổ ngữ kết quả, bổ ngữ phương hướng, câu phức 虽然/因为), tổng 18 bài, 83 bài tập, validator ĐẠT. Vòng trình duyệt qa-02 xác minh live 12 bài trước lô 2 và lịch sử ôn cập nhật tức thì; live 18 bài chờ xác minh sau push lô 2. Các nhóm HSK1–2 còn lại vẫn partial/not_started.",
+      "evidence": "Lô 1: 9 bài; lô 2: 6 bài; lô 3: 6 bài mới (tiền tố/hậu tố, đại từ, phó từ, 还是, trùng điệp, câu hai tân ngữ 给), tổng 24 bài, 111 bài tập, validator ĐẠT. Dữ liệu đã tách shard theo cấp (hsk1 14 bài, hsk2 10 bài). Live 24 bài chờ xác minh sau merge. Audio: TTS theo yêu cầu, phát thực tế = not_run cho cả 24 bài.",
       "files": [],
       "id": "P06-01",
       "inputs": "Baseline khóa",
