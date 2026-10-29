@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "separable-verbs",
+      "title_vi": "Ly hợp từ: động từ tách được",
+      "pattern": "Động từ + Tân ngữ gốc (ly hợp) • Chèn 了/数量/形容词 vào giữa",
+      "hsk_level": 1,
+      "difficulty": "medium",
+      "objective": "Sau bài này, người học nhận biết ly hợp từ và tách đúng khi chèn 了, số lượng hoặc tính từ vào giữa, đồng thời đặt 没 trước cả cụm khi phủ định.",
+      "when_to_use": "Khi dùng các động từ như 看病, 睡觉, 说话, 上课 mà cần nói đã làm, làm bao nhiêu, hoặc phủ định cả việc đó.",
+      "formula_notes": "Ly hợp từ gồm động từ + tân ngữ gốc vốn đi liền nhưng có thể tách ra: 睡觉 → 睡了一个好觉, 说话 → 说了很多话. 没 phủ định đứng trước cả cụm: 没睡觉 (không phải 睡没觉). Khi đã tách thành 睡了觉 thì không thêm 觉 lần nữa.",
+      "examples": [
+        {
+          "zh": "我去看病。",
+          "vi": "Tôi đi khám bệnh.",
+          "pinyin": "Wǒ qù kànbìng.",
+          "tokens": [
+            "我",
+            "去",
+            "看病"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "他睡了一个好觉。",
+          "vi": "Anh ấy ngủ một giấc ngon.",
+          "pinyin": "Tā shuì le yí gè hǎo jiào.",
+          "tokens": [
+            "他",
+            "睡",
+            "了",
+            "一",
+            "个",
+            "好",
+            "觉"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "我们说了很多话。",
+          "vi": "Chúng tôi nói rất nhiều chuyện.",
+          "pinyin": "Wǒmen shuō le hěn duō huà.",
+          "tokens": [
+            "我们",
+            "说",
+            "了",
+            "很",
+            "多",
+            "话"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "sepl-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn câu đúng để nói 'Anh ấy ngủ một giấc ngon.'",
+          "payload": {
+            "options": [
+              "他睡了一个好觉。",
+              "他睡觉了一个好觉。",
+              "他睡了觉好个一。",
+              "他睡好觉了一个。"
+            ]
+          },
+          "accepted_answers": [
+            "他睡了一个好觉。"
+          ],
+          "explanation": "Tách ly hợp từ: 睡 + 了 + 一个好 + 觉。"
+        },
+        {
+          "id": "sepl-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Chúng tôi nói rất nhiều chuyện.'",
+          "payload": {
+            "prompt_zh": "我们说了___话。",
+            "hint_vi": "Dùng 很多。"
+          },
+          "accepted_answers": [
+            "我们说了很多话。",
+            "我们说了很多话"
+          ],
+          "explanation": "我们 + 说 + 了 + 很多 + 话。"
+        },
+        {
+          "id": "sepl-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy ngủ một giấc ngon.'",
+          "payload": {
+            "tokens": [
+              "觉",
+              "他",
+              "睡",
+              "了",
+              "一",
+              "个",
+              "好"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "他",
+              "睡",
+              "了",
+              "一",
+              "个",
+              "好",
+              "觉"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → 睡 → 了 → 一个好 → 觉。"
+        },
+        {
+          "id": "sepl-ex4",
+          "type": "error_spot",
+          "prompt_vi": "Câu sau sai ở khối nào? 他睡没觉。",
+          "payload": {
+            "sentence_zh": "他睡没觉。",
+            "options": [
+              "他",
+              "睡",
+              "没",
+              "觉"
+            ]
+          },
+          "accepted_answers": [
+            "没"
+          ],
+          "explanation": "没 phải đứng trước cả ly hợp từ: 他没睡觉。"
+        },
+        {
+          "id": "sepl-ex5",
+          "type": "fill",
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tôi đi khám bệnh' (viết bằng chữ Hán)",
+          "payload": {
+            "prompt_zh": null,
+            "hint_vi": "Bắt đầu bằng 我。"
+          },
+          "accepted_answers": [
+            "我去看病。",
+            "我去看病"
+          ],
+          "explanation": "Tôi đi khám bệnh: 我 + 去 + 看病。"
+        }
+      ],
+      "confusions": [
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他睡没觉。",
+          "explanation": "没 đứng trước cả ly hợp từ: 没睡觉, không chèn 没 vào giữa 睡 và 觉。"
+        },
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他睡觉了觉。",
+          "explanation": "Đã tách thành 睡了觉 thì không thêm 觉 lần nữa."
+        },
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "看病 dịch từng chữ là 'nhìn bệnh'",
+          "explanation": "看病 là ly hợp từ nghĩa 'đi khám bệnh', không dịch từng chữ."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "hsk-official",
+          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 09 từ danh mục HSK1–2 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí."
+      }
+    }
+  ]
+}
