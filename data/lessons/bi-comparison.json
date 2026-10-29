@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Đổi thứ tự hai danh từ sẽ đổi người thắng trong so sánh. 小张比小李高 nghĩa là Tiểu Trương cao hơn, không phải Tiểu Lý cao hơn.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "小李比小张高。 viết nhầm thành 小张比小李高。 khi vẫn muốn nói Tiểu Lý cao hơn."
+        },
+        {
+          "explanation": "Không đặt 不 trước tính từ sau 比 để nói 'kém hơn'. Muốn nói kém hơn, đổi sang tính từ ngược nghĩa: 他比我矮 (Anh ấy thấp hơn tôi), hoặc dùng 没有: 他没有我高 (Anh ấy không cao bằng tôi).",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他比我不高。 (muốn nói 'Anh ấy không cao bằng tôi')"
+        },
+        {
+          "explanation": "没有 trong câu so sánh nghĩa là 'không bằng', không phải phủ định đơn thuần của 比. 他没有我高 = Anh ấy không cao bằng tôi, chứ không có nghĩa 'Anh ấy thấp hơn tôi' theo cùng một mức khẳng định.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "Dùng 没有 thay cho 比 khi muốn nhấn mạnh người đầu hơn hẳn."
+        }
+      ],
+      "content_version": 1,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Xiǎo Lǐ bǐ Xiǎo Zhāng gāo.",
+          "tokens": [
+            "小李",
+            "比",
+            "小张",
+            "高"
+          ],
+          "vi": "Tiểu Lý cao hơn Tiểu Trương.",
+          "zh": "小李比小张高。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ jiějie de Zhōngwén bǐ wǒ de hǎo.",
+          "tokens": [
+            "我",
+            "姐姐",
+            "的",
+            "中文",
+            "比",
+            "我",
+            "的",
+            "好"
+          ],
+          "vi": "Tiếng Trung của chị tôi tốt hơn của tôi.",
+          "zh": "我姐姐的中文比我的好。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā bǐ wǒ gāo duō le.",
+          "tokens": [
+            "他",
+            "比",
+            "我",
+            "高",
+            "多了"
+          ],
+          "vi": "Anh ấy cao hơn tôi nhiều.",
+          "zh": "他比我高多了。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "小李比小张高。"
+          ],
+          "explanation": "Người đứng trước 比 là người hơn: 小李 đứng trước nên Tiểu Lý cao hơn.",
+          "id": "bi-ex1",
+          "payload": {
+            "options": [
+              "小李比小张高。",
+              "小张比小李高。",
+              "小李高比小张。",
+              "小李比高小张。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Tiểu Lý cao hơn Tiểu Trương'.",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "他比我高多了。",
+            "他比我高多了"
+          ],
+          "explanation": "Muốn nhấn mạnh chênh lệch lớn, thêm 多了 sau tính từ: 高多了.",
+          "id": "bi-ex2",
+          "payload": {
+            "hint_vi": "Thêm 多了 sau tính từ."
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy cao hơn tôi nhiều.'",
+          "prompt_zh": "他比我高___。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            [
+              "他",
+              "比",
+              "我",
+              "忙"
+            ]
+          ],
+          "explanation": "Thứ tự: người hơn → 比 → người bị so → tính từ. Tính từ đứng cuối, sau người bị so.",
+          "id": "bi-ex3",
+          "payload": {
+            "tokens": [
+              "忙",
+              "他",
+              "我",
+              "比"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy bận hơn tôi.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "比"
+          ],
+          "explanation": "Lỗi ở chỗ đặt 不 trước tính từ sau 比. Sửa thành: 他没有我高。 (Anh ấy không cao bằng tôi) hoặc đổi tính từ: 他比我矮。",
+          "id": "bi-ex4",
+          "payload": {
+            "options": [
+              "他",
+              "比",
+              "不",
+              "高"
+            ],
+            "sentence_zh": "他比我不高。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 他比我不高。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "我妈妈比我爸爸大。",
+            "我妈妈比我爸爸大"
+          ],
+          "explanation": "Từ ý muốn nói 'Mẹ tôi lớn tuổi hơn bố tôi': người hơn (妈妈) → 比 → 爸爸 → 大. Lưu ý: nói tuổi người lớn dùng 大 trong cấu trúc này theo cách dùng phổ biến, không dùng 高.",
+          "id": "bi-ex5",
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 我妈妈."
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Mẹ tôi lớn tuổi hơn bố tôi.'",
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "Công thức mở rộng: Danh từ 1 + 比 + Danh từ 2 + Tính từ (+ 多了 / 一点儿 để nói mức chênh lệch). Phó từ như 也, 都, 更 đặt trước 比, ví dụ: 他也比我高. Mức chênh lệch cụ thể (ví dụ 高三厘米) đặt sau tính từ.",
+      "hsk_level": 2,
+      "id": "bi-comparison",
+      "objective": "Sau bài này, người học so sánh được 'A hơn B ở điểm nào', biết ai là người hơn và nói được mức chênh lệch.",
+      "pattern": "Danh từ 1 + 比 + Danh từ 2 + Tính từ",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki (Basic comparisons with bi, mức A2/HSK2) và kiểm tra bẫy 不 sau 比, phân biệt 比/没有. Không khẳng định có giáo viên/người bản ngữ duyệt.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Cấu trúc Noun 1 + 比 + Noun 2 + Adj.; người đầu là người hơn; mẫu 比...更 và chênh lệch.",
+          "source_id": "cgw"
+        }
+      ],
+      "status": "published",
+      "title_vi": "比: so sánh hơn (A hơn B)",
+      "when_to_use": "Khi hai người/vật khác nhau ở một tính chất và muốn nói bên nào hơn. Điều kiện: tính từ đứng cuối câu; không dùng 比 để nói hai bên giống nhau (dùng 一样) và không dùng 不 trước tính từ sau 比."
+    }
+  ]
+}
