@@ -6,10 +6,9 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-from validate import check  # noqa: E402
+from validate import check, load_data  # noqa: E402
 
-DATA = json.loads((Path(__file__).resolve().parent.parent
-                   / "data" / "lessons.json").read_text(encoding="utf-8"))
+DATA = load_data()
 
 
 class TestValidator(unittest.TestCase):
