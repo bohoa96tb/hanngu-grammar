@@ -213,3 +213,18 @@ thì vướng quyền phân phối chưa xác minh.
 nhóm phạm vi của dự án; số mục nhóm không phải số chính thức và không
 dùng tính phần trăm bao phủ vi mô. P01-02 vẫn in_progress cho tới khi
 HSK3–6 đối chiếu xong. Bài mới chỉ chọn từ mục thiếu đã xác minh.
+
+## D24 — Xác định giọng zh phải chờ voiceschanged, không đọc danh sách rỗng (29/10/2026)
+Lý do: nghiệm thu qa-06 cho thấy bảng chẩn đoán báo "không tìm thấy
+giọng zh" nhưng bấm Nghe mẫu lại không hiện cảnh báo, vì getVoices()
+lúc bấm nút thường trả về rỗng do danh sách giọng tải bất đồng bộ;
+code cũ coi rỗng là "chưa xác định" nên bỏ qua cảnh báo, còn bảng
+chẩn đoán cũ lại coi rỗng là "không có giọng".
+Ảnh hưởng: voicesReady chỉ bật khi voiceschanged đã kích hoạt hoặc
+danh sách đã có phần tử; speak() chờ tối đa ~1 giây rồi mới kết luận
+và cảnh báo; bài học có dòng cảnh báo bền vững khi đã xác định không
+có giọng zh; bảng chẩn đoán phân biệt "đang tải danh sách giọng…" với
+"không tìm thấy giọng zh". Nếu hết thời gian chờ mà vẫn không có sự
+kiện voiceschanged thì vẫn cảnh báo thay vì đọc lặng bằng giọng mặc
+định. TTS vẫn là phương án tạm thời; cảnh báo không thay thế audio
+tạo trước theo đặc tả.
