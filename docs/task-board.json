@@ -99,7 +99,7 @@
         "P02-01",
         "P01-01"
       ],
-      "evidence": "docs/reviews/batch-01.md; validator đạt",
+      "evidence": "12/12 bài mẫu đại diện đã duyệt và phát hành (validator ĐẠT 12 bài, 53 bài tập); lô đầu 3 bài + lô 2 gồm 9 bài mới (hen, ma, de, you, bu-mei, measure, question-words, modal, guo).",
       "files": [
         "data/lessons.json"
       ],
@@ -169,7 +169,7 @@
       "depends_on": [
         "P05-01"
       ],
-      "evidence": "Chưa làm; phụ thuộc baseline khóa",
+      "evidence": "Lô 1 (cũng là lô mẫu P03): 9 bài HSK1–2 mới đã phát hành, tổng 12 bài; danh mục làm việc 0.2 có thêm 6 mục HSK2 đang lên kế hoạch (zai, zhe, shi-de, result, direction, complex) chưa biên soạn. Bao phủ HSK1–2 đầy đủ CHƯA đạt vì baseline gốc chưa khóa.",
       "files": [],
       "id": "P06-01",
       "inputs": "Baseline khóa",
@@ -177,7 +177,7 @@
       "related_requirements": [
         "CUR-01"
       ],
-      "status": "pending",
+      "status": "in_progress",
       "title": "Mở rộng HSK1-2"
     },
     {
@@ -214,7 +214,7 @@
       "depends_on": [
         "P08-01"
       ],
-      "evidence": "docs/reviews/qa-01.md: test tự động đạt (validator, unittest 5, FSRS 7); tương tác trình duyệt 6/6 đạt trên bản live (localhost bị chặn ở cấp công cụ); 1 lỗi nhỏ về lịch sử ôn đã sửa trong app.js.",
+      "evidence": "PHẠM VI BẢN THỬ NGHIỆM (3 bài lúc kiểm tra), commit live đã kiểm tra 0e9a9904; tương tác trình duyệt 6/6 bước chức năng đạt; lỗi console = not_run; hiệu năng = not_run; bản sửa lịch sử ôn 8fe1c7c5 chưa qua vòng trình duyệt thứ hai. P09 toàn dự án chưa hoàn thành (xem P09-02).",
       "files": [],
       "id": "P09-01",
       "inputs": "Toàn bộ app + nội dung",
@@ -243,6 +243,12 @@
       ],
       "status": "done",
       "title": "Phát hành và kiểm tra live"
+    },
+    {
+      "id": "P09-02",
+      "status": "pending",
+      "title": "Kiểm định toàn hệ thống sau khi HSK1–6 hoàn thành",
+      "evidence": "Chưa làm; chỉ làm sau khi P06–P08 xong, bao gồm vòng trình duyệt và lỗi console."
     }
   ]
 }
