@@ -11,14 +11,6 @@
         "P01-02",
         "P06-01"
       ]
-    },
-    {
-      "action_needed_by_user": "Bật GitHub Pages từ nhánh main (Settings > Pages > Deploy from a branch > main, /(root)), hoặc tự thêm file .github/workflows/pages.yml qua giao diện web (API của App bị chặn 403 với file workflow). Sau đó báo để kiểm tra URL live.",
-      "blocker": "File .github/workflows/pages.yml bị từ chối 403 qua Contents API (hạn chế với file workflow của GitHub App); các file khác đã lên đủ. Pages chưa được bật nên chưa có URL live đã xác minh.",
-      "id": "PAGES-WORKFLOW-403",
-      "task_ids": [
-        "P10-01"
-      ]
     }
   ],
   "changed_files": [
@@ -67,16 +59,18 @@
     "head_verified": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
     "initial_commit": "86f65bbe639c7af96afe316eb8a26b228092a0eb",
     "owner": "bohoa96tb",
-    "pages_enabled": false,
+    "pages_enabled": true,
     "pages_url_expected": "https://bohoa96tb.github.io/hanngu-grammar/",
-    "pages_url_verified": null,
+    "pages_url_verified": "https://bohoa96tb.github.io/hanngu-grammar/",
     "preferred_repo": "hanngu-grammar",
     "pushed": true,
     "pushed_files": "21/22 (trừ .github/workflows/pages.yml bị 403)",
     "repo_exists": true,
     "repo_url": "https://github.com/bohoa96tb/hanngu-grammar",
     "status": "connected",
-    "workflow_file_pushed": false
+    "workflow_file_pushed": false,
+    "pages_verified_at": "2026-10-29T04:52Z (text fetch)",
+    "pages_verified_method": "browser text fetch của index và data/lessons.json; chưa kiểm tra tương tác JS trực tiếp trên live bằng trình duyệt thật"
   },
   "known_limitations": [
     "Chưa kiểm tra trên Android Chrome / Safari iOS thật.",
@@ -88,13 +82,13 @@
   ],
   "latest_verified_commit": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
   "next_actions": [
-    "Người dùng bật Pages từ nhánh main (hoặc thêm workflow qua web), rồi nhắn 'Tiếp tục' để kiểm tra URL live.",
-    "Tiếp theo về nội dung: P05-01 (FSRS thật) hoặc P01-02 khi có đề cương gốc."
+    "Tiếp theo về nội dung: P05-01 (FSRS thật) hoặc P01-02 khi có đề cương gốc.",
+    "Khi có thay đổi mới: đẩy lên main rồi kiểm tra lại URL live."
   ],
   "pending_review_ids": [],
   "phase": "P05",
   "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "P00-P04 đã đẩy lên GitHub bằng create_or_update_file từng file (push_files 403 git/trees; workflow 403 riêng). Head đã xác minh fd8799247, 21/22 file, chỉ thiếu .github/workflows/pages.yml. Pages chưa bật, chưa có URL live đã xác minh. Task tiếp theo: P05-01.",
+  "resume_notes": "P00-P04 đã đẩy lên GitHub (head 368425b4). GitHub Pages đã bật từ nhánh main và đã xác minh live qua text fetch: index hiển thị tiêu đề/tagline, data/lessons.json đủ 3 bài. Workflow Actions vẫn thiếu (403 qua API) nhưng không cần cho Pages từ nhánh. Task tiếp theo: P05-01.",
   "schema_version": 1,
   "spec_version": "1.0",
   "updated_at": "2026-10-29",
@@ -138,7 +132,11 @@
     {
       "command": "list_commits + get_file_contents sau đợt 3",
       "result": "Head fd8799247 (thêm docs/release-log.md). index.html SHA 519f760d, app.js 65ee98e4, data/lessons.json 05f84f13, docs/checkpoint.json 2ec559cd khớp file đã đẩy; .github/workflows/pages.yml không tồn tại remote (403 khi ghi)."
+    },
+    {
+      "command": "browser.open https://bohoa96tb.github.io/hanngu-grammar/ và /data/lessons.json",
+      "result": "ĐẠT (text fetch, crawled 2026-10-29 04:52 UTC): index có tiêu đề Hanngu Grammar và tagline; lessons.json đủ 3 bài published (shi, bi, le). Chưa kiểm tra tương tác JS live bằng trình duyệt thật."
     }
   ],
-  "working_tree_state": "pushed_21_of_22_workflow_missing"
+  "working_tree_state": "pushed_and_pages_live_verified_text_fetch"
 }
