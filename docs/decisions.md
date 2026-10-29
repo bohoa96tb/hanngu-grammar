@@ -130,3 +130,13 @@ Quyền phân phối tách riêng và chưa xác minh: repo không chứa PDF g�
 không chứa bảng gốc nguyên văn, không sao chép câu ví dụ của đề cương;
 chỉ diễn đạt lại bằng tiếng Việt kèm tham chiếu. Câu trùng giữa các bài
 là hợp lệ về mặt sư phạm, không sửa chỉ để làm đẹp số liệu.
+
+## D17 — Đẩy data/lessons.json dạng thu gọn vì giới hạn tham số CLI (29/10/2026)
+Lý do: file lessons.json dạng thụt lề ở 18 bài là 108 KB, nhưng khi truyền
+qua tham số --arguments-json của CLI GitHub thì chuỗi JSON vượt giới hạn
+128 KB cho một tham số đơn của Linux (đo được 150.885 byte) và lệnh đẩy
+báo "Argument list too long". Dạng thu gọn (separators , :) chỉ còn
+75.669 byte, tham số JSON 115.597 byte, đẩy được.
+Ảnh hưởng: khi đẩy lessons.json, luôn đẩy dạng thu gọn; bản chỉnh sửa
+trong workspace vẫn giữ dạng thụt lề để đọc và sửa. Nội dung hai bản
+tương đương về mặt dữ liệu; SHA của blob remote mới là căn cứ xác minh.
