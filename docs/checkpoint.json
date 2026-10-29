@@ -44,7 +44,7 @@
     "baseline_items": 50,
     "draft_lessons": 0,
     "reviewed_lessons": 0,
-    "published_lessons": 12
+    "published_lessons": 18
   },
   "github": {
     "connect_url": "https://agent.meta.ai/connectors/connect/github",
@@ -74,14 +74,14 @@
   ],
   "latest_verified_commit": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
   "next_actions": [
-    "Vòng trình duyệt bản mới: đếm 12 bài trên live, kiểm tra lịch sử ôn cập nhật tức thì sau Good, ghi trạng thái thẻ Learning + bước học 10 phút.",
-    "P06 lô 2: biên soạn 6 bài HSK2 theo từng lô nhỏ có rà soát.",
-    "Ánh xạ điểm vi mô tiếp tục đối chiếu theo từng lô; quyền phân phối tài liệu gốc vẫn chưa xác minh — không đưa tài liệu gốc vào repo."
+    "Xác minh live 18 bài sau push lô 2 (text fetch hoặc vòng trình duyệt ngắn).",
+    "P06 lô 3: các nhóm HSK1–2 còn lại (tiền tố/hậu tố, đại từ, phó từ, cụm từ, câu phức còn lại) theo từng lô nhỏ có rà soát.",
+    "P09-02 sau khi HSK1–6 hoàn thành."
   ],
   "pending_review_ids": [],
   "phase": "P06",
   "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "Baseline 1.0-official-scope đã khóa phạm vi theo PDF chính thức (2025-11/2026-07), 50 nhóm, 了→HSK1, 在→HSK1. 12 bài mẫu đã rà soát đầy đủ theo P03 (batch-04). P01-02 xong ở mức phạm vi; P06-01 đang làm, lô 2 chưa biên soạn. Live 12 bài CHƯA xác minh xong — chờ vòng trình duyệt bản mới.",
+  "resume_notes": "18 bài published (83 bài tập). Vòng qa-02 xác minh: live 12 bài trước lô 2, lịch sử ôn cập nhật tức thì sau Good, FSRS Good thứ hai → Review hạn 2 ngày đúng cấu hình. Chân trang và trang Giới thiệu đã sửa văn bản cũ. P06-01 đang làm; P09-01 chỉ phạm vi mẫu.",
   "schema_version": 1,
   "spec_version": "1.0",
   "updated_at": "2026-10-29",
@@ -145,7 +145,11 @@
     {
       "command": "browser.open PDF chính thức + đọc 语法大纲 HSK1–6; python3 scripts/validate.py sau sửa cấp 了",
       "result": "PDF đọc được toàn văn, bìa 2025-11/2026-07; 语法大纲 HSK1–6 đã đọc hết; validator ĐẠT 12 bài, 53 bài tập sau khi chuyển 了 sang HSK1 (content_version 2)."
+    },
+    {
+      "command": "python3 scripts/validate.py; node --check app.js",
+      "result": "ĐẠT 18 bài, 83 bài tập; JS_OK. Unittest/FSRS không chạy lại vì không có thay đổi liên quan."
     }
   ],
-  "working_tree_state": "baseline_locked_scope_p03_reviewed_ready_to_push"
+  "working_tree_state": "p06_lot2_done_ready_to_push"
 }
