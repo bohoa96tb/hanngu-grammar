@@ -77,3 +77,13 @@
   thành "scope_groups_locked_official_catalogue_not_fully_verified",
   và task P01-02 quay lại in_progress cho phần xác minh danh mục đầy đủ.
   Không được gọi baseline là "đã khóa toàn bộ" hay "đã xác minh đầy đủ".
+
+## Cập nhật 29/10/2026 — P01-02 phần HSK1–2
+HSK1–2 đã đối chiếu xong theo mục nhóm diễn giải (xem
+docs/baseline-hsk1-hsk2-mapping.md và
+docs/official-catalogue-hsk1-hsk2.json): HSK1 52 mục nhóm (20 đã có,
+10 một phần, 22 thiếu), HSK2 62 mục nhóm (14 đã có, 14 một phần,
+34 thiếu). Không cần sửa cấp độ cho 24 bài cũ. Trạng thái tổng thể
+vẫn là khóa nhóm phạm vi, chưa xác minh đầy đủ danh mục chính thức,
+vì HSK3–6 chưa đối chiếu và bản trích dùng ngày 2026-09-25 chưa ghi
+hash file gốc.
