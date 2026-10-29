@@ -53,8 +53,11 @@
     {
       "id": "OFF-H1-06",
       "title_vi": "Ly hợp từ (看病/睡觉/说话/上课/下课/上班/下班/生病)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "separable-verbs"
+      ],
+      "note": "Bài mới lô 09, đã rà soát nội bộ."
     },
     {
       "id": "OFF-H1-07",
@@ -67,8 +70,11 @@
     {
       "id": "OFF-H1-08",
       "title_vi": "Nghi vấn 怎么/怎么样",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "zenme-question"
+      ],
+      "note": "Bài mới lô 09, đã rà soát nội bộ."
     },
     {
       "id": "OFF-H1-09",
@@ -166,8 +172,11 @@
     {
       "id": "OFF-H1-21",
       "title_vi": "Phủ định 不要",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "bu-yao-prohibition"
+      ],
+      "note": "Bài mới lô 09, đã rà soát nội bộ."
     },
     {
       "id": "OFF-H1-22",
@@ -691,8 +700,11 @@
     {
       "id": "OFF-H2-42",
       "title_vi": "Trạng thái bổ ngữ (động từ+得+tính từ)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "state-complement-de"
+      ],
+      "note": "Bài mới lô 09, đã rà soát nội bộ."
     },
     {
       "id": "OFF-H2-43",
@@ -738,8 +750,11 @@
     {
       "id": "OFF-H2-49",
       "title_vi": "存现句 dạng 处所+动词+着+名词",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "cunxian-chu"
+      ],
+      "note": "Bài mới lô 09, đã rà soát nội bộ."
     },
     {
       "id": "OFF-H2-50",
@@ -761,8 +776,11 @@
     {
       "id": "OFF-H2-52",
       "title_vi": "兼语句 请/叫/让",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "jianyu-qing-jiao-rang"
+      ],
+      "note": "Bài mới lô 09, đã rà soát nội bộ."
     },
     {
       "id": "OFF-H2-53",
