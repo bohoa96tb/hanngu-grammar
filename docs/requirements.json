@@ -132,7 +132,6 @@
     },
     {
       "acceptance_criteria": "Build/lint/test theo stack thực tế chạy đạt; GitHub Pages (nếu dùng) kiểm tra live khớp bản đã kiểm tra.",
-      "blocked_reason": "Workflow Pages bị 403 qua API; cần bật Pages từ nhánh main hoặc thêm workflow qua web.",
       "description": "Phát hành GitHub Pages và kiểm tra sau phát hành.",
       "evidence_paths": [
         ".github/workflows/pages.yml",
@@ -141,7 +140,7 @@
       "id": "OPS-01",
       "phase": "P10",
       "priority": "P0",
-      "status": "blocked"
+      "status": "verified"
     },
     {
       "acceptance_criteria": "Chấm phát âm chuyên sâu có đánh giá thực tế về hỗ trợ ngôn ngữ, độ tin cậy, chi phí trước khi phát hành; không suy đoán thanh điệu từ transcript.",
