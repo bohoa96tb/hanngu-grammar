@@ -30,7 +30,7 @@
       "depends_on": [
         "P00-01"
       ],
-      "evidence": "push_files 403 git/trees; đang đẩy từng file bằng create_or_update_file, head sau đợt 2 là 2e05854e.",
+      "evidence": "21/22 file đã lên main, head đã xác minh fd8799247; chỉ thiếu workflow Pages (403 riêng).",
       "files": [],
       "id": "P00-02",
       "inputs": "Tài khoản bohoa96tb",
@@ -38,7 +38,7 @@
       "related_requirements": [
         "GOV-01"
       ],
-      "status": "in_progress",
+      "status": "done",
       "title": "Kết nối GitHub và tạo repository"
     },
     {
@@ -230,7 +230,7 @@
         "P00-02",
         "P09-01"
       ],
-      "evidence": "Workflow đã chuẩn bị; chưa chạy vì chưa có repo",
+      "evidence": "Workflow Pages bị 403 qua API; Pages chưa bật, chưa có URL live đã xác minh.",
       "files": [
         ".github/workflows/pages.yml",
         "docs/release-log.md"
@@ -241,7 +241,7 @@
       "related_requirements": [
         "OPS-01"
       ],
-      "status": "pending",
+      "status": "blocked",
       "title": "Phát hành và kiểm tra live"
     }
   ]
