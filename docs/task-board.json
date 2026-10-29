@@ -154,7 +154,7 @@
       "depends_on": [
         "P04-01"
       ],
-      "evidence": "Chưa làm; cần khóa phiên bản ts-fsrs",
+      "evidence": "node --test tests/test_fsrs.mjs 7 passed (thời gian giả lập, chống ghi trùng, serialize); máy chủ tĩnh 200 cho app/srs/vendor/lessons; validator + unittest vẫn đạt.",
       "files": [],
       "id": "P05-01",
       "inputs": "ts-fsrs",
@@ -162,7 +162,7 @@
       "related_requirements": [
         "SRS-01"
       ],
-      "status": "pending",
+      "status": "done",
       "title": "Tích hợp FSRS và sao lưu/khôi phục"
     },
     {
