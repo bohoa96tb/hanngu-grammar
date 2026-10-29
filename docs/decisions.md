@@ -140,3 +140,28 @@ báo "Argument list too long". Dạng thu gọn (separators , :) chỉ còn
 Ảnh hưởng: khi đẩy lessons.json, luôn đẩy dạng thu gọn; bản chỉnh sửa
 trong workspace vẫn giữ dạng thụt lề để đọc và sửa. Nội dung hai bản
 tương đương về mặt dữ liệu; SHA của blob remote mới là căn cứ xác minh.
+
+## D18 — Sửa trạng thái baseline: khóa phạm vi nhóm, chưa xác minh đầy đủ danh mục (29/10/2026)
+Lý do: tài liệu gốc không đánh số từng điểm ngữ pháp; số 50 là cách chia
+nhóm của dự án, không phải số mục chính thức. Bản đọc là crawl 25/09/2026,
+chưa ghi hash, trích xuất bảng bị xáo trộn, điểm vi mô và từ vựng/chữ Hán
+chưa đối chiếu, quyền phân phối chưa xác minh.
+Ảnh hưởng: trạng thái baseline sửa thành
+scope_groups_locked_official_catalogue_not_fully_verified; bằng chứng đầy
+đủ trong docs/baseline-evidence.md; task P01-02 quay lại in_progress cho
+phần xác minh danh mục đầy đủ. Không gọi baseline là đã khóa toàn bộ.
+
+## D19 — Tách dữ liệu thành shard theo cấp, đẩy qua nhánh + PR + merge (29/10/2026)
+Lý do: file tổng hợp vượt giới hạn 128 KB/tham số CLI khi đẩy; minify
+chỉ là cách nhét tạm, tạo ra hai bản khác nhau (workspace thụt lề, repo
+thu gọn) và không giải quyết được khi file tiếp tục lớn.
+Ảnh hưởng: shard theo cấp trong data/lessons/ + manifest là nguồn duy
+nhất; app và validator đọc qua manifest; ID bài không đổi nên tiến trình
+không ảnh hưởng. Đẩy theo quy trình: tạo nhánh, đẩy từng file lên nhánh,
+mở PR, merge PR để main nhận một merge commit chứa toàn bộ thay đổi
+liên quan (các commit trên nhánh vẫn là từng file, nhưng main chỉ nhận
+một merge commit). Nếu merge không thực hiện được, phương án dự phòng là
+đẩy trực tiếp lên main theo thứ tự: shard + manifest trước, app.js sau,
+xóa file cũ cuối cùng, và báo cáo rõ là không đạt được một commit hợp
+nhất. Git commit–push trực tiếp không khả thi ở đây vì workspace không
+phải là git repo và không có thông tin đăng nhập git để đẩy.

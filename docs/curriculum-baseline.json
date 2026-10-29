@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "baseline_version": "0.2-working-provisional",
-  "status": "provisional_working_not_locked",
+  "status": "scope_groups_locked_official_catalogue_not_fully_verified",
   "edition": {
     "id": "hsk-exam-syllabus-2025-11",
     "source": "hsk-official",
@@ -220,6 +220,7 @@
       "coverage_status": "planned"
     }
   ],
-  "warning": "Baseline toàn diện HSK1–6 CHƯA khóa. Danh mục này là danh mục làm việc tạm thời, không phải baseline hoàn chỉnh. Không dùng số bài để suy ra độ bao phủ HSK1–6.",
-  "updated_at": "2026-10-29"
+  "warning": "KHÓA PHẠM VI DỰ ÁN (mức nhóm) nhưng CHƯA xác minh đầy đủ danh mục chính thức: xem docs/baseline-evidence.md mục 6 (điểm vi mô chưa đối chiếu, trích xuất bảng bị xáo trộn, bản đọc là crawl 25/09/2026 chưa ghi hash, quyền phân phối chưa xác minh, từ vựng/chữ Hán chưa đối chiếu). Không gọi baseline là đã khóa toàn bộ.",
+  "updated_at": "2026-10-29",
+  "evidence": "docs/baseline-evidence.md"
 }

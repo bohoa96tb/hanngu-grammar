@@ -28,7 +28,7 @@ python3 -m unittest discover -s tests -v
 ## Cấu trúc
 
 - `index.html`, `styles.css`, `app.js` — ứng dụng tĩnh (không framework build).
-- `data/lessons.json` — nội dung bài học đã duyệt/bản nháp, theo schema ở `docs/schema.md`.
+- `data/lessons-manifest.json` + `data/lessons/hsk*.json` — nội dung bài học đã duyệt/bản nháp theo cấp, theo schema ở `docs/schema.md` (shard là nguồn duy nhất, mỗi shard dưới giới hạn truyền file của công cụ đẩy).
 - `scripts/validate.py` — kiểm tra schema, ID duy nhất, liên kết, placeholder, đáp án.
 - `docs/` — đặc tả, yêu cầu, quyết định, nguồn, baseline, task board, checkpoint, cổng chất lượng.
 

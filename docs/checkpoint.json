@@ -44,7 +44,7 @@
     "baseline_items": 50,
     "draft_lessons": 0,
     "reviewed_lessons": 0,
-    "published_lessons": 18
+    "published_lessons": 24
   },
   "github": {
     "connect_url": "https://agent.meta.ai/connectors/connect/github",
@@ -74,14 +74,14 @@
   ],
   "latest_verified_commit": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
   "next_actions": [
-    "Xác minh live 18 bài sau push lô 2 (text fetch hoặc vòng trình duyệt ngắn).",
-    "P06 lô 3: các nhóm HSK1–2 còn lại (tiền tố/hậu tố, đại từ, phó từ, cụm từ, câu phức còn lại) theo từng lô nhỏ có rà soát.",
-    "P09-02 sau khi HSK1–6 hoàn thành."
+    "Merge nhánh migration-shards-lot3 rồi xác minh live 24 bài (đếm bài, chân trang/Giới thiệu, một bài mới hoạt động).",
+    "P06 lô tiếp theo: các nhóm HSK1–2 còn lại theo từng lô nhỏ có rà soát.",
+    "Xác minh danh mục chính thức đầy đủ (P01-02): đối chiếu điểm vi mô, bản PDF trực quan, hash file, quyền phân phối."
   ],
   "pending_review_ids": [],
   "phase": "P06",
   "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "18 bài published (83 bài tập). Vòng qa-02 xác minh: live 12 bài trước lô 2, lịch sử ôn cập nhật tức thì sau Good, FSRS Good thứ hai → Review hạn 2 ngày đúng cấu hình. Chân trang và trang Giới thiệu đã sửa văn bản cũ. P06-01 đang làm; P09-01 chỉ phạm vi mẫu.",
+  "resume_notes": "24 bài published (111 bài tập) sau lô 3. Dữ liệu đã tách shard theo cấp; baseline sửa trạng thái: khóa phạm vi nhóm, chưa xác minh đầy đủ danh mục (baseline-evidence.md). Audio TTS phát thực tế = not_run cho cả 24 bài. Chờ merge nhánh rồi xác minh live 24 bài.",
   "schema_version": 1,
   "spec_version": "1.0",
   "updated_at": "2026-10-29",
@@ -149,7 +149,11 @@
     {
       "command": "python3 scripts/validate.py; node --check app.js",
       "result": "ĐẠT 18 bài, 83 bài tập; JS_OK. Unittest/FSRS không chạy lại vì không có thay đổi liên quan."
+    },
+    {
+      "command": "python3 scripts/validate.py; python3 -m unittest; node --check app.js",
+      "result": "ĐẠT 24 bài, 111 bài tập; unittest 5 passed; JS_OK. FSRS không chạy lại vì không có thay đổi liên quan."
     }
   ],
-  "working_tree_state": "p06_lot2_done_ready_to_push"
+  "working_tree_state": "migration_and_lot3_ready_for_branch_pr"
 }

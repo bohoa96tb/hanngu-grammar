@@ -48,3 +48,10 @@ Chưa có bản phát hành nào.
   qa-02 xác minh lịch sử ôn cập nhật tức thì sau Good và FSRS Good thứ
   hai cho hạn 2 ngày đúng cấu hình thư viện; sửa chân trang và trang
   Giới thiệu (văn bản cũ). Live 18 bài chờ xác minh sau push.
+
+- 2026-10-29 — Sửa trạng thái baseline: khóa phạm vi nhóm (50 nhóm), chưa
+  xác minh đầy đủ danh mục chính thức (baseline-evidence.md). Tách dữ
+  liệu thành shard theo cấp (hsk1 14 bài, hsk2 10 bài) thay cho file tổng
+  hợp, app/validator đọc qua manifest. Lô 3: thêm 6 bài (tiền tố/hậu tố,
+  đại từ, phó từ, 还是, trùng điệp, câu hai tân ngữ 给), tổng 24 bài,
+  111 bài tập. Audio TTS phát thực tế vẫn not_run cho cả 24 bài.
