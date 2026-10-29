@@ -1,5 +1,7 @@
 {
-  "active_task_ids": [],
+  "active_task_ids": [
+    "P06-01"
+  ],
   "blocked_items": [
     {
       "action_needed_by_user": "Cung cấp hoặc xác nhận văn bản đề cương HSK 3.0 gốc (hoặc link chính thức tới danh sách điểm ngữ pháp theo cấp) để đối chiếu trước khi khóa baseline.",
@@ -49,11 +51,10 @@
     "P09-01"
   ],
   "content_counts": {
-    "baseline_items": 3,
-    "baseline_items_note": "Chỉ 3 mục mẫu, baseline toàn diện chưa khóa nên không tính phần trăm bao phủ.",
+    "baseline_items": null,
     "draft_lessons": 0,
-    "published_lessons": 3,
-    "reviewed_lessons": 3
+    "reviewed_lessons": 0,
+    "published_lessons": 12
   },
   "github": {
     "connect_url": "https://agent.meta.ai/connectors/connect/github",
@@ -83,13 +84,13 @@
   ],
   "latest_verified_commit": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
   "next_actions": [
-    "P06-01 vẫn chờ baseline khóa (BASELINE-OFFICIAL): cần văn bản đề cương HSK 3.0 gốc hoặc link chính thức từ người dùng.",
-    "Khi có thay đổi mới: đẩy lên main rồi kiểm tra lại URL live."
+    "P06 lô 2: biên soạn 6 bài HSK2 đang lên kế hoạch (zai, zhe, shi-de, result, direction, complex) theo từng lô nhỏ có rà soát.",
+    "Để khóa baseline: cần văn bản gốc đề cương thi 11/2025 (sách/PDF chính thức từ CTI/CLEC) để đối chiếu từng mục theo số thứ tự gốc."
   ],
   "pending_review_ids": [],
-  "phase": "P09",
+  "phase": "P06",
   "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "P00-P05, P09, P10 xong. P09-01: kiểm định toàn hệ thống đạt, tương tác trình duyệt 6/6 trên bản live; lỗi nhỏ lịch sử ôn không cập nhật tức thì đã sửa bằng render lại trang Ôn lại sau khi ghi (lastReviewNote). P06-P08 chờ baseline khóa.",
+  "resume_notes": "P03 mẫu đủ 12 bài (validator 12 bài, 53 bài tập). Baseline 0.2-working (đề cương thi 11/2025, chưa khóa). P06-01 đang làm: lô 1 xong, lô 2 còn 6 bài HSK2 planned. P09-01 chỉ phạm vi mẫu; P09-02 chờ sau HSK1–6.",
   "schema_version": 1,
   "spec_version": "1.0",
   "updated_at": "2026-10-29",
@@ -145,7 +146,11 @@
     {
       "command": "browser QA 6 bước trên https://bohoa96tb.github.io/hanngu-grammar/ + node --check app.js sau sửa",
       "result": "6/6 đạt trên live (localhost bị chặn ở cấp công cụ); sau sửa: node --check đạt, máy chủ tĩnh 200."
+    },
+    {
+      "command": "python3 scripts/validate.py; python3 -m unittest; node --test tests/test_fsrs.mjs; node --check app.js",
+      "result": "ĐẠT 12 bài, 53 bài tập; unittest 5 passed; FSRS 7 passed; JS_OK."
     }
   ],
-  "working_tree_state": "p09_done_ready_to_push"
+  "working_tree_state": "p03_done_p06_lot1_done_ready_to_push"
 }
