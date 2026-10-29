@@ -45,7 +45,8 @@
     "P04-02",
     "P00-02",
     "P10-01",
-    "P05-01"
+    "P05-01",
+    "P09-01"
   ],
   "content_counts": {
     "baseline_items": 3,
@@ -82,13 +83,13 @@
   ],
   "latest_verified_commit": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
   "next_actions": [
-    "Tiếp theo về nội dung: P06-01 khi có baseline khóa (đang bị chặn bởi BASELINE-OFFICIAL), hoặc mở rộng bài mẫu theo lô nhỏ nếu người dùng chọn.",
+    "P06-01 vẫn chờ baseline khóa (BASELINE-OFFICIAL): cần văn bản đề cương HSK 3.0 gốc hoặc link chính thức từ người dùng.",
     "Khi có thay đổi mới: đẩy lên main rồi kiểm tra lại URL live."
   ],
   "pending_review_ids": [],
-  "phase": "P05",
+  "phase": "P09",
   "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "P00-P05 xong, Pages live đã xác minh. P05-01: FSRS thật bằng ts-fsrs 5.4.2 vendored, một thẻ/bài đã hoàn thành, 4 mức tự đánh giá, event_id chống ghi trùng, tiến trình v2 (migrate từ v1). Task tiếp theo bị chặn nội dung là P06-01 (cần baseline khóa).",
+  "resume_notes": "P00-P05, P09, P10 xong. P09-01: kiểm định toàn hệ thống đạt, tương tác trình duyệt 6/6 trên bản live; lỗi nhỏ lịch sử ôn không cập nhật tức thì đã sửa bằng render lại trang Ôn lại sau khi ghi (lastReviewNote). P06-P08 chờ baseline khóa.",
   "schema_version": 1,
   "spec_version": "1.0",
   "updated_at": "2026-10-29",
@@ -140,7 +141,11 @@
     {
       "command": "node --test tests/test_fsrs.mjs; python3 scripts/validate.py; python3 -m unittest; node --check app.js srs.mjs; http.server 8125",
       "result": "FSRS 7 passed; validator ĐẠT 3 bài; unittest 5 passed; JS_OK; http 200 cho index/app/srs/vendor/lessons."
+    },
+    {
+      "command": "browser QA 6 bước trên https://bohoa96tb.github.io/hanngu-grammar/ + node --check app.js sau sửa",
+      "result": "6/6 đạt trên live (localhost bị chặn ở cấp công cụ); sau sửa: node --check đạt, máy chủ tĩnh 200."
     }
   ],
-  "working_tree_state": "p05_done_ready_to_push"
+  "working_tree_state": "p09_done_ready_to_push"
 }
