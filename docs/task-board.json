@@ -62,7 +62,7 @@
       "depends_on": [
         "P01-01"
       ],
-      "evidence": "HSK1–2 ĐÃ ĐỐI CHIẾU và cập nhật cho 28 bài: docs/baseline-hsk1-hsk2-mapping.md + docs/official-catalogue-hsk1-hsk2.json (HSK1 52 mục nhóm: 22 có/10 một phần/20 thiếu; HSK2 62 mục nhóm: 16 có/14 một phần/32 thiếu; số mục nhóm do dự án chia, KHÔNG phải số chính thức, KHÔNG dùng thay số chính thức). Không cần sửa cấp độ cho 28 bài cũ và 6 bài lô 09. HSK3–6 CHƯA đối chiếu nên task vẫn in_progress. Bản trích dùng ngày 2026-09-25, chưa ghi hash file gốc.",
+      "evidence": "HSK1–2 đã đối chiếu (HSK1 52 mục nhóm: 25 đã có, 10 một phần, 17 thiếu; HSK2 62 mục nhóm: 19 đã có, 14 một phần, 29 thiếu, tính cho 34 bài). HSK3–4 đã đối chiếu (HSK3 50 mục nhóm: 4 đã có, 4 một phần, 42 thiếu sau lô 10; HSK4 34 mục nhóm: tất cả thiếu). HSK5–6 chưa đối chiếu. Số mục nhóm là cách chia của dự án, không phải số chính thức.",
       "files": [
         "docs/curriculum-baseline.json"
       ],
@@ -169,7 +169,7 @@
       "depends_on": [
         "P05-01"
       ],
-      "evidence": "34 bài, 161 bài tập, validator ĐẠT. Lô 09 thêm 6 bài từ danh mục HSK1–2 đã xác minh: bu-yao-prohibition, separable-verbs, zenme-question (HSK1), jianyu-qing-jiao-rang, cunxian-chu, state-complement-de (HSK2). 6 bài mới là đã rà soát nội bộ, CHƯA đạt toàn bộ tiêu chí vì audio chưa nghiệm thu. Kèm sửa lỗi cảnh báo giọng (D24, build voicewarn2). Live 34 bài chưa nghiệm thu (chờ vòng sau merge).",
+      "evidence": "38 bài, 181 bài tập, validator ĐẠT. Lô 10 (4 bài HSK3: ba-sentence-1, bei-passive-1, zhe-accompanying, bi-comparison-2) đã rà soát nội bộ, chờ đẩy và nghiệm thu live. Các bài là đã rà soát nội bộ, CHƯA đạt toàn bộ tiêu chí vì audio chưa nghiệm thu.",
       "files": [],
       "id": "P06-01",
       "inputs": "Baseline khóa",
@@ -254,7 +254,7 @@
       "id": "AUD-TTS-01",
       "title": "Nghiệm thu audio TTS: giọng zh-CN, phát/dừng, thiếu giọng",
       "status": "in_progress",
-      "evidence": "TTS trình duyệt là phương án TẠM THỜI, chưa mặc nhiên đáp ứng yêu cầu audio tạo trước trong đặc tả. Build voicewarn đã nghiệm thu live 28 bài (qa-06) nhưng PHÁT HIỆN LỖI: bấm Nghe mẫu không hiện cảnh báo dù bảng chẩn đoán báo không có giọng zh — nguyên nhân: getVoices() lúc bấm thường trả về rỗng do tải bất đồng bộ. ĐÃ SỬA ở build voicewarn2 (D24): chờ voiceschanged tối đa ~1 giây, dòng cảnh báo bền vững trong bài học, bảng chẩn đoán phân biệt chưa tải xong với không có giọng. Chưa kiểm tra lại cảnh báo ở build mới (chờ vòng sau merge); nghe thực tế, phát/dừng và thiếu giọng trên thiết bị thật vẫn not_run cho cả 34 bài. Không đánh dấu bài đạt toàn bộ tiêu chí khi audio chưa nghiệm thu."
+      "evidence": "TTS trình duyệt là phương án TẠM THỜI, chưa mặc nhiên đáp ứng yêu cầu audio tạo trước trong đặc tả. Build voicewarn2 đã nghiệm thu live 34 bài (qa-07): dòng cảnh báo thiếu giọng zh ĐÃ hiển thị sẵn trong phần Ví dụ (đúng nội dung cảnh báo), đạt yêu cầu hiển thị thông báo thay vì âm thầm dùng giọng mặc định. Hộp thoại cảnh báo khi bấm Nghe mẫu thì KHÔNG quan sát được trong vòng kiểm tra (nguyên nhân chưa xác định, có thể do khung kiểm tra xử lý hộp thoại) — ghi là chưa quan sát được, không khẳng định đã hoạt động. Nghe thực tế, phát/dừng và thiếu giọng trên thiết bị thật vẫn not_run cho cả 34 bài. Không đánh dấu bài đạt toàn bộ tiêu chí khi audio chưa nghiệm thu."
     }
   ]
 }
