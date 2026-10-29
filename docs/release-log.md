@@ -35,3 +35,10 @@ Chưa có bản phát hành nào.
   0.2-working: chốt phiên bản mục tiêu là đề cương thi 11/2025, nhưng CHƯA
   khóa vì chưa có văn bản gốc để đối chiếu. P09-01 chỉ công nhận phạm vi
   bản thử nghiệm; lỗi console và hiệu năng ghi not_run.
+
+- 2026-10-29 — Baseline 1.0-official-scope: khóa phạm vi theo PDF đề cương
+  chính thức (2025-11 发布, 2026-07 实施, 语法大纲 tr.382–400), 50 nhóm;
+  sửa cấp 了 sang HSK1, 在/正在 sang HSK1. Quyền phân phối chưa xác minh
+  nên repo chỉ diễn đạt lại, không chứa tài liệu gốc. 12 bài mẫu đã rà
+  soát đầy đủ theo P03 (batch-04). Live 12 bài chưa xác minh xong — chờ
+  vòng trình duyệt bản mới.
