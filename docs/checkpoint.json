@@ -74,14 +74,13 @@
   ],
   "latest_verified_commit": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
   "next_actions": [
-    "Nghiệm thu bản 24 bài bằng ?debug=1: giao diện đủ 24 bài, mở bài hai-shi-choice bằng ID thật, làm trắc nghiệm, tải lại giữ tiến trình; kiểm tra cả phiên cũ (18 bài) và phiên mới nếu công cụ cho phép.",
-    "Sau nghiệm thu mới đẩy docs qa-03/batch-07 + checkpoint lên main.",
-    "P06 lô tiếp theo (sau nghiệm thu) và P01-02 xác minh danh mục đầy đủ; AUD-TTS-01 nghiệm thu audio."
+    "Đẩy qa-04 + checkpoint + task-board lên main qua nhánh/PR (đang chạy).",
+    "Sau đó mới làm P06 lô tiếp theo; P01-02 xác minh danh mục đầy đủ vẫn in_progress; AUD-TTS-01 nghiệm thu audio trên thiết bị thật."
   ],
   "pending_review_ids": [],
   "phase": "P06",
   "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "Shard theo bài (24 file) + debug ?debug=1 + versioning đã xong, chờ đẩy qua nhánh/PR. App không có service worker/Cache Storage. TTS là tạm thời (AUD-TTS-01). Live 24 bài chưa nghiệm thu xong; mở bài 还是 bằng ID thật hai-shi-choice (không đoán haishi-choice).",
+  "resume_notes": "LIVE 24 BÀI ĐÃ NGHIỆM THU (qa-04, 06:52 UTC, cả phiên mới và phiên cũ): build 20261029-pl24, 24/24 published, hai-shi-choice mở được, trắc nghiệm đúng, tiến trình giữ sau tải lại. Nguyên nhân vụ 18 bài: app.js cũ trong HTTP cache (không SW, không Cache Storage). Cả hai môi trường kiểm tra đều không có giọng zh (AUD-TTS-01). TTS tạm thời; audio thực tế not_run.",
   "schema_version": 1,
   "spec_version": "1.0",
   "updated_at": "2026-10-29",
@@ -159,5 +158,5 @@
       "result": "Main và cây file Pages: 24 bài đúng. Giao diện: 18 bài sau cả cache-bust và hard refresh tới 06:10 UTC. Live 24 bài CHƯA xác minh."
     }
   ],
-  "working_tree_state": "debug_and_per_lesson_shards_ready_for_branch_pr"
+  "working_tree_state": "qa04_and_checkpoint_local_only_pending_push"
 }
