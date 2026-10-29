@@ -24,3 +24,8 @@ Chưa có bản phát hành nào.
 - 2026-10-29 — P05-01: FSRS thật bằng ts-fsrs 5.4.2 (vendored, MIT).
   Một thẻ cho mỗi bài đã hoàn thành, 4 mức tự đánh giá, event_id chống ghi
   trùng, tiến trình v2 (migrate từ v1), kiểm thử Node 7 passed.
+
+- 2026-10-29 — P09-01 kiểm định: 6/6 bước tương tác đạt trên bản live;
+  sửa lỗi nhỏ lịch sử ôn chỉ cập nhật sau khi tải lại trang (nay render lại
+  ngay sau khi ghi). Hạn chế còn lại: chưa kiểm tra Android/iOS thật, mic
+  thật, tiếp cận 200% bằng công cụ chuyên dụng, E2E tự động.
