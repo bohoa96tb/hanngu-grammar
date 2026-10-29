@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "ba-sentence-1",
+      "title_vi": "Câu chữ 把 dạng 1",
+      "pattern": "Chủ ngữ + 把 + Tân ngữ + Động từ + (Bổ ngữ/Kết quả)",
+      "hsk_level": 3,
+      "difficulty": "medium",
+      "objective": "Sau bài này, người học dùng câu chữ 把 để đưa tân ngữ lên trước động từ khi muốn nhấn mạnh việc xử lý hoặc kết quả tác động lên tân ngữ, phân biệt với câu bị động dùng 被.",
+      "when_to_use": "Khi muốn nhấn mạnh ai đã xử lý vật gì ra sao (đặt ở đâu, làm xong chưa, đóng lại...), thay vì chỉ nói ai làm gì.",
+      "formula_notes": "把 đứng trước tân ngữ, tân ngữ đứng trước động từ; động từ sau tân ngữ phải có thêm thành phần kết quả hoặc bổ ngữ (在/到 + nơi chốn, kết quả bổ ngữ, xu hướng bổ ngữ...), không đứng trơ một mình. Chủ ngữ là người chủ động thực hiện.",
+      "examples": [
+        {
+          "zh": "我把书放在桌子上了。",
+          "vi": "Tôi đặt sách lên bàn rồi.",
+          "pinyin": "Wǒ bǎ shū fàng zài zhuōzi shang le.",
+          "tokens": [
+            "我",
+            "把",
+            "书",
+            "放",
+            "在",
+            "桌子",
+            "上",
+            "了"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "他把作业做完了。",
+          "vi": "Anh ấy làm xong bài tập rồi.",
+          "pinyin": "Tā bǎ zuòyè zuò wán le.",
+          "tokens": [
+            "他",
+            "把",
+            "作业",
+            "做",
+            "完",
+            "了"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "请把门关上。",
+          "vi": "Xin hãy đóng cửa lại.",
+          "pinyin": "Qǐng bǎ mén guān shang.",
+          "tokens": [
+            "请",
+            "把",
+            "门",
+            "关",
+            "上"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "ba-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn câu đúng để nói 'Tôi đặt sách lên bàn rồi.'",
+          "payload": {
+            "options": [
+              "我把书放在桌子上了。",
+              "我书把放在桌子上了。",
+              "我把书放桌子上。",
+              "我放书把在桌子上了。"
+            ]
+          },
+          "accepted_answers": [
+            "我把书放在桌子上了。"
+          ],
+          "explanation": "我 + 把 + 书 + 放在桌子上了。"
+        },
+        {
+          "id": "ba-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy làm xong bài tập rồi.'",
+          "payload": {
+            "prompt_zh": "他把作业___了。",
+            "hint_vi": "Dùng 做完。"
+          },
+          "accepted_answers": [
+            "他把作业做完了。",
+            "他把作业做完了"
+          ],
+          "explanation": "他 + 把 + 作业 + 做完了。"
+        },
+        {
+          "id": "ba-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành câu: 'Xin hãy đóng cửa lại.'",
+          "payload": {
+            "tokens": [
+              "门",
+              "请",
+              "把",
+              "关",
+              "上"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "请",
+              "把",
+              "门",
+              "关",
+              "上"
+            ]
+          ],
+          "explanation": "Thứ tự: 请 → 把 → 门 → 关上。"
+        },
+        {
+          "id": "ba-ex4",
+          "type": "error_spot",
+          "prompt_vi": "Câu sau sai ở khối nào? 我书把放在桌子上了。",
+          "payload": {
+            "sentence_zh": "我书把放在桌子上了。",
+            "options": [
+              "我",
+              "书",
+              "把",
+              "放",
+              "在",
+              "桌子",
+              "上",
+              "了"
+            ]
+          },
+          "accepted_answers": [
+            "书"
+          ],
+          "explanation": "书 đặt sai chỗ: tân ngữ phải đứng sau 把: 我把书放在桌子上了。"
+        },
+        {
+          "id": "ba-ex5",
+          "type": "fill",
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Anh ấy đặt chìa khóa vào túi rồi' (viết bằng chữ Hán)",
+          "payload": {
+            "prompt_zh": null,
+            "hint_vi": "Bắt đầu bằng 他。"
+          },
+          "accepted_answers": [
+            "他把钥匙放在包里了。",
+            "他把钥匙放在包里了",
+            "他把钥匙放进包里了。",
+            "他把钥匙放进包里了"
+          ],
+          "explanation": "Anh ấy đặt chìa khóa vào túi rồi: 他 + 把 + 钥匙 + 放在包里了 (hoặc 放进包里了)。"
+        }
+      ],
+      "confusions": [
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我书把放在桌子上了。",
+          "explanation": "Tân ngữ đứng sau 把, trước động từ: 我把书放在桌子上了。"
+        },
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我把书看了。",
+          "explanation": "Động từ trong câu chữ 把 không đứng trơ một mình; cần thêm kết quả hoặc bổ ngữ, ví dụ 我把书看完了。"
+        },
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "书被我放在桌子上了。(khi muốn nói chủ động 'tôi đặt sách lên bàn')",
+          "explanation": "Đây là câu bị động (sách bị đặt); muốn nói chủ động thì dùng 把: 我把书放在桌子上了。"
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "hsk-official",
+          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 10 từ danh mục HSK3 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí."
+      }
+    }
+  ]
+}
