@@ -1,6 +1,9 @@
 // Hanngu Grammar — app tĩnh, không framework.
 // Tiến trình chỉ lưu ở localStorage của trình duyệt này. Không gửi dữ liệu ra ngoài.
-const LS_KEY = "hanngu-progress-v1";
+// Lịch ôn dùng thư viện ts-fsrs 5.4.2 qua srs.mjs (không phải công thức tự chế).
+import * as SRS from "./srs.mjs";
+const LS_KEY = "hanngu-progress-v2";
+const OLD_LS_KEY = "hanngu-progress-v1";
 let lessons = [];
 let progress = loadProgress();
 let showPinyin = false;
@@ -13,15 +16,26 @@ let speakingChunks = [];
 let speakingBlobUrl = null;
 let speakingRecording = false;
 
+function emptyProgressV2() {
+  return { version: 2, fsrsVersion: SRS.FSRS_VERSION, completedLessons: [], attempts: {}, hints: {}, cards: {}, events: [], reviewLimit: 20 };
+}
+function migrateProgress(p) {
+  // v1 -> v2: giữ nguyên hoàn thành/bài tập/gợi ý; thẻ FSRS bắt đầu trống.
+  // Thẻ cũ không tồn tại ở v1 nên không có migration trạng thái FSRS nào.
+  if (p.version === 2) {
+    return { ...emptyProgressV2(), ...p, cards: p.cards || {}, events: Array.isArray(p.events) ? p.events : [], reviewLimit: p.reviewLimit || 20 };
+  }
+  return { ...emptyProgressV2(), completedLessons: p.completedLessons || [], attempts: p.attempts || {}, hints: p.hints || {} };
+}
 function loadProgress() {
   try {
-    const raw = localStorage.getItem(LS_KEY);
-    if (!raw) return { version: 1, completedLessons: [], attempts: {}, hints: {} };
+    const raw = localStorage.getItem(LS_KEY) || localStorage.getItem(OLD_LS_KEY);
+    if (!raw) return emptyProgressV2();
     const p = JSON.parse(raw);
-    if (p.version !== 1) throw new Error("Phiên bản tiến trình không khớp");
-    return { version: 1, completedLessons: p.completedLessons || [], attempts: p.attempts || {}, hints: p.hints || {} };
+    if (p.version !== 1 && p.version !== 2) throw new Error("Phiên bản tiến trình không khớp");
+    return migrateProgress(p);
   } catch (e) {
-    return { version: 1, completedLessons: [], attempts: {}, hints: {} };
+    return emptyProgressV2();
   }
 }
 function saveProgress() { localStorage.setItem(LS_KEY, JSON.stringify(progress)); }
@@ -74,7 +88,7 @@ function renderHome() {
       <button id="exportBtn" class="secondary">Xuất tiến trình (JSON)</button>
       <label for="importFile">Nhập tiến trình (sẽ hỏi xác nhận trước khi ghi đè)</label>
       <input id="importFile" type="file" accept=".json,application/json">
-      <p class="note">Ôn tập FSRS thật chưa có. Trang Ôn lại hiện chỉ liệt kê bài đã học và bài từng làm sai — không gọi đó là FSRS.</p>
+      <p class="note">Ôn tập dùng thư viện FSRS thật (ts-fsrs 5.4.2, xem trang Ôn lại). Mốc thời gian lưu UTC (ISO); “hôm nay” tính theo múi giờ của thiết bị bạn.</p>
     </div>`;
   document.getElementById("searchBtn").onclick = () => {
     const v = document.getElementById("q").value;
@@ -86,14 +100,16 @@ function renderHome() {
   document.getElementById("exportBtn").onclick = () => {
     const blob = new Blob([JSON.stringify(progress, null, 2)], { type: "application/json" });
     const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob); a.download = "hanngu-progress-v1.json"; a.click();
+    a.href = URL.createObjectURL(blob); a.download = "hanngu-progress-v2.json"; a.click();
   };
   document.getElementById("importFile").onchange = async (ev) => {
     const file = ev.target.files[0]; if (!file) return;
     try {
       const data = JSON.parse(await file.text());
-      if (data.version !== 1 || !Array.isArray(data.completedLessons)) throw new Error("Định dạng không khớp (cần version 1)");
-      if (confirm("Ghi đè toàn bộ tiến trình hiện tại bằng file đã nhập?")) { progress = data; saveProgress(); render(); }
+      if ((data.version !== 1 && data.version !== 2) || !Array.isArray(data.completedLessons)) throw new Error("Định dạng không khớp (cần version 1 hoặc 2)");
+      if (data.version === 2 && data.cards && typeof data.cards !== "object") throw new Error("Trường cards không hợp lệ");
+      if (data.version === 2 && data.events && !Array.isArray(data.events)) throw new Error("Trường events không hợp lệ");
+      if (confirm("Ghi đè toàn bộ tiến trình hiện tại bằng file đã nhập?")) { progress = migrateProgress(data); progress.fsrsVersion = SRS.FSRS_VERSION; saveProgress(); render(); }
     } catch (e) { alert("Không nhập được: " + e.message); }
   };
 }
@@ -270,19 +286,73 @@ function renderLesson(id) {
 
 function renderReview() {
   const app = document.getElementById("app");
+  const now = new Date();
+  const queue = SRS.dueCards(progress, lessons, now);
+  const due = queue.filter((q) => q.isDue);
+  const upcoming = queue.filter((q) => !q.isDue);
+  const limit = progress.reviewLimit || 20;
+  const shown = due.slice(0, limit);
   const wrong = lessons.filter((l) => l.exercises.some((ex) => progress.attempts[ex.id] && !progress.attempts[ex.id].lastCorrect));
-  const done = lessons.filter((l) => progress.completedLessons.includes(l.id));
-  app.innerHTML = `<h2>Ôn lại</h2>
-    <p class="note">Đây là danh sách ôn đơn giản, chưa phải FSRS và chưa có lịch ôn theo thuật toán. Tích hợp thư viện FSRS đã khóa phiên bản là công việc P05.</p>
-    <section class="card"><h3>Bài từng làm sai gần nhất</h3>${wrong.length ? wrong.map((l) => `<p><a href="#/lesson/${l.id}">${esc(l.title_vi)}</a></p>`).join("") : "<p>Chưa có bài nào làm sai — tốt lắm.</p>"}</section>
-    <section class="card"><h3>Bài đã hoàn thành</h3>${done.length ? done.map((l) => `<p><a href="#/lesson/${l.id}">${esc(l.title_vi)}</a></p>`).join("") : "<p>Chưa hoàn thành bài nào.</p>"}</section>`;
+  const history = [...(progress.events || [])].slice(-10).reverse();
+  app.innerHTML = `<h2>Ôn lại theo FSRS</h2>
+    <p class="note">Lịch ôn do thư viện <strong>ts-fsrs 5.4.2</strong> tính, không phải công thức tự chế. Mốc thời gian lưu UTC; “hôm nay” theo múi giờ thiết bị của bạn. Mỗi thẻ là một bài đã hoàn thành. Cách ôn: tự nhớ lại công thức trước, bấm “Hiện công thức để đối chiếu”, rồi tự đánh giá mức nhớ — đây là tự đánh giá nhớ lại, không phải máy chấm bài tập. Học bài mới không bị khóa dù còn thẻ đến hạn.</p>
+    <div class="card">
+      <label for="reviewLimit">Giới hạn số thẻ ôn mỗi ngày (có thể chỉnh)</label>
+      <input id="reviewLimit" type="number" min="1" max="100" value="${limit}">
+      <p class="note">Đến hạn: ${due.length} thẻ · Hiển thị: ${shown.length} · Còn lại sau giới hạn: ${Math.max(0, due.length - shown.length)}</p>
+    </div>
+    <section class="card"><h3>Đến hạn ôn (${shown.length})</h3>
+      ${shown.length ? shown.map((q) => `
+        <div class="card" id="review-${q.lesson.id}">
+          <h4><a href="#/lesson/${q.lesson.id}">${esc(q.lesson.title_vi)}</a></h4>
+          <p>Trạng thái thẻ: ${esc(SRS.STATE_LABELS[q.serialized ? q.serialized.state : SRS.State.New] || "")} · Lần ôn trước: ${q.serialized && q.serialized.last_review ? new Date(q.serialized.last_review).toLocaleString("vi-VN") : "chưa ôn"}</p>
+          <p>Hãy tự nhớ lại công thức này và tự nói một câu dùng nó, rồi mới đối chiếu:</p>
+          <p><button class="secondary" data-reveal="${q.lesson.id}">Hiện công thức để đối chiếu</button></p>
+          <div id="reveal-${q.lesson.id}" style="display:none"><p class="zh">${esc(q.lesson.pattern)}</p><p>${esc(q.lesson.objective)}</p></div>
+          <p>Tự đánh giá mức nhớ của bạn:</p>
+          <p>${[SRS.Rating.Again, SRS.Rating.Hard, SRS.Rating.Good, SRS.Rating.Easy].map((r) => `<button data-rate="${q.lesson.id}:${r}">${esc(SRS.RATING_LABELS[r])}</button>`).join(" ")}</p>
+          <div id="rated-${q.lesson.id}"></div>
+        </div>`).join("") : "<p>Không có thẻ nào đến hạn. Hãy học thêm bài mới, hoặc quay lại khi có thẻ đến hạn.</p>"}
+    </section>
+    <section class="card"><h3>Sắp đến hạn (${upcoming.length})</h3>
+      ${upcoming.length ? upcoming.map((q) => `<p><a href="#/lesson/${q.lesson.id}">${esc(q.lesson.title_vi)}</a> — ${esc(SRS.formatDue(q.due, now))} · ${esc(SRS.STATE_LABELS[q.serialized.state] || "")}</p>`).join("") : "<p>Chưa có thẻ sắp đến hạn.</p>"}
+    </section>
+    <section class="card"><h3>Lịch sử ôn gần nhất</h3>
+      ${history.length ? history.map((e) => `<p>${esc((lessonById(e.card_id) || {}).title_vi || e.card_id)} — ${esc(e.rating_label)} · ${new Date(e.review).toLocaleString("vi-VN")} · Hạn tiếp theo: ${e.due_after ? new Date(e.due_after).toLocaleString("vi-VN") : ""}</p>`).join("") : "<p>Chưa có lần ôn FSRS nào.</p>"}
+    </section>
+    <section class="card"><h3>Bài từng làm sai gần nhất (không phải thẻ FSRS)</h3>${wrong.length ? wrong.map((l) => `<p><a href="#/lesson/${l.id}">${esc(l.title_vi)}</a></p>`).join("") : "<p>Chưa có bài nào làm sai — tốt lắm.</p>"}</section>`;
+  const limitInput = document.getElementById("reviewLimit");
+  if (limitInput) limitInput.onchange = () => {
+    const v = Math.max(1, Math.min(100, parseInt(limitInput.value, 10) || 20));
+    progress.reviewLimit = v; saveProgress(); render();
+  };
+  document.querySelectorAll("[data-reveal]").forEach((b) => {
+    b.onclick = () => { const el = document.getElementById("reveal-" + b.dataset.reveal); if (el) el.style.display = "block"; };
+  });
+  document.querySelectorAll("[data-rate]").forEach((b) => {
+    b.onclick = () => {
+      const [lessonId, ratingStr] = b.dataset.rate.split(":");
+      const rating = Number(ratingStr);
+      const result = SRS.applyReview(progress, lessonId, rating, new Date());
+      const box = document.getElementById("rated-" + lessonId);
+      if (!result.applied) {
+        if (box) box.innerHTML = `<div class="feedback">Lần ôn này đã được ghi rồi (chống ghi trùng theo event_id) nên không tính thêm.</div>`;
+        return;
+      }
+      progress.cards = result.cards; progress.events = result.events; saveProgress();
+      if (box) box.innerHTML = `<div class="feedback">Đã ghi: ${esc(result.event.rating_label)}. Hạn tiếp theo: ${new Date(result.card.due).toLocaleString("vi-VN")}.</div>`;
+      // Vô hiệu hóa các nút đánh giá của thẻ vừa ôn để tránh bấm lặp trong cùng lượt hiển thị.
+      document.querySelectorAll(`[data-rate^="${lessonId}:"]`).forEach((x) => { x.disabled = true; });
+    };
+  });
 }
 
 function renderAbout() {
   document.getElementById("app").innerHTML = `<h2>Giới thiệu &amp; giới hạn</h2>
     <div class="card"><p>Hanngu Grammar giúp người Việt học cách dùng ngữ pháp tiếng Trung: hiểu ý nghĩa, biết lúc nào dùng, đặt thành phần đúng vị trí, phân biệt cách dùng dễ nhầm và tự tạo câu mới.</p>
     <p><strong>Luyện nói bản cốt lõi đã có trong mỗi bài:</strong> nghe mẫu, thu âm, nghe lại, đọc đuổi và tự nói theo tình huống. Bản thu chỉ ở trong trang, không lưu, không gửi đi và <strong>không được chấm điểm tự động</strong>.</p>
-    <p><strong>Chưa có:</strong> chấm phát âm chuyên sâu, phân tích cú pháp câu bất kỳ, chatbot gia sư, đồng bộ đa thiết bị, đăng nhập, đề thi mô phỏng đầy đủ, audio thu sẵn, lịch ôn FSRS. Những mục này nằm trong backlog, không có nút giả vờ đã làm.</p>
+    <p><strong>Ôn tập FSRS đã có:</strong> trang Ôn lại dùng thư viện ts-fsrs 5.4.2, một thẻ cho mỗi bài đã hoàn thành, 4 mức tự đánh giá (Quên rồi / Khó / Nhớ được / Dễ dàng), lịch sử event có event_id chống ghi trùng, xuất/nhập tiến trình phiên bản 2.</p>
+    <p><strong>Chưa có:</strong> chấm phát âm chuyên sâu, phân tích cú pháp câu bất kỳ, chatbot gia sư, đồng bộ đa thiết bị, đăng nhập, đề thi mô phỏng đầy đủ, audio thu sẵn. Những mục này nằm trong backlog, không có nút giả vờ đã làm.</p>
     <p><strong>Nguồn:</strong> bài mẫu tham khảo Chinese Grammar Wiki (CC BY-NC-SA 3.0) và ghi nguồn trong từng bài. Baseline HSK1–6 toàn diện chưa khóa vì chưa đối chiếu được văn bản đề cương gốc — xem <code>docs/curriculum-baseline.json</code> và <code>docs/decisions.md</code> (D04).</p>
     <p><strong>Riêng tư:</strong> không tài khoản, không gửi tiến trình lên máy chủ. Dữ liệu chỉ ở localStorage trên thiết bị của bạn và có thể xuất/nhập.</p></div>`;
 }
