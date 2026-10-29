@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "adverbs-du-ye",
+      "title_vi": "Phó từ: 都/也/还/再 và phó từ mức độ",
+      "pattern": "Chủ ngữ + 都/也/还/再 + Vị ngữ • 很/非常/太 + Tính từ",
+      "hsk_level": 1,
+      "difficulty": "medium",
+      "objective": "Sau bài này, người học đặt được 都/也/还/再 đúng vị trí và dùng được phó từ mức độ, không đặt phó từ trước chủ ngữ.",
+      "when_to_use": "Khi muốn nói 'đều', 'cũng', 'còn/thêm' hoặc 'lại (trong tương lai)' và khi muốn nói mức độ (rất, quá). Phó từ đứng sau chủ ngữ, trước vị ngữ.",
+      "formula_notes": "都/也/还/再 đứng sau chủ ngữ, trước động từ/tính từ. 都: tất cả đều. 也: cũng. 还: còn/thêm. 再: lại trong tương lai. Mức độ: 很 (mức độ chung), 非常 (rất mạnh), 太 (quá, thường hàm ý vượt mức).",
+      "examples": [
+        {
+          "zh": "我们都很好。",
+          "vi": "Chúng tôi đều rất khỏe.",
+          "pinyin": "Wǒmen dōu hěn hǎo.",
+          "tokens": [
+            "我们",
+            "都",
+            "很",
+            "好"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "他也是学生。",
+          "vi": "Anh ấy cũng là học sinh.",
+          "pinyin": "Tā yě shì xuésheng.",
+          "tokens": [
+            "他",
+            "也",
+            "是",
+            "学生"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "我还要一杯茶。",
+          "vi": "Tôi muốn thêm một tách trà.",
+          "pinyin": "Wǒ hái yào yì bēi chá.",
+          "tokens": [
+            "我",
+            "还",
+            "要",
+            "一杯",
+            "茶"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "adv-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn câu đúng để nói 'Chúng tôi đều rất khỏe'.",
+          "payload": {
+            "options": [
+              "我们都很好。",
+              "都我们很好。",
+              "我们很好都。",
+              "我们都好很。"
+            ]
+          },
+          "accepted_answers": [
+            "我们都很好。"
+          ],
+          "explanation": "都 đứng sau chủ ngữ 我们, trước vị ngữ 很好."
+        },
+        {
+          "id": "adv-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy cũng là học sinh.'",
+          "payload": {
+            "prompt_zh": "他___学生。",
+            "hint_vi": "Dùng 也是."
+          },
+          "accepted_answers": [
+            "他也是学生。",
+            "他也是学生"
+          ],
+          "explanation": "Cũng: 也 + 是 + 学生."
+        },
+        {
+          "id": "adv-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành câu: 'Chúng tôi đều rất khỏe.'",
+          "payload": {
+            "tokens": [
+              "都",
+              "我们",
+              "很",
+              "好"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "我们",
+              "都",
+              "很",
+              "好"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → 都 → 很 → 好."
+        },
+        {
+          "id": "adv-ex4",
+          "type": "error_spot",
+          "prompt_vi": "Câu sau sai ở khối nào? 都我们很好。",
+          "payload": {
+            "sentence_zh": "都我们很好。",
+            "options": [
+              "都",
+              "我们",
+              "很",
+              "好"
+            ]
+          },
+          "accepted_answers": [
+            "都"
+          ],
+          "explanation": "都 phải đứng sau chủ ngữ: 我们都很好 mới đúng."
+        },
+        {
+          "id": "adv-ex5",
+          "type": "fill",
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tôi cũng là giáo viên.' (viết bằng chữ Hán)",
+          "payload": {
+            "prompt_zh": null,
+            "hint_vi": "Bắt đầu bằng 我."
+          },
+          "accepted_answers": [
+            "我也是老师。",
+            "我也是老师"
+          ],
+          "explanation": "Từ ý muốn nói 'Tôi cũng là giáo viên': 我 + 也 + 是 + 老师."
+        }
+      ],
+      "confusions": [
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "都我们很好。",
+          "explanation": "Phó từ 都 đứng sau chủ ngữ, không đứng trước chủ ngữ."
+        },
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我也一杯茶。 (muốn nói 'Tôi muốn thêm một tách trà')",
+          "explanation": "也 nói 'cũng', không nói 'thêm'; muốn thêm thì dùng 还: 我还要一杯茶."
+        },
+        {
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "Dùng 太 thay 很 trong mọi câu khen",
+          "explanation": "太 thường hàm ý vượt mức hoặc kèm đánh giá (quá…), không phải lúc nào cũng thay được cho 很 trong câu khen trung tính."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "cgw",
+          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
+      }
+    }
+  ]
+}
