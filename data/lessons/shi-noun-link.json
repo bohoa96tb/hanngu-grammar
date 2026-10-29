@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "是 chỉ nối hai danh từ. Muốn nói tính chất, dùng tính từ làm vị ngữ, thường có 很 đứng trước (nhưng ở đây 很 không nhấn mạnh 'rất'): 我很忙 mới đúng.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我是忙。 (muốn nói 'Tôi bận')"
+        },
+        {
+          "explanation": "Muốn nói ai ở đâu, dùng 在, không dùng 是: 我在学校 mới đúng. 是 nói 'là ai/cái gì', 在 nói 'ở đâu'.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我是学校。 (muốn nói 'Tôi ở trường')"
+        }
+      ],
+      "content_version": 1,
+      "difficulty": "easy",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒ shì xuésheng.",
+          "tokens": [
+            "我",
+            "是",
+            "学生"
+          ],
+          "vi": "Tôi là học sinh.",
+          "zh": "我是学生。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhè shì wǒ de shū.",
+          "tokens": [
+            "这",
+            "是",
+            "我",
+            "的",
+            "书"
+          ],
+          "vi": "Đây là sách của tôi.",
+          "zh": "这是我的书。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā bú shì yīshēng, tā shì lǎoshī.",
+          "tokens": [
+            "他",
+            "不是",
+            "医生",
+            "，",
+            "他",
+            "是",
+            "老师"
+          ],
+          "vi": "Anh ấy không phải là bác sĩ, anh ấy là giáo viên.",
+          "zh": "他不是医生，他是老师。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "我是学生。",
+            "我是学生"
+          ],
+          "explanation": "Chủ ngữ 我 + 是 + danh từ 学生. Không thêm từ nào giữa 是 và danh từ ở câu cơ bản này.",
+          "id": "shi-ex1",
+          "payload": {
+            "options": [
+              "我是学生。",
+              "我是忙。",
+              "我在学生。",
+              "我学生是。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Tôi là học sinh'.",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "他不是老师。",
+            "他不是老师"
+          ],
+          "explanation": "Phủ định của 是 là 不是, đặt ngay trước 是: 他不是老师.",
+          "id": "shi-ex2",
+          "payload": {
+            "hint_vi": "Dùng 不是."
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy không phải là giáo viên.' (viết bằng chữ Hán)",
+          "prompt_zh": "他___老师。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            [
+              "我",
+              "是",
+              "老师"
+            ]
+          ],
+          "explanation": "Thứ tự cố định: chủ ngữ → 是 → danh từ. Đảo thành 老师是我 sẽ đổi nghĩa/vô nghĩa trong ngữ cảnh này.",
+          "id": "shi-ex3",
+          "payload": {
+            "tokens": [
+              "老师",
+              "我",
+              "是"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Tôi là giáo viên.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "她是医生。",
+            "她是医生"
+          ],
+          "explanation": "Từ ý muốn nói 'Cô ấy là bác sĩ': chủ ngữ 她 + 是 + danh từ 医生.",
+          "id": "shi-ex4",
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 她."
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Cô ấy là bác sĩ.' (viết bằng chữ Hán)",
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "Phủ định: 不是 + danh từ. Câu hỏi: ...是...吗? Ví dụ: 你是学生吗? Thành phần sau 是 bắt buộc là danh từ hoặc cụm danh từ.",
+      "hsk_level": 1,
+      "id": "shi-noun-link",
+      "objective": "Sau bài này, người học nói được 'A là B' khi B là người, vật hoặc thân phận, và không dùng nhầm 是 trước tính từ.",
+      "pattern": "Danh từ 1 + 是 + Danh từ 2",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki (Connecting nouns with shi), kiểm tra phủ định 不是 và phân biệt 是/很/在. Không khẳng định có giáo viên/người bản ngữ duyệt.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Cấu trúc cơ bản Noun 1 + 是 + Noun 2; 是 không dùng với tính từ.",
+          "source_id": "cgw"
+        }
+      ],
+      "status": "published",
+      "title_vi": "是: nối hai danh từ (A là B)",
+      "when_to_use": "Khi muốn xác định 'A là ai/cái gì', tức hai bên là cùng một người/vật/thân phận. Không dùng 是 để nói tính chất (cao, bận, mệt) và không dùng để nói vị trí."
+    }
+  ]
+}
