@@ -42,3 +42,9 @@ Chưa có bản phát hành nào.
   nên repo chỉ diễn đạt lại, không chứa tài liệu gốc. 12 bài mẫu đã rà
   soát đầy đủ theo P03 (batch-04). Live 12 bài chưa xác minh xong — chờ
   vòng trình duyệt bản mới.
+
+- 2026-10-29 — P06 lô 2: thêm 6 bài (在, 着, 是……的, bổ ngữ kết quả, bổ
+  ngữ phương hướng, câu phức 虽然/因为), tổng 18 bài, 83 bài tập. Vòng
+  qa-02 xác minh lịch sử ôn cập nhật tức thì sau Good và FSRS Good thứ
+  hai cho hạn 2 ngày đúng cấu hình thư viện; sửa chân trang và trang
+  Giới thiệu (văn bản cũ). Live 18 bài chờ xác minh sau push.
