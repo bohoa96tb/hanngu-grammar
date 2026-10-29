@@ -80,3 +80,11 @@ từng file, bắt đầu từ README. Không dùng gh/PAT/token khác.
 Ảnh hưởng: lịch sử commit có nhiều commit nhỏ theo file thay vì một snapshot;
 nội dung cuối cùng giống nhau. Ghi rõ trong checkpoint để phiên sau không
 tưởng push_files đã thành công.
+
+## D13 — Workflow Pages bị 403 qua API; Pages từ nhánh là phương án thay thế (29/10/2026)
+Lý do: GitHub chặn GitHub App ghi file `.github/workflows/` qua Contents API
+ngay cả khi các file khác ghi được. App tĩnh này không bắt buộc phải deploy
+bằng Actions.
+Ảnh hưởng: giữ file workflow trong local để người dùng tự thêm qua web nếu
+muốn; phương án mặc định là bật Pages từ nhánh `main` (/(root)) trong Settings.
+Chưa tuyên bố URL live cho tới khi kiểm tra được.
