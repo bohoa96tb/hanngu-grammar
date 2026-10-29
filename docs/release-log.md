@@ -20,3 +20,7 @@ Chưa có bản phát hành nào.
   và tagline, data/lessons.json đủ 3 bài. Deploy từ nhánh main (không dùng
   workflow Actions, vì file workflow bị 403 qua API). Chưa kiểm tra tương tác
   JS trực tiếp trên live bằng trình duyệt thật.
+
+- 2026-10-29 — P05-01: FSRS thật bằng ts-fsrs 5.4.2 (vendored, MIT).
+  Một thẻ cho mỗi bài đã hoàn thành, 4 mức tự đánh giá, event_id chống ghi
+  trùng, tiến trình v2 (migrate từ v1), kiểm thử Node 7 passed.
