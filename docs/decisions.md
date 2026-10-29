@@ -118,3 +118,15 @@ gốc. Danh mục làm việc trong docs/curriculum-baseline.json chỉ chứa c
 Để khóa cần: văn bản gốc (sách/PDF chính thức từ CTI/CLEC) hoặc xác nhận
 của trung tâm thi, đối chiếu từng mục theo số thứ tự gốc, và ghi giấy phép
 sử dụng (repo chỉ diễn đạt lại, không sao chép danh sách gốc).
+
+## D16 — Baseline phạm vi khóa theo tài liệu gốc, tách quyền phân phối (29/10/2026)
+Lý do: link Examination Syllabus trên chinesetest.cn dẫn tới PDF chính
+thức của 中外语言交流合作中心, text fetch đọc được toàn văn, bìa ghi
+2025-11 发布 / 2026-07 实施, 语法大纲 ở mục lục tr.382–400.
+Ảnh hưởng: baseline 1.0-official-scope khóa ở mức nhóm phạm vi (50 nhóm),
+không khóa ở mức điểm vi mô có đánh số vì tài liệu gốc trình bày theo
+nhóm, không đánh số từng điểm. Sửa ánh xạ: 了 → HSK1, 在/正在 → HSK1.
+Quyền phân phối tách riêng và chưa xác minh: repo không chứa PDF gốc,
+không chứa bảng gốc nguyên văn, không sao chép câu ví dụ của đề cương;
+chỉ diễn đạt lại bằng tiếng Việt kèm tham chiếu. Câu trùng giữa các bài
+là hợp lệ về mặt sư phạm, không sửa chỉ để làm đẹp số liệu.
