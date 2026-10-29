@@ -191,3 +191,25 @@ phát/dừng và trường hợp thiếu giọng trên thiết bị thật.
 đánh dấu bài đạt toàn bộ tiêu chí khi audio bắt buộc chưa được nghiệm
 thu; bảng ?debug=1 hiển thị danh sách giọng zh tìm thấy để kiểm tra
 giọng; chỉ ghi "đã nghe và xác minh âm thanh" khi thực sự nghe được.
+
+## D22 — Thông báo thiếu giọng zh thay vì dùng lặng giọng mặc định (29/10/2026)
+Lý do: cả hai môi trường kiểm tra qa-04 đều không có giọng zh; dùng
+lặng giọng mặc định mà không báo sẽ khiến người học tưởng đó là phát
+âm mẫu chuẩn.
+Ảnh hưởng: speak() cảnh báo một lần mỗi lần tải trang khi danh sách
+giọng đã tải xong và không có giọng zh; vẫn thử đọc theo lang zh-CN
+sau cảnh báo (người học tự quyết định có nghe tiếp hay không).
+Trường hợp danh sách giọng chưa tải xong thì chưa xác định được giọng
+zh — không cảnh báo vội, bảng ?debug=1 ghi rõ danh sách giọng tìm thấy.
+TTS vẫn là phương án tạm thời (D21, AUD-TTS-01); cảnh báo không thay
+thế audio tạo trước theo đặc tả và không chặn việc biên soạn độc lập.
+
+## D23 — P01-02 đối chiếu theo mục nhóm diễn giải, HSK1–2 trước (29/10/2026)
+Lý do: đề cương chính thức trình bày ngữ pháp theo bảng nhóm, không
+đánh số từng điểm vi mô; sao chép nguyên văn bảng vào repo công khai
+thì vướng quyền phân phối chưa xác minh.
+Ảnh hưởng: đối chiếu HSK1–2 bằng danh mục mục nhóm do dự án tự chia
+(HSK1 52 mục, HSK2 62 mục), diễn giải bằng tiếng Việt, giữ riêng với
+nhóm phạm vi của dự án; số mục nhóm không phải số chính thức và không
+dùng tính phần trăm bao phủ vi mô. P01-02 vẫn in_progress cho tới khi
+HSK3–6 đối chiếu xong. Bài mới chỉ chọn từ mục thiếu đã xác minh.
