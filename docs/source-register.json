@@ -1,1 +1,67 @@
-{"note":"Giấy phép mã nguồn repo không bao phủ dữ liệu sao chép. Dịch/rút gọn/diễn đạt lại không xóa nghĩa vụ giấy phép của nội dung phái sinh. Không khẳng định an toàn pháp lý tuyệt đối.","schema_version":1,"sources":[{"accessed_at":"2026-10-29","distribution_allowed":"unknown","document":"Đề cương thi HSK 3.0 (công bố 15/11/2025, theo nguồn thứ cấp)","id":"hsk-official","license":"Chưa xác minh — không sao chép danh sách đề cương gốc vào repo","name":"HSK — Chinese Testing International","notes":"Nguồn thứ cấp (Wikipedia, tổng hợp HSK 3.0) cho biết HSK 3.0 có 9 cấp, điểm ngữ pháp tích lũy cấp 1-6 là 70/148/244/339/409/459. Đây KHÔNG phải bằng chứng khóa baseline; cần văn bản gốc.","owner":"Chinese Testing International","scope":"Xác định phạm vi và phân cấp HSK1-6 cho baseline toàn diện","url":"https://www.chinesetest.cn/HSK","verification_status":"blocked_official_text_not_checked","version_checked":"Chưa đối chiếu được văn bản gốc trong phiên này"},{"accessed_at":"2026-10-29","distribution_allowed":"conditional_attribution_noncommercial_sharealike","document":"Chinese Grammar Wiki","id":"cgw","license":"CC BY-NC-SA 3.0 (theo đặc tả §14; cần xác minh lại trên trang giấy phép trước khi phát hành thương mại)","license_url":"https://creativecommons.org/licenses/by-nc-sa/3.0/","name":"Chinese Grammar Wiki (AllSet Learning)","owner":"AllSet Learning","pages_used":["https://resources.allsetlearning.com/chinese/grammar/Connecting_nouns_with_%22shi%22","https://resources.allsetlearning.com/chinese/grammar/%E6%AF%94%E5%AD%97%E5%8F%A5","https://resources.allsetlearning.com/chinese/grammar/ASGAGDCQ","https://resources.allsetlearning.com/gramwiki/?title=Change_of_state_with_%22le%22&"],"scope":"Tham khảo giải thích, ví dụ, đối chiếu cho 3 bài mẫu; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn","url":"https://resources.allsetlearning.com/chinese/grammar/","verification_status":"partially_verified_pages_read_via_search","version_checked":"Trang truy cập qua tìm kiếm ngày 2026-10-29 (bản crawl gần nhất vài ngày trước)"},{"accessed_at":null,"distribution_allowed":"unknown","document":"CC-CEDICT","id":"cc-cedict","license":"CC BY-SA 4.0 (cần xác minh lại trước khi dùng)","name":"CC-CEDICT","owner":"CC-CEDICT project","scope":"Kiểm chứng cách đọc và nghĩa khi cần; định nghĩa Trung-Anh KHÔNG phải bản dịch tiếng Việt đã duyệt","url":"https://www.mdbg.net/chinese/dictionary?page=cc-cedict","verification_status":"not_used_yet","version_checked":"Chưa dùng trong phiên này"},{"accessed_at":null,"distribution_allowed":"pending_version_lock","document":"ts-fsrs","id":"ts-fsrs","license":"MIT (cần xác minh lại khi khóa phiên bản)","name":"ts-fsrs (open-spaced-repetition)","owner":"open-spaced-repetition","scope":"Thư viện SRS sẽ dùng ở P05; KHÔNG dùng công thức tự chế mang tên FSRS","url":"https://github.com/open-spaced-repetition/ts-fsrs","verification_status":"not_used_yet","version_checked":"Chưa khóa phiên bản — task P05"}],"updated_at":"2026-10-29"}
+{
+  "note": "Giấy phép mã nguồn repo không bao phủ dữ liệu sao chép. Dịch/rút gọn/diễn đạt lại không xóa nghĩa vụ giấy phép của nội dung phái sinh. Không khẳng định an toàn pháp lý tuyệt đối.",
+  "schema_version": 1,
+  "sources": [
+    {
+      "accessed_at": "2026-10-29",
+      "distribution_allowed": "unknown",
+      "document": "Đề cương thi HSK 3.0 (công bố 15/11/2025, theo nguồn thứ cấp)",
+      "id": "hsk-official",
+      "license": "Chưa xác minh — không sao chép danh sách đề cương gốc vào repo",
+      "name": "HSK — Chinese Testing International",
+      "notes": "Nguồn thứ cấp (Wikipedia, tổng hợp HSK 3.0) cho biết HSK 3.0 có 9 cấp, điểm ngữ pháp tích lũy cấp 1-6 là 70/148/244/339/409/459. Đây KHÔNG phải bằng chứng khóa baseline; cần văn bản gốc.",
+      "owner": "Chinese Testing International",
+      "scope": "Xác định phạm vi và phân cấp HSK1-6 cho baseline toàn diện",
+      "url": "https://www.chinesetest.cn/HSK",
+      "verification_status": "blocked_official_text_not_checked",
+      "version_checked": "Chưa đối chiếu được văn bản gốc trong phiên này"
+    },
+    {
+      "accessed_at": "2026-10-29",
+      "distribution_allowed": "conditional_attribution_noncommercial_sharealike",
+      "document": "Chinese Grammar Wiki",
+      "id": "cgw",
+      "license": "CC BY-NC-SA 3.0 (theo đặc tả §14; cần xác minh lại trên trang giấy phép trước khi phát hành thương mại)",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "name": "Chinese Grammar Wiki (AllSet Learning)",
+      "owner": "AllSet Learning",
+      "pages_used": [
+        "https://resources.allsetlearning.com/chinese/grammar/Connecting_nouns_with_%22shi%22",
+        "https://resources.allsetlearning.com/chinese/grammar/%E6%AF%94%E5%AD%97%E5%8F%A5",
+        "https://resources.allsetlearning.com/chinese/grammar/ASGAGDCQ",
+        "https://resources.allsetlearning.com/gramwiki/?title=Change_of_state_with_%22le%22&"
+      ],
+      "scope": "Tham khảo giải thích, ví dụ, đối chiếu cho 3 bài mẫu; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn",
+      "url": "https://resources.allsetlearning.com/chinese/grammar/",
+      "verification_status": "partially_verified_pages_read_via_search",
+      "version_checked": "Trang truy cập qua tìm kiếm ngày 2026-10-29 (bản crawl gần nhất vài ngày trước)"
+    },
+    {
+      "accessed_at": null,
+      "distribution_allowed": "unknown",
+      "document": "CC-CEDICT",
+      "id": "cc-cedict",
+      "license": "CC BY-SA 4.0 (cần xác minh lại trước khi dùng)",
+      "name": "CC-CEDICT",
+      "owner": "CC-CEDICT project",
+      "scope": "Kiểm chứng cách đọc và nghĩa khi cần; định nghĩa Trung-Anh KHÔNG phải bản dịch tiếng Việt đã duyệt",
+      "url": "https://www.mdbg.net/chinese/dictionary?page=cc-cedict",
+      "verification_status": "not_used_yet",
+      "version_checked": "Chưa dùng trong phiên này"
+    },
+    {
+      "accessed_at": "2026-10-29",
+      "distribution_allowed": "MIT (vendored, kèm LICENSE)",
+      "document": "ts-fsrs",
+      "id": "ts-fsrs",
+      "license": "MIT (cần xác minh lại khi khóa phiên bản)",
+      "name": "ts-fsrs (open-spaced-repetition)",
+      "owner": "open-spaced-repetition",
+      "scope": "Thư viện SRS sẽ dùng ở P05; KHÔNG dùng công thức tự chế mang tên FSRS",
+      "url": "https://github.com/open-spaced-repetition/ts-fsrs",
+      "verification_status": "verified_version_locked",
+      "version_checked": "ts-fsrs 5.4.2, MIT, dist/index.mjs vendored nguyên văn ngày 2026-10-29; API next/repeat/Rating/State đã kiểm tra bằng node --test tests/test_fsrs.mjs (7 passed)"
+    }
+  ],
+  "updated_at": "2026-10-29"
+}
