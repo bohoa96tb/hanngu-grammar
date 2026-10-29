@@ -14,3 +14,9 @@ Chưa có bản phát hành nào.
   `.github/workflows/pages.yml` do API của GitHub App trả 403 với file workflow.
   Pages chưa bật nên chưa có URL live đã xác minh; rollback: về commit trước
   bằng cách ghi đè file tương ứng qua Contents API (không force-push).
+
+- 2026-10-29 — GitHub Pages live đã xác minh qua text fetch (04:52 UTC):
+  https://bohoa96tb.github.io/hanngu-grammar/ — index hiển thị đúng tiêu đề
+  và tagline, data/lessons.json đủ 3 bài. Deploy từ nhánh main (không dùng
+  workflow Actions, vì file workflow bị 403 qua API). Chưa kiểm tra tương tác
+  JS trực tiếp trên live bằng trình duyệt thật.
