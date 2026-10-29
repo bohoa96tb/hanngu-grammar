@@ -1,0 +1,546 @@
+{
+  "schema_version": 1,
+  "edition": {
+    "id": "hsk-exam-syllabus-2025-11",
+    "source": "hsk-official",
+    "section": "语法大纲 HSK3 (tr.389) và HSK4 (tr.392)",
+    "crawl_date": "2026-09-25",
+    "note": "Diễn giải bằng tiếng Việt của dự án, không sao chép nguyên văn bảng hay câu ví dụ của đề cương (quyền phân phối chưa xác minh). Số mục nhóm là cách chia của dự án, KHÔNG phải số mục chính thức và KHÔNG dùng thay cho số chính thức. Bố cục bảng trong bản trích bị nhòe ở một số hàng nên nhóm con của một vài phó từ ghi chú chưa chắc chắn."
+  },
+  "hsk3": [
+    {
+      "id": "OFF-H3-01",
+      "title_vi": "Tiền tố 老—",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-02",
+      "title_vi": "Hậu tố —家/—子/—员",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-03",
+      "title_vi": "Phương vị 东/南/西/北/北方/东方/南方/西方/中间",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-04",
+      "title_vi": "Năng nguyện 需要/该/应该/愿意/得",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-05",
+      "title_vi": "Ly hợp từ động tân式 (放假/见面/结婚/洗澡)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-06",
+      "title_vi": "Ly hợp từ động bổ式 (离开/完成/分开)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-07",
+      "title_vi": "Nghi vấn 怎样 và câu hỏi 怎样+động từ",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-08",
+      "title_vi": "Nghi vấn dùng không hỏi (任指/不定指)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-09",
+      "title_vi": "Nhân xưng 别人/咱们",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-10",
+      "title_vi": "Chỉ định 别的/其他",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-11",
+      "title_vi": "Lượng từ HSK3 (把/双/张/种/层/封/页/辆/节/所/班/段/头/句; 碗/盘/公斤/斤/角/毛/刻/米; 口/回/遍/声; trùng điệp)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-12",
+      "title_vi": "Phó từ mức độ 更/特别/挺/有些/越/极 (và 比较)",
+      "status": "missing",
+      "lesson_ids": [],
+      "note": "Nhóm con trong bản trích có chỗ nhòe."
+    },
+    {
+      "id": "OFF-H3-13",
+      "title_vi": "Phó từ phạm vi 一块儿/一共/只/到处/只是",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-14",
+      "title_vi": "Phó từ thời gian 马上/先/一会儿/刚/刚刚/一直",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-15",
+      "title_vi": "Phó từ tần suất 总/总是/又/常常",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-16",
+      "title_vi": "Phó từ liên kết 一边 (一边……,一边……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-17",
+      "title_vi": "Phó từ tình thái 大概/必须/差不多/一定/好像/几乎",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-18",
+      "title_vi": "Phó từ ngữ khí 当然/其实/终于/才",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-19",
+      "title_vi": "Phủ định 不必/不用",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-20",
+      "title_vi": "Giới từ 为/向/为了/为/根据/关于",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-21",
+      "title_vi": "Giới từ 把/被 (chỉ tác nhân/bị tác động)",
+      "status": "partial",
+      "lesson_ids": [
+        "ba-sentence-1",
+        "bei-passive-1"
+      ],
+      "note": "Bài mới lô 10, đã rà soát nội bộ."
+    },
+    {
+      "id": "OFF-H3-22",
+      "title_vi": "Liên từ 或/或者; 只有/只要/不但/而且/如果/可是/然后; 的话",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-23",
+      "title_vi": "Động bổ đoản ngữ dạng 2",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-24",
+      "title_vi": "Đồng vị đoản ngữ; tứ tự cách; số lượng trùng điệp",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-25",
+      "title_vi": "Cụm cố định HSK3 (在……看来, 不一会儿, 不A不B, 看来/看起来/看上去, 一般来说, 不怎么样, 除了……, 从……起, 一……也/都+不/没……, 对……来说, 一点儿也不)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-26",
+      "title_vi": "Mẫu cố định HSK3 ((在)……以前/以后/前/后, 越……越……, X什么(啊), 在……上/下/中, 该……了)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-27",
+      "title_vi": "Chủ ngữ bằng động/tính đoản ngữ hoặc chủ vị đoản ngữ; đa định ngữ",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-28",
+      "title_vi": "Kết quả bổ ngữ dạng 2 (到/住/走/上)",
+      "status": "partial",
+      "lesson_ids": [
+        "result-complement"
+      ],
+      "note": "Bài cũ dạy 完/好/懂/错; thiếu 到/住/走/上."
+    },
+    {
+      "id": "OFF-H3-29",
+      "title_vi": "Xu hướng bổ ngữ nghĩa dẫn申 (kết quả/bắt đầu/tiếp tục)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-30",
+      "title_vi": "Khả năng bổ ngữ dạng 1 (động từ+得/不+động/tính từ)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-31",
+      "title_vi": "Mức độ bổ ngữ dạng 1 (tính từ+得很; 极了/坏了)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-32",
+      "title_vi": "Số lượng bổ ngữ dạng 3 (khoảng cách từ lúc kết thúc đến thời điểm)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-33",
+      "title_vi": "Câu hỏi phản vấn dạng 1 (不是……吗？)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-34",
+      "title_vi": "把字句 dạng 1",
+      "status": "covered",
+      "lesson_ids": [
+        "ba-sentence-1"
+      ],
+      "note": "Bài mới lô 10, đã rà soát nội bộ."
+    },
+    {
+      "id": "OFF-H3-35",
+      "title_vi": "被动句 dạng 1",
+      "status": "covered",
+      "lesson_ids": [
+        "bei-passive-1"
+      ],
+      "note": "Bài mới lô 10, đã rà soát nội bộ."
+    },
+    {
+      "id": "OFF-H3-36",
+      "title_vi": "连动句 dạng 2: 着 chỉ hành động kèm theo (động từ1+着+động từ2)",
+      "status": "covered",
+      "lesson_ids": [
+        "zhe-accompanying"
+      ],
+      "note": "Bài mới lô 10, đã rà soát nội bộ."
+    },
+    {
+      "id": "OFF-H3-37",
+      "title_vi": "比较句 dạng 2 (更/还; 一样; 不比; 多/少/早/晚+động từ+ số lượng)",
+      "status": "covered",
+      "lesson_ids": [
+        "bi-comparison-2"
+      ],
+      "note": "Bài mới lô 10, đã rà soát nội bộ."
+    },
+    {
+      "id": "OFF-H3-38",
+      "title_vi": "存现句 dạng 3 (xuất hiện/biến mất)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-39",
+      "title_vi": "是……的句 dạng 2 (nhấn mạnh quan điểm/thái độ người nói)",
+      "status": "partial",
+      "lesson_ids": [
+        "shi-de-emphasis"
+      ],
+      "note": "Bài cũ dạy dạng HSK2 (thời gian/địa điểm/cách thức/người thực hiện)."
+    },
+    {
+      "id": "OFF-H3-40",
+      "title_vi": "Trùng động句 (chủ ngữ+động từ+tân ngữ+động từ+bổ ngữ)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-41",
+      "title_vi": "Câu phức承接 (先……，再/然后……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-42",
+      "title_vi": "Câu phức lựa chọn (或者……，或者……; 一会儿……，一会儿……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-43",
+      "title_vi": "Câu phức song song (又……，又……; 一边……，一边……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-44",
+      "title_vi": "Câu phức递进 (不但……，而且……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-45",
+      "title_vi": "Câu phức转折 (虽然……，可是……)",
+      "status": "partial",
+      "lesson_ids": [
+        "complex-suiran-yinwei"
+      ],
+      "note": "Bài cũ dạy 虽然……，但是……; dạng 可是 chưa tách."
+    },
+    {
+      "id": "OFF-H3-46",
+      "title_vi": "Câu phức giả thiết (如果……，就……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-47",
+      "title_vi": "Câu phức điều kiện (……的话，就……; 只有……，才……; 只要……，就……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-48",
+      "title_vi": "Câu phức mục đích (为了……，……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-49",
+      "title_vi": "Câu phức紧缩 (……了……(就)……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H3-50",
+      "title_vi": "概数 dạng 2 (大概; hai số kề nhau)",
+      "status": "missing",
+      "lesson_ids": []
+    }
+  ],
+  "hsk4": [
+    {
+      "id": "OFF-H4-01",
+      "title_vi": "Năng nguyện 敢",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-02",
+      "title_vi": "Chỉ định 各/各位/各种/任何/此",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-03",
+      "title_vi": "Lượng từ HSK4 (打/袋/棵/台/幅; 脸/手/盒/屋子/桌子; 场/顿/趟)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-04",
+      "title_vi": "Phó từ mức độ 十分/更加/稍/稍微/尤其/多么",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-05",
+      "title_vi": "Phó từ phạm vi 共/全/光/仅/仅仅/至少",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-06",
+      "title_vi": "Phó từ thời gian 按时/从来/赶紧/赶快/已/忽然/将/将要/从/本來",
+      "status": "missing",
+      "lesson_ids": [],
+      "note": "Chữ 本來 trong bản trích có thể là 本来; ghi chú không chắc về dị thể."
+    },
+    {
+      "id": "OFF-H4-07",
+      "title_vi": "Phó từ tần suất/cách thức 重新/往往/偶尔/再次/老; 故意/互相/相互",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-08",
+      "title_vi": "Phó từ liên kết 却; tình thái 也许/恐怕",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-09",
+      "title_vi": "Phó từ ngữ khí 难道/千万/确实/只好/差(一)点儿/竟然/究竟/正好",
+      "status": "missing",
+      "lesson_ids": [],
+      "note": "才 xuất hiện ở nhiều cấp với chỉ số khác nhau; nhóm con chưa chắc chắn."
+    },
+    {
+      "id": "OFF-H4-10",
+      "title_vi": "Giới từ 自/当/由; 将/由/叫/让; 由于; 对于/与; 作为/按/按照",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-11",
+      "title_vi": "Liên từ 此外/而/并/与; 不光/不仅/另外/要是/因此/由于/加上/既然/甚至/不过/并且",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-12",
+      "title_vi": "Trợ từ khác 等/者/之/就是; thán từ 啊/嗯",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-13",
+      "title_vi": "Tứ tự cách (一A一B, 无A无B, 有A有B)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-14",
+      "title_vi": "Cụm cố định HSK4 (来得及/来不及, 就是说/这就是说, 有的是, 说不定, 不怎么)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-15",
+      "title_vi": "Mẫu cố định HSK4 (một lượng từ + 比 + một lượng từ; 在……方面; 怎么都/也+不/没……; 再也不/没……; 为了……而……; 够……的; 拿……来说; (没)有什么(好)X的; 动词+一X是一X; X也得X,不X也得X; X是X,Y是Y; X就是了; 你X你的吧; 还X呢; 说什么/怎么(着)也得X; X就X(点儿)吧; 让/叫你X你就X)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-16",
+      "title_vi": "Mức độ bổ ngữ dạng 2 (tính từ/động từ tâm lý+死了/厉害)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-17",
+      "title_vi": "Khả năng bổ ngữ dạng 2 (động từ+得/不+了)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-18",
+      "title_vi": "Câu hỏi phản vấn dạng 2 (把字句 phản vấn; 难道……吗？)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-19",
+      "title_vi": "把字句 dạng 2",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-20",
+      "title_vi": "被动句 dạng 2 (叫/让 làm dấu bị động)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-21",
+      "title_vi": "兼语句 dạng 2 (yêu ghét; gọi tên/nhận định; khiến)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-22",
+      "title_vi": "比较句 dạng 3 (A不如B; 跟……相比)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-23",
+      "title_vi": "Câu phủ định kép (不是……，而是……; phủ định kép nhấn mạnh)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-24",
+      "title_vi": "Câu phức song song HSK4 (一方面……，另一方面……; 首先……，其次……; 既……，又/也……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-25",
+      "title_vi": "Câu phức承接 HSK4 (首先……，然后……; ……，于是……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-26",
+      "title_vi": "Câu phức递进 HSK4 (不仅/不光……，还/而且……; ……,甚至……; ……，并且……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-27",
+      "title_vi": "Câu phức lựa chọn HSK4 (不是……，就是……; 连……也/都……，……更……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-28",
+      "title_vi": "Câu phức转折 HSK4 (尽管……，但是/可是……; ……，然而……; ……，不过……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-29",
+      "title_vi": "Câu phức giả thiết HSK4 (……X是X，就是/不过……; 要是……，就……; 要是……，(就)……，否则……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-30",
+      "title_vi": "Câu phức điều kiện HSK4 (不管……，都/也……; 无论……，都/也……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-31",
+      "title_vi": "Câu phức nhân quả HSK4 (既然……，就……; (由于)……，因此……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-32",
+      "title_vi": "Câu phức mục đích/nhượng bộ HSK4 (……，好……; 即使……，也……; 就是……，也……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-33",
+      "title_vi": "Câu phức紧缩 HSK4 (không dấu; 不……也……)",
+      "status": "missing",
+      "lesson_ids": []
+    },
+    {
+      "id": "OFF-H4-34",
+      "title_vi": "概数 dạng 3 (số từ+来+ lượng từ); cách nói số (大约/左右/前后; thập phân/phân số/phần trăm/bội số)",
+      "status": "missing",
+      "lesson_ids": []
+    }
+  ]
+}

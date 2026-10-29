@@ -74,14 +74,14 @@
   ],
   "latest_verified_commit": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
   "next_actions": [
-    "Đẩy lô 09 + sửa giọng (voicewarn2) + qa-05/qa-06 + checkpoint qua nhánh/PR/merge.",
-    "Nghiệm thu live 34 bài ở profile mới, trọng tâm: cảnh báo giọng (hộp thoại và/hoặc dòng cảnh báo) khi bấm Nghe mẫu, đếm 34 bài, mở 1 bài mới.",
-    "P01-02: đối chiếu HSK3–6; AUD-TTS-01: nghiệm thu audio trên thiết bị thật."
+    "Đẩy lô 10 + qa-07 (nhánh batch10-qa07 → PR → merge), rồi nghiệm thu live bản 38 bài ở profile mới (trọng tâm: đếm 38, mở 1 bài mới, trắc nghiệm đúng).",
+    "Sau đó: đối chiếu HSK5–6 cho P01-02, hoặc lô HSK3 tiếp theo (câu phức HSK3, kết quả bổ ngữ dạng 2, khả năng bổ ngữ dạng 1).",
+    "AUD-TTS-01: nghiệm thu audio trên thiết bị thật; cơ chế hộp thoại cảnh báo giọng vẫn chưa quan sát được (qa-07)."
   ],
   "pending_review_ids": [],
   "phase": "P06",
   "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "34 bài (161 bài tập) lô 09 + sửa lỗi cảnh báo giọng (D24, build voicewarn2) chờ đẩy. Build voicewarn 28 bài đã nghiệm thu live ở profile mới (qa-06); lỗi cảnh báo giọng đã tìm ra nguyên nhân (getVoices rỗng lúc bấm) và đã sửa. P01-02 HSK1–2 cập nhật cho 28 bài. TTS tạm thời; audio thực tế not_run.",
+  "resume_notes": "Lô 10 xong, chờ đẩy: 4 bài HSK3 mới (ba-sentence-1, bei-passive-1, zhe-accompanying, bi-comparison-2), tổng 38 bài / 181 bài tập, validator ĐẠT. Đối chiếu HSK3–4 xong (HSK3: 4/4/42; HSK4: tất cả thiếu); HSK5–6 chưa đối chiếu. qa-07 + checkpoint local từ phiên trước cũng nằm trong lần đẩy này. Điểm dừng: lô 10 xong; tiếp theo là nghiệm thu live 38 bài rồi đối chiếu HSK5–6 hoặc lô HSK3 tiếp theo.",
   "schema_version": 1,
   "spec_version": "1.0",
   "updated_at": "2026-10-29",
@@ -159,5 +159,5 @@
       "result": "Main và cây file Pages: 24 bài đúng. Giao diện: 18 bài sau cả cache-bust và hard refresh tới 06:10 UTC. Live 24 bài CHƯA xác minh."
     }
   ],
-  "working_tree_state": "batch09_plus_voicefix_ready_for_branch_pr"
+  "working_tree_state": "batch10_ready_for_branch_pr"
 }
