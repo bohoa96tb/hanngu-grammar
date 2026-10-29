@@ -11,6 +11,9 @@ let speechRate = 1;
 // Luyện nói P04-02 (bản cốt lõi): bản thu chỉ giữ trong bộ nhớ của trang này,
 // không lưu localStorage, không gửi lên máy chủ, mất khi rời/tải lại trang.
 // Không chấm điểm phát âm: người học tự nghe lại và đối chiếu với mẫu.
+// Thông báo sau một lần ôn vừa ghi, hiển thị một lần ở lần render Ôn lại
+// ngay sau đó (P09 phát hiện: trước đây lịch sử chỉ cập nhật sau khi tải lại).
+let lastReviewNote = "";
 let speakingRecorder = null;
 let speakingChunks = [];
 let speakingBlobUrl = null;
@@ -295,6 +298,7 @@ function renderReview() {
   const wrong = lessons.filter((l) => l.exercises.some((ex) => progress.attempts[ex.id] && !progress.attempts[ex.id].lastCorrect));
   const history = [...(progress.events || [])].slice(-10).reverse();
   app.innerHTML = `<h2>Ôn lại theo FSRS</h2>
+    ${lastReviewNote ? `<div class="feedback">${esc(lastReviewNote)}</div>` : ""}
     <p class="note">Lịch ôn do thư viện <strong>ts-fsrs 5.4.2</strong> tính, không phải công thức tự chế. Mốc thời gian lưu UTC; “hôm nay” theo múi giờ thiết bị của bạn. Mỗi thẻ là một bài đã hoàn thành. Cách ôn: tự nhớ lại công thức trước, bấm “Hiện công thức để đối chiếu”, rồi tự đánh giá mức nhớ — đây là tự đánh giá nhớ lại, không phải máy chấm bài tập. Học bài mới không bị khóa dù còn thẻ đến hạn.</p>
     <div class="card">
       <label for="reviewLimit">Giới hạn số thẻ ôn mỗi ngày (có thể chỉnh)</label>
@@ -340,11 +344,16 @@ function renderReview() {
         return;
       }
       progress.cards = result.cards; progress.events = result.events; saveProgress();
-      if (box) box.innerHTML = `<div class="feedback">Đã ghi: ${esc(result.event.rating_label)}. Hạn tiếp theo: ${new Date(result.card.due).toLocaleString("vi-VN")}.</div>`;
-      // Vô hiệu hóa các nút đánh giá của thẻ vừa ôn để tránh bấm lặp trong cùng lượt hiển thị.
-      document.querySelectorAll(`[data-rate^="${lessonId}:"]`).forEach((x) => { x.disabled = true; });
+      // Render lại ngay để thẻ vừa ôn rời khỏi "Đến hạn", vào "Sắp đến hạn"
+      // và lịch sử cập nhật tức thì (không cần tải lại trang như trước P09).
+      lastReviewNote = `Đã ghi: ${result.event.rating_label}. Hạn tiếp theo: ${new Date(result.card.due).toLocaleString("vi-VN")}.`;
+      render();
+      return;
     };
   });
+  // HTML đã xây xong từ lastReviewNote, giờ xóa để lần vào Ôn lại sau
+  // không hiện lại thông báo cũ.
+  lastReviewNote = "";
 }
 
 function renderAbout() {
