@@ -1,6 +1,6 @@
 {
   "active_task_ids": [
-    "P00-02"
+    "P05-01"
   ],
   "blocked_items": [
     {
@@ -13,11 +13,10 @@
       ]
     },
     {
-      "action_needed_by_user": "Cập nhật cài đặt GitHub App của Muse để bao gồm repository hanngu-grammar (repo này được tạo sau lần chọn repo trước đó nên có thể chưa nằm trong danh sách cài đặt). Mở link cài đặt, chọn hanngu-grammar, lưu, rồi nhắn 'Tiếp tục'.",
-      "blocker": "Push snapshot thất bại: POST git/trees trả 403 'Resource not accessible by integration'. Đọc (get_me, search, list_commits) vẫn được, nhưng ghi nội dung bị từ chối — dấu hiệu App chưa được cài trên repo này hoặc chưa có quyền Contents ghi. Head remote vẫn là 86f65bbe, chưa có commit mới.",
-      "id": "GH-WRITE-ACCESS",
+      "action_needed_by_user": "Bật GitHub Pages từ nhánh main (Settings > Pages > Deploy from a branch > main, /(root)), hoặc tự thêm file .github/workflows/pages.yml qua giao diện web (API của App bị chặn 403 với file workflow). Sau đó báo để kiểm tra URL live.",
+      "blocker": "File .github/workflows/pages.yml bị từ chối 403 qua Contents API (hạn chế với file workflow của GitHub App); các file khác đã lên đủ. Pages chưa được bật nên chưa có URL live đã xác minh.",
+      "id": "PAGES-WORKFLOW-403",
       "task_ids": [
-        "P00-02",
         "P10-01"
       ]
     }
@@ -46,14 +45,15 @@
     "styles.css",
     "tests/test_validator.py"
   ],
-  "code_base_commit": null,
+  "code_base_commit": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
   "completed_task_ids": [
     "P00-01",
     "P01-01",
     "P02-01",
     "P03-01",
     "P04-01",
-    "P04-02"
+    "P04-02",
+    "P00-02"
   ],
   "content_counts": {
     "baseline_items": 3,
@@ -64,17 +64,19 @@
   },
   "github": {
     "connect_url": "https://agent.meta.ai/connectors/connect/github",
+    "head_verified": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
     "initial_commit": "86f65bbe639c7af96afe316eb8a26b228092a0eb",
     "owner": "bohoa96tb",
+    "pages_enabled": false,
+    "pages_url_expected": "https://bohoa96tb.github.io/hanngu-grammar/",
+    "pages_url_verified": null,
     "preferred_repo": "hanngu-grammar",
-    "pushed": "partial_via_create_or_update_file",
-    "repo_created_by": "user_via_web_initial_commit",
+    "pushed": true,
+    "pushed_files": "21/22 (trừ .github/workflows/pages.yml bị 403)",
     "repo_exists": true,
-    "repo_fallback": "hanngu-grammar-app",
     "repo_url": "https://github.com/bohoa96tb/hanngu-grammar",
     "status": "connected",
-    "push_last_error": "push_files vẫn 403 git/trees; create_or_update_file từng file đã thành công cho README + 10 file (head 2e05854e). Đang đẩy nốt docs còn lại.",
-    "head_after_batch2": "2e05854eda4df84fb60926a6125bdd26aec1799b"
+    "workflow_file_pushed": false
   },
   "known_limitations": [
     "Chưa kiểm tra trên Android Chrome / Safari iOS thật.",
@@ -84,16 +86,15 @@
     "Ôn tập FSRS thật, luyện nói, chấm phát âm, đồng bộ, đăng nhập chưa làm (backlog).",
     "Luyện nói P04-02 chưa kiểm tra mic/thu âm trên trình duyệt thật."
   ],
-  "latest_verified_commit": null,
+  "latest_verified_commit": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
   "next_actions": [
-    "Người dùng cập nhật cài đặt GitHub App để bao gồm hanngu-grammar, rồi nhắn 'Tiếp tục' để thử push lại.",
-    "Không thử push lại bằng gh/PAT/token khác (theo hướng dẫn connector).",
-    "Sau khi push thành công: xác minh head SHA, cập nhật checkpoint, kiểm tra Pages."
+    "Người dùng bật Pages từ nhánh main (hoặc thêm workflow qua web), rồi nhắn 'Tiếp tục' để kiểm tra URL live.",
+    "Tiếp theo về nội dung: P05-01 (FSRS thật) hoặc P01-02 khi có đề cương gốc."
   ],
   "pending_review_ids": [],
   "phase": "P05",
   "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "P00-P04 xong, gồm P04-02 luyện nói. Repo bohoa96tb/hanngu-grammar đã tồn tại (initial commit 86f65bbe, chỉ README placeholder) nhưng PUSH CHƯA THÀNH CÔNG do 403 App chưa có quyền ghi trên repo này. Toàn bộ code vẫn ở local ~/workspace/hanngu-grammar, chưa có commit mới remote.",
+  "resume_notes": "P00-P04 đã đẩy lên GitHub bằng create_or_update_file từng file (push_files 403 git/trees; workflow 403 riêng). Head đã xác minh fd8799247, 21/22 file, chỉ thiếu .github/workflows/pages.yml. Pages chưa bật, chưa có URL live đã xác minh. Task tiếp theo: P05-01.",
   "schema_version": 1,
   "spec_version": "1.0",
   "updated_at": "2026-10-29",
@@ -133,7 +134,11 @@
     {
       "command": "create_or_update_file từng file (đợt 1+2)",
       "result": "Thành công 11/11 file: README (952ea8f), index.html, styles.css, app.js, data/lessons.json, .gitignore (head 77225052), AGENTS, LICENSE, scripts/validate.py, tests/test_validator.py, docs spec (head 2e05854e)."
+    },
+    {
+      "command": "list_commits + get_file_contents sau đợt 3",
+      "result": "Head fd8799247 (thêm docs/release-log.md). index.html SHA 519f760d, app.js 65ee98e4, data/lessons.json 05f84f13, docs/checkpoint.json 2ec559cd khớp file đã đẩy; .github/workflows/pages.yml không tồn tại remote (403 khi ghi)."
     }
   ],
-  "working_tree_state": "pushing_individually_batch2_done"
+  "working_tree_state": "pushed_21_of_22_workflow_missing"
 }
