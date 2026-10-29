@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "jianyu-qing-jiao-rang",
+      "title_vi": "Câu kiêm ngữ với 请/叫/让",
+      "pattern": "Chủ ngữ + 请/叫/让 + Người + Động từ (+ Tân ngữ)",
+      "hsk_level": 2,
+      "difficulty": "medium",
+      "objective": "Sau bài này, người học dùng câu kiêm ngữ 请/叫/让 + người + động từ để nói ai bảo hoặc mời ai làm gì, phân biệt với câu hai tân ngữ dùng 给.",
+      "when_to_use": "Khi nói một người bảo, gọi hoặc mời một người khác làm một việc.",
+      "formula_notes": "请/叫/让 làm động từ chính; người được bảo hoặc mời đứng ngay sau nó, trước động từ chỉ việc làm: 妈妈叫我去买东西. 叫 thiên về bảo hoặc gọi; mời một cách lịch sự dùng 请. Khác với 给 (mua giúp cho ai) trong câu hai tân ngữ.",
+      "examples": [
+        {
+          "zh": "老师请他回答问题。",
+          "vi": "Thầy giáo mời anh ấy trả lời câu hỏi.",
+          "pinyin": "Lǎoshī qǐng tā huídá wèntí.",
+          "tokens": [
+            "老师",
+            "请",
+            "他",
+            "回答",
+            "问题"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "妈妈叫我去买东西。",
+          "vi": "Mẹ bảo tôi đi mua đồ.",
+          "pinyin": "Māma jiào wǒ qù mǎi dōngxi.",
+          "tokens": [
+            "妈妈",
+            "叫",
+            "我",
+            "去",
+            "买",
+            "东西"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "请让我想一想。",
+          "vi": "Xin hãy để tôi nghĩ một chút.",
+          "pinyin": "Qǐng ràng wǒ xiǎng yì xiǎng.",
+          "tokens": [
+            "请",
+            "让",
+            "我",
+            "想",
+            "一",
+            "想"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "jianyu-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn câu đúng để nói 'Mẹ bảo tôi đi mua đồ.'",
+          "payload": {
+            "options": [
+              "妈妈叫我去买东西。",
+              "妈妈我叫去买东西。",
+              "妈妈叫去我买东西。",
+              "妈妈叫我买去东西。"
+            ]
+          },
+          "accepted_answers": [
+            "妈妈叫我去买东西。"
+          ],
+          "explanation": "妈妈 + 叫 + 我 + 去买东西。"
+        },
+        {
+          "id": "jianyu-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Thầy giáo mời anh ấy trả lời câu hỏi.'",
+          "payload": {
+            "prompt_zh": "老师请他___问题。",
+            "hint_vi": "Dùng 回答。"
+          },
+          "accepted_answers": [
+            "老师请他回答问题。",
+            "老师请他回答问题"
+          ],
+          "explanation": "老师 + 请 + 他 + 回答问题。"
+        },
+        {
+          "id": "jianyu-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành câu: 'Thầy giáo mời anh ấy trả lời câu hỏi.'",
+          "payload": {
+            "tokens": [
+              "问题",
+              "老师",
+              "请",
+              "他",
+              "回答"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "老师",
+              "请",
+              "他",
+              "回答",
+              "问题"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → 请 → người → động từ → tân ngữ."
+        },
+        {
+          "id": "jianyu-ex4",
+          "type": "error_spot",
+          "prompt_vi": "Câu sau sai ở khối nào? 妈妈叫去我买东西。",
+          "payload": {
+            "sentence_zh": "妈妈叫去我买东西。",
+            "options": [
+              "妈妈",
+              "叫",
+              "去",
+              "我",
+              "买",
+              "东西"
+            ]
+          },
+          "accepted_answers": [
+            "去"
+          ],
+          "explanation": "Người được bảo (我) phải đứng ngay sau 叫, trước động từ 去。"
+        },
+        {
+          "id": "jianyu-ex5",
+          "type": "fill",
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Thầy giáo mời bạn trả lời câu hỏi' (viết bằng chữ Hán)",
+          "payload": {
+            "prompt_zh": null,
+            "hint_vi": "Bắt đầu bằng 老师。"
+          },
+          "accepted_answers": [
+            "老师请你回答问题。",
+            "老师请你回答问题"
+          ],
+          "explanation": "Thầy giáo mời bạn trả lời câu hỏi: 老师 + 请 + 你 + 回答问题。"
+        }
+      ],
+      "confusions": [
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "妈妈叫买东西我。",
+          "explanation": "Người được bảo phải đứng ngay sau 叫, trước động từ: 妈妈叫我去买东西。"
+        },
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "妈妈给我买东西。(khi muốn nói 'mẹ bảo tôi đi mua đồ')",
+          "explanation": "给 là 'mua giúp cho'; bảo ai làm gì thì dùng 叫: 妈妈叫我去买东西。"
+        },
+        {
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "请回答问题。(khi muốn nói 'mời anh ấy trả lời')",
+          "explanation": "Thiếu người được mời thì thành yêu cầu trực tiếp với người nghe; câu kiêm ngữ cần 请他回答问题。"
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "hsk-official",
+          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 09 từ danh mục HSK1–2 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí."
+      }
+    }
+  ]
+}
