@@ -88,3 +88,14 @@ bằng Actions.
 Ảnh hưởng: giữ file workflow trong local để người dùng tự thêm qua web nếu
 muốn; phương án mặc định là bật Pages từ nhánh `main` (/(root)) trong Settings.
 Chưa tuyên bố URL live cho tới khi kiểm tra được.
+
+## D14 — FSRS thật bằng ts-fsrs 5.4.2 vendored, tắt fuzz, một thẻ/bài (29/10/2026)
+Lý do: đặc tả §9 yêu cầu thư viện FSRS được duy trì, khóa phiên bản, không dùng
+công thức tự chế. ts-fsrs 5.4.2 (MIT, không phụ thuộc) có bản ESM dùng được
+trực tiếp trên GitHub Pages tĩnh mà không cần build.
+Ảnh hưởng: `vendor/ts-fsrs-5.4.2.mjs` sao chép nguyên văn từ npm, logic thuần
+ở `srs.mjs`, app chuyển sang ES module. `enable_fuzz: false` để lịch ôn xác
+định và kiểm thử lặp lại được; các tham số khác giữ mặc định của thư viện.
+Một thẻ cho mỗi bài đã hoàn thành (chưa tách thẻ theo kỹ năng) để tránh quá
+tải ở giai đoạn mẫu; bài chưa hoàn thành không vào hàng đợi, học mới không bị
+khóa. Mốc thời gian lưu UTC (ISO), hiển thị theo múi giờ thiết bị.
