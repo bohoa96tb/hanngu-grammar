@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "tasks": [
+    {
+      "depends_on": [],
+      "evidence": "docs/*, AGENTS.md, README.md; validator đạt",
+      "files": [
+        "AGENTS.md",
+        "README.md",
+        "docs/requirements.json",
+        "docs/decisions.md",
+        "docs/source-register.json",
+        "docs/curriculum-baseline.json",
+        "docs/task-board.json",
+        "docs/checkpoint.json",
+        "docs/quality-gates.md",
+        "docs/schema.md"
+      ],
+      "id": "P00-01",
+      "inputs": "Đặc tả, quyền người dùng",
+      "outputs": "Hồ sơ dự án và hệ thống quản lý",
+      "related_requirements": [
+        "GOV-02",
+        "SEC-01"
+      ],
+      "status": "done",
+      "title": "Khởi tạo hồ sơ dự án và checkpoint"
+    },
+    {
+      "depends_on": [
+        "P00-01"
+      ],
+      "evidence": "push_files 403 git/trees; đang đẩy từng file bằng create_or_update_file, head sau đợt 2 là 2e05854e.",
+      "files": [],
+      "id": "P00-02",
+      "inputs": "Tài khoản bohoa96tb",
+      "outputs": "Repository hanngu-grammar trên GitHub, nhánh main",
+      "related_requirements": [
+        "GOV-01"
+      ],
+      "status": "in_progress",
+      "title": "Kết nối GitHub và tạo repository"
+    },
+    {
+      "depends_on": [
+        "P00-01"
+      ],
+      "evidence": "docs/source-register.json; tìm kiếm 29/10/2026",
+      "files": [
+        "docs/source-register.json"
+      ],
+      "id": "P01-01",
+      "inputs": "HSK chính thức, Chinese Grammar Wiki, CC-CEDICT",
+      "outputs": "Source register với trạng thái xác minh thật",
+      "related_requirements": [
+        "SRC-01"
+      ],
+      "status": "done",
+      "title": "Xác minh nguồn cho bài mẫu và ghi trạng thái chưa rõ"
+    },
+    {
+      "depends_on": [
+        "P01-01"
+      ],
+      "evidence": "Cần văn bản đề cương gốc",
+      "files": [
+        "docs/curriculum-baseline.json"
+      ],
+      "id": "P01-02",
+      "inputs": "Văn bản đề cương HSK 3.0 gốc",
+      "outputs": "Baseline HSK1-6 đã khóa",
+      "related_requirements": [
+        "CUR-01"
+      ],
+      "status": "blocked",
+      "title": "Khóa baseline HSK1-6"
+    },
+    {
+      "depends_on": [
+        "P00-01"
+      ],
+      "evidence": "python3 scripts/validate.py: ĐẠT 3 bài; unittest 5 passed",
+      "files": [
+        "docs/schema.md",
+        "scripts/validate.py",
+        "tests/test_validator.py"
+      ],
+      "id": "P02-01",
+      "inputs": "Đặc tả §5-§7",
+      "outputs": "Schema v1 + validator + fixtures đúng/sai",
+      "related_requirements": [
+        "CUR-02"
+      ],
+      "status": "done",
+      "title": "Schema và validator dữ liệu"
+    },
+    {
+      "depends_on": [
+        "P02-01",
+        "P01-01"
+      ],
+      "evidence": "docs/reviews/batch-01.md; validator đạt",
+      "files": [
+        "data/lessons.json"
+      ],
+      "id": "P03-01",
+      "inputs": "Baseline mẫu, nguồn CGW",
+      "outputs": "3 bài mẫu đã rà soát (是, 比, 了)",
+      "related_requirements": [
+        "LES-01"
+      ],
+      "status": "done",
+      "title": "Biên soạn 3 bài mẫu đầu tiên"
+    },
+    {
+      "depends_on": [
+        "P03-01"
+      ],
+      "evidence": "Máy chủ tĩnh local trả 200 cho index và lessons.json; node --check đạt. Chưa kiểm tra thiết bị thật.",
+      "files": [
+        "index.html",
+        "styles.css",
+        "app.js"
+      ],
+      "id": "P04-01",
+      "inputs": "3 bài mẫu",
+      "outputs": "App tĩnh: danh mục, bài, luyện tập, TTS, tiến trình local, xuất/nhập",
+      "related_requirements": [
+        "UI-01",
+        "AUD-01"
+      ],
+      "status": "done",
+      "title": "Luồng học hoàn chỉnh với bài mẫu"
+    },
+    {
+      "depends_on": [
+        "P04-01"
+      ],
+      "evidence": "node --check app.js đạt; máy chủ tĩnh local trả 200 cho index.html và data/lessons.json; validator vẫn đạt 3 bài. Chưa kiểm tra mic/thu âm trên trình duyệt thật.",
+      "files": [
+        "app.js",
+        "docs/decisions.md"
+      ],
+      "id": "P04-02",
+      "inputs": "App P04",
+      "outputs": "Luyện nói: thu âm, phát lại, đọc đuổi (từ chối mic vẫn học được)",
+      "related_requirements": [
+        "AUD-02"
+      ],
+      "status": "done",
+      "title": "Luyện nói bản cốt lõi"
+    },
+    {
+      "depends_on": [
+        "P04-01"
+      ],
+      "evidence": "Chưa làm; cần khóa phiên bản ts-fsrs",
+      "files": [],
+      "id": "P05-01",
+      "inputs": "ts-fsrs",
+      "outputs": "Ôn tập FSRS thật + kiểm thử thời gian giả lập + chống ghi trùng",
+      "related_requirements": [
+        "SRS-01"
+      ],
+      "status": "pending",
+      "title": "Tích hợp FSRS và sao lưu/khôi phục"
+    },
+    {
+      "depends_on": [
+        "P05-01"
+      ],
+      "evidence": "Chưa làm; phụ thuộc baseline khóa",
+      "files": [],
+      "id": "P06-01",
+      "inputs": "Baseline khóa",
+      "outputs": "Các mục HSK1-2 bao phủ đầy đủ bởi bài đã duyệt",
+      "related_requirements": [
+        "CUR-01"
+      ],
+      "status": "pending",
+      "title": "Mở rộng HSK1-2"
+    },
+    {
+      "depends_on": [
+        "P06-01"
+      ],
+      "evidence": "Chưa làm",
+      "files": [],
+      "id": "P07-01",
+      "inputs": "Baseline khóa",
+      "outputs": "Các mục HSK3-4 hoàn chỉnh",
+      "related_requirements": [
+        "CUR-01"
+      ],
+      "status": "pending",
+      "title": "Mở rộng HSK3-4"
+    },
+    {
+      "depends_on": [
+        "P07-01"
+      ],
+      "evidence": "Chưa làm",
+      "files": [],
+      "id": "P08-01",
+      "inputs": "Baseline khóa",
+      "outputs": "Các mục HSK5-6 hoàn chỉnh",
+      "related_requirements": [
+        "CUR-01"
+      ],
+      "status": "pending",
+      "title": "Mở rộng HSK5-6"
+    },
+    {
+      "depends_on": [
+        "P08-01"
+      ],
+      "evidence": "Chưa làm",
+      "files": [],
+      "id": "P09-01",
+      "inputs": "Toàn bộ app + nội dung",
+      "outputs": "Báo cáo E2E, hiệu năng, tiếp cận, bảo vệ dữ liệu, backup",
+      "related_requirements": [
+        "OPS-01"
+      ],
+      "status": "pending",
+      "title": "Kiểm định toàn hệ thống"
+    },
+    {
+      "depends_on": [
+        "P00-02",
+        "P09-01"
+      ],
+      "evidence": "Workflow đã chuẩn bị; chưa chạy vì chưa có repo",
+      "files": [
+        ".github/workflows/pages.yml",
+        "docs/release-log.md"
+      ],
+      "id": "P10-01",
+      "inputs": "Repo GitHub",
+      "outputs": "Phát hành GitHub Pages đã kiểm tra live",
+      "related_requirements": [
+        "OPS-01"
+      ],
+      "status": "pending",
+      "title": "Phát hành và kiểm tra live"
+    }
+  ]
+}
