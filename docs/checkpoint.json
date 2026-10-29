@@ -2,17 +2,7 @@
   "active_task_ids": [
     "P06-01"
   ],
-  "blocked_items": [
-    {
-      "action_needed_by_user": "Cung cấp hoặc xác nhận văn bản đề cương HSK 3.0 gốc (hoặc link chính thức tới danh sách điểm ngữ pháp theo cấp) để đối chiếu trước khi khóa baseline.",
-      "blocker": "Chưa đối chiếu được văn bản đề cương gốc; chỉ có nguồn thứ cấp về số điểm ngữ pháp HSK 3.0.",
-      "id": "BASELINE-OFFICIAL",
-      "task_ids": [
-        "P01-02",
-        "P06-01"
-      ]
-    }
-  ],
+  "blocked_items": [],
   "changed_files": [
     ".github/workflows/pages.yml",
     ".gitignore",
@@ -51,7 +41,7 @@
     "P09-01"
   ],
   "content_counts": {
-    "baseline_items": null,
+    "baseline_items": 50,
     "draft_lessons": 0,
     "reviewed_lessons": 0,
     "published_lessons": 12
@@ -84,13 +74,14 @@
   ],
   "latest_verified_commit": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
   "next_actions": [
-    "P06 lô 2: biên soạn 6 bài HSK2 đang lên kế hoạch (zai, zhe, shi-de, result, direction, complex) theo từng lô nhỏ có rà soát.",
-    "Để khóa baseline: cần văn bản gốc đề cương thi 11/2025 (sách/PDF chính thức từ CTI/CLEC) để đối chiếu từng mục theo số thứ tự gốc."
+    "Vòng trình duyệt bản mới: đếm 12 bài trên live, kiểm tra lịch sử ôn cập nhật tức thì sau Good, ghi trạng thái thẻ Learning + bước học 10 phút.",
+    "P06 lô 2: biên soạn 6 bài HSK2 theo từng lô nhỏ có rà soát.",
+    "Ánh xạ điểm vi mô tiếp tục đối chiếu theo từng lô; quyền phân phối tài liệu gốc vẫn chưa xác minh — không đưa tài liệu gốc vào repo."
   ],
   "pending_review_ids": [],
   "phase": "P06",
   "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "P03 mẫu đủ 12 bài (validator 12 bài, 53 bài tập). Baseline 0.2-working (đề cương thi 11/2025, chưa khóa). P06-01 đang làm: lô 1 xong, lô 2 còn 6 bài HSK2 planned. P09-01 chỉ phạm vi mẫu; P09-02 chờ sau HSK1–6.",
+  "resume_notes": "Baseline 1.0-official-scope đã khóa phạm vi theo PDF chính thức (2025-11/2026-07), 50 nhóm, 了→HSK1, 在→HSK1. 12 bài mẫu đã rà soát đầy đủ theo P03 (batch-04). P01-02 xong ở mức phạm vi; P06-01 đang làm, lô 2 chưa biên soạn. Live 12 bài CHƯA xác minh xong — chờ vòng trình duyệt bản mới.",
   "schema_version": 1,
   "spec_version": "1.0",
   "updated_at": "2026-10-29",
@@ -150,7 +141,11 @@
     {
       "command": "python3 scripts/validate.py; python3 -m unittest; node --test tests/test_fsrs.mjs; node --check app.js",
       "result": "ĐẠT 12 bài, 53 bài tập; unittest 5 passed; FSRS 7 passed; JS_OK."
+    },
+    {
+      "command": "browser.open PDF chính thức + đọc 语法大纲 HSK1–6; python3 scripts/validate.py sau sửa cấp 了",
+      "result": "PDF đọc được toàn văn, bìa 2025-11/2026-07; 语法大纲 HSK1–6 đã đọc hết; validator ĐẠT 12 bài, 53 bài tập sau khi chuyển 了 sang HSK1 (content_version 2)."
     }
   ],
-  "working_tree_state": "p03_done_p06_lot1_done_ready_to_push"
+  "working_tree_state": "baseline_locked_scope_p03_reviewed_ready_to_push"
 }
