@@ -214,7 +214,7 @@
       "depends_on": [
         "P08-01"
       ],
-      "evidence": "Chưa làm",
+      "evidence": "docs/reviews/qa-01.md: test tự động đạt (validator, unittest 5, FSRS 7); tương tác trình duyệt 6/6 đạt trên bản live (localhost bị chặn ở cấp công cụ); 1 lỗi nhỏ về lịch sử ôn đã sửa trong app.js.",
       "files": [],
       "id": "P09-01",
       "inputs": "Toàn bộ app + nội dung",
@@ -222,7 +222,7 @@
       "related_requirements": [
         "OPS-01"
       ],
-      "status": "pending",
+      "status": "done",
       "title": "Kiểm định toàn hệ thống"
     },
     {
