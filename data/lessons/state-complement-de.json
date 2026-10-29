@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "lessons": [
+    {
+      "id": "state-complement-de",
+      "title_vi": "Bổ ngữ trạng thái với 得",
+      "pattern": "Động từ + 得 + Tính từ (cụm tính từ)",
+      "hsk_level": 2,
+      "difficulty": "medium",
+      "objective": "Sau bài này, người học dùng động từ + 得 + tính từ để đánh giá mức độ hoặc cách thức thực hiện một hành động, phân biệt 得 với 的 và 地.",
+      "when_to_use": "Khi muốn nhận xét một hành động được thực hiện tốt, nhanh, hay hay dở đến mức nào.",
+      "formula_notes": "得 đứng sau động từ, trước tính từ đánh giá: 跑得很快, 说得很好. Phủ định đặt trước tính từ: 写得不好 (không đặt 不 trước 得). Đừng nhầm: 的 đứng trước danh từ, 地 đứng trước động từ, còn bổ ngữ trạng thái sau động từ dùng 得.",
+      "examples": [
+        {
+          "zh": "他跑得很快。",
+          "vi": "Anh ấy chạy rất nhanh.",
+          "pinyin": "Tā pǎo de hěn kuài.",
+          "tokens": [
+            "他",
+            "跑",
+            "得",
+            "很",
+            "快"
+          ],
+          "from_vietnamese_intent": true
+        },
+        {
+          "zh": "她说得很好。",
+          "vi": "Cô ấy nói rất hay.",
+          "pinyin": "Tā shuō de hěn hǎo.",
+          "tokens": [
+            "她",
+            "说",
+            "得",
+            "很",
+            "好"
+          ],
+          "from_vietnamese_intent": false
+        },
+        {
+          "zh": "这个字写得不好。",
+          "vi": "Chữ này viết không đẹp.",
+          "pinyin": "Zhè gè zì xiě de bù hǎo.",
+          "tokens": [
+            "这",
+            "个",
+            "字",
+            "写",
+            "得",
+            "不",
+            "好"
+          ],
+          "from_vietnamese_intent": false
+        }
+      ],
+      "exercises": [
+        {
+          "id": "statede-ex1",
+          "type": "choice",
+          "prompt_vi": "Chọn câu đúng để nói 'Anh ấy chạy rất nhanh.'",
+          "payload": {
+            "options": [
+              "他跑得很快。",
+              "他跑的很快。",
+              "他跑得快很。",
+              "他跑很快得。"
+            ]
+          },
+          "accepted_answers": [
+            "他跑得很快。"
+          ],
+          "explanation": "他 + 跑 + 得 + 很快。"
+        },
+        {
+          "id": "statede-ex2",
+          "type": "fill",
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Cô ấy nói rất hay.'",
+          "payload": {
+            "prompt_zh": "她说得___。",
+            "hint_vi": "Dùng 很好。"
+          },
+          "accepted_answers": [
+            "她说得很好。",
+            "她说得很好"
+          ],
+          "explanation": "她 + 说 + 得 + 很好。"
+        },
+        {
+          "id": "statede-ex3",
+          "type": "order",
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy chạy rất nhanh.'",
+          "payload": {
+            "tokens": [
+              "快",
+              "他",
+              "跑",
+              "得",
+              "很"
+            ]
+          },
+          "accepted_answers": [
+            [
+              "他",
+              "跑",
+              "得",
+              "很",
+              "快"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → động từ → 得 → tính từ."
+        },
+        {
+          "id": "statede-ex4",
+          "type": "error_spot",
+          "prompt_vi": "Câu sau sai ở khối nào? 他跑的很快。",
+          "payload": {
+            "sentence_zh": "他跑的很快。",
+            "options": [
+              "他",
+              "跑",
+              "的",
+              "很",
+              "快"
+            ]
+          },
+          "accepted_answers": [
+            "的"
+          ],
+          "explanation": "Sau động từ làm bổ ngữ trạng thái phải dùng 得, không dùng 的。"
+        },
+        {
+          "id": "statede-ex5",
+          "type": "fill",
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Cô ấy hát rất hay' (viết bằng chữ Hán)",
+          "payload": {
+            "prompt_zh": null,
+            "hint_vi": "Bắt đầu bằng 她。"
+          },
+          "accepted_answers": [
+            "她唱得很好。",
+            "她唱得很好"
+          ],
+          "explanation": "Cô ấy hát rất hay: 她 + 唱 + 得 + 很好。"
+        }
+      ],
+      "confusions": [
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他跑的很快。",
+          "explanation": "Sau động từ làm bổ ngữ trạng thái phải dùng 得, không dùng 的。"
+        },
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他跑地很快。",
+          "explanation": "地 đứng trước động từ, không đứng sau động từ; sau động từ dùng 得。"
+        },
+        {
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他跑不得快。",
+          "explanation": "Phủ định đặt trước tính từ: 跑得不快, không đặt 不 trước 得。"
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "hsk-official",
+          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+        }
+      ],
+      "status": "published",
+      "content_version": 1,
+      "review": {
+        "reviewer": "quy-trinh-ra-soat-noi-bo",
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 09 từ danh mục HSK1–2 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí."
+      }
+    }
+  ]
+}
