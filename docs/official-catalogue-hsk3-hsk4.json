@@ -178,23 +178,21 @@
     {
       "id": "OFF-H3-28",
       "title_vi": "Kết quả bổ ngữ dạng 2 (到/住/走/上)",
-      "status": "partial",
-      "lesson_ids": [
-        "result-complement"
-      ],
+      "status": "covered",
+      "lesson_ids": ["result-complement", "result-complement-2"],
       "note": "Bài cũ dạy 完/好/懂/错; thiếu 到/住/走/上."
     },
     {
       "id": "OFF-H3-29",
       "title_vi": "Xu hướng bổ ngữ nghĩa dẫn申 (kết quả/bắt đầu/tiếp tục)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": ["direction-complement", "direction-complement-2"]
     },
     {
       "id": "OFF-H3-30",
       "title_vi": "Khả năng bổ ngữ dạng 1 (động từ+得/不+động/tính từ)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": ["potential-complement-1"]
     },
     {
       "id": "OFF-H3-31",
@@ -253,23 +251,21 @@
     {
       "id": "OFF-H3-38",
       "title_vi": "存现句 dạng 3 (xuất hiện/biến mất)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": ["cunxian-chu", "cunxian-appearance"]
     },
     {
       "id": "OFF-H3-39",
       "title_vi": "是……的句 dạng 2 (nhấn mạnh quan điểm/thái độ người nói)",
-      "status": "partial",
-      "lesson_ids": [
-        "shi-de-emphasis"
-      ],
+      "status": "covered",
+      "lesson_ids": ["shi-de-emphasis", "shi-de-attitude"],
       "note": "Bài cũ dạy dạng HSK2 (thời gian/địa điểm/cách thức/người thực hiện)."
     },
     {
       "id": "OFF-H3-40",
       "title_vi": "Trùng động句 (chủ ngữ+động từ+tân ngữ+động từ+bổ ngữ)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": ["verb-repetition-sentence"]
     },
     {
       "id": "OFF-H3-41",
@@ -307,14 +303,14 @@
     {
       "id": "OFF-H3-46",
       "title_vi": "Câu phức giả thiết (如果……，就……)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": ["complex-hypothesis"]
     },
     {
       "id": "OFF-H3-47",
       "title_vi": "Câu phức điều kiện (……的话，就……; 只有……，才……; 只要……，就……)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": ["complex-hypothesis", "complex-condition"]
     },
     {
       "id": "OFF-H3-48",
