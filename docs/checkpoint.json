@@ -27,7 +27,7 @@
     "styles.css",
     "tests/test_validator.py"
   ],
-  "code_base_commit": "616b63af3e3a1f74c644c8a95e493968efefe1d6",
+  "code_base_commit": "8c88c2b84dd607a74dce23d20f6c8988e94bc978",
   "completed_task_ids": [
     "P00-01",
     "P01-01",
@@ -44,12 +44,12 @@
     "baseline_items": 50,
     "draft_lessons": 0,
     "reviewed_lessons": 0,
-    "published_lessons": 39,
-    "exercises": 186
+    "published_lessons": 43,
+    "exercises": 208
   },
   "github": {
     "connect_url": "https://agent.meta.ai/connectors/connect/github",
-    "head_verified": "616b63af3e3a1f74c644c8a95e493968efefe1d6",
+    "head_verified": "8c88c2b84dd607a74dce23d20f6c8988e94bc978",
     "initial_commit": "86f65bbe639c7af96afe316eb8a26b228092a0eb",
     "owner": "bohoa96tb",
     "pages_enabled": true,
@@ -73,17 +73,17 @@
     "Ôn tập FSRS thật, luyện nói, chấm phát âm, đồng bộ, đăng nhập chưa làm (backlog).",
     "Luyện nói P04-02 chưa kiểm tra mic/thu âm trên trình duyệt thật."
   ],
-  "latest_verified_commit": "616b63af3e3a1f74c644c8a95e493968efefe1d6",
+  "latest_verified_commit": "8c88c2b84dd607a74dce23d20f6c8988e94bc978",
   "next_actions": [
-    "Lô HSK3-2: 4 bài mới (complex-hypothesis, complex-condition, result-complement-2, potential-complement-1) + sửa trùng 存现 ở zhe-continuation và bổ sung bài tập 还/再 cho adverbs-du-ye.",
-    "Sau HSK3-2: tiếp tục phủ HSK3 theo catalogue (存现句3, 是……的 dạng 2, trùng động, 趋向补语2, 紧缩句) rồi sang HSK4.",
-    "P01-02 phần xác minh sâu: hash bản trích đề cương, điểm vi mô, quyền phân phối — làm khi có điều kiện, không chặn lô nội dung.",
+    "Lô HSK3 tiếp theo theo catalogue: 存现句 dạng 3, 是……的 dạng 2, trùng động câu, xu hướng bổ ngữ dạng 2 （引申用法), câu紧缩 HSK3 — chọn tối đa 4 bài theo điều kiện tiên quyết.",
+    "Sau khi HSK3 phủ đủ các mục chính: chuyển sang HSK4 theo bản đồ baseline-hsk3-hsk4-mapping.md.",
+    "P01-02 phần xác minh sâu (hash bản trích, điểm vi mô, quyền phân phối) — không chặn lô nội dung.",
     "AUD-TTS-01: nghiệm thu audio trên thiết bị thật."
   ],
   "pending_review_ids": [],
   "phase": "P06",
   "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "Đối chiếu phạm vi P01-02 đã xong cả 6 cấp ở mức mục nhóm (251 mục nhóm của dự án: HSK1 52, HSK2 62, HSK3 50, HSK4 34, HSK5 31, HSK6 22); việc còn lại của P01-02 là xác minh sâu (điểm vi mô, hash bản trích, quyền phân phối) — trạng thái baseline giữ nguyên 'khóa phạm vi mức nhóm'. question-words đã đổi hsk_evidence thành verified sau khi Manager kiểm tra trực tiếp bản gốc (几/多少 thuộc nhóm đại từ để hỏi HSK1). Bản live hiện tại: build 20261030-std2 (merge 616b63af), 39 bài/186 bài tập. Lô đang chạy: HSK3 lô 2 (4 bài mới + 2 sửa phủ/trùng).",
+  "resume_notes": "Lô HSK3-2 XONG: PR #10 merge 8c88c2b8, build 20261030-hsk3b2, nghiệm thu live đạt (43/43, 4 bài mới mở và làm bài đúng, dòng đối chiếu HSK3 hiển thị). Tổng 43 bài/208 bài tập: HSK1 20, HSK2 15, HSK3 8. QA 2 vòng (vòng 1 đạt có điều kiện — Q-1 diễn đạt tuyệt đối về lược 就 — đã sửa cùng H-1..H-7; vòng 2 ĐẠT). Lưu ý nghiệm thu: lần kiểm live đầu chạy ~1 phút sau merge nên còn bản cũ do Pages chưa triển khai xong + cache; kiểm lại sau khi có bản mới thì đạt — khi nghiệm thu phải chờ Pages và tải lại. TTS thiết bị thật vẫn not_run; các bài mới là đã rà soát nội bộ.",
   "schema_version": 1,
   "spec_version": "1.0",
   "updated_at": "2026-10-30",
@@ -179,7 +179,11 @@
     {
       "command": "browser.open/fetch bản PDF đề cương chính thức (crawl 2026-09-25) + đọc docs/official-catalogue-hsk5-hsk6.json",
       "result": "HSK5 31 mục nhóm, HSK6 22 mục nhóm, tất cả missing (chưa có bài). Manager tự kiểm tra bản gốc: nhóm đại từ để hỏi HSK1 có 多/多少/几/哪/哪儿/哪里/哪些 cùng 什么/谁/怎么/怎么样 — đủ cơ sở đổi question-words sang verified."
+    },
+    {
+      "command": "python3 scripts/validate.py; unittest; FSRS; harness local; browser live sau merge 8c88c2b8",
+      "result": "ĐẠT: 43 bài/208 bài tập; unittest 9/9; FSRS 7/7; harness 19/19; QA-HSK3-2 vòng 2 ĐẠT; live build 20261030-hsk3b2 đủ 43/43, potential-complement-1 làm bài đúng, complex-condition đủ A–F, adverbs-du-ye đủ 7 bài tập."
     }
   ],
-  "working_tree_state": "std2_merged_and_live_verified"
+  "working_tree_state": "hsk3_batch2_merged_and_live_verified"
 }

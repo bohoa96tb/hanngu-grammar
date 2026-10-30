@@ -114,3 +114,20 @@ Chưa có bản phát hành nào.
   được với localhost trên VM hiện tại (proxy chặn CONNECT ra ngoài)
   nên nghiệm thu live dùng trình duyệt nền tảng; TTS thiết bị thật
   vẫn not_run (AUD-TTS-01). Rollback: revert merge 616b63af.
+
+- 2026-10-30 — Lô HSK3-2 (PR #10, nhánh batch-hsk3-2, merge 8c88c2b8,
+  build 20261030-hsk3b2): 4 bài HSK3 mới — result-complement-2
+  （到/住/走/上）, potential-complement-1 （得/不）, complex-hypothesis
+  （如果/的话）, complex-condition （只有……才 đối chiếu 只要……就）;
+  zhe-continuation bỏ dạy trùng mẫu tồn hiện (liên kết sang
+  cunxian-chu); adverbs-du-ye thêm bài tập 还/再. Tổng 43 bài / 208
+  bài tập. QA hai vòng: vòng 1 đạt có điều kiện (diễn đạt tuyệt đối
+  về việc lược 就 — đã sửa cùng 7 điểm nhỏ), vòng 2 ĐẠT. Nghiệm thu
+  live đạt sau khi Pages triển khai xong (lần kiểm đầu quá sớm gặp
+  bản cũ do cache). Audio vẫn not_run. Rollback: revert 8c88c2b8.
+- 2026-10-30 — Lô bản đồ HSK5–6 (PR #9, merge ef4cb8a4): thêm
+  official-catalogue-hsk5-hsk6.json (31 + 22 mục nhóm, tất cả thiếu)
+  và baseline-hsk5-hsk6-mapping.md — đối chiếu phạm vi P01-02 đủ 6
+  cấp ở mức mục nhóm (251 mục). question-words đổi hsk_evidence
+  thành verified sau khi kiểm tra trực tiếp bản gốc （几/多少 thuộc
+  nhóm đại từ để hỏi HSK1).

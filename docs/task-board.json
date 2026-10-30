@@ -169,7 +169,7 @@
       "depends_on": [
         "P05-01"
       ],
-      "evidence": "39 bài, 186 bài tập sau lô std2 (PR #8, merge 616b63af, build 20261030-std2 đã nghiệm thu live). Các bài là đã rà soát nội bộ + chuẩn hóa A–F + có trạng thái đối chiếu hsk_evidence, CHƯA đạt toàn bộ tiêu chí vì audio chưa nghiệm thu.",
+      "evidence": "43 bài, 208 bài tập sau lô HSK3-2 (PR #10, merge 8c88c2b8, build 20261030-hsk3b2 đã nghiệm thu live). HSK1 20, HSK2 15, HSK3 8. Đã rà soát nội bộ + chuẩn hóa, CHƯA đạt toàn bộ tiêu chí vì audio chưa nghiệm thu.",
       "files": [],
       "id": "P06-01",
       "inputs": "Baseline khóa",
@@ -184,7 +184,7 @@
       "depends_on": [
         "P06-01"
       ],
-      "evidence": "Chưa làm",
+      "evidence": "Một phần: 8/50 mục nhóm HSK3 đã có bài (cập nhật chi tiết ở baseline-hsk3-hsk4-mapping.md); tiếp tục theo catalogue.",
       "files": [],
       "id": "P07-01",
       "inputs": "Baseline khóa",
