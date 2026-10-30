@@ -1,0 +1,222 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "他是昨天来的 là dạng 1: nhấn chi tiết 'hôm qua' của việc đã xảy ra. Muốn khẳng định thái độ về việc sắp tới, dùng dạng 2: 他是会来的。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他是昨天来的。 (dùng khi muốn khẳng định 'anh ấy chắc chắn sẽ đến')"
+        },
+        {
+          "explanation": "Thiếu 的 ở cuối câu nên khung 是……的 sụp; phải chốt 的: 他是会来的。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他是会来。"
+        },
+        {
+          "explanation": "的 ở đây không phải 的 sở hữu đặt sau 我. Khung thái độ là 是 + cụm động từ + 的 ở cuối câu: 这件事我是知道的。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "这件事是我的知道。 (muốn nói 'chuyện này tôi có biết')"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Tā shì huì lái de.",
+          "tokens": [
+            "他",
+            "是",
+            "会",
+            "来",
+            "的"
+          ],
+          "vi": "Anh ấy sẽ đến thôi (chắc chắn đấy).",
+          "zh": "他是会来的。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhè jiàn shì wǒ shì zhīdào de.",
+          "tokens": [
+            "这件",
+            "事",
+            "我",
+            "是",
+            "知道",
+            "的"
+          ],
+          "vi": "Chuyện này tôi có biết đấy.",
+          "zh": "这件事我是知道的。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Nǐ fàngxīn, wǒ yídìng huì bāng nǐ de.",
+          "tokens": [
+            "你",
+            "放心",
+            "，",
+            "我",
+            "一定",
+            "会",
+            "帮",
+            "你",
+            "的"
+          ],
+          "vi": "Bạn yên tâm, tôi nhất định sẽ giúp bạn.",
+          "zh": "你放心，我一定会帮你的。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ shì bú huì fàngqì de.",
+          "tokens": [
+            "我",
+            "是",
+            "不会",
+            "放弃",
+            "的"
+          ],
+          "vi": "Tôi sẽ không bỏ cuộc đâu.",
+          "zh": "我是不会放弃的。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhège wèntí wǒmen shì kěyǐ jiějué de.",
+          "tokens": [
+            "这个",
+            "问题",
+            "我们",
+            "是",
+            "可以",
+            "解决",
+            "的"
+          ],
+          "vi": "Vấn đề này chúng ta giải quyết được mà.",
+          "zh": "这个问题我们是可以解决的。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "你的意思我是明白的。"
+          ],
+          "explanation": "Nhấn thái độ: 是 sau chủ ngữ, 的 chốt cuối câu. Bỏ 的 câu nghe cụt; 我是明白你意思的人 là câu 'tôi là người hiểu ý bạn', nghĩa khác.",
+          "id": "shide2-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "你的意思我是明白的。",
+              "你的意思我明白的。",
+              "你的意思是我明白。",
+              "我是明白你意思的人。"
+            ]
+          },
+          "prompt_vi": "Chọn câu dùng 是……的 để khẳng định chắc chắn 'Ý của bạn tôi hiểu.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "我们",
+              "是",
+              "会",
+              "去",
+              "的"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → 是 → 会 + động từ → 的.",
+          "id": "shide2-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "的",
+              "我们",
+              "是",
+              "会",
+              "去"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Chúng ta sẽ đi mà (chắc chắn).'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "他是不会同意的。",
+            "他是不会同意的"
+          ],
+          "explanation": "Khẳng định thái độ phủ định: 是 + 不会 + 同意 + 的.",
+          "id": "shide2-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Động từ 'đồng ý' là 同意。",
+            "prompt_zh": "他是不会___的。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy sẽ không đồng ý đâu.'",
+          "prompt_zh": null,
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "他是会来的。",
+            "他是会来的"
+          ],
+          "explanation": "Khung 是……的 dạng 2 nhấn thái độ: 是 + cụm động từ + 的 chốt ở cuối câu. Thiếu 的 là sụp khung — phải điền 的 ngay sau 来: 他是会来的。",
+          "id": "shide2-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Chốt câu bằng 的 của khung 是……的。",
+            "prompt_zh": "他是会来___。"
+          },
+          "prompt_vi": "Điền 的 vào đúng chỗ để hoàn chỉnh câu: 'Anh ấy sẽ đến thôi (chắc chắn đấy).'",
+          "prompt_zh": null,
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "我一定会帮你的。",
+            "我一定会帮你的",
+            "我是一定会帮你的。",
+            "我是一定会帮你的"
+          ],
+          "explanation": "Khẳng định thái độ: (是) + 一定会 + động từ + 的; 的 ở cuối câu là chốt bắt buộc của khung.",
+          "id": "shide2-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 一定会帮你 và chốt 的 ở cuối câu; có thể thêm 是 sau 我。",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Bạn yên tâm, tôi nhất định sẽ giúp bạn.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Vị trí: 是 đứng sau chủ ngữ, trước cụm động từ; 的 chốt ở cuối câu: Chủ ngữ + 是 + Cụm động từ + 的 (他是会来的). 2) Cần có sẵn: khung này thường đi với các từ chỉ chắc chắn như 会, 一定, 知道 — sắc thái khẳng định đến từ cả khung 是……的 lẫn các từ này. 是 có thể lược khi đã có từ khẳng định mạnh như 一定 (我一定会帮你的); riêng 的 ở cuối câu thì không lược được. 3) Không dùng: không bỏ 的 ở cuối câu — thiếu 的, khung sụp và câu nghe cụt. 4) Phân biệt: dạng 1 nhấn chi tiết đã xảy ra (是昨天来的); dạng 2 nhấn thái độ chắc chắn (我是知道的 = 'chuyện này tôi có biết đấy'), không dùng để hỏi hay nhấn chi tiết thời gian, nơi chốn.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "shi-de-attitude",
+      "objective": "Sau bài này, người học dùng 是……的 để khẳng định thái độ và sự chắc chắn của mình về một việc (sẽ đến, có biết, nhất định giúp), phân biệt với dạng 1 nhấn chi tiết của việc đã xảy ra.",
+      "pattern": "Chủ ngữ + 是 + Cụm động từ + 的",
+      "quick_memory": "Khẳng định chắc nịch, bọc 是……的: 是 sau chủ ngữ (có 一定 thì lược cũng được), 的 chốt cuối — thiếu 的 là sụp khung.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-3 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-39 và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập trong cùng bài. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về 是……的 nhấn thái độ theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-39 (是……的句 dạng 2: nhấn mạnh quan điểm/thái độ người nói) trong catalogue dự án từ đề cương thi 11/2025.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "是……的 dạng 2: nhấn thái độ và quan điểm",
+      "when_to_use": "Ví dụ: muốn trấn an bạn 'Yên tâm, anh ấy sẽ đến', nói 他会来的。 đã được; bọc thêm 是 thành 他是会来的。 thì thái độ khẳng định càng mạnh. Dạng 2 của 是……的 dùng để khẳng định thái độ/quan điểm của người nói về một việc nói chung hoặc chưa xảy ra: tin là đúng, chắc chắn sẽ làm. Khác dạng 1 (bài shi-de-emphasis): dạng 1 nhấn một chi tiết cụ thể (是昨天来的 — nhấn 'hôm qua') của việc đã xảy ra; dạng 2 không nhấn chi tiết nào, mà nhấn chính sự khẳng định của người nói."
+    }
+  ],
+  "schema_version": 1
+}
