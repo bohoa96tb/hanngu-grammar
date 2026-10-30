@@ -246,3 +246,43 @@ có giọng zh; bảng chẩn đoán phân biệt "đang tải danh sách giọn
 kiện voiceschanged thì vẫn cảnh báo thay vì đọc lặng bằng giọng mặc
 định. TTS vẫn là phương án tạm thời; cảnh báo không thay thế audio
 tạo trước theo đặc tả.
+
+## D26 — Lô std2: trạng thái đối chiếu từng bài + tách bài chọn lọc (2026-10-30)
+
+Căn cứ: docs/reviews/std2-content-audit.md (Agent Nội dung) + chỉ đạo của
+Hoa cho lô std2. Manager quyết:
+
+1. Thêm trường `hsk_evidence` (xem schema.md) cho mọi bài published và
+   hiển thị dòng đối chiếu ở trang bài. Badge "HSK n" giữ nguyên cho mọi
+   bài (phần lõi đều đúng cấp); trung thực nằm ở dòng trạng thái, không
+   ở việc đổi badge. Sau lô này: 36/39 bài `verified`, 3 bài `partial`
+   (de-possessive — nhắc 得/地 HSK2; modal-xiang-yao — nhắc nghĩa sắp
+   xảy ra của 要; question-words — 几/多少 chưa có mục tương ứng trong
+   danh mục đối chiếu của dự án, chờ kiểm tra bản gốc trước khi kết
+   luận cấp; không tự khẳng định cấp khác).
+2. bi-comparison: bỏ quy tắc vị trí của 更 khỏi bước 3 của công thức
+   (chỉ giữ 也/都 đặt trước 比). 更 thuộc HSK3 (OFF-H3-12) và đã có bài
+   bi-comparison-2 dạy; dạy quy tắc + ví dụ ở bài HSK2 là vượt phạm vi
+   bằng chứng. Sửa nội dung thay vì ghi chú quanh nội dung lệch. Ghi
+   chú: ở lô std1, QA từng bắt lỗi vị trí 更 trong chính bước này; bỏ
+   hẳn quy tắc khỏi bài HSK2 là cách xử lý gốc rễ.
+3. Tách le-completion-change: ID cũ giữ cho phần 了 sau động từ (hoàn
+   thành; 4/5 bài tập hiện có và thẻ FSRS đi theo phần này, không nhân
+   đôi thẻ); bài mới le-sentence-final-change （了 cuối câu) đặt ngay
+   sau trong manifest, nhận le-ex2 (giữ ID bài tập) + nội dung bổ sung;
+   phần phân biệt hai cách dùng đặt làm bài tập chốt của bài mới. Bài
+   tập prefix-ex5 chuyển sang location-nouns thì đổi ID thành
+   locnoun-ex6 (bài tập mới thêm ở std1, chi phí đổi ID thấp nhất lúc
+   này); đây là ngoại lệ có ghi lý do, không phải tiền lệ đổi ID tùy
+   tiện. Ví dụ 了解 bỏ khỏi cả hai bài 了 (giữ dạng confusion).
+4. prefix-suffix giữ một bài （第/小/们）, chuyển chủ điểm 边 sang
+   location-nouns — chỉ lấy 前边/后边 (thuộc OFF-H1-03); 左/右 để dành
+   cấp sau, không đưa vào location-nouns ở lô này. complex-suiran-
+   yinwei giữ nguyên cấu trúc hai cặp (đối chiếu ghép chéo là mục tiêu
+   học), chỉ bổ sung cân bằng phủ trong bài (1 ví dụ 因为, bài tập tự
+   sản xuất complex-ex6 cho cặp 虽然, không đánh số lại bài tập cũ).
+5. Rà Nhớ nhanh: thay nguyên văn 8 mục theo audit §1.3 (adverbs-du-ye,
+   bei-passive-1, bi-comparison, bu-yao-prohibition, cunxian-chu,
+   measure-words, verb-reduplication, why-question); không bài nào bỏ
+   mục F — cả ba ứng viên yếu nhất đều có bẫy phân biệt thật và trang
+   Ôn tập dùng quick_memory làm nội dung đối chiếu.
