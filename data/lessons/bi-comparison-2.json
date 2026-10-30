@@ -1,19 +1,28 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "bi-comparison-2",
-      "title_vi": "So sánh dạng 2: 更/还, 一样, 不比",
-      "pattern": "A比B + 更/还 + Tính từ • A跟B + 一样 + Tính từ • A不比B + Tính từ",
-      "hsk_level": 3,
+      "confusions": [
+        {
+          "explanation": "更 đứng trước tính từ, không đứng sau tính từ.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他比我高更。"
+        },
+        {
+          "explanation": "一样 cần 跟: 他跟我一样高。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他我一样高。"
+        },
+        {
+          "explanation": "不比 chỉ nói 'không hơn', có thể bằng; muốn khẳng định thấp hơn hẳn thì dùng 他比我矮。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他不比我高。(khi muốn khẳng định 'anh ấy thấp hơn tôi')"
+        }
+      ],
+      "content_version": 2,
       "difficulty": "medium",
-      "objective": "Sau bài này, người học dùng 更/还 sau 比, 一样 với 跟, và 不比 để so sánh ở mức HSK3, phân biệt 不比 (không hơn) với khẳng định thấp hơn.",
-      "when_to_use": "Khi so sánh mà muốn nói 'còn hơn nữa', 'bằng nhau', hoặc 'không hơn'.",
-      "formula_notes": "更/还 đứng sau 比 và trước tính từ: 比我更高. 一样 cần 跟: A跟B一样 + tính từ. 不比 chỉ nói 'không hơn' (có thể bằng); muốn khẳng định thấp hơn hẳn thì dùng tính từ trái nghĩa với 比, ví dụ 比我矮.",
       "examples": [
         {
-          "zh": "他比我更高。",
-          "vi": "Anh ấy còn cao hơn tôi.",
+          "from_vietnamese_intent": true,
           "pinyin": "Tā bǐ wǒ gèng gāo.",
           "tokens": [
             "他",
@@ -22,11 +31,11 @@
             "更",
             "高"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Anh ấy còn cao hơn tôi.",
+          "zh": "他比我更高。"
         },
         {
-          "zh": "他跟我一样高。",
-          "vi": "Anh ấy cao bằng tôi.",
+          "from_vietnamese_intent": false,
           "pinyin": "Tā gēn wǒ yíyàng gāo.",
           "tokens": [
             "他",
@@ -35,11 +44,11 @@
             "一样",
             "高"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Anh ấy cao bằng tôi.",
+          "zh": "他跟我一样高。"
         },
         {
-          "zh": "他不比我高。",
-          "vi": "Anh ấy không cao hơn tôi.",
+          "from_vietnamese_intent": false,
           "pinyin": "Tā bù bǐ wǒ gāo.",
           "tokens": [
             "他",
@@ -48,14 +57,18 @@
             "我",
             "高"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Anh ấy không cao hơn tôi.",
+          "zh": "他不比我高。"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "他比我更高。"
+          ],
+          "explanation": "他 + 比 + 我 + 更高。",
           "id": "bicom2-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để nói 'Anh ấy còn cao hơn tôi.'",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "他比我更高。",
@@ -64,38 +77,25 @@
               "他比我更。"
             ]
           },
-          "accepted_answers": [
-            "他比我更高。"
-          ],
-          "explanation": "他 + 比 + 我 + 更高。"
+          "prompt_vi": "Chọn câu đúng để nói 'Anh ấy còn cao hơn tôi.'",
+          "type": "choice"
         },
         {
-          "id": "bicom2-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy cao bằng tôi.'",
-          "payload": {
-            "prompt_zh": "他跟我一样___。",
-            "hint_vi": "Dùng 高。"
-          },
           "accepted_answers": [
             "他跟我一样高。",
             "他跟我一样高"
           ],
-          "explanation": "他 + 跟 + 我 + 一样高。"
+          "explanation": "他 + 跟 + 我 + 一样高。",
+          "id": "bicom2-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 高。",
+            "prompt_zh": "他跟我一样___。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy cao bằng tôi.'",
+          "type": "fill"
         },
         {
-          "id": "bicom2-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy còn cao hơn tôi.'",
-          "payload": {
-            "tokens": [
-              "高",
-              "他",
-              "比",
-              "我",
-              "更"
-            ]
-          },
           "accepted_answers": [
             [
               "他",
@@ -105,72 +105,78 @@
               "高"
             ]
           ],
-          "explanation": "Thứ tự: chủ ngữ → 比 → đối tượng → 更 → tính từ."
+          "explanation": "Thứ tự: chủ ngữ → 比 → đối tượng → 更 → tính từ.",
+          "id": "bicom2-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "高",
+              "他",
+              "比",
+              "我",
+              "更"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy còn cao hơn tôi.'",
+          "type": "order"
         },
         {
+          "accepted_answers": [
+            "更"
+          ],
+          "explanation": "更 phải đứng trước tính từ, sau 比 và đối tượng: 比我更高。",
           "id": "bicom2-ex4",
-          "type": "error_spot",
-          "prompt_vi": "Câu sau sai ở khối nào? 他比我高更。",
+          "is_open_ended": false,
           "payload": {
-            "sentence_zh": "他比我高更。",
             "options": [
               "他",
               "比",
               "我",
               "高",
               "更"
-            ]
+            ],
+            "sentence_zh": "他比我高更。"
           },
-          "accepted_answers": [
-            "更"
-          ],
-          "explanation": "更 phải đứng trước tính từ, sau 比 và đối tượng: 比我更高。"
+          "prompt_vi": "Câu sau sai ở khối nào? 他比我高更。",
+          "type": "error_spot"
         },
         {
-          "id": "bicom2-ex5",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Anh ấy không cao hơn tôi' (viết bằng chữ Hán)",
-          "payload": {
-            "prompt_zh": null,
-            "hint_vi": "Bắt đầu bằng 他。"
-          },
           "accepted_answers": [
             "他不比我高。",
             "他不比我高"
           ],
-          "explanation": "Anh ấy không cao hơn tôi: 他 + 不比 + 我 + 高。"
+          "explanation": "Anh ấy không cao hơn tôi: 他 + 不比 + 我 + 高。",
+          "id": "bicom2-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 他。",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Anh ấy không cao hơn tôi' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
-      "confusions": [
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "他比我高更。",
-          "explanation": "更 đứng trước tính từ, không đứng sau tính từ."
-        },
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "他我一样高。",
-          "explanation": "一样 cần 跟: 他跟我一样高。"
-        },
-        {
-          "verdict": "doi_nghia",
-          "wrong_or_risky": "他不比我高。(khi muốn khẳng định 'anh ấy thấp hơn tôi')",
-          "explanation": "不比 chỉ nói 'không hơn', có thể bằng; muốn khẳng định thấp hơn hẳn thì dùng 他比我矮。"
-        }
-      ],
+      "formula_notes": "1) 更/还: đứng sau 比, trước tính từ (比我更高). 2) 一样: cần 跟 — A跟B一样 + Tính từ. 3) 不比: chỉ nói “không hơn” (có thể vẫn bằng nhau); khẳng định thấp hơn hẳn thì dùng tính từ trái nghĩa với 比 (比我矮).",
+      "hsk_level": 3,
+      "id": "bi-comparison-2",
+      "objective": "Sau bài này, người học dùng 更/还 sau 比, 一样 với 跟, và 不比 để so sánh ở mức HSK3, phân biệt 不比 (không hơn) với khẳng định thấp hơn.",
+      "pattern": "A比B + 更/还 + Tính từ • A跟B + 一样 + Tính từ • A不比B + Tính từ",
+      "quick_memory": "Hơn nữa dùng 更/还 sau 比; giống nhau dùng 跟…一样; 不比 chỉ là “không hơn”, chưa chắc kém.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 10 từ danh mục HSK3 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "hsk-official",
-          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "hsk-official"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 10 từ danh mục HSK3 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí."
-      }
+      "title_vi": "So sánh dạng 2: 更/还, 一样, 不比",
+      "when_to_use": "Khi so sánh mà muốn nói 'còn hơn nữa', 'bằng nhau', hoặc 'không hơn'."
     }
-  ]
+  ],
+  "schema_version": 1
 }

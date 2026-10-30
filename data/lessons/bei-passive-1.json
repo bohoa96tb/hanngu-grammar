@@ -1,19 +1,28 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "bei-passive-1",
-      "title_vi": "Câu bị động với 被 dạng 1",
-      "pattern": "Chủ ngữ (chịu tác động) + 被 (+ Tác nhân) + Động từ + Thành phần khác",
-      "hsk_level": 3,
-      "difficulty": "medium",
-      "objective": "Sau bài này, người học dùng câu bị động với 被 để nói chủ ngữ chịu tác động của hành động, phân biệt với câu chữ 把 nói chủ động.",
-      "when_to_use": "Khi muốn nhấn mạnh vật hoặc người chịu tác động, hoặc khi không cần nói rõ ai thực hiện.",
-      "formula_notes": "被 đứng trước tác nhân (có thể lược bỏ tác nhân) và động từ; động từ sau 被 phải có thêm thành phần khác (kết quả bổ ngữ, 了...), không đứng trơ một mình. Chủ ngữ là đối tượng chịu tác động, ngược với câu chữ 把.",
+      "confusions": [
+        {
+          "explanation": "Muốn nói bị động thì dùng 被; 把 dùng cho câu chủ động.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "杯子把打碎了。"
+        },
+        {
+          "explanation": "Động từ trong câu bị động không đứng trơ một mình; cần thêm thành phần khác, ví dụ 杯子被打碎了。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "杯子被打。"
+        },
+        {
+          "explanation": "Câu đúng nhưng chưa nhấn mạnh bị động; muốn nhấn mạnh bị động thì dùng 杯子被打碎了。",
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "杯子打碎了。(khi muốn nhấn mạnh bị động)"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "hard",
       "examples": [
         {
-          "zh": "我的书被他拿走了。",
-          "vi": "Sách của tôi bị anh ấy lấy đi rồi.",
+          "from_vietnamese_intent": true,
           "pinyin": "Wǒ de shū bèi tā ná zǒu le.",
           "tokens": [
             "我",
@@ -25,11 +34,11 @@
             "走",
             "了"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Sách của tôi bị anh ấy lấy đi rồi.",
+          "zh": "我的书被他拿走了。"
         },
         {
-          "zh": "杯子被打碎了。",
-          "vi": "Cốc bị làm vỡ rồi.",
+          "from_vietnamese_intent": false,
           "pinyin": "Bēizi bèi dǎ suì le.",
           "tokens": [
             "杯子",
@@ -38,11 +47,11 @@
             "碎",
             "了"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Cốc bị làm vỡ rồi.",
+          "zh": "杯子被打碎了。"
         },
         {
-          "zh": "他被老师表扬了。",
-          "vi": "Anh ấy được thầy giáo khen rồi.",
+          "from_vietnamese_intent": false,
           "pinyin": "Tā bèi lǎoshī biǎoyáng le.",
           "tokens": [
             "他",
@@ -51,14 +60,18 @@
             "表扬",
             "了"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Anh ấy được thầy giáo khen rồi.",
+          "zh": "他被老师表扬了。"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "杯子被打碎了。"
+          ],
+          "explanation": "杯子 + 被 + 打碎了。",
           "id": "bei-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để nói 'Cốc bị làm vỡ rồi.'",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "杯子被打碎了。",
@@ -67,38 +80,25 @@
               "杯子被碎打了。"
             ]
           },
-          "accepted_answers": [
-            "杯子被打碎了。"
-          ],
-          "explanation": "杯子 + 被 + 打碎了。"
+          "prompt_vi": "Chọn câu đúng để nói 'Cốc bị làm vỡ rồi.'",
+          "type": "choice"
         },
         {
-          "id": "bei-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Sách của tôi bị anh ấy lấy đi rồi.'",
-          "payload": {
-            "prompt_zh": "我的书被他___了。",
-            "hint_vi": "Dùng 拿走。"
-          },
           "accepted_answers": [
             "我的书被他拿走了。",
             "我的书被他拿走了"
           ],
-          "explanation": "我的书 + 被 + 他 + 拿走了。"
+          "explanation": "我的书 + 被 + 他 + 拿走了。",
+          "id": "bei-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 拿走。",
+            "prompt_zh": "我的书被他___了。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Sách của tôi bị anh ấy lấy đi rồi.'",
+          "type": "fill"
         },
         {
-          "id": "bei-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu: 'Cốc bị làm vỡ rồi.'",
-          "payload": {
-            "tokens": [
-              "碎",
-              "杯子",
-              "被",
-              "打",
-              "了"
-            ]
-          },
           "accepted_answers": [
             [
               "杯子",
@@ -108,72 +108,78 @@
               "了"
             ]
           ],
-          "explanation": "Thứ tự: chủ ngữ → 被 → động từ → kết quả → 了。"
+          "explanation": "Thứ tự: chủ ngữ → 被 → động từ → kết quả → 了。",
+          "id": "bei-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "碎",
+              "杯子",
+              "被",
+              "打",
+              "了"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Cốc bị làm vỡ rồi.'",
+          "type": "order"
         },
         {
+          "accepted_answers": [
+            "把"
+          ],
+          "explanation": "Muốn nói bị động thì dùng 被, không dùng 把: 杯子被打碎了。",
           "id": "bei-ex4",
-          "type": "error_spot",
-          "prompt_vi": "Câu sau sai ở khối nào? 杯子把打碎了。",
+          "is_open_ended": false,
           "payload": {
-            "sentence_zh": "杯子把打碎了。",
             "options": [
               "杯子",
               "把",
               "打",
               "碎",
               "了"
-            ]
+            ],
+            "sentence_zh": "杯子把打碎了。"
           },
-          "accepted_answers": [
-            "把"
-          ],
-          "explanation": "Muốn nói bị động thì dùng 被, không dùng 把: 杯子被打碎了。"
+          "prompt_vi": "Câu sau sai ở khối nào? 杯子把打碎了。",
+          "type": "error_spot"
         },
         {
-          "id": "bei-ex5",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tiền của tôi bị anh ấy lấy đi rồi' (viết bằng chữ Hán)",
-          "payload": {
-            "prompt_zh": null,
-            "hint_vi": "Bắt đầu bằng 我。"
-          },
           "accepted_answers": [
             "我的钱被他拿走了。",
             "我的钱被他拿走了"
           ],
-          "explanation": "Tiền của tôi bị anh ấy lấy đi rồi: 我的钱 + 被 + 他 + 拿走了。"
+          "explanation": "Tiền của tôi bị anh ấy lấy đi rồi: 我的钱 + 被 + 他 + 拿走了。",
+          "id": "bei-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 我。",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tiền của tôi bị anh ấy lấy đi rồi' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
-      "confusions": [
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "杯子把打碎了。",
-          "explanation": "Muốn nói bị động thì dùng 被; 把 dùng cho câu chủ động."
-        },
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "杯子被打。",
-          "explanation": "Động từ trong câu bị động không đứng trơ một mình; cần thêm thành phần khác, ví dụ 杯子被打碎了。"
-        },
-        {
-          "verdict": "thay_duoc_co_dieu_kien",
-          "wrong_or_risky": "杯子打碎了。(khi muốn nhấn mạnh bị động)",
-          "explanation": "Câu đúng nhưng chưa nhấn mạnh bị động; muốn nhấn mạnh bị động thì dùng 杯子被打碎了。"
-        }
-      ],
+      "formula_notes": "1) Vị trí: 被 đứng trước tác nhân và động từ; chủ ngữ là đối tượng chịu tác động, ngược với câu chữ 把. 2) Cần có sẵn: động từ sau 被 phải kèm thành phần khác (bổ ngữ kết quả, 了…), không đứng trơ một mình. 3) Mở rộng: tác nhân có thể lược bỏ.",
+      "hsk_level": 3,
+      "id": "bei-passive-1",
+      "objective": "Sau bài này, người học dùng câu bị động với 被 để nói chủ ngữ chịu tác động của hành động, phân biệt với câu chữ 把 nói chủ động.",
+      "pattern": "Chủ ngữ (chịu tác động) + 被 (+ Tác nhân) + Động từ + Thành phần khác",
+      "quick_memory": "Chịu tác động: chủ ngữ + 被 + động từ + thành phần khác. Bị động nhìn từ phía người/vật chịu tác động.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 10 từ danh mục HSK3 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "hsk-official",
-          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "hsk-official"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 10 từ danh mục HSK3 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí."
-      }
+      "title_vi": "Câu bị động với 被 dạng 1",
+      "when_to_use": "Khi muốn nhấn mạnh vật hoặc người chịu tác động, hoặc khi không cần nói rõ ai thực hiện."
     }
-  ]
+  ],
+  "schema_version": 1
 }

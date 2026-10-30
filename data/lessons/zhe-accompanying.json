@@ -1,19 +1,28 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "zhe-accompanying",
-      "title_vi": "着 chỉ hành động kèm theo",
-      "pattern": "Động từ 1 + 着 + Động từ 2",
-      "hsk_level": 3,
+      "confusions": [
+        {
+          "explanation": "着 đứng ngay sau động từ thứ nhất, trước động từ thứ hai: 笑着说。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他笑说着。"
+        },
+        {
+          "explanation": "Chưa thành câu mẫu kèm theo: mẫu này cần động từ thứ hai sau 着 (他笑着说话); chỉ nói 他笑着。 thì chưa thành mẫu kèm theo.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他笑着。"
+        },
+        {
+          "explanation": "在表 tiến hành, không thay được cho mẫu kèm theo; kèm theo dùng động từ + 着 + động từ.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他在笑说。"
+        }
+      ],
+      "content_version": 2,
       "difficulty": "medium",
-      "objective": "Sau bài này, người học dùng động từ 1 + 着 + động từ 2 để nói một hành động diễn ra kèm theo hành động chính, phân biệt với 着 chỉ trạng thái đã học ở HSK2.",
-      "when_to_use": "Khi hai hành động xảy ra cùng lúc và hành động thứ nhất là nền hoặc cách thức cho hành động thứ hai (vừa cười vừa nói, đứng ăn cơm...).",
-      "formula_notes": "着 đứng ngay sau động từ thứ nhất, trước động từ thứ hai: 笑着说, 站着吃饭. Mẫu này cần động từ thứ hai; chỉ nói 着 mà không có động từ thứ hai thì chưa thành mẫu kèm theo. Khác với 着 chỉ trạng thái (门开着) đã học ở HSK2.",
       "examples": [
         {
-          "zh": "他笑着说。",
-          "vi": "Anh ấy vừa cười vừa nói.",
+          "from_vietnamese_intent": true,
           "pinyin": "Tā xiào zhe shuō.",
           "tokens": [
             "他",
@@ -21,11 +30,11 @@
             "着",
             "说"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Anh ấy vừa cười vừa nói.",
+          "zh": "他笑着说。"
         },
         {
-          "zh": "她哭着跑了。",
-          "vi": "Cô ấy vừa khóc vừa chạy.",
+          "from_vietnamese_intent": false,
           "pinyin": "Tā kū zhe pǎo le.",
           "tokens": [
             "她",
@@ -34,11 +43,11 @@
             "跑",
             "了"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Cô ấy vừa khóc vừa chạy.",
+          "zh": "她哭着跑了。"
         },
         {
-          "zh": "他站着吃饭。",
-          "vi": "Anh ấy đứng ăn cơm.",
+          "from_vietnamese_intent": false,
           "pinyin": "Tā zhàn zhe chī fàn.",
           "tokens": [
             "他",
@@ -47,14 +56,18 @@
             "吃",
             "饭"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Anh ấy đứng ăn cơm.",
+          "zh": "他站着吃饭。"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "他笑着说。"
+          ],
+          "explanation": "他 + 笑 + 着 + 说。",
           "id": "zheacc-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để nói 'Anh ấy vừa cười vừa nói.'",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "他笑着说。",
@@ -63,37 +76,25 @@
               "他着笑说。"
             ]
           },
-          "accepted_answers": [
-            "他笑着说。"
-          ],
-          "explanation": "他 + 笑 + 着 + 说。"
+          "prompt_vi": "Chọn câu đúng để nói 'Anh ấy vừa cười vừa nói.'",
+          "type": "choice"
         },
         {
-          "id": "zheacc-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Cô ấy vừa khóc vừa chạy.'",
-          "payload": {
-            "prompt_zh": "她哭着___了。",
-            "hint_vi": "Dùng 跑。"
-          },
           "accepted_answers": [
             "她哭着跑了。",
             "她哭着跑了"
           ],
-          "explanation": "她 + 哭 + 着 + 跑了。"
+          "explanation": "她 + 哭 + 着 + 跑了。",
+          "id": "zheacc-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 跑。",
+            "prompt_zh": "她哭着___了。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Cô ấy vừa khóc vừa chạy.'",
+          "type": "fill"
         },
         {
-          "id": "zheacc-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy vừa cười vừa nói.'",
-          "payload": {
-            "tokens": [
-              "说",
-              "他",
-              "笑",
-              "着"
-            ]
-          },
           "accepted_answers": [
             [
               "他",
@@ -102,71 +103,76 @@
               "说"
             ]
           ],
-          "explanation": "Thứ tự: chủ ngữ → động từ 1 → 着 → động từ 2."
+          "explanation": "Thứ tự: chủ ngữ → động từ 1 → 着 → động từ 2.",
+          "id": "zheacc-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "说",
+              "他",
+              "笑",
+              "着"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy vừa cười vừa nói.'",
+          "type": "order"
         },
         {
+          "accepted_answers": [
+            "着"
+          ],
+          "explanation": "着 phải đứng ngay sau động từ thứ nhất, trước động từ thứ hai: 笑着说。",
           "id": "zheacc-ex4",
-          "type": "error_spot",
-          "prompt_vi": "Câu sau sai ở khối nào? 他笑说着。",
+          "is_open_ended": false,
           "payload": {
-            "sentence_zh": "他笑说着。",
             "options": [
               "他",
               "笑",
               "说",
               "着"
-            ]
+            ],
+            "sentence_zh": "他笑说着。"
           },
-          "accepted_answers": [
-            "着"
-          ],
-          "explanation": "着 phải đứng ngay sau động từ thứ nhất, trước động từ thứ hai: 笑着说。"
+          "prompt_vi": "Câu sau sai ở khối nào? 他笑说着。",
+          "type": "error_spot"
         },
         {
-          "id": "zheacc-ex5",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Cô ấy đứng hát' (viết bằng chữ Hán)",
-          "payload": {
-            "prompt_zh": null,
-            "hint_vi": "Bắt đầu bằng 她。"
-          },
           "accepted_answers": [
             "她站着唱歌。",
             "她站着唱歌"
           ],
-          "explanation": "Cô ấy đứng hát: 她 + 站 + 着 + 唱歌。"
+          "explanation": "Cô ấy đứng hát: 她 + 站 + 着 + 唱歌。",
+          "id": "zheacc-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 她。",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Cô ấy đứng hát' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
-      "confusions": [
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "他笑说着。",
-          "explanation": "着 đứng ngay sau động từ thứ nhất, trước động từ thứ hai: 笑着说。"
-        },
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "他笑着。",
-          "explanation": "Mẫu kèm theo cần động từ thứ hai sau 着; chỉ nói 笑着 thì chưa thành mẫu này."
-        },
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "他在笑说。",
-          "explanation": "在表 tiến hành, không thay được cho mẫu kèm theo; kèm theo dùng động từ + 着 + động từ."
-        }
-      ],
+      "formula_notes": "1) Vị trí: 着 đứng ngay sau động từ thứ nhất, trước động từ thứ hai (笑着说, 站着吃饭). 2) Cần có sẵn: mẫu kèm theo bắt buộc có động từ thứ hai. 3) Phân biệt: khác 着 chỉ trạng thái (门开着) đã học ở HSK2.",
+      "hsk_level": 3,
+      "id": "zhe-accompanying",
+      "objective": "Sau bài này, người học dùng động từ 1 + 着 + động từ 2 để nói một hành động diễn ra kèm theo hành động chính, phân biệt với 着 chỉ trạng thái đã học ở HSK2.",
+      "pattern": "Động từ 1 + 着 + Động từ 2",
+      "quick_memory": "Vừa làm A vừa làm B: động từ 1 + 着 + động từ 2. Thiếu động từ thứ hai là chưa thành mẫu.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 10 từ danh mục HSK3 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "hsk-official",
-          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "hsk-official"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 10 từ danh mục HSK3 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí."
-      }
+      "title_vi": "着 chỉ hành động kèm theo",
+      "when_to_use": "Khi hai hành động xảy ra cùng lúc và hành động thứ nhất là nền hoặc cách thức cho hành động thứ hai (vừa cười vừa nói, đứng ăn cơm...)."
     }
-  ]
+  ],
+  "schema_version": 1
 }

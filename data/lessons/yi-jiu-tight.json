@@ -1,19 +1,28 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "yi-jiu-tight",
-      "title_vi": "Vừa… là… ngay với 一……就……",
-      "pattern": "一 + Động tác 1 + 就 + Động tác 2",
-      "hsk_level": 2,
+      "confusions": [
+        {
+          "explanation": "一 đứng trước động từ thứ nhất, không đứng sau nó.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他回家一就睡觉。"
+        },
+        {
+          "explanation": "Mẫu cố định là 一……就……; bỏ 就 thì câu không còn đúng mẫu này.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他一回家睡觉。"
+        },
+        {
+          "explanation": "先……，再…… chỉ nói thứ tự trước–sau; muốn nhấn mạnh 'ngay lập tức' thì dùng 一……就……。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他先回家，再睡觉。(khi muốn nhấn mạnh vừa về là ngủ ngay)"
+        }
+      ],
+      "content_version": 2,
       "difficulty": "medium",
-      "objective": "Sau bài này, người học dùng mẫu 一……就…… để nói hai việc xảy ra sát nhau, việc sau theo ngay việc trước.",
-      "when_to_use": "Khi muốn nhấn mạnh hai việc xảy ra liền nhau, không có khoảng nghỉ đáng kể giữa chúng.",
-      "formula_notes": "Mẫu cố định là 一……就……: 一 đứng trước động từ thứ nhất, 就 đứng trước động từ thứ hai và nhấn mạnh 'ngay'. Bỏ 就 thì không còn đúng mẫu này.",
       "examples": [
         {
-          "zh": "他一回家就睡觉。",
-          "vi": "Anh ấy vừa về nhà là ngủ ngay.",
+          "from_vietnamese_intent": true,
           "pinyin": "Tā yī huí jiā jiù shuìjiào.",
           "tokens": [
             "他",
@@ -22,11 +31,11 @@
             "就",
             "睡觉"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Anh ấy vừa về nhà là ngủ ngay.",
+          "zh": "他一回家就睡觉。"
         },
         {
-          "zh": "我一看就懂了。",
-          "vi": "Tôi vừa nhìn là hiểu ngay.",
+          "from_vietnamese_intent": false,
           "pinyin": "Wǒ yī kàn jiù dǒng le.",
           "tokens": [
             "我",
@@ -36,11 +45,11 @@
             "懂",
             "了"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Tôi vừa nhìn là hiểu ngay.",
+          "zh": "我一看就懂了。"
         },
         {
-          "zh": "她一到学校就给我打电话。",
-          "vi": "Cô ấy vừa đến trường là gọi điện cho tôi ngay.",
+          "from_vietnamese_intent": false,
           "pinyin": "Tā yī dào xuéxiào jiù gěi wǒ dǎ diànhuà.",
           "tokens": [
             "她",
@@ -52,14 +61,18 @@
             "我",
             "打电话"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Cô ấy vừa đến trường là gọi điện cho tôi ngay.",
+          "zh": "她一到学校就给我打电话。"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "他一回家就睡觉。"
+          ],
+          "explanation": "Mẫu: 一 + 回家 + 就 + 睡觉。",
           "id": "yijiu-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để nói 'Anh ấy vừa về nhà là ngủ ngay.'",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "他一回家就睡觉。",
@@ -68,38 +81,25 @@
               "他回家就睡觉一。"
             ]
           },
-          "accepted_answers": [
-            "他一回家就睡觉。"
-          ],
-          "explanation": "Mẫu: 一 + 回家 + 就 + 睡觉。"
+          "prompt_vi": "Chọn câu đúng để nói 'Anh ấy vừa về nhà là ngủ ngay.'",
+          "type": "choice"
         },
         {
-          "id": "yijiu-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Tôi vừa nhìn là hiểu ngay.'",
-          "payload": {
-            "prompt_zh": "我一看就___了。",
-            "hint_vi": "Dùng 懂。"
-          },
           "accepted_answers": [
             "我一看就懂了。",
             "我一看就懂了"
           ],
-          "explanation": "我 + 一 + 看 + 就 + 懂 + 了。"
+          "explanation": "我 + 一 + 看 + 就 + 懂 + 了。",
+          "id": "yijiu-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 懂。",
+            "prompt_zh": "我一看就___了。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Tôi vừa nhìn là hiểu ngay.'",
+          "type": "fill"
         },
         {
-          "id": "yijiu-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy vừa về nhà là ngủ ngay.'",
-          "payload": {
-            "tokens": [
-              "睡觉",
-              "他",
-              "一",
-              "回家",
-              "就"
-            ]
-          },
           "accepted_answers": [
             [
               "他",
@@ -109,74 +109,80 @@
               "睡觉"
             ]
           ],
-          "explanation": "Thứ tự: chủ ngữ → 一 → động tác 1 → 就 → động tác 2."
+          "explanation": "Thứ tự: chủ ngữ → 一 → động tác 1 → 就 → động tác 2.",
+          "id": "yijiu-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "睡觉",
+              "他",
+              "一",
+              "回家",
+              "就"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy vừa về nhà là ngủ ngay.'",
+          "type": "order"
         },
         {
+          "accepted_answers": [
+            "回家"
+          ],
+          "explanation": "一 phải đứng trước động từ thứ nhất; ở đây 回家 đặt trước 一 nên sai vị trí.",
           "id": "yijiu-ex4",
-          "type": "error_spot",
-          "prompt_vi": "Câu sau sai ở khối nào? 他回家一就睡觉。",
+          "is_open_ended": false,
           "payload": {
-            "sentence_zh": "他回家一就睡觉。",
             "options": [
               "他",
               "回家",
               "一",
               "就",
               "睡觉"
-            ]
+            ],
+            "sentence_zh": "他回家一就睡觉。"
           },
-          "accepted_answers": [
-            "回家"
-          ],
-          "explanation": "一 phải đứng trước động từ thứ nhất; ở đây 回家 đặt trước 一 nên sai vị trí."
+          "prompt_vi": "Câu sau sai ở khối nào? 他回家一就睡觉。",
+          "type": "error_spot"
         },
         {
-          "id": "yijiu-ex5",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tôi vừa về nhà là gọi điện cho bạn' (viết bằng chữ Hán)",
-          "payload": {
-            "prompt_zh": null,
-            "hint_vi": "Bắt đầu bằng 我。"
-          },
           "accepted_answers": [
             "我一回家就给你打电话。",
             "我一回家就给你打电话",
             "我一到家就给你打电话。",
             "我一到家就给你打电话"
           ],
-          "explanation": "Tôi vừa về nhà là gọi điện cho bạn: 我 + 一 + 回家/到家 + 就 + 给你打电话。"
+          "explanation": "Tôi vừa về nhà là gọi điện cho bạn: 我 + 一 + 回家/到家 + 就 + 给你打电话。",
+          "id": "yijiu-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 我。",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tôi vừa về nhà là gọi điện cho bạn' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
-      "confusions": [
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "他回家一就睡觉。",
-          "explanation": "一 đứng trước động từ thứ nhất, không đứng sau nó."
-        },
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "他一回家睡觉。",
-          "explanation": "Mẫu cố định là 一……就……; bỏ 就 thì câu không còn đúng mẫu này."
-        },
-        {
-          "verdict": "doi_nghia",
-          "wrong_or_risky": "他先回家，再睡觉。(khi muốn nhấn mạnh vừa về là ngủ ngay)",
-          "explanation": "先……，再…… chỉ nói thứ tự trước–sau; muốn nhấn mạnh 'ngay lập tức' thì dùng 一……就……。"
-        }
-      ],
+      "formula_notes": "1) Vị trí: 一 đứng trước động từ thứ nhất, 就 đứng trước động từ thứ hai và nhấn mạnh “ngay”. 2) Cần có sẵn: thiếu 就 thì không còn là mẫu 一……就…….",
+      "hsk_level": 2,
+      "id": "yi-jiu-tight",
+      "objective": "Sau bài này, người học dùng mẫu 一……就…… để nói hai việc xảy ra sát nhau, việc sau theo ngay việc trước.",
+      "pattern": "一 + Động tác 1 + 就 + Động tác 2",
+      "quick_memory": "Vừa làm A xong là B ngay: 一 + động từ 1 + 就 + động từ 2. Thiếu 就 là mất mẫu.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "hsk-official",
-          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "hsk-official"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí."
-      }
+      "title_vi": "Vừa… là… ngay với 一……就……",
+      "when_to_use": "Khi muốn nhấn mạnh hai việc xảy ra liền nhau, không có khoảng nghỉ đáng kể giữa chúng."
     }
-  ]
+  ],
+  "schema_version": 1
 }

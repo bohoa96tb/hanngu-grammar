@@ -1,19 +1,28 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "gei-double-object",
-      "title_vi": "Câu hai tân ngữ với 给",
-      "pattern": "Chủ ngữ + 动词 + 给 + Người + Vật • Chủ ngữ + 给 + Người + 动词 + Vật",
-      "hsk_level": 2,
+      "confusions": [
+        {
+          "explanation": "Người nhận phải đứng trước vật được cho: 送给他一本书 mới đúng.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我送一本书他。"
+        },
+        {
+          "explanation": "为 nói 'vì ai, thay ai' theo nghĩa mục đích; nói người nhận trực tiếp thì dùng 给.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我为他买了一本书。 (muốn nói 'Tôi tặng anh ấy một cuốn sách')"
+        },
+        {
+          "explanation": "Lượng từ + danh từ đi cùng nhau: 一本书, không tách thành 书一本.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我送给他书一本。"
+        }
+      ],
+      "content_version": 2,
       "difficulty": "medium",
-      "objective": "Sau bài này, người học dùng được hai mẫu câu hai tân ngữ với 给, không đảo vị trí người nhận và vật được cho.",
-      "when_to_use": "Khi muốn nói cho/tặng ai cái gì hoặc làm gì cho ai: người nhận và vật được cho đều là tân ngữ, thứ tự cố định.",
-      "formula_notes": "Mẫu 1: Chủ ngữ + Động từ + 给 + Người nhận + Vật. Mẫu 2: Chủ ngữ + 给 + Người nhận + Động từ + Vật. Người nhận đứng trước vật trong cả hai mẫu.",
       "examples": [
         {
-          "zh": "我送给他一本书。",
-          "vi": "Tôi tặng anh ấy một cuốn sách.",
+          "from_vietnamese_intent": true,
           "pinyin": "Wǒ sòng gěi tā yì běn shū.",
           "tokens": [
             "我",
@@ -21,11 +30,11 @@
             "他",
             "一本书"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Tôi tặng anh ấy một cuốn sách.",
+          "zh": "我送给他一本书。"
         },
         {
-          "zh": "我给他买了一本书。",
-          "vi": "Tôi mua cho anh ấy một cuốn sách.",
+          "from_vietnamese_intent": false,
           "pinyin": "Wǒ gěi tā mǎi le yì běn shū.",
           "tokens": [
             "我",
@@ -35,11 +44,11 @@
             "了",
             "一本书"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Tôi mua cho anh ấy một cuốn sách.",
+          "zh": "我给他买了一本书。"
         },
         {
-          "zh": "妈妈给我做了一件衣服。",
-          "vi": "Mẹ làm cho tôi một bộ quần áo.",
+          "from_vietnamese_intent": false,
           "pinyin": "Māma gěi wǒ zuò le yí jiàn yīfu.",
           "tokens": [
             "妈妈",
@@ -49,14 +58,18 @@
             "了",
             "一件衣服"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Mẹ làm cho tôi một bộ quần áo.",
+          "zh": "妈妈给我做了一件衣服。"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "我送给他一本书。"
+          ],
+          "explanation": "Mẫu 1: 送 + 给 + 他 + 一本书. Người nhận 他 đứng trước vật 一本书.",
           "id": "gei-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để nói 'Tôi tặng anh ấy một cuốn sách'.",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "我送给他一本书。",
@@ -65,37 +78,25 @@
               "我送给他书一本。"
             ]
           },
-          "accepted_answers": [
-            "我送给他一本书。"
-          ],
-          "explanation": "Mẫu 1: 送 + 给 + 他 + 一本书. Người nhận 他 đứng trước vật 一本书."
+          "prompt_vi": "Chọn câu đúng để nói 'Tôi tặng anh ấy một cuốn sách'.",
+          "type": "choice"
         },
         {
-          "id": "gei-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Tôi mua cho anh ấy một cuốn sách.'",
-          "payload": {
-            "prompt_zh": "我___买了一本书。",
-            "hint_vi": "Dùng 给他."
-          },
           "accepted_answers": [
             "我给他买了一本书。",
             "我给他买了一本书"
           ],
-          "explanation": "Mẫu 2: 给 + 他 + 买 + 了 + 一本书."
+          "explanation": "Mẫu 2: 给 + 他 + 买 + 了 + 一本书.",
+          "id": "gei-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 给他.",
+            "prompt_zh": "我___买了一本书。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Tôi mua cho anh ấy một cuốn sách.'",
+          "type": "fill"
         },
         {
-          "id": "gei-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu: 'Tôi tặng anh ấy một cuốn sách.'",
-          "payload": {
-            "tokens": [
-              "一本书",
-              "我",
-              "送给",
-              "他"
-            ]
-          },
           "accepted_answers": [
             [
               "我",
@@ -104,71 +105,78 @@
               "一本书"
             ]
           ],
-          "explanation": "Thứ tự: chủ ngữ → 送给 → người nhận → vật."
+          "explanation": "Thứ tự: chủ ngữ → 送给 → người nhận → vật.",
+          "id": "gei-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "一本书",
+              "我",
+              "送给",
+              "他"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Tôi tặng anh ấy một cuốn sách.'",
+          "type": "order"
         },
         {
+          "accepted_answers": [
+            "一本书"
+          ],
+          "explanation": "Lỗi ở 一本书: vật đang đứng trước người nhận. Thứ tự đúng là người nhận trước vật: 我送给他一本书。",
           "id": "gei-ex4",
-          "type": "error_spot",
-          "prompt_vi": "Câu sau sai ở khối nào? 我送一本书他。",
+          "is_open_ended": false,
           "payload": {
-            "sentence_zh": "我送一本书他。",
             "options": [
               "我",
               "送",
               "一本书",
               "他"
-            ]
+            ],
+            "sentence_zh": "我送一本书他。"
           },
-          "accepted_answers": [
-            "一本书"
-          ],
-          "explanation": "Người nhận phải đứng trước vật: 送给他一本书 mới đúng."
+          "prompt_vi": "Câu sau sai ở khối nào? 我送一本书他。",
+          "type": "error_spot"
         },
         {
-          "id": "gei-ex5",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tôi tặng cô ấy một cây bút.' (viết bằng chữ Hán)",
-          "payload": {
-            "prompt_zh": null,
-            "hint_vi": "Bắt đầu bằng 我."
-          },
           "accepted_answers": [
             "我送给她一支笔。",
-            "我送给她一支笔"
+            "我送给她一支笔",
+            "我送她一支笔。",
+            "我送她一支笔"
           ],
-          "explanation": "Từ ý muốn nói 'Tôi tặng cô ấy một cây bút': 我 + 送给 + 她 + 一支笔."
+          "explanation": "Từ ý muốn nói 'Tôi tặng cô ấy một cây bút': 我 + 送给/送 + 她 + 一支笔 (người nhận đứng trước vật).",
+          "id": "gei-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 我.",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tôi tặng cô ấy một cây bút.' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
-      "confusions": [
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "我送一本书他。",
-          "explanation": "Người nhận phải đứng trước vật được cho: 送给他一本书 mới đúng."
-        },
-        {
-          "verdict": "doi_nghia",
-          "wrong_or_risky": "我为他买了一本书。 (muốn nói 'Tôi tặng anh ấy một cuốn sách')",
-          "explanation": "为 nói 'vì ai, thay ai' theo nghĩa mục đích; nói người nhận trực tiếp thì dùng 给."
-        },
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "我送给他书一本。",
-          "explanation": "Lượng từ + danh từ đi cùng nhau: 一本书, không tách thành 书一本."
-        }
-      ],
+      "formula_notes": "1) Mẫu 1: Chủ ngữ + Động từ + 给 + Người nhận + Vật. 2) Mẫu 2: Chủ ngữ + 给 + Người nhận + Động từ + Vật. 3) Cần có sẵn: người nhận luôn đứng trước vật trong cả hai mẫu.",
+      "hsk_level": 2,
+      "id": "gei-double-object",
+      "objective": "Sau bài này, người học dùng được hai mẫu câu hai tân ngữ với 给, không đảo vị trí người nhận và vật được cho.",
+      "pattern": "Chủ ngữ + 动词 + 给 + Người + Vật • Chủ ngữ + 给 + Người + 动词 + Vật",
+      "quick_memory": "Cho ai cái gì: người nhận luôn đứng trước vật. 给 đặt sát người nhận.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "cgw",
-          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "cgw"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
-      }
+      "title_vi": "Câu hai tân ngữ với 给",
+      "when_to_use": "Khi muốn nói cho/tặng ai cái gì hoặc làm gì cho ai: người nhận và vật được cho đều là tân ngữ, thứ tự cố định."
     }
-  ]
+  ],
+  "schema_version": 1
 }
