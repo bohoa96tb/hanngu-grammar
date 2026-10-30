@@ -214,6 +214,24 @@ nhóm phạm vi của dự án; số mục nhóm không phải số chính thứ
 dùng tính phần trăm bao phủ vi mô. P01-02 vẫn in_progress cho tới khi
 HSK3–6 đối chiếu xong. Bài mới chỉ chọn từ mục thiếu đã xác minh.
 
+## D25 — Mô hình AI Manager và chuẩn hóa toàn bộ nội dung/giao diện (30/10/2026)
+Lý do: người dùng mở rộng nhiệm vụ (chuẩn hóa toàn bộ) và yêu cầu vận hành
+theo mô hình Manager: Manager đọc checkpoint + HEAD/PR thật trước khi giao
+việc; ba vai trò Nội dung / Code / QA với quyền sở hữu file không chồng nhau;
+vòng tự sửa QA tối đa 3 vòng cho cùng một lỗi; chỉ Manager tích hợp, commit,
+tạo PR và merge; merge chỉ khi QA đạt; sau merge phải nghiệm thu live đúng
+commit mới tính lô hoàn thành.
+Ảnh hưởng: chuẩn áp dụng ghi ở docs/reviews/standardization-2026-10-30.md
+(schema: thêm `quick_memory` bắt buộc cho bài published, `formula_notes`
+chia bước đánh số, thêm `is_open_ended: false` cho mọi bài tập; độ khó gán
+lại: ba-sentence-1/bei-passive-1/le-completion-change → hard, why-question
+→ easy, prefix-suffix/pronouns → medium). Bài le-completion-change tạm gán
+hard và chia hai cách dùng rõ trong bài; việc TÁCH thành hai bài riêng ghi
+vào kế hoạch lô sau vì đổi cấu trúc bài giữa lô chuẩn hóa giao diện có rủi
+ro tiến độ/ID, không phải vì giữ gộp vĩnh viễn. Không có cơ chế chạy nền
+ngoài phiên: mọi việc chỉ chạy trong phiên làm việc, không tuyên bố tự
+khởi chạy khi không có phiên.
+
 ## D24 — Xác định giọng zh phải chờ voiceschanged, không đọc danh sách rỗng (29/10/2026)
 Lý do: nghiệm thu qa-06 cho thấy bảng chẩn đoán báo "không tìm thấy
 giọng zh" nhưng bấm Nghe mẫu lại không hiện cảnh báo, vì getVoices()

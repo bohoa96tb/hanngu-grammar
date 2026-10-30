@@ -1,19 +1,28 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "hai-shi-choice",
-      "title_vi": "Câu hỏi lựa chọn với 还是",
-      "pattern": "A + 还是 + B?",
-      "hsk_level": 2,
+      "confusions": [
+        {
+          "explanation": "Câu hỏi lựa chọn bằng 还是 không dùng 吗.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "你喝茶吗还是喝咖啡？"
+        },
+        {
+          "explanation": "或者 dùng trong câu trần thuật ('uống trà hoặc cà phê đều được'); hỏi lựa chọn phải dùng 还是.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "你喝茶或者喝咖啡？ (muốn hỏi lựa chọn)"
+        },
+        {
+          "explanation": "Câu hỏi 还是 yêu cầu chọn một phương án, không trả lời 是/不是.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "Trả lời câu hỏi 还是 bằng 是。"
+        }
+      ],
+      "content_version": 2,
       "difficulty": "medium",
-      "objective": "Sau bài này, người học đặt được câu hỏi lựa chọn bằng 还是, không dùng 吗 và không nhầm với 或者.",
-      "when_to_use": "Khi hỏi người nghe chọn một trong hai (hoặc nhiều) phương án. Câu hỏi lựa chọn không dùng 吗.",
-      "formula_notes": "Phương án 1 + 还是 + Phương án 2 (+ ?). Trả lời bằng cách chọn một phương án, không trả lời 是/不是. 或者 dùng trong câu trần thuật, không dùng để hỏi lựa chọn.",
       "examples": [
         {
-          "zh": "你喝茶还是喝咖啡？",
-          "vi": "Bạn uống trà hay uống cà phê?",
+          "from_vietnamese_intent": true,
           "pinyin": "Nǐ hē chá háishì hē kāfēi?",
           "tokens": [
             "你",
@@ -23,11 +32,11 @@
             "喝",
             "咖啡"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Bạn uống trà hay uống cà phê?",
+          "zh": "你喝茶还是喝咖啡？"
         },
         {
-          "zh": "你去还是我去？",
-          "vi": "Bạn đi hay tôi đi?",
+          "from_vietnamese_intent": false,
           "pinyin": "Nǐ qù háishì wǒ qù?",
           "tokens": [
             "你",
@@ -36,11 +45,11 @@
             "我",
             "去"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Bạn đi hay tôi đi?",
+          "zh": "你去还是我去？"
         },
         {
-          "zh": "你要大的还是小的？",
-          "vi": "Bạn muốn cái lớn hay cái nhỏ?",
+          "from_vietnamese_intent": false,
           "pinyin": "Nǐ yào dà de háishì xiǎo de?",
           "tokens": [
             "你",
@@ -51,14 +60,18 @@
             "小",
             "的"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Bạn muốn cái lớn hay cái nhỏ?",
+          "zh": "你要大的还是小的？"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "你喝茶还是喝咖啡？"
+          ],
+          "explanation": "Câu hỏi lựa chọn dùng 还是 và không dùng 吗.",
           "id": "haishi-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để hỏi 'Bạn uống trà hay uống cà phê?'",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "你喝茶还是喝咖啡？",
@@ -67,37 +80,25 @@
               "你喝茶还是喝咖啡吗？"
             ]
           },
-          "accepted_answers": [
-            "你喝茶还是喝咖啡？"
-          ],
-          "explanation": "Câu hỏi lựa chọn dùng 还是 và không dùng 吗."
+          "prompt_vi": "Chọn câu đúng để hỏi 'Bạn uống trà hay uống cà phê?'",
+          "type": "choice"
         },
         {
-          "id": "haishi-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Bạn đi hay tôi đi?'",
-          "payload": {
-            "prompt_zh": "你去___我去？",
-            "hint_vi": "Dùng 还是."
-          },
           "accepted_answers": [
             "你去还是我去？",
             "你去还是我去"
           ],
-          "explanation": "Lựa chọn: 你去 + 还是 + 我去."
+          "explanation": "Lựa chọn: 你去 + 还是 + 我去.",
+          "id": "haishi-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 还是.",
+            "prompt_zh": "你去___我去？"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Bạn đi hay tôi đi?'",
+          "type": "fill"
         },
         {
-          "id": "haishi-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu: 'Bạn uống trà hay uống cà phê?'",
-          "payload": {
-            "tokens": [
-              "喝咖啡",
-              "你",
-              "喝茶",
-              "还是"
-            ]
-          },
           "accepted_answers": [
             [
               "你",
@@ -106,72 +107,77 @@
               "喝咖啡"
             ]
           ],
-          "explanation": "Thứ tự: chủ ngữ → phương án 1 → 还是 → phương án 2."
+          "explanation": "Thứ tự: chủ ngữ → phương án 1 → 还是 → phương án 2.",
+          "id": "haishi-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "喝咖啡",
+              "你",
+              "喝茶",
+              "还是"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Bạn uống trà hay uống cà phê?'",
+          "type": "order"
         },
         {
+          "accepted_answers": [
+            "吗"
+          ],
+          "explanation": "Câu hỏi lựa chọn bằng 还是 không dùng 吗.",
           "id": "haishi-ex4",
-          "type": "error_spot",
-          "prompt_vi": "Câu sau sai ở khối nào? 你喝茶吗还是喝咖啡？",
+          "is_open_ended": false,
           "payload": {
-            "sentence_zh": "你喝茶吗还是喝咖啡？",
             "options": [
               "你",
               "喝茶",
               "吗",
               "还是",
               "喝咖啡"
-            ]
+            ],
+            "sentence_zh": "你喝茶吗还是喝咖啡？"
           },
-          "accepted_answers": [
-            "吗"
-          ],
-          "explanation": "Câu hỏi lựa chọn bằng 还是 không dùng 吗."
+          "prompt_vi": "Câu sau sai ở khối nào? 你喝茶吗还是喝咖啡？",
+          "type": "error_spot"
         },
         {
-          "id": "haishi-ex5",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Bạn muốn trà hay cà phê?' (viết bằng chữ Hán)",
-          "payload": {
-            "prompt_zh": null,
-            "hint_vi": "Bắt đầu bằng 你."
-          },
           "accepted_answers": [
             "你要茶还是咖啡？",
             "你要茶还是咖啡"
           ],
-          "explanation": "Từ ý muốn nói 'Bạn muốn trà hay cà phê': 你 + 要 + 茶 + 还是 + 咖啡."
+          "explanation": "Từ ý muốn nói 'Bạn muốn trà hay cà phê': 你 + 要 + 茶 + 还是 + 咖啡.",
+          "id": "haishi-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 你.",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Bạn muốn trà hay cà phê?' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
-      "confusions": [
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "你喝茶吗还是喝咖啡？",
-          "explanation": "Câu hỏi lựa chọn bằng 还是 không dùng 吗."
-        },
-        {
-          "verdict": "doi_nghia",
-          "wrong_or_risky": "你喝茶或者喝咖啡？ (muốn hỏi lựa chọn)",
-          "explanation": "或者 dùng trong câu trần thuật ('uống trà hoặc cà phê đều được'); hỏi lựa chọn phải dùng 还是."
-        },
-        {
-          "verdict": "doi_nghia",
-          "wrong_or_risky": "Trả lời câu hỏi 还是 bằng 是。",
-          "explanation": "Câu hỏi 还是 yêu cầu chọn một phương án, không trả lời 是/不是."
-        }
-      ],
+      "formula_notes": "1) Vị trí: Phương án 1 + 还是 + Phương án 2? 2) Trả lời: chọn một phương án, không trả lời 是/不是. 3) Không dùng: 或者 chỉ dùng trong câu trần thuật, không dùng để hỏi lựa chọn.",
+      "hsk_level": 2,
+      "id": "hai-shi-choice",
+      "objective": "Sau bài này, người học đặt được câu hỏi lựa chọn bằng 还是, không dùng 吗 và không nhầm với 或者.",
+      "pattern": "A + 还是 + B?",
+      "quick_memory": "Hỏi chọn một trong hai → 还是. Câu kể lựa chọn thì dùng 或者, không dùng 还是.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "cgw",
-          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "cgw"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
-      }
+      "title_vi": "Câu hỏi lựa chọn với 还是",
+      "when_to_use": "Khi hỏi người nghe chọn một trong hai (hoặc nhiều) phương án. Câu hỏi lựa chọn không dùng 吗."
     }
-  ]
+  ],
+  "schema_version": 1
 }

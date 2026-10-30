@@ -1,53 +1,66 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "verb-reduplication",
-      "title_vi": "Động từ trùng điệp: 看看, 想一想",
-      "pattern": "AA • A一A • ABAB",
-      "hsk_level": 2,
+      "confusions": [
+        {
+          "explanation": "Trùng điệp mang giọng thân mật, nhẹ nhàng; văn phong trang trọng dùng dạng đầy đủ không trùng điệp.",
+          "verdict": "khac_van_phong",
+          "wrong_or_risky": "Dùng 看看 trong văn bản hành chính trang trọng"
+        },
+        {
+          "explanation": "看看 và 看一看 đều đúng; 看一看 nhấn mạnh 'thử một lần' hơn một chút, trong nhiều ngữ cảnh thay được cho nhau.",
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "看看 và 看一看 chỉ dùng một dạng duy nhất"
+        },
+        {
+          "explanation": "Phần trùng điệp phải đứng ngay sau động từ, trước tân ngữ: 看看这本书 mới đúng.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "你看书看。"
+        }
+      ],
+      "content_version": 2,
       "difficulty": "medium",
-      "objective": "Sau bài này, người học dùng được động từ trùng điệp để nói thử làm một việc một cách nhẹ nhàng, không dùng trong văn phong trang trọng.",
-      "when_to_use": "Khi muốn nói thử làm một việc trong thời gian ngắn, giọng nhẹ nhàng, thân mật (thử xem, nghĩ xem). Không dùng trong văn bản trang trọng.",
-      "formula_notes": "Động từ đơn âm tiết: AA (看看) hoặc A一A (看一看). Động từ song âm tiết cũng có dạng trùng điệp, ví dụ mẫu cố định 走来走去 (đi đi lại lại). Trùng điệp làm giọng nhẹ nhàng, thân mật, không đổi nghĩa gốc của động từ.",
       "examples": [
         {
-          "zh": "你看看这本书。",
-          "vi": "Bạn xem thử cuốn sách này.",
+          "from_vietnamese_intent": true,
           "pinyin": "Nǐ kàn kan zhè běn shū.",
           "tokens": [
             "你",
             "看看",
             "这本书"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Bạn xem thử cuốn sách này.",
+          "zh": "你看看这本书。"
         },
         {
-          "zh": "我们想一想。",
-          "vi": "Chúng ta nghĩ xem.",
+          "from_vietnamese_intent": false,
           "pinyin": "Wǒmen xiǎng yi xiǎng.",
           "tokens": [
             "我们",
             "想一想"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Chúng ta nghĩ xem.",
+          "zh": "我们想一想。"
         },
         {
-          "zh": "他走来走去。",
-          "vi": "Anh ấy đi đi lại lại.",
+          "from_vietnamese_intent": false,
           "pinyin": "Tā zǒu lái zǒu qù.",
           "tokens": [
             "他",
             "走来走去"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Anh ấy đi đi lại lại.",
+          "zh": "他走来走去。"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "你看看这本书。"
+          ],
+          "explanation": "Trùng điệp AA: 看看 + 这本书.",
           "id": "redup-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để nói 'Bạn xem thử cuốn sách này'.",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "你看看这本书。",
@@ -56,36 +69,27 @@
               "你看看书这本。"
             ]
           },
-          "accepted_answers": [
-            "你看看这本书。"
-          ],
-          "explanation": "Trùng điệp AA: 看看 + 这本书."
+          "prompt_vi": "Chọn câu đúng để nói 'Bạn xem thử cuốn sách này'.",
+          "type": "choice"
         },
         {
-          "id": "redup-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Chúng ta nghĩ xem.'",
-          "payload": {
-            "prompt_zh": "我们___。",
-            "hint_vi": "Dùng 想一想."
-          },
           "accepted_answers": [
             "我们想一想。",
-            "我们想一想"
+            "我们想一想",
+            "我们想想。",
+            "我们想想"
           ],
-          "explanation": "Trùng điệp A一A: 想一想."
+          "explanation": "Trùng điệp: 想一想 (A一A) hoặc 想想 (AA).",
+          "id": "redup-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 想一想.",
+            "prompt_zh": "我们___。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Chúng ta nghĩ xem.'",
+          "type": "fill"
         },
         {
-          "id": "redup-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu: 'Bạn xem thử cuốn sách này.'",
-          "payload": {
-            "tokens": [
-              "这本书",
-              "你",
-              "看看"
-            ]
-          },
           "accepted_answers": [
             [
               "你",
@@ -93,70 +97,76 @@
               "这本书"
             ]
           ],
-          "explanation": "Thứ tự: chủ ngữ → 看看 → tân ngữ."
+          "explanation": "Thứ tự: chủ ngữ → 看看 → tân ngữ.",
+          "id": "redup-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "这本书",
+              "你",
+              "看看"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Bạn xem thử cuốn sách này.'",
+          "type": "order"
         },
         {
+          "accepted_answers": [
+            "看"
+          ],
+          "explanation": "Trùng điệp phải gắn ngay sau động từ: 看看, không tách ra sau tân ngữ.",
           "id": "redup-ex4",
-          "type": "error_spot",
-          "prompt_vi": "Câu sau sai ở khối nào? 你看书看。",
+          "is_open_ended": false,
           "payload": {
-            "sentence_zh": "你看书看。",
             "options": [
               "你",
               "看书",
               "看"
-            ]
+            ],
+            "sentence_zh": "你看书看。"
           },
-          "accepted_answers": [
-            "看"
-          ],
-          "explanation": "Trùng điệp phải gắn ngay sau động từ: 看看, không tách ra sau tân ngữ."
+          "prompt_vi": "Câu sau sai ở khối nào? 你看书看。",
+          "type": "error_spot"
         },
         {
-          "id": "redup-ex5",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Bạn thử xem.' (viết bằng chữ Hán)",
-          "payload": {
-            "prompt_zh": null,
-            "hint_vi": "Bắt đầu bằng 你."
-          },
           "accepted_answers": [
             "你试试。",
-            "你试试"
+            "你试试",
+            "你试一试。",
+            "你试一试"
           ],
-          "explanation": "Từ ý muốn nói 'Bạn thử xem': 你 + 试试."
+          "explanation": "Từ ý muốn nói 'Bạn thử xem': 你 + 试试/试一试.",
+          "id": "redup-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 你.",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Bạn thử xem.' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
-      "confusions": [
-        {
-          "verdict": "khac_van_phong",
-          "wrong_or_risky": "Dùng 看看 trong văn bản hành chính trang trọng",
-          "explanation": "Trùng điệp mang giọng thân mật, nhẹ nhàng; văn phong trang trọng dùng dạng đầy đủ không trùng điệp."
-        },
-        {
-          "verdict": "thay_duoc_co_dieu_kien",
-          "wrong_or_risky": "看看 và 看一看 chỉ dùng một dạng duy nhất",
-          "explanation": "看看 và 看一看 đều đúng; 看一看 nhấn mạnh 'thử một lần' hơn một chút, trong nhiều ngữ cảnh thay được cho nhau."
-        },
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "你看书看。",
-          "explanation": "Phần trùng điệp phải đứng ngay sau động từ, trước tân ngữ: 看看这本书 mới đúng."
-        }
-      ],
+      "formula_notes": "1) Động từ một âm tiết: AA (看看) hoặc A一A (看一看). 2) Động từ hai âm tiết: dạng ABAB (研究研究, 休息休息). 3) Tác dụng: làm giọng nhẹ nhàng, thân mật; không đổi nghĩa gốc của động từ. 4) Mở rộng (chỉ nhận biết): 走来走去 thuộc mẫu V来V去 riêng, không phải trùng điệp.",
+      "hsk_level": 2,
+      "id": "verb-reduplication",
+      "objective": "Sau bài này, người học dùng được động từ trùng điệp để nói thử làm một việc một cách nhẹ nhàng, không dùng trong văn phong trang trọng.",
+      "pattern": "AA • A一A • ABAB",
+      "quick_memory": "Nói nhẹ nhàng, thử làm: lặp động từ (看看, 看一看). Lặp xong không gắn thêm tân ngữ lạ.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "cgw",
-          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "cgw"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
-      }
+      "title_vi": "Động từ trùng điệp: 看看, 想一想",
+      "when_to_use": "Khi muốn nói thử làm một việc trong thời gian ngắn, giọng nhẹ nhàng, thân mật (thử xem, nghĩ xem). Không dùng trong văn bản trang trọng."
     }
-  ]
+  ],
+  "schema_version": 1
 }

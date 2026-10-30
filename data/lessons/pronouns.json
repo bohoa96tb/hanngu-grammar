@@ -1,19 +1,28 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "pronouns",
-      "title_vi": "Đại từ: 这/那 và đại từ nhân xưng",
-      "pattern": "这/那 (+ Lượng từ) + Danh từ • Đại từ nhân xưng",
-      "hsk_level": 1,
-      "difficulty": "easy",
-      "objective": "Sau bài này, người học dùng được 这/那 chỉ vật gần/xa, 这些/那些 chỉ số nhiều và đại từ nhân xưng đúng ngôi, không nhầm gần/xa.",
-      "when_to_use": "Khi chỉ người/vật đang nói tới: gần người nói dùng 这, xa người nói dùng 那; nhiều vật dùng 这些/那些.",
-      "formula_notes": "这/那 + (Lượng từ) + Danh từ. Số nhiều: 这些/那些 + Danh từ. Đại từ nhân xưng: 我/你/他/她/我们/你们/他们/她们; 他 và 她 đọc giống nhau, viết khác nhau theo giới tính người được nhắc tới.",
+      "confusions": [
+        {
+          "explanation": "这 chỉ người/vật gần người nói; người kia (xa) phải dùng 那.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "这个人是老师。 (muốn nói 'Người kia là giáo viên')"
+        },
+        {
+          "explanation": "这 là số ít; nhiều cuốn phải dùng 这些.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "这是我的书。 (muốn nói 'Những cuốn này là sách của tôi')"
+        },
+        {
+          "explanation": "他 và 她 đọc giống nhau nhưng viết khác nhau theo giới tính người được nhắc tới; viết cần chọn đúng.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "Dùng 他 cho mọi người được nhắc tới khi viết"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
       "examples": [
         {
-          "zh": "这是他的笔。",
-          "vi": "Đây là bút của anh ấy.",
+          "from_vietnamese_intent": true,
           "pinyin": "Zhè shì tā de bǐ.",
           "tokens": [
             "这",
@@ -22,11 +31,11 @@
             "的",
             "笔"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Đây là bút của anh ấy.",
+          "zh": "这是他的笔。"
         },
         {
-          "zh": "那个人是老师。",
-          "vi": "Người kia là giáo viên.",
+          "from_vietnamese_intent": false,
           "pinyin": "Nà gè rén shì lǎoshī.",
           "tokens": [
             "那",
@@ -35,11 +44,11 @@
             "是",
             "老师"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Người kia là giáo viên.",
+          "zh": "那个人是老师。"
         },
         {
-          "zh": "这些是我的书。",
-          "vi": "Những cuốn này là sách của tôi.",
+          "from_vietnamese_intent": false,
           "pinyin": "Zhèxiē shì wǒ de shū.",
           "tokens": [
             "这些",
@@ -48,14 +57,18 @@
             "的",
             "书"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Những cuốn này là sách của tôi.",
+          "zh": "这些是我的书。"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "那个人是老师。"
+          ],
+          "explanation": "Xa người nói dùng 那: 那 + 个 + 人 + 是 + 老师.",
           "id": "pron-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để nói 'Người kia là giáo viên'.",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "那个人是老师。",
@@ -64,38 +77,25 @@
               "那个人老师是。"
             ]
           },
-          "accepted_answers": [
-            "那个人是老师。"
-          ],
-          "explanation": "Xa người nói dùng 那: 那 + 个 + 人 + 是 + 老师."
+          "prompt_vi": "Chọn câu đúng để nói 'Người kia là giáo viên'.",
+          "type": "choice"
         },
         {
-          "id": "pron-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Những cuốn này là sách của tôi.'",
-          "payload": {
-            "prompt_zh": "___是我的书。",
-            "hint_vi": "Dùng 这些."
-          },
           "accepted_answers": [
             "这些是我的书。",
             "这些是我的书"
           ],
-          "explanation": "Số nhiều gần người nói: 这些 + 是 + 我的书."
+          "explanation": "Số nhiều gần người nói: 这些 + 是 + 我的书.",
+          "id": "pron-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 这些.",
+            "prompt_zh": "___是我的书。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Những cuốn này là sách của tôi.'",
+          "type": "fill"
         },
         {
-          "id": "pron-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu: 'Đây là bút của anh ấy.'",
-          "payload": {
-            "tokens": [
-              "笔",
-              "这",
-              "是",
-              "他",
-              "的"
-            ]
-          },
           "accepted_answers": [
             [
               "这",
@@ -105,53 +105,58 @@
               "笔"
             ]
           ],
-          "explanation": "Thứ tự: 这 → 是 → 他 → 的 → 笔."
+          "explanation": "Thứ tự: 这 → 是 → 他 → 的 → 笔.",
+          "id": "pron-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "笔",
+              "这",
+              "是",
+              "他",
+              "的"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Đây là bút của anh ấy.'",
+          "type": "order"
         },
         {
-          "id": "pron-ex4",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Đó là giáo viên của tôi.' (viết bằng chữ Hán)",
-          "payload": {
-            "prompt_zh": null,
-            "hint_vi": "Bắt đầu bằng 那."
-          },
           "accepted_answers": [
             "那是我的老师。",
             "那是我的老师"
           ],
-          "explanation": "Từ ý muốn nói 'Đó là giáo viên của tôi': 那 + 是 + 我的老师."
+          "explanation": "Từ ý muốn nói 'Đó là giáo viên của tôi': 那 + 是 + 我的老师.",
+          "id": "pron-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 那.",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Đó là giáo viên của tôi.' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
-      "confusions": [
-        {
-          "verdict": "doi_nghia",
-          "wrong_or_risky": "这个人是老师。 (muốn nói 'Người kia là giáo viên')",
-          "explanation": "这 chỉ người/vật gần người nói; người kia (xa) phải dùng 那."
-        },
-        {
-          "verdict": "doi_nghia",
-          "wrong_or_risky": "这是我的书。 (muốn nói 'Những cuốn này là sách của tôi')",
-          "explanation": "这 là số ít; nhiều cuốn phải dùng 这些."
-        },
-        {
-          "verdict": "doi_nghia",
-          "wrong_or_risky": "Dùng 他 cho mọi người được nhắc tới khi viết",
-          "explanation": "他 và 她 đọc giống nhau nhưng viết khác nhau theo giới tính người được nhắc tới; viết cần chọn đúng."
-        }
-      ],
+      "formula_notes": "1) Chỉ định: 这/那 + (Lượng từ) + Danh từ; số nhiều dùng 这些/那些 + Danh từ. 2) Nhân xưng: 我/你/他/她/我们/你们/他们/她们. 3) Lưu ý: 他 và 她 đọc giống nhau, viết khác nhau theo giới tính người được nhắc.",
+      "hsk_level": 1,
+      "id": "pronouns",
+      "objective": "Sau bài này, người học dùng được 这/那 chỉ vật gần/xa, 这些/那些 chỉ số nhiều và đại từ nhân xưng đúng ngôi, không nhầm gần/xa.",
+      "pattern": "这/那 (+ Lượng từ) + Danh từ • Đại từ nhân xưng",
+      "quick_memory": "Này/kia: 这/那 + lượng từ + danh từ. Anh ấy/cô ấy viết khác (他/她) nhưng đọc giống nhau.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "cgw",
-          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "cgw"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
-      }
+      "title_vi": "Đại từ: 这/那 và đại từ nhân xưng",
+      "when_to_use": "Khi chỉ người/vật đang nói tới: gần người nói dùng 这, xa người nói dùng 那; nhiều vật dùng 这些/那些."
     }
-  ]
+  ],
+  "schema_version": 1
 }

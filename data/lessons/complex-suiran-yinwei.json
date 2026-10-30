@@ -1,19 +1,28 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "complex-suiran-yinwei",
-      "title_vi": "Câu phức: 虽然……但是 và 因为……所以",
-      "pattern": "虽然……，但是…… • 因为……，所以……",
-      "hsk_level": 2,
+      "confusions": [
+        {
+          "explanation": "Ghép nhầm hai cặp: 虽然 đi với 但是, 因为 đi với 所以.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "虽然今天很冷，所以我还是去跑步了。"
+        },
+        {
+          "explanation": "Ghép nhầm hai cặp: 因为 đi với 所以, không đi với 但是.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "因为今天很冷，但是我还是去跑步了。"
+        },
+        {
+          "explanation": "Trong giao tiếp, 虽然 có thể đứng một mình với 还是 ở phân câu sau, nhưng với người học, dùng đủ cặp 虽然……但是 rõ ràng và an toàn hơn.",
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "Bỏ 但是 trong câu 虽然 (chỉ nói 虽然……，我还是……)"
+        }
+      ],
+      "content_version": 3,
       "difficulty": "medium",
-      "objective": "Sau bài này, người học dùng được hai cặp câu phức 虽然……但是 và 因为……所以, không ghép nhầm hai nửa của hai cặp.",
-      "when_to_use": "Khi muốn nói quan hệ nhượng bộ (mặc dù… nhưng…) hoặc quan hệ nhân quả (vì… nên…). Hai nửa của một cặp phải đi cùng nhau.",
-      "formula_notes": "虽然 + phân câu 1, 但是 + phân câu 2. 因为 + phân câu 1, 所以 + phân câu 2. Chủ ngữ có thể đứng trước 虽然/因为 hoặc sau nó khi hai phân câu cùng chủ ngữ.",
       "examples": [
         {
-          "zh": "虽然今天很冷，但是我还是去跑步了。",
-          "vi": "Mặc dù hôm nay rất lạnh, nhưng tôi vẫn đi chạy bộ.",
+          "from_vietnamese_intent": true,
           "pinyin": "Suīrán jīntiān hěn lěng, dànshì wǒ háishì qù pǎobù le.",
           "tokens": [
             "虽然",
@@ -28,11 +37,11 @@
             "跑步",
             "了"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Mặc dù hôm nay rất lạnh, nhưng tôi vẫn đi chạy bộ.",
+          "zh": "虽然今天很冷，但是我还是去跑步了。"
         },
         {
-          "zh": "因为他生病了，所以今天没来。",
-          "vi": "Vì anh ấy bị ốm nên hôm nay không đến.",
+          "from_vietnamese_intent": false,
           "pinyin": "Yīnwèi tā shēng bìng le, suǒyǐ jīntiān méi lái.",
           "tokens": [
             "因为",
@@ -45,11 +54,11 @@
             "没",
             "来"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Vì anh ấy bị ốm nên hôm nay không đến.",
+          "zh": "因为他生病了，所以今天没来。"
         },
         {
-          "zh": "虽然他很忙，但是他还是帮我了。",
-          "vi": "Mặc dù anh ấy rất bận, nhưng anh ấy vẫn giúp tôi.",
+          "from_vietnamese_intent": false,
           "pinyin": "Suīrán tā hěn máng, dànshì tā háishì bāng wǒ le.",
           "tokens": [
             "虽然",
@@ -64,14 +73,18 @@
             "我",
             "了"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Mặc dù anh ấy rất bận, nhưng anh ấy vẫn giúp tôi.",
+          "zh": "虽然他很忙，但是他还是帮我了。"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "虽然今天很冷，但是我还是去跑步了。"
+          ],
+          "explanation": "Cặp nhượng bộ là 虽然……但是; 所以 thuộc cặp nhân quả.",
           "id": "complex-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để nói 'Mặc dù hôm nay rất lạnh, nhưng tôi vẫn đi chạy bộ'.",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "虽然今天很冷，但是我还是去跑步了。",
@@ -80,106 +93,103 @@
               "今天很冷虽然，但是我还是去跑步了。"
             ]
           },
-          "accepted_answers": [
-            "虽然今天很冷，但是我还是去跑步了。"
-          ],
-          "explanation": "Cặp nhượng bộ là 虽然……但是; 所以 thuộc cặp nhân quả."
+          "prompt_vi": "Chọn câu đúng để nói 'Mặc dù hôm nay rất lạnh, nhưng tôi vẫn đi chạy bộ'.",
+          "type": "choice"
         },
         {
-          "id": "complex-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Vì anh ấy bị ốm nên hôm nay không đến.'",
-          "payload": {
-            "prompt_zh": "___他生病了，___今天没来。",
-            "hint_vi": "Cặp nhân quả: 因为……所以…… (điền cả hai chỗ)."
-          },
           "accepted_answers": [
             "因为他生病了，所以今天没来。",
-            "因为他生病了，所以今天没来"
+            "因为他生病了，所以今天没来",
+            "因为他生病了，所以他今天没来。",
+            "因为他生病了，所以他今天没来"
           ],
-          "explanation": "Nhân quả: 因为 + nguyên nhân, 所以 + kết quả."
+          "explanation": "Nhân quả: 因为 + nguyên nhân, 所以 + kết quả.",
+          "id": "complex-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Cặp nhân quả: 因为……所以…… (điền cả hai chỗ).",
+            "prompt_zh": "___他生病了，___今天没来。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Vì anh ấy bị ốm nên hôm nay không đến.'",
+          "type": "fill"
         },
         {
-          "id": "complex-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu: 'Mặc dù anh ấy rất bận, nhưng anh ấy vẫn giúp tôi.'",
-          "payload": {
-            "tokens": [
-              "但是他还是帮我了",
-              "虽然他很忙"
-            ]
-          },
           "accepted_answers": [
             [
               "虽然他很忙",
               "但是他还是帮我了"
             ]
           ],
-          "explanation": "Thứ tự cố định: phân câu 虽然 trước, phân câu 但是 sau."
+          "explanation": "Thứ tự cố định: phân câu 虽然 trước, phân câu 但是 sau.",
+          "id": "complex-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "但是他还是帮我了",
+              "虽然他很忙"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Mặc dù anh ấy rất bận, nhưng anh ấy vẫn giúp tôi.'",
+          "type": "order"
         },
         {
+          "accepted_answers": [
+            "所以"
+          ],
+          "explanation": "Lỗi ghép nhầm cặp: 虽然 phải đi với 但是, không đi với 所以.",
           "id": "complex-ex4",
-          "type": "error_spot",
-          "prompt_vi": "Câu sau sai ở khối nào? 虽然今天很冷，所以我还是去跑步了。",
+          "is_open_ended": false,
           "payload": {
-            "sentence_zh": "虽然今天很冷，所以我还是去跑步了。",
             "options": [
               "虽然",
               "今天很冷",
               "所以",
               "我还是去跑步了"
-            ]
+            ],
+            "sentence_zh": "虽然今天很冷，所以我还是去跑步了。"
           },
-          "accepted_answers": [
-            "所以"
-          ],
-          "explanation": "Lỗi ghép nhầm cặp: 虽然 phải đi với 但是, không đi với 所以."
+          "prompt_vi": "Câu sau sai ở khối nào? 虽然今天很冷，所以我还是去跑步了。",
+          "type": "error_spot"
         },
         {
-          "id": "complex-ex5",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Vì hôm nay mưa nên tôi không đi.' (viết bằng chữ Hán)",
-          "payload": {
-            "prompt_zh": null,
-            "hint_vi": "Bắt đầu bằng 因为."
-          },
           "accepted_answers": [
             "因为今天下雨，所以我没去。",
-            "因为今天下雨，所以我没去"
+            "因为今天下雨，所以我没去",
+            "因为今天下雨，所以我没有去。",
+            "因为今天下雨，所以我没有去"
           ],
-          "explanation": "Từ ý muốn nói 'Vì hôm nay mưa nên tôi không đi': 因为 + 今天下雨, 所以 + 我没去."
+          "explanation": "Từ ý muốn nói 'Vì hôm nay mưa nên tôi không đi': 因为 + 今天下雨, 所以 + 我没去.",
+          "id": "complex-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 因为.",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Vì hôm nay mưa nên tôi không đi.' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
-      "confusions": [
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "虽然今天很冷，所以我还是去跑步了。",
-          "explanation": "Ghép nhầm hai cặp: 虽然 đi với 但是, 因为 đi với 所以."
-        },
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "因为今天很冷，但是我还是去跑步了。",
-          "explanation": "Ghép nhầm hai cặp: 因为 đi với 所以, không đi với 但是."
-        },
-        {
-          "verdict": "thay_duoc_co_dieu_kien",
-          "wrong_or_risky": "Bỏ 但是 trong câu 虽然 (chỉ nói 虽然……，我还是……)",
-          "explanation": "Trong giao tiếp, 虽然 có thể đứng một mình với 还是 ở phân câu sau, nhưng với người học, dùng đủ cặp 虽然……但是 rõ ràng và an toàn hơn."
-        }
-      ],
+      "formula_notes": "1) Nhượng bộ: 虽然 + phân câu 1, 但是 + phân câu 2. 2) Nhân quả: 因为 + phân câu 1, 所以 + phân câu 2. 3) Vị trí chủ ngữ: hai phân câu cùng chủ ngữ thì chủ ngữ đứng trước 虽然/因为 hoặc sau nó đều được. 4) Mở rộng (chỉ nhận biết): trong giao tiếp thật một vế có thể lược khi ý đã rõ (虽然很冷，他还是去跑步了); người mới nên dùng đủ cặp.",
+      "hsk_level": 2,
+      "id": "complex-suiran-yinwei",
+      "objective": "Sau bài này, người học dùng được hai cặp câu phức 虽然……但是 và 因为……所以, không ghép nhầm hai nửa của hai cặp.",
+      "pattern": "虽然……，但是…… • 因为……，所以……",
+      "quick_memory": "Đúng cặp mới đúng câu: 虽然 đi với 但是, 因为 đi với 所以. Đừng ghép chéo hai cặp.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "cgw",
-          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "cgw"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
-      }
+      "title_vi": "Câu phức: 虽然……但是 và 因为……所以",
+      "when_to_use": "Khi muốn nói quan hệ nhượng bộ (mặc dù… nhưng…) hoặc quan hệ nhân quả (vì… nên…). Người mới nên dùng đủ cả cặp cho rõ ý; trong giao tiếp thật, một vế có thể được lược khi ý đã rõ."
     }
-  ]
+  ],
+  "schema_version": 1
 }

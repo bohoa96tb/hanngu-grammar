@@ -35,6 +35,16 @@ class TestValidator(unittest.TestCase):
         bad["lessons"][0].pop("review", None)
         self.assertTrue(check(bad, Path("x")))
 
+    def test_published_without_quick_memory_fails(self):
+        bad = copy.deepcopy(DATA)
+        bad["lessons"][0].pop("quick_memory", None)
+        self.assertTrue(check(bad, Path("x")))
+
+    def test_unstepped_formula_notes_fails(self):
+        bad = copy.deepcopy(DATA)
+        bad["lessons"][0]["formula_notes"] = "Đoạn văn liền không chia bước."
+        self.assertTrue(check(bad, Path("x")))
+
     def test_missing_vietnamese_intent_example_fails(self):
         bad = copy.deepcopy(DATA)
         for e in bad["lessons"][0]["examples"]:

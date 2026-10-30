@@ -1,19 +1,23 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "ma-question",
-      "title_vi": "吗: câu hỏi có/không",
-      "pattern": "Câu trần thuật + 吗?",
-      "hsk_level": 1,
+      "confusions": [
+        {
+          "explanation": "Câu đã có từ để hỏi 谁 thì không thêm 吗: 你是谁？ mới đúng.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "你是谁吗？ (muốn hỏi 'Bạn là ai?')"
+        },
+        {
+          "explanation": "Câu hỏi chính-phản (忙不忙) đã tự chứa ý hỏi nên không thêm 吗: 你忙不忙？ hoặc 你忙吗？ mới đúng.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "你忙不忙吗？ (muốn hỏi 'Bạn có bận không?')"
+        }
+      ],
+      "content_version": 2,
       "difficulty": "easy",
-      "objective": "Sau bài này, người học đặt được câu hỏi có/không bằng 吗 và trả lời mà không lặp lại 吗.",
-      "when_to_use": "Khi muốn hỏi một điều có đúng hay không và chờ câu trả lời có/không. 吗 đặt cuối câu trần thuật, không dùng cho câu hỏi có từ để hỏi.",
-      "formula_notes": "Công thức: Câu trần thuật + 吗? Trả lời: khẳng định lặp lại vị ngữ (是/会/想…), phủ định dùng 不/没. Không đặt 吗 sau từ để hỏi (什么/谁/哪儿).",
       "examples": [
         {
-          "zh": "你是学生吗？",
-          "vi": "Bạn là học sinh phải không?",
+          "from_vietnamese_intent": true,
           "pinyin": "Nǐ shì xuésheng ma?",
           "tokens": [
             "你",
@@ -21,11 +25,11 @@
             "学生",
             "吗"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Bạn là học sinh phải không?",
+          "zh": "你是学生吗？"
         },
         {
-          "zh": "他会说中文吗？",
-          "vi": "Anh ấy biết nói tiếng Trung không?",
+          "from_vietnamese_intent": false,
           "pinyin": "Tā huì shuō Zhōngwén ma?",
           "tokens": [
             "他",
@@ -34,11 +38,11 @@
             "中文",
             "吗"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Anh ấy biết nói tiếng Trung không?",
+          "zh": "他会说中文吗？"
         },
         {
-          "zh": "你想喝茶吗？",
-          "vi": "Bạn muốn uống trà không?",
+          "from_vietnamese_intent": false,
           "pinyin": "Nǐ xiǎng hē chá ma?",
           "tokens": [
             "你",
@@ -47,65 +51,45 @@
             "茶",
             "吗"
           ],
-          "from_vietnamese_intent": false
-        }
-      ],
-      "confusions": [
-        {
-          "wrong_or_risky": "你是谁吗？ (muốn hỏi 'Bạn là ai?')",
-          "verdict": "sai_ngu_phap",
-          "explanation": "Câu đã có từ để hỏi 谁 thì không thêm 吗: 你是谁？ mới đúng."
-        },
-        {
-          "wrong_or_risky": "Trả lời '吗' trong câu trả lời, ví dụ: 是吗。",
-          "verdict": "doi_nghia",
-          "explanation": "吗 chỉ dùng để hỏi. Trả lời khẳng định chỉ nói 是 hoặc lặp lại vị ngữ, không giữ 吗."
+          "vi": "Bạn muốn uống trà không?",
+          "zh": "你想喝茶吗？"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "你是老师吗？"
+          ],
+          "explanation": "Câu trần thuật 你是老师 + 吗 cuối câu.",
           "id": "ma-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để hỏi 'Bạn là giáo viên phải không?'.",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "你是老师吗？",
-              "你是老师？",
+              "你是吗老师？",
               "你是谁吗？",
               "吗你是老师？"
             ]
           },
-          "accepted_answers": [
-            "你是老师吗？"
-          ],
-          "explanation": "Câu trần thuật 你是老师 + 吗 cuối câu."
+          "prompt_vi": "Chọn câu đúng để hỏi 'Bạn là giáo viên phải không?'.",
+          "type": "choice"
         },
         {
-          "id": "ma-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Bạn là học sinh phải không?'",
-          "prompt_zh": "你是学生___。",
-          "payload": {
-            "hint_vi": "Thêm 吗 cuối câu."
-          },
           "accepted_answers": [
             "你是学生吗？",
             "你是学生吗"
           ],
-          "explanation": "吗 đặt cuối câu trần thuật, trước dấu chấm hỏi."
+          "explanation": "吗 đặt cuối câu trần thuật, trước dấu chấm hỏi.",
+          "id": "ma-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Thêm 吗 cuối câu."
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Bạn là học sinh phải không?'",
+          "prompt_zh": "你是学生___。",
+          "type": "fill"
         },
         {
-          "id": "ma-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu hỏi: 'Bạn là học sinh phải không?'.",
-          "payload": {
-            "tokens": [
-              "吗",
-              "你",
-              "是",
-              "学生"
-            ]
-          },
           "accepted_answers": [
             [
               "你",
@@ -114,35 +98,56 @@
               "吗"
             ]
           ],
-          "explanation": "Thứ tự: chủ ngữ → 是 → danh từ → 吗."
+          "explanation": "Thứ tự: chủ ngữ → 是 → danh từ → 吗.",
+          "id": "ma-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "吗",
+              "你",
+              "是",
+              "学生"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu hỏi: 'Bạn là học sinh phải không?'.",
+          "type": "order"
         },
         {
-          "id": "ma-ex4",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Bạn bận không?' (viết bằng chữ Hán)",
-          "payload": {
-            "hint_vi": "Bắt đầu bằng 你."
-          },
           "accepted_answers": [
             "你忙吗？",
             "你忙吗"
           ],
-          "explanation": "Từ ý muốn nói 'Bạn bận không?': 你 + 忙 + 吗 (tính từ làm vị ngữ, không cần 很 trong câu hỏi này)."
+          "explanation": "Từ ý muốn nói 'Bạn bận không?': 你 + 忙 + 吗 (tính từ làm vị ngữ, không cần 很 trong câu hỏi này). Dạng 你忙不忙？ cũng đúng (câu hỏi chính-phản, học ở bài sau).",
+          "id": "ma-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 你."
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Bạn bận không?' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
+      "formula_notes": "1) Vị trí: 吗 ở cuối câu trần thuật (你是学生 → 你是学生吗？). 2) Trả lời: lặp vị ngữ để khẳng định (是/会/想…); phủ định dùng 不/没, không lặp 吗. 3) Không dùng: đã có từ để hỏi (什么/谁/哪儿) thì bỏ 吗.",
+      "hsk_level": 1,
+      "id": "ma-question",
+      "objective": "Sau bài này, người học đặt được câu hỏi có/không bằng 吗 và trả lời mà không lặp lại 吗.",
+      "pattern": "Câu trần thuật + 吗?",
+      "quick_memory": "Hỏi có/không: lấy câu trần thuật, thêm 吗 ở cuối. Đã có từ để hỏi thì không thêm 吗.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "cgw",
-          "note": "Chủ đề A1/A2 theo Chinese Grammar Wiki; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề A1/A2 theo Chinese Grammar Wiki; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "cgw"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
-      }
+      "title_vi": "吗: câu hỏi có/không",
+      "when_to_use": "Khi muốn hỏi một điều có đúng hay không và chờ câu trả lời có/không. 吗 đặt cuối câu trần thuật, không dùng cho câu hỏi có từ để hỏi."
     }
-  ]
+  ],
+  "schema_version": 1
 }

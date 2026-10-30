@@ -1,19 +1,28 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "why-question",
-      "title_vi": "Hỏi nguyên nhân với 为什么",
-      "pattern": "为什么 + Câu?",
-      "hsk_level": 2,
-      "difficulty": "medium",
-      "objective": "Sau bài này, người học đặt câu hỏi nguyên nhân bằng 为什么 và trả lời bằng 因为.",
-      "when_to_use": "Khi muốn biết lý do của một việc, hoặc giải thích lý do mình làm gì.",
-      "formula_notes": "为什么 đứng trước động từ hoặc cụm động từ trong câu hỏi. Câu hỏi đặc chỉ với 为什么 không dùng 吗. Trả lời nguyên nhân bằng 因为……, không trả lời 是/不是.",
+      "confusions": [
+        {
+          "explanation": "为什么 đứng trước động từ hoặc cụm động từ, không đứng sau động từ.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "你学为什么中文？"
+        },
+        {
+          "explanation": "Câu hỏi đặc chỉ (hỏi bằng từ để hỏi) không dùng 吗; 吗 chỉ dùng cho câu hỏi có/không.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "你为什么学中文吗？"
+        },
+        {
+          "explanation": "为什么 hỏi nguyên nhân nên trả lời bằng 因为……, không trả lời 是/不是。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "Trả lời câu hỏi 为什么 bằng 是/不是。"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "easy",
       "examples": [
         {
-          "zh": "你为什么学中文？",
-          "vi": "Sao bạn học tiếng Trung?",
+          "from_vietnamese_intent": true,
           "pinyin": "Nǐ wèishénme xué Zhōngwén?",
           "tokens": [
             "你",
@@ -21,11 +30,11 @@
             "学",
             "中文"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Sao bạn học tiếng Trung?",
+          "zh": "你为什么学中文？"
         },
         {
-          "zh": "他为什么没来？",
-          "vi": "Sao anh ấy không đến?",
+          "from_vietnamese_intent": false,
           "pinyin": "Tā wèishénme méi lái?",
           "tokens": [
             "他",
@@ -33,11 +42,11 @@
             "没",
             "来"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Sao anh ấy không đến?",
+          "zh": "他为什么没来？"
         },
         {
-          "zh": "你为什么喜欢这本书？",
-          "vi": "Sao bạn thích quyển sách này?",
+          "from_vietnamese_intent": false,
           "pinyin": "Nǐ wèishénme xǐhuan zhè běn shū?",
           "tokens": [
             "你",
@@ -47,14 +56,18 @@
             "本",
             "书"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Sao bạn thích quyển sách này?",
+          "zh": "你为什么喜欢这本书？"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "你为什么学中文？"
+          ],
+          "explanation": "为什么 đứng trước cụm động từ: 你 + 为什么 + 学中文。",
           "id": "why-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để hỏi 'Sao bạn học tiếng Trung?'",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "你为什么学中文？",
@@ -63,37 +76,27 @@
               "你学中文为什么？"
             ]
           },
-          "accepted_answers": [
-            "你为什么学中文？"
-          ],
-          "explanation": "为什么 đứng trước cụm động từ: 你 + 为什么 + 学中文。"
+          "prompt_vi": "Chọn câu đúng để hỏi 'Sao bạn học tiếng Trung?'",
+          "type": "choice"
         },
         {
-          "id": "why-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Sao anh ấy không đến?'",
-          "payload": {
-            "prompt_zh": "他为什么没___？",
-            "hint_vi": "Dùng 来。"
-          },
           "accepted_answers": [
             "他为什么没来？",
-            "他为什么没来"
+            "他为什么没来",
+            "他为什么没有来？",
+            "他为什么没有来"
           ],
-          "explanation": "他 + 为什么 + 没 + 来。"
+          "explanation": "他 + 为什么 + 没 + 来。",
+          "id": "why-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 来。",
+            "prompt_zh": "他为什么没___？"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Sao anh ấy không đến?'",
+          "type": "fill"
         },
         {
-          "id": "why-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu: 'Sao bạn học tiếng Trung?'",
-          "payload": {
-            "tokens": [
-              "中文",
-              "你",
-              "为什么",
-              "学"
-            ]
-          },
           "accepted_answers": [
             [
               "你",
@@ -102,72 +105,77 @@
               "中文"
             ]
           ],
-          "explanation": "Thứ tự: chủ ngữ → 为什么 → động từ → tân ngữ."
+          "explanation": "Thứ tự: chủ ngữ → 为什么 → động từ → tân ngữ.",
+          "id": "why-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "中文",
+              "你",
+              "为什么",
+              "学"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Sao bạn học tiếng Trung?'",
+          "type": "order"
         },
         {
+          "accepted_answers": [
+            "吗"
+          ],
+          "explanation": "Câu hỏi đặc chỉ với 为什么 không dùng 吗。",
           "id": "why-ex4",
-          "type": "error_spot",
-          "prompt_vi": "Câu sau sai ở khối nào? 你为什么学中文吗？",
+          "is_open_ended": false,
           "payload": {
-            "sentence_zh": "你为什么学中文吗？",
             "options": [
               "你",
               "为什么",
               "学",
               "中文",
               "吗"
-            ]
+            ],
+            "sentence_zh": "你为什么学中文吗？"
           },
-          "accepted_answers": [
-            "吗"
-          ],
-          "explanation": "Câu hỏi đặc chỉ với 为什么 không dùng 吗。"
+          "prompt_vi": "Câu sau sai ở khối nào? 你为什么学中文吗？",
+          "type": "error_spot"
         },
         {
-          "id": "why-ex5",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Sao anh ấy thích trà?' (viết bằng chữ Hán)",
-          "payload": {
-            "prompt_zh": null,
-            "hint_vi": "Bắt đầu bằng 他。"
-          },
           "accepted_answers": [
             "他为什么喜欢茶？",
             "他为什么喜欢茶"
           ],
-          "explanation": "Sao anh ấy thích trà: 他 + 为什么 + 喜欢 + 茶。"
+          "explanation": "Sao anh ấy thích trà: 他 + 为什么 + 喜欢 + 茶。",
+          "id": "why-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 他。",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Sao anh ấy thích trà?' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
-      "confusions": [
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "你学为什么中文？",
-          "explanation": "为什么 đứng trước động từ hoặc cụm động từ, không đứng sau động từ."
-        },
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "你为什么学中文吗？",
-          "explanation": "Câu hỏi đặc chỉ (hỏi bằng từ để hỏi) không dùng 吗; 吗 chỉ dùng cho câu hỏi có/không."
-        },
-        {
-          "verdict": "doi_nghia",
-          "wrong_or_risky": "Trả lời câu hỏi 为什么 bằng 是/不是。",
-          "explanation": "为什么 hỏi nguyên nhân nên trả lời bằng 因为……, không trả lời 是/不是。"
-        }
-      ],
+      "formula_notes": "1) Vị trí: 为什么 đứng trước động từ hoặc cụm động từ. 2) Không dùng: câu hỏi đặc chỉ với 为什么 không thêm 吗. 3) Trả lời: dùng 因为……, không trả lời 是/不是.",
+      "hsk_level": 2,
+      "id": "why-question",
+      "objective": "Sau bài này, người học đặt câu hỏi nguyên nhân bằng 为什么 và trả lời bằng 因为.",
+      "pattern": "为什么 + Câu?",
+      "quick_memory": "Hỏi lý do: 为什么 + câu hỏi, không thêm 吗. Trả lời bằng 因为…, không trả lời 是/不是.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "hsk-official",
-          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "hsk-official"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí."
-      }
+      "title_vi": "Hỏi nguyên nhân với 为什么",
+      "when_to_use": "Khi muốn biết lý do của một việc, hoặc giải thích lý do mình làm gì."
     }
-  ]
+  ],
+  "schema_version": 1
 }

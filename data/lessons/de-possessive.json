@@ -1,19 +1,23 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "de-possessive",
-      "title_vi": "的: sở hữu và định ngữ",
-      "pattern": "Người/Vật + 的 + Danh từ",
-      "hsk_level": 1,
+      "confusions": [
+        {
+          "explanation": "Sau động từ, bổ ngữ mức độ dùng 得: 我跑得很快. 的 không đứng sau động từ ở đây.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我跑的很快。 (muốn nói 'Tôi chạy rất nhanh')"
+        },
+        {
+          "explanation": "Câu này hiểu được nhưng kém tự nhiên; quan hệ thân thuộc gần thường lược 的: 我妈妈.",
+          "verdict": "kem_tu_nhien",
+          "wrong_or_risky": "我的妈妈 (trong câu nói hàng ngày)"
+        }
+      ],
+      "content_version": 2,
       "difficulty": "easy",
-      "objective": "Sau bài này, người học nối được người sở hữu với vật sở hữu bằng 的 và không nhầm 的 với 得, 地.",
-      "when_to_use": "Khi muốn nói cái gì thuộc về ai, hoặc cụm nào bổ nghĩa cho danh từ nào. 的 đứng giữa thành phần sở hữu/định ngữ và danh từ chính.",
-      "formula_notes": "Công thức: Sở hữu/Định ngữ + 的 + Danh từ. Với quan hệ thân thuộc gần (mẹ, nhà), người ta thường lược 的: 我妈妈 thay vì 我的妈妈. 得 dùng sau động từ (bổ ngữ), 地 dùng trước động từ (trạng ngữ) — khác 的.",
       "examples": [
         {
-          "zh": "这是她的笔。",
-          "vi": "Đây là bút của cô ấy.",
+          "from_vietnamese_intent": true,
           "pinyin": "Zhè shì tā de bǐ.",
           "tokens": [
             "这",
@@ -22,11 +26,11 @@
             "的",
             "笔"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Đây là bút của cô ấy.",
+          "zh": "这是她的笔。"
         },
         {
-          "zh": "他是我的老师。",
-          "vi": "Anh ấy là giáo viên của tôi.",
+          "from_vietnamese_intent": false,
           "pinyin": "Tā shì wǒ de lǎoshī.",
           "tokens": [
             "他",
@@ -35,11 +39,11 @@
             "的",
             "老师"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Anh ấy là giáo viên của tôi.",
+          "zh": "他是我的老师。"
         },
         {
-          "zh": "这是我妈妈的手机。",
-          "vi": "Đây là điện thoại của mẹ tôi.",
+          "from_vietnamese_intent": false,
           "pinyin": "Zhè shì wǒ māma de shǒujī.",
           "tokens": [
             "这",
@@ -49,26 +53,18 @@
             "的",
             "手机"
           ],
-          "from_vietnamese_intent": false
-        }
-      ],
-      "confusions": [
-        {
-          "wrong_or_risky": "我跑的很快。 (muốn nói 'Tôi chạy rất nhanh')",
-          "verdict": "sai_ngu_phap",
-          "explanation": "Sau động từ, bổ ngữ mức độ dùng 得: 我跑得很快. 的 không đứng sau động từ ở đây."
-        },
-        {
-          "wrong_or_risky": "我的妈妈 (trong câu nói hàng ngày)",
-          "verdict": "kem_tu_nhien",
-          "explanation": "Câu này hiểu được nhưng kém tự nhiên; quan hệ thân thuộc gần thường lược 的: 我妈妈."
+          "vi": "Đây là điện thoại của mẹ tôi.",
+          "zh": "这是我妈妈的手机。"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "这是她的笔。"
+          ],
+          "explanation": "Sở hữu 她 + 的 + danh từ 笔.",
           "id": "de-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để nói 'Đây là bút của cô ấy'.",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "这是她的笔。",
@@ -77,38 +73,25 @@
               "这是她的得笔。"
             ]
           },
-          "accepted_answers": [
-            "这是她的笔。"
-          ],
-          "explanation": "Sở hữu 她 + 的 + danh từ 笔."
+          "prompt_vi": "Chọn câu đúng để nói 'Đây là bút của cô ấy'.",
+          "type": "choice"
         },
         {
-          "id": "de-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy là giáo viên của tôi.'",
-          "prompt_zh": "他是我的___。",
-          "payload": {
-            "hint_vi": "Danh từ chỉ nghề nghiệp."
-          },
           "accepted_answers": [
             "他是我的老师。",
             "他是我的老师"
           ],
-          "explanation": "他是 + 我的 + 老师."
+          "explanation": "他是 + 我的 + 老师.",
+          "id": "de-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Danh từ chỉ nghề nghiệp."
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy là giáo viên của tôi.'",
+          "prompt_zh": "他是我的___。",
+          "type": "fill"
         },
         {
-          "id": "de-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu: 'Đây là bút của cô ấy.'",
-          "payload": {
-            "tokens": [
-              "的",
-              "这",
-              "是",
-              "她",
-              "笔"
-            ]
-          },
           "accepted_answers": [
             [
               "这",
@@ -118,35 +101,57 @@
               "笔"
             ]
           ],
-          "explanation": "Thứ tự: 这 + 是 + 她 + 的 + 笔."
+          "explanation": "Thứ tự: 这 + 是 + 她 + 的 + 笔.",
+          "id": "de-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "的",
+              "这",
+              "是",
+              "她",
+              "笔"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Đây là bút của cô ấy.'",
+          "type": "order"
         },
         {
-          "id": "de-ex4",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Đây là điện thoại của anh ấy.' (viết bằng chữ Hán)",
-          "payload": {
-            "hint_vi": "Bắt đầu bằng 这是."
-          },
           "accepted_answers": [
             "这是他的手机。",
             "这是他的手机"
           ],
-          "explanation": "Từ ý muốn nói 'Đây là điện thoại của anh ấy': 这是 + 他的 + 手机."
+          "explanation": "Từ ý muốn nói 'Đây là điện thoại của anh ấy': 这是 + 他的 + 手机.",
+          "id": "de-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 这是."
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Đây là điện thoại của anh ấy.' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
+      "formula_notes": "1) Vị trí: phần sở hữu/định ngữ + 的 + danh từ. 2) Mở rộng: quan hệ thân thuộc gần (mẹ, nhà) thường lược 的: 我妈妈. 3) Không dùng: sau động từ dùng 得 (bổ ngữ), trước động từ dùng 地 (trạng ngữ) — không phải 的.",
+      "hsk_level": 1,
+      "id": "de-possessive",
+      "objective": "Sau bài này, người học nối được người sở hữu với vật sở hữu bằng 的 và không nhầm 的 với 得, 地.",
+      "pattern": "Người/Vật + 的 + Danh từ",
+      "quick_memory": "Của ai/cái gì: để 的 giữa phần mô tả và danh từ. Người thân gần thì hay bỏ 的.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "cgw",
-          "note": "Chủ đề A1/A2 theo Chinese Grammar Wiki; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề A1/A2 theo Chinese Grammar Wiki; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "cgw"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
-      }
+      "title_vi": "的: sở hữu và định ngữ",
+      "when_to_use": "Khi muốn nói cái gì thuộc về ai, hoặc cụm nào bổ nghĩa cho danh từ nào. 的 đứng giữa thành phần sở hữu/định ngữ và danh từ chính."
     }
-  ]
+  ],
+  "schema_version": 1
 }
