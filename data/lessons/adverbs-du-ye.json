@@ -18,7 +18,7 @@
           "wrong_or_risky": "Dùng 太 thay 很 trong mọi câu khen"
         }
       ],
-      "content_version": 3,
+      "content_version": 5,
       "difficulty": "medium",
       "examples": [
         {
@@ -149,6 +149,51 @@
           },
           "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tôi cũng là giáo viên.' (viết bằng chữ Hán)",
           "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "我还没吃饭。"
+          ],
+          "explanation": "还 ở đây nghĩa là 'vẫn còn': 我 + 还 + 没 + 吃饭 — 还 đứng sau chủ ngữ, trước 没. Câu nói tôi vẫn chưa ăn cơm.",
+          "id": "adv-ex6",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我还没吃饭。",
+              "我还吃饭没。",
+              "还我没吃饭。",
+              "我没还吃饭。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Tôi vẫn chưa ăn cơm.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "你明天再来。",
+            "你明天再来",
+            "明天你再来。",
+            "明天你再来",
+            "明天你再来吧。",
+            "明天你再来吧",
+            "你明天再来吧。",
+            "你明天再来吧",
+            "明天再来吧。",
+            "明天再来吧",
+            "请你明天再来。",
+            "请你明天再来",
+            "请你明天再来吧。",
+            "请你明天再来吧"
+          ],
+          "explanation": "Từ ý muốn nói 'ngày mai hãy đến lại': 再 đặt sau chủ ngữ (hoặc sau thời gian), trước động từ 来, chỉ việc lặp lại ở tương lai — 明天再来 / 你明天再来（吧）.",
+          "id": "adv-ex7",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 再 cho việc lặp lại trong tương lai: …再来。",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Ngày mai bạn hãy đến lại nhé.' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
       "formula_notes": "1) Vị trí: 都/也/还/再 đứng sau chủ ngữ, trước động từ/tính từ. 2) Chọn phó từ: 都 tất cả đều, 也 cũng, 还 còn/thêm, 再 lại (việc ở tương lai). 3) Mức độ: 很 mức chung, 非常 rất mạnh, 太 quá (thường hàm ý vượt mức).",
@@ -162,7 +207,7 @@
       "quick_memory": "Bốn phó từ đều đứng sau chủ ngữ: tất cả → 都; cũng → 也; còn/thêm → 还; làm lại sau này → 再.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thay mục Nhớ nhanh theo rà soát std2 (audit §1.3)",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thay mục Nhớ nhanh theo rà soát std2 (audit §1.3) Chuẩn hóa HSK3-2 30/10/2026: thêm adv-ex6 kiểm tra 还 và adv-ex7 kiểm tra 再 theo audit std2 (hai phó từ này trước đây chỉ có mặt ở ví dụ/công thức, chưa có bài tập); không đánh số lại bài tập cũ. Sửa vòng 2 theo QA-HSK3-2 30/10/2026: adv-ex7 thêm biến thể '明天你再来吧。' và dạng không dấu câu (H-4).",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

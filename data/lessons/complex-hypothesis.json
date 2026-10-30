@@ -1,0 +1,238 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Câu này không sai ngữ pháp: trong giao tiếp thật có thể lược 就 khi ý đã rõ, nhất là khi vế điều kiện đã chốt bằng 的话. Nhưng bài này dạy mẫu chuẩn đầy đủ 如果……，就……, nên khi luyện tập phải giữ 就 ở đầu vế kết quả: 如果明天下雨，我就留在家里。",
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "如果明天下雨，我留在家里。"
+        },
+        {
+          "explanation": "的话 phải đứng ở cuối vế điều kiện: 如果你有问题的话，就问老师。/ 你有问题的话，就问老师。Không chen 的话 vào giữa vế điều kiện.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "如果你有的话问题，就问老师。"
+        },
+        {
+          "explanation": "如果 chỉ nói giả định chung. Điều kiện duy nhất, bắt buộc phải có thì dùng 只有……，才……: 只有钱够了，我才买这辆车 — mẫu này học ở bài Câu phức điều kiện.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "如果有钱，我就买这辆车。 (muốn nói 'chỉ khi có đủ tiền tôi mới mua, không có tiền là không mua')"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Rúguǒ míngtiān yǒu shíjiān, wǒmen jiù qù kàn diànyǐng.",
+          "tokens": [
+            "如果",
+            "明天",
+            "有",
+            "时间",
+            "，",
+            "我们",
+            "就",
+            "去",
+            "看",
+            "电影"
+          ],
+          "vi": "Nếu ngày mai có thời gian, chúng ta sẽ đi xem phim.",
+          "zh": "如果明天有时间，我们就去看电影。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Nǐ xiǎng qù dehuà, wǒ jiù péi nǐ qù.",
+          "tokens": [
+            "你",
+            "想",
+            "去",
+            "的话",
+            "，",
+            "我",
+            "就",
+            "陪",
+            "你",
+            "去"
+          ],
+          "vi": "Nếu bạn muốn đi thì tôi sẽ đi cùng bạn.",
+          "zh": "你想去的话，我就陪你去。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Rúguǒ shēntǐ bù shūfu, jiù zǎo diǎnr xiūxi.",
+          "tokens": [
+            "如果",
+            "身体",
+            "不",
+            "舒服",
+            "，",
+            "就",
+            "早点儿",
+            "休息"
+          ],
+          "vi": "Nếu người không khỏe thì nghỉ sớm một chút.",
+          "zh": "如果身体不舒服，就早点儿休息。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhōumò tiānqì hǎo dehuà, wǒmen jiù qù páshān.",
+          "tokens": [
+            "周末",
+            "天气",
+            "好",
+            "的话",
+            "，",
+            "我们",
+            "就",
+            "去",
+            "爬山"
+          ],
+          "vi": "Nếu cuối tuần thời tiết đẹp thì chúng ta sẽ đi leo núi.",
+          "zh": "周末天气好的话，我们就去爬山。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Nǐ yǒu wèntí dehuà, jiù wèn lǎoshī.",
+          "tokens": [
+            "你",
+            "有",
+            "问题",
+            "的话",
+            "，",
+            "就",
+            "问",
+            "老师"
+          ],
+          "vi": "Nếu bạn có câu hỏi thì cứ hỏi giáo viên.",
+          "zh": "你有问题的话，就问老师。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "如果明天不下雨，我们就去玩儿。"
+          ],
+          "explanation": "Mẫu 1 đầy đủ: 如果 + vế điều kiện, 就 đứng đầu vế kết quả. 的话 nếu dùng thì đứng cuối vế điều kiện, không đứng ở vế kết quả.",
+          "id": "chyp-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "如果明天不下雨，我们就去玩儿。",
+              "明天如果不下雨就，我们去玩儿。",
+              "如果明天不下雨，我们去玩儿就。",
+              "如果明天不下雨，我们的话就去玩儿。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Nếu ngày mai không mưa, chúng ta sẽ đi chơi.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "如果你不忙，就跟我去吧。",
+            "如果你不忙，就跟我去吧",
+            "你不忙的话，就跟我去吧。",
+            "你不忙的话，就跟我去吧"
+          ],
+          "explanation": "Giả định: 如果 + 你不忙, 就 + 跟我去吧; cũng đúng với mẫu 2: 你不忙的话，就跟我去吧。",
+          "id": "chyp-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Mẫu 1: 如果……，就…… (điền cả hai chỗ) — hoặc mẫu 2 với 的话.",
+            "prompt_zh": "___你不忙，___跟我去吧。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Nếu bạn không bận thì đi cùng tôi nhé.'",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            [
+              "如果你有时间",
+              "我们就一起吃饭"
+            ]
+          ],
+          "explanation": "Thứ tự cố định: vế điều kiện 如果…… trước, vế kết quả ……就…… sau.",
+          "id": "chyp-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "我们就一起吃饭",
+              "如果你有时间"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Nếu bạn có thời gian, chúng ta sẽ cùng ăn cơm.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "的话"
+          ],
+          "explanation": "的话 bị đặt ở vế kết quả. 的话 phải chốt cuối vế điều kiện: 如果你累了的话，就休息。Hoặc: 你累了的话，就休息。",
+          "id": "chyp-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "如果你累了",
+              "就",
+              "休息",
+              "的话"
+            ],
+            "sentence_zh": "如果你累了，就休息的话。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 如果你累了，就休息的话。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "如果周末我不忙，我就去看你。",
+            "如果周末我不忙，我就去看你",
+            "周末我不忙的话，我就去看你。",
+            "周末我不忙的话，我就去看你",
+            "我周末不忙的话，我就去看你。",
+            "我周末不忙的话，我就去看你",
+            "如果我周末不忙，我就去看你。",
+            "如果我周末不忙，我就去看你",
+            "如果周末不忙，我就去看你。",
+            "如果周末不忙，我就去看你"
+          ],
+          "explanation": "Từ ý muốn nói: vế điều kiện 周末（我）不忙, vế kết quả 我就去看你 — có 如果 hoặc 的话 ở vế điều kiện và 就 ở vế kết quả.",
+          "id": "chyp-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 如果, hoặc dùng 的话 chốt vế điều kiện.",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Nếu cuối tuần tôi không bận, tôi sẽ đi thăm bạn.' (viết bằng chữ Hán)",
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Mẫu 1: 如果 + vế điều kiện, 就 + vế kết quả. 2) Mẫu 2: vế điều kiện + 的话, 就 + vế kết quả; 的话 chỉ đứng ở cuối vế điều kiện, không chen giữa câu và không sang vế kết quả. 3) Không dùng: theo mẫu chuẩn của bài, vế kết quả không bỏ 就 khi vế điều kiện đã có 如果 hoặc 的话. 4) Phân biệt: 如果 nói giả định nói chung; điều kiện duy nhất, bắt buộc phải có thì dùng 只有……，才…… (chỉ nhận biết ở bài này, học kỹ ở bài Câu phức điều kiện).",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "complex-hypothesis",
+      "objective": "Sau bài này, người học nói được câu giả định 'nếu… thì…' bằng hai mẫu 如果……，就…… và ……的话，就……, biết 的话 đứng cuối vế điều kiện và không quên 就 ở vế kết quả.",
+      "pattern": "如果……，就…… • ……的话，就……",
+      "quick_memory": "Nếu… thì…: vế điều kiện mở bằng 如果 hoặc chốt bằng 的话, vế kết quả có 就 đứng đầu (mẫu chuẩn của bài).",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-2 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-46 và OFF-H3-47 (phần 的话), diễn giải theo Chinese Grammar Wiki, bài viết mới bằng tiếng Việt, không sao chép nguyên văn nguồn ngoài; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật. Sửa vòng 2 theo QA-HSK3-2 30/10/2026: confusion 1 đổi verdict sang thay_duoc_co_dieu_kien và viết lại lời giải (Q-1 — 就 có thể lược trong giao tiếp thật, bài dạy mẫu chuẩn đầy đủ); quick_memory bỏ chữ 'luôn'; confusion 3 đổi ví dụ 只有有钱 thành 只有钱够了 (H-1); chyp-ex5 thêm biến thể 我周末不忙的话，我就去看你。 (H-3); sửa typo dính chữ trong lời giải chyp-ex4 (H-7).",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về hai mẫu 如果……，就…… và ……的话，就…… (vị trí của 的话 và 就), không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-46 (câu phức giả thiết) và OFF-H3-47 (……的话，就……) trong catalogue dự án từ đề cương thi 11/2025.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Câu phức giả định: nếu… thì…",
+      "when_to_use": "Khi muốn nói một việc chỉ xảy ra nếu một điều kiện giả định đúng (nếu… thì…): việc chưa xảy ra hoặc chưa chắc chắn. Hai mẫu cùng một quan hệ giả định: mẫu 1 đặt 如果 ở đầu vế điều kiện; mẫu 2 đặt 的话 ở cuối vế điều kiện và gặp nhiều trong lời nói hằng ngày. Đừng nhầm với 只有……，才…… (chỉ khi… mới…) — đó là điều kiện cần thiết, học ở bài Câu phức điều kiện."
+    }
+  ],
+  "schema_version": 1
+}
