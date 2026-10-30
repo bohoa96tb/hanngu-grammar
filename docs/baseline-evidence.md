@@ -78,6 +78,26 @@
   và task P01-02 quay lại in_progress cho phần xác minh danh mục đầy đủ.
   Không được gọi baseline là "đã khóa toàn bộ" hay "đã xác minh đầy đủ".
 
+## Cập nhật 30/10/2026 — kiểm trực quan trang in 394 (khối câu phức HSK4)
+- Manager đã tải PDF đề cương gốc từ chinesetest.cn và đọc TRỰC QUAN
+  trang in 394 (trang PDF 397). Ảnh bằng chứng lưu NGOÀI repo:
+  ~/workspace/qa-evidence/hsk4-grammar-p394.png.
+- Phát hiện lỗi lệch hàng của bản trích xuất text trong khối 复句 HSK4:
+  （连……也/都……，……更…… bị gắn sang mục lựa chọn — thực thuộc mục
+  tiến triển; 不是……，而是…… bị gắn sang phủ định kép — thực thuộc
+  mục song song; 首先……，其次…… bị gắn sang song song — thực thuộc
+  mục tiếp nối; ……X是X，就是/不过…… bị gắn sang giả thiết — thực
+  thuộc mục chuyển hướng. Mục lựa chọn HSK4 thực tế chỉ có một thành
+  viên: 不是……，就是…….
+- Đã sửa theo bằng chứng này: docs/official-catalogue-hsk3-hsk4.json
+  (OFF-H4-23, H4-24, H4-25, H4-26, H4-28, H4-29 về tiêu đề/note;
+  OFF-H4-27 từ một phần thành đã có) và tài liệu ánh xạ HSK3–4 (mục 3).
+- CẢNH BÁO PHẠM VI: lần kiểm trực quan này mới bao phủ trang in 394.
+  Phần còn lại của bảng HSK4 và toàn bộ các cấp khác vẫn dựa trên bản
+  trích xuất text ngày 2026-09-25 (xem giới hạn (b) ở mục 6) — rủi ro
+  lệch hàng tương tự CHƯA được loại trừ. Việc kiểm trực quan toàn bộ
+  语法大纲 thuộc phần xác minh sâu còn mở của P01-02.
+
 ## Cập nhật 29/10/2026 — P01-02 phần HSK1–2
 HSK1–2 đã đối chiếu xong theo mục nhóm diễn giải (xem
 docs/baseline-hsk1-hsk2-mapping.md và
