@@ -1,0 +1,233 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Có chủ ngữ 你, không có 啊 và không lặp động từ thì thường là câu hỏi thật 'bạn đang nhìn gì?', chờ người ta trả lời (ngữ điệu mạnh ngoài đời vẫn có thể làm nó nghe như bác bỏ). Muốn bác bỏ rõ ràng kiểu 'nhìn gì mà nhìn' phải dùng dạng lặp: 看什么看？",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "你看什么？"
+        },
+        {
+          "explanation": "Trật tự của dạng lặp là Động từ + 什么 + Động từ （看什么看）; 啊 chỉ đứng ở cuối câu （看什么啊？) hoặc bỏ hẳn, không chen vào giữa khung lặp.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "看什么啊看？"
+        },
+        {
+          "explanation": "Câu đúng mẫu nhưng mẫu X什么（啊） mang thái độ bác bỏ trực diện, không hợp quan hệ trang trọng với người trên. Nói mềm và thẳng: 您别急，时间还早。",
+          "verdict": "thieu_ngu_canh",
+          "wrong_or_risky": "（nói với giáo viên mới quen）您急什么啊？"
+        }
+      ],
+      "content_version": 1,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Jí shénme a? Shíjiān hái zǎo ne.",
+          "tokens": [
+            "急",
+            "什么",
+            "啊",
+            "时间",
+            "还",
+            "早",
+            "呢"
+          ],
+          "vi": "Vội gì mà vội? Còn sớm mà.",
+          "zh": "急什么啊？时间还早呢。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Kàn shénme kàn? Kuài zǒu ba.",
+          "tokens": [
+            "看",
+            "什么",
+            "看",
+            "快",
+            "走",
+            "吧"
+          ],
+          "vi": "Nhìn gì mà nhìn? Đi nhanh đi.",
+          "zh": "看什么看？快走吧。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Zhè yǒu shénme nán de? Wǒ jiāo nǐ.",
+          "tokens": [
+            "这",
+            "有",
+            "什么",
+            "难",
+            "的",
+            "我",
+            "教",
+            "你"
+          ],
+          "vi": "Cái này có gì khó đâu? Tôi dạy bạn.",
+          "zh": "这有什么难的？我教你。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Pà shénme a? Wǒmen yìqǐ qù.",
+          "tokens": [
+            "怕",
+            "什么",
+            "啊",
+            "我们",
+            "一起",
+            "去"
+          ],
+          "vi": "Sợ gì mà sợ? Chúng ta cùng đi.",
+          "zh": "怕什么啊？我们一起去。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhème wǎn le, chǎo shénme chǎo? Dàjiā dōu shuì le.",
+          "tokens": [
+            "这么",
+            "晚",
+            "了",
+            "吵",
+            "什么",
+            "吵",
+            "大家",
+            "都",
+            "睡",
+            "了"
+          ],
+          "vi": "Muộn thế này rồi, ồn gì mà ồn? Mọi người ngủ hết rồi.",
+          "zh": "这么晚了，吵什么吵？大家都睡了。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "怕什么啊？"
+          ],
+          "explanation": "怕什么啊？ là mẫu X什么（啊）: bác bỏ, không chờ trả lời. 你怕什么？ và 你怕什么东西？ ở dạng viết trung tính thường là câu hỏi thật; phương án cuối sai trật tự.",
+          "id": "shm-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "怕什么啊？",
+              "你怕什么？",
+              "你怕什么东西？",
+              "什么你怕啊？"
+            ]
+          },
+          "prompt_vi": "Chọn câu bác bỏ đúng nghĩa 'Có gì mà phải sợ!'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "看什么看？"
+          ],
+          "explanation": "Dạng lặp Động từ + 什么 + Động từ: 看什么看？你在看什么？ là câu hỏi thật 'bạn đang xem gì?'; hai phương án còn lại sai cấu tạo.",
+          "id": "shm-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "看什么看？",
+              "你在看什么？",
+              "你看什么看书？",
+              "看书什么看？"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Nhìn gì mà nhìn?' (ý bác bỏ, không phải hỏi)",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "这",
+              "有",
+              "什么",
+              "难",
+              "的"
+            ]
+          ],
+          "explanation": "Dạng với 有： 有什么 + Tính từ + 的： 这有什么难的？",
+          "id": "shm-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "什么",
+              "这",
+              "有",
+              "难",
+              "的"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Cái này có gì khó đâu?'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "啊"
+          ],
+          "explanation": "Khối sai là 啊： dạng lặp phải là 看什么看？, 啊 không chen giữa khung lặp; muốn dùng 啊 thì bỏ động từ lặp: 看什么啊？",
+          "id": "shm-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "看",
+              "什么",
+              "啊",
+              "看"
+            ],
+            "sentence_zh": "看什么啊看？没什么好看的。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 看什么啊看？没什么好看的。",
+          "prompt_zh": "看什么啊看？没什么好看的。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "老师，您别急，时间还早。"
+          ],
+          "explanation": "Mẫu X什么（啊） mang thái độ bác bỏ trực diện nên không dùng với người trên trong ngữ cảnh trang trọng; nói thẳng và mềm: 您别急，时间还早。",
+          "id": "shm-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "您急什么啊？",
+              "老师，您别急，时间还早。",
+              "老师急什么急？",
+              "您有什么急的？"
+            ]
+          },
+          "prompt_vi": "Chọn cách nói LỊCH SỰ với giáo viên khi muốn nói 'Thầy đừng vội.'",
+          "type": "choice"
+        }
+      ],
+      "formula_notes": "1) Cấu tạo — dạng thường: Động từ/Tính từ + 什么, cuối câu thêm 啊 để tăng thái độ: 急什么啊？笑什么？Bỏ 啊 vẫn giữ nguyên ý bác bỏ. 2) Cấu tạo — dạng lặp: Động từ + 什么 + chính động từ đó: 看什么看？哭什么哭？Dạng này chỉ dùng để bác bỏ một hành động đang diễn ra, động từ lặp nguyên vẹn. 3) Dạng với 有: 有什么 + Tính từ + 的: 这有什么难的？(có gì khó đâu); mở rộng hay gặp: 有什么好 + Động từ + 的: 有什么好怕的？(có gì đáng sợ đâu). 4) Phân biệt: câu hỏi thật thường có chủ ngữ và ngữ cảnh hỏi thông tin （你在看什么？); X什么（啊） không chờ trả lời — đáp lại nó là một lời phủ nhận hoặc thôi không làm nữa. 5) Lưu ý thái độ: với người trên/người lạ, mẫu này dễ nghe thành vô lễ; khi cần lịch sự, nói thẳng ý phủ định một cách mềm: 不用急 / 没什么难的。",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "fixed-pattern-shenme",
+      "objective": "Sau bài này, người học dùng được mẫu cố định X什么（啊） để bác bỏ nhẹ một hành động/cảm xúc là không cần thiết （急什么啊？ = có gì mà vội), nhận ra dạng lặp động từ （看什么看？), và biết mẫu này mang thái độ nên không dùng bừa trong ngữ cảnh trang trọng.",
+      "pattern": "Động từ/Tính từ + 什么（啊） · Động từ + 什么 + Động từ (lặp lại)",
+      "quick_memory": "X + 什么（啊） = '…gì mà…': 急什么啊？ = vội gì mà vội. Lặp: 看什么看？ Mẫu này bác bỏ, không phải hỏi thật.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-9 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án và đề cương thi HSK 11/2025, phạm vi xác minh TRỰC QUAN từ PDF gốc thay cho bản trích xuất text; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về mẫu cố định X什么（啊） (dạng bác bỏ kiểu phản vấn và dạng lặp động từ) theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi đối chiếu mục OFF-H3-26 trong catalogue dự án từ đề cương thi 11/2025, xác minh trực quan khối 固定格式 trang in 390 ngày 2026-10-30: hàng X什么（啊） là thành viên cuối chưa dạy của mục. Sau bài này OFF-H3-26 phủ đủ cả 5 thành viên của giỏ dự án.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Mẫu cố định HSK3: X什么（啊） — “…gì mà…” （急什么啊？ / 看什么看？）",
+      "when_to_use": "Mẫu khẩu ngữ mang thái độ: người nói cho rằng việc kia không cần, không đáng, hoặc không có cơ sở. Hai dạng: (1) Động từ/Tính từ + 什么（+啊）: 急什么啊？(vội gì mà vội), 怕什么？(sợ gì); riêng dạng có 有： 有什么 + Tính từ + 的： 这有什么难的？(có gì khó đâu). (2) Lặp động từ: Động từ + 什么 + Động từ: 看什么看？(nhìn gì mà nhìn). Đây không phải câu hỏi thật — người nói không chờ câu trả lời. Ranh giới: khác câu hỏi thật bằng 什么 ở bài question-words （你在看什么？là hỏi thật, chờ trả lời); khác phản vấn nguyên câu 不是……吗？/怎么……呢？ ở bài rhetorical-question — mẫu này là khung cố định ngắn gắn liền sau động từ/tính từ. Thái độ của mẫu khá trực diện (bực, chê trách, hoặc đùa thân mật) nên tránh dùng với người trên và người lạ."
+    }
+  ],
+  "schema_version": 1
+}

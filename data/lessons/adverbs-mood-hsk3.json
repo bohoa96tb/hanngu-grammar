@@ -1,0 +1,236 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Nếu không có bối cảnh chờ đợi đặc biệt, câu này không tự nhiên: 终于 dành cho việc được chờ đợi/nỗ lực lâu mới thành （等了两个小时，火车终于来了）. Ăn sáng hằng ngày là việc thường nhật — nói thẳng 他每天吃早饭。",
+          "verdict": "kem_tu_nhien",
+          "wrong_or_risky": "他终于每天吃早饭了。"
+        },
+        {
+          "explanation": "Không chồng 才 và 就 cùng một vị trí nhấn mạnh. Chọn một: 这才是我的书 hoặc 这就是我的书 — cả hai đều đúng, sắc thái nhấn hơi khác nhau.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "这就才是我的书。"
+        },
+        {
+          "explanation": "Câu này đúng ngữ pháp, nhưng 才 ở đây là phó từ THỜI GIAN ('mãi đến mười giờ mới đến'), không phải 才 ngữ khí của bài này. Muốn nhấn quả quyết kiểu ngữ khí phải vào khung như 这才是…… hoặc ……才不……呢。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我十点才来，所以我来晚了。"
+        }
+      ],
+      "content_version": 1,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Dāngrán, wǒ yídìng qù.",
+          "tokens": [
+            "当然",
+            "我",
+            "一定",
+            "去"
+          ],
+          "vi": "Đương nhiên, tôi nhất định đi.",
+          "zh": "当然，我一定去。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Qíshí, zhè jiàn shì hěn jiǎndān.",
+          "tokens": [
+            "其实",
+            "这件",
+            "事",
+            "很",
+            "简单"
+          ],
+          "vi": "Thực ra, chuyện này rất đơn giản.",
+          "zh": "其实，这件事很简单。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Děng le liǎng ge xiǎoshí, huǒchē zhōngyú lái le.",
+          "tokens": [
+            "等",
+            "了",
+            "两个",
+            "小时",
+            "火车",
+            "终于",
+            "来",
+            "了"
+          ],
+          "vi": "Đợi hai tiếng đồng hồ, cuối cùng tàu cũng đến.",
+          "zh": "等了两个小时，火车终于来了。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhè cái shì zhēnzhèng de péngyou.",
+          "tokens": [
+            "这",
+            "才",
+            "是",
+            "真正的",
+            "朋友"
+          ],
+          "vi": "Đây mới chính là bạn bè thật sự.",
+          "zh": "这才是真正的朋友。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ cái bú pà ne!",
+          "tokens": [
+            "我",
+            "才",
+            "不",
+            "怕",
+            "呢"
+          ],
+          "vi": "Tôi nhất định không sợ đâu!",
+          "zh": "我才不怕呢！"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā jiùshì bù tīng.",
+          "tokens": [
+            "他",
+            "就是",
+            "不",
+            "听"
+          ],
+          "vi": "Anh ta nhất định không chịu nghe.",
+          "zh": "他就是不听。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "其实，这件事很简单。"
+          ],
+          "explanation": "Đính chính nhẹ, hé lộ điều khác ấn tượng ban đầu thì dùng 其实。当然 là khẳng định điều hiển nhiên; 终于 cần bối cảnh chờ đợi lâu; phương án cuối sai vị trí của 才。",
+          "id": "amd-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "其实，这件事很简单。",
+              "当然，这件事很简单。",
+              "终于，这件事很简单。",
+              "这件事才很简单。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Thực ra, chuyện này rất đơn giản.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "飞机晚点了三个小时，我们终于上了飞机。"
+          ],
+          "explanation": "Việc chờ đợi lâu mới thành dùng 终于。当然/其实 không mang sắc thái 'chờ lâu mới thành'; phương án cuối thiếu phó từ ngữ khí cần thiết cho ý này.",
+          "id": "amd-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "飞机晚点了三个小时，我们终于上了飞机。",
+              "飞机晚点了三个小时，我们当然上了飞机。",
+              "飞机晚点了三个小时，我们其实上了飞机。",
+              "飞机晚点了三个小时，我们是上了飞机。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Máy bay trễ ba tiếng, cuối cùng chúng tôi cũng lên được máy bay.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "这",
+              "才",
+              "是",
+              "真正的",
+              "朋友"
+            ]
+          ],
+          "explanation": "Khung nhấn mạnh: 这 + 才 + 是 + …: 这才是真正的朋友。",
+          "id": "amd-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "是",
+              "这",
+              "朋友",
+              "真正的",
+              "才"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Đây mới chính là bạn bè thật sự.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "这才是对的做法。"
+          ],
+          "explanation": "Khung khẳng định danh tính: 这 + 才 + 是 + …: 这才是对的做法。当然 khẳng định điều hiển nhiên, không mang ý phân biệt 'mới chính là'; 才不是 lật câu thành phủ định; phương án cuối đặt 才 sai vị trí — trong khung này 才 đứng trước 是。",
+          "id": "amd-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "这才是对的做法。",
+              "这当然是对的做法。",
+              "这才不是对的做法。",
+              "这是才对的做法。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để khẳng định 'Đây mới chính là cách làm đúng.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "就"
+          ],
+          "explanation": "Khối sai là 就： không chồng hai từ nhấn mạnh cùng vị trí — bỏ 就 thành 这才是好办法， hoặc bỏ 才 thành 这就是好办法， đều đúng.",
+          "id": "amd-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "这",
+              "就",
+              "才",
+              "是",
+              "好办法"
+            ],
+            "sentence_zh": "这就才是好办法。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 这就才是好办法。",
+          "prompt_zh": "这就才是好办法。",
+          "type": "error_spot"
+        }
+      ],
+      "formula_notes": "1) Vị trí: 当然/其实/终于 đứng đầu câu hoặc sau chủ ngữ, trước động từ: 其实，我不太喜欢。/ 他终于来了。Riêng 当然 còn đứng một mình làm câu trả lời: —你来吗？—当然！ 2) Chọn từ — 其实 vs 当然: 其实 mở ra điều khác với ấn tượng ban đầu （其实很简单）; 当然 khẳng định điều ai cũng thấy là đúng — không dùng 当然 để hé lộ một điều bất ngờ. 3) Chọn từ — 终于: chỉ dùng khi sự việc được chờ đợi hoặc nỗ lực trong thời gian dài rồi mới thành; sự kiện bình thường không có bối cảnh chờ đợi thì không gắn 终于. 4) 才/就 ngữ khí: 这 + 才/就 + 是 = 'đây mới chính là…': 这才是好茶。Phủ định quả quyết: Chủ ngữ + 才/就 + 不/没 + Động từ + 呢： 我才不去呢。Sắc thái này mạnh và khẩu ngữ, dễ nghe thành thách thức — cẩn thận ngữ cảnh. 5) Phân biệt: 才 trong 只有……，才…… và ……才能…… là 'chỉ khi… mới' (điều kiện); 就 trong 如果……就…… là từ nối kết quả. Cả hai đều khác vai ngữ khí nhấn mạnh của bài này — nhìn vào khung câu, không nhìn mặt chữ đơn lẻ.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "adverbs-mood-hsk3",
+      "objective": "Sau bài này, người học thêm được thái độ của người nói vào câu: khẳng định điều hiển nhiên bằng 当然, đính chính nhẹ bằng 其实, nói việc chờ đợi lâu mới thành bằng 终于, và nhấn mạnh quả quyết bằng 才/就 ở vai ngữ khí.",
+      "pattern": "Chủ ngữ + 当然/其实/终于 + Động từ · 这 + 才/就 + 是 · Chủ ngữ + 才/就 + 不/没 + Động từ + 呢",
+      "quick_memory": "Hiển nhiên → 当然； đính chính → 其实； chờ lâu mới thành → 终于； quả quyết → 这才是… / 我才不…呢.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-9 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án và đề cương thi HSK 11/2025, phạm vi xác minh TRỰC QUAN từ PDF gốc thay cho bản trích xuất text; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về các phó từ ngữ khí 当然/其实/终于 và vai nhấn mạnh của 才/就 theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi đối chiếu mục OFF-H3-18 trong catalogue dự án từ đề cương thi 11/2025, xác minh trực quan trang in 389 ngày 2026-10-30: hàng 语气副词 gồm 当然、其实、终于、才（hai nghĩa đánh số 2/3）、就（nghĩa đánh số 4) — bản ghi catalogue cũ thiếu 就, đã sửa title của mục theo bằng chứng trực quan này. Bài chỉ dạy vai ngữ khí; các nghĩa điều kiện/thời gian của 才 và vai nối kết quả của 就 thuộc bài khác.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Phó từ ngữ khí HSK3: đương nhiên / thực ra / cuối cùng / quả quyết （当然/其实/终于/才/就）",
+      "when_to_use": "Nhóm này không đổi sự việc mà đổi THÁI ĐỘ của người nói: 当然 = đương nhiên — điều hiển nhiên, chắc chắn; 其实 = thực ra — đính chính nhẹ, hé lộ điều khác với vẻ ngoài; 终于 = cuối cùng — việc được chờ đợi, nỗ lực lâu nay mới thành hiện thực; 才 ở vai ngữ khí = 'mới chính là' （这才是……) và quả quyết khi phủ định （我才不去呢）; 就 ở vai ngữ khí = nhấn khẳng định/cố ý （他就是不听）. Ranh giới bắt buộc: 才 ở đây khác hẳn 才 'chỉ khi… mới' trong 只有……，才…… (bài complex-condition) và ……才能 (bài zenme-yang-question); phó từ thời gian 才 'mãi đến lúc đó mới' （他十点才来） thuộc nhóm thời gian — bài này chỉ nhắc để phân biệt, không dạy. 就 ở đây cũng khác 就 nối kết quả （如果……就……)."
+    }
+  ],
+  "schema_version": 1
+}
