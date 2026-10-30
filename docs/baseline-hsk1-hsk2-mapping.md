@@ -32,6 +32,13 @@ Trạng thái dùng trong tài liệu này:
   已经/有时/快/快要/正/常/经常, 别, 就), giới từ 从/往/跟, 兼语句,
   存现句2, 是字句2, 有字句2, 状态补语, 数量补语2, 概数, 序数 dạng
   数词+量词, và A了A trong động từ trùng điệp.
+- Cập nhật vòng sửa QA lô HSK3-5 (30/10/2026): OFF-H2-43
+  （ 数量补语 dạng 2) chuyển từ THIẾU sang MỘT PHẦN nhờ bài
+  quantity-complement-objects (chi tiết ở mục 3). Cùng vòng sửa
+  này, một gán nhầm phạm vi liên cấp đã được sửa: điểm 数量补语
+  dạng 3 (OFF-H3-32) trong đề cương là "thời gian đã trôi qua
+  kể từ khi hành động kết thúc", nay đã có bài riêng
+  time-since-completion ở HSK3 (xem tài liệu ánh xạ HSK3–4).
 - Nhắc lại theo yêu cầu đối chiếu: số mục nhóm trong tài liệu này là
   cách chia của dự án để đối chiếu, KHÔNG phải số mục chính thức
   trong đề cương (đề cương không đánh số từng điểm vi mô) và KHÔNG
@@ -157,7 +164,14 @@ Trạng thái dùng trong tài liệu này:
   khung đơn + phức qua ví dụ, chưa đủ mọi dạng phức).
 - Trạng thái bổ ngữ (động từ + 得 + tính từ đoản ngữ): THIẾU.
 - Số lượng bổ ngữ dạng 2 (thời gian kéo dài; tính từ + số lượng):
-  THIẾU.
+  MỘT PHẦN (bài quantity-complement-objects dạy bổ ngữ thời
+  lượng/tần suất sau động từ — mẫu nền khi câu không có tân ngữ
+  và vị trí trong ba trường hợp khi câu có tân ngữ; phần tính
+  từ + số lượng chưa dạy). Ghi mốc sửa phạm vi: bài này vốn
+  được soạn ở lô HSK3-5 dưới id quantity-complement-3 và gán
+  cho OFF-H3-32 ở HSK3; vòng sửa QA đã xác định nội dung thuộc
+  OFF-H2-43 nên đổi danh tính, hạ cấp HSK2 và bổ sung khối nền
+  dạng 2 (xem thêm mục 1).
 - Chủ vị làm vị ngữ: THIẾU.
 ### Loại câu và câu đặc biệt
 - Câu hỏi lựa chọn bằng 还是: ĐÃ CÓ (hai-shi-choice).
