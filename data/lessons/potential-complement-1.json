@@ -1,0 +1,225 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "不 phải chen giữa động từ và bổ ngữ kết quả: 我听不懂老师的话。Không đặt 不 trước động từ.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我不听懂老师的话。"
+        },
+        {
+          "explanation": "Kết quả cụ thể 'nghe mà không hiểu' dùng khả năng bổ ngữ: 我听不懂这句话。能 nói khả năng/kỹ năng nói chung, đặt trước động từ sẽ đổi ý sang 'không có khả năng/không được phép nghe hiểu'. Câu này không sai ngữ pháp; khi nói khả năng nói chung vẫn gặp, nhưng 'nghe câu này mà không hiểu' (kết quả của lần nghe cụ thể) thì 听不懂 là dạng chính xác.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我不能听懂这句话。 (muốn nói 'tôi nghe câu này mà không hiểu')"
+        },
+        {
+          "explanation": "Không chen cả 得 và 不: khẳng định dùng 得 (听得懂), phủ định thay 得 bằng 不 (听不懂).",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我听得不懂。"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Lǎoshī shuō de tài kuài, wǒ tīng bù dǒng.",
+          "tokens": [
+            "老师",
+            "说",
+            "得",
+            "太",
+            "快",
+            "，",
+            "我",
+            "听不懂"
+          ],
+          "vi": "Giáo viên nói nhanh quá, tôi nghe không hiểu.",
+          "zh": "老师说得太快，我听不懂。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhè běn shū wǒ yì tiān kàn de wán.",
+          "tokens": [
+            "这本",
+            "书",
+            "我",
+            "一天",
+            "看得完"
+          ],
+          "vi": "Cuốn sách này tôi đọc một ngày là xong được.",
+          "zh": "这本书我一天看得完。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zì tài xiǎo, wǒ kàn bù jiàn.",
+          "tokens": [
+            "字",
+            "太",
+            "小",
+            "，",
+            "我",
+            "看不见"
+          ],
+          "vi": "Chữ nhỏ quá, tôi nhìn không thấy.",
+          "zh": "字太小，我看不见。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā shuō de hěn màn, wǒ tīng de dǒng.",
+          "tokens": [
+            "他",
+            "说",
+            "得",
+            "很",
+            "慢",
+            "，",
+            "我",
+            "听得懂"
+          ],
+          "vi": "Anh ấy nói rất chậm, tôi nghe hiểu được.",
+          "zh": "他说得很慢，我听得懂。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒ bìng le, shénme dōu chī bù xià.",
+          "tokens": [
+            "我",
+            "病",
+            "了",
+            "，",
+            "什么",
+            "都",
+            "吃不下"
+          ],
+          "vi": "Tôi ốm, chẳng ăn được gì.",
+          "zh": "我病了，什么都吃不下。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "作业太多了，我今天做不完。"
+          ],
+          "explanation": "Không đạt kết quả: chen 不 giữa động từ và bổ ngữ — 做 + 不 + 完. 不 không đứng trước động từ, và không chen cả 得 lẫn 不.",
+          "id": "pot1-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "作业太多了，我今天做不完。",
+              "作业太多了，我今天不做完。",
+              "作业太多了，我今天做得不完。",
+              "作业太多了，我今天做完不。"
+            ]
+          },
+          "prompt_vi": "Chọn câu dùng khả năng bổ ngữ để nói 'Bài tập nhiều quá, hôm nay tôi làm không xong.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "请开灯，太黑了，我看不见。",
+            "请开灯，太黑了，我看不见"
+          ],
+          "explanation": "Nhìn mà không thấy là kết quả không đạt: 看 + 不 + 见, 不 chen giữa động từ và bổ ngữ.",
+          "id": "pot1-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 看不见: 看 + 不 + 见.",
+            "prompt_zh": "请开灯，太黑了，我___。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Hãy bật đèn, tối quá, tôi nhìn không thấy.'",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            [
+              "我",
+              "听得懂",
+              "老师的话"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → động từ + 得 + bổ ngữ → tân ngữ.",
+          "id": "pot1-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "老师的话",
+              "我",
+              "听得懂"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Tôi nghe hiểu được lời giáo viên nói.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "不"
+          ],
+          "explanation": "不 bị đặt trước động từ. Phủ định khả năng bổ ngữ chen 不 giữa động từ và bổ ngữ: 这件工作我做不完。",
+          "id": "pot1-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "这件工作",
+              "我",
+              "不",
+              "做完"
+            ],
+            "sentence_zh": "这件工作我不做完。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 这件工作我不做完。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "这道菜太辣了，我吃不下。",
+            "这道菜太辣了，我吃不下",
+            "这个菜太辣了，我吃不下。",
+            "这个菜太辣了，我吃不下",
+            "这道菜很辣，我吃不下。",
+            "这道菜很辣，我吃不下",
+            "这个菜很辣，我吃不下。",
+            "这个菜很辣，我吃不下"
+          ],
+          "explanation": "Từ ý muốn nói 'ăn không xuống được' là kết quả không đạt: 吃 + 不 + 下.",
+          "id": "pot1-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 吃不下: 吃 + 不 + 下.",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Món ăn này cay quá, tôi ăn không xuống được.' (viết bằng chữ Hán)",
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Vị trí: 得 hoặc 不 chen giữa động từ và bổ ngữ kết quả: 听 + 得/不 + 懂. 2) Khẳng định: Động từ + 得 + Bổ ngữ (看得见, 做得完) — nói làm được. 3) Phủ định: Động từ + 不 + Bổ ngữ (看不见, 做不完) — nói không làm được; 不 không đứng trước động từ. 4) Phân biệt: 能 nói khả năng nói chung, kỹ năng đã học hoặc điều kiện bên ngoài cho phép; khả năng bổ ngữ nói kết quả cụ thể của chính hành động đó có đạt hay không — muốn nói 'nghe mà không hiểu' thì dùng 听不懂, không thay bằng 能.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "potential-complement-1",
+      "objective": "Sau bài này, người học nói được một hành động có đạt kết quả hay không bằng mẫu Động từ + 得/不 + bổ ngữ kết quả (听得懂/听不懂, 看得见/看不见, 做得完/做不完), và biết khi nào không thay mẫu này bằng 能.",
+      "pattern": "Động từ + 得/不 + Bổ ngữ kết quả",
+      "quick_memory": "Làm được hay không: chen 得 (được) hoặc 不 (không) vào giữa động từ và kết quả: 听得懂 / 听不懂.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-2 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-30, ghi rõ điều kiện nền (bổ ngữ kết quả dạng 1 và 得 ở bài bổ ngữ trạng thái) trong when_to_use; diễn giải theo Chinese Grammar Wiki, bài viết mới bằng tiếng Việt, không sao chép nguyên văn nguồn ngoài; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật. Sửa vòng 2 theo QA-HSK3-2 30/10/2026: confusion 2 thêm câu chốt mềm hóa — câu với 不能听懂 không sai ngữ pháp, chỉ không chính xác cho ý kết quả cụ thể (H-2); giữ verdict doi_nghia.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về mẫu Động từ + 得/不 + bổ ngữ kết quả và cách phân biệt với 能, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-30 (khả năng bổ ngữ dạng 1) trong catalogue dự án từ đề cương thi 11/2025.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Khả năng bổ ngữ dạng 1: làm được / không làm được",
+      "when_to_use": "Khi muốn nói một hành động CÓ đạt được kết quả hay KHÔNG, xét theo tình hình cụ thể lúc nói: 听得懂 là nghe thì hiểu được, 听不懂 là nghe mà không hiểu được. Điều kiện nền: mẫu này ghép động từ với bổ ngữ kết quả đã học ở bài Bổ ngữ kết quả dạng 1 (完/懂/错), và dùng lại chữ 得 đã gặp ở bài Bổ ngữ trạng thái với 得 — nhưng ở đây 得/不 chen giữa động từ và bổ ngữ để nói khả năng đạt kết quả, không phải để đánh giá mức độ. Khẳng định: Động từ + 得 + bổ ngữ; phủ định: Động từ + 不 + bổ ngữ."
+    }
+  ],
+  "schema_version": 1
+}

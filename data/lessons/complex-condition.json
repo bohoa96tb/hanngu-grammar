@@ -1,0 +1,215 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Ghép chéo cặp: 只有 phải đi với 才 — 只有努力学习，才能学好中文。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "只有努力学习，就能学好中文。"
+        },
+        {
+          "explanation": "Ghép chéo cặp ngược lại: 只要 phải đi với 就 — 只要努力学习，就能学好中文。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "只要努力学习，才能学好中文。"
+        },
+        {
+          "explanation": "Ý 'chỉ cần' là điều kiện đủ, dễ đạt — dùng 只要……，就……: 只要你来，我就很高兴。Câu đã viết vừa ghép chéo 就, vừa nói như thể việc bạn đến là điều kiện duy nhất bắt buộc.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "只有你来，我就很高兴。 (muốn nói 'chỉ cần bạn đến là tôi vui rồi')"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Zhǐyǒu nǔlì xuéxí, cái néng xuéhǎo Zhōngwén.",
+          "tokens": [
+            "只有",
+            "努力",
+            "学习",
+            "，",
+            "才",
+            "能",
+            "学好",
+            "中文"
+          ],
+          "vi": "Chỉ khi học chăm chỉ mới học tốt tiếng Trung được.",
+          "zh": "只有努力学习，才能学好中文。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhǐyào nǐ nǔlì, jiù néng xuéhǎo Zhōngwén.",
+          "tokens": [
+            "只要",
+            "你",
+            "努力",
+            "，",
+            "就",
+            "能",
+            "学好",
+            "中文"
+          ],
+          "vi": "Chỉ cần bạn chăm chỉ là học tốt tiếng Trung được.",
+          "zh": "只要你努力，就能学好中文。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhǐyǒu zhōumò, tā cái yǒu shíjiān xiūxi.",
+          "tokens": [
+            "只有",
+            "周末",
+            "，",
+            "他",
+            "才",
+            "有",
+            "时间",
+            "休息"
+          ],
+          "vi": "Chỉ cuối tuần anh ấy mới có thời gian nghỉ.",
+          "zh": "只有周末，他才有时间休息。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Zhǐyào yǒu shíjiān, wǒ jiù qù kàn nǐ.",
+          "tokens": [
+            "只要",
+            "有",
+            "时间",
+            "，",
+            "我",
+            "就",
+            "去",
+            "看",
+            "你"
+          ],
+          "vi": "Chỉ cần có thời gian là tôi sẽ đến thăm bạn.",
+          "zh": "只要有时间，我就去看你。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "只有买了票，才能进去。"
+          ],
+          "explanation": "Chưa mua được vé là không vào được — điều kiện duy nhất/bắt buộc: 只有……，才…….",
+          "id": "ccon-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "只有买了票，才能进去。",
+              "只要买了票，才能进去。",
+              "只有买了票，就能进去。",
+              "买了票只有，才能进去。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Chỉ khi mua được vé mới vào được.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "只要你给我打电话，我就去接你。",
+            "只要你给我打电话，我就去接你"
+          ],
+          "explanation": "Điều kiện đủ, dễ đạt (gọi điện là đến đón): 只要 + 你给我打电话, 就 + 去接你. Không dùng 只有/才 ở đây.",
+          "id": "ccon-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Điều kiện đủ: 只要……，就…… (điền cả hai chỗ).",
+            "prompt_zh": "___你给我打电话，我___去接你。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Chỉ cần bạn gọi điện cho tôi, tôi sẽ đến đón bạn.'",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            [
+              "只有多练习",
+              "你才能说得好"
+            ]
+          ],
+          "explanation": "Thứ tự cố định: vế điều kiện 只有…… trước, vế kết quả ……才…… sau.",
+          "id": "ccon-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "你才能说得好",
+              "只有多练习"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Chỉ khi luyện tập nhiều, bạn mới nói tốt được.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "就"
+          ],
+          "explanation": "只有 không cặp với 就. Vế kết quả phải dùng 才: 只有天气好，我们才去爬山。",
+          "id": "ccon-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "只有",
+              "天气好",
+              "我们",
+              "就",
+              "去爬山"
+            ],
+            "sentence_zh": "只有天气好，我们就去爬山。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 只有天气好，我们就去爬山。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "只要有互联网，我就能在家学中文。",
+            "只要有互联网，我就能在家学中文",
+            "只要有网络，我就能在家学中文。",
+            "只要有网络，我就能在家学中文",
+            "只要有互联网，我就能在家学习中文。",
+            "只要有互联网，我就能在家学习中文",
+            "只要有网络，我就能在家学习中文。",
+            "只要有网络，我就能在家学习中文"
+          ],
+          "explanation": "Từ ý muốn nói: điều kiện 只要有互联网/有网络 là đủ để học ở nhà → 只要……，就……, không dùng 只有……，才…….",
+          "id": "ccon-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Điều kiện đủ, dễ đạt → 只要……，就……",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Chỉ cần có internet là tôi có thể học tiếng Trung ở nhà.' (viết bằng chữ Hán)",
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Điều kiện cần: 只有 + điều kiện, 才 + kết quả; 才 nhấn mạnh 'phải đến lúc đó mới'. 2) Điều kiện đủ: 只要 + điều kiện, 就 + kết quả. 3) Không dùng: không ghép chéo — 只有 không cặp với 就 trong mẫu này, 只要 không cặp với 才. 4) Phân biệt: tự hỏi 'không có điều kiện này, kết quả có xảy ra không?' — Không thể → 只有……，才……; hễ có là được, điều kiện dễ đạt → 只要……，就…….",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "complex-condition",
+      "objective": "Sau bài này, người học phân biệt và dùng đúng hai mẫu điều kiện: 只有……，才…… (chỉ khi có điều kiện duy nhất/bắt buộc thì kết quả mới xảy ra) và 只要……，就…… (chỉ cần có điều kiện đủ là kết quả xảy ra), không ghép chéo 才 và 就.",
+      "pattern": "只有……，才…… • 只要……，就……",
+      "quick_memory": "Chỉ một đường duy nhất mới tới → 只有…才…; hễ có điều kiện là tới ngay → 只要…就…. Đừng ghép chéo.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-2 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-47 và OFF-H3-22, diễn giải theo Chinese Grammar Wiki, bài viết mới bằng tiếng Việt, không sao chép nguyên văn nguồn ngoài; đối chiếu hai mẫu là mục tiêu chính của bài; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật. Sửa vòng 2 theo QA-HSK3-2 30/10/2026: ccon-ex1 đổi ngữ cảnh '只有有票' thành '只有买了票，才能进去。' và chỉnh 3 phương án nhiễu/lời giải cho khớp (H-1).",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về cách đối chiếu 只有……，才…… (điều kiện cần) với 只要……，就…… (điều kiện đủ), không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-47 (câu phức điều kiện) và OFF-H3-22 (liên từ 只有/只要) trong catalogue dự án từ đề cương thi 11/2025.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Câu phức điều kiện: chỉ khi… mới… / chỉ cần… là…",
+      "when_to_use": "Khi muốn nói điều kiện quyết định kết quả, và việc chọn mẫu nào chính là ý muốn nói: 只有……，才…… dùng khi điều kiện là duy nhất/bắt buộc — không có điều kiện đó thì không có kết quả. 只要……，就…… dùng khi điều kiện là đủ và thường dễ đạt — hễ có điều kiện đó là kết quả xảy ra. Đây là bài đối chiếu: hai mẫu dạy cùng nhau vì nhầm lẫn giữa chúng là lỗi chính."
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,216 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Phủ định bổ ngữ kết quả không giữ 了: 没 + động từ + bổ ngữ — 我没找到钥匙。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我没找到了钥匙。"
+        },
+        {
+          "explanation": "到 là bổ ngữ đứng sau động từ, không đứng trước: 我看到他了。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我到看他了。"
+        },
+        {
+          "explanation": "上 dính ngay sau động từ rồi mới đến tân ngữ: 他关上了门。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他关门上了。"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒ zhǎodào le wǒ de yàoshi.",
+          "tokens": [
+            "我",
+            "找到",
+            "了",
+            "我的",
+            "钥匙"
+          ],
+          "vi": "Tôi tìm thấy chìa khóa của mình rồi.",
+          "zh": "我找到了我的钥匙。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ zài lùshang kàndào le yí gè péngyou.",
+          "tokens": [
+            "我",
+            "在",
+            "路上",
+            "看到",
+            "了",
+            "一个",
+            "朋友"
+          ],
+          "vi": "Trên đường tôi nhìn thấy một người bạn.",
+          "zh": "我在路上看到了一个朋友。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Qǐng jìzhù zhège diànhuà hàomǎ.",
+          "tokens": [
+            "请",
+            "记住",
+            "这个",
+            "电话号码"
+          ],
+          "vi": "Hãy nhớ kỹ số điện thoại này.",
+          "zh": "请记住这个电话号码。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Jiějie dàizǒu le tā de bāo.",
+          "tokens": [
+            "姐姐",
+            "带走",
+            "了",
+            "她的",
+            "包"
+          ],
+          "vi": "Chị gái mang túi của mình đi rồi.",
+          "zh": "姐姐带走了她的包。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Tā chuānshàng le yí jiàn xīn yīfu.",
+          "tokens": [
+            "他",
+            "穿上",
+            "了",
+            "一件",
+            "新",
+            "衣服"
+          ],
+          "vi": "Anh ấy mặc một chiếc áo mới.",
+          "zh": "他穿上了一件新衣服。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "我听到了铃声。"
+          ],
+          "explanation": "Nghe thấy được là kết quả đạt được: 听 + 到 + 了 + 铃声, bổ ngữ 到 đứng ngay sau động từ.",
+          "id": "res2-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我听到了铃声。",
+              "我听铃声到。",
+              "我到听了铃声。",
+              "我听到了在铃声。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Tôi nghe thấy tiếng chuông.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "我没找到那本书。",
+            "我没找到那本书"
+          ],
+          "explanation": "Chưa tìm thấy là kết quả chưa đạt: 没 + 找到 + 那本书 — giống cách phủ định ở dạng 1.",
+          "id": "res2-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Phủ định của 找到: 没 + 找到 (không có 了).",
+            "prompt_zh": "我没___那本书。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Tôi chưa tìm thấy cuốn sách đó.'",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            [
+              "他",
+              "关上",
+              "了",
+              "门"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → động từ + bổ ngữ 上 → 了 → tân ngữ.",
+          "id": "res2-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "了",
+              "门",
+              "他",
+              "关上"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy đóng cửa rồi.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "住记"
+          ],
+          "explanation": "住 là bổ ngữ, phải đứng sau động từ 记: 我记住了这个词。",
+          "id": "res2-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我",
+              "住记",
+              "了",
+              "这个词"
+            ],
+            "sentence_zh": "我住记了这个词。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 我住记了这个词。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "姐姐买到了她喜欢的衣服。",
+            "姐姐买到了她喜欢的衣服",
+            "我姐姐买到了她喜欢的衣服。",
+            "我姐姐买到了她喜欢的衣服"
+          ],
+          "explanation": "Từ ý muốn nói 'mua được' là đạt kết quả: 买 + 到 + 了 + 她喜欢的衣服.",
+          "id": "res2-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 姐姐 hoặc 我姐姐; 'mua được' dùng 买到.",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Chị tôi mua được chiếc áo mà chị ấy thích.' (viết bằng chữ Hán)",
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Vị trí: bổ ngữ kết quả đứng ngay sau động từ, trước tân ngữ nếu có: Động từ + 到/住/走/上 (+ 了) (+ Tân ngữ). 2) 到: đạt đích hoặc tìm/thấy được — 找到, 看到, 听到. 3) 住/走/上: 住 giữ cố định (记住, 站住); 走 mang đi khỏi chỗ cũ (拿走, 带走); 上 đóng lại hoặc đạt trạng thái (关上, 穿上). 4) Phủ định: 没 + Động từ + Bổ ngữ, không có 了 (我没找到) — giống hệt cách phủ định ở dạng 1.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "result-complement-2",
+      "objective": "Sau bài này, người học dùng được bốn bổ ngữ kết quả dạng 2 — 到 (đạt đích, tìm/thấy được), 住 (giữ cố định), 走 (mang đi khỏi), 上 (đóng lại/đạt trạng thái) — và phủ định bằng 没 như dạng 1.",
+      "pattern": "Động từ + 到/住/走/上",
+      "quick_memory": "Đạt đích/tìm thấy → 到; giữ chặt → 住; mang đi → 走; đóng/đạt → 上. Phủ định vẫn: 没 + động từ + bổ ngữ.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-2 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-28, nối tiếp bài result-complement (dạng 1) và ghi rõ đây là dạng 2 trong when_to_use/formula; diễn giải theo Chinese Grammar Wiki, bài viết mới bằng tiếng Việt, không sao chép nguyên văn nguồn ngoài; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật. Sửa vòng 2 theo QA-HSK3-2 30/10/2026: when_to_use đổi câu chữ mức dạy của 上 từ 'nhận biết cơ bản' thành 'luyện ở mức xếp câu và nhận diện lỗi' cho khớp ví dụ 穿上 và bài tập 关上 (H-6).",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về bốn bổ ngữ kết quả 到/住/走/上 và cách chọn theo loại kết quả, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-28 (kết quả bổ ngữ dạng 2: 到/住/走/上) trong catalogue dự án từ đề cương thi 11/2025.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Kết quả bổ ngữ dạng 2: 到/住/走/上",
+      "when_to_use": "Đây là dạng 2 của bổ ngữ kết quả, nối tiếp bài Bổ ngữ kết quả dạng 1 (完/好/懂/错 ở HSK2). Khi muốn nói kết quả cụ thể của hành động: động từ + 到 là đạt tới đích hoặc tìm/thấy được (找到, 看到); + 住 là giữ cố định, không rời ra (记住, 站住); + 走 là mang đi khỏi chỗ cũ (拿走, 带走); + 上 là đóng lại hoặc đạt trạng thái mặc/vào người (关上, 穿上 — ở bài này 上 luyện ở mức xếp câu và nhận diện lỗi). Phủ định giống hệt dạng 1: 没 + động từ + bổ ngữ."
+    }
+  ],
+  "schema_version": 1
+}
