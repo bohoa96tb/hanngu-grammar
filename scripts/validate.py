@@ -62,6 +62,17 @@ def check(data, path) -> list[str]:
                 errors.append(f"{lid}: thiếu {field}")
             elif any(p in val for p in PLACEHOLDERS):
                 errors.append(f"{lid}: placeholder trong {field}")
+        # Chuẩn hóa 30/10/2026 (D25): formula_notes phải chia bước "1) ...",
+        # bài published phải có quick_memory 40–110 ký tự.
+        fn = les.get("formula_notes", "")
+        if fn and not fn.lstrip().startswith("1)"):
+            errors.append(f"{lid}: formula_notes chưa chia bước (phải bắt đầu bằng '1)')")
+        if les.get("status") == "published":
+            qm = les.get("quick_memory", "")
+            if not qm:
+                errors.append(f"{lid}: bài published thiếu quick_memory")
+            elif not (40 <= len(qm) <= 110):
+                errors.append(f"{lid}: quick_memory phải 40–110 ký tự, có {len(qm)}")
         if les.get("hsk_level") not in (1, 2, 3, 4, 5, 6):
             errors.append(f"{lid}: hsk_level phải 1-6")
         diff = les.get("difficulty")
@@ -92,6 +103,8 @@ def check(data, path) -> list[str]:
             if key in seen_ex:
                 errors.append(f"{key}: trùng id bài tập")
             seen_ex.add(key)
+            if ex.get("is_open_ended") is not False:
+                errors.append(f"{key}: is_open_ended phải có mặt và bằng false (schema v1)")
             if not ex.get("prompt_vi") or not ex.get("explanation"):
                 errors.append(f"{key}: thiếu đề bài hoặc lời giải")
             if not ex.get("accepted_answers"):
