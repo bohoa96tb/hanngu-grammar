@@ -132,6 +132,30 @@ Chưa có bản phát hành nào.
   thành verified sau khi kiểm tra trực tiếp bản gốc （几/多少 thuộc
   nhóm đại từ để hỏi HSK1).
 
+- 2026-10-30 — Lô HSK3-6 (build 20261030-hsk3f6): 4 bài mới —
+  complex-parallel （并列复句， OFF-H3-43), modal-verbs-hsk3 （能愿
+  需要/该/应该/愿意/得， OFF-H3-04), alternating-actions
+  （一会儿……，一会儿……, hoàn thiện OFF-H3-42), yue-patterns
+  （越……越…… trong giỏ OFF-H3-26). KÈM SỬA CẤP theo chỉ đạo của
+  Hoa: bài complex-choice chuyển hsk_level 3 → 4 vì khung chính
+  不是……，就是…… thuộc bảng HSK4 — bài nay đứng đầu khối HSK4,
+  OFF-H4-27 phủ một phần (còn thiếu Liên……也/都……，……更……);
+  OFF-H3-42 đạt covered xuyên cấp （或者 do complex-choice dạy ở
+  khối HSK4, 一会儿 do alternating-actions) và không tính khung
+  HSK4 vào phủ HSK3. Tổng 60 bài / 293 bài tập (HSK1: 20, HSK2: 16,
+  HSK3: 23, HSK4: 1). Ánh xạ sau lô: HSK3 22 đã có / 4 một phần /
+  24 thiếu (nhóm ưu tiên cao ở mục 2b đã trống); HSK4 0/1/33.
+  Xác minh phạm vi trước soạn bắt thêm: cả 5 động từ năng nguyện
+  HSK3 đều chưa từng được dạy ở bài cũ. QA đạt có điều kiện, sửa 2
+  điểm Quan trọng: complex-parallel từng gán sai_ngu_phap cho câu
+  chỉ có một 又 (thực ra đúng ngữ pháp, đổi nghĩa); modal-verbs-hsk3
+  từng khẳng định tuyệt đối "*不得 không tồn tại" ở 4 chỗ (thực tế
+  不得 là cách nói trang trọng nghĩa cấm — đã sửa cả 4). Phúc tra
+  5/5 đạt. CI hai job là điều kiện merge bắt buộc. Báo cáo QA vòng 1
+  của lô HSK3-5 (bị cụt khi ghi) đã gắn ghi chú xử lý dẫn tới báo
+  cáo vòng 2 và nhật ký này, không dựng lại phần thiếu. Audio TTS
+  thiết bị thật vẫn not_run; các bài mới là đã rà soát nội bộ.
+
 - 2026-10-30 — Lô HSK3-5 (build 20261030-hsk3e5): 4 bài mới —
   complex-sequence （承接复句 先……，然后/接着……, OFF-H3-41),
   complex-choice （选择复句, OFF-H3-42 — phủ một phần), complex-purpose
