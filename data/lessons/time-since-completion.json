@@ -1,0 +1,221 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Câu này đúng ngữ pháp nhưng nghĩa khác hẳn: nó nói việc học kéo dài ba năm (thời lượng của chính hành động, dạng 2). Muốn nói \"đã ba năm kể từ khi việc kết thúc\" phải chọn động từ chỉ điểm kết thúc và chốt 了 cuối câu: 他离开学校三年了。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他学了三年中文。(dùng để nói \"đã ba năm kể từ khi anh ấy nghỉ học\")"
+        },
+        {
+          "explanation": "Thiếu 了 chốt cuối câu, câu này đọc thành \"anh ấy đã đi bộ ba tiếng\" — thời lượng của việc đi. Thêm 了 cuối câu mới chuyển sang nghĩa \"đã ba tiếng kể từ lúc anh ấy rời đi\": 他走了三个小时了。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他走了三个小时。(để nói \"anh ấy đã rời khỏi đây ba tiếng rồi\")"
+        },
+        {
+          "explanation": "Với nghĩa \"đã ba năm kể từ khi anh ấy rời Bắc Kinh\" đang luyện, câu thiếu 了 chốt cuối nên không trọn: mẫu này cần 了 cuối câu để chốt nghĩa \"tính đến bây giờ\": 他离开北京三年了。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他离开北京三年。"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Tā líkāi Běijīng sān nián le.",
+          "tokens": [
+            "他",
+            "离开",
+            "北京",
+            "三年",
+            "了"
+          ],
+          "vi": "Đã ba năm kể từ khi anh ấy rời Bắc Kinh.",
+          "zh": "他离开北京三年了。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā bìyè liǎng nián le, xiànzài zài yì jiā gōngsī gōngzuò.",
+          "tokens": [
+            "她",
+            "毕业",
+            "两年",
+            "了",
+            "，",
+            "现在",
+            "在",
+            "一家",
+            "公司",
+            "工作"
+          ],
+          "vi": "Cô ấy tốt nghiệp đã hai năm, hiện đang làm việc ở một công ty.",
+          "zh": "她毕业两年了，现在在一家公司工作。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā zǒu le sān gè xiǎoshí le, wǒmen gěi tā dǎ diànhuà ba.",
+          "tokens": [
+            "他",
+            "走了",
+            "三个小时",
+            "了",
+            "，",
+            "我们",
+            "给他",
+            "打电话",
+            "吧"
+          ],
+          "vi": "Anh ấy đi đã ba tiếng rồi, mình gọi điện cho anh ấy đi.",
+          "zh": "他走了三个小时了，我们给他打电话吧。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒmen jiéhūn wǔ nián le.",
+          "tokens": [
+            "我们",
+            "结婚",
+            "五年",
+            "了"
+          ],
+          "vi": "Chúng tôi cưới nhau đã được năm năm rồi.",
+          "zh": "我们结婚五年了。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tāmen bānjiā bàn nián le.",
+          "tokens": [
+            "他们",
+            "搬家",
+            "半年",
+            "了"
+          ],
+          "vi": "Họ chuyển nhà đã nửa năm rồi.",
+          "zh": "他们搬家半年了。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "他离开公司四年了。"
+          ],
+          "explanation": "Mẫu dạng 3: động từ điểm-kết-thúc 离开 + mốc 公司 + thời lượng 四年 + 了 chốt cuối. Câu 2 đúng ngữ pháp nhưng đo thời lượng của việc làm việc tại công ty — đổi nghĩa. Câu 3 thiếu 了 chốt cuối nên không trọn với nghĩa này; câu 4 đặt 了 chen sau cụm rời công ty mà vẫn thiếu 了 chốt cuối câu.",
+          "id": "tsc-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他离开公司四年了。",
+              "他在公司工作了四年。",
+              "他离开公司四年。",
+              "他离开公司了四年。"
+            ]
+          },
+          "prompt_vi": "Chọn câu có nghĩa 'Đã bốn năm kể từ khi anh ấy rời công ty.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "她",
+              "离开",
+              "上海",
+              "五年",
+              "了"
+            ]
+          ],
+          "explanation": "Thứ tự của mẫu: chủ ngữ + động từ điểm-kết-thúc （离开） + mốc （上海） + thời lượng （五年） + 了 chốt cuối câu.",
+          "id": "tsc-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "五年",
+              "了",
+              "她",
+              "离开",
+              "上海"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Cô ấy rời Thượng Hải đã năm năm.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "三年"
+          ],
+          "explanation": "Thời lượng 三年 bị đặt trước động từ. Trong mẫu này thời lượng đứng sau động từ và mốc, trước 了 chốt cuối: 他离开北京三年了。",
+          "id": "tsc-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他",
+              "三年",
+              "离开",
+              "北京了"
+            ],
+            "sentence_zh": "他三年离开北京了。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 他三年离开北京了。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "她走了两个小时了。",
+            "她走了两个小时了"
+          ],
+          "explanation": "Điền 了： 她走了两个小时了。 了 cuối câu chốt nghĩa \"đã hai tiếng kể từ lúc cô ấy rời đi\"; không có 了， câu đọc thành thời lượng của việc đi bộ （她走了两个小时 = cô ấy đã đi bộ hai tiếng).",
+          "id": "tsc-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Mẫu này cần một trợ từ chốt ở cuối câu để nói \"tính đến bây giờ\"; thiếu nó câu đọc thành \"đi bộ hai tiếng\"."
+          },
+          "prompt_vi": "Điền từ còn thiếu để câu có nghĩa 'Cô ấy đi đã hai tiếng rồi.'",
+          "prompt_zh": "她走了两个小时___。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "他离开家四个小时了。",
+            "他离开家四个小时了"
+          ],
+          "explanation": "Mẫu đầy đủ: 他离开家四个小时了。 — 离开 là động từ điểm-kết-thúc, 家 là mốc, 四个小时 là khoảng thời gian đã trôi qua, 了 cuối câu chốt \"tính đến bây giờ\".",
+          "id": "tsc-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng động từ 离开 + mốc 家 + thời lượng 四个小时 + 了 chốt cuối câu."
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Anh ấy rời khỏi nhà đã bốn tiếng rồi.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Mẫu cốt lõi: Chủ ngữ + Động từ + 了 + Thời lượng + 了. Hai chữ 了 làm hai việc khác nhau: 了 ngay sau động từ báo việc đã xảy ra và kết thúc; 了 ở cuối câu chốt nghĩa \"tính đến bây giờ\". Ví dụ: 他走了三个小时了 (đã ba tiếng kể từ lúc anh ấy đi). Lưu ý ngữ cảnh: với động từ di chuyển như 走, nếu việc đang tiếp diễn thì câu còn đọc được là \"đã đi bộ được ba tiếng rồi\" — các ví dụ trong bài này đều đặt ở ngữ cảnh người đã rời đi. 2) Với mốc nơi chốn/sự kiện: Động từ + mốc + Thời lượng + 了: 他离开北京三年了； 她毕业两年了. Động từ hợp mẫu này là động từ chỉ một điểm kết thúc/rời khỏi: 离开、走、毕业、结婚、搬家、退休… — việc chỉ diễn ra một lần rồi xong, sau đó thời gian mới \"chạy\" tiếp. 3) Phân biệt cốt lõi với dạng 2: 他学了三年中文 trả lời \"việc học kéo dài bao lâu\" (ba năm học, có thể vẫn đang học tiếp); 他离开学校三年了 trả lời \"đã bao lâu kể từ khi việc kết thúc\" (rời trường một lần, ba năm đã trôi qua kể từ đó). 4) Điều kiện dùng: muốn đọc theo nghĩa \"đã trôi qua\" thì bắt buộc có 了 chốt ở cuối câu và động từ phải là động từ điểm-kết-thúc; động từ kéo dài （学、住、工作） đi với thời lượng sẽ tự động đọc thành thời lượng của chính hành động, không thành \"kể từ khi kết thúc\".",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "time-since-completion",
+      "objective": "Sau bài này, người học nói được \"đã X thời gian kể từ khi một việc kết thúc\" （他离开北京三年了）, nhận ra vai trò của 了 cuối câu, và phân biệt được mẫu này với bổ ngữ đo thời lượng của chính hành động （他学了三年中文）.",
+      "pattern": "Động từ (kết thúc/rời khỏi) + 了 + Thời lượng + 了 • Động từ + Mốc + Thời lượng + 了",
+      "quick_memory": "Việc xong một lần, đồng hồ chạy tiếp: Động từ + (mốc) + Thời lượng + 了 chốt cuối — 他离开北京三年了。",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn ở vòng sửa QA lô HSK3-5 30/10/2026 để phủ đúng chủ điểm OFF-H3-32, thay cho bài quantity-complement-3 bị gán nhầm chủ điểm này ở bản đầu của lô: rà soát nội bộ — đối chiếu catalogue dự án và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh (điểm phân biệt cốt lõi: thời lượng của hành động vs thời gian kể từ khi hành động kết thúc, vai trò của 了 cuối câu), và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về bổ ngữ thời lượng đo khoảng thời gian kể từ khi hành động kết thúc (mẫu động từ + 了 + thời lượng + 了) theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-32 （ 数量补语 dạng 3: khoảng thời gian từ lúc hành động kết thúc đến thời điểm mốc) trong catalogue dự án từ đề cương thi 11/2025.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Bổ ngữ số lượng dạng 3: đã bao lâu kể từ khi việc kết thúc （他离开北京三年了）",
+      "when_to_use": "Ví dụ: 他离开北京三年了。 — câu này không nói \"anh ấy rời Bắc Kinh trong ba năm\", mà nói \"đã ba năm trôi qua kể từ khi anh ấy rời Bắc Kinh\". Đây là số lượng bổ ngữ dạng 3 theo đề cương: bổ ngữ đo khoảng thời gian từ lúc một hành động KẾT THÚC đến thời điểm nói. Khác hẳn dạng 2 (bài quantity-complement-objects, HSK2): ở đó bổ ngữ đo thời lượng của chính hành động đang diễn ra （他学了三年中文 — học trong ba năm). Bài này chỉ cần nhớ một câu hỏi phân biệt: thời lượng này đo \"việc kéo dài bao lâu\" hay đo \"khoảng trống sau khi việc đã xong\"?"
+    }
+  ],
+  "schema_version": 1
+}

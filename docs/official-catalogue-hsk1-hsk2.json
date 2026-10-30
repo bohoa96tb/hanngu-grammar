@@ -709,8 +709,11 @@
     {
       "id": "OFF-H2-43",
       "title_vi": "Số lượng bổ ngữ dạng 2",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "partial",
+      "lesson_ids": [
+        "quantity-complement-objects"
+      ],
+      "note": "Bài quantity-complement-objects phủ phần vị trí của bổ ngữ thời lượng/tần suất (nền khi không có tân ngữ + ba trường hợp khi có tân ngữ); phần tính từ + số lượng của dạng 2 chưa dạy."
     },
     {
       "id": "OFF-H2-44",

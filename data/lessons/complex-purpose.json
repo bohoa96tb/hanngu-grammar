@@ -1,0 +1,235 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Đặt vế mục đích xuống cuối câu là theo trật tự tiếng Việt. Trong mẫu này, vế 为了 đứng đầu câu hoặc ngay sau chủ ngữ: 为了学好中文，他每天练习口语。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他每天练习口语为了学好中文。"
+        },
+        {
+          "explanation": "Đây mới chỉ là vế mục đích, chưa có vế hành động nên ý chưa trọn. Phải nói đủ hai vế: 为了学好中文，他每天练习口语。",
+          "verdict": "thieu_ngu_canh",
+          "wrong_or_risky": "为了学好中文。(đứng một mình làm một câu)"
+        },
+        {
+          "explanation": "为 + cụm động từ không phải sai hẳn: cách dùng này tồn tại ở văn phong trang trọng (kiểu 为……而……). Nhưng trong lời nói thường ngày và ở cấp HSK3, mệnh đề mục đích dài dùng 为了： 他为了学好中文，每天练习口语。 为 đơn độc ở mức này thường đi với danh từ ngắn chỉ người/lý do ngắn （为他买东西）.",
+          "verdict": "khac_van_phong",
+          "wrong_or_risky": "他为学好中文，每天练习口语。"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wèile xué hǎo Zhōngwén, tā měi tiān liànxí kǒuyǔ.",
+          "tokens": [
+            "为了",
+            "学好",
+            "中文",
+            "，",
+            "他",
+            "每天",
+            "练习",
+            "口语"
+          ],
+          "vi": "Để học tốt tiếng Trung, anh ấy luyện nói hằng ngày.",
+          "zh": "为了学好中文，他每天练习口语。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ wèile tōngguò kǎoshì, zhōumò yě zài xuéxí.",
+          "tokens": [
+            "我",
+            "为了",
+            "通过",
+            "考试",
+            "，",
+            "周末",
+            "也",
+            "在",
+            "学习"
+          ],
+          "vi": "Để thi đỗ, cuối tuần tôi cũng vẫn học.",
+          "zh": "我为了通过考试，周末也在学习。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wèile shěng shíjiān, wǒmen zuò dìtiě qù.",
+          "tokens": [
+            "为了",
+            "省",
+            "时间",
+            "，",
+            "我们",
+            "坐",
+            "地铁",
+            "去"
+          ],
+          "vi": "Để tiết kiệm thời gian, chúng tôi đi bằng tàu điện ngầm.",
+          "zh": "为了省时间，我们坐地铁去。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Tā wèile xué yóuyǒng, bào le yí gè yóuyǒng bān.",
+          "tokens": [
+            "她",
+            "为了",
+            "学",
+            "游泳",
+            "，",
+            "报了",
+            "一个",
+            "游泳班"
+          ],
+          "vi": "Để học bơi, cô ấy đã đăng ký một lớp học bơi.",
+          "zh": "她为了学游泳，报了一个游泳班。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wèile shēntǐ jiànkāng, tā měi tiān pǎobù.",
+          "tokens": [
+            "为了",
+            "身体",
+            "健康",
+            "，",
+            "他",
+            "每天",
+            "跑步"
+          ],
+          "vi": "Để cơ thể khỏe mạnh, anh ấy chạy bộ mỗi ngày.",
+          "zh": "为了身体健康，他每天跑步。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "她为了省钱，自己做饭。"
+          ],
+          "explanation": "Vế 为了 đặt ngay sau chủ ngữ 她， trước vế hành động 自己做饭 — đúng mẫu. Câu 2 để vế mục đích xuống cuối câu; câu 3 dùng 为 đơn độc cho mệnh đề mục đích; câu 4 đúng ngữ pháp nhưng vế mục đích bị đổi người — 为了她省钱 nghĩa là \"để cô ấy tiết kiệm tiền\" trong khi người nấu ăn là người nói, nên không khớp nghĩa đề cho.",
+          "id": "purp-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "她为了省钱，自己做饭。",
+              "她自己做饭为了省钱。",
+              "她为省钱，自己做饭。",
+              "为了她省钱，自己做饭。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Để tiết kiệm tiền, cô ấy tự nấu ăn.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "为了",
+              "找到好工作",
+              "他",
+              "努力学习"
+            ],
+            [
+              "他",
+              "为了",
+              "找到好工作",
+              "努力学习"
+            ]
+          ],
+          "explanation": "Cả hai thứ tự đều đúng: vế 为了 đứng đầu câu hoặc ngay sau chủ ngữ 他， miễn là vế hành động 努力学习 đi sau vế mục đích.",
+          "id": "purp-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "他",
+              "努力学习",
+              "为了",
+              "找到好工作"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Để tìm được việc tốt, anh ấy học hành chăm chỉ.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "为了"
+          ],
+          "explanation": "Khối 为了 đặt cuối câu là sai vị trí trong mẫu này. Chuyển cả vế mục đích lên đầu: 为了锻炼身体，我每天早起。",
+          "id": "purp-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我",
+              "每天早起",
+              "为了",
+              "锻炼身体"
+            ],
+            "sentence_zh": "我每天早起为了锻炼身体。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 我每天早起为了锻炼身体。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "为了学好汉语，他每天都练习听力。",
+            "为了学好汉语，他每天都练习听力"
+          ],
+          "explanation": "Vế mục đích đứng đầu câu phải mở bằng 为了： 为了学好汉语，他每天都练习听力。",
+          "id": "purp-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Cụm mở đầu vế mục đích: 为了."
+          },
+          "prompt_vi": "Điền cụm mục đích để hoàn thành câu: 'Để học tốt tiếng Hán, anh ấy ngày nào cũng luyện nghe.'",
+          "prompt_zh": "___学好汉语，他每天都练习听力。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "为了买到便宜的票，我提前订票。",
+            "为了买到便宜的票，我提前订票",
+            "为了买到便宜票，我很早就订了票。",
+            "为了买到便宜票，我很早就订了票"
+          ],
+          "explanation": "Vế mục đích 为了买到便宜的票/便宜票 đứng trước, vế hành động đặt vé đi sau — đúng khung và đúng thứ tự của mẫu.",
+          "id": "purp-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Khung: 为了 + mục đích，chủ ngữ + hành động; 'đặt vé' nói 订票， 'từ sớm' nói 提前/很早就。"
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Để mua được vé rẻ, tôi đặt vé từ sớm.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Vị trí: 为了 + mệnh đề mục đích đứng đầu câu, trước chủ ngữ của vế hành động （为了学好中文，他每天练习）; cũng đặt được ngay sau chủ ngữ （他为了学好中文，每天练习） — hai vị trí đều đúng. 2) Cần có sẵn: sau vế mục đích bắt buộc có vế hành động; chỉ nói vế 为了 mà dừng lại thì câu chưa hoàn chỉnh. 3) Không dùng: không đặt vế 为了 ở cuối câu theo trật tự tiếng Việt '… để …' — trật tự 'hành động + 为了 + mục đích' không thuộc mẫu này. 4) Phân biệt: 为 + danh từ ngắn chỉ người （为他买东西） là 'vì/làm cho ai'; mệnh đề mục đích dài thì dùng 为了. Hai từ đều dịch là 'để/vì' nhưng cấu trúc đi kèm khác nhau.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "complex-purpose",
+      "objective": "Sau bài này, người học đặt được vế mục đích bằng 为了 ở đầu câu hoặc ngay sau chủ ngữ, kèm vế hành động theo sau, để nói 'làm việc này để đạt điều kia'.",
+      "pattern": "为了 + Mệnh đề mục đích，Chủ ngữ + Vế hành động",
+      "quick_memory": "Đích nói trước, việc làm sau: 为了 + mục đích，chủ ngữ + hành động. 为了 không bao giờ chạy xuống cuối câu.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-5 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về câu phức mục đích với 为了 theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-48 （ câu phức mục đích: 为了……) trong catalogue dự án từ đề cương thi 11/2025.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Câu phức mục đích: làm gì để đạt điều gì （为了……）",
+      "when_to_use": "Ví dụ: 为了学好中文，他每天练习口语。 — vế 为了 nói mục đích trước, vế sau nói việc làm để đạt mục đích đó. Bài này chỉ dạy 为了 đứng đầu một mệnh đề mục đích. Khác 为 + người đã gặp trong bài gei-double-object （为他买东西 — 'làm cho/vì ai'): đó là cụm ngắn chỉ người hưởng lợi, không phải mệnh đề mục đích. Cũng khác cách nói mục đích bằng hai động từ nối tiếp đã gặp （去买东西 — đi để mua, không có từ đánh dấu): 为了 nêu mục đích thành một vế riêng, rõ ràng hơn và hợp với mục đích dài hạn."
+    }
+  ],
+  "schema_version": 1
+}

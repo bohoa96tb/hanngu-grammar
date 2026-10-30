@@ -132,6 +132,25 @@ Chưa có bản phát hành nào.
   thành verified sau khi kiểm tra trực tiếp bản gốc （几/多少 thuộc
   nhóm đại từ để hỏi HSK1).
 
+- 2026-10-30 — Lô HSK3-5 (build 20261030-hsk3e5): 4 bài mới —
+  complex-sequence （承接复句 先……，然后/接着……, OFF-H3-41),
+  complex-choice （选择复句, OFF-H3-42 — phủ một phần), complex-purpose
+  （目的复句 为了……, OFF-H3-48), time-since-completion （数量补语3 đúng
+  phạm vi chính thức: đã bao lâu kể từ khi việc kết thúc, OFF-H3-32);
+  kèm bài quantity-complement-objects (HSK2 — vị trí bổ ngữ số lượng
+  khi có tân ngữ, phủ một phần OFF-H2-43). Tổng 56 bài / 273 bài tập.
+  Ánh xạ sau lô: HSK3 19 đã có / 4 một phần / 27 thiếu; HSK2 19/15/28.
+  QA vòng 1 CHƯA ĐẠT và bắt hai lỗi phạm vi nghiêm trọng (đối chiếu bản
+  trích xuất đề cương gốc): bài soạn ban đầu cho OFF-H3-32 dạy lệch chủ
+  điểm (vị trí tân ngữ thay vì "kể từ khi kết thúc") → tách thành bài
+  HSK2 ở trên + bài dạng 3 đúng phạm vi; OFF-H3-42 hạ xuống một phần vì
+  khung chính 不是……，就是…… thuộc bảng HSK4 và mẫu luân phiên
+  一会儿……，一会儿…… chưa dạy (ghi vào mục 2b). Vòng sửa bổ sung khối
+  nền dạng 2 cho bài vị trí tân ngữ. QA vòng 2 ĐẠT CÓ ĐIỀU KIỆN (một
+  lỗi chữ ở hint đã sửa tại chỗ + 2 khuyến nghị đã áp dụng). CI hai job
+  là điều kiện merge bắt buộc kể từ lô này. Audio TTS thiết bị thật
+  vẫn not_run; các bài mới là đã rà soát nội bộ.
+
 - 2026-10-30 — Lô HSK3-4 + rà soát tính tuyệt đối (build 20261030-hsk3d4):
   4 bài HSK3 mới — complex-progressive （不但……，而且……, OFF-H3-44),
   complex-compact （紧缩句: 一……也/都…… + ……了就……, OFF-H3-49, đồng

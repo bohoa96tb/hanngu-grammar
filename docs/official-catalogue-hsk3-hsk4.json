@@ -215,8 +215,10 @@
     {
       "id": "OFF-H3-32",
       "title_vi": "Số lượng bổ ngữ dạng 3 (khoảng cách từ lúc kết thúc đến thời điểm)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "time-since-completion"
+      ]
     },
     {
       "id": "OFF-H3-33",
@@ -293,14 +295,19 @@
     {
       "id": "OFF-H3-41",
       "title_vi": "Câu phức承接 (先……，再/然后……)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "complex-sequence"
+      ]
     },
     {
       "id": "OFF-H3-42",
       "title_vi": "Câu phức lựa chọn (或者……，或者……; 一会儿……，一会儿……)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "partial",
+      "lesson_ids": [
+        "complex-choice"
+      ],
+      "note": "Bài complex-choice đã phủ khung 或者……，或者……; mẫu luân phiên 一会儿……，一会儿…… chưa dạy. Khung 不是……，就是…… trong cùng bài thuộc bảng HSK4 của đề cương, không tính vào phủ HSK3."
     },
     {
       "id": "OFF-H3-43",
@@ -345,8 +352,10 @@
     {
       "id": "OFF-H3-48",
       "title_vi": "Câu phức mục đích (为了……，……)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "complex-purpose"
+      ]
     },
     {
       "id": "OFF-H3-49",
