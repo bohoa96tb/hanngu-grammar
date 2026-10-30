@@ -1,0 +1,232 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Câu này không sai, nhưng 我们 có thể bị hiểu là 'nhóm của tôi' không gồm người nghe; khi rủ rê và muốn khẳng định có cả người nghe, 咱们一起走吧 rõ ràng và thân mật hơn.",
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "我们一起走吧。(dùng khi muốn rủ chính người nghe cùng đi)"
+        },
+        {
+          "explanation": "别人 chỉ dùng cho người, nên 我要别人 bị hiểu là 'tôi muốn người khác'. Nói về vật phải dùng 别的： 我要别的。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我要别人。(ý muốn nói 'tôi muốn cái khác' về một món đồ)"
+        },
+        {
+          "explanation": "Trong tiếng Trung, 别的/其他 luôn đứng TRƯỚC danh từ: 我买了其他书。/ 我买了别的书。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我买了书其他。(đặt từ chỉ 'khác' sau danh từ như tiếng Việt)"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Biérén de dōngxi búyào suíbiàn dòng.",
+          "tokens": [
+            "别人",
+            "的",
+            "东西",
+            "不要",
+            "随便",
+            "动"
+          ],
+          "vi": "Đồ của người khác thì đừng tùy tiện động vào.",
+          "zh": "别人的东西不要随便动。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Zánmen yìqǐ qù chīfàn ba.",
+          "tokens": [
+            "咱们",
+            "一起",
+            "去",
+            "吃饭",
+            "吧"
+          ],
+          "vi": "Chúng ta (cả bạn nữa) cùng đi ăn đi.",
+          "zh": "咱们一起去吃饭吧。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhè jiàn yīfu tài dà le, nǐ yǒu biéde ma?",
+          "tokens": [
+            "这件",
+            "衣服",
+            "太",
+            "大",
+            "了",
+            "，",
+            "你",
+            "有",
+            "别的",
+            "吗"
+          ],
+          "vi": "Cái áo này to quá, bạn có cái khác không?",
+          "zh": "这件衣服太大了，你有别的吗？"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Qítā tóngxué dōu lái le, zhǐyǒu tā méi lái.",
+          "tokens": [
+            "其他",
+            "同学",
+            "都",
+            "来",
+            "了",
+            "，",
+            "只有",
+            "他",
+            "没",
+            "来"
+          ],
+          "vi": "Các bạn học khác đều đến rồi, chỉ mình anh ấy chưa đến.",
+          "zh": "其他同学都来了，只有他没来。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒ bù xǐhuan zhège yánsè, xiǎng kànkan biéde.",
+          "tokens": [
+            "我",
+            "不",
+            "喜欢",
+            "这个",
+            "颜色",
+            "，",
+            "想",
+            "看看",
+            "别的"
+          ],
+          "vi": "Tôi không thích màu này, muốn xem cái khác.",
+          "zh": "我不喜欢这个颜色，想看看别的。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "咱们一起回家吧。"
+          ],
+          "explanation": "Rủ cả người nghe cùng làm thì dùng 咱们 (luôn gồm người nghe) + 吧. 他们 là 'họ', 别人 là 'người khác', phương án cuối tự phủ định ý rủ về nhà.",
+          "id": "pro-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "咱们一起回家吧。",
+              "他们一起回家吧。",
+              "别人一起回家吧。",
+              "咱们一起不回家吧。"
+            ]
+          },
+          "prompt_vi": "Chọn câu rủ rê đúng nghĩa: 'Chúng ta (kể cả bạn) cùng về nhà đi.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "其他",
+              "学生",
+              "都",
+              "去",
+              "了"
+            ]
+          ],
+          "explanation": "其他 đứng trước danh từ 学生： 其他学生都去了。",
+          "id": "pro-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "都",
+              "其他",
+              "学生",
+              "了",
+              "去"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Các học sinh khác đều đi rồi.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "别人"
+          ],
+          "explanation": "Sách là vật; 'quyển khác' phải dùng 别的， còn 别人 chỉ dùng cho người. Sửa: 我想买别的书。",
+          "id": "pro-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我",
+              "想",
+              "买",
+              "别人",
+              "书"
+            ],
+            "sentence_zh": "我想买别人书。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 我想买别人书。(ý muốn nói: tôi muốn mua một quyển sách khác)",
+          "prompt_zh": null,
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "别人"
+          ],
+          "explanation": "别人的手机 = điện thoại của người khác; 别人 + 的 chỉ sở hữu của người ngoài.",
+          "id": "pro-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "'Của người khác' = từ chỉ người + 的."
+          },
+          "prompt_vi": "Điền từ chỉ 'người khác' để hoàn thành câu: 'Điện thoại của người khác không được tùy tiện dùng.'",
+          "prompt_zh": "___的手机不能随便用。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "其他人都知道，只有我不知道。",
+            "其他人都知道，只有我不知道",
+            "别人都知道，只有我不知道。",
+            "别人都知道，只有我不知道"
+          ],
+          "explanation": "其他人 = những người khác trong nhóm; câu đối lập 'chỉ mình tôi' dùng 只有我， đúng khung bài học.",
+          "id": "pro-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "'Những người khác' dùng 其他人； 'chỉ mình tôi' dùng 只有我。"
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Những người khác đều biết, chỉ mình tôi không biết.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Vị trí: 别的 và 其他 đứng TRƯỚC danh từ （别的书，其他同学）; cả hai cũng đứng một mình khi danh từ đã rõ （我要别的；其他都来了）. 别人 đứng một mình hoặc trước 的 + danh từ （别人的东西）. 2) Chọn từ — người hay vật: chỉ người → 别人； vật/nhóm còn lại → 别的 hoặc 其他. 3) Phân biệt: 别的 thiên về 'cái khác hẳn, đổi sang cái khác'; 其他 thiên về 'những cái còn lại trong cùng một nhóm' — khẩu ngữ nhiều trường hợp thay nhau được, không phải ranh giới cứng. 4) 咱们： luôn gồm người nghe, sắc thái thân mật, hay đi với 吧 khi rủ rê （咱们走吧）; văn viết trang trọng thường dùng 我们 thay thế.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "pronouns-others",
+      "objective": "Sau bài này, người học nói được 'người khác', 'cái khác' và rủ người nghe bằng 'chúng ta' gồm cả họ: dùng đúng 别人， 别的， 其他 và 咱们 trong giao tiếp hằng ngày.",
+      "pattern": "咱们 + Động từ • 别人（的）+ Danh từ • 别的 / 其他（的）+ Danh từ",
+      "quick_memory": "Khác người → 别人； khác vật → 别的/其他； rủ cả người nghe → 咱们. Trước danh từ: 别的/其他 đứng trước, không đứng sau.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-7 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về các đại từ 别人/咱们 và từ chỉ định 别的/其他 theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-09 （别人/咱们） và OFF-H3-10 （别的/其他） trong catalogue dự án từ đề cương thi 11/2025; hai mục được gộp một bài vì cùng một mục tiêu 'người khác / thứ khác'.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Đại từ mở rộng: người khác / thứ khác （别人 / 咱们 / 别的 / 其他）",
+      "when_to_use": "Khi cần nói về người/vật KHÔNG phải người đang nói tới: 别人 = người khác (không gồm mình), 别的 = cái khác (cho vật và cả người theo nhóm), 其他 = những… khác/còn lại trong một nhóm đã biết, 咱们 = 'chúng ta' luôn gồm cả người nghe, rất hay dùng khi rủ rê. Phân biệt cốt lõi: 我们 có thể không gồm người nghe (ví dụ nói về nhóm của mình cho người ngoài nghe), còn 咱们 luôn gồm người nghe. Bài này mở rộng bài pronouns (đại từ nhân xưng cơ bản) và question-words, không dạy lại các đại từ đã học."
+    }
+  ],
+  "schema_version": 1
+}
