@@ -53,16 +53,16 @@ jobs:
           sudo apt-get install -y libnss3 libnspr4 libatk1.0-0t64 libatk-bridge2.0-0t64 libcups2t64 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libpango-1.0-0 libcairo2 libasound2t64
       - name: Tải chrome-headless-shell (cùng phiên bản dùng ở máy phát triển)
         run: |
-          curl -fsSL -o /tmp/chs.zip [https://storage.googleapis.com/chrome\-for\-testing\-public/156.0.8078.80/linux64/chrome\-headless\-shell\-linux64.zip](<https://storage.googleapis.com/chrome-for-testing-public/156.0.8078.80/linux64/chrome-headless-shell-linux64.zip>)
+          curl -fsSL -o /tmp/chs.zip https://storage.googleapis.com/chrome-for-testing-public/156.0.8078.80/linux64/chrome-headless-shell-linux64.zip
           unzip -q /tmp/chs.zip -d /tmp/chs
       - name: Chạy harness trên bản local
         env:
           CHROME_BIN: /tmp/chs/chrome-headless-shell-linux64/chrome-headless-shell
         run: |
           python3 -m http.server 8901 > /tmp/http-server.log 2>&1 &
-          for i in $(seq 1 30); do curl -fsS [http://127.0.0.1:8901/](<http://127.0.0.1:8901/>) >/dev/null 2>&1 && break; sleep 1; done
-          curl -fsS [http://127.0.0.1:8901/](<http://127.0.0.1:8901/>) >/dev/null
-          node tests/browser-check.mjs [http://127.0.0.1:8901/](<http://127.0.0.1:8901/>) /tmp/browser-report.json
+          for i in $(seq 1 30); do curl -fsS http://127.0.0.1:8901/ >/dev/null 2>&1 && break; sleep 1; done
+          curl -fsS http://127.0.0.1:8901/ >/dev/null
+          node tests/browser-check.mjs http://127.0.0.1:8901/ /tmp/browser-report.json
       - name: Tải log chẩn đoán lên khi job thất bại
         if: failure()
         uses: actions/upload-artifact@v4
