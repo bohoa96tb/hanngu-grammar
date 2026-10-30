@@ -96,3 +96,21 @@ Chưa có bản phát hành nào.
   (not_run, mới kiểm tĩnh CSS), audio thiết bị thật (not_run,
   AUD-TTS-01). Rollback: revert merge 298576ff hoặc triển khai lại từ
   f6e505b1.
+
+- 2026-10-30 — Lô std2 (PR #8, nhánh batch-std2, merge 616b63af,
+  build 20261030-std2): thêm harness kiểm tra trình duyệt thật bằng
+  Chromium headless qua CDP (tests/browser-check.mjs) — tràn ngang ở
+  360/390/768/1280, lỗi console, bàn phím, trạng thái nghe/dừng, lưu
+  tiến độ; harness bắt và đã sửa lỗi tràn thật ở ô chọn câu mẫu
+  (#speakSel) và ô nhập tệp tiến độ. Nội dung: thay 8 mục Nhớ nhanh;
+  thêm trạng thái đối chiếu cấp HSK từng bài (hsk_evidence: 36
+  verified / 3 partial có ghi chú); bi-comparison bỏ quy tắc 更 của
+  HSK3; tách le-completion-change thành hai bài (bài mới
+  le-sentence-final-change), chuyển chủ điểm 边 sang location-nouns,
+  complex thêm ví dụ và bài tập. Tổng 39 bài / 186 bài tập. QA hai
+  vòng (vòng 1 chưa đạt vì locnoun-ex5 chấm oan biến thể, đã sửa) —
+  ĐẠT; kiểm tra di trú tiến độ 15/15, không nhân đôi thẻ FSRS.
+  Nghiệm thu live sau merge đạt. Giới hạn còn lại: harness chỉ chạy
+  được với localhost trên VM hiện tại (proxy chặn CONNECT ra ngoài)
+  nên nghiệm thu live dùng trình duyệt nền tảng; TTS thiết bị thật
+  vẫn not_run (AUD-TTS-01). Rollback: revert merge 616b63af.

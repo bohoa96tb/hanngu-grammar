@@ -4,6 +4,10 @@
 // Kiểm tra: tràn ngang ở 360/390/768/1280, lỗi console, thao tác bàn phím,
 // nút nghe/dừng (trạng thái, không khẳng định nghe được âm thanh), luồng làm bài
 // và lưu tiến độ sau tải lại. Kết quả là JSON; exit 1 nếu có kiểm tra "fail".
+// GIỚI HẠN MÔI TRƯỜNG (ghi 30/10/2026): trên VM của Muse, Chromium này chỉ tải
+// được địa chỉ localhost — proxy ra ngoài chặn CONNECT của nó
+// (ERR_TUNNEL_CONNECTION_FAILED với URL https bên ngoài). Nghiệm thu live dùng
+// harness trên bản local + kiểm tra tương tác qua trình duyệt của nền tảng.
 import { spawn } from "node:child_process";
 import { writeFileSync } from "node:fs";
 
@@ -39,10 +43,16 @@ function record(name, status, detail) {
 import { mkdtempSync } from "node:fs";
 import { tmpdir } from "node:os";
 const PROFILE_DIR = mkdtempSync(`${tmpdir()}/hanngu-cdp-`);
+// Nếu môi trường có proxy ra ngoài (biến HTTPS_PROXY của VM này), Chromium phải
+// dùng --proxy-server tường minh (nó không đọc biến môi trường); kèm bỏ qua lỗi
+// chứng chỉ vì proxy chặn TLS bằng CA riêng — chỉ chấp nhận được trong kiểm tra.
+const PROXY = process.env.HTTPS_PROXY || process.env.https_proxy || "";
 const chrome = spawn(CHROME_BIN, [
   "--headless=new", "--no-sandbox", "--disable-gpu",
   `--remote-debugging-port=${PORT}`,
-  `--user-data-dir=${PROFILE_DIR}`, "about:blank",
+  `--user-data-dir=${PROFILE_DIR}`,
+  ...(PROXY ? [`--proxy-server=${PROXY}`, "--ignore-certificate-errors"] : []),
+  "about:blank",
 ], { stdio: "ignore" });
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

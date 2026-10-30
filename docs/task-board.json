@@ -169,7 +169,7 @@
       "depends_on": [
         "P05-01"
       ],
-      "evidence": "38 bài, 182 bài tập sau lô chuẩn hóa std1 (PR #7, merge 298576ff, build 20261030-std1 đã nghiệm thu live). Các bài là đã rà soát nội bộ + chuẩn hóa A–F, CHƯA đạt toàn bộ tiêu chí vì audio chưa nghiệm thu.",
+      "evidence": "39 bài, 186 bài tập sau lô std2 (PR #8, merge 616b63af, build 20261030-std2 đã nghiệm thu live). Các bài là đã rà soát nội bộ + chuẩn hóa A–F + có trạng thái đối chiếu hsk_evidence, CHƯA đạt toàn bộ tiêu chí vì audio chưa nghiệm thu.",
       "files": [],
       "id": "P06-01",
       "inputs": "Baseline khóa",
@@ -268,6 +268,19 @@
         "data/lessons/*.json",
         "scripts/validate.py",
         "docs/schema.md"
+      ]
+    },
+    {
+      "id": "STD-02",
+      "status": "done",
+      "title": "Khép khoảng trống QA bằng harness trình duyệt thật; trạng thái đối chiếu từng bài; tách bài chọn lọc",
+      "evidence": "PR #8 merge 616b63af; harness CDP 19/19 + di trú 15/15; QA vòng 1 chưa đạt (locnoun-ex5) → sửa → vòng 2 ĐẠT; nghiệm thu live đạt (xem docs/reviews/qa-std2.md, D26).",
+      "files": [
+        "tests/browser-check.mjs",
+        "styles.css",
+        "app.js",
+        "data/lessons/*.json",
+        "data/lessons-manifest.json"
       ]
     }
   ]

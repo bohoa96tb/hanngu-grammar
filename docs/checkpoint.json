@@ -27,7 +27,7 @@
     "styles.css",
     "tests/test_validator.py"
   ],
-  "code_base_commit": "298576ff20c7b2d552d665707c9188e1271b32b3",
+  "code_base_commit": "616b63af3e3a1f74c644c8a95e493968efefe1d6",
   "completed_task_ids": [
     "P00-01",
     "P01-01",
@@ -44,12 +44,12 @@
     "baseline_items": 50,
     "draft_lessons": 0,
     "reviewed_lessons": 0,
-    "published_lessons": 38,
-    "exercises": 182
+    "published_lessons": 39,
+    "exercises": 186
   },
   "github": {
     "connect_url": "https://agent.meta.ai/connectors/connect/github",
-    "head_verified": "298576ff20c7b2d552d665707c9188e1271b32b3",
+    "head_verified": "616b63af3e3a1f74c644c8a95e493968efefe1d6",
     "initial_commit": "86f65bbe639c7af96afe316eb8a26b228092a0eb",
     "owner": "bohoa96tb",
     "pages_enabled": true,
@@ -73,17 +73,16 @@
     "Ôn tập FSRS thật, luyện nói, chấm phát âm, đồng bộ, đăng nhập chưa làm (backlog).",
     "Luyện nói P04-02 chưa kiểm tra mic/thu âm trên trình duyệt thật."
   ],
-  "latest_verified_commit": "298576ff20c7b2d552d665707c9188e1271b32b3",
+  "latest_verified_commit": "616b63af3e3a1f74c644c8a95e493968efefe1d6",
   "next_actions": [
-    "Lô tách bài (theo D25): le-completion-change → 2 bài, prefix-suffix → 2 bài, complex-suiran-yinwei → 2 bài (giữ ID/tien trình theo quy tắc đã ghi).",
-    "Hoặc tiếp tục P01-02: đối chiếu HSK5–6, sau đó lô HSK3 tiếp theo (câu phức, kết quả bổ ngữ dạng 2, khả năng bổ ngữ dạng 1).",
-    "Bổ sung bài tập còn thiếu: shi-de (nơi chốn/phủ định), modal-hui-neng-keyi (order/đối chiếu cặp), question-words (sản sinh 几/多少), jianyu (让).",
+    "P01-02: đối chiếu phạm vi HSK5–6 với đề cương thi HSK 3.0 (tạo official-catalogue-hsk5-hsk6.json + baseline-hsk5-hsk6-mapping.md); đồng thời kiểm tra lại bản gốc điểm 几/多少 của question-words.",
+    "Sau đối chiếu: chọn lô nội dung theo điều kiện tiên quyết — ứng viên: lô HSK3 tiếp (câu phức, kết quả bổ ngữ dạng 2, khả năng bổ ngữ dạng 1), xử lý trùng lặp 存现/着 giữa zhe-continuation và cunxian-chu, bổ sung phủ 还/再 (adverbs-du-ye) và bài tập còn thiếu (shi-de nơi chốn/phủ định, modal-hui-neng-keyi order).",
     "AUD-TTS-01: nghiệm thu audio trên thiết bị thật."
   ],
   "pending_review_ids": [],
   "phase": "P06",
   "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "Lô chuẩn hóa std1 XONG: PR #7 (nhánh batch-std1) đã merge, merge commit 298576ff, build 20261030-std1 đã nghiệm thu live (bảng ?debug=1: 38/38, mọi nguồn 200; luồng danh mục → bài ma-question A–F → chọn/Kiểm tra/Làm lại → hoàn thành giữ sau tải lại → Ôn lại khóa rate tới khi đối chiếu, ghi FSRS Good đúng). Tiến trình cũ từ bản trước (bài 是 hoàn thành 29/10 + lịch sử ôn) đọc đúng trên build mới. QA: vòng 1 CHƯA ĐẠT (4 lỗi) → ND-03/CODE-02 sửa → QA vòng 2 ĐẠT. Console = not_run (công cụ không đọc được console), kiểm tra bề rộng 390px trên trình duyệt thật = not_run (chỉ kiểm tĩnh CSS), TTS thiết bị thật = not_run (AUD-TTS-01).",
+  "resume_notes": "Lô std2 XONG: PR #8 merge 616b63af, build 20261030-std2 đã nghiệm thu live (debug 39/39; hai bài le tách đúng; dòng đối chiếu verified/partial hiển thị đúng nguyên văn; làm bài + hoàn thành giữ sau tải lại). QA bằng harness Chromium headless qua CDP (tests/browser-check.mjs, chỉ chạy được với localhost trên VM này — proxy chặn CONNECT ra ngoài): 19/19 PASS gồm tràn ngang 360/390/768/1280, 0 lỗi console, bàn phím, nghe/dừng theo trạng thái, lưu tiến độ/prefs; kiểm tra di trú CDP 15/15 (tách bài không nhân đôi thẻ FSRS). QA nội dung vòng 1 CHƯA ĐẠT vì locnoun-ex5 chấm oan → vòng 2 ĐẠT. hsk_evidence: 36 verified / 3 partial (de-possessive, modal-xiang-yao, question-words). Ghi chú nhỏ: số hoàn thành ở bảng ?debug=1 chỉ cập nhật sau tải lại trang (hiển thị chẩn đoán, không ảnh hưởng dữ liệu). TTS thiết bị thật vẫn not_run.",
   "schema_version": 1,
   "spec_version": "1.0",
   "updated_at": "2026-10-30",
@@ -167,7 +166,15 @@
     {
       "command": "browser live https://bohoa96tb.github.io/hanngu-grammar/?debug=1 sau merge 298576ff",
       "result": "ĐẠT bước 1–6: build 20261030-std1, 38/38 published, badge HSK/độ khó, Tiếp tục học, bài ma-question đủ A–F + Nhớ nhanh + nav trước/sau, chọn→Kiểm tra→Làm lại đúng, hoàn thành giữ sau tải lại, Ôn lại khóa rate tới khi đối chiếu và hiện Nhớ nhanh. Bước 7 (390px) not_run — công cụ không đổi được kích thước cửa sổ; console not_run."
+    },
+    {
+      "command": "python3 scripts/validate.py; python3 -m unittest discover -s tests; node --test tests/test_fsrs.mjs; node tests/browser-check.mjs (local)",
+      "result": "ĐẠT: 39 bài/186 bài tập; unittest 9/9; FSRS 7/7; harness 19/19 PASS. QA-STD2 vòng 2 ĐẠT (docs/reviews/qa-std2.md); di trú tiến độ CDP 15/15."
+    },
+    {
+      "command": "browser live https://bohoa96tb.github.io/hanngu-grammar/?debug=1 sau merge 616b63af",
+      "result": "ĐẠT: build 20261030-std2, 39/39 published, đủ hai bài 了 sau tách, prefix-suffix đã đổi tên, dòng đối chiếu ✓/◐ hiển thị đúng, điền le-ex2 đúng và hoàn thành giữ sau tải lại."
     }
   ],
-  "working_tree_state": "std1_merged_and_live_verified"
+  "working_tree_state": "std2_merged_and_live_verified"
 }
