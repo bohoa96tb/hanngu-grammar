@@ -1,29 +1,38 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "bu-yao-prohibition",
-      "title_vi": "Ra lệnh cấm với 不要",
-      "pattern": "不要 + Động từ",
-      "hsk_level": 1,
+      "confusions": [
+        {
+          "explanation": "不要 đứng trước động từ, không đứng sau động từ.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "说话不要。"
+        },
+        {
+          "explanation": "不 là phủ định chung; muốn ra lệnh cấm rõ ràng thì dùng 不要说话。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "不说话。(khi muốn ra lệnh cấm rõ ràng)"
+        },
+        {
+          "explanation": "要不要…… là câu hỏi 'có muốn... không', không phải lệnh cấm; lệnh cấm dùng 不要说话。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "要不要说话？(khi muốn ra lệnh cấm)"
+        }
+      ],
+      "content_version": 2,
       "difficulty": "medium",
-      "objective": "Sau bài này, người học dùng 不要 + động từ để ra lệnh cấm hoặc khuyên đừng làm gì, phân biệt với phủ định chung bằng 不 và câu hỏi 要不要…….",
-      "when_to_use": "Khi muốn bảo ai đó đừng làm một việc, hoặc khuyên can một cách rõ ràng.",
-      "formula_notes": "不要 đứng trước động từ. 不 là phủ định chung (thói quen, hiện tại); muốn ra lệnh cấm rõ ràng thì dùng 不要. 要不要…… là câu hỏi 'có muốn... không', không phải lệnh cấm.",
       "examples": [
         {
-          "zh": "不要说话。",
-          "vi": "Đừng nói chuyện.",
+          "from_vietnamese_intent": true,
           "pinyin": "Bú yào shuōhuà.",
           "tokens": [
             "不要",
             "说话"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Đừng nói chuyện.",
+          "zh": "不要说话。"
         },
         {
-          "zh": "上课不要玩手机。",
-          "vi": "Trong giờ học đừng chơi điện thoại.",
+          "from_vietnamese_intent": false,
           "pinyin": "Shàngkè bú yào wán shǒujī.",
           "tokens": [
             "上课",
@@ -31,24 +40,28 @@
             "玩",
             "手机"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Trong giờ học đừng chơi điện thoại.",
+          "zh": "上课不要玩手机。"
         },
         {
-          "zh": "不要去。",
-          "vi": "Đừng đi.",
+          "from_vietnamese_intent": false,
           "pinyin": "Bú yào qù.",
           "tokens": [
             "不要",
             "去"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Đừng đi.",
+          "zh": "不要去。"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "不要说话。"
+          ],
+          "explanation": "不要 đứng trước động từ: 不要 + 说话。",
           "id": "buyao-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để nói 'Đừng nói chuyện.'",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "不要说话。",
@@ -57,105 +70,98 @@
               "不说要话。"
             ]
           },
-          "accepted_answers": [
-            "不要说话。"
-          ],
-          "explanation": "不要 đứng trước động từ: 不要 + 说话。"
+          "prompt_vi": "Chọn câu đúng để nói 'Đừng nói chuyện.'",
+          "type": "choice"
         },
         {
-          "id": "buyao-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Trong giờ học đừng chơi điện thoại.'",
-          "payload": {
-            "prompt_zh": "上课不要___手机。",
-            "hint_vi": "Dùng 玩。"
-          },
           "accepted_answers": [
             "上课不要玩手机。",
             "上课不要玩手机"
           ],
-          "explanation": "上课 + 不要 + 玩手机。"
+          "explanation": "上课 + 不要 + 玩手机。",
+          "id": "buyao-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 玩。",
+            "prompt_zh": "上课不要___手机。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Trong giờ học đừng chơi điện thoại.'",
+          "type": "fill"
         },
         {
-          "id": "buyao-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu: 'Đừng nói chuyện.'",
-          "payload": {
-            "tokens": [
-              "说话",
-              "不要"
-            ]
-          },
           "accepted_answers": [
             [
               "不要",
               "说话"
             ]
           ],
-          "explanation": "Thứ tự: 不要 → động từ."
+          "explanation": "Thứ tự: 不要 → động từ.",
+          "id": "buyao-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "说话",
+              "不要"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Đừng nói chuyện.'",
+          "type": "order"
         },
         {
+          "accepted_answers": [
+            "话"
+          ],
+          "explanation": "话 đặt sai chỗ: động từ là 说话, 不要 đứng trước cả cụm: 不要说话。",
           "id": "buyao-ex4",
-          "type": "error_spot",
-          "prompt_vi": "Câu sau sai ở khối nào? 不要话说。",
+          "is_open_ended": false,
           "payload": {
-            "sentence_zh": "不要话说。",
             "options": [
               "不要",
               "话",
               "说"
-            ]
+            ],
+            "sentence_zh": "不要话说。"
           },
-          "accepted_answers": [
-            "话"
-          ],
-          "explanation": "话 đặt sai chỗ: động từ là 说话, 不要 đứng trước cả cụm: 不要说话。"
+          "prompt_vi": "Câu sau sai ở khối nào? 不要话说。",
+          "type": "error_spot"
         },
         {
-          "id": "buyao-ex5",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Đừng khóc' (viết bằng chữ Hán)",
-          "payload": {
-            "prompt_zh": null,
-            "hint_vi": "Bắt đầu bằng 不要。"
-          },
           "accepted_answers": [
             "不要哭。",
             "不要哭"
           ],
-          "explanation": "Đừng khóc: 不要 + 哭。"
+          "explanation": "Đừng khóc: 不要 + 哭。",
+          "id": "buyao-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 不要。",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Đừng khóc' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
-      "confusions": [
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "说话不要。",
-          "explanation": "不要 đứng trước động từ, không đứng sau động từ."
-        },
-        {
-          "verdict": "doi_nghia",
-          "wrong_or_risky": "不说话。(khi muốn ra lệnh cấm rõ ràng)",
-          "explanation": "不 là phủ định chung; muốn ra lệnh cấm rõ ràng thì dùng 不要说话。"
-        },
-        {
-          "verdict": "doi_nghia",
-          "wrong_or_risky": "要不要说话？(khi muốn ra lệnh cấm)",
-          "explanation": "要不要…… là câu hỏi 'có muốn... không', không phải lệnh cấm; lệnh cấm dùng 不要说话。"
-        }
-      ],
+      "formula_notes": "1) Vị trí: 不要 đứng trước động từ. 2) Phân biệt: 不 là phủ định chung (thói quen, hiện tại); ra lệnh cấm rõ ràng thì dùng 不要. 3) Không dùng: 要不要…… là câu hỏi “có muốn… không”, không phải lệnh cấm.",
+      "hsk_level": 1,
+      "id": "bu-yao-prohibition",
+      "objective": "Sau bài này, người học dùng 不要 + động từ để ra lệnh cấm hoặc khuyên đừng làm gì, phân biệt với phủ định chung bằng 不 và câu hỏi 要不要…….",
+      "pattern": "不要 + Động từ",
+      "quick_memory": "Cấm ai làm gì: 不要 + động từ. 要不要 là câu hỏi “có muốn không”, không phải lệnh cấm.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 09 từ danh mục HSK1–2 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "hsk-official",
-          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "hsk-official"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 09 từ danh mục HSK1–2 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí."
-      }
+      "title_vi": "Ra lệnh cấm với 不要",
+      "when_to_use": "Khi muốn bảo ai đó đừng làm một việc, hoặc khuyên can một cách rõ ràng."
     }
-  ]
+  ],
+  "schema_version": 1
 }

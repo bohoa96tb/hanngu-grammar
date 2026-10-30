@@ -1,29 +1,38 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "zhe-continuation",
-      "title_vi": "着: trạng thái đang tiếp diễn",
-      "pattern": "Động từ + 着",
-      "hsk_level": 2,
+      "confusions": [
+        {
+          "explanation": "开了 nhấn mạnh trạng thái đã đổi (từ đóng thành mở); muốn nói trạng thái đang kéo dài thì dùng 开着.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "门开了。 (muốn nói 'Cửa đang mở' như một trạng thái kéo dài)"
+        },
+        {
+          "explanation": "在 + động từ nhấn mạnh hành động đang diễn ra (đang mặc vào); 穿着 nhấn mạnh trạng thái đã mặc xong và vẫn đang mặc.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他在穿衣服。 (muốn nói 'Anh ấy đang mặc quần áo' như trạng thái)"
+        },
+        {
+          "explanation": "着 là trợ từ gắn sau động từ, không đứng cuối câu sau tân ngữ: 他穿着衣服 mới đúng.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他穿衣服着。"
+        }
+      ],
+      "content_version": 2,
       "difficulty": "medium",
-      "objective": "Sau bài này, người học nói được một trạng thái đang kéo dài (cửa đang mở, đang mặc áo) bằng 着, không nhầm với 了 và 在.",
-      "when_to_use": "Khi muốn nói một trạng thái kéo dài sau một hành động (đang mở, đang mặc, đang treo), hoặc nơi chốn + động từ + 着 + người/vật (tồn hiện dạng 2). Không dùng 着 để nói hành động vừa xong.",
-      "formula_notes": "Động từ + 着 (+ tân ngữ). Tồn hiện: Nơi chốn + Động từ + 着 (+ số lượng) + Danh từ. Phủ định của trạng thái thường dùng 没 + động từ, không giữ 着 theo cùng cách.",
       "examples": [
         {
-          "zh": "门开着。",
-          "vi": "Cửa đang mở.",
+          "from_vietnamese_intent": true,
           "pinyin": "Mén kāi zhe.",
           "tokens": [
             "门",
             "开着"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Cửa đang mở.",
+          "zh": "门开着。"
         },
         {
-          "zh": "他穿着一件红衣服。",
-          "vi": "Anh ấy đang mặc một bộ quần áo đỏ.",
+          "from_vietnamese_intent": false,
           "pinyin": "Tā chuān zhe yí jiàn hóng yīfu.",
           "tokens": [
             "他",
@@ -32,11 +41,11 @@
             "红",
             "衣服"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Anh ấy đang mặc một bộ quần áo đỏ.",
+          "zh": "他穿着一件红衣服。"
         },
         {
-          "zh": "墙上挂着一幅画。",
-          "vi": "Trên tường đang treo một bức tranh.",
+          "from_vietnamese_intent": false,
           "pinyin": "Qiáng shang guà zhe yì fú huà.",
           "tokens": [
             "墙上",
@@ -44,14 +53,18 @@
             "一幅",
             "画"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Trên tường đang treo một bức tranh.",
+          "zh": "墙上挂着一幅画。"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "门开着。"
+          ],
+          "explanation": "Trạng thái kéo dài dùng 着: 开着. 开了 nói trạng thái đã đổi (từ đóng thành mở).",
           "id": "zhe-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để nói 'Cửa đang mở'.",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "门开着。",
@@ -60,36 +73,25 @@
               "门开。"
             ]
           },
-          "accepted_answers": [
-            "门开着。"
-          ],
-          "explanation": "Trạng thái kéo dài dùng 着: 开着. 开了 nói trạng thái đã đổi (từ đóng thành mở)."
+          "prompt_vi": "Chọn câu đúng để nói 'Cửa đang mở'.",
+          "type": "choice"
         },
         {
-          "id": "zhe-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy đang mặc một bộ quần áo đỏ.'",
-          "payload": {
-            "prompt_zh": "他___一件红衣服。",
-            "hint_vi": "Dùng 穿着."
-          },
           "accepted_answers": [
             "他穿着一件红衣服。",
             "他穿着一件红衣服"
           ],
-          "explanation": "Trạng thái mặc: 穿 + 着 + 一件红衣服."
+          "explanation": "Trạng thái mặc: 穿 + 着 + 一件红衣服.",
+          "id": "zhe-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 穿着.",
+            "prompt_zh": "他___一件红衣服。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy đang mặc một bộ quần áo đỏ.'",
+          "type": "fill"
         },
         {
-          "id": "zhe-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu: 'Trên tường đang treo một bức tranh.'",
-          "payload": {
-            "tokens": [
-              "一幅画",
-              "墙上",
-              "挂着"
-            ]
-          },
           "accepted_answers": [
             [
               "墙上",
@@ -97,71 +99,75 @@
               "一幅画"
             ]
           ],
-          "explanation": "Thứ tự tồn hiện: nơi chốn → động từ + 着 → danh từ."
+          "explanation": "Thứ tự tồn hiện: nơi chốn → động từ + 着 → danh từ.",
+          "id": "zhe-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "一幅画",
+              "墙上",
+              "挂着"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Trên tường đang treo một bức tranh.'",
+          "type": "order"
         },
         {
+          "accepted_answers": [
+            "着"
+          ],
+          "explanation": "着 phải đứng ngay sau động từ: 他穿着衣服 mới đúng.",
           "id": "zhe-ex4",
-          "type": "error_spot",
-          "prompt_vi": "Câu sau sai ở khối nào? 他穿衣服着。",
+          "is_open_ended": false,
           "payload": {
-            "sentence_zh": "他穿衣服着。",
             "options": [
               "他",
               "穿",
               "衣服",
               "着"
-            ]
+            ],
+            "sentence_zh": "他穿衣服着。"
           },
-          "accepted_answers": [
-            "着"
-          ],
-          "explanation": "着 phải đứng ngay sau động từ: 他穿着衣服 mới đúng."
+          "prompt_vi": "Câu sau sai ở khối nào? 他穿衣服着。",
+          "type": "error_spot"
         },
         {
-          "id": "zhe-ex5",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Cửa sổ đang mở.' (viết bằng chữ Hán)",
-          "payload": {
-            "prompt_zh": null,
-            "hint_vi": "Bắt đầu bằng 窗户."
-          },
           "accepted_answers": [
             "窗户开着。",
             "窗户开着"
           ],
-          "explanation": "Từ ý muốn nói 'Cửa sổ đang mở': 窗户 + 开着."
+          "explanation": "Từ ý muốn nói 'Cửa sổ đang mở': 窗户 + 开着.",
+          "id": "zhe-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 窗户.",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Cửa sổ đang mở.' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
-      "confusions": [
-        {
-          "verdict": "doi_nghia",
-          "wrong_or_risky": "门开了。 (muốn nói 'Cửa đang mở' như một trạng thái kéo dài)",
-          "explanation": "开了 nhấn mạnh trạng thái đã đổi (từ đóng thành mở); muốn nói trạng thái đang kéo dài thì dùng 开着."
-        },
-        {
-          "verdict": "doi_nghia",
-          "wrong_or_risky": "他在穿衣服。 (muốn nói 'Anh ấy đang mặc quần áo' như trạng thái)",
-          "explanation": "在 + động từ nhấn mạnh hành động đang diễn ra (đang mặc vào); 穿着 nhấn mạnh trạng thái đã mặc xong và vẫn đang mặc."
-        },
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "他穿衣服着。",
-          "explanation": "着 là trợ từ gắn sau động từ, không đứng cuối câu sau tân ngữ: 他穿着衣服 mới đúng."
-        }
-      ],
+      "formula_notes": "1) Vị trí: Động từ + 着 (+ Tân ngữ). 2) Tồn hiện: Nơi chốn + Động từ + 着 + (Số lượng) + Danh từ. 3) Phủ định: trạng thái thường phủ định bằng 没 + động từ, không giữ 着 theo cùng cách.",
+      "hsk_level": 2,
+      "id": "zhe-continuation",
+      "objective": "Sau bài này, người học nói được một trạng thái đang kéo dài (cửa đang mở, đang mặc áo) bằng 着, không nhầm với 了 và 在.",
+      "pattern": "Động từ + 着",
+      "quick_memory": "Trạng thái đang tiếp diễn: động từ + 着. 着 dính ngay sau động từ, không đứng cuối câu.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "cgw",
-          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề theo Chinese Grammar Wiki và 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "cgw"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
-      }
+      "title_vi": "着: trạng thái đang tiếp diễn",
+      "when_to_use": "Khi muốn nói một trạng thái kéo dài sau một hành động (đang mở, đang mặc, đang treo), hoặc nơi chốn + động từ + 着 + người/vật (tồn hiện dạng 2). Không dùng 着 để nói hành động vừa xong."
     }
-  ]
+  ],
+  "schema_version": 1
 }

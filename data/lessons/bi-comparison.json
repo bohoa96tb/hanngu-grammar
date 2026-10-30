@@ -1,5 +1,4 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
       "confusions": [
@@ -19,7 +18,7 @@
           "wrong_or_risky": "Dùng 没有 thay cho 比 khi muốn nhấn mạnh người đầu hơn hẳn."
         }
       ],
-      "content_version": 1,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -71,6 +70,7 @@
           ],
           "explanation": "Người đứng trước 比 là người hơn: 小李 đứng trước nên Tiểu Lý cao hơn.",
           "id": "bi-ex1",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "小李比小张高。",
@@ -85,12 +85,15 @@
         {
           "accepted_answers": [
             "他比我高多了。",
-            "他比我高多了"
+            "他比我高多了",
+            "他比我高很多。",
+            "他比我高很多"
           ],
-          "explanation": "Muốn nhấn mạnh chênh lệch lớn, thêm 多了 sau tính từ: 高多了.",
+          "explanation": "Muốn nhấn mạnh chênh lệch lớn, thêm 多了 hoặc 很多 sau tính từ: 高多了 / 高很多 — cả hai biến thể đều được nhận, không chỉ riêng 多了.",
           "id": "bi-ex2",
+          "is_open_ended": false,
           "payload": {
-            "hint_vi": "Thêm 多了 sau tính từ."
+            "hint_vi": "Thêm 多了 hoặc 很多 sau tính từ."
           },
           "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy cao hơn tôi nhiều.'",
           "prompt_zh": "他比我高___。",
@@ -107,6 +110,7 @@
           ],
           "explanation": "Thứ tự: người hơn → 比 → người bị so → tính từ. Tính từ đứng cuối, sau người bị so.",
           "id": "bi-ex3",
+          "is_open_ended": false,
           "payload": {
             "tokens": [
               "忙",
@@ -120,10 +124,11 @@
         },
         {
           "accepted_answers": [
-            "比"
+            "不"
           ],
           "explanation": "Lỗi ở chỗ đặt 不 trước tính từ sau 比. Sửa thành: 他没有我高。 (Anh ấy không cao bằng tôi) hoặc đổi tính từ: 他比我矮。",
           "id": "bi-ex4",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "他",
@@ -143,6 +148,7 @@
           ],
           "explanation": "Từ ý muốn nói 'Mẹ tôi lớn tuổi hơn bố tôi': người hơn (妈妈) → 比 → 爸爸 → 大. Lưu ý: nói tuổi người lớn dùng 大 trong cấu trúc này theo cách dùng phổ biến, không dùng 高.",
           "id": "bi-ex5",
+          "is_open_ended": false,
           "payload": {
             "hint_vi": "Bắt đầu bằng 我妈妈."
           },
@@ -150,14 +156,15 @@
           "type": "fill"
         }
       ],
-      "formula_notes": "Công thức mở rộng: Danh từ 1 + 比 + Danh từ 2 + Tính từ (+ 多了 / 一点儿 để nói mức chênh lệch). Phó từ như 也, 都, 更 đặt trước 比, ví dụ: 他也比我高. Mức chênh lệch cụ thể (ví dụ 高三厘米) đặt sau tính từ.",
+      "formula_notes": "1) Vị trí: Danh từ 1 + 比 + Danh từ 2 + Tính từ. 2) Mức chênh: 多了/一点儿 đặt sau tính từ; chênh cụ thể (高三厘米) cũng đặt sau tính từ. 3) Mở rộng: 也/都 đặt trước 比 (他也比我高); riêng 更 đặt sau 比, trước tính từ (他比我更高).",
       "hsk_level": 2,
       "id": "bi-comparison",
       "objective": "Sau bài này, người học so sánh được 'A hơn B ở điểm nào', biết ai là người hơn và nói được mức chênh lệch.",
       "pattern": "Danh từ 1 + 比 + Danh từ 2 + Tính từ",
+      "quick_memory": "So hơn: A + 比 + B + tính từ. Muốn nói “không bằng” thì đổi mẫu 没有, đừng thêm 不.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki (Basic comparisons with bi, mức A2/HSK2) và kiểm tra bẫy 不 sau 比, phân biệt 比/没有. Không khẳng định có giáo viên/người bản ngữ duyệt.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki (Basic comparisons with bi, mức A2/HSK2) và kiểm tra bẫy 不 sau 比, phân biệt 比/没有. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [
@@ -170,5 +177,6 @@
       "title_vi": "比: so sánh hơn (A hơn B)",
       "when_to_use": "Khi hai người/vật khác nhau ở một tính chất và muốn nói bên nào hơn. Điều kiện: tính từ đứng cuối câu; không dùng 比 để nói hai bên giống nhau (dùng 一样) và không dùng 不 trước tính từ sau 比."
     }
-  ]
+  ],
+  "schema_version": 1
 }

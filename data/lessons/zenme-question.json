@@ -1,19 +1,28 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "zenme-question",
-      "title_vi": "Hỏi cách thức với 怎么 và đánh giá với 怎么样",
-      "pattern": "怎么 + Động từ? • ……怎么样?",
-      "hsk_level": 1,
+      "confusions": [
+        {
+          "explanation": "怎么 đứng trước động từ, không đứng sau động từ.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "你去怎么学校？"
+        },
+        {
+          "explanation": "Hỏi cách thức dùng 怎么 + động từ; 怎么样 dùng cuối câu hỏi ý kiến hoặc tình hình.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "你怎么样去学校？"
+        },
+        {
+          "explanation": "Hỏi ý kiến hoặc tình hình dùng 怎么样 ở cuối câu; 怎么 đứng trước động từ, không đứng cuối câu hỏi ý kiến.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "这本书怎么？"
+        }
+      ],
+      "content_version": 2,
       "difficulty": "medium",
-      "objective": "Sau bài này, người học hỏi cách thức bằng 怎么 + động từ và hỏi ý kiến hoặc tình hình bằng 怎么样 ở cuối câu.",
-      "when_to_use": "Khi muốn biết ai đó làm việc gì bằng cách nào, hoặc hỏi ý kiến, đánh giá về một vật, một việc.",
-      "formula_notes": "怎么 đứng trước động từ để hỏi cách thức: 怎么去 (đi bằng cách nào). 怎么样 đứng cuối câu để hỏi ý kiến hoặc tình hình: 这本书怎么样？ (quyển sách này thế nào?). Câu hỏi đặc chỉ không dùng 吗.",
       "examples": [
         {
-          "zh": "你怎么去学校？",
-          "vi": "Bạn đi học bằng cách nào?",
+          "from_vietnamese_intent": true,
           "pinyin": "Nǐ zěnme qù xuéxiào?",
           "tokens": [
             "你",
@@ -21,11 +30,11 @@
             "去",
             "学校"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Bạn đi học bằng cách nào?",
+          "zh": "你怎么去学校？"
         },
         {
-          "zh": "这本书怎么样？",
-          "vi": "Quyển sách này thế nào?",
+          "from_vietnamese_intent": false,
           "pinyin": "Zhè běn shū zěnmeyàng?",
           "tokens": [
             "这",
@@ -33,11 +42,11 @@
             "书",
             "怎么样"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Quyển sách này thế nào?",
+          "zh": "这本书怎么样？"
         },
         {
-          "zh": "你觉得中文怎么样？",
-          "vi": "Bạn thấy tiếng Trung thế nào?",
+          "from_vietnamese_intent": false,
           "pinyin": "Nǐ juéde Zhōngwén zěnmeyàng?",
           "tokens": [
             "你",
@@ -45,14 +54,18 @@
             "中文",
             "怎么样"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Bạn thấy tiếng Trung thế nào?",
+          "zh": "你觉得中文怎么样？"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "你怎么去学校？"
+          ],
+          "explanation": "怎么 đứng trước động từ: 你 + 怎么 + 去学校。",
           "id": "zenme-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để hỏi 'Bạn đi học bằng cách nào?'",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "你怎么去学校？",
@@ -61,37 +74,25 @@
               "你学校怎么去？"
             ]
           },
-          "accepted_answers": [
-            "你怎么去学校？"
-          ],
-          "explanation": "怎么 đứng trước động từ: 你 + 怎么 + 去学校。"
+          "prompt_vi": "Chọn câu đúng để hỏi 'Bạn đi học bằng cách nào?'",
+          "type": "choice"
         },
         {
-          "id": "zenme-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Bạn đi học bằng cách nào?'",
-          "payload": {
-            "prompt_zh": "你___去学校？",
-            "hint_vi": "Dùng 怎么。"
-          },
           "accepted_answers": [
             "你怎么去学校？",
             "你怎么去学校"
           ],
-          "explanation": "你 + 怎么 + 去学校。"
+          "explanation": "你 + 怎么 + 去学校。",
+          "id": "zenme-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 怎么。",
+            "prompt_zh": "你___去学校？"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Bạn đi học bằng cách nào?'",
+          "type": "fill"
         },
         {
-          "id": "zenme-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu: 'Bạn đi học bằng cách nào?'",
-          "payload": {
-            "tokens": [
-              "学校",
-              "你",
-              "怎么",
-              "去"
-            ]
-          },
           "accepted_answers": [
             [
               "你",
@@ -100,72 +101,77 @@
               "学校"
             ]
           ],
-          "explanation": "Thứ tự: chủ ngữ → 怎么 → động từ → nơi chốn."
+          "explanation": "Thứ tự: chủ ngữ → 怎么 → động từ → nơi chốn.",
+          "id": "zenme-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "学校",
+              "你",
+              "怎么",
+              "去"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Bạn đi học bằng cách nào?'",
+          "type": "order"
         },
         {
+          "accepted_answers": [
+            "吗"
+          ],
+          "explanation": "Câu hỏi đặc chỉ không dùng 吗。",
           "id": "zenme-ex4",
-          "type": "error_spot",
-          "prompt_vi": "Câu sau sai ở khối nào? 这本书怎么样吗？",
+          "is_open_ended": false,
           "payload": {
-            "sentence_zh": "这本书怎么样吗？",
             "options": [
               "这",
               "本",
               "书",
               "怎么样",
               "吗"
-            ]
+            ],
+            "sentence_zh": "这本书怎么样吗？"
           },
-          "accepted_answers": [
-            "吗"
-          ],
-          "explanation": "Câu hỏi đặc chỉ không dùng 吗。"
+          "prompt_vi": "Câu sau sai ở khối nào? 这本书怎么样吗？",
+          "type": "error_spot"
         },
         {
-          "id": "zenme-ex5",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Quyển sách này thế nào?' (viết bằng chữ Hán)",
-          "payload": {
-            "prompt_zh": null,
-            "hint_vi": "Bắt đầu bằng 这。"
-          },
           "accepted_answers": [
             "这本书怎么样？",
             "这本书怎么样"
           ],
-          "explanation": "Quyển sách này thế nào: 这本书 + 怎么样。"
+          "explanation": "Quyển sách này thế nào: 这本书 + 怎么样。",
+          "id": "zenme-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 这。",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Quyển sách này thế nào?' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
-      "confusions": [
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "你去怎么学校？",
-          "explanation": "怎么 đứng trước động từ, không đứng sau động từ."
-        },
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "你怎么样去学校？",
-          "explanation": "Hỏi cách thức dùng 怎么 + động từ; 怎么样 dùng cuối câu hỏi ý kiến hoặc tình hình."
-        },
-        {
-          "verdict": "sai_ngu_phap",
-          "wrong_or_risky": "这本书怎么？",
-          "explanation": "Hỏi ý kiến hoặc tình hình dùng 怎么样 ở cuối câu; 怎么 đứng trước động từ, không đứng cuối câu hỏi ý kiến."
-        }
-      ],
+      "formula_notes": "1) 怎么: đứng trước động từ, hỏi cách thức (怎么去 đi bằng cách nào). 2) 怎么样: đứng cuối câu, hỏi ý kiến/tình hình (这本书怎么样？). 3) Không dùng: câu hỏi đặc chỉ không dùng 吗.",
+      "hsk_level": 1,
+      "id": "zenme-question",
+      "objective": "Sau bài này, người học hỏi cách thức bằng 怎么 + động từ và hỏi ý kiến hoặc tình hình bằng 怎么样 ở cuối câu.",
+      "pattern": "怎么 + Động từ? • ……怎么样?",
+      "quick_memory": "Hỏi cách làm → 怎么 + động từ. Hỏi “thế nào” → để 怎么样 ở cuối câu.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 09 từ danh mục HSK1–2 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "hsk-official",
-          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề theo 语法大纲 trong đề cương thi 11/2025; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "hsk-official"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 09 từ danh mục HSK1–2 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí."
-      }
+      "title_vi": "Hỏi cách thức với 怎么 và đánh giá với 怎么样",
+      "when_to_use": "Khi muốn biết ai đó làm việc gì bằng cách nào, hoặc hỏi ý kiến, đánh giá về một vật, một việc."
     }
-  ]
+  ],
+  "schema_version": 1
 }

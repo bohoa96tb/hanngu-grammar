@@ -1,19 +1,23 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "guo-experience",
-      "title_vi": "过: đã từng trải qua",
-      "pattern": "Động từ + 过 (+ Tân ngữ)",
-      "hsk_level": 2,
+      "confusions": [
+        {
+          "explanation": "去了中国 nói hành động đi đã hoàn thành trong một khung thời gian, chưa nhấn mạnh kinh nghiệm. Nói kinh nghiệm dùng 过: 我去过中国.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我去了中国。 (muốn nói 'Tôi đã từng đến Trung Quốc' như một kinh nghiệm)"
+        },
+        {
+          "explanation": "Phủ định kinh nghiệm dùng 没: 我没去过中国.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我不去过中国。"
+        }
+      ],
+      "content_version": 2,
       "difficulty": "medium",
-      "objective": "Sau bài này, người học nói được kinh nghiệm đã từng có bằng 过 và phân biệt 过 với 了.",
-      "when_to_use": "Khi muốn nói mình đã từng làm gì đó trong quá khứ (kinh nghiệm), không chỉ nói hành động đã hoàn thành. Phủ định kinh nghiệm: 没(有) + Động từ + 过.",
-      "formula_notes": "Công thức: Động từ + 过 + Tân ngữ. 了 nói hành động hoàn thành trong một khung thời gian; 过 nói kinh nghiệm từng có, không gắn với một lần cụ thể nào. Phủ định: 我没去过中国 (không dùng 不去过).",
       "examples": [
         {
-          "zh": "我去过中国。",
-          "vi": "Tôi đã từng đến Trung Quốc.",
+          "from_vietnamese_intent": true,
           "pinyin": "Wǒ qù guo Zhōngguó.",
           "tokens": [
             "我",
@@ -21,11 +25,11 @@
             "过",
             "中国"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Tôi đã từng đến Trung Quốc.",
+          "zh": "我去过中国。"
         },
         {
-          "zh": "他吃过中国菜。",
-          "vi": "Anh ấy đã từng ăn món Trung Quốc.",
+          "from_vietnamese_intent": false,
           "pinyin": "Tā chī guo Zhōngguó cài.",
           "tokens": [
             "他",
@@ -33,11 +37,11 @@
             "过",
             "中国菜"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Anh ấy đã từng ăn món Trung Quốc.",
+          "zh": "他吃过中国菜。"
         },
         {
-          "zh": "你看过这本书吗？",
-          "vi": "Bạn đã từng đọc cuốn sách này chưa?",
+          "from_vietnamese_intent": false,
           "pinyin": "Nǐ kàn guo zhè běn shū ma?",
           "tokens": [
             "你",
@@ -48,26 +52,18 @@
             "书",
             "吗"
           ],
-          "from_vietnamese_intent": false
-        }
-      ],
-      "confusions": [
-        {
-          "wrong_or_risky": "我去了中国。 (muốn nói 'Tôi đã từng đến Trung Quốc' như một kinh nghiệm)",
-          "verdict": "doi_nghia",
-          "explanation": "去了中国 nói hành động đi đã hoàn thành trong một khung thời gian, chưa nhấn mạnh kinh nghiệm. Nói kinh nghiệm dùng 过: 我去过中国."
-        },
-        {
-          "wrong_or_risky": "我不去过中国。",
-          "verdict": "sai_ngu_phap",
-          "explanation": "Phủ định kinh nghiệm dùng 没: 我没去过中国."
+          "vi": "Bạn đã từng đọc cuốn sách này chưa?",
+          "zh": "你看过这本书吗？"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "我去过中国。"
+          ],
+          "explanation": "Kinh nghiệm: 去 + 过 + 中国.",
           "id": "guo-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để nói 'Tôi đã từng đến Trung Quốc'.",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "我去过中国。",
@@ -76,37 +72,27 @@
               "我去中国过。"
             ]
           },
-          "accepted_answers": [
-            "我去过中国。"
-          ],
-          "explanation": "Kinh nghiệm: 去 + 过 + 中国."
+          "prompt_vi": "Chọn câu đúng để nói 'Tôi đã từng đến Trung Quốc'.",
+          "type": "choice"
         },
         {
+          "accepted_answers": [
+            "我没去过中国。",
+            "我没去过中国",
+            "我没有去过中国。",
+            "我没有去过中国"
+          ],
+          "explanation": "没 + 去 + 过 + 中国.",
           "id": "guo-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Tôi chưa từng đến Trung Quốc.'",
-          "prompt_zh": "我___中国。",
+          "is_open_ended": false,
           "payload": {
             "hint_vi": "Phủ định kinh nghiệm."
           },
-          "accepted_answers": [
-            "我没去过中国。",
-            "我没去过中国"
-          ],
-          "explanation": "没 + 去 + 过 + 中国."
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Tôi chưa từng đến Trung Quốc.'",
+          "prompt_zh": "我___中国。",
+          "type": "fill"
         },
         {
-          "id": "guo-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy đã từng ăn món Trung Quốc.'",
-          "payload": {
-            "tokens": [
-              "吃",
-              "他",
-              "过",
-              "中国菜"
-            ]
-          },
           "accepted_answers": [
             [
               "他",
@@ -115,54 +101,76 @@
               "中国菜"
             ]
           ],
-          "explanation": "Thứ tự: chủ ngữ → động từ → 过 → tân ngữ."
+          "explanation": "Thứ tự: chủ ngữ → động từ → 过 → tân ngữ.",
+          "id": "guo-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "吃",
+              "他",
+              "过",
+              "中国菜"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy đã từng ăn món Trung Quốc.'",
+          "type": "order"
         },
         {
+          "accepted_answers": [
+            "不"
+          ],
+          "explanation": "Lỗi ở 不: phủ định kinh nghiệm dùng 没. Sửa thành: 我没去过中国。",
           "id": "guo-ex4",
-          "type": "error_spot",
-          "prompt_vi": "Câu sau sai ở khối nào? 我不去过中国。",
+          "is_open_ended": false,
           "payload": {
-            "sentence_zh": "我不去过中国。",
             "options": [
               "我",
               "不",
               "去",
               "过",
               "中国"
-            ]
+            ],
+            "sentence_zh": "我不去过中国。"
           },
-          "accepted_answers": [
-            "不"
-          ],
-          "explanation": "Lỗi ở 不: phủ định kinh nghiệm dùng 没. Sửa thành: 我没去过中国。"
+          "prompt_vi": "Câu sau sai ở khối nào? 我不去过中国。",
+          "type": "error_spot"
         },
         {
-          "id": "guo-ex5",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Bạn đã từng đọc cuốn sách này chưa?' (viết bằng chữ Hán)",
-          "payload": {
-            "hint_vi": "Bắt đầu bằng 你."
-          },
           "accepted_answers": [
             "你看过这本书吗？",
             "你看过这本书吗"
           ],
-          "explanation": "Từ ý muốn nói 'Bạn đã từng đọc cuốn sách này chưa?': 你 + 看 + 过 + 这本书 + 吗."
+          "explanation": "Từ ý muốn nói 'Bạn đã từng đọc cuốn sách này chưa?': 你 + 看 + 过 + 这本书 + 吗.",
+          "id": "guo-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 你."
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Bạn đã từng đọc cuốn sách này chưa?' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
+      "formula_notes": "1) Vị trí: Động từ + 过 + Tân ngữ. 2) Phân biệt: 了 nói hành động hoàn thành trong một khung thời gian; 过 nói kinh nghiệm từng có, không gắn một lần cụ thể. 3) Phủ định: dùng 没 (我没去过中国), không dùng 不去过.",
+      "hsk_level": 2,
+      "id": "guo-experience",
+      "objective": "Sau bài này, người học nói được kinh nghiệm đã từng có bằng 过 và phân biệt 过 với 了.",
+      "pattern": "Động từ + 过 (+ Tân ngữ)",
+      "quick_memory": "Từng trải qua → 过 sau động từ. Phủ định kinh nghiệm chỉ dùng 没: 没去过, không dùng 不.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "cgw",
-          "note": "Chủ đề A1/A2 theo Chinese Grammar Wiki; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề A1/A2 theo Chinese Grammar Wiki; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "cgw"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
-      }
+      "title_vi": "过: đã từng trải qua",
+      "when_to_use": "Khi muốn nói mình đã từng làm gì đó trong quá khứ (kinh nghiệm), không chỉ nói hành động đã hoàn thành. Phủ định kinh nghiệm: 没(有) + Động từ + 过."
     }
-  ]
+  ],
+  "schema_version": 1
 }
