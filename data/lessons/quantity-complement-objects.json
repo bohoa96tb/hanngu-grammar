@@ -1,0 +1,238 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Tân ngữ thường 书 không nhận bổ ngữ thời lượng đứng sau nó theo cách này. Nói đúng theo trường hợp 1: 我看了三个小时的书。 hoặc lặp động từ: 我看书看了三个小时。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我看了书三个小时。"
+        },
+        {
+          "explanation": "Đại từ làm tân ngữ phải ôm sát ngay sau động từ, bổ ngữ thời lượng đứng sau đại từ: 我等了他二十分钟。 (trường hợp 2 của bài này)",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我等了二十分钟他。"
+        },
+        {
+          "explanation": "Thiếu 的： trong mẫu chêm (trường hợp 1), 的 nối bổ ngữ thời lượng với tân ngữ thường; bỏ 的 câu nghe cụt và chưa đúng mẫu chuẩn đang luyện: 他看了三个小时的书。 Lưu ý trường hợp 3 （学中文） lại không dùng 的 — hai trường hợp khác nhau, đừng lẫn.",
+          "verdict": "kem_tu_nhien",
+          "wrong_or_risky": "他看了三个小时书。"
+        }
+      ],
+      "content_version": 3,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā zuótiān shuì le bā gè xiǎoshí.",
+          "tokens": [
+            "他",
+            "昨天",
+            "睡了",
+            "八个小时"
+          ],
+          "vi": "Hôm qua anh ấy ngủ đủ tám tiếng. (mẫu nền: câu không có tân ngữ, bổ ngữ đứng ngay sau động từ)",
+          "zh": "他昨天睡了八个小时。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Tā zuótiān kàn le sān gè xiǎoshí de shū.",
+          "tokens": [
+            "他",
+            "昨天",
+            "看了",
+            "三个小时",
+            "的",
+            "书"
+          ],
+          "vi": "Hôm qua anh ấy đọc sách suốt ba tiếng đồng hồ.",
+          "zh": "他昨天看了三个小时的书。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ děng le tā èrshí fēnzhōng, tā hái méi lái.",
+          "tokens": [
+            "我",
+            "等了",
+            "他",
+            "二十分钟",
+            "，",
+            "他",
+            "还",
+            "没",
+            "来"
+          ],
+          "vi": "Tôi đợi anh ấy hai mươi phút mà anh ấy vẫn chưa đến.",
+          "zh": "我等了他二十分钟，他还没来。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā xué le liǎng nián Zhōngwén, xiànzài shuō de hěn búcuò.",
+          "tokens": [
+            "她",
+            "学了",
+            "两年",
+            "中文",
+            "，",
+            "现在",
+            "说",
+            "得",
+            "很",
+            "不错"
+          ],
+          "vi": "Cô ấy đã học tiếng Trung hai năm, giờ nói khá tốt.",
+          "zh": "她学了两年中文，现在说得很不错。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Lǎoshī jiǎng le liǎng gè xiǎoshí de kè.",
+          "tokens": [
+            "老师",
+            "讲了",
+            "两个小时",
+            "的",
+            "课"
+          ],
+          "vi": "Thầy giáo giảng bài suốt hai tiếng đồng hồ.",
+          "zh": "老师讲了两个小时的课。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒ děng le nǐ shíwǔ fēnzhōng.",
+          "tokens": [
+            "我",
+            "等了",
+            "你",
+            "十五分钟"
+          ],
+          "vi": "Tớ đã đợi cậu mười lăm phút đấy.",
+          "zh": "我等了你十五分钟。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "我看了三个小时的书。"
+          ],
+          "explanation": "书 là tân ngữ thường nên dùng mẫu chêm của trường hợp 1: động từ + 了 + thời lượng + 的 + tân ngữ. Câu 2 để thời lượng sau tân ngữ; hai câu còn lại sai trật tự từ.",
+          "id": "qc3-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我看了三个小时的书。",
+              "我看了书三个小时。",
+              "我看了三个书小时。",
+              "我三个小时看了的书。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Tôi đọc sách ba tiếng đồng hồ.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "她",
+              "学了",
+              "两年",
+              "中文"
+            ]
+          ],
+          "explanation": "学中文 là cụm cố định (trường hợp 3): bổ ngữ thời lượng 两年 đứng ngay trước tân ngữ 中文 và không cần 的.",
+          "id": "qc3-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "中文",
+              "她",
+              "学了",
+              "两年"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Cô ấy đã học tiếng Trung hai năm.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "老师"
+          ],
+          "explanation": "老师 ở đây là tân ngữ chỉ người cụ thể (trường hợp 2): tân ngữ phải ôm sát động từ, bổ ngữ đứng sau: 同学们等了老师十分钟。 Để 老师 sau bổ ngữ là sai vị trí.",
+          "id": "qc3-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "同学们",
+              "等了",
+              "十分钟",
+              "老师"
+            ],
+            "sentence_zh": "同学们等了十分钟老师。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 同学们等了十分钟老师。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "他写了两个小时的作业。",
+            "他写了两个小时的作业"
+          ],
+          "explanation": "作业 là tân ngữ thường (trường hợp 1): sau bổ ngữ thời lượng 两个小时 phải có 的 rồi mới đến tân ngữ: 他写了两个小时的作业。",
+          "id": "qc3-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Mẫu chêm với tân ngữ thường cần một từ nối bổ ngữ với tân ngữ."
+          },
+          "prompt_vi": "Điền từ còn thiếu để hoàn thành câu: 'Anh ấy làm bài tập hai tiếng đồng hồ.'",
+          "prompt_zh": "他写了两个小时___作业。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "我等了他半个小时。",
+            "我等了他半个小时",
+            "我等了他三十分钟。",
+            "我等了他三十分钟",
+            "我等了他半小时。",
+            "我等了他半小时"
+          ],
+          "explanation": "他 là đại từ làm tân ngữ (trường hợp 2): ôm sát động từ 等， bổ ngữ thời lượng đứng sau: 我等了他半个小时。",
+          "id": "qc3-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Tân ngữ là đại từ 他： để bổ ngữ thời lượng sau đại từ; 'nửa tiếng' nói 半个小时 hoặc 三十分钟。"
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tôi đợi anh ấy nửa tiếng đồng hồ.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Nền dạng 2 (phần nền tối thiểu bài này tự dạy, vì dự án chưa có bài riêng cho dạng 2) — câu KHÔNG có tân ngữ: bổ ngữ thời lượng/tần suất đứng ngay sau động từ: Động từ + (了/过) + thời lượng/tần suất. Ví dụ: 我睡了八个小时 (ngủ tám tiếng); 他去过三次 (đã đi ba lần); 我等了二十分钟 (đợi hai mươi phút — không nói rõ đợi ai). 2) Trường hợp 1 — tân ngữ thường （书、作业、课）: Động từ + 了 + bổ ngữ thời lượng + 的 + tân ngữ （看了三个小时的书）; 的 là phần bắt buộc của mẫu chêm này. Cách khác cũng đúng: lặp lại động từ (bài verb-repetition-sentence): 看书看了三个小时。 Bổ ngữ tần suất đi với tân ngữ thường cũng tránh chen giữa, dùng cách lặp động từ （看书看了两遍）. 3) Trường hợp 2 — tân ngữ là đại từ, tên riêng hoặc người cụ thể đã xác định （他、你、小王、老师…）: tân ngữ ôm sát ngay sau động từ, bổ ngữ đứng sau tân ngữ: 等了他二十分钟； không đảo thành 等了二十分钟他. 4) Trường hợp 3 — tân ngữ gắn chặt với động từ thành cụm quen thuộc （学中文、说汉语）: bổ ngữ đứng ngay trước tân ngữ và không cần 的： 学了两年中文. Trường hợp này chỉ áp cho cụm cố định kiểu đó, không áp cho tân ngữ thường như 书. 5) Phân biệt nhanh: câu chưa có tân ngữ thì dùng mẫu nền ở bước 1; hễ thêm tân ngữ vào câu thì phải chọn một trong ba trường hợp 2–4 tùy loại tân ngữ, không chen bổ ngữ vào giữa động từ và tân ngữ theo mẫu nền.",
+      "hsk_evidence": {
+        "note": "Bài phủ phần vị trí của số lượng bổ ngữ dạng 2 khi có tân ngữ, kèm nền tối thiểu khi không có tân ngữ (dự án chưa có bài riêng cho dạng 2). Điểm số lượng bổ ngữ dạng 3 chính thức thuộc bài time-since-completion.",
+        "status": "partial"
+      },
+      "hsk_level": 2,
+      "id": "quantity-complement-objects",
+      "objective": "Sau bài này, người học dùng được bổ ngữ thời lượng/tần suất ở mẫu nền khi câu không có tân ngữ, và đặt đúng vị trí của bổ ngữ khi câu có tân ngữ: chêm 的 với tân ngữ thường, đặt bổ ngữ ngay sau tân ngữ là đại từ/tên riêng, và nhận ra trường hợp cụm cố định kiểu 学中文.",
+      "pattern": "Động từ + (了) + Số lượng (không tân ngữ) • Động từ + Số lượng + 的 + Tân ngữ • Động từ + Tân ngữ (đại từ/tên riêng) + Số lượng • Động từ + Số lượng + Tân ngữ cố định",
+      "quick_memory": "Không tân ngữ: bổ ngữ sát động từ （睡了八个小时）. Tân ngữ thường → chêm 的； đại từ → bổ ngữ theo sau.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Đổi danh tính ở vòng sửa QA lô HSK3-5 30/10/2026: bản đầu của lô soạn bài này dưới id quantity-complement-3, cấp HSK3, gán cho OFF-H3-32 — nhưng nội dung thực chất là vị trí của 数量补语 dạng 2. Đã đổi id thành quantity-complement-objects, hạ cấp HSK2, bổ sung khối nền dạng 2 (một bước công thức + một ví dụ) và đặt hsk_evidence = partial trỏ OFF-H2-43. Rà soát nội bộ: kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về vị trí bổ ngữ thời lượng/tần suất (mẫu nền không tân ngữ và ba trường hợp khi có tân ngữ) theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H2-43 （ 数量补语 dạng 2) trong catalogue dự án từ đề cương thi 11/2025; bài phủ phần vị trí khi có tân ngữ kèm nền tối thiểu khi không có tân ngữ.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Bổ ngữ số lượng: vị trí khi câu có tân ngữ （看了三个小时的书 / 等了他十分钟）",
+      "when_to_use": "Ví dụ: 他昨天看了三个小时的书。 — Khi câu không có tân ngữ, bổ ngữ thời lượng đứng ngay sau động từ （我睡了八个小时）; đó là dạng nền （ 数量补语 dạng 2). Dự án chưa có bài riêng cho dạng nền này, nên bài này dạy kèm phần nền tối thiểu (bước 1 của công thức và một ví dụ nền) rồi mới vào trọng tâm: hễ câu CÓ tân ngữ, bổ ngữ không chen vào giữa động từ và tân ngữ theo mẫu nền được nữa, mà đổi vị trí theo đúng ba trường hợp của bài này: tân ngữ thường, tân ngữ là đại từ/tên riêng, và tân ngữ gắn chặt với động từ kiểu 学中文. Đây là bài về vị trí từ: mỗi trường hợp một quy tắc riêng, không gộp thành một quy tắc chung."
+    }
+  ],
+  "schema_version": 1
+}

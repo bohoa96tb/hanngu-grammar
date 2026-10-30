@@ -1,0 +1,241 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "先 là phó từ chỉ thứ tự, đứng ngay trước động từ 1 chứ không đứng sau động từ. Nói đúng: 我先洗手，然后吃晚饭。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我洗手先，然后吃晚饭。"
+        },
+        {
+          "explanation": "Vế đầu thiếu chủ ngữ nên không rõ ai đi mua, ai nấu — mẫu này cần chủ ngữ rõ ràng. Nếu khác người làm thì nói rõ cả hai: 我先去买菜，然后妈妈做饭。 Nếu cùng một người: 妈妈先去买菜，然后做饭。",
+          "verdict": "thieu_ngu_canh",
+          "wrong_or_risky": "先去买菜，然后妈妈做饭。"
+        },
+        {
+          "explanation": "Câu này đúng — đó là mẫu nén ……了就…… (bài complex-compact): nhấn việc 1 hoàn thành rồi việc 2 tiếp nối, không cần từ nối tường minh. Chỉ khi muốn kể thứ tự từng bước rõ ràng mới cần khung 先……，然后…… của bài này.",
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "我先吃了饭就去上班。(bị tưởng là sai vì thiếu 然后）"
+        }
+      ],
+      "content_version": 1,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒ xiān xǐ shǒu, ránhòu chī wǎnfàn.",
+          "tokens": [
+            "我",
+            "先",
+            "洗手",
+            "，",
+            "然后",
+            "吃",
+            "晚饭"
+          ],
+          "vi": "Tôi rửa tay trước, rồi mới ăn tối.",
+          "zh": "我先洗手，然后吃晚饭。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā xiān qù yínháng, ránhòu qù yóujú qǔ qián.",
+          "tokens": [
+            "他",
+            "先",
+            "去",
+            "银行",
+            "，",
+            "然后",
+            "去",
+            "邮局",
+            "取钱"
+          ],
+          "vi": "Anh ấy đến ngân hàng trước, rồi đến bưu điện lấy tiền.",
+          "zh": "他先去银行，然后去邮局取钱。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒmen xiān fùxí shēngcí, jiēzhe zuò liànxí.",
+          "tokens": [
+            "我们",
+            "先",
+            "复习",
+            "生词",
+            "，",
+            "接着",
+            "做",
+            "练习"
+          ],
+          "vi": "Chúng tôi ôn từ mới trước, tiếp đó làm bài tập.",
+          "zh": "我们先复习生词，接着做练习。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā xiān gěi wǒ dǎ diànhuà, ránhòu wǒmen yìqǐ qù kàn diànyǐng.",
+          "tokens": [
+            "她",
+            "先",
+            "给",
+            "我",
+            "打电话",
+            "，",
+            "然后",
+            "我们",
+            "一起",
+            "去",
+            "看电影"
+          ],
+          "vi": "Cô ấy gọi điện cho tôi trước, rồi chúng tôi cùng đi xem phim.",
+          "zh": "她先给我打电话，然后我们一起去看电影。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Nǐ xiān bǎ xíngli fàng hǎo, ránhòu wǒmen chūqù chī fàn.",
+          "tokens": [
+            "你",
+            "先",
+            "把",
+            "行李",
+            "放好",
+            "，",
+            "然后",
+            "我们",
+            "出去",
+            "吃饭"
+          ],
+          "vi": "Bạn cất gọn hành lý trước, rồi chúng ta ra ngoài ăn cơm.",
+          "zh": "你先把行李放好，然后我们出去吃饭。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "我先回家，然后做作业。"
+          ],
+          "explanation": "Khung tiếp nối: 先 trước động từ 1 （回家）, 然后 đầu vế 2 （做作业）, và thứ tự vế đúng thứ tự việc. Câu 2 đặt 先 sai chỗ; câu 3 đảo thứ tự hai việc; câu 4 thừa 了 sau 然后。",
+          "id": "seq-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我先回家，然后做作业。",
+              "我回家先，然后做作业。",
+              "我先做作业，然后回家。",
+              "我先回家，然后了做作业。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Tôi về nhà trước, rồi làm bài tập.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "她",
+              "先",
+              "做饭",
+              "然后",
+              "给朋友打电话"
+            ]
+          ],
+          "explanation": "Thứ tự cố định: chủ ngữ + 先 + việc 1, rồi 然后 + việc 2 — đúng trình tự nấu cơm trước, gọi điện sau.",
+          "id": "seq-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "然后",
+              "给朋友打电话",
+              "她",
+              "做饭",
+              "先"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Cô ấy nấu cơm trước, rồi gọi điện cho bạn.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "了"
+          ],
+          "explanation": "了 không đứng giữa 然后 và động từ của vế 2. Bỏ 了： 他先写完作业，然后看电视。 Ý hoàn thành của vế 1 đã có 完 trong 写完 lo.",
+          "id": "seq-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他",
+              "先写完作业",
+              "然后",
+              "了",
+              "看电视"
+            ],
+            "sentence_zh": "他先写完作业，然后了看电视。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 他先写完作业，然后了看电视。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "我们先讨论问题，接着决定怎么做。",
+            "我们先讨论问题，接着决定怎么做",
+            "我们先讨论问题，然后决定怎么做。",
+            "我们先讨论问题，然后决定怎么做"
+          ],
+          "explanation": "Vế 2 cần một từ nối tường minh: 接着 (nối sát ngay sau, hợp với việc quyết định liền sau thảo luận) hoặc 然后 đều đúng. Đây là điểm khác mẫu nén ……了就……: mẫu bài này nói từ nối ra thành lời.",
+          "id": "seq-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Từ nối đầu vế 2: 然后 hoặc 接着 đều đúng; 接着 nhấn nối sát ngay sau."
+          },
+          "prompt_vi": "Điền từ nối để hoàn thành câu: 'Chúng tôi thảo luận vấn đề trước, tiếp đó quyết định làm thế nào.'",
+          "prompt_zh": "我们先讨论问题，___决定怎么做。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "你先喝水，然后休息一会儿。",
+            "你先喝水，然后休息一会儿",
+            "你先喝点儿水，然后休息一会儿。",
+            "你先喝点儿水，然后休息一会儿",
+            "你先喝水，接着休息一会儿。",
+            "你先喝水，接着休息一会儿"
+          ],
+          "explanation": "Đủ khung 先……，然后/接着…… và đúng thứ tự: uống nước trước, nghỉ sau. Cả 然后 và 接着 đều dùng được ở đây.",
+          "id": "seq-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Khung: 先……，然后/接着……; 'nghỉ một lát' nói 休息一会儿。"
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Bạn uống nước trước, rồi nghỉ một lát.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Vị trí: chủ ngữ chung đứng đầu câu, 先 ngay trước động từ 1; 然后 hoặc 接着 đứng đầu vế 2, sau dấu phẩy. Nếu vế 2 khác chủ ngữ thì nói rõ chủ ngữ sau từ nối （她先给我打电话，然后我们一起去看电影）. 2) Chọn từ: 然后 trung tính, dùng rộng nhất; 接着 nhấn việc 2 nối sát ngay sau việc 1 và thường cùng một chủ ngữ. Cụm ngắn 先……，再…… cũng gặp với cùng ý thứ tự. 3) Phân biệt: ……了就…… (bài complex-compact) không có từ nối tường minh và nhấn việc 1 hoàn thành; 一……就…… (bài yi-jiu-tight) nhấn 'vừa… là ngay'. Muốn kể thứ tự rõ ràng từng bước thì dùng mẫu của bài này. 4) Mở rộng: 后来 kể một việc xảy ra về sau trong câu chuyện （他先去银行，后来去了邮局） — chỉ cần nhận biết, không thuộc khung 先…… đang luyện.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "complex-sequence",
+      "objective": "Sau bài này, người học kể được một chuỗi hai việc theo đúng thứ tự xảy ra bằng khung 先……，然后/接着……, với từ nối tường minh ở cả hai vế.",
+      "pattern": "先 + Động từ 1，然后/接着 + Động từ 2",
+      "quick_memory": "Kể theo thứ tự: 先 việc 1，然后/接着 việc 2. Vế nào nói trước, việc đó làm trước — từ nối là xương sống của mẫu.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-5 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về câu phức tiếp nối （先……，然后/接着……) theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-41 （ câu phức 承接： 先……，再/然后……) trong catalogue dự án từ đề cương thi 11/2025.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Câu phức tiếp nối: kể việc theo thứ tự （先……，然后/接着……）",
+      "when_to_use": "Ví dụ: 我先洗手，然后吃晚饭。 — khi kể một chuỗi việc theo đúng thứ tự xảy ra, bài này dùng từ nối nói ra thành lời: 先 ở vế đầu, 然后/接着 ở vế sau; thứ tự các vế chính là thứ tự sự việc. Khác mẫu nén ……了就…… (bài complex-compact): mẫu đó bỏ hẳn từ nối và nhấn việc 1 xong thì việc 2 tiếp nối. Khác 一……就…… (bài yi-jiu-tight): mẫu đó nhấn hai việc sát nhau kiểu 'vừa… là ngay'. Bài này là kể chuỗi việc bằng từ nối tường minh."
+    }
+  ],
+  "schema_version": 1
+}

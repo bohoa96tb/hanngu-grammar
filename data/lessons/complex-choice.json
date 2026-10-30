@@ -1,0 +1,240 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Đây là câu trần thuật nên không dùng 还是 — 还是 chỉ nối phương án trong câu hỏi lựa chọn (bài hai-shi-choice). Nói đúng: 他或者去北京，或者去上海。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他还是去北京，还是去上海。"
+        },
+        {
+          "explanation": "Ghép chéo hai khung của bài này: 不是 phải đi với 就是， còn 或者 đi thành cặp 或者……，或者……. Nói đúng một trong hai: 他不是在开会，就是在出差。 / 他或者在开会，或者在出差。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他不是在开会，或者在出差。"
+        },
+        {
+          "explanation": "Đây là phản vấn 不是……吗？ (bài rhetorical-question): hỏi để khẳng định 'anh ấy bận mà', chỉ nói về một việc duy nhất. Mẫu lựa chọn của bài này phải có hai khả năng và cặp từ đi đủ: 不是……，就是…….",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他不是很忙吗？(bị tưởng là mẫu lựa chọn của bài này)"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā búshì zài kāihuì, jiùshì zài chūchāi.",
+          "tokens": [
+            "他",
+            "不是",
+            "在",
+            "开会",
+            "，",
+            "就是",
+            "在",
+            "出差"
+          ],
+          "vi": "Anh ấy không đang họp thì là đang đi công tác (chắc chắn một trong hai).",
+          "zh": "他不是在开会，就是在出差。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā búshì wàng le, jiùshì méi tīngjiàn.",
+          "tokens": [
+            "她",
+            "不是",
+            "忘了",
+            "，",
+            "就是",
+            "没",
+            "听见"
+          ],
+          "vi": "Cô ấy hoặc là quên mất, hoặc là không nghe thấy.",
+          "zh": "她不是忘了，就是没听见。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhōumò wǒmen huòzhě qù páshān, huòzhě zài jiā kàn diànyǐng.",
+          "tokens": [
+            "周末",
+            "我们",
+            "或者",
+            "去",
+            "爬山",
+            "，",
+            "或者",
+            "在",
+            "家",
+            "看电影"
+          ],
+          "vi": "Cuối tuần chúng tôi hoặc đi leo núi, hoặc ở nhà xem phim.",
+          "zh": "周末我们或者去爬山，或者在家看电影。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Nǐ huòzhě zuò dìtiě, huòzhě zuò gōnggòng qìchē, dōu hěn fāngbiàn.",
+          "tokens": [
+            "你",
+            "或者",
+            "坐",
+            "地铁",
+            "，",
+            "或者",
+            "坐",
+            "公共汽车",
+            "，",
+            "都",
+            "很",
+            "方便"
+          ],
+          "vi": "Bạn hoặc đi tàu điện ngầm, hoặc đi xe buýt, đều tiện cả.",
+          "zh": "你或者坐地铁，或者坐公共汽车，都很方便。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Búshì tā qù, jiùshì wǒ qù, nǐ fàngxīn.",
+          "tokens": [
+            "不是",
+            "他",
+            "去",
+            "，",
+            "就是",
+            "我",
+            "去",
+            "，",
+            "你",
+            "放心"
+          ],
+          "vi": "Không anh ấy đi thì tôi đi, bạn cứ yên tâm.",
+          "zh": "不是他去，就是我去，你放心。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "他不是忙，就是忘了。"
+          ],
+          "explanation": "Đề yêu cầu suy đoán chắc chắn 'một trong hai' nên dùng 不是……，就是……. Câu 或者……，或者…… chỉ nêu khả năng trung tính, chưa đúng sắc thái đề yêu cầu; câu 3 là phản vấn; câu 4 dùng 还是 trong câu trần thuật là sai.",
+          "id": "choice-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他不是忙，就是忘了。",
+              "他或者忙，或者忘了。",
+              "他不是很忙吗？",
+              "他还是忙，还是忘了。"
+            ]
+          },
+          "prompt_vi": "Chọn câu thể hiện suy đoán chắc chắn: 'Anh ấy không bận thì là quên mất rồi.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "她",
+              "或者",
+              "在家休息",
+              "或者",
+              "去医院"
+            ]
+          ],
+          "explanation": "Mẫu trung tính: chủ ngữ + 或者 + khả năng 1，或者 + khả năng 2 — 或者 lặp lại ở đầu mỗi khả năng.",
+          "id": "choice-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "或者",
+              "去医院",
+              "她",
+              "在家休息",
+              "或者"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Cô ấy hoặc ở nhà nghỉ, hoặc đi bệnh viện.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "还是"
+          ],
+          "explanation": "Câu này là trần thuật nên không dùng 还是 (từ của câu hỏi lựa chọn). Sửa bằng khung 或者： 你或者喝茶，或者喝咖啡，都可以。",
+          "id": "choice-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "你",
+              "还是",
+              "喝茶",
+              "或者喝咖啡",
+              "都可以"
+            ],
+            "sentence_zh": "你还是喝茶，或者喝咖啡，都可以。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 你还是喝茶，或者喝咖啡，都可以。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "他不是在教室，就是在图书馆。",
+            "他不是在教室，就是在图书馆"
+          ],
+          "explanation": "Hai khả năng loại trừ nhau và người nói khá chắc chỉ có thể là một trong hai, nên đi cặp 不是……，就是…… chứ không dùng 或者 trung tính.",
+          "id": "choice-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Cặp suy đoán: 不是……，就是……"
+          },
+          "prompt_vi": "Điền cặp từ để hoàn thành suy đoán chắc chắn: 'Anh ấy không ở lớp học thì ở thư viện.'",
+          "prompt_zh": "他___在教室，___在图书馆。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "周末我或者在家，或者去超市。",
+            "周末我或者在家，或者去超市",
+            "这个周末我或者在家，或者去超市。",
+            "这个周末我或者在家，或者去超市"
+          ],
+          "explanation": "Hai phương án được nêu trung tính, chưa chọn bên nào, nên dùng 或者……，或者……; 或者 phải lặp ở đầu cả hai phương án.",
+          "id": "choice-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Khung trung tính: 或者……，或者……; 'siêu thị' nói 超市。"
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Cuối tuần tôi hoặc ở nhà, hoặc đi siêu thị.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Mẫu 1 — suy đoán chắc chắn: 不是 + khả năng A，就是 + khả năng B; người nói tin chắc sự việc rơi vào một trong hai khả năng, thường là hai khả năng đối lập hoặc cùng một nhóm nhỏ （不是忘了，就是没听见）. 2) Mẫu 2 — nêu khả năng trung tính: 或者 + A，或者 + B; chỉ liệt kê hai khả năng/phương án, chưa nghiêng về bên nào. 或者 cũng dùng đơn lẻ trong câu trần thuật （你喝茶或者咖啡都可以）. 3) Không dùng: câu trần thuật không dùng 还是 để nối hai phương án — 还是 dành cho câu hỏi lựa chọn (bài hai-shi-choice). 4) Phân biệt: 不是……吗？ có 吗 ở cuối là phản vấn (hỏi để khẳng định); ở bài này 不是 đi cặp với 就是 và câu kết thúc bằng dấu chấm.",
+      "hsk_evidence": {
+        "note": "Khung 不是……，就是…… của bài thuộc bảng HSK4 trong đề cương; phần HSK3 của mục này （或者……，或者……) đã phủ, còn mẫu luân phiên 一会儿……，一会儿…… chưa dạy.",
+        "status": "partial"
+      },
+      "hsk_level": 3,
+      "id": "complex-choice",
+      "objective": "Sau bài này, người học nói được 'một trong hai' trong câu trần thuật: suy đoán chắc chắn bằng 不是……，就是…… và nêu hai khả năng trung tính bằng 或者……，或者…….",
+      "pattern": "不是 + A，就是 + B • 或者 + A，或者 + B",
+      "quick_memory": "Một trong hai: đoán chắc → 不是……就是……; trung tính → 或者……或者……. Còn 还是 chỉ dành cho câu hỏi.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-5 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về câu phức lựa chọn （不是……，就是…… và 或者……，或者……) theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi đối chiếu mục OFF-H3-42 (câu phức lựa chọn) trong catalogue dự án từ đề cương thi 11/2025: bài phủ khung 或者……，或者…… thuộc HSK3; khung 不是……，就是…… thuộc bảng HSK4, dạy kèm vì cùng mục tiêu \"một trong hai\"; mẫu luân phiên 一会儿……，一会儿…… chưa dạy.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Câu phức lựa chọn: một trong hai （不是……，就是……; 或者……，或者……）",
+      "when_to_use": "Ví dụ: 他不是在开会，就是在出差。 — người nói suy đoán khá chắc: chỉ có thể là một trong hai khả năng này. Bài này dạy hai khung trần thuật cùng một mục tiêu 'một trong hai': 不是……，就是…… cho suy đoán chắc chắn, 或者……，或者…… để nêu hai khả năng một cách trung tính. Khác câu hỏi lựa chọn bằng 还是 (bài hai-shi-choice): đó là câu hỏi chờ người nghe chọn một phương án; ở đây là câu nói, không chờ trả lời. Cũng khác phản vấn 不是……吗？ (bài rhetorical-question): khung đó hỏi để khẳng định một điều đã biết, chỉ nói về một việc."
+    }
+  ],
+  "schema_version": 1
+}
