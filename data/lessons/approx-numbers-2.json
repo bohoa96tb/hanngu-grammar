@@ -18,7 +18,7 @@
           "wrong_or_risky": "发票上写：大概一百块。(hóa đơn ghi 'khoảng một trăm tệ')"
         }
       ],
-      "content_version": 1,
+      "content_version": 2,
       "difficulty": "medium",
       "examples": [
         {
@@ -223,7 +223,7 @@
       ],
       "status": "published",
       "title_vi": "Số ước lượng dạng 2: khoảng / chừng （大概 + số lượng; hai số kề nhau）",
-      "when_to_use": "Khi không biết hoặc không cần con số chính xác: nói 'khoảng/chừng' về số người, giá tiền, thời gian, độ dài. Hai cách của bài này: đặt 大概 trước cụm số lượng （大概二十个人）, hoặc ghép hai số kề nhau （七八天）. Phạm vi bài chỉ gồm hai cách này: mẫu ước lượng cấp dưới với 多/几 (mục OFF-H2-61 trong catalogue) chưa có bài riêng trong dự án — bạn mới gặp 几/多少 trong câu hỏi 'mấy/bao nhiêu' (bài question-words) — nên bài này không dựa vào chúng, chỉ cần số đếm và lượng từ đã học. 大概 với nghĩa phỏng đoán 'chắc là…' là một vai trò khác, thuộc bài phó từ tình thái sau này."
+      "when_to_use": "Khi không biết hoặc không cần con số chính xác: nói 'khoảng/chừng' về số người, giá tiền, thời gian, độ dài. Hai cách của bài này — ĐỘC LẬP với nhau, dùng riêng từng cách là đủ, không cần kết hợp cả hai trong một câu: đặt 大概 trước cụm số lượng （大概二十个人）, hoặc ghép hai số kề nhau （七八天）. Nền tiên quyết: cách nói số ước lượng cấp dưới với 几 và 多 (mục OFF-H2-61) đã học ở bài approx-numbers-1 (HSK2) — bài này là bước tiếp theo của cùng chuỗi số ước lượng, chỉ cần thêm số đếm và lượng từ đã học. 大概 với nghĩa phỏng đoán 'chắc là…' là một vai trò khác, thuộc bài phó từ tình thái sau này."
     }
   ],
   "schema_version": 1

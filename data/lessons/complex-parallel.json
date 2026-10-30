@@ -18,7 +18,7 @@
           "wrong_or_risky": "我一边洗手，一边吃饭。"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -211,7 +211,7 @@
           "source_id": "cgw"
         },
         {
-          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-43 （并列复句： 又……，又……; 一边……，一边……) trong catalogue dự án từ đề cương thi 11/2025.",
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-43 （并列复句： 一会儿……，一会儿……; 又……，又……; 一边……，一边……) trong catalogue dự án từ đề cương thi 11/2025 (thành viên 一会儿……，一会儿…… xác minh trực quan trang in 391, sửa đối chiếu 2026-10-30 lần 2). Bài này dạy hai thành viên 又……，又…… và 一边……，一边……; thành viên 一会儿……，一会儿…… do bài alternating-actions dạy.",
           "source_id": "hsk-official"
         }
       ],
