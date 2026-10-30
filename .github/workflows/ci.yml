@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: Validator và unit test
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validator dữ liệu bài học
+        run: python3 scripts/validate.py
+      - name: Unit test Python
+        run: python3 -m unittest discover -s tests
+      - name: Kiểm tra cú pháp JS
+        run: node --check app.js && node --check srs.mjs
+      - name: Test FSRS
+        run: node --test tests/test_fsrs.mjs
+
+  browser:
+    name: Kiểm tra trình duyệt (harness local)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Cài thư viện hệ thống cho Chrome headless
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libnss3 libnspr4 libatk1.0-0t64 libatk-bridge2.0-0t64 libcups2t64 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libpango-1.0-0 libcairo2 libasound2t64
+      - name: Tải chrome-headless-shell
+        run: |
+          curl --retry 3 -fsSL -o /tmp/chs.zip https://storage.googleapis.com/chrome-for-testing-public/156.0.8078.80/linux64/chrome-headless-shell-linux64.zip
+          unzip -q /tmp/chs.zip -d /tmp/chs
+      - name: Chạy harness trên bản local
+        env:
+          CHROME_BIN: /tmp/chs/chrome-headless-shell-linux64/chrome-headless-shell
+        run: |
+          python3 -m http.server 8901 > /tmp/http-server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for i in $(seq 1 30); do
+            curl -fsS http://127.0.0.1:8901/ >/dev/null 2>&1 && break
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:8901/ >/dev/null
+          node tests/browser-check.mjs http://127.0.0.1:8901/ /tmp/browser-report.json 2>&1 | tee /tmp/browser-harness.log
+      - name: Tải log chẩn đoán lên khi job thất bại
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-diagnostics
+          path: |
+            /tmp/browser-report.json
+            /tmp/http-server.log
+            /tmp/browser-harness.log
+          if-no-files-found: ignore
