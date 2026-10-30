@@ -98,24 +98,30 @@
     },
     {
       "id": "OFF-H3-13",
-      "title_vi": "Phó từ phạm vi 一块儿/一共/只/到处/只是",
-      "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Phó từ phạm vi （就/一块儿/一共/只/到处/只是）",
+      "status": "covered",
+      "lesson_ids": [
+        "adverbs-scope-hsk3"
+      ],
+      "note": "Xác minh trực quan trang in 389 (hàng 范围副词）: đủ 6 thành viên 就、一块儿、一共、只、到处、只是 — bản ghi cũ thiếu 就 (nghĩa phạm vi 'chỉ có'), đã sửa title. Bài adverbs-scope-hsk3 phủ cả 6; 就 ở đây là nghĩa phạm vi, phân biệt với 就 ngữ khí (OFF-H3-18) và 就 nối kết quả trong các khung câu phức đã học."
     },
     {
       "id": "OFF-H3-14",
-      "title_vi": "Phó từ thời gian 马上/先/一会儿/刚/刚刚/一直",
-      "status": "covered",
+      "title_vi": "Phó từ thời gian 才¹/马上/先/一会儿/刚/刚刚/一直",
+      "status": "partial",
       "lesson_ids": [
         "adverbs-time-hsk3"
       ],
-      "note": "Bài adverbs-time-hsk3 phủ 马上/先/刚/刚刚/一直. Thành viên 一会儿 đã phủ từ trước: vai lượng thời gian 'một lát' gặp trong các bài cũ và mẫu luân phiên 一会儿……，一会儿…… ở bài alternating-actions."
+      "note": "Bài adverbs-time-hsk3 phủ 6/7 thành viên （马上/先/刚/刚刚/一直; thêm 一会儿 ở vai lượng thời gian 'một lát' và mẫu luân phiên 一会儿……，一会儿……). Thành viên còn thiếu: 才¹ — phó từ thời gian 'mãi đến lúc đó mới' （他十点才来） — chưa có bài dạy, theo dõi ở mục 2b của tài liệu ánh xạ. Hiệu chỉnh 30/10/2026: kiểm trực quan trang in 389 (Nội dung và QA xác minh độc lập) cho thấy hàng 时间副词 có 7 thành viên gồm 才¹; nhận định 'đã có' ở các lô HSK3-7/HSK3-8 dựa trên bản trích xuất ghi thiếu thành viên, nay bị thay thế."
     },
     {
       "id": "OFF-H3-15",
       "title_vi": "Phó từ tần suất 总/总是/又/常常",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "adverbs-frequency-hsk3"
+      ],
+      "note": "Xác minh trực quan trang in 389 (hàng 频率副词）: đúng 4 thành viên 总、总是、又、常常, khớp title. Bài adverbs-frequency-hsk3 phủ cả 4; 又 ở đây là nghĩa tần suất 'lại', phân biệt với khung song song 又……，又…… (OFF-H3-43)."
     },
     {
       "id": "OFF-H3-16",
@@ -131,9 +137,12 @@
     },
     {
       "id": "OFF-H3-18",
-      "title_vi": "Phó từ ngữ khí 当然/其实/终于/才",
-      "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Phó từ ngữ khí 当然/其实/终于/才/就",
+      "status": "covered",
+      "lesson_ids": [
+        "adverbs-mood-hsk3"
+      ],
+      "note": "Xác minh trực quan trang in 389 (hàng 语气副词）: gồm 当然、其实、终于、才（hai nghĩa đánh số 2/3)、就（nghĩa đánh số 4) — bản ghi cũ thiếu 就, đã sửa title. Bài adverbs-mood-hsk3 phủ cả 5 từ ở VAI NGỮ KHÍ （这才是…; …才/就不/没…呢）. Các nghĩa khác của hai chữ này không thuộc mục này: 才 'chỉ khi… mới' ở OFF-H3-47 và bài zenme-yang-question, 就 nối kết quả ở các mục câu phức; riêng phó từ thời gian 才¹ thuộc hàng 时间副词 (xem mục OFF-H3-14) — bài này chỉ nhắc phân biệt, không dạy."
     },
     {
       "id": "OFF-H3-19",
@@ -189,12 +198,13 @@
     {
       "id": "OFF-H3-26",
       "title_vi": "Mẫu cố định HSK3 ((在)……以前/以后/前/后, 越……越……, X什么(啊), 在……上/下/中, 该……了)",
-      "status": "partial",
+      "status": "covered",
       "lesson_ids": [
         "yue-patterns",
-        "time-frame-patterns"
+        "time-frame-patterns",
+        "fixed-pattern-shenme"
       ],
-      "note": "Đã phủ: 越……越…… （kèm 越来越……) qua bài yue-patterns; （在）……以前/以后/前/后 qua bài time-frame-patterns (lô HSK3-8). Chưa dạy thành bài: X什么（啊） — mục vẫn MỘT PHẦN. Thành viên 在……上/下/中 đã phủ cơ bản qua bài location-nouns ở cấp dưới; mẫu 该……了 được dạy trong bài modal-verbs-hsk3 (mục OFF-H3-04) chứ không tính vào bài của mục này. Các thành viên của giỏ đã xác minh trực quan ở khối 固定格式, trang in 390."
+      "note": "Đã phủ đủ 5 thành viên của giỏ: 越……越…… （kèm 越来越……) qua yue-patterns; （在）……以前/以后/前/后 qua time-frame-patterns (lô HSK3-8); X什么（啊） qua fixed-pattern-shenme (lô HSK3-9). Thành viên 在……上/下/中 đã phủ cơ bản qua bài location-nouns ở cấp dưới; mẫu 该……了 được dạy trong bài modal-verbs-hsk3 (mục OFF-H3-04) chứ không tính vào bài của mục này. Các thành viên của giỏ đã xác minh trực quan ở khối 固定格式, trang in 390."
     },
     {
       "id": "OFF-H3-27",
