@@ -1,0 +1,241 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Câu không sai ngữ pháp, nhưng quan hệ mức bị đảo: 'biết nói' là mức nền, 'nói hay' mới là mức tiến thêm, nên thứ tự đúng là 他不但会说中文，而且说得很好。 Mẫu này đòi vế sau nặng hơn vế trước.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他不但说得很好，而且会说中文。"
+        },
+        {
+          "explanation": "Ghép chéo hai cặp: 虽然 đi với 但是 (chuyển hướng), còn 而且 thuộc cặp tiến triển 不但……而且……. Nói đúng: 虽然他很忙，但是他还是帮了我。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "虽然他很忙，而且他还是帮了我。"
+        },
+        {
+          "explanation": "Câu này hợp lệ: 而且 đứng một mình vẫn nối được một ý thêm vào. Chỉ là khi muốn nhấn mạnh quan hệ 'không những… mà còn…' thì nên dùng đủ cặp 不但……，而且…… cho rõ mức tiến triển.",
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "他会说中文，而且说得很好。 (bị tưởng là sai vì thiếu 不但)"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Tā búdàn huì shuō Zhōngwén, érqiě shuō de hěn hǎo.",
+          "tokens": [
+            "他",
+            "不但",
+            "会",
+            "说",
+            "中文",
+            "，",
+            "而且",
+            "说",
+            "得",
+            "很",
+            "好"
+          ],
+          "vi": "Anh ấy không những biết nói tiếng Trung mà còn nói rất hay.",
+          "zh": "他不但会说中文，而且说得很好。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhè jiàn yīfu búdàn hǎokàn, érqiě hěn piányi.",
+          "tokens": [
+            "这件",
+            "衣服",
+            "不但",
+            "好看",
+            "，",
+            "而且",
+            "很",
+            "便宜"
+          ],
+          "vi": "Cái áo này không những đẹp mà còn rất rẻ.",
+          "zh": "这件衣服不但好看，而且很便宜。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā búdàn xuéxí hǎo, érqiě chángcháng bāngzhù tóngxué.",
+          "tokens": [
+            "她",
+            "不但",
+            "学习",
+            "好",
+            "，",
+            "而且",
+            "常常",
+            "帮助",
+            "同学"
+          ],
+          "vi": "Cô ấy không những học giỏi mà còn thường xuyên giúp bạn học.",
+          "zh": "她不但学习好，而且常常帮助同学。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Jīntiān búdàn lěng, érqiě fēng hěn dà.",
+          "tokens": [
+            "今天",
+            "不但",
+            "冷",
+            "，",
+            "而且",
+            "风",
+            "很",
+            "大"
+          ],
+          "vi": "Hôm nay không những lạnh mà còn gió rất to.",
+          "zh": "今天不但冷，而且风很大。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒmen búdàn yào xué yǔfǎ, érqiě yào duō liànxí.",
+          "tokens": [
+            "我们",
+            "不但",
+            "要",
+            "学",
+            "语法",
+            "，",
+            "而且",
+            "要",
+            "多",
+            "练习"
+          ],
+          "vi": "Chúng ta không những phải học ngữ pháp mà còn phải luyện tập nhiều.",
+          "zh": "我们不但要学语法，而且要多练习。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "他不但会开车，而且开得很好。"
+          ],
+          "explanation": "Tiến triển: mức nền là 会开车， mức tiến thêm là 开得很好， đi cùng cặp 不但……，而且……. Câu thứ hai đảo mức; hai câu còn lại dùng 但是 (chuyển hướng) nên lệch ý.",
+          "id": "prog-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他不但会开车，而且开得很好。",
+              "他不但开得很好，而且会开车。",
+              "虽然他会开车，但是他开得很好。",
+              "他会开车，但是他开得很好。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Anh ấy không những biết lái xe mà còn lái rất tốt.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "他",
+              "不但",
+              "工作认真",
+              "而且",
+              "效率很高"
+            ]
+          ],
+          "explanation": "Thứ tự cố định: phân câu 不但 (mức nền: làm việc nghiêm túc) trước, phân câu 而且 (mức tiến thêm: hiệu quả cao) sau.",
+          "id": "prog-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "而且",
+              "效率很高",
+              "他",
+              "不但",
+              "工作认真"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy không những làm việc nghiêm túc mà còn rất hiệu quả.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "而且"
+          ],
+          "explanation": "虽然 phải đi với 但是 (chuyển hướng: bận nhưng vẫn giúp). 而且 thuộc cặp tiến triển 不但……而且……, không ghép với 虽然.",
+          "id": "prog-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "虽然",
+              "他很忙",
+              "而且",
+              "他还是帮了我"
+            ],
+            "sentence_zh": "虽然他很忙，而且他还是帮了我。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 虽然他很忙，而且他还是帮了我。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "他不但会游泳，而且游得很快。",
+            "他不但会游泳，而且游得很快",
+            "他不但会游泳，还游得很快。",
+            "他不但会游泳，还游得很快"
+          ],
+          "explanation": "Phân câu sau bắt đầu bằng 而且， đưa ý tiến thêm: biết bơi → bơi nhanh. Dùng 还 (他不但会游泳，还游得很快。) ở đây cũng đúng và thông dụng; 而且 là dạng đầy đủ của cặp mẫu đang luyện trong bài này.",
+          "id": "prog-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Điền từ mở đầu phân câu tiến thêm (thuộc cặp 不但……，……）。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Anh ấy không những biết bơi mà còn bơi rất nhanh.'",
+          "prompt_zh": "他不但会游泳，___游得很快。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "这本书不但便宜，而且很有意思。",
+            "这本书不但便宜，而且很有意思",
+            "这本书不但很便宜，而且很有意思。",
+            "这本书不但很便宜，而且很有意思",
+            "这本书不但便宜，而且很好看。",
+            "这本书不但便宜，而且很好看"
+          ],
+          "explanation": "Mức nền: sách rẻ （便宜）; mức tiến thêm: hay （有意思/好看）. Đủ cặp 不但……，而且…… và vế sau nặng hơn vế trước.",
+          "id": "prog-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Cặp tiến triển: 不但……，而且……; 'hay/thú vị' có thể nói 有意思 hoặc 好看。"
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Quyển sách này không những rẻ mà còn rất hay.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Vị trí: 不但 đứng trước phân câu 1, 而且 đứng trước phân câu 2; chủ ngữ chung đặt trước 不但 (他不但……，而且……), hai chủ ngữ khác nhau thì chủ ngữ 2 đứng sau 而且. 2) Cần có sẵn: hai vế phải cùng hướng và vế 2 tiến thêm một mức so với vế 1 — nếu hai ý chỉ ngang hàng, không hơn kém, thì chưa đúng quan hệ của mẫu này. 3) Phân biệt: 虽然……但是…… là quay hướng (mặc dù… nhưng…), 不但……而且…… là tiến lên cùng hướng (không những… mà còn…). 4) Mở rộng: 而且 cũng đứng một mình ở đầu phân câu sau để thêm ý, không bắt buộc lúc nào cũng đi đủ cặp.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "complex-progressive",
+      "objective": "Sau bài này, người học dùng được cặp 不但……，而且…… để nói 'không những… mà còn…', trong đó vế sau tiến thêm một mức (hơn về lượng, mức độ hoặc thêm một ý nặng hơn) so với vế trước.",
+      "pattern": "Không những + Ý 1，而且 + Ý 2 (ý 2 tiến thêm một mức so với ý 1)",
+      "quick_memory": "Không những A mà còn B: B phải 'hơn' A một nấc. Cùng hướng đi lên: 不但……而且； quay ngược hướng: 虽然……但是。",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-4 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về câu phức tiến triển 不但……，而且…… theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-44 （ câu phức 递进： 不但……，而且……) trong catalogue dự án từ đề cương thi 11/2025.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Câu phức tiến triển: càng thêm một ý （不但……，而且……）",
+      "when_to_use": "Ví dụ: 他不但会说中文，而且说得很好。 — biết nói là mức nền, nói hay là mức tiến thêm. Cặp này dùng khi hai ý đi cùng một hướng và ý sau mạnh hơn/thêm hơn ý trước. Khác với cặp chuyển hướng 虽然……，但是…… (bài complex-suiran-yinwei): cặp đó quay ngược kỳ vọng, còn cặp này đi tiếp cùng hướng và nâng dần mức."
+    }
+  ],
+  "schema_version": 1
+}

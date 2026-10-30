@@ -1,0 +1,228 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Câu này vẫn nghe được trong khẩu ngữ và không phải lỗi ngữ pháp nặng; chỉ là thiếu 也/都 thì lực nhấn 'không chút nào' của mẫu yếu đi hẳn. Khi luyện mẫu phủ định tuyệt đối, luôn giữ 也/都： 他一口水也没喝。",
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "他一口水没喝。 (bị tưởng là sai hẳn vì thiếu 也)"
+        },
+        {
+          "explanation": "Phủ định đặt sai chỗ: 没 phải đứng sau cụm 一口水 + 也 và ngay trước động từ — 他一口水也没喝。 Đặt 没 lên trước 一 là phá vỡ khung của mẫu.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他没一口水也喝。"
+        },
+        {
+          "explanation": "Câu này đúng ngữ pháp và rõ nghĩa; chỉ là dài hơn và lặp chủ ngữ. Mẫu rút gọn bỏ 然后， giữ một chủ ngữ và gắn hai hành động liền nhau: 我吃了饭就去上班。",
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "我吃了饭，然后我就去上班了。 (bị tưởng là sai vì không 'nén')"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Tā yī kǒu shuǐ yě méi hē.",
+          "tokens": [
+            "他",
+            "一",
+            "口",
+            "水",
+            "也",
+            "没",
+            "喝"
+          ],
+          "vi": "Anh ấy không uống một ngụm nước nào (cả buổi chẳng uống chút nào).",
+          "zh": "他一口水也没喝。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā yī jù huà yě méi shuō.",
+          "tokens": [
+            "她",
+            "一",
+            "句",
+            "话",
+            "也",
+            "没",
+            "说"
+          ],
+          "vi": "Cô ấy không nói một lời nào.",
+          "zh": "她一句话也没说。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ yī gè zì dōu bù rènshi.",
+          "tokens": [
+            "我",
+            "一",
+            "个",
+            "字",
+            "都",
+            "不",
+            "认识"
+          ],
+          "vi": "Tôi không biết một chữ nào.",
+          "zh": "我一个字都不认识。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā yī diǎnr dōngxi dōu méi chī.",
+          "tokens": [
+            "他",
+            "一点儿",
+            "东西",
+            "都",
+            "没",
+            "吃"
+          ],
+          "vi": "Anh ấy chẳng ăn chút gì cả.",
+          "zh": "他一点儿东西都没吃。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒ chī le fàn jiù qù shàngbān.",
+          "tokens": [
+            "我",
+            "吃",
+            "了",
+            "饭",
+            "就",
+            "去",
+            "上班"
+          ],
+          "vi": "Tôi ăn cơm xong là đi làm.",
+          "zh": "我吃了饭就去上班。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "他一个字也没看。"
+          ],
+          "explanation": "Khung đúng: 一 + 个 + 字 + 也 + 没 + 看. Các câu còn lại đều xáo trộn vị trí của 也/没 so với khung.",
+          "id": "compact-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他一个字也没看。",
+              "他没一个字也看。",
+              "他一个字看也没。",
+              "他也一个字没看。"
+            ]
+          },
+          "prompt_vi": "Chọn câu dùng đúng mẫu phủ định tuyệt đối 一……也/都…… để nói 'Anh ấy không đọc một chữ nào.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "他",
+              "吃了",
+              "晚饭",
+              "就",
+              "出去散步"
+            ]
+          ],
+          "explanation": "Mẫu 2 — nén hai hành động: Động từ 1 + 了 + 就 + Động từ 2 (ăn tối xong rồi ra ngoài đi dạo), chủ ngữ chỉ nói một lần. Khác 一……就…… (bài yi-jiu-tight): mẫu kia có 一 và nhấn 'vừa… là ngay'; ở đây trọng tâm là việc 1 hoàn thành rồi việc 2 tiếp nối.",
+          "id": "compact-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "就",
+              "他",
+              "吃了",
+              "晚饭",
+              "出去散步"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy ăn tối xong là ra ngoài đi dạo.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "也"
+          ],
+          "explanation": "也 đặt sai chỗ: nó phải đứng sau cụm 一口水 và trước phủ định — 他一口水也没喝。 Đặt 也 ngay sau chủ ngữ là phá khung của mẫu.",
+          "id": "compact-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他",
+              "也",
+              "一口水",
+              "没",
+              "喝"
+            ],
+            "sentence_zh": "他也一口水没喝。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 他也一口水没喝。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "她一点儿东西也没吃。",
+            "她一点儿东西也没吃",
+            "她一点儿东西都没吃。",
+            "她一点儿东西都没吃"
+          ],
+          "explanation": "Khung: 一点儿东西 + 也/都 + 没 + 吃. Cả 也 và 都 đều đúng trong mẫu phủ định tuyệt đối này.",
+          "id": "compact-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Điền trợ từ của mẫu phủ định tuyệt đối (đứng trước 没）: 也 hoặc 都 đều được."
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Cô ấy chẳng ăn chút gì cả.'",
+          "prompt_zh": "她一点儿东西___没吃。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "他一页书也没看。",
+            "他一页书也没看",
+            "他一页书都没看。",
+            "他一页书都没看"
+          ],
+          "explanation": "一页书 + 也/都 + 没看： phủ định tuyệt đối 'không một trang nào'. 也 và 都 đều là đáp án đúng của mẫu này.",
+          "id": "compact-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Mẫu phủ định tuyệt đối với lượng từ 页： 一页书 + 也/都 + 没 + 看。"
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Anh ấy không đọc một trang sách nào.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Mẫu 1 — cấu tạo: 一 + lượng từ + danh từ + 也/都 + phủ định + động từ （一口水也没喝，一句话也没说）; 也 và 都 đều dùng được. 2) Vị trí phủ định: phủ định đứng sau 也/都， ngay trước động từ; dùng 没 cho việc (đã) không xảy ra, 不 cho trạng thái/thói quen （一个字都不认识）. 3) Mẫu 2 — nén hai hành động: Động từ 1 + 了 + 就 + Động từ 2 （吃了饭就走）; chủ ngữ chỉ nói một lần, trọng tâm là việc 1 hoàn thành rồi việc 2 tiếp nối. 4) Phân biệt: mẫu 2 gần nghĩa với 一……就…… (bài yi-jiu-tight) nhưng không có 一 và không nhấn mạnh 'vừa… là ngay'; mẫu 1 chỉ dùng cho phủ định — câu khẳng định không dựng theo khung này.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "complex-compact",
+      "objective": "Sau bài này, người học dùng được hai mẫu rút gọn: phủ định tuyệt đối 一……也/都 + 不/没…… ('không một chút nào') và mẫu nén hai hành động ……了就…… (làm xong việc này thì sang việc kia, chủ ngữ chỉ nói một lần).",
+      "pattern": "一 + Lượng từ + Danh từ + 也/都 + Không/Chưa + Động từ • Động từ 1 + 了 + 就 + Động từ 2",
+      "quick_memory": "Không chút nào: 一+lượng+danh từ+也/都+不/没+động từ. Nén hai việc: động từ 1+了+就+động từ 2, một chủ ngữ.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-4 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về câu phức rút gọn （紧缩句） và mẫu phủ định tuyệt đối 一……也/都…… theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-49 （ câu phức 紧缩） trong catalogue dự án từ đề cương thi 11/2025; cụm 一……也/都+不/没…… đồng thời nằm trong danh sách cụm của mục OFF-H3-25.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Câu phức rút gọn: nén hai ý vào một câu （一……也/都……; ……了就……）",
+      "when_to_use": "Ví dụ: 他一口水也没喝。 — cả buổi anh ấy không uống một ngụm nước nào; mẫu 一……也/都…… nén ý 'dù chỉ một lượng nhỏ nhất cũng không' vào một câu ngắn. Mẫu thứ hai 我吃了饭就去上班。 nén hai hành động nối nhau vào một câu, không cần liên từ như 然后. Đây là hai mẫu thuộc nhóm câu phức rút gọn （紧缩句） của HSK3: bỏ liên từ và chủ ngữ lặp, ý vẫn đủ."
+    }
+  ],
+  "schema_version": 1
+}

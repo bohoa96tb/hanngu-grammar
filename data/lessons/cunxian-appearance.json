@@ -3,7 +3,7 @@
     {
       "confusions": [
         {
-          "explanation": "Mẫu xuất hiện/biến mất bắt buộc có 了 sau bổ ngữ: 门口走进来一个人。Thiếu 了, câu mất ý thay đổi vừa xảy ra và nghe chưa trọn.",
+          "explanation": "Câu này chưa thành mẫu tồn hiện biến động: động từ chỉ thay đổi phải kèm bổ ngữ xu hướng như 进来/出来 để chỉ rõ sự xuất hiện — 门口走进来一个人。Chỉ '走进 + số lượng + người' thì chưa nói được ai vừa xuất hiện.",
           "verdict": "sai_ngu_phap",
           "wrong_or_risky": "门口走进一个人。"
         },
@@ -18,7 +18,7 @@
           "wrong_or_risky": "桌子上有了一本书。 (muốn nói sách trên bàn vừa bị lấy mất một quyển)"
         }
       ],
-      "content_version": 2,
+      "content_version": 4,
       "difficulty": "medium",
       "examples": [
         {
@@ -101,7 +101,7 @@
           "accepted_answers": [
             "教室里走出来一个学生。"
           ],
-          "explanation": "Xuất hiện: nơi chốn + động từ + bổ ngữ + 了 + số lượng + danh từ. Không chen 有 vào mẫu biến động, và số lượng (一个) đứng trước danh từ, không đứng sau.",
+          "explanation": "Xuất hiện: nơi chốn + động từ + bổ ngữ + số lượng + danh từ （出来 là bổ ngữ xu hướng kép — câu đã trọn nên đáp án này không cần 了）. Không chen 有 vào mẫu biến động, và số lượng (一个) đứng trước danh từ, không đứng sau.",
           "id": "cx3-ex1",
           "is_open_ended": false,
           "payload": {
@@ -207,15 +207,15 @@
           "type": "fill"
         }
       ],
-      "formula_notes": "1) Vị trí: Nơi chốn + Động từ + Bổ ngữ + 了 + Số lượng + Danh từ — người/vật mới xuất hiện hay vừa mất đứng ở cuối câu, sau số lượng (门口走进来一个人). 2) Xuất hiện: động từ đi kèm bổ ngữ xu hướng như 进来/出来, hoặc động từ chỉ sự đến như 来: 走进来, 跑出来, 新来了一位老师. 3) Biến mất: dùng động từ chỉ mất mát như 少 (thiếu mất), 丢 (mất), 走 (bỏ đi): 桌子上的书少了一本, 钱包里丢了二百块钱. 4) Không dùng: không dùng 有 cho biến động — Có chỉ nói tồn tại tĩnh (桌子上有一本书 là 'trên bàn có một quyển sách', không nói sách vừa bị lấy mất). 5) Phân biệt: khác tồn hiện tĩnh (cunxian-chu) ở chỗ bắt buộc có 了 và động từ chỉ thay đổi; nơi chốn không thay đổi gì thì không dùng mẫu này.",
+      "formula_notes": "1) Vị trí: Nơi chốn + Động từ + Bổ ngữ + (了) + Số lượng + Danh từ — người/vật mới xuất hiện hay vừa mất đứng ở cuối câu, sau số lượng (门口走进来一个人). 2) Xuất hiện: động từ đi kèm bổ ngữ xu hướng như 进来/出来, hoặc động từ chỉ sự đến như 来: 走进来, 跑出来, 新来了一位老师. 3) Biến mất: dùng động từ chỉ mất mát như 少 (thiếu mất), 丢 (mất), 走 (bỏ đi): 桌子上的书少了一本, 钱包里丢了二百块钱. 4) Không dùng: không dùng 有 cho biến động — Có chỉ nói tồn tại tĩnh (桌子上有一本书 là 'trên bàn có một quyển sách', không nói sách vừa bị lấy mất). 5) Phân biệt: khác tồn hiện tĩnh (cunxian-chu) ở chỗ phải có động từ chỉ thay đổi, thường chốt bằng 了 （新来了, 少了, 丢了); riêng khi bổ ngữ là xu hướng kép như 进来/出来, câu vẫn trọn dù không có 了 （门口走进来一个人 — chính là ví dụ đầu của bài). Nơi chốn không thay đổi gì thì không dùng mẫu này.",
       "hsk_evidence": {
         "status": "verified"
       },
       "hsk_level": 3,
       "id": "cunxian-appearance",
       "objective": "Sau bài này, người học nói được ở một nơi vừa xuất hiện thêm hoặc vừa biến mất người/vật nào đó bằng mẫu tồn hiện biến động, phân biệt với câu tồn hiện tĩnh đã học (有/在/着).",
-      "pattern": "Nơi chốn + Động từ + Bổ ngữ (xu hướng/kết quả) + 了 + Số lượng + Danh từ",
-      "quick_memory": "Có gì xuất hiện hay vừa mất? Nơi chốn mở đầu, động từ + 了 ở giữa, người/vật thay đổi chốt cuối sau số lượng.",
+      "pattern": "Nơi chốn + Động từ + Bổ ngữ (xu hướng/kết quả) + (了) + Số lượng + Danh từ",
+      "quick_memory": "Xuất hiện/biến mất: nơi chốn + động từ + bổ ngữ + số lượng — thường chốt 了； 进来/出来 thì khỏi cần.",
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-3 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-38 và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập trong cùng bài. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
@@ -233,7 +233,7 @@
       ],
       "status": "published",
       "title_vi": "Tồn hiện dạng 3: xuất hiện và biến mất",
-      "when_to_use": "Ví dụ: đang ngồi trong lớp thì có người mới bước vào — 班里新来了一位老师。 Câu này không tả trạng thái tĩnh 'ở đó có gì' mà báo một thay đổi vừa xảy ra: người/vật mới xuất hiện, hoặc người/vật vừa biến mất (桌子上的书少了一本。). Khác bài tồn hiện HSK2 (cunxian-chu): bài cũ nói tồn tại tĩnh bằng 有/在/着 + số lượng + danh từ, không có biến động; dạng này bắt buộc có động từ chỉ thay đổi kèm bổ ngữ (走进来, 新来, 少, 丢) và 了, người/vật thay đổi đứng cuối câu sau số lượng."
+      "when_to_use": "Ví dụ: đang ngồi trong lớp thì có người mới bước vào — 班里新来了一位老师。 Câu này không tả trạng thái tĩnh 'ở đó có gì' mà báo một thay đổi vừa xảy ra: người/vật mới xuất hiện, hoặc người/vật vừa biến mất (桌子上的书少了一本。). Khác bài tồn hiện HSK2 (cunxian-chu): bài cũ nói tồn tại tĩnh bằng 有/在/着 + số lượng + danh từ, không có biến động; dạng này phải có động từ chỉ thay đổi kèm bổ ngữ (走进来, 新来, 少, 丢) và thường chốt bằng 了, người/vật thay đổi đứng cuối câu sau số lượng."
     }
   ],
   "schema_version": 1

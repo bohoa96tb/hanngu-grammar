@@ -1,0 +1,225 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Câu trả lời không sai ngữ pháp, nhưng trong ngữ cảnh nhắc nhở, người nói không hỏi thật — họ đang khẳng định 'bạn đã đi rồi mà'. Trả lời xác nhận khô khan như vậy dễ lệch ý định giao tiếp; tự nhiên hơn là phản ứng theo nội dung được nhắc.",
+          "verdict": "thieu_ngu_canh",
+          "wrong_or_risky": "Nghe 你不是去过北京吗？ rồi trả lời máy móc: “是的，我去过。”"
+        },
+        {
+          "explanation": "Bỏ 呢 không làm câu sai: nhờ ngữ điệu, nó vẫn có thể là phản vấn. Nhưng thêm 呢 thì giọng phản vấn rõ và mềm hơn hẳn; khi viết và khi luyện mẫu này, nên giữ 呢 ở cuối câu.",
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "我怎么知道？ (bỏ 呢)"
+        },
+        {
+          "explanation": "Đây không phải lỗi: 不是……吗？ còn dùng để hỏi xác nhận điều mình đang đoán. Khác biệt nằm ở ngữ cảnh — người nói đã chắc ý và nhắc lại thì là phản vấn khẳng định; người nói còn ngờ và chờ xác nhận thì là câu hỏi thật.",
+          "verdict": "thieu_ngu_canh",
+          "wrong_or_risky": "明天不是有考试吗？ nói khi người nói thật sự chưa chắc, muốn xác nhận lại"
+        }
+      ],
+      "content_version": 1,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Nǐ bú shì qù guo Běijīng ma?",
+          "tokens": [
+            "你",
+            "不是",
+            "去过",
+            "北京",
+            "吗"
+          ],
+          "vi": "Bạn đã đi Bắc Kinh rồi mà? (lời nhắc: người nói biết rõ là đã đi)",
+          "zh": "你不是去过北京吗？"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒ zěnme zhīdào ne?",
+          "tokens": [
+            "我",
+            "怎么",
+            "知道",
+            "呢"
+          ],
+          "vi": "Tôi làm sao mà biết được? (ý là: tôi không biết)",
+          "zh": "我怎么知道呢？"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhème wǎn le, nǐ zěnme hái bú shuì ne?",
+          "tokens": [
+            "这么",
+            "晚",
+            "了",
+            "，",
+            "你",
+            "怎么",
+            "还",
+            "不",
+            "睡",
+            "呢"
+          ],
+          "vi": "Muộn thế này rồi, sao bạn còn chưa ngủ? (ý trách nhẹ: đáng lẽ phải ngủ rồi)",
+          "zh": "这么晚了，你怎么还不睡呢？"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Nǐ bú shì shuō yào zǎodiǎnr shuì ma?",
+          "tokens": [
+            "你",
+            "不是",
+            "说",
+            "要",
+            "早点儿",
+            "睡",
+            "吗"
+          ],
+          "vi": "Bạn đã nói là sẽ ngủ sớm cơ mà?",
+          "zh": "你不是说要早点儿睡吗？"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Shéi zhīdào ne?",
+          "tokens": [
+            "谁",
+            "知道",
+            "呢"
+          ],
+          "vi": "Ai mà biết được? (ý là: không ai biết chắc)",
+          "zh": "谁知道呢？"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "你不是去过上海吗？"
+          ],
+          "explanation": "你不是去过上海吗？ là phản vấn mẫu 不是……吗？: người nói biết rõ bạn đã đi, chỉ nhắc lại. Ba câu còn lại là câu hỏi thật （吗 hỏi xác nhận chưa biết, 怎么去 hỏi cách đi, 做什么 hỏi mục đích).",
+          "id": "rhet-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "你不是去过上海吗？",
+              "你去过上海吗？",
+              "你怎么去上海？",
+              "你去上海做什么？"
+            ]
+          },
+          "prompt_vi": "Chọn câu là phản vấn (hình thức hỏi nhưng ý là nhắc 'bạn đã đi rồi mà', không chờ trả lời thật).",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "你",
+              "不是",
+              "说",
+              "要",
+              "早",
+              "睡",
+              "吗"
+            ]
+          ],
+          "explanation": "Khung 不是……吗？: 不是 đứng trước nội dung được nhắc （说要早睡）, 吗 chốt ở cuối câu.",
+          "id": "rhet-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "睡",
+              "你",
+              "不是",
+              "吗",
+              "说",
+              "要",
+              "早"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu phản vấn: 'Bạn đã nói là sẽ ngủ sớm cơ mà?'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "不是"
+          ],
+          "explanation": "不是 bị đặt giữa câu. Trong khung 不是……吗？, 不是 đứng trước toàn bộ nội dung được nhắc: 你不是去过北京吗？",
+          "id": "rhet-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "你",
+              "去过",
+              "不是",
+              "北京",
+              "吗"
+            ],
+            "sentence_zh": "你去过不是北京吗？"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 你去过不是北京吗？",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "他怎么会来呢？",
+            "他怎么会来呢"
+          ],
+          "explanation": "怎么 + 会来 + 呢 tạo phản vấn phủ định: mặt chữ là hỏi cách, ý thật là 'anh ấy không đến đâu'.",
+          "id": "rhet-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Điền từ hỏi của mẫu 怎么……呢？"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh (phản vấn, ý là 'anh ấy không đến đâu'): 'Anh ấy làm sao mà đến được?'",
+          "prompt_zh": "他___会来呢？",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "我怎么帮你呢？",
+            "我怎么帮你呢",
+            "我怎么能帮你呢？",
+            "我怎么能帮你呢"
+          ],
+          "explanation": "Phản vấn mẫu 2: 我怎么帮你呢？ — mặt chữ hỏi 'giúp thế nào', ý thật là phủ định 'tôi không giúp được'. Thêm 能 （我怎么能帮你呢？) cũng đúng.",
+          "id": "rhet-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Mẫu 怎么……呢？: 我怎么 + động từ + 呢？"
+          },
+          "prompt_vi": "Tự đặt câu phản vấn cho tình huống mới: 'Tôi làm sao giúp được bạn?' (ý thật: tôi không giúp được). (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Mẫu 1 — 不是……吗？: đặt điều người nói tin là thật vào giữa khung: 你不是说今天有考试吗？Nghe như hỏi, ý là khẳng định điều đó đúng và nhắc người nghe nhớ lại. 2) Mẫu 2 — 怎么……呢？: 我怎么知道呢？ nghĩa ngược mặt chữ: 'tôi làm sao biết được' = tôi không biết; 怎么 + động từ/tính từ + 呢， ý khẳng định/phủ định nằm ở ngữ cảnh. 3) Giọng điệu: giữ 吗/呢 ở cuối câu và dấu chấm hỏi — hai trợ từ này giúp giọng phản vấn rõ; thiếu chúng câu dễ bị nghe thành câu hỏi thường. 4) Trả lời: phản vấn không chờ đáp án thật; người nghe thường phản ứng bằng hành động hoặc giải thích, không trả lời 'đúng/sai' một cách máy móc. 5) Mở rộng (chỉ nhận biết): 谁……呢？ cũng là phản vấn — 谁知道呢？ ('ai mà biết được' = không ai biết chắc).",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "rhetorical-question",
+      "objective": "Sau bài này, người học nhận ra và dùng được câu hỏi phản vấn dạng 1: dùng hình thức câu hỏi （不是……吗？ và 怎么……呢？) để khẳng định hoặc phủ định ngược ý trên mặt chữ, thay vì chờ một câu trả lời thật.",
+      "pattern": "Không phải + [điều đã biết] + 吗？ • Thế nào + Động từ/Tính từ + 呢？",
+      "quick_memory": "Hỏi mà không hỏi: 不是……吗？ = 'đã… rồi mà'; 怎么……呢？ = 'làm sao mà… được'. Giữ 吗/呢 để rõ giọng phản vấn.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-4 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về câu hỏi phản vấn （不是……吗？ và 怎么……呢？) theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-33 （ câu hỏi phản vấn dạng 1: 不是……吗？) trong catalogue dự án từ đề cương thi 11/2025; mẫu 怎么……呢？ cùng họ phản vấn dạng 1.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Câu hỏi phản vấn: hỏi để khẳng định （不是……吗？; 怎么……呢？）",
+      "when_to_use": "Ví dụ: 你不是去过北京吗？ — người nói biết rõ bạn đã đi Bắc Kinh; câu 'hỏi' này là lời nhắc 'bạn đã đi rồi mà', không chờ bạn trả lời có/không. Phản vấn dùng để nhắc điều hiển nhiên, khẳng định mạnh hoặc trách nhẹ. Hình thức không khác câu hỏi thường đã học （吗， 怎么） — khác ở ý định và ngữ cảnh: người nói đã biết đáp án, thậm chí đáp án ngược với mặt chữ （我怎么知道呢？ = tôi không biết)."
+    }
+  ],
+  "schema_version": 1
+}

@@ -8,7 +8,7 @@
           "wrong_or_risky": "他是昨天来的。 (dùng khi muốn khẳng định 'anh ấy chắc chắn sẽ đến')"
         },
         {
-          "explanation": "Thiếu 的 ở cuối câu nên khung 是……的 sụp; phải chốt 的: 他是会来的。",
+          "explanation": "Câu này đã mở khung bằng 是 mà thiếu 的 ở cuối, nên khung không đóng được — chỗ chưa đúng nằm ở đó; phải chốt 的: 他是会来的。 Khác hẳn việc bỏ cả khung: 他一定会来。 vẫn là câu đúng, chỉ không dùng mẫu đang luyện.",
           "verdict": "sai_ngu_phap",
           "wrong_or_risky": "他是会来。"
         },
@@ -18,7 +18,7 @@
           "wrong_or_risky": "这件事是我的知道。 (muốn nói 'chuyện này tôi có biết')"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -99,7 +99,7 @@
           "accepted_answers": [
             "你的意思我是明白的。"
           ],
-          "explanation": "Nhấn thái độ: 是 sau chủ ngữ, 的 chốt cuối câu. Bỏ 的 câu nghe cụt; 我是明白你意思的人 là câu 'tôi là người hiểu ý bạn', nghĩa khác.",
+          "explanation": "Đề yêu cầu chọn câu dùng khung 是……的 để khẳng định: phải đủ 是 sau chủ ngữ và 的 chốt cuối câu. 我是明白你意思的人 là câu 'tôi là người hiểu ý bạn', nghĩa khác.",
           "id": "shide2-ex1",
           "is_open_ended": false,
           "payload": {
@@ -159,7 +159,7 @@
             "他是会来的。",
             "他是会来的"
           ],
-          "explanation": "Khung 是……的 dạng 2 nhấn thái độ: 是 + cụm động từ + 的 chốt ở cuối câu. Thiếu 的 là sụp khung — phải điền 的 ngay sau 来: 他是会来的。",
+          "explanation": "Đề đã cho sẵn 他是会来___。 — khung đã mở bằng 是, nên để giữ đúng mẫu 是……的 đang luyện, cần điền 的 ngay sau 来 để đóng khung: 他是会来的。 Đây là yêu cầu của mẫu, không phải hễ không dùng khung này là sai: bỏ cả khung （他一定会来。) vẫn là câu đúng, chỉ mất sắc thái khẳng định.",
           "id": "shide2-ex4",
           "is_open_ended": false,
           "payload": {
@@ -177,7 +177,7 @@
             "我是一定会帮你的。",
             "我是一定会帮你的"
           ],
-          "explanation": "Khẳng định thái độ: (是) + 一定会 + động từ + 的; 的 ở cuối câu là chốt bắt buộc của khung.",
+          "explanation": "Khẳng định thái độ: (是) + 一定会 + động từ + 的; khi đã dùng khung này (gợi ý của đề cũng yêu cầu chốt 的) thì 的 ở cuối câu là phần đóng khung bắt buộc. Câu 我一定会帮你。 tự nó không sai — chỉ là chưa dùng khung 是……的 mà bài này đang luyện.",
           "id": "shide2-ex5",
           "is_open_ended": false,
           "payload": {
@@ -189,7 +189,7 @@
           "type": "fill"
         }
       ],
-      "formula_notes": "1) Vị trí: 是 đứng sau chủ ngữ, trước cụm động từ; 的 chốt ở cuối câu: Chủ ngữ + 是 + Cụm động từ + 的 (他是会来的). 2) Cần có sẵn: khung này thường đi với các từ chỉ chắc chắn như 会, 一定, 知道 — sắc thái khẳng định đến từ cả khung 是……的 lẫn các từ này. 是 có thể lược khi đã có từ khẳng định mạnh như 一定 (我一定会帮你的); riêng 的 ở cuối câu thì không lược được. 3) Không dùng: không bỏ 的 ở cuối câu — thiếu 的, khung sụp và câu nghe cụt. 4) Phân biệt: dạng 1 nhấn chi tiết đã xảy ra (是昨天来的); dạng 2 nhấn thái độ chắc chắn (我是知道的 = 'chuyện này tôi có biết đấy'), không dùng để hỏi hay nhấn chi tiết thời gian, nơi chốn.",
+      "formula_notes": "1) Vị trí: 是 đứng sau chủ ngữ, trước cụm động từ; 的 chốt ở cuối câu: Chủ ngữ + 是 + Cụm động từ + 的 (他是会来的). 2) Cần có sẵn: khung này thường đi với các từ chỉ chắc chắn như 会, 一定, 知道 — sắc thái khẳng định đến từ cả khung 是……的 lẫn các từ này. 是 có thể lược khi đã có từ khẳng định mạnh như 一定 (我一定会帮你的); nhưng hễ còn giữ 是 mở khung thì 的 ở cuối câu không lược được, vì 的 là đầu đóng của chính khung này. 3) Không dùng: đã mở khung bằng 是 thì không bỏ 的 ở cuối câu — thiếu 的, khung không đóng được và câu nghe cụt. Phân biệt rõ: bỏ hẳn cả khung thì câu vẫn hoàn toàn đúng — 他一定会来。 là câu hợp lệ, chỉ không còn sắc thái khẳng định chắc nịch mà bài này luyện; “cần 的” là yêu cầu của mẫu khi đã dùng 是, không phải câu khẳng định nào cũng phải có 是……的. 4) Phân biệt: dạng 1 nhấn chi tiết đã xảy ra (是昨天来的); dạng 2 nhấn thái độ chắc chắn (我是知道的 = 'chuyện này tôi có biết đấy'), không dùng để hỏi hay nhấn chi tiết thời gian, nơi chốn.",
       "hsk_evidence": {
         "status": "verified"
       },
@@ -197,7 +197,7 @@
       "id": "shi-de-attitude",
       "objective": "Sau bài này, người học dùng 是……的 để khẳng định thái độ và sự chắc chắn của mình về một việc (sẽ đến, có biết, nhất định giúp), phân biệt với dạng 1 nhấn chi tiết của việc đã xảy ra.",
       "pattern": "Chủ ngữ + 是 + Cụm động từ + 的",
-      "quick_memory": "Khẳng định chắc nịch, bọc 是……的: 是 sau chủ ngữ (có 一定 thì lược cũng được), 的 chốt cuối — thiếu 的 là sụp khung.",
+      "quick_memory": "Đã mở 是 thì phải có 的 chốt cuối cho trọn khung; bỏ cả khung （他一定会来） vẫn đúng, chỉ bớt chắc nịch.",
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-3 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-39 và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập trong cùng bài. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",

@@ -1,0 +1,210 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "极了 là đuôi mức độ, luôn đứng sau tính từ: 他累极了。 Đặt 极了 lên trước tính từ là sai vị trí của mẫu.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他极了累。"
+        },
+        {
+          "explanation": "Mỗi câu chỉ chọn một đuôi mức độ. Chồng 得很 và 极了 lên nhau là sai mẫu; nói 他累得很 hoặc 他累极了 đều được.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他累得很极了。"
+        },
+        {
+          "explanation": "坏了 trong bài này gắn với trạng thái quá sức/tiêu cực （累，忙，饿，气）; gắn cho tính từ tích cực như 漂亮 thì không thành cụm tự nhiên. (Khẩu ngữ có vài cụm quen thuộc như 高兴坏了， nằm ngoài phạm vi bài này.)",
+          "verdict": "kem_tu_nhien",
+          "wrong_or_risky": "这件衣服漂亮坏了。"
+        }
+      ],
+      "content_version": 1,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Jīntiān rè de hěn.",
+          "tokens": [
+            "今天",
+            "热",
+            "得",
+            "很"
+          ],
+          "vi": "Hôm nay nóng lắm.",
+          "zh": "今天热得很。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Tā lèi jí le.",
+          "tokens": [
+            "他",
+            "累",
+            "极",
+            "了"
+          ],
+          "vi": "Anh ấy mệt cực kỳ.",
+          "zh": "他累极了。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā gāoxìng jí le.",
+          "tokens": [
+            "她",
+            "高兴",
+            "极",
+            "了"
+          ],
+          "vi": "Cô ấy vui cực kỳ.",
+          "zh": "她高兴极了。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒ máng huài le.",
+          "tokens": [
+            "我",
+            "忙",
+            "坏",
+            "了"
+          ],
+          "vi": "Tôi bận đến phát mệt.",
+          "zh": "我忙坏了。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Háizimen è huài le.",
+          "tokens": [
+            "孩子们",
+            "饿",
+            "坏",
+            "了"
+          ],
+          "vi": "Bọn trẻ đói đến lả đi.",
+          "zh": "孩子们饿坏了。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "今天热极了。"
+          ],
+          "explanation": "Đuôi 极了 đứng sau tính từ và mỗi câu chỉ một đuôi mức độ: 热 + 极了. Câu cuối chồng 很 với 极了 nên không đúng mẫu.",
+          "id": "degree-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "今天热极了。",
+              "今天极了热。",
+              "今天热得很极了。",
+              "今天很热极了。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Hôm nay nóng cực kỳ.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "她",
+              "今天",
+              "高兴",
+              "极了"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → thời gian → tính từ → đuôi 极了 ở cuối.",
+          "id": "degree-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "极了",
+              "她",
+              "高兴",
+              "今天"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Hôm nay cô ấy vui cực kỳ.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "极了"
+          ],
+          "explanation": "极了 bị đặt trước tính từ. Đuôi mức độ phải đứng sau tính từ: 我忙极了。",
+          "id": "degree-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我",
+              "极了",
+              "忙"
+            ],
+            "sentence_zh": "我极了忙。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 我极了忙。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "今天冷得很。",
+            "今天冷得很"
+          ],
+          "explanation": "Tính từ 冷 + đuôi 得很 = mức 'lắm/rất'. Không thêm 很 trước 冷 khi đã có 得很.",
+          "id": "degree-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng đuôi 得很 (rất)."
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh với đuôi 得很： 'Hôm nay lạnh lắm.'",
+          "prompt_zh": "今天冷___。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "我累极了。",
+            "我累极了",
+            "下课后，我累极了。",
+            "下课后，我累极了",
+            "下课以后，我累极了。",
+            "下课以后，我累极了"
+          ],
+          "explanation": "Lõi câu là 我累极了 (tính từ 累 + đuôi 极了）; thêm 下课后/下课以后 ở đầu đều chấp nhận.",
+          "id": "degree-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Đuôi cực kỳ: 累 + 极了； 'sau giờ học' có thể nói 下课后 hoặc 下课以后， hoặc lược."
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Sau giờ học, tôi mệt cực kỳ.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) 得很： Tính từ + 得很 （热得很，忙得很） — mức 'rất'; đã có 得很 thì không thêm 很 trước tính từ nữa. 2) 极了： Tính từ + 极了 （累极了，高兴极了） — mức cực điểm, hay dùng cho cảm giác và trạng thái; 极了 luôn đứng sau tính từ, mỗi câu chỉ chọn một đuôi mức độ. 3) 坏了： gắn sau tính từ hoặc động từ tâm lý chỉ trạng thái quá sức （累坏了，忙坏了，饿坏了，气坏了） — sắc thái 'đến tệ/đến mệt', thường là tiêu cực. 4) Phân biệt: 热得很 chỉ nói mức độ nóng; 跑得很快 (bài state-complement-de) mô tả hành động chạy diễn ra thế nào — hai cấu trúc khác nhau dù cùng có chữ 得.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "degree-complement-1",
+      "objective": "Sau bài này, người học gắn được ba đuôi mức độ cố định sau tính từ: 得很 (rất), 极了 (cực kỳ) và 坏了 (đến mức quá sức, thường là tệ/mệt), và phân biệt chúng với bổ ngữ trạng thái đã học.",
+      "pattern": "Tính từ + 得很 • Tính từ + 极了 • Tính từ/Động từ tâm lý + 坏了",
+      "quick_memory": "Đuôi mức độ đóng: tính từ+得很 (rất), +极了 (cực kỳ), +坏了 (quá sức, thường tệ). Luôn đứng sau tính từ.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-4 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về bổ ngữ mức độ （得很，极了，坏了） theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-31 （ mức độ bổ ngữ dạng 1: tính từ+得很； 极了/坏了） trong catalogue dự án từ đề cương thi 11/2025.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Bổ ngữ mức độ dạng 1: rất / cực kỳ / tệ （……得很；……极了；……坏了）",
+      "when_to_use": "Ví dụ: bài cũ đã có 好得很 và 累极了 — đó chính là các đuôi của bài này. Khi chỉ muốn nâng mức của một tính từ lên ('rất…', '…cực kỳ', '…đến phát mệt') mà không mô tả thêm cách thức, dùng ba đuôi đóng này. Ranh giới với bài state-complement-de: ở bài đó, 得 + cụm tính từ là một cụm mở mô tả trạng thái/cách thức của hành động （跑得很快 = chạy nhanh thế nào); ở bài này, đuôi là dạng cố định chỉ thuần mức độ, gắn trực tiếp sau tính từ."
+    }
+  ],
+  "schema_version": 1
+}
