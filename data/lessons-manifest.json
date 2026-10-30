@@ -3,6 +3,7 @@
   "shards": [
     "data/lessons/shi-noun-link.json",
     "data/lessons/le-completion-change.json",
+    "data/lessons/le-sentence-final-change.json",
     "data/lessons/hen-adj-predicate.json",
     "data/lessons/ma-question.json",
     "data/lessons/de-possessive.json",
