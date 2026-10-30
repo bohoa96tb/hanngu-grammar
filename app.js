@@ -133,6 +133,21 @@ function formulaStepsHTML(notes) {
   if (items.length < 2) return `<p>${esc(t)}</p>`;
   return `<ol class="formula-steps">${items.map((s) => `<li>${esc(s)}</li>`).join("")}</ol>`;
 }
+// Dòng đối chiếu cấp HSK của chính bài (hsk_evidence, D26): hiển thị ở khối
+// nguồn cuối trang bài. Bài thiếu trường hoặc status lạ thì không hiện gì
+// (validator chịu trách nhiệm bắt lỗi dữ liệu; app không được vỡ trang).
+function hskEvidenceHTML(les) {
+  const ev = les.hsk_evidence;
+  if (!ev || typeof ev !== "object") return "";
+  if (ev.status === "verified") {
+    return `<p class="note">✓ Đã đối chiếu đề cương HSK 3.0: toàn bộ nội dung thuộc HSK ${les.hsk_level}.</p>`;
+  }
+  if (ev.status === "partial") {
+    const note = ev.note ? ` ${esc(ev.note)}` : "";
+    return `<p class="note">◐ Đã đối chiếu đề cương HSK 3.0: phần chính thuộc HSK ${les.hsk_level};${note}</p>`;
+  }
+  return "";
+}
 // Một hàng ví dụ dùng chung cho mục A (ví dụ nhanh) và mục C: chữ Hán + nút
 // nghe/dừng cạnh câu, Pinyin và nghĩa Việt ẩn/hiện bằng thuộc tính hidden
 // theo prefs (không vẽ lại trang khi đổi).
@@ -446,6 +461,7 @@ function renderLesson(id) {
       <button type="button" class="secondary" id="reportBtn">Báo lỗi bài học</button>
       <p id="reportText" class="note"></p>
       <p class="note">Nguồn: ${les.sources.map((s) => esc(s.source_id) + " — " + esc(s.note)).join("; ")}. Rà soát: ${esc(les.review ? les.review.reviewer + ", " + les.review.date : "chưa rà soát")}. Phiên bản nội dung: ${les.content_version}.</p>
+      ${hskEvidenceHTML(les)}
     </div>
     <nav class="lesson-nav" aria-label="Điều hướng bài học">
       ${prev ? `<a class="nav-link" href="#/lesson/${prev.id}">← Bài trước: ${esc(prev.title_vi)}</a>` : `<span class="nav-link disabled" aria-disabled="true">← Bài trước</span>`}
@@ -852,7 +868,7 @@ function render() {
 // bản cũ từ bộ nhớ đệm sau khi app.js mới đã chạy. Lưu ý: tham số này chỉ
 // có tác dụng khi app.js mới đã được tải; nó không chữa được app.js cũ
 // còn trong bộ nhớ đệm (xem docs/decisions.md D20).
-const BUILD_VERSION = "20261030-std1";
+const BUILD_VERSION = "20261030-std2";
 const DEBUG = new URLSearchParams(location.search).get("debug") === "1";
 let debugInfo = null;
 

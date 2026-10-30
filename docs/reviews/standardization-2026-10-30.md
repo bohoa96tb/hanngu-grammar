@@ -116,3 +116,12 @@
   le-completion-change. Nội dung quick_memory + formula_notes chia bước đã
   soạn ở báo cáo biên soạn (docs/reviews/standardization-2026-10-30.md là
   bản tóm tắt; nguyên văn áp dụng trực tiếp vào dữ liệu ở bước làm mẫu).
+
+## 5. Lô std2 (30/10/2026) — ghi chép nằm ở D26
+
+Việc chuẩn hóa tiếp nối (khép khoảng trống QA bằng harness trình duyệt
+thật, rà Nhớ nhanh theo chất lượng, trạng thái đối chiếu từng bài qua
+trường `hsk_evidence`, tách bài chọn lọc) được quyết ở
+`docs/decisions.md` mục D26, trên cơ sở `docs/reviews/std2-content-audit.md`
+và kiểm định ở `docs/reviews/qa-std2.md`. Mục này chỉ là mốc truy vết;
+nội dung chuẩn vẫn là D26 và các báo cáo trên.

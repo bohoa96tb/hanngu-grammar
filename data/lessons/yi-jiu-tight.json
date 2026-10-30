@@ -18,7 +18,7 @@
           "wrong_or_risky": "他先回家，再睡觉。(khi muốn nhấn mạnh vừa về là ngủ ngay)"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -163,6 +163,9 @@
         }
       ],
       "formula_notes": "1) Vị trí: 一 đứng trước động từ thứ nhất, 就 đứng trước động từ thứ hai và nhấn mạnh “ngay”. 2) Cần có sẵn: thiếu 就 thì không còn là mẫu 一……就…….",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 2,
       "id": "yi-jiu-tight",
       "objective": "Sau bài này, người học dùng mẫu 一……就…… để nói hai việc xảy ra sát nhau, việc sau theo ngay việc trước.",
@@ -170,7 +173,7 @@
       "quick_memory": "Vừa làm A xong là B ngay: 一 + động từ 1 + 就 + động từ 2. Thiếu 就 là mất mẫu.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

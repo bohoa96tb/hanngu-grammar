@@ -13,7 +13,7 @@
           "wrong_or_risky": "你忙不忙吗？ (muốn hỏi 'Bạn có bận không?')"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "easy",
       "examples": [
         {
@@ -128,6 +128,9 @@
         }
       ],
       "formula_notes": "1) Vị trí: 吗 ở cuối câu trần thuật (你是学生 → 你是学生吗？). 2) Trả lời: lặp vị ngữ để khẳng định (是/会/想…); phủ định dùng 不/没, không lặp 吗. 3) Không dùng: đã có từ để hỏi (什么/谁/哪儿) thì bỏ 吗.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 1,
       "id": "ma-question",
       "objective": "Sau bài này, người học đặt được câu hỏi có/không bằng 吗 và trả lời mà không lặp lại 吗.",
@@ -135,7 +138,7 @@
       "quick_memory": "Hỏi có/không: lấy câu trần thuật, thêm 吗 ở cuối. Đã có từ để hỏi thì không thêm 吗.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

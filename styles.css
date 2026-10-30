@@ -67,6 +67,7 @@ button { min-height: var(--tap); padding: 10px 14px; border-radius: var(--radius
 button.secondary { background: var(--surface); color: var(--ink); border-color: var(--line); }
 button:disabled { opacity: .55; cursor: not-allowed; }
 .btn-row { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+.btn-row > *, .toolbar > * { min-width: 0; }
 .btn-link { display: inline-flex; align-items: center; min-height: var(--tap); padding: 10px 14px; border-radius: var(--radius-sm); background: var(--accent); color: var(--accent-ink); font-weight: 600; text-decoration: none; }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, .token:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 button.speaking { background: var(--warn); border-color: var(--warn); color: #fff; }
@@ -74,7 +75,9 @@ button.recording { background: var(--error); border-color: var(--error); color: 
 
 /* Ô nhập */
 input, select, textarea { padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
-input[type="text"], input[type="search"], textarea { width: 100%; }
+input[type="text"], input[type="search"], textarea { width: 100%; max-width: 100%; min-width: 0; }
+input, select { max-width: 100%; }
+#speakSel { width: 100%; }
 textarea { min-height: 80px; }
 label { display: block; margin: 10px 0 4px; font-weight: 600; }
 .lesson-controls label { display: inline-flex; margin: 0; align-items: center; gap: var(--space-2); }

@@ -18,7 +18,7 @@
           "wrong_or_risky": "Dùng 没有 thay cho 比 khi muốn nhấn mạnh người đầu hơn hẳn."
         }
       ],
-      "content_version": 3,
+      "content_version": 4,
       "difficulty": "medium",
       "examples": [
         {
@@ -156,20 +156,23 @@
           "type": "fill"
         }
       ],
-      "formula_notes": "1) Vị trí: Danh từ 1 + 比 + Danh từ 2 + Tính từ. 2) Mức chênh: 多了/一点儿 đặt sau tính từ; chênh cụ thể (高三厘米) cũng đặt sau tính từ. 3) Mở rộng: 也/都 đặt trước 比 (他也比我高); riêng 更 đặt sau 比, trước tính từ (他比我更高).",
+      "formula_notes": "1) Vị trí: Danh từ 1 + 比 + Danh từ 2 + Tính từ. 2) Mức chênh: 多了/一点儿 đặt sau tính từ; chênh cụ thể (高三厘米) cũng đặt sau tính từ. 3) Mở rộng: 也/都 đặt trước 比 (他也比我高).",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 2,
       "id": "bi-comparison",
       "objective": "Sau bài này, người học so sánh được 'A hơn B ở điểm nào', biết ai là người hơn và nói được mức chênh lệch.",
       "pattern": "Danh từ 1 + 比 + Danh từ 2 + Tính từ",
-      "quick_memory": "So hơn: A + 比 + B + tính từ. Muốn nói “không bằng” thì đổi mẫu 没有, đừng thêm 不.",
+      "quick_memory": "Ai hơn thì đứng trước 比, tính từ chốt cuối câu. Nói “không bằng”: dùng 没有…, đừng thêm 不 sau 比.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki (Basic comparisons with bi, mức A2/HSK2) và kiểm tra bẫy 不 sau 比, phân biệt 比/没有. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki (Basic comparisons with bi, mức A2/HSK2) và kiểm tra bẫy 不 sau 比, phân biệt 比/没有. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thay mục Nhớ nhanh theo audit §1.3; bỏ quy tắc vị trí của 更 khỏi bước 3 công thức và khỏi ghi chú nguồn theo D26",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [
         {
-          "note": "Cấu trúc Noun 1 + 比 + Noun 2 + Adj.; người đầu là người hơn; mẫu 比...更 và chênh lệch.",
+          "note": "Cấu trúc Noun 1 + 比 + Noun 2 + Adj.; người đầu là người hơn; mức chênh lệch.",
           "source_id": "cgw"
         }
       ],

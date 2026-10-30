@@ -18,7 +18,7 @@
           "wrong_or_risky": "小王 = 'Vương nhỏ' theo nghĩa đen"
         }
       ],
-      "content_version": 3,
+      "content_version": 4,
       "difficulty": "medium",
       "examples": [
         {
@@ -54,20 +54,6 @@
           ],
           "vi": "Chúng tôi là học sinh.",
           "zh": "我们是学生。"
-        },
-        {
-          "from_vietnamese_intent": false,
-          "pinyin": "Wǒ de jiā zài xuéxiào qiánbiān.",
-          "tokens": [
-            "我",
-            "的",
-            "家",
-            "在",
-            "学校",
-            "前边"
-          ],
-          "vi": "Nhà tôi ở phía trước trường.",
-          "zh": "我的家在学校前边。"
         }
       ],
       "exercises": [
@@ -139,38 +125,20 @@
           },
           "prompt_vi": "Tự đặt câu cho tình huống mới: 'Các bạn là giáo viên.' (viết bằng chữ Hán)",
           "type": "fill"
-        },
-        {
-          "accepted_answers": [
-            "我的家在学校前边。",
-            "我的家在学校前边",
-            "我的家在学校前面。",
-            "我的家在学校前面",
-            "我家在学校前边。",
-            "我家在学校前边",
-            "我家在学校前面。",
-            "我家在学校前面"
-          ],
-          "explanation": "Phía trước đặt sau danh từ nơi chốn, nói bằng 前边 hoặc 前面 đều đúng: 学校前边 / 学校前面. Dạng đầy đủ 我的家 và dạng lược 的 (我家) cũng đều được nhận.",
-          "id": "prefix-ex5",
-          "is_open_ended": false,
-          "payload": {
-            "hint_vi": "Dùng 前边."
-          },
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Nhà tôi ở phía trước trường học.' (viết bằng chữ Hán)",
-          "prompt_zh": "我的家在学校___。",
-          "type": "fill"
         }
       ],
-      "formula_notes": "1) Thứ tự: 第 + Số (+ Lượng từ + Danh từ). 2) Gọi thân mật: 小 + Họ. 3) Số nhiều người: đại từ/danh từ chỉ người + 们; không dùng 们 sau số từ. 4) Phía: Danh từ + 边 (前边/后边/左边/右边).",
+      "formula_notes": "1) Thứ tự: 第 + Số (+ Lượng từ + Danh từ). 2) Gọi thân mật: 小 + Họ. 3) Số nhiều người: đại từ/danh từ chỉ người + 们; không dùng 们 sau số từ.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 1,
       "id": "prefix-suffix",
-      "objective": "Sau bài này, người học dùng được 第 nói thứ tự, 小 trước họ để gọi thân mật, 们 nói số nhiều người và 边 nói phía/vị trí tương đối.",
-      "pattern": "第 + Số • 小 + Họ • Danh từ + 们 • Danh từ + 边",
-      "quick_memory": "Thứ tự dùng 第, gọi thân mật dùng 小, nhiều người dùng 们, phía dùng 边 — mỗi từ một việc.",
+      "objective": "Sau bài này, người học dùng được 第 nói thứ tự, 小 trước họ để gọi thân mật và 们 nói số nhiều người.",
+      "pattern": "第 + Số • 小 + Họ • Danh từ + 们",
+      "quick_memory": "Thứ tự dùng 第, gọi thân mật dùng 小, nhiều người dùng 们 — mỗi từ một việc.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: chuyển chủ điểm 边 sang bài location-nouns theo D26; bài còn 第/小/们, đổi tiêu đề và bỏ vế 边 trong Nhớ nhanh",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [
@@ -180,8 +148,8 @@
         }
       ],
       "status": "published",
-      "title_vi": "Tiền tố, hậu tố: 第/小/们/边",
-      "when_to_use": "Khi nói thứ tự (bài thứ ba), gọi tên thân mật (Tiểu Vương), nói nhóm người (chúng tôi, các bạn) hoặc nói phía (phía trước trường)."
+      "title_vi": "Ngữ tố gắn danh từ: 第 · 小 · 们",
+      "when_to_use": "Khi nói thứ tự (bài thứ ba), gọi tên thân mật (Tiểu Vương) hoặc nói nhóm người (chúng tôi, các bạn)."
     }
   ],
   "schema_version": 1

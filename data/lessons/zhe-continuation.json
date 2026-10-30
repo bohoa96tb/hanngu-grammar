@@ -18,7 +18,7 @@
           "wrong_or_risky": "他穿衣服着。"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -148,6 +148,9 @@
         }
       ],
       "formula_notes": "1) Vị trí: Động từ + 着 (+ Tân ngữ). 2) Tồn hiện: Nơi chốn + Động từ + 着 + (Số lượng) + Danh từ. 3) Phủ định: trạng thái thường phủ định bằng 没 + động từ, không giữ 着 theo cùng cách.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 2,
       "id": "zhe-continuation",
       "objective": "Sau bài này, người học nói được một trạng thái đang kéo dài (cửa đang mở, đang mặc áo) bằng 着, không nhầm với 了 và 在.",
@@ -155,7 +158,7 @@
       "quick_memory": "Trạng thái đang tiếp diễn: động từ + 着. 着 dính ngay sau động từ, không đứng cuối câu.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

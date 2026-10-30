@@ -18,8 +18,8 @@
           "wrong_or_risky": "Dịch mọi câu có 了 sang thì quá khứ tiếng Việt mà không xem ngữ cảnh."
         }
       ],
-      "content_version": 3,
-      "difficulty": "hard",
+      "content_version": 4,
+      "difficulty": "medium",
       "examples": [
         {
           "from_vietnamese_intent": true,
@@ -35,40 +35,27 @@
         },
         {
           "from_vietnamese_intent": false,
-          "pinyin": "Wǒ è le.",
+          "pinyin": "Wǒ hē le yì bēi shuǐ.",
           "tokens": [
             "我",
-            "饿",
-            "了"
+            "喝",
+            "了",
+            "一杯水"
           ],
-          "vi": "Tôi đói rồi. (trước đó chưa đói, giờ đã đói)",
-          "zh": "我饿了。"
+          "vi": "Tôi đã uống một cốc nước.",
+          "zh": "我喝了一杯水。"
         },
         {
           "from_vietnamese_intent": false,
-          "pinyin": "Wǒ huì shuō Zhōngwén le.",
+          "pinyin": "Tā mǎi le yí jiàn yīfu.",
           "tokens": [
-            "我",
-            "会",
-            "说",
-            "中文",
-            "了"
+            "她",
+            "买",
+            "了",
+            "一件衣服"
           ],
-          "vi": "Tôi biết nói tiếng Trung rồi. (trước đó chưa biết, giờ đã biết)",
-          "zh": "我会说中文了。"
-        },
-        {
-          "from_vietnamese_intent": false,
-          "pinyin": "Wǒ liǎojiě tā de yìsi.",
-          "tokens": [
-            "我",
-            "了解",
-            "他",
-            "的",
-            "意思"
-          ],
-          "vi": "Tôi hiểu ý của anh ấy. (了解 đọc liǎojiě — đa âm cần chú ý)",
-          "zh": "我了解他的意思。"
+          "vi": "Cô ấy đã mua một chiếc áo.",
+          "zh": "她买了一件衣服。"
         }
       ],
       "exercises": [
@@ -89,21 +76,6 @@
           },
           "prompt_vi": "Chọn câu đúng để nói 'Tôi đã mua cuốn sách này'.",
           "type": "choice"
-        },
-        {
-          "accepted_answers": [
-            "我饿了。",
-            "我饿了"
-          ],
-          "explanation": "Tính từ + 了 cuối câu nói trạng thái đã đổi: từ chưa đói thành đói.",
-          "id": "le-ex2",
-          "is_open_ended": false,
-          "payload": {
-            "hint_vi": "Thêm 了 cuối câu."
-          },
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Tôi đói rồi.'",
-          "prompt_zh": "我饿___。",
-          "type": "fill"
         },
         {
           "accepted_answers": [
@@ -172,26 +144,29 @@
           "type": "fill"
         }
       ],
-      "formula_notes": "1) Xong việc: Động từ + 了 + (Tân ngữ) — 了 ngay sau động từ (我买了这本书). 2) Đổi tình hình: 了 ở cuối câu (我饿了; 我会说中文了). 3) Phủ định “chưa làm”: 没/没有 + Động từ, bỏ 了 (他没买这本书). 4) Mở rộng (chỉ nhận biết): một câu có thể có hai 了, mỗi 了 một việc.",
+      "formula_notes": "1) Vị trí: 了 ngay sau động từ, trước tân ngữ (我买了这本书). 2) Phủ định: việc “chưa làm” dùng 没/没有 + Động từ và bỏ 了 (他没买这本书). 3) Không dùng: không thêm 了 chỉ vì câu tiếng Việt ở quá khứ; 了 chỉ nói hành động được nhìn như đã hoàn thành.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 1,
       "id": "le-completion-change",
-      "objective": "Sau bài này, người học phân biệt được 了 sau động từ (hoàn thành) với 了 cuối câu (tình huống đã đổi), và không đọc nhầm 了解.",
-      "pattern": "Động từ + 了  •  Tính từ + 了 (cuối câu)",
-      "quick_memory": "Thấy 了, hỏi trước: “xong việc” hay “đổi khác trước”? Sau động từ = xong việc; cuối câu = đã đổi.",
+      "objective": "Sau bài này, người học dùng được 了 ngay sau động từ để nói một hành động đã hoàn thành trong khung thời gian đang xét, biết bỏ 了 khi phủ định bằng 没/没有, và không đọc nhầm 了解.",
+      "pattern": "Động từ + 了 (+ Tân ngữ)",
+      "quick_memory": "Việc đã xong chưa? Xong rồi thì gắn 了 ngay sau động từ; chưa làm thì dùng 没 + động từ và bỏ 了.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki (Expressing completion with le; Change of state with le) và Wiktionary về đa âm 了 le/liǎo. Bài này cố ý gộp 2 cách dùng để làm mẫu 'đa cách dùng'; phiên mở rộng nên tách thành bài nhỏ theo đặc tả §5.1. Không khẳng định có giáo viên/người bản ngữ duyệt. 29/10/2026 đối chiếu đề cương chính thức: chuyển cấp từ HSK2 tạm thời sang HSK1 vì 完成态 và 变化态 đều thuộc HSK（一级）trong 语法大纲; độ khó sư phạm giữ medium. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki (Expressing completion with le; Change of state with le) và Wiktionary về đa âm 了 le/liǎo. Bài này cố ý gộp 2 cách dùng để làm mẫu 'đa cách dùng'; phiên mở rộng nên tách thành bài nhỏ theo đặc tả §5.1. Không khẳng định có giáo viên/người bản ngữ duyệt. 29/10/2026 đối chiếu đề cương chính thức: chuyển cấp từ HSK2 tạm thời sang HSK1 vì 完成态 và 变化态 đều thuộc HSK（一级）trong 语法大纲; độ khó sư phạm giữ medium. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: tách phần 了 cuối câu sang bài mới le-sentence-final-change theo D26; bài này chỉ còn 了 sau động từ (hoàn thành), thêm ví dụ hoàn thành, độ khó hard → medium, viết lại Nhớ nhanh",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [
         {
-          "note": "了1 hoàn thành (Verb + 了) và 了2 đổi trạng thái (Subj. + Adj. + 了).",
+          "note": "了1 hoàn thành (Verb + 了): 了 ngay sau động từ nói hành động đã hoàn thành.",
           "source_id": "cgw"
         }
       ],
       "status": "published",
-      "title_vi": "了: hoàn thành và đổi trạng thái",
-      "when_to_use": "Dùng 了 khi muốn nói một hành động đã hoàn thành trong khung thời gian đang xét, hoặc một tình huống đã đổi so với trước. Không dùng 了 chỉ vì câu tiếng Việt ở thì quá khứ — phải xem hành động có được nhìn như hoàn thành hay tình huống có đổi không."
+      "title_vi": "了: việc đã hoàn thành (Động từ + 了)",
+      "when_to_use": "Dùng 了 ngay sau động từ khi muốn nói một hành động đã hoàn thành trong khung thời gian đang xét. Không dùng 了 chỉ vì câu tiếng Việt ở thì quá khứ — phải xem hành động có được nhìn như đã hoàn thành không. Muốn nói một tình huống đã đổi khác trước, xem bài “了 cuối câu: tình trạng đã đổi khác”."
     }
   ],
   "schema_version": 1

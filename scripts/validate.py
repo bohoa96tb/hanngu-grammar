@@ -73,6 +73,25 @@ def check(data, path) -> list[str]:
                 errors.append(f"{lid}: bài published thiếu quick_memory")
             elif not (40 <= len(qm) <= 110):
                 errors.append(f"{lid}: quick_memory phải 40–110 ký tự, có {len(qm)}")
+        # Lô std2 30/10/2026 (D26): bài published phải có hsk_evidence —
+        # trạng thái đối chiếu cấp HSK của chính bài theo đề cương HSK 3.0.
+        if les.get("status") == "published":
+            ev = les.get("hsk_evidence")
+            if not isinstance(ev, dict):
+                errors.append(f"{lid}: bài published thiếu hsk_evidence (phải là object)")
+            elif ev.get("status") not in ("verified", "partial"):
+                errors.append(f"{lid}: hsk_evidence.status phải là 'verified' hoặc 'partial', "
+                              f"có {ev.get('status')!r}")
+            else:
+                note = ev.get("note")
+                if ev.get("status") == "partial":
+                    if not note:
+                        errors.append(f"{lid}: hsk_evidence partial bắt buộc có note")
+                    elif not (20 <= len(note) <= 220):
+                        errors.append(f"{lid}: hsk_evidence.note (partial) phải 20–220 ký tự, "
+                                      f"có {len(note)}")
+                elif note is not None and len(note) > 220:
+                    errors.append(f"{lid}: hsk_evidence.note tối đa 220 ký tự, có {len(note)}")
         if les.get("hsk_level") not in (1, 2, 3, 4, 5, 6):
             errors.append(f"{lid}: hsk_level phải 1-6")
         diff = les.get("difficulty")

@@ -18,7 +18,7 @@
           "wrong_or_risky": "他跑不得快。"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -159,6 +159,9 @@
         }
       ],
       "formula_notes": "1) Vị trí: 得 đứng sau động từ, trước tính từ đánh giá (跑得很快, 说得很好). 2) Phủ định: đặt 不 trước tính từ (写得不好), không đặt trước 得. 3) Không dùng: 的 đứng trước danh từ, 地 đứng trước động từ; sau động từ làm bổ ngữ trạng thái phải dùng 得.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 2,
       "id": "state-complement-de",
       "objective": "Sau bài này, người học dùng động từ + 得 + tính từ để đánh giá mức độ hoặc cách thức thực hiện một hành động, phân biệt 得 với 的 và 地.",
@@ -166,7 +169,7 @@
       "quick_memory": "Làm đến mức nào: động từ + 得 + tính từ. Sau động từ là 得 — không phải 的, không phải 地.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 09 từ danh mục HSK1–2 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 09 từ danh mục HSK1–2 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

@@ -18,7 +18,7 @@
           "wrong_or_risky": "Bỏ 但是 trong câu 虽然 (chỉ nói 虽然……，我还是……)"
         }
       ],
-      "content_version": 3,
+      "content_version": 5,
       "difficulty": "medium",
       "examples": [
         {
@@ -59,7 +59,7 @@
         },
         {
           "from_vietnamese_intent": false,
-          "pinyin": "Suīrán tā hěn máng, dànshì tā háishì bāng wǒ le.",
+          "pinyin": "Suīrán tā hěn máng, dànshì tā háishì bāng le wǒ.",
           "tokens": [
             "虽然",
             "他",
@@ -70,11 +70,30 @@
             "他",
             "还是",
             "帮",
-            "我",
-            "了"
+            "了",
+            "我"
           ],
           "vi": "Mặc dù anh ấy rất bận, nhưng anh ấy vẫn giúp tôi.",
-          "zh": "虽然他很忙，但是他还是帮我了。"
+          "zh": "虽然他很忙，但是他还是帮了我。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Yīnwèi míngtiān yǒu kǎoshì, suǒyǐ wǒ jīntiān zài jiā xuéxí.",
+          "tokens": [
+            "因为",
+            "明天",
+            "有",
+            "考试",
+            "，",
+            "所以",
+            "我",
+            "今天",
+            "在",
+            "家",
+            "学习"
+          ],
+          "vi": "Vì ngày mai có bài kiểm tra nên hôm nay tôi ở nhà học.",
+          "zh": "因为明天有考试，所以我今天在家学习。"
         }
       ],
       "exercises": [
@@ -167,9 +186,31 @@
           },
           "prompt_vi": "Tự đặt câu cho tình huống mới: 'Vì hôm nay mưa nên tôi không đi.' (viết bằng chữ Hán)",
           "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "虽然下雨，但是我还是去上学了。",
+            "虽然下雨，但是我还是去上学了",
+            "虽然今天下雨，但是我还是去上学了。",
+            "虽然今天下雨，但是我还是去上学了",
+            "虽然下雨，但是我还是去上学。",
+            "虽然下雨，但是我还是去上学"
+          ],
+          "explanation": "Nhượng bộ: 虽然 + trời mưa, 但是 + tôi vẫn đi học. Đúng cặp là 虽然……但是; 所以 thuộc cặp nhân quả, không ghép vào đây.",
+          "id": "complex-ex6",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Cặp nhượng bộ: 虽然……但是…… — vế sau giữ 还是 để nói “vẫn”."
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Mặc dù trời mưa, tôi vẫn đi học.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
         }
       ],
       "formula_notes": "1) Nhượng bộ: 虽然 + phân câu 1, 但是 + phân câu 2. 2) Nhân quả: 因为 + phân câu 1, 所以 + phân câu 2. 3) Vị trí chủ ngữ: hai phân câu cùng chủ ngữ thì chủ ngữ đứng trước 虽然/因为 hoặc sau nó đều được. 4) Mở rộng (chỉ nhận biết): trong giao tiếp thật một vế có thể lược khi ý đã rõ (虽然很冷，他还是去跑步了); người mới nên dùng đủ cặp.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 2,
       "id": "complex-suiran-yinwei",
       "objective": "Sau bài này, người học dùng được hai cặp câu phức 虽然……但是 và 因为……所以, không ghép nhầm hai nửa của hai cặp.",
@@ -177,7 +218,7 @@
       "quick_memory": "Đúng cặp mới đúng câu: 虽然 đi với 但是, 因为 đi với 所以. Đừng ghép chéo hai cặp.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: bổ sung cân bằng trong bài theo audit §3.3: thêm 1 ví dụ 因为……所以…… và bài tập tự sản xuất complex-ex6 cho cặp 虽然……但是……; không đánh số lại bài tập cũ Chuẩn hóa std2 vòng 2 30/10/2026: sửa ví dụ 3 theo QA H3 — “帮我了” sai vị trí 了, đổi thành “帮了我” (cả zh, tokens và pinyin).",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

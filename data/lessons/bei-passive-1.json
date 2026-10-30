@@ -18,7 +18,7 @@
           "wrong_or_risky": "杯子打碎了。(khi muốn nhấn mạnh bị động)"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "hard",
       "examples": [
         {
@@ -160,14 +160,17 @@
         }
       ],
       "formula_notes": "1) Vị trí: 被 đứng trước tác nhân và động từ; chủ ngữ là đối tượng chịu tác động, ngược với câu chữ 把. 2) Cần có sẵn: động từ sau 被 phải kèm thành phần khác (bổ ngữ kết quả, 了…), không đứng trơ một mình. 3) Mở rộng: tác nhân có thể lược bỏ.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 3,
       "id": "bei-passive-1",
       "objective": "Sau bài này, người học dùng câu bị động với 被 để nói chủ ngữ chịu tác động của hành động, phân biệt với câu chữ 把 nói chủ động.",
       "pattern": "Chủ ngữ (chịu tác động) + 被 (+ Tác nhân) + Động từ + Thành phần khác",
-      "quick_memory": "Chịu tác động: chủ ngữ + 被 + động từ + thành phần khác. Bị động nhìn từ phía người/vật chịu tác động.",
+      "quick_memory": "Ai chịu tác động thì làm chủ ngữ: 被 + động từ + thành phần khác; động từ không đứng trơ một mình.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 10 từ danh mục HSK3 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 10 từ danh mục HSK3 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thay mục Nhớ nhanh theo rà soát std2 (audit §1.3)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

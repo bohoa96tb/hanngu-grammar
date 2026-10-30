@@ -18,7 +18,7 @@
           "wrong_or_risky": "三个书。"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -147,14 +147,17 @@
         }
       ],
       "formula_notes": "1) Vị trí: Số + Lượng từ + Danh từ. 2) Chọn lượng từ: 个 dùng chung cho người/vật; 本 cho sách/vở; 件 cho quần áo. 3) Số 2: trước lượng từ đọc 两, không dùng 二. 4) Câu hỏi: 几 + lượng từ (thường khi kỳ vọng số nhỏ) hoặc 多少 (không kỳ vọng khoảng số).",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 1,
       "id": "measure-words",
       "objective": "Sau bài này, người học đếm được người, sách, quần áo bằng lượng từ đúng và dùng 两 thay 二 trước lượng từ.",
       "pattern": "Số + Lượng từ + Danh từ",
-      "quick_memory": "Đếm thì phải có lượng từ ở giữa: số + lượng từ + danh từ. Số 2 trước lượng từ đọc 两.",
+      "quick_memory": "Giữa số và danh từ luôn có lượng từ: sách → 本, áo → 件, dùng chung → 个. Số 2 đọc 两, không đọc 二.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thay mục Nhớ nhanh theo rà soát std2 (audit §1.3)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

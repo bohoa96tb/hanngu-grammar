@@ -18,7 +18,7 @@
           "wrong_or_risky": "要不要说话？(khi muốn ra lệnh cấm)"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -142,14 +142,17 @@
         }
       ],
       "formula_notes": "1) Vị trí: 不要 đứng trước động từ. 2) Phân biệt: 不 là phủ định chung (thói quen, hiện tại); ra lệnh cấm rõ ràng thì dùng 不要. 3) Không dùng: 要不要…… là câu hỏi “có muốn… không”, không phải lệnh cấm.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 1,
       "id": "bu-yao-prohibition",
       "objective": "Sau bài này, người học dùng 不要 + động từ để ra lệnh cấm hoặc khuyên đừng làm gì, phân biệt với phủ định chung bằng 不 và câu hỏi 要不要…….",
       "pattern": "不要 + Động từ",
-      "quick_memory": "Cấm ai làm gì: 不要 + động từ. 要不要 là câu hỏi “có muốn không”, không phải lệnh cấm.",
+      "quick_memory": "Đừng làm gì → 不要 + động từ. Thấy 要不要… là câu hỏi “có muốn… không”, không phải lệnh cấm.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 09 từ danh mục HSK1–2 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 09 từ danh mục HSK1–2 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thay mục Nhớ nhanh theo rà soát std2 (audit §1.3)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

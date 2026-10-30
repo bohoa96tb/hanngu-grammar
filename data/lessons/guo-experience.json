@@ -13,7 +13,7 @@
           "wrong_or_risky": "我不去过中国。"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -151,6 +151,9 @@
         }
       ],
       "formula_notes": "1) Vị trí: Động từ + 过 + Tân ngữ. 2) Phân biệt: 了 nói hành động hoàn thành trong một khung thời gian; 过 nói kinh nghiệm từng có, không gắn một lần cụ thể. 3) Phủ định: dùng 没 (我没去过中国), không dùng 不去过.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 2,
       "id": "guo-experience",
       "objective": "Sau bài này, người học nói được kinh nghiệm đã từng có bằng 过 và phân biệt 过 với 了.",
@@ -158,7 +161,7 @@
       "quick_memory": "Từng trải qua → 过 sau động từ. Phủ định kinh nghiệm chỉ dùng 没: 没去过, không dùng 不.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [
