@@ -149,11 +149,12 @@ Chưa có bản phát hành nào.
   direction-complement-2 soi lại không cần sửa. QA hai vòng: vòng 1 ĐẠT
   CÓ ĐIỀU KIỆN (Q-1 bài rút gọn thiếu bài tập cho mẫu 2 → đổi
   compact-ex2; Q-2 prog-ex4 thiếu biến thể 还 → đã thêm; H-1..H-3),
-  vòng 2 ĐẠT 5/5. Harness local 19/19. CI: file .github/workflows/ci.yml
-  đã soạn và kiểm chứng (mọi lệnh/đường dẫn/phiên bản Chrome 156.0.8078.80
-  đều tồn tại và tải được), nhưng quyền ghi file workflow qua API bị
-  GitHub chặn 403 — chờ Hoa thêm thủ công qua giao diện web; cổng chất
-  lượng hiện tại vẫn là validator + test + harness + QA độc lập tại chỗ.
+  vòng 2 ĐẠT 5/5. Harness local 19/19. CI: file .github/workflows/ci.yml đã có trên main (commit 1a3b97f,
+  do Hoa thêm qua ChatGPT vì API của Muse bị GitHub chặn ghi file
+  workflow 403) và ĐÃ CHẠY XANH trên GitHub Actions: run trên main và
+  run trên PR #12 (sau cập nhật nhánh từ main) đều Success với hai job
+  'Validator và unit test' và 'Kiểm tra trình duyệt (harness local)';
+  PR #12 chỉ merge sau khi CI xanh trên commit mới nhất.
   Audio TTS thiết bị thật vẫn not_run; các bài mới là đã rà soát nội bộ.
 
 - 2026-10-30 — Lô HSK3-3 (build 20261030-hsk3c3): 4 bài HSK3 mới —

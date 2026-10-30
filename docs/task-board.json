@@ -184,7 +184,7 @@
       "depends_on": [
         "P06-01"
       ],
-      "evidence": "Lô 08–10 (HSK1–3 nền) + HSK3-2 + HSK3-3: 47 bài đã rà soát nội bộ (HSK1: 20, HSK2: 15, HSK3: 12), 228 bài tập. Mới nhất — HSK3-3 (PR #11, build 20261030-hsk3c3): cunxian-appearance, shi-de-attitude, direction-complement-2, verb-repetition-sentence. Ánh xạ HSK3: 12 đã có / 2 một phần / 36 thiếu (50 mục nhóm). Audio thật vẫn not_run nên chưa bài nào đạt toàn bộ tiêu chí.",
+      "evidence": "Lô 08–10 + HSK3-2/3/4: 51 bài đã rà soát nội bộ (HSK1: 20, HSK2: 15, HSK3: 16), 248 bài tập. Mới nhất — HSK3-4 (PR #12, build 20261030-hsk3d4, CI hai job xanh trên PR trước merge): complex-progressive, complex-compact, degree-complement-1, rhetorical-question. Ánh xạ HSK3: 16 đã có / 3 một phần / 31 thiếu (50 mục nhóm); danh sách còn thiếu có ưu tiên ở mục 2b tài liệu ánh xạ. Audio thật vẫn not_run.",
       "files": [],
       "id": "P07-01",
       "inputs": "Baseline khóa",
