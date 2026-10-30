@@ -1,190 +1,165 @@
 {
-  "active_task_ids": [
-    "P06-01"
-  ],
-  "blocked_items": [],
-  "changed_files": [
-    ".github/workflows/pages.yml",
-    ".gitignore",
-    "AGENTS.md",
-    "LICENSE",
-    "README.md",
-    "app.js",
-    "data/lessons.json",
-    "docs/AGENT_SPEC_CHINESE_GRAMMAR_HSK1-6.md",
-    "docs/checkpoint.json",
-    "docs/curriculum-baseline.json",
-    "docs/decisions.md",
-    "docs/quality-gates.md",
-    "docs/release-log.md",
-    "docs/requirements.json",
-    "docs/reviews/batch-01.md",
-    "docs/schema.md",
-    "docs/source-register.json",
-    "docs/task-board.json",
-    "index.html",
-    "scripts/validate.py",
-    "styles.css",
-    "tests/test_validator.py"
-  ],
-  "code_base_commit": "8c88c2b84dd607a74dce23d20f6c8988e94bc978",
-  "completed_task_ids": [
-    "P00-01",
-    "P01-01",
-    "P02-01",
-    "P03-01",
-    "P04-01",
-    "P04-02",
-    "P00-02",
-    "P10-01",
-    "P05-01",
-    "P09-01"
-  ],
-  "content_counts": {
-    "baseline_items": 50,
-    "draft_lessons": 0,
-    "reviewed_lessons": 0,
-    "published_lessons": 43,
-    "exercises": 208
+ "active_task_ids": [
+  "P06-01"
+ ],
+ "blocked_items": [],
+ "changed_files": [],
+ "code_base_commit": "e92d22a11ad58d8e91ba968a4522c0318df594d6",
+ "completed_task_ids": [
+  "P00-01",
+  "P01-01",
+  "P02-01",
+  "P03-01",
+  "P04-01",
+  "P04-02",
+  "P00-02",
+  "P10-01",
+  "P05-01",
+  "P09-01"
+ ],
+ "content_counts": {
+  "baseline_items": 50,
+  "draft_lessons": 0,
+  "reviewed_lessons": 0,
+  "published_lessons": 43,
+  "exercises": 208
+ },
+ "github": {
+  "connect_url": "https://agent.meta.ai/connectors/connect/github",
+  "head_verified": "8c88c2b84dd607a74dce23d20f6c8988e94bc978",
+  "initial_commit": "86f65bbe639c7af96afe316eb8a26b228092a0eb",
+  "owner": "bohoa96tb",
+  "pages_enabled": true,
+  "pages_url_expected": "https://bohoa96tb.github.io/hanngu-grammar/",
+  "pages_url_verified": "https://bohoa96tb.github.io/hanngu-grammar/",
+  "preferred_repo": "hanngu-grammar",
+  "pushed": true,
+  "pushed_files": "21/22 (trừ .github/workflows/pages.yml bị 403)",
+  "repo_exists": true,
+  "repo_url": "https://github.com/bohoa96tb/hanngu-grammar",
+  "status": "connected",
+  "workflow_file_pushed": false,
+  "pages_verified_at": "2026-10-29T04:52Z (text fetch)",
+  "pages_verified_method": "browser text fetch của index và data/lessons.json; chưa kiểm tra tương tác JS trực tiếp trên live bằng trình duyệt thật"
+ },
+ "known_limitations": [
+  "Chưa kiểm tra trên Android Chrome / Safari iOS thật.",
+  "Chưa kiểm tra thủ công toàn bộ luồng trên màn hình 360px thật.",
+  "Bài 了 gộp 2 cách dùng; phiên mở rộng nên tách bài nhỏ.",
+  "TTS trình duyệt chưa được gắn nhãn audio đã duyệt.",
+  "Ôn tập FSRS thật, luyện nói, chấm phát âm, đồng bộ, đăng nhập chưa làm (backlog).",
+  "Luyện nói P04-02 chưa kiểm tra mic/thu âm trên trình duyệt thật."
+ ],
+ "latest_verified_commit": "e92d22a11ad58d8e91ba968a4522c0318df594d6",
+ "next_actions": [
+  "Lô HSK3-9 (nội dung đã soạn xong ở local, 72 bài — chờ QA độc lập rồi phát hành): 4 bài fixed-pattern-shenme (khép OFF-H3-26), adverbs-frequency-hsk3 (H3-15), adverbs-scope-hsk3 (H3-13 — sửa catalogue: giỏ có 6 từ gồm 就）, adverbs-mood-hsk3 (H3-18 — giỏ có 就⁴). Việc kèm theo khi QA/sửa: quyết định Manager về OFF-H3-14 — hàng phó từ thời gian trang in 389 có 7 thành viên gồm 才¹ (nghĩa thời gian) mà catalogue chỉ ghi 6; bổ sung 才¹ vào title và xét lại trạng thái covered → partial (nghĩa này chưa bài nào dạy), cập nhật số đếm HSK3 tương ứng (dự kiến 32/4/14, chưa phủ đủ 18 mục). Sau HSK3-9, HSK3 còn 2 mục lớn để lại: OFF-H3-11 lượng từ (cần vòng chọn lọc tần suất) và OFF-H3-17 tình thái (cần thiết kế bài phân biệt sắc thái).",
+  "Vẫn mở: branch protection do Hoa bật (chọn 2 check CI); AUD-TTS-01 audio thiết bị thật not_run; P01-02 xác minh sâu toàn bộ bảng còn lại; ISSUE-LOAD-STALL-01 theo dõi hiện tượng live."
+ ],
+ "pending_review_ids": [],
+ "phase": "P06",
+ "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
+ "resume_notes": "Lô HSK3-2 XONG: PR #10 merge 8c88c2b8, build 20261030-hsk3b2, nghiệm thu live đạt (43/43, 4 bài mới mở và làm bài đúng, dòng đối chiếu HSK3 hiển thị). Tổng 43 bài/208 bài tập: HSK1 20, HSK2 15, HSK3 8. QA 2 vòng (vòng 1 đạt có điều kiện — Q-1 diễn đạt tuyệt đối về lược 就 — đã sửa cùng H-1..H-7; vòng 2 ĐẠT). Lưu ý nghiệm thu: lần kiểm live đầu chạy ~1 phút sau merge nên còn bản cũ do Pages chưa triển khai xong + cache; kiểm lại sau khi có bản mới thì đạt — khi nghiệm thu phải chờ Pages và tải lại. TTS thiết bị thật vẫn not_run; các bài mới là đã rà soát nội bộ.",
+ "schema_version": 1,
+ "spec_version": "1.0",
+ "updated_at": "2026-10-30",
+ "verification_results": [
+  {
+   "command": "python3 scripts/validate.py",
+   "result": "ĐẠT: 3 bài, 3 bài published, 14 bài tập."
   },
-  "github": {
-    "connect_url": "https://agent.meta.ai/connectors/connect/github",
-    "head_verified": "8c88c2b84dd607a74dce23d20f6c8988e94bc978",
-    "initial_commit": "86f65bbe639c7af96afe316eb8a26b228092a0eb",
-    "owner": "bohoa96tb",
-    "pages_enabled": true,
-    "pages_url_expected": "https://bohoa96tb.github.io/hanngu-grammar/",
-    "pages_url_verified": "https://bohoa96tb.github.io/hanngu-grammar/",
-    "preferred_repo": "hanngu-grammar",
-    "pushed": true,
-    "pushed_files": "21/22 (trừ .github/workflows/pages.yml bị 403)",
-    "repo_exists": true,
-    "repo_url": "https://github.com/bohoa96tb/hanngu-grammar",
-    "status": "connected",
-    "workflow_file_pushed": false,
-    "pages_verified_at": "2026-10-29T04:52Z (text fetch)",
-    "pages_verified_method": "browser text fetch của index và data/lessons.json; chưa kiểm tra tương tác JS trực tiếp trên live bằng trình duyệt thật"
+  {
+   "command": "python3 -m unittest discover -s tests -v",
+   "result": "5 tests passed."
   },
-  "known_limitations": [
-    "Chưa kiểm tra trên Android Chrome / Safari iOS thật.",
-    "Chưa kiểm tra thủ công toàn bộ luồng trên màn hình 360px thật.",
-    "Bài 了 gộp 2 cách dùng; phiên mở rộng nên tách bài nhỏ.",
-    "TTS trình duyệt chưa được gắn nhãn audio đã duyệt.",
-    "Ôn tập FSRS thật, luyện nói, chấm phát âm, đồng bộ, đăng nhập chưa làm (backlog).",
-    "Luyện nói P04-02 chưa kiểm tra mic/thu âm trên trình duyệt thật."
-  ],
-  "latest_verified_commit": "8c88c2b84dd607a74dce23d20f6c8988e94bc978",
-  "next_actions": [
-    "Lô HSK3-9: chọn tối đa 4 mục từ 21 mục chưa phủ đủ ở mục 2b theo kiến thức tiên quyết (ứng viên còn lại: OFF-H3-11 lượng từ — cần chọn lọc tần suất; các giỏ phó từ H3-13 phạm vi, H3-15 tần suất, H3-17 tình thái, H3-18 ngữ khí — cần thiết kế chọn lọc từ và khóa đáp án cẩn thận; X什么（啊） — thành viên cuối của OFF-H3-26; các mục một phần còn lại theo 2b). MỌI phạm vi mới phải xác minh TRỰC QUAN từ PDF gốc trước khi soạn (bài học lệch hàng). Việc xác minh sâu toàn bộ 251 mục (P01-02) vẫn mở; cân nhắc một lô riêng kiểm trực quan toàn bộ các bảng còn lại khi Hoa quyết định.",
-    "Sau khi HSK3 phủ đủ các mục chính: chuyển sang HSK4 theo bản đồ baseline-hsk3-hsk4-mapping.md.",
-    "P01-02 phần xác minh sâu (hash bản trích, điểm vi mô, quyền phân phối) — không chặn lô nội dung.",
-    "AUD-TTS-01: nghiệm thu audio trên thiết bị thật."
-  ],
-  "pending_review_ids": [],
-  "phase": "P06",
-  "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "Lô HSK3-2 XONG: PR #10 merge 8c88c2b8, build 20261030-hsk3b2, nghiệm thu live đạt (43/43, 4 bài mới mở và làm bài đúng, dòng đối chiếu HSK3 hiển thị). Tổng 43 bài/208 bài tập: HSK1 20, HSK2 15, HSK3 8. QA 2 vòng (vòng 1 đạt có điều kiện — Q-1 diễn đạt tuyệt đối về lược 就 — đã sửa cùng H-1..H-7; vòng 2 ĐẠT). Lưu ý nghiệm thu: lần kiểm live đầu chạy ~1 phút sau merge nên còn bản cũ do Pages chưa triển khai xong + cache; kiểm lại sau khi có bản mới thì đạt — khi nghiệm thu phải chờ Pages và tải lại. TTS thiết bị thật vẫn not_run; các bài mới là đã rà soát nội bộ.",
-  "schema_version": 1,
-  "spec_version": "1.0",
-  "updated_at": "2026-10-30",
-  "verification_results": [
-    {
-      "command": "python3 scripts/validate.py",
-      "result": "ĐẠT: 3 bài, 3 bài published, 14 bài tập."
-    },
-    {
-      "command": "python3 -m unittest discover -s tests -v",
-      "result": "5 tests passed."
-    },
-    {
-      "command": "node --check app.js",
-      "result": "Đạt (không lỗi)."
-    },
-    {
-      "command": "python3 -m http.server 8123 + curl",
-      "result": "index.html 200, data/lessons.json 200."
-    },
-    {
-      "command": "/opt/hatch/bin/github status; gh auth status",
-      "result": "not_connected; gh chưa đăng nhập. Chưa xác minh được quyền ghi."
-    },
-    {
-      "command": "/opt/hatch/bin/github get_me + search_repositories + list_commits",
-      "result": "login bohoa96tb (id 70761745); repo bohoa96tb/hanngu-grammar public, default main, created 2026-10-29T04:08:36Z, head 86f65bbe Initial commit (web-flow). get_file_contents cho index.html/app.js/data/lessons.json/docs/checkpoint.json: không tồn tại remote; README.md chỉ có '# hanngu-grammar'."
-    },
-    {
-      "command": "github push-files main (22 files)",
-      "result": "THẤT BẠI: failed to create tree: POST git/trees 403 Resource not accessible by integration. Head remote kiểm tra lại vẫn là 86f65bbe."
-    },
-    {
-      "command": "github push-files main (22 files) — thử lại sau khi người dùng nhắn 'Tiếp tục'",
-      "result": "THẤT BẠI LẠI: failed to create tree: POST git/trees 403 Resource not accessible by integration. Head remote kiểm tra lại vẫn là 86f65bbe."
-    },
-    {
-      "command": "create_or_update_file từng file (đợt 1+2)",
-      "result": "Thành công 11/11 file: README (952ea8f), index.html, styles.css, app.js, data/lessons.json, .gitignore (head 77225052), AGENTS, LICENSE, scripts/validate.py, tests/test_validator.py, docs spec (head 2e05854e)."
-    },
-    {
-      "command": "list_commits + get_file_contents sau đợt 3",
-      "result": "Head fd8799247 (thêm docs/release-log.md). index.html SHA 519f760d, app.js 65ee98e4, data/lessons.json 05f84f13, docs/checkpoint.json 2ec559cd khớp file đã đẩy; .github/workflows/pages.yml không tồn tại remote (403 khi ghi)."
-    },
-    {
-      "command": "browser.open https://bohoa96tb.github.io/hanngu-grammar/ và /data/lessons.json",
-      "result": "ĐẠT (text fetch, crawled 2026-10-29 04:52 UTC): index có tiêu đề Hanngu Grammar và tagline; lessons.json đủ 3 bài published (shi, bi, le). Chưa kiểm tra tương tác JS live bằng trình duyệt thật."
-    },
-    {
-      "command": "node --test tests/test_fsrs.mjs; python3 scripts/validate.py; python3 -m unittest; node --check app.js srs.mjs; http.server 8125",
-      "result": "FSRS 7 passed; validator ĐẠT 3 bài; unittest 5 passed; JS_OK; http 200 cho index/app/srs/vendor/lessons."
-    },
-    {
-      "command": "browser QA 6 bước trên https://bohoa96tb.github.io/hanngu-grammar/ + node --check app.js sau sửa",
-      "result": "6/6 đạt trên live (localhost bị chặn ở cấp công cụ); sau sửa: node --check đạt, máy chủ tĩnh 200."
-    },
-    {
-      "command": "python3 scripts/validate.py; python3 -m unittest; node --test tests/test_fsrs.mjs; node --check app.js",
-      "result": "ĐẠT 12 bài, 53 bài tập; unittest 5 passed; FSRS 7 passed; JS_OK."
-    },
-    {
-      "command": "browser.open PDF chính thức + đọc 语法大纲 HSK1–6; python3 scripts/validate.py sau sửa cấp 了",
-      "result": "PDF đọc được toàn văn, bìa 2025-11/2026-07; 语法大纲 HSK1–6 đã đọc hết; validator ĐẠT 12 bài, 53 bài tập sau khi chuyển 了 sang HSK1 (content_version 2)."
-    },
-    {
-      "command": "python3 scripts/validate.py; node --check app.js",
-      "result": "ĐẠT 18 bài, 83 bài tập; JS_OK. Unittest/FSRS không chạy lại vì không có thay đổi liên quan."
-    },
-    {
-      "command": "python3 scripts/validate.py; python3 -m unittest; node --check app.js",
-      "result": "ĐẠT 24 bài, 111 bài tập; unittest 5 passed; JS_OK. FSRS không chạy lại vì không có thay đổi liên quan."
-    },
-    {
-      "command": "API main (manifest/shards/app.js) + text fetch Pages (manifest, hsk2) + 3 vòng trình duyệt",
-      "result": "Main và cây file Pages: 24 bài đúng. Giao diện: 18 bài sau cả cache-bust và hard refresh tới 06:10 UTC. Live 24 bài CHƯA xác minh."
-    },
-    {
-      "command": "python3 scripts/validate.py (quy tắc mới D25); python3 -m unittest; node --test tests/test_fsrs.mjs; node --check app.js",
-      "result": "ĐẠT: 38 bài, 182 bài tập; unittest 7/7; FSRS 7/7; JS_OK. QA-02 vòng 2 ĐẠT (docs/reviews/qa-std1.md)."
-    },
-    {
-      "command": "browser live https://bohoa96tb.github.io/hanngu-grammar/?debug=1 sau merge 298576ff",
-      "result": "ĐẠT bước 1–6: build 20261030-std1, 38/38 published, badge HSK/độ khó, Tiếp tục học, bài ma-question đủ A–F + Nhớ nhanh + nav trước/sau, chọn→Kiểm tra→Làm lại đúng, hoàn thành giữ sau tải lại, Ôn lại khóa rate tới khi đối chiếu và hiện Nhớ nhanh. Bước 7 (390px) not_run — công cụ không đổi được kích thước cửa sổ; console not_run."
-    },
-    {
-      "command": "python3 scripts/validate.py; python3 -m unittest discover -s tests; node --test tests/test_fsrs.mjs; node tests/browser-check.mjs (local)",
-      "result": "ĐẠT: 39 bài/186 bài tập; unittest 9/9; FSRS 7/7; harness 19/19 PASS. QA-STD2 vòng 2 ĐẠT (docs/reviews/qa-std2.md); di trú tiến độ CDP 15/15."
-    },
-    {
-      "command": "browser live https://bohoa96tb.github.io/hanngu-grammar/?debug=1 sau merge 616b63af",
-      "result": "ĐẠT: build 20261030-std2, 39/39 published, đủ hai bài 了 sau tách, prefix-suffix đã đổi tên, dòng đối chiếu ✓/◐ hiển thị đúng, điền le-ex2 đúng và hoàn thành giữ sau tải lại."
-    },
-    {
-      "command": "browser.open/fetch bản PDF đề cương chính thức (crawl 2026-09-25) + đọc docs/official-catalogue-hsk5-hsk6.json",
-      "result": "HSK5 31 mục nhóm, HSK6 22 mục nhóm, tất cả missing (chưa có bài). Manager tự kiểm tra bản gốc: nhóm đại từ để hỏi HSK1 có 多/多少/几/哪/哪儿/哪里/哪些 cùng 什么/谁/怎么/怎么样 — đủ cơ sở đổi question-words sang verified."
-    },
-    {
-      "command": "python3 scripts/validate.py; unittest; FSRS; harness local; browser live sau merge 8c88c2b8",
-      "result": "ĐẠT: 43 bài/208 bài tập; unittest 9/9; FSRS 7/7; harness 19/19; QA-HSK3-2 vòng 2 ĐẠT; live build 20261030-hsk3b2 đủ 43/43, potential-complement-1 làm bài đúng, complex-condition đủ A–F, adverbs-du-ye đủ 7 bài tập."
-    }
-  ],
-  "working_tree_state": "hsk3_batch2_merged_and_live_verified",
-  "last_completed_batch": "Lô HSK3-8 (2026-10-30): PR #17 merge 067485ac, build 20261030-hsk3h8, 68 bài/333 bài tập (HSK1: 20, HSK2: 17, HSK3: 30, HSK4: 1). Bài mới: approx-numbers-1 (HSK2, OFF-H2-61 — khép khoảng trống nền, liên kết tiên quyết hai chiều với approx-numbers-2), zenme-yang-question (OFF-H3-07), time-frame-patterns (thành viên mốc thời gian của OFF-H3-26), adverbs-degree-hsk3 (OFF-H3-12). Ánh xạ: HSK2 20 đã có / 15 một phần / 27 thiếu; HSK3 29/4/17 (mục 2b còn 21 mục chưa phủ đủ); HSK4 1/0/33. Mọi phạm vi của lô xác minh TRỰC QUAN từ PDF gốc (trang in 388–391): sửa 3 sai lệch trích xuất — 一会儿……，一会儿…… thuộc 并列 (OFF-H3-42 chỉ còn 或者, vẫn covered; OFF-H3-43 đủ 3 thành viên; thay thế cách gán của lô HSK3-5/6); OFF-H3-07 thu hẹp đúng '怎样+动词'; OFF-H3-12 có 8 thành viên (bản cũ thiếu 还, nay đủ qua phủ chéo bi-comparison-2/yue-patterns). Rà approx-numbers-2: hai cách （大概 / hai số kề nhau) vốn độc lập, đã ghi tường minh — không có công thức bắt buộc kết hợp. QA ĐẠT toàn bộ (không lỗi Quan trọng), 3 điểm Hoàn thiện đã áp dụng, phúc tra 3/3. KỸ THUẬT — ISSUE-LOAD-STALL-01: điều tra kẹt tải bằng 3 kịch bản có số đo (báo cáo docs/reviews/loading-stall-investigation.md): tải mới 1,7s đạt; mạng chậm 41,5s vì tải TUẦN TỰ 65 file (không treo — quan sát phụ, chưa sửa); file 404 đã có banner + nút thử lại; KẾT NỐI TREO = lỗi xác nhận (fetch không timeout → tải vô hạn) → app.js đã sửa tối thiểu: AbortController timeout 15s cho manifest + từng shard, đi vào đường lỗi sẵn có; kiểm chứng sau sửa đạt, harness 19/19. Hiện tượng live ở build hsk3g7 không tái hiện nguyên trạng ở local → KHÔNG kết luận nguyên nhân, giữ theo dõi trong issue. CI 2/2 xanh trên commit mới nhất (70c663d) trước merge. TTS thiết bị thật vẫn not_run. Nghiệm thu live ĐẠT (không cần tải lại): build 20261030-hsk3h8, 68/68 bài; approx-numbers-1 hiển thị đúng HSK 2 và làm đúng bài tập đầu; tiêu đề adverbs-degree-hsk3 có '极（văn viết）'. QUAN SÁT BỔ SUNG cho ISSUE-LOAD-STALL-01: lần tải live đầu tiên mất ~20 giây quan sát mới hiện danh sách (không kẹt vĩnh viễn) — khớp kịch bản tải tuần tự trên mạng thật; việc song song hóa tải shard được ghi thành hướng xử lý tiếp trong issue, chưa làm ở lô này."
+  {
+   "command": "node --check app.js",
+   "result": "Đạt (không lỗi)."
+  },
+  {
+   "command": "python3 -m http.server 8123 + curl",
+   "result": "index.html 200, data/lessons.json 200."
+  },
+  {
+   "command": "/opt/hatch/bin/github status; gh auth status",
+   "result": "not_connected; gh chưa đăng nhập. Chưa xác minh được quyền ghi."
+  },
+  {
+   "command": "/opt/hatch/bin/github get_me + search_repositories + list_commits",
+   "result": "login bohoa96tb (id 70761745); repo bohoa96tb/hanngu-grammar public, default main, created 2026-10-29T04:08:36Z, head 86f65bbe Initial commit (web-flow). get_file_contents cho index.html/app.js/data/lessons.json/docs/checkpoint.json: không tồn tại remote; README.md chỉ có '# hanngu-grammar'."
+  },
+  {
+   "command": "github push-files main (22 files)",
+   "result": "THẤT BẠI: failed to create tree: POST git/trees 403 Resource not accessible by integration. Head remote kiểm tra lại vẫn là 86f65bbe."
+  },
+  {
+   "command": "github push-files main (22 files) — thử lại sau khi người dùng nhắn 'Tiếp tục'",
+   "result": "THẤT BẠI LẠI: failed to create tree: POST git/trees 403 Resource not accessible by integration. Head remote kiểm tra lại vẫn là 86f65bbe."
+  },
+  {
+   "command": "create_or_update_file từng file (đợt 1+2)",
+   "result": "Thành công 11/11 file: README (952ea8f), index.html, styles.css, app.js, data/lessons.json, .gitignore (head 77225052), AGENTS, LICENSE, scripts/validate.py, tests/test_validator.py, docs spec (head 2e05854e)."
+  },
+  {
+   "command": "list_commits + get_file_contents sau đợt 3",
+   "result": "Head fd8799247 (thêm docs/release-log.md). index.html SHA 519f760d, app.js 65ee98e4, data/lessons.json 05f84f13, docs/checkpoint.json 2ec559cd khớp file đã đẩy; .github/workflows/pages.yml không tồn tại remote (403 khi ghi)."
+  },
+  {
+   "command": "browser.open https://bohoa96tb.github.io/hanngu-grammar/ và /data/lessons.json",
+   "result": "ĐẠT (text fetch, crawled 2026-10-29 04:52 UTC): index có tiêu đề Hanngu Grammar và tagline; lessons.json đủ 3 bài published (shi, bi, le). Chưa kiểm tra tương tác JS live bằng trình duyệt thật."
+  },
+  {
+   "command": "node --test tests/test_fsrs.mjs; python3 scripts/validate.py; python3 -m unittest; node --check app.js srs.mjs; http.server 8125",
+   "result": "FSRS 7 passed; validator ĐẠT 3 bài; unittest 5 passed; JS_OK; http 200 cho index/app/srs/vendor/lessons."
+  },
+  {
+   "command": "browser QA 6 bước trên https://bohoa96tb.github.io/hanngu-grammar/ + node --check app.js sau sửa",
+   "result": "6/6 đạt trên live (localhost bị chặn ở cấp công cụ); sau sửa: node --check đạt, máy chủ tĩnh 200."
+  },
+  {
+   "command": "python3 scripts/validate.py; python3 -m unittest; node --test tests/test_fsrs.mjs; node --check app.js",
+   "result": "ĐẠT 12 bài, 53 bài tập; unittest 5 passed; FSRS 7 passed; JS_OK."
+  },
+  {
+   "command": "browser.open PDF chính thức + đọc 语法大纲 HSK1–6; python3 scripts/validate.py sau sửa cấp 了",
+   "result": "PDF đọc được toàn văn, bìa 2025-11/2026-07; 语法大纲 HSK1–6 đã đọc hết; validator ĐẠT 12 bài, 53 bài tập sau khi chuyển 了 sang HSK1 (content_version 2)."
+  },
+  {
+   "command": "python3 scripts/validate.py; node --check app.js",
+   "result": "ĐẠT 18 bài, 83 bài tập; JS_OK. Unittest/FSRS không chạy lại vì không có thay đổi liên quan."
+  },
+  {
+   "command": "python3 scripts/validate.py; python3 -m unittest; node --check app.js",
+   "result": "ĐẠT 24 bài, 111 bài tập; unittest 5 passed; JS_OK. FSRS không chạy lại vì không có thay đổi liên quan."
+  },
+  {
+   "command": "API main (manifest/shards/app.js) + text fetch Pages (manifest, hsk2) + 3 vòng trình duyệt",
+   "result": "Main và cây file Pages: 24 bài đúng. Giao diện: 18 bài sau cả cache-bust và hard refresh tới 06:10 UTC. Live 24 bài CHƯA xác minh."
+  },
+  {
+   "command": "python3 scripts/validate.py (quy tắc mới D25); python3 -m unittest; node --test tests/test_fsrs.mjs; node --check app.js",
+   "result": "ĐẠT: 38 bài, 182 bài tập; unittest 7/7; FSRS 7/7; JS_OK. QA-02 vòng 2 ĐẠT (docs/reviews/qa-std1.md)."
+  },
+  {
+   "command": "browser live https://bohoa96tb.github.io/hanngu-grammar/?debug=1 sau merge 298576ff",
+   "result": "ĐẠT bước 1–6: build 20261030-std1, 38/38 published, badge HSK/độ khó, Tiếp tục học, bài ma-question đủ A–F + Nhớ nhanh + nav trước/sau, chọn→Kiểm tra→Làm lại đúng, hoàn thành giữ sau tải lại, Ôn lại khóa rate tới khi đối chiếu và hiện Nhớ nhanh. Bước 7 (390px) not_run — công cụ không đổi được kích thước cửa sổ; console not_run."
+  },
+  {
+   "command": "python3 scripts/validate.py; python3 -m unittest discover -s tests; node --test tests/test_fsrs.mjs; node tests/browser-check.mjs (local)",
+   "result": "ĐẠT: 39 bài/186 bài tập; unittest 9/9; FSRS 7/7; harness 19/19 PASS. QA-STD2 vòng 2 ĐẠT (docs/reviews/qa-std2.md); di trú tiến độ CDP 15/15."
+  },
+  {
+   "command": "browser live https://bohoa96tb.github.io/hanngu-grammar/?debug=1 sau merge 616b63af",
+   "result": "ĐẠT: build 20261030-std2, 39/39 published, đủ hai bài 了 sau tách, prefix-suffix đã đổi tên, dòng đối chiếu ✓/◐ hiển thị đúng, điền le-ex2 đúng và hoàn thành giữ sau tải lại."
+  },
+  {
+   "command": "browser.open/fetch bản PDF đề cương chính thức (crawl 2026-09-25) + đọc docs/official-catalogue-hsk5-hsk6.json",
+   "result": "HSK5 31 mục nhóm, HSK6 22 mục nhóm, tất cả missing (chưa có bài). Manager tự kiểm tra bản gốc: nhóm đại từ để hỏi HSK1 có 多/多少/几/哪/哪儿/哪里/哪些 cùng 什么/谁/怎么/怎么样 — đủ cơ sở đổi question-words sang verified."
+  },
+  {
+   "command": "python3 scripts/validate.py; unittest; FSRS; harness local; browser live sau merge 8c88c2b8",
+   "result": "ĐẠT: 43 bài/208 bài tập; unittest 9/9; FSRS 7/7; harness 19/19; QA-HSK3-2 vòng 2 ĐẠT; live build 20261030-hsk3b2 đủ 43/43, potential-complement-1 làm bài đúng, complex-condition đủ A–F, adverbs-du-ye đủ 7 bài tập."
+  }
+ ],
+ "working_tree_state": "Đã đồng bộ main ở e92d22a1 cho PR kỹ thuật (app.js/index.html perf1 + 2 báo cáo + release-log + task-board/checkpoint của Manager). Workspace local còn thay đổi NỘI DUNG của lô HSK3-9 chưa đẩy (4 bài mới + manifest + catalogue + mapping) — sẽ đi PR riêng ngay sau QA.",
+ "last_completed_batch": "PR KỸ THUẬT hiệu năng tải (2026-10-30, XONG TRƯỚC lô HSK3-9 theo chỉ đạo Hoa): PR #18 merge e92d22a1, build 20261030-perf1. Thay đổi app.js duy nhất: loadLessons tải shard song song giới hạn LOAD_CONCURRENCY=8 (đo thử: 4=20,1s; 8=19,5s; 16=19,5s ở mạng chậm — chọn 8), ghép theo chỉ số manifest; fetchData giữ timeout 15s tới khi đọc xong body (sửa khe hở: bản HSK3-8 hủy timer ở headers → treo body = tải vô hạn). Đo cùng điều kiện (72 bài local): mạng chậm 46,4→19,4s; treo-body từ vô hạn → banner ở ~15,3s; 404/hang-headers/thứ tự/đường lỗi giữ nguyên đúng. QA độc lập ĐẠT, tự đo khớp (chậm 19,3s). CI 2/2 xanh trên head 3a6be73. Nghiệm thu live: build perf1, 68/68 (nội dung HSK3-9 chưa phát hành), đầu/cuối đúng manifest, lọc HSK2 = 17; lần mở đầu gặp bản cũ do cache Pages, tải lại ra bản mới. ISSUE-LOAD-STALL-01 chuyển trạng thái monitoring: hai lỗi đã đo đã sửa+phát hành; hiện tượng live build hsk3g7 vẫn chưa rõ nguyên nhân. Nội dung không đổi đợt này: vẫn 68 bài/333 bài tập trên live."
 }

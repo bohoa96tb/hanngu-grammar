@@ -1,300 +1,300 @@
 {
-  "schema_version": 1,
-  "tasks": [
-    {
-      "depends_on": [],
-      "evidence": "docs/*, AGENTS.md, README.md; validator đạt",
-      "files": [
-        "AGENTS.md",
-        "README.md",
-        "docs/requirements.json",
-        "docs/decisions.md",
-        "docs/source-register.json",
-        "docs/curriculum-baseline.json",
-        "docs/task-board.json",
-        "docs/checkpoint.json",
-        "docs/quality-gates.md",
-        "docs/schema.md"
-      ],
-      "id": "P00-01",
-      "inputs": "Đặc tả, quyền người dùng",
-      "outputs": "Hồ sơ dự án và hệ thống quản lý",
-      "related_requirements": [
-        "GOV-02",
-        "SEC-01"
-      ],
-      "status": "done",
-      "title": "Khởi tạo hồ sơ dự án và checkpoint"
-    },
-    {
-      "depends_on": [
-        "P00-01"
-      ],
-      "evidence": "21/22 file đã lên main, head đã xác minh fd8799247; chỉ thiếu workflow Pages (403 riêng).",
-      "files": [],
-      "id": "P00-02",
-      "inputs": "Tài khoản bohoa96tb",
-      "outputs": "Repository hanngu-grammar trên GitHub, nhánh main",
-      "related_requirements": [
-        "GOV-01"
-      ],
-      "status": "done",
-      "title": "Kết nối GitHub và tạo repository"
-    },
-    {
-      "depends_on": [
-        "P00-01"
-      ],
-      "evidence": "docs/source-register.json; tìm kiếm 29/10/2026",
-      "files": [
-        "docs/source-register.json"
-      ],
-      "id": "P01-01",
-      "inputs": "HSK chính thức, Chinese Grammar Wiki, CC-CEDICT",
-      "outputs": "Source register với trạng thái xác minh thật",
-      "related_requirements": [
-        "SRC-01"
-      ],
-      "status": "done",
-      "title": "Xác minh nguồn cho bài mẫu và ghi trạng thái chưa rõ"
-    },
-    {
-      "depends_on": [
-        "P01-01"
-      ],
-      "evidence": "Đối chiếu phạm vi xong cả 6 cấp ở mức mục nhóm ngày 30/10/2026 (HSK1–2 lô 08, HSK3–4 lô 10, HSK5–6 lô sau std2): 251 mục nhóm của dự án; mọi mục HSK5/HSK6 đều thiếu bài. Phần còn mở của P01-02 chỉ còn xác minh sâu: điểm vi mô, hash của bản trích 25/09/2026, quyền phân phối — baseline vẫn là khóa phạm vi mức nhóm, chưa phải xác minh đầy đủ danh mục chính thức.",
-      "files": [
-        "docs/curriculum-baseline.json"
-      ],
-      "id": "P01-02",
-      "inputs": "Văn bản đề cương HSK 3.0 gốc",
-      "outputs": "Baseline HSK1-6 đã khóa",
-      "related_requirements": [
-        "CUR-01"
-      ],
-      "status": "in_progress",
-      "title": "Khóa baseline HSK1-6"
-    },
-    {
-      "depends_on": [
-        "P00-01"
-      ],
-      "evidence": "python3 scripts/validate.py: ĐẠT 3 bài; unittest 5 passed",
-      "files": [
-        "docs/schema.md",
-        "scripts/validate.py",
-        "tests/test_validator.py"
-      ],
-      "id": "P02-01",
-      "inputs": "Đặc tả §5-§7",
-      "outputs": "Schema v1 + validator + fixtures đúng/sai",
-      "related_requirements": [
-        "CUR-02"
-      ],
-      "status": "done",
-      "title": "Schema và validator dữ liệu"
-    },
-    {
-      "depends_on": [
-        "P02-01",
-        "P01-01"
-      ],
-      "evidence": "12/12 bài mẫu đại diện đã duyệt và phát hành (validator ĐẠT 12 bài, 53 bài tập); lô đầu 3 bài + lô 2 gồm 9 bài mới (hen, ma, de, you, bu-mei, measure, question-words, modal, guo).",
-      "files": [
-        "data/lessons.json"
-      ],
-      "id": "P03-01",
-      "inputs": "Baseline mẫu, nguồn CGW",
-      "outputs": "3 bài mẫu đã rà soát (是, 比, 了)",
-      "related_requirements": [
-        "LES-01"
-      ],
-      "status": "done",
-      "title": "Biên soạn 3 bài mẫu đầu tiên"
-    },
-    {
-      "depends_on": [
-        "P03-01"
-      ],
-      "evidence": "Máy chủ tĩnh local trả 200 cho index và lessons.json; node --check đạt. Chưa kiểm tra thiết bị thật.",
-      "files": [
-        "index.html",
-        "styles.css",
-        "app.js"
-      ],
-      "id": "P04-01",
-      "inputs": "3 bài mẫu",
-      "outputs": "App tĩnh: danh mục, bài, luyện tập, TTS, tiến trình local, xuất/nhập",
-      "related_requirements": [
-        "UI-01",
-        "AUD-01"
-      ],
-      "status": "done",
-      "title": "Luồng học hoàn chỉnh với bài mẫu"
-    },
-    {
-      "depends_on": [
-        "P04-01"
-      ],
-      "evidence": "node --check app.js đạt; máy chủ tĩnh local trả 200 cho index.html và data/lessons.json; validator vẫn đạt 3 bài. Chưa kiểm tra mic/thu âm trên trình duyệt thật.",
-      "files": [
-        "app.js",
-        "docs/decisions.md"
-      ],
-      "id": "P04-02",
-      "inputs": "App P04",
-      "outputs": "Luyện nói: thu âm, phát lại, đọc đuổi (từ chối mic vẫn học được)",
-      "related_requirements": [
-        "AUD-02"
-      ],
-      "status": "done",
-      "title": "Luyện nói bản cốt lõi"
-    },
-    {
-      "depends_on": [
-        "P04-01"
-      ],
-      "evidence": "node --test tests/test_fsrs.mjs 7 passed (thời gian giả lập, chống ghi trùng, serialize); máy chủ tĩnh 200 cho app/srs/vendor/lessons; validator + unittest vẫn đạt.",
-      "files": [],
-      "id": "P05-01",
-      "inputs": "ts-fsrs",
-      "outputs": "Ôn tập FSRS thật + kiểm thử thời gian giả lập + chống ghi trùng",
-      "related_requirements": [
-        "SRS-01"
-      ],
-      "status": "done",
-      "title": "Tích hợp FSRS và sao lưu/khôi phục"
-    },
-    {
-      "depends_on": [
-        "P05-01"
-      ],
-      "evidence": "43 bài, 208 bài tập sau lô HSK3-2 (PR #10, merge 8c88c2b8, build 20261030-hsk3b2 đã nghiệm thu live). HSK1 20, HSK2 15, HSK3 8. Đã rà soát nội bộ + chuẩn hóa, CHƯA đạt toàn bộ tiêu chí vì audio chưa nghiệm thu.",
-      "files": [],
-      "id": "P06-01",
-      "inputs": "Baseline khóa",
-      "outputs": "Các mục HSK1-2 bao phủ đầy đủ bởi bài đã duyệt",
-      "related_requirements": [
-        "CUR-01"
-      ],
-      "status": "in_progress",
-      "title": "Mở rộng HSK1-2"
-    },
-    {
-      "depends_on": [
-        "P06-01"
-      ],
-      "evidence": "64 bài sau HSK3-7 → 68 bài đã rà soát nội bộ sau HSK3-8 (HSK1: 20, HSK2: 17, HSK3: 30, HSK4: 1), 333 bài tập. Mới nhất — HSK3-8 (PR #17, build 20261030-hsk3h8, CI 2/2 xanh trên commit mới nhất trước merge): approx-numbers-1 (HSK2), zenme-yang-question, time-frame-patterns, adverbs-degree-hsk3 + sửa đối chiếu trực quan (H3-42/43, H3-07, H3-12) + sửa lỗi treo tải trong app.js. Ánh xạ: HSK2 20/15/27; HSK3 29 đã có / 4 một phần / 17 thiếu; HSK4 1/0/33. Audio thật vẫn not_run.",
-      "files": [],
-      "id": "P07-01",
-      "inputs": "Baseline khóa",
-      "outputs": "Các mục HSK3-4 hoàn chỉnh",
-      "related_requirements": [
-        "CUR-01"
-      ],
-      "status": "pending",
-      "title": "Mở rộng HSK3-4"
-    },
-    {
-      "depends_on": [
-        "P07-01"
-      ],
-      "evidence": "Chưa làm",
-      "files": [],
-      "id": "P08-01",
-      "inputs": "Baseline khóa",
-      "outputs": "Các mục HSK5-6 hoàn chỉnh",
-      "related_requirements": [
-        "CUR-01"
-      ],
-      "status": "pending",
-      "title": "Mở rộng HSK5-6"
-    },
-    {
-      "depends_on": [
-        "P08-01"
-      ],
-      "evidence": "PHẠM VI BẢN THỬ NGHIỆM. Vòng qa-01 (commit 0e9a9904, 3 bài) và vòng qa-02 (bản 12 bài, 29/10/2026): chức năng đạt, lịch sử ôn cập nhật tức thì đã xác minh, FSRS Good thứ hai cho hạn 2 ngày đúng cấu hình thư viện; lỗi console = not_run; hiệu năng = not_run. P09 toàn dự án chưa hoàn thành (xem P09-02).",
-      "files": [],
-      "id": "P09-01",
-      "inputs": "Toàn bộ app + nội dung",
-      "outputs": "Báo cáo E2E, hiệu năng, tiếp cận, bảo vệ dữ liệu, backup",
-      "related_requirements": [
-        "OPS-01"
-      ],
-      "status": "done",
-      "title": "Kiểm định toàn hệ thống"
-    },
-    {
-      "depends_on": [
-        "P00-02",
-        "P09-01"
-      ],
-      "evidence": "Pages live đã xác minh qua text fetch index + lessons.json (04:52 UTC 2026-10-29); chưa kiểm tra tương tác JS live bằng trình duyệt thật.",
-      "files": [
-        ".github/workflows/pages.yml",
-        "docs/release-log.md"
-      ],
-      "id": "P10-01",
-      "inputs": "Repo GitHub",
-      "outputs": "Phát hành GitHub Pages đã kiểm tra live",
-      "related_requirements": [
-        "OPS-01"
-      ],
-      "status": "done",
-      "title": "Phát hành và kiểm tra live"
-    },
-    {
-      "id": "P09-02",
-      "status": "pending",
-      "title": "Kiểm định toàn hệ thống sau khi HSK1–6 hoàn thành",
-      "evidence": "Chưa làm; chỉ làm sau khi P06–P08 xong, bao gồm vòng trình duyệt và lỗi console."
-    },
-    {
-      "id": "AUD-TTS-01",
-      "title": "Nghiệm thu audio TTS: giọng zh-CN, phát/dừng, thiếu giọng",
-      "status": "in_progress",
-      "evidence": "TTS trình duyệt là phương án TẠM THỜI, chưa mặc nhiên đáp ứng yêu cầu audio tạo trước trong đặc tả. Build voicewarn2 đã nghiệm thu live 34 bài (qa-07): dòng cảnh báo thiếu giọng zh ĐÃ hiển thị sẵn trong phần Ví dụ (đúng nội dung cảnh báo), đạt yêu cầu hiển thị thông báo thay vì âm thầm dùng giọng mặc định. Hộp thoại cảnh báo khi bấm Nghe mẫu thì KHÔNG quan sát được trong vòng kiểm tra (nguyên nhân chưa xác định, có thể do khung kiểm tra xử lý hộp thoại) — ghi là chưa quan sát được, không khẳng định đã hoạt động. Nghe thực tế, phát/dừng và thiếu giọng trên thiết bị thật vẫn not_run cho cả 34 bài. Không đánh dấu bài đạt toàn bộ tiêu chí khi audio chưa nghiệm thu."
-    },
-    {
-      "id": "STD-01",
-      "status": "done",
-      "title": "Chuẩn hóa toàn bộ nội dung và giao diện (chuẩn A–F, design system, chấm bài)",
-      "evidence": "PR #7 merge 298576ff; QA-01 vòng 1 chưa đạt (4 lỗi) → sửa ND-03/CODE-02 → QA-02 ĐẠT; nghiệm thu live build 20261030-std1 đạt bước 1–6 (xem docs/reviews/qa-std1.md, docs/reviews/standardization-2026-10-30.md). Console và bề rộng 390px live: not_run.",
-      "files": [
-        "app.js",
-        "styles.css",
-        "index.html",
-        "data/lessons/*.json",
-        "scripts/validate.py",
-        "docs/schema.md"
-      ]
-    },
-    {
-      "id": "STD-02",
-      "status": "done",
-      "title": "Khép khoảng trống QA bằng harness trình duyệt thật; trạng thái đối chiếu từng bài; tách bài chọn lọc",
-      "evidence": "PR #8 merge 616b63af; harness CDP 19/19 + di trú 15/15; QA vòng 1 chưa đạt (locnoun-ex5) → sửa → vòng 2 ĐẠT; nghiệm thu live đạt (xem docs/reviews/qa-std2.md, D26).",
-      "files": [
-        "tests/browser-check.mjs",
-        "styles.css",
-        "app.js",
-        "data/lessons/*.json",
-        "data/lessons-manifest.json"
-      ]
-    },
-    {
-      "id": "MNT-CI-01",
-      "title": "Bảo trì CI: nâng các action lên bản chạy Node 24 (hết cảnh báo deprecated Node 20)",
-      "status": "done",
-      "evidence": "Cảnh báo từ các lần chạy CI 2026-10-30: checkout@v4, setup-node@v4, setup-python@v5 chạy nền Node 20 đã deprecated (GitHub ép chạy Node 24). Đã xác minh bản thay thế tương thích bằng cách đọc action.yml chính thức của từng action: actions/checkout@v5 (node24), actions/setup-node@v5 (node24), actions/setup-python@v6 (node24), actions/upload-artifact@v6 (node24; v5 vẫn node20, v7 cũng node24 — chọn v6 là bước nhảy tối thiểu). Nâng cả 4 action theo danh sách này sẽ hết toàn bộ cảnh báo deprecated. Việc sửa file workflow phải qua PR RIÊNG (không trộn lô nội dung) và do Hoa commit (API của Muse bị chặn ghi .github/workflows — 403); Muse chuẩn bị diff chính xác khi thực hiện. || Cập nhật 2026-10-30: đã tự chuẩn bị bản workflow hoàn chỉnh (docs/ci-workflow-proposed-mnt-ci-01.yml, đã kiểm tra cú pháp YAML) và tự thử ghi lên nhánh mnt-ci-01 (đã tạo sẵn trên GitHub) kèm SHA hiện tại — GitHub trả 403 'refusing to allow a GitHub App to create or update workflow without workflows permission'. Không có đường vòng qua API. Đã gửi Hoa lỗi cụ thể + toàn bộ YAML. Chờ Hoa commit file lên nhánh mnt-ci-01; sau đó Manager tạo PR, kiểm tra CI (PR dùng chính workflow mới) và merge. || HOÀN TẤT 2026-10-30: Hoa/ChatGPT commit file lên nhánh mnt-ci-01 tại 69a2824 (khớp 100% bản Muse chuẩn bị); PR #15 (head cuối d5ac8b8 sau khi cập nhật từ main) chạy CI bằng chính workflow mới: cả hai job xanh, mục Annotations trống — cảnh báo Node 20 deprecated đã biến mất; merge b00a8783. Từ nay CI của mọi PR dùng actions bản Node 24.",
-      "dependencies": []
-    },
-    {
-      "id": "ISSUE-LOAD-STALL-01",
-      "title": "Kẹt màn hình tải 'Đang tải bài học…': fetch dữ liệu không timeout khiến kết nối treo thành tải vô hạn; hiện tượng live 30/10 giữ trạng thái theo dõi",
-      "status": "open",
-      "evidence": "Điều tra 2026-10-30 (docs/reviews/loading-stall-investigation.md, số đo harness CDP local): (a) tải mới 1.745ms đạt; (b) mạng chậm (400ms latency, ~50KB/s) hiện danh sách sau 41.479ms — tải TUẦN TỰ manifest + shard cộng dồn độ trễ, không treo vô hạn (quan sát phụ, chưa sửa song song hóa); (c1) một file bài 404 → banner 'Tải thiếu 1 phần dữ liệu bài học' + nút 'Thử tải lại' sau 839ms (đường lỗi vốn đúng); (c2) KẾT NỐI TREO (server nhận request không trả lời) = LỖI XÁC NHẬN: trước sửa đứng quá 40s ở màn hình tải, không thông báo/không thử lại, vì fetch() trong loadLessons() không timeout. ĐÃ SỬA ở lô HSK3-8 (app.js: fetchData + AbortController, FETCH_TIMEOUT_MS=15000 cho manifest và từng shard; AbortError đi vào đường lỗi sẵn có) — kiểm chứng sau sửa: treo shard → banner ở 16.566ms; treo manifest → trang lỗi ở 15.213ms và nút tải lại hoạt động; harness 19/19, validator ĐẠT. Phát hành ở build 20261030-hsk3h8 (PR #17). PHẦN CÒN THEO DÕI: hiện tượng live ngày 30/10/2026 ở build 20261030-hsk3g7 không tái hiện nguyên trạng ở local → không kết luận nguyên nhân; nếu tái diễn trên bản đã có timeout, ghi lại điều kiện mạng/thiết bị kèm thời gian chờ cụ thể rồi mở lại điều tra. Bước tái hiện lỗi gốc (trước sửa): phục vụ app bằng máy chủ nhận request nhưng không trả lời data/lessons-manifest.json hoặc một file data/lessons/ → trang đứng ở 'Đang tải bài học…' quá 40 giây. || Quan sát live sau phát hành (nghiệm thu lô HSK3-8, build 20261030-hsk3h8): lần tải đầu mất ~20 giây quan sát mới hiện danh sách bài, không kẹt vĩnh viễn — củng cố nhận định tải tuần tự gây chờ lâu trên mạng thật. Hướng xử lý tiếp đề xuất (chưa làm): tải song song các shard (Promise.all) kèm giữ nguyên timeout + banner lỗi; làm thành nhiệm vụ riêng, kiểm chứng bằng cùng kịch bản mạng chậm (mục tiêu giảm rõ thời gian chờ so với 41,5s local / ~20s live)."
-    }
-  ]
+ "schema_version": 1,
+ "tasks": [
+  {
+   "depends_on": [],
+   "evidence": "docs/*, AGENTS.md, README.md; validator đạt",
+   "files": [
+    "AGENTS.md",
+    "README.md",
+    "docs/requirements.json",
+    "docs/decisions.md",
+    "docs/source-register.json",
+    "docs/curriculum-baseline.json",
+    "docs/task-board.json",
+    "docs/checkpoint.json",
+    "docs/quality-gates.md",
+    "docs/schema.md"
+   ],
+   "id": "P00-01",
+   "inputs": "Đặc tả, quyền người dùng",
+   "outputs": "Hồ sơ dự án và hệ thống quản lý",
+   "related_requirements": [
+    "GOV-02",
+    "SEC-01"
+   ],
+   "status": "done",
+   "title": "Khởi tạo hồ sơ dự án và checkpoint"
+  },
+  {
+   "depends_on": [
+    "P00-01"
+   ],
+   "evidence": "21/22 file đã lên main, head đã xác minh fd8799247; chỉ thiếu workflow Pages (403 riêng).",
+   "files": [],
+   "id": "P00-02",
+   "inputs": "Tài khoản bohoa96tb",
+   "outputs": "Repository hanngu-grammar trên GitHub, nhánh main",
+   "related_requirements": [
+    "GOV-01"
+   ],
+   "status": "done",
+   "title": "Kết nối GitHub và tạo repository"
+  },
+  {
+   "depends_on": [
+    "P00-01"
+   ],
+   "evidence": "docs/source-register.json; tìm kiếm 29/10/2026",
+   "files": [
+    "docs/source-register.json"
+   ],
+   "id": "P01-01",
+   "inputs": "HSK chính thức, Chinese Grammar Wiki, CC-CEDICT",
+   "outputs": "Source register với trạng thái xác minh thật",
+   "related_requirements": [
+    "SRC-01"
+   ],
+   "status": "done",
+   "title": "Xác minh nguồn cho bài mẫu và ghi trạng thái chưa rõ"
+  },
+  {
+   "depends_on": [
+    "P01-01"
+   ],
+   "evidence": "Đối chiếu phạm vi xong cả 6 cấp ở mức mục nhóm ngày 30/10/2026 (HSK1–2 lô 08, HSK3–4 lô 10, HSK5–6 lô sau std2): 251 mục nhóm của dự án; mọi mục HSK5/HSK6 đều thiếu bài. Phần còn mở của P01-02 chỉ còn xác minh sâu: điểm vi mô, hash của bản trích 25/09/2026, quyền phân phối — baseline vẫn là khóa phạm vi mức nhóm, chưa phải xác minh đầy đủ danh mục chính thức.",
+   "files": [
+    "docs/curriculum-baseline.json"
+   ],
+   "id": "P01-02",
+   "inputs": "Văn bản đề cương HSK 3.0 gốc",
+   "outputs": "Baseline HSK1-6 đã khóa",
+   "related_requirements": [
+    "CUR-01"
+   ],
+   "status": "in_progress",
+   "title": "Khóa baseline HSK1-6"
+  },
+  {
+   "depends_on": [
+    "P00-01"
+   ],
+   "evidence": "python3 scripts/validate.py: ĐẠT 3 bài; unittest 5 passed",
+   "files": [
+    "docs/schema.md",
+    "scripts/validate.py",
+    "tests/test_validator.py"
+   ],
+   "id": "P02-01",
+   "inputs": "Đặc tả §5-§7",
+   "outputs": "Schema v1 + validator + fixtures đúng/sai",
+   "related_requirements": [
+    "CUR-02"
+   ],
+   "status": "done",
+   "title": "Schema và validator dữ liệu"
+  },
+  {
+   "depends_on": [
+    "P02-01",
+    "P01-01"
+   ],
+   "evidence": "12/12 bài mẫu đại diện đã duyệt và phát hành (validator ĐẠT 12 bài, 53 bài tập); lô đầu 3 bài + lô 2 gồm 9 bài mới (hen, ma, de, you, bu-mei, measure, question-words, modal, guo).",
+   "files": [
+    "data/lessons.json"
+   ],
+   "id": "P03-01",
+   "inputs": "Baseline mẫu, nguồn CGW",
+   "outputs": "3 bài mẫu đã rà soát (是, 比, 了)",
+   "related_requirements": [
+    "LES-01"
+   ],
+   "status": "done",
+   "title": "Biên soạn 3 bài mẫu đầu tiên"
+  },
+  {
+   "depends_on": [
+    "P03-01"
+   ],
+   "evidence": "Máy chủ tĩnh local trả 200 cho index và lessons.json; node --check đạt. Chưa kiểm tra thiết bị thật.",
+   "files": [
+    "index.html",
+    "styles.css",
+    "app.js"
+   ],
+   "id": "P04-01",
+   "inputs": "3 bài mẫu",
+   "outputs": "App tĩnh: danh mục, bài, luyện tập, TTS, tiến trình local, xuất/nhập",
+   "related_requirements": [
+    "UI-01",
+    "AUD-01"
+   ],
+   "status": "done",
+   "title": "Luồng học hoàn chỉnh với bài mẫu"
+  },
+  {
+   "depends_on": [
+    "P04-01"
+   ],
+   "evidence": "node --check app.js đạt; máy chủ tĩnh local trả 200 cho index.html và data/lessons.json; validator vẫn đạt 3 bài. Chưa kiểm tra mic/thu âm trên trình duyệt thật.",
+   "files": [
+    "app.js",
+    "docs/decisions.md"
+   ],
+   "id": "P04-02",
+   "inputs": "App P04",
+   "outputs": "Luyện nói: thu âm, phát lại, đọc đuổi (từ chối mic vẫn học được)",
+   "related_requirements": [
+    "AUD-02"
+   ],
+   "status": "done",
+   "title": "Luyện nói bản cốt lõi"
+  },
+  {
+   "depends_on": [
+    "P04-01"
+   ],
+   "evidence": "node --test tests/test_fsrs.mjs 7 passed (thời gian giả lập, chống ghi trùng, serialize); máy chủ tĩnh 200 cho app/srs/vendor/lessons; validator + unittest vẫn đạt.",
+   "files": [],
+   "id": "P05-01",
+   "inputs": "ts-fsrs",
+   "outputs": "Ôn tập FSRS thật + kiểm thử thời gian giả lập + chống ghi trùng",
+   "related_requirements": [
+    "SRS-01"
+   ],
+   "status": "done",
+   "title": "Tích hợp FSRS và sao lưu/khôi phục"
+  },
+  {
+   "depends_on": [
+    "P05-01"
+   ],
+   "evidence": "43 bài, 208 bài tập sau lô HSK3-2 (PR #10, merge 8c88c2b8, build 20261030-hsk3b2 đã nghiệm thu live). HSK1 20, HSK2 15, HSK3 8. Đã rà soát nội bộ + chuẩn hóa, CHƯA đạt toàn bộ tiêu chí vì audio chưa nghiệm thu.",
+   "files": [],
+   "id": "P06-01",
+   "inputs": "Baseline khóa",
+   "outputs": "Các mục HSK1-2 bao phủ đầy đủ bởi bài đã duyệt",
+   "related_requirements": [
+    "CUR-01"
+   ],
+   "status": "in_progress",
+   "title": "Mở rộng HSK1-2"
+  },
+  {
+   "depends_on": [
+    "P06-01"
+   ],
+   "evidence": "64 bài sau HSK3-7 → 68 bài đã rà soát nội bộ sau HSK3-8 (HSK1: 20, HSK2: 17, HSK3: 30, HSK4: 1), 333 bài tập. Mới nhất — HSK3-8 (PR #17, build 20261030-hsk3h8, CI 2/2 xanh trên commit mới nhất trước merge): approx-numbers-1 (HSK2), zenme-yang-question, time-frame-patterns, adverbs-degree-hsk3 + sửa đối chiếu trực quan (H3-42/43, H3-07, H3-12) + sửa lỗi treo tải trong app.js. Ánh xạ: HSK2 20/15/27; HSK3 29 đã có / 4 một phần / 17 thiếu; HSK4 1/0/33. Audio thật vẫn not_run.",
+   "files": [],
+   "id": "P07-01",
+   "inputs": "Baseline khóa",
+   "outputs": "Các mục HSK3-4 hoàn chỉnh",
+   "related_requirements": [
+    "CUR-01"
+   ],
+   "status": "pending",
+   "title": "Mở rộng HSK3-4"
+  },
+  {
+   "depends_on": [
+    "P07-01"
+   ],
+   "evidence": "Chưa làm",
+   "files": [],
+   "id": "P08-01",
+   "inputs": "Baseline khóa",
+   "outputs": "Các mục HSK5-6 hoàn chỉnh",
+   "related_requirements": [
+    "CUR-01"
+   ],
+   "status": "pending",
+   "title": "Mở rộng HSK5-6"
+  },
+  {
+   "depends_on": [
+    "P08-01"
+   ],
+   "evidence": "PHẠM VI BẢN THỬ NGHIỆM. Vòng qa-01 (commit 0e9a9904, 3 bài) và vòng qa-02 (bản 12 bài, 29/10/2026): chức năng đạt, lịch sử ôn cập nhật tức thì đã xác minh, FSRS Good thứ hai cho hạn 2 ngày đúng cấu hình thư viện; lỗi console = not_run; hiệu năng = not_run. P09 toàn dự án chưa hoàn thành (xem P09-02).",
+   "files": [],
+   "id": "P09-01",
+   "inputs": "Toàn bộ app + nội dung",
+   "outputs": "Báo cáo E2E, hiệu năng, tiếp cận, bảo vệ dữ liệu, backup",
+   "related_requirements": [
+    "OPS-01"
+   ],
+   "status": "done",
+   "title": "Kiểm định toàn hệ thống"
+  },
+  {
+   "depends_on": [
+    "P00-02",
+    "P09-01"
+   ],
+   "evidence": "Pages live đã xác minh qua text fetch index + lessons.json (04:52 UTC 2026-10-29); chưa kiểm tra tương tác JS live bằng trình duyệt thật.",
+   "files": [
+    ".github/workflows/pages.yml",
+    "docs/release-log.md"
+   ],
+   "id": "P10-01",
+   "inputs": "Repo GitHub",
+   "outputs": "Phát hành GitHub Pages đã kiểm tra live",
+   "related_requirements": [
+    "OPS-01"
+   ],
+   "status": "done",
+   "title": "Phát hành và kiểm tra live"
+  },
+  {
+   "id": "P09-02",
+   "status": "pending",
+   "title": "Kiểm định toàn hệ thống sau khi HSK1–6 hoàn thành",
+   "evidence": "Chưa làm; chỉ làm sau khi P06–P08 xong, bao gồm vòng trình duyệt và lỗi console."
+  },
+  {
+   "id": "AUD-TTS-01",
+   "title": "Nghiệm thu audio TTS: giọng zh-CN, phát/dừng, thiếu giọng",
+   "status": "in_progress",
+   "evidence": "TTS trình duyệt là phương án TẠM THỜI, chưa mặc nhiên đáp ứng yêu cầu audio tạo trước trong đặc tả. Build voicewarn2 đã nghiệm thu live 34 bài (qa-07): dòng cảnh báo thiếu giọng zh ĐÃ hiển thị sẵn trong phần Ví dụ (đúng nội dung cảnh báo), đạt yêu cầu hiển thị thông báo thay vì âm thầm dùng giọng mặc định. Hộp thoại cảnh báo khi bấm Nghe mẫu thì KHÔNG quan sát được trong vòng kiểm tra (nguyên nhân chưa xác định, có thể do khung kiểm tra xử lý hộp thoại) — ghi là chưa quan sát được, không khẳng định đã hoạt động. Nghe thực tế, phát/dừng và thiếu giọng trên thiết bị thật vẫn not_run cho cả 34 bài. Không đánh dấu bài đạt toàn bộ tiêu chí khi audio chưa nghiệm thu."
+  },
+  {
+   "id": "STD-01",
+   "status": "done",
+   "title": "Chuẩn hóa toàn bộ nội dung và giao diện (chuẩn A–F, design system, chấm bài)",
+   "evidence": "PR #7 merge 298576ff; QA-01 vòng 1 chưa đạt (4 lỗi) → sửa ND-03/CODE-02 → QA-02 ĐẠT; nghiệm thu live build 20261030-std1 đạt bước 1–6 (xem docs/reviews/qa-std1.md, docs/reviews/standardization-2026-10-30.md). Console và bề rộng 390px live: not_run.",
+   "files": [
+    "app.js",
+    "styles.css",
+    "index.html",
+    "data/lessons/*.json",
+    "scripts/validate.py",
+    "docs/schema.md"
+   ]
+  },
+  {
+   "id": "STD-02",
+   "status": "done",
+   "title": "Khép khoảng trống QA bằng harness trình duyệt thật; trạng thái đối chiếu từng bài; tách bài chọn lọc",
+   "evidence": "PR #8 merge 616b63af; harness CDP 19/19 + di trú 15/15; QA vòng 1 chưa đạt (locnoun-ex5) → sửa → vòng 2 ĐẠT; nghiệm thu live đạt (xem docs/reviews/qa-std2.md, D26).",
+   "files": [
+    "tests/browser-check.mjs",
+    "styles.css",
+    "app.js",
+    "data/lessons/*.json",
+    "data/lessons-manifest.json"
+   ]
+  },
+  {
+   "id": "MNT-CI-01",
+   "title": "Bảo trì CI: nâng các action lên bản chạy Node 24 (hết cảnh báo deprecated Node 20)",
+   "status": "done",
+   "evidence": "Cảnh báo từ các lần chạy CI 2026-10-30: checkout@v4, setup-node@v4, setup-python@v5 chạy nền Node 20 đã deprecated (GitHub ép chạy Node 24). Đã xác minh bản thay thế tương thích bằng cách đọc action.yml chính thức của từng action: actions/checkout@v5 (node24), actions/setup-node@v5 (node24), actions/setup-python@v6 (node24), actions/upload-artifact@v6 (node24; v5 vẫn node20, v7 cũng node24 — chọn v6 là bước nhảy tối thiểu). Nâng cả 4 action theo danh sách này sẽ hết toàn bộ cảnh báo deprecated. Việc sửa file workflow phải qua PR RIÊNG (không trộn lô nội dung) và do Hoa commit (API của Muse bị chặn ghi .github/workflows — 403); Muse chuẩn bị diff chính xác khi thực hiện. || Cập nhật 2026-10-30: đã tự chuẩn bị bản workflow hoàn chỉnh (docs/ci-workflow-proposed-mnt-ci-01.yml, đã kiểm tra cú pháp YAML) và tự thử ghi lên nhánh mnt-ci-01 (đã tạo sẵn trên GitHub) kèm SHA hiện tại — GitHub trả 403 'refusing to allow a GitHub App to create or update workflow without workflows permission'. Không có đường vòng qua API. Đã gửi Hoa lỗi cụ thể + toàn bộ YAML. Chờ Hoa commit file lên nhánh mnt-ci-01; sau đó Manager tạo PR, kiểm tra CI (PR dùng chính workflow mới) và merge. || HOÀN TẤT 2026-10-30: Hoa/ChatGPT commit file lên nhánh mnt-ci-01 tại 69a2824 (khớp 100% bản Muse chuẩn bị); PR #15 (head cuối d5ac8b8 sau khi cập nhật từ main) chạy CI bằng chính workflow mới: cả hai job xanh, mục Annotations trống — cảnh báo Node 20 deprecated đã biến mất; merge b00a8783. Từ nay CI của mọi PR dùng actions bản Node 24.",
+   "dependencies": []
+  },
+  {
+   "id": "ISSUE-LOAD-STALL-01",
+   "title": "Tải dữ liệu: đã sửa tải tuần tự (song song giới hạn 8) + timeout phủ cả body ở build 20261030-perf1; hiện tượng live 30/10 (build hsk3g7) chưa rõ nguyên nhân — tiếp tục theo dõi",
+   "status": "monitoring",
+   "evidence": "Điều tra 2026-10-30 (docs/reviews/loading-stall-investigation.md, số đo harness CDP local): (a) tải mới 1.745ms đạt; (b) mạng chậm (400ms latency, ~50KB/s) hiện danh sách sau 41.479ms — tải TUẦN TỰ manifest + shard cộng dồn độ trễ, không treo vô hạn (quan sát phụ, chưa sửa song song hóa); (c1) một file bài 404 → banner 'Tải thiếu 1 phần dữ liệu bài học' + nút 'Thử tải lại' sau 839ms (đường lỗi vốn đúng); (c2) KẾT NỐI TREO (server nhận request không trả lời) = LỖI XÁC NHẬN: trước sửa đứng quá 40s ở màn hình tải, không thông báo/không thử lại, vì fetch() trong loadLessons() không timeout. ĐÃ SỬA ở lô HSK3-8 (app.js: fetchData + AbortController, FETCH_TIMEOUT_MS=15000 cho manifest và từng shard; AbortError đi vào đường lỗi sẵn có) — kiểm chứng sau sửa: treo shard → banner ở 16.566ms; treo manifest → trang lỗi ở 15.213ms và nút tải lại hoạt động; harness 19/19, validator ĐẠT. Phát hành ở build 20261030-hsk3h8 (PR #17). PHẦN CÒN THEO DÕI: hiện tượng live ngày 30/10/2026 ở build 20261030-hsk3g7 không tái hiện nguyên trạng ở local → không kết luận nguyên nhân; nếu tái diễn trên bản đã có timeout, ghi lại điều kiện mạng/thiết bị kèm thời gian chờ cụ thể rồi mở lại điều tra. Bước tái hiện lỗi gốc (trước sửa): phục vụ app bằng máy chủ nhận request nhưng không trả lời data/lessons-manifest.json hoặc một file data/lessons/ → trang đứng ở 'Đang tải bài học…' quá 40 giây. || Quan sát live sau phát hành (nghiệm thu lô HSK3-8, build 20261030-hsk3h8): lần tải đầu mất ~20 giây quan sát mới hiện danh sách bài, không kẹt vĩnh viễn — củng cố nhận định tải tuần tự gây chờ lâu trên mạng thật. Hướng xử lý tiếp đề xuất (chưa làm): tải song song các shard (Promise.all) kèm giữ nguyên timeout + banner lỗi; làm thành nhiệm vụ riêng, kiểm chứng bằng cùng kịch bản mạng chậm (mục tiêu giảm rõ thời gian chờ so với 41,5s local / ~20s live). NÂNG CẤP 2026-10-30 (PR kỹ thuật riêng #18, merge e92d22a1, build 20261030-perf1, nghiệm thu live đạt): (1) tải shard chuyển sang SONG SONG giới hạn LOAD_CONCURRENCY=8 (chọn bằng đo thử 4/8/16), ghép theo chỉ số manifest giữ nguyên thứ tự; đo cùng điều kiện local (72 bài): mạng chậm 46,4 → 19,4 giây (Code đo), QA độc lập đo lại 19,3 giây — khớp; (2) phát hiện và sửa thêm KHE HỞ TIMEOUT-BODY: bản HSK3-8 hủy timer khi có headers nên treo giữa body vẫn tải vô hạn (đo trước: >45 giây không kết thúc) — nay timeout phủ tới khi đọc xong body, kịch bản treo-body kết thúc bằng banner + thử lại ở ~15,3 giây (Code + QA cùng đo). Báo cáo: docs/reviews/loading-perf-optimization.md + docs/reviews/qa-perf-load.md. PHẦN CÒN MỞ duy nhất của issue: hiện tượng live 30/10 ở build hsk3g7 vẫn chưa xác định nguyên nhân → giữ trạng thái THEO DÕI; hai lỗi đã đo (tải tuần tự chậm, timeout chưa phủ body) đã sửa và phát hành, không gộp kết luận với hiện tượng live."
+  }
+ ]
 }
