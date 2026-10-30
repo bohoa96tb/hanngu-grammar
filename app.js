@@ -868,7 +868,7 @@ function render() {
 // bản cũ từ bộ nhớ đệm sau khi app.js mới đã chạy. Lưu ý: tham số này chỉ
 // có tác dụng khi app.js mới đã được tải; nó không chữa được app.js cũ
 // còn trong bộ nhớ đệm (xem docs/decisions.md D20).
-const BUILD_VERSION = "20261030-hsk3g7";
+const BUILD_VERSION = "20261030-hsk3h8";
 const DEBUG = new URLSearchParams(location.search).get("debug") === "1";
 let debugInfo = null;
 
@@ -915,12 +915,30 @@ function renderDebug() {
   }
 }
 
+// fetch() không có hạn chót sẽ treo vĩnh viễn nếu máy chủ nhận kết nối
+// nhưng không bao giờ trả lời xong (đã tái hiện bằng máy chủ treo —
+// xem docs/reviews/loading-stall-investigation.md): promise không
+// resolve cũng không reject nên màn hình "Đang tải bài học…" không bao
+// giờ được thay. Mọi lần tải dữ liệu đều qua fetchData() có timeout;
+// khi quá hạn, AbortError đi vào đúng các đường lỗi sẵn có (trang lỗi
+// tải nếu là manifest, banner tải thiếu nếu là một shard).
+const FETCH_TIMEOUT_MS = 15000;
+async function fetchData(url) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
+  try {
+    return await fetch(url, { signal: ctrl.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 async function loadLessons() {
   const sources = [];
   let failedShards = 0;
   const manifestUrl = `data/lessons-manifest.json?v=${BUILD_VERSION}`;
   try {
-    const mr = await fetch(manifestUrl);
+    const mr = await fetchData(manifestUrl);
     if (!mr.ok) throw new Error("HTTP " + mr.status);
     const m = await mr.json();
     sources.push({ url: manifestUrl, status: mr.status, count: (m.shards || []).length, error: null });
@@ -928,7 +946,7 @@ async function loadLessons() {
     for (const s of (m.shards || [])) {
       const url = `${s}?v=${BUILD_VERSION}`;
       try {
-        const r = await fetch(url);
+        const r = await fetchData(url);
         if (!r.ok) throw new Error("HTTP " + r.status);
         const shard = await r.json();
         sources.push({ url, status: r.status, count: (shard.lessons || []).length, error: null });
