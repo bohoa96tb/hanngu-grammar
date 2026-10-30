@@ -62,7 +62,7 @@
       "depends_on": [
         "P01-01"
       ],
-      "evidence": "HSK1–2 đã đối chiếu (HSK1 52 mục nhóm: 25 đã có, 10 một phần, 17 thiếu; HSK2 62 mục nhóm: 19 đã có, 14 một phần, 29 thiếu, tính cho 34 bài). HSK3–4 đã đối chiếu (HSK3 50 mục nhóm: 4 đã có, 4 một phần, 42 thiếu sau lô 10; HSK4 34 mục nhóm: tất cả thiếu). HSK5–6 chưa đối chiếu. Số mục nhóm là cách chia của dự án, không phải số chính thức.",
+      "evidence": "Đối chiếu phạm vi xong cả 6 cấp ở mức mục nhóm ngày 30/10/2026 (HSK1–2 lô 08, HSK3–4 lô 10, HSK5–6 lô sau std2): 251 mục nhóm của dự án; mọi mục HSK5/HSK6 đều thiếu bài. Phần còn mở của P01-02 chỉ còn xác minh sâu: điểm vi mô, hash của bản trích 25/09/2026, quyền phân phối — baseline vẫn là khóa phạm vi mức nhóm, chưa phải xác minh đầy đủ danh mục chính thức.",
       "files": [
         "docs/curriculum-baseline.json"
       ],
