@@ -18,7 +18,7 @@
           "wrong_or_risky": "Dùng 在 thay 正在 trong mọi câu tiến hành"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -148,6 +148,9 @@
         }
       ],
       "formula_notes": "1) Vị trí: Chủ ngữ + 在 + Nơi chốn (nói ở đâu). 2) Tiến hành: Chủ ngữ + 在/正在 + Động từ; thêm 呢 cuối câu để nhấn mạnh đang diễn ra. 3) Phân biệt: 正在 nhấn mạnh “đang” hơn 在; 在 là vị trí hay tiến hành thì nhìn thành phần đứng sau.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 1,
       "id": "zai-progress",
       "objective": "Sau bài này, người học nói được ai ở đâu bằng 在 và nói được hành động đang diễn ra bằng 在/正在, không nhầm với 是.",
@@ -155,7 +158,7 @@
       "quick_memory": "Ở đâu → 在 + nơi chốn. Đang làm gì → 正在 + động từ. Nhìn động từ hay nơi chốn đứng sau 在.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

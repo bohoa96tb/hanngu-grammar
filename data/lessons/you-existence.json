@@ -13,7 +13,7 @@
           "wrong_or_risky": "我不有哥哥。"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "easy",
       "examples": [
         {
@@ -130,6 +130,9 @@
         }
       ],
       "formula_notes": "1) Sở hữu: Ai + 有 + Vật (我有一个哥哥). 2) Tồn tại: Nơi chốn + 有 + Người/Vật (教室里有很多学生). 3) Không dùng: nói người ở đâu thì dùng 在 (我在教室), không dùng 有.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 1,
       "id": "you-existence",
       "objective": "Sau bài này, người học nói được ai có cái gì và ở đâu có cái gì bằng 有, phân biệt 有 với 在.",
@@ -137,7 +140,7 @@
       "quick_memory": "Có: ai có gì hoặc nơi nào có gì đều dùng 有. Người ở đâu thì dùng 在, không dùng 有.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

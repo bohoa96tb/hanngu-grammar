@@ -13,7 +13,7 @@
           "wrong_or_risky": "我是学校。 (muốn nói 'Tôi ở trường')"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "easy",
       "examples": [
         {
@@ -128,6 +128,9 @@
         }
       ],
       "formula_notes": "1) Cần có sẵn: sau 是 bắt buộc là danh từ hoặc cụm danh từ. 2) Phủ định: 不是 + danh từ. 3) Câu hỏi: thêm 吗 ở cuối (你是学生吗？).",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 1,
       "id": "shi-noun-link",
       "objective": "Sau bài này, người học nói được 'A là B' khi B là người, vật hoặc thân phận, và không dùng nhầm 是 trước tính từ.",
@@ -135,7 +138,7 @@
       "quick_memory": "Là ai/cái gì thì dùng 是 nối hai danh từ. Nói tính chất hay vị trí thì không dùng 是.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki (Connecting nouns with shi), kiểm tra phủ định 不是 và phân biệt 是/很/在. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki (Connecting nouns with shi), kiểm tra phủ định 不是 và phân biệt 是/很/在. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

@@ -18,7 +18,7 @@
           "wrong_or_risky": "你看书看。"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -147,14 +147,17 @@
         }
       ],
       "formula_notes": "1) Động từ một âm tiết: AA (看看) hoặc A一A (看一看). 2) Động từ hai âm tiết: dạng ABAB (研究研究, 休息休息). 3) Tác dụng: làm giọng nhẹ nhàng, thân mật; không đổi nghĩa gốc của động từ. 4) Mở rộng (chỉ nhận biết): 走来走去 thuộc mẫu V来V去 riêng, không phải trùng điệp.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 2,
       "id": "verb-reduplication",
       "objective": "Sau bài này, người học dùng được động từ trùng điệp để nói thử làm một việc một cách nhẹ nhàng, không dùng trong văn phong trang trọng.",
       "pattern": "AA • A一A • ABAB",
-      "quick_memory": "Nói nhẹ nhàng, thử làm: lặp động từ (看看, 看一看). Lặp xong không gắn thêm tân ngữ lạ.",
+      "quick_memory": "Giọng nhẹ, thử làm: lặp động từ (看看, 看一看, 研究研究). Khối lặp dính liền động từ, đừng tách ra sau tân ngữ.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thay mục Nhớ nhanh theo rà soát std2 (audit §1.3)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

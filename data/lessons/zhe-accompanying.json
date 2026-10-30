@@ -18,7 +18,7 @@
           "wrong_or_risky": "他在笑说。"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -153,6 +153,9 @@
         }
       ],
       "formula_notes": "1) Vị trí: 着 đứng ngay sau động từ thứ nhất, trước động từ thứ hai (笑着说, 站着吃饭). 2) Cần có sẵn: mẫu kèm theo bắt buộc có động từ thứ hai. 3) Phân biệt: khác 着 chỉ trạng thái (门开着) đã học ở HSK2.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 3,
       "id": "zhe-accompanying",
       "objective": "Sau bài này, người học dùng động từ 1 + 着 + động từ 2 để nói một hành động diễn ra kèm theo hành động chính, phân biệt với 着 chỉ trạng thái đã học ở HSK2.",
@@ -160,7 +163,7 @@
       "quick_memory": "Vừa làm A vừa làm B: động từ 1 + 着 + động từ 2. Thiếu động từ thứ hai là chưa thành mẫu.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 10 từ danh mục HSK3 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 10 từ danh mục HSK3 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [
