@@ -13,12 +13,12 @@
           "wrong_or_risky": "他说话得很快。"
         },
         {
-          "explanation": "Nói gọn thế này nghe thiếu nhịp và dễ bị hiểu lệch; dạng đầy đủ của câu trùng động lặp lại động từ: 她看书看累了。",
+          "explanation": "Dạng rút gọn này vẫn gặp trong khẩu ngữ, không phải câu sai ngữ pháp; chỉ là nghe thiếu nhịp và dễ bị hiểu lệch sang hai vế rời. Khi luyện mẫu trùng động chuẩn, dùng dạng đầy đủ có lặp động từ: 她看书看累了。",
           "verdict": "kem_tu_nhien",
           "wrong_or_risky": "她看书累了。 (muốn nói 'cô ấy đọc sách đến mệt')"
         }
       ],
-      "content_version": 1,
+      "content_version": 2,
       "difficulty": "medium",
       "examples": [
         {
