@@ -39,6 +39,10 @@
     "data/lessons/ba-sentence-1.json",
     "data/lessons/bei-passive-1.json",
     "data/lessons/zhe-accompanying.json",
-    "data/lessons/bi-comparison-2.json"
+    "data/lessons/bi-comparison-2.json",
+    "data/lessons/result-complement-2.json",
+    "data/lessons/potential-complement-1.json",
+    "data/lessons/complex-hypothesis.json",
+    "data/lessons/complex-condition.json"
   ]
 }
