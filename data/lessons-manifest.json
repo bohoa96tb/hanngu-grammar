@@ -54,8 +54,12 @@
     "data/lessons/degree-complement-1.json",
     "data/lessons/rhetorical-question.json",
     "data/lessons/complex-sequence.json",
-    "data/lessons/complex-choice.json",
     "data/lessons/complex-purpose.json",
-    "data/lessons/time-since-completion.json"
+    "data/lessons/time-since-completion.json",
+    "data/lessons/complex-parallel.json",
+    "data/lessons/modal-verbs-hsk3.json",
+    "data/lessons/alternating-actions.json",
+    "data/lessons/yue-patterns.json",
+    "data/lessons/complex-choice.json"
   ]
 }

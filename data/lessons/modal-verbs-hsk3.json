@@ -1,0 +1,216 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "得 (děi) không phủ định bằng 不 để nói 'không cần phải' — 我不得去开会。 không mang nghĩa đó. 不得 có thật nhưng là cách nói trang trọng trong quy định, nghĩa cấm 'không được phép' （不得入内）. Muốn nói 'không cần phải đi họp' thì đổi từ: 我不用去开会。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我不得去开会。"
+        },
+        {
+          "explanation": "该 và 应该 cùng nghĩa 'nên', không xếp chồng lên nhau; chọn một: 我该休息了。 / 我应该休息。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我该应该休息。"
+        },
+        {
+          "explanation": "Cùng một chữ 得 nhưng khác từ: trước động từ với nghĩa 'phải' đọc děi （我得早起）; sau động từ trong mẫu bổ ngữ trạng thái đọc de （他说得很好， bài state-complement-de). Đọc sai âm dễ làm người nghe hiểu nhầm cấu trúc.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我得（de）早起。(đọc 得 thành de)"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Nǐ yīnggāi duō xiūxi.",
+          "tokens": [
+            "你",
+            "应该",
+            "多",
+            "休息"
+          ],
+          "vi": "Bạn nên nghỉ ngơi nhiều hơn.",
+          "zh": "你应该多休息。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ xūyào mǎi yí jiàn xīn dàyī.",
+          "tokens": [
+            "我",
+            "需要",
+            "买",
+            "一件",
+            "新",
+            "大衣"
+          ],
+          "vi": "Tôi cần mua một chiếc áo khoác mới.",
+          "zh": "我需要买一件新大衣。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā yuànyì bāngzhù tóngxué.",
+          "tokens": [
+            "他",
+            "愿意",
+            "帮助",
+            "同学"
+          ],
+          "vi": "Anh ấy sẵn lòng giúp đỡ bạn học.",
+          "zh": "他愿意帮助同学。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Míngtiān kāihuì, wǒ děi zǎoqǐ.",
+          "tokens": [
+            "明天",
+            "开会",
+            "，",
+            "我",
+            "得",
+            "早起"
+          ],
+          "vi": "Ngày mai họp, tôi phải dậy sớm.",
+          "zh": "明天开会，我得早起。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Shíjiān bù zǎo le, wǒmen gāi zǒu le.",
+          "tokens": [
+            "时间",
+            "不早",
+            "了",
+            "，",
+            "我们",
+            "该",
+            "走",
+            "了"
+          ],
+          "vi": "Không còn sớm nữa, chúng ta nên đi thôi.",
+          "zh": "时间不早了，我们该走了。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "他愿意教我们中文。"
+          ],
+          "explanation": "'Sẵn lòng' là tự nguyện nên dùng 愿意. 需要 là 'cần', 应该 là 'nên', 得 (děi) là 'phải' — đều đổi sắc thái so với đề.",
+          "id": "modal3-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他愿意教我们中文。",
+              "他需要教我们中文。",
+              "他应该教我们中文。",
+              "他得教我们中文。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Anh ấy sẵn lòng dạy chúng tôi tiếng Trung.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "你",
+              "应该",
+              "多",
+              "休息"
+            ]
+          ],
+          "explanation": "Động từ năng nguyện đứng ngay trước động từ chính: 你 + 应该 + 多休息。",
+          "id": "modal3-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "应该",
+              "你",
+              "休息",
+              "多"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Bạn nên nghỉ ngơi nhiều hơn.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "不得"
+          ],
+          "explanation": "Khối sai là 不得： người nói muốn nói 'không cần phải', mà 不得 là cách nói trang trọng nghĩa 'không được phép' （不得入内） nên không dùng cho nghĩa đó. Nói 'không cần phải đi họp' thì dùng 不用： 我不用去开会。",
+          "id": "modal3-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我",
+              "不得",
+              "去",
+              "开会"
+            ],
+            "sentence_zh": "我不得去开会。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 我不得去开会。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "得"
+          ],
+          "explanation": "Điền 得 (děi): 我得五点起床。 Nếu dùng 应该 thì câu thành 'nên dậy lúc năm giờ' — nhẹ hơn sắc thái bắt buộc mà đề yêu cầu.",
+          "id": "modal3-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Từ này đọc là děi, đứng ngay trước động từ."
+          },
+          "prompt_vi": "Điền từ có nghĩa 'phải' (bắt buộc vì hoàn cảnh, khẩu ngữ) để hoàn thành câu: 'Ngày mai sáu giờ họp, tôi phải dậy từ năm giờ.'",
+          "prompt_zh": "明天六点开会，我___五点起床。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "天黑了，我们该回家了。",
+            "天黑了，我们该回家了",
+            "我们该回家了。",
+            "我们该回家了"
+          ],
+          "explanation": "Mẫu 该……了 chốt cả hai đầu: 该 trước động từ, 了 cuối câu — 'đến lúc nên về nhà rồi'. Thiếu 了 cuối câu thì sắc thái 'đến lúc' chưa trọn.",
+          "id": "modal3-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Mẫu 'đến lúc nên… rồi': 该……了; 'trời tối' nói 天黑了， 'về nhà' nói 回家。"
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Trời tối rồi, chúng ta nên về nhà thôi.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Vị trí: cả năm từ đứng ngay trước động từ （你应该多休息；我需要买一件大衣）. 2) Chọn từ — mức độ: 需要 = cần (có nhu cầu thật); 应该 = nên theo lẽ thường/quy tắc, văn phong trung tính-trang trọng; 该 = cũng là 'nên' nhưng khẩu ngữ hơn và có mẫu riêng 该……了; 愿意 = sẵn lòng, nhấn tự nguyện; 得 (děi) = phải vì hoàn cảnh, khẩu ngữ. 3) Mẫu 该……了: 该 + động từ + 了 ở cuối câu = 'đến lúc nên làm rồi' （我们该走了）. 4) Phủ định: 不需要 / 不应该 / 不该 / 不愿意 đều dùng được; riêng 得 không phủ định bằng 不 với nghĩa 'không cần phải' — muốn nói 'không cần phải' thì dùng 不用/不必 (nhóm phủ định riêng, chỉ nhắc để tránh lỗi). Lưu ý: 不得 có thật trong văn trang trọng/quy định với nghĩa cấm 'không được phép' （不得入内）, khác hẳn nghĩa 'không cần phải'. 5) Đọc âm: 得 trong bài này đọc děi; khác 得 đọc de sau động từ trong bài state-complement-de （说得很好） và 得 đọc dé trong từ ghép như 觉得.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "modal-verbs-hsk3",
+      "objective": "Sau bài này, người học phân biệt và dùng được năm động từ năng nguyện HSK3: 需要 (cần), 应该/该 (nên), 愿意 (sẵn lòng) và 得 (děi, phải) — gồm cả mẫu 该……了 'đến lúc nên… rồi'.",
+      "pattern": "需要/应该/该/愿意/得（děi) + Động từ",
+      "quick_memory": "Cần → 需要； nên → 应该/该 (đến lúc: 该…了）; sẵn lòng → 愿意； phải → 得 děi; không cần phải → 不用 (không dùng 不得）。",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-6 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về động từ năng nguyện 需要/应该/该/愿意/得 theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-04 （能愿： 需要/该/应该/愿意/得） trong catalogue dự án từ đề cương thi 11/2025; cả năm từ đều chưa có ở các bài modal HSK1–2 của dự án.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Động từ năng nguyện HSK3: cần / nên / sẵn lòng / phải （需要 / 应该 / 该 / 愿意 / 得 děi）",
+      "when_to_use": "Ví dụ: 明天开会，我得早起。 — 'phải' vì hoàn cảnh bắt buộc, nói bằng 得 (đọc děi). Năm từ này đều đứng trước động từ nhưng khác sắc thái: cần thiết khách quan （需要）, nên theo lẽ/đạo lý （应该 trang trọng hơn, 该 khẩu ngữ hơn), tự nguyện （愿意）, bắt buộc vì hoàn cảnh （得）. Ranh giới với bài cũ: modal-xiang-yao đã dạy 想/要 (muốn) và modal-hui-neng-keyi đã dạy 会/能/可以 (có thể) — bài này chỉ đối chiếu khi cần phân biệt, không dạy lại; cả năm từ ở đây đều là phần chưa dạy."
+    }
+  ],
+  "schema_version": 1
+}

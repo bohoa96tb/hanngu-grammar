@@ -29,8 +29,10 @@
     {
       "id": "OFF-H3-04",
       "title_vi": "Năng nguyện 需要/该/应该/愿意/得",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "modal-verbs-hsk3"
+      ]
     },
     {
       "id": "OFF-H3-05",
@@ -168,8 +170,11 @@
     {
       "id": "OFF-H3-26",
       "title_vi": "Mẫu cố định HSK3 ((在)……以前/以后/前/后, 越……越……, X什么(啊), 在……上/下/中, 该……了)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "partial",
+      "lesson_ids": [
+        "yue-patterns"
+      ],
+      "note": "Mới phủ thành viên 越……越…… （kèm 越来越……) qua bài yue-patterns. Thành viên 在……上/下/中 đã phủ cơ bản qua bài location-nouns ở cấp dưới. Chưa dạy thành bài: （在）……以前/以后/前/后 và X什么（啊）; mẫu 该……了 được dạy trong bài modal-verbs-hsk3 (mục OFF-H3-04) chứ không tính vào bài của mục này."
     },
     {
       "id": "OFF-H3-27",
@@ -303,17 +308,20 @@
     {
       "id": "OFF-H3-42",
       "title_vi": "Câu phức lựa chọn (或者……，或者……; 一会儿……，一会儿……)",
-      "status": "partial",
+      "status": "covered",
       "lesson_ids": [
-        "complex-choice"
+        "complex-choice",
+        "alternating-actions"
       ],
-      "note": "Bài complex-choice đã phủ khung 或者……，或者……; mẫu luân phiên 一会儿……，一会儿…… chưa dạy. Khung 不是……，就是…… trong cùng bài thuộc bảng HSK4 của đề cương, không tính vào phủ HSK3."
+      "note": "Đã phủ đủ hai thành viên HSK3, sắp xếp xuyên cấp: 或者……，或者…… do bài complex-choice dạy (bài này nay xếp ở cấp HSK4 vì khung chính của nó thuộc HSK4), 一会儿……，一会儿…… do bài alternating-actions dạy. Khung 不是……，就是…… trong bài complex-choice thuộc bảng HSK4, KHÔNG tính vào phủ HSK3."
     },
     {
       "id": "OFF-H3-43",
       "title_vi": "Câu phức song song (又……，又……; 一边……，一边……)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "complex-parallel"
+      ]
     },
     {
       "id": "OFF-H3-44",
@@ -534,8 +542,11 @@
     {
       "id": "OFF-H4-27",
       "title_vi": "Câu phức lựa chọn HSK4 (不是……，就是……; 连……也/都……，……更……)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "partial",
+      "lesson_ids": [
+        "complex-choice"
+      ],
+      "note": "Mới phủ thành viên 不是……，就是…… qua bài complex-choice (bài nay xếp ở cấp HSK4 từ lô HSK3-6). Thành viên 连……也/都……，……更…… chưa dạy."
     },
     {
       "id": "OFF-H4-28",

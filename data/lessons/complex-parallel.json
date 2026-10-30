@@ -1,0 +1,224 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "一边 chỉ nối hai hành động đang diễn ra; 高/漂亮 là thuộc tính nên dùng 又……，又……: 她又高又漂亮。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "她一边高，一边漂亮。"
+        },
+        {
+          "explanation": "Câu này không sai ngữ pháp: 又 đứng một mình đọc là 'lại/nữa', nên 他又唱歌跳舞。 hiểu được là 'anh ấy lại hát và nhảy'. Chỉ là câu đó không thuộc mẫu song song 又……，又…… đang luyện; muốn liệt kê hai việc cùng có trong khung song song thì phải lặp 又： 他又唱歌，又跳舞。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他又唱歌跳舞。"
+        },
+        {
+          "explanation": "Rửa tay và ăn cơm là hai việc nối tiếp nhau chứ không diễn ra đồng thời, nên khung 一边……，一边…… không hợp; kể thứ tự thì dùng 先……，然后…… (bài complex-sequence): 我先洗手，然后吃饭。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我一边洗手，一边吃饭。"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Zhège fángjiān yòu dà yòu gānjìng.",
+          "tokens": [
+            "这个",
+            "房间",
+            "又",
+            "大",
+            "又",
+            "干净"
+          ],
+          "vi": "Phòng này vừa rộng vừa sạch.",
+          "zh": "这个房间又大又干净。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā yìbiān tīng yīnyuè, yìbiān zuò fàn.",
+          "tokens": [
+            "她",
+            "一边",
+            "听",
+            "音乐",
+            "，",
+            "一边",
+            "做饭"
+          ],
+          "vi": "Cô ấy vừa nghe nhạc vừa nấu cơm.",
+          "zh": "她一边听音乐，一边做饭。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhè jiàn yīfu yòu piányi yòu hǎokàn.",
+          "tokens": [
+            "这件",
+            "衣服",
+            "又",
+            "便宜",
+            "又",
+            "好看"
+          ],
+          "vi": "Chiếc áo này vừa rẻ vừa đẹp.",
+          "zh": "这件衣服又便宜又好看。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒmen yìbiān zǒu, yìbiān liáotiān.",
+          "tokens": [
+            "我们",
+            "一边",
+            "走",
+            "，",
+            "一边",
+            "聊天"
+          ],
+          "vi": "Chúng tôi vừa đi vừa trò chuyện.",
+          "zh": "我们一边走，一边聊天。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Háizimen yòu chàng yòu tiào, fēicháng kāixīn.",
+          "tokens": [
+            "孩子们",
+            "又",
+            "唱",
+            "又",
+            "跳",
+            "，",
+            "非常",
+            "开心"
+          ],
+          "vi": "Bọn trẻ vừa hát vừa nhảy, rất vui.",
+          "zh": "孩子们又唱又跳，非常开心。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "老师又热情又有耐心。"
+          ],
+          "explanation": "Nhiệt tình và kiên nhẫn là hai thuộc tính nên dùng 又……，又…… và phải lặp 又. Câu 2 và 4 dùng 一边 với thuộc tính là sai; câu 3 chỉ có một 又 nên không thành khung song song \"vừa… vừa…\" (đọc thành 又 = lại/nữa, đổi nghĩa).",
+          "id": "par-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "老师又热情又有耐心。",
+              "老师一边热情，一边有耐心。",
+              "老师又热情有耐心。",
+              "老师一边教课，一边有耐心。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Cô giáo vừa nhiệt tình vừa kiên nhẫn.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "他",
+              "一边",
+              "听音乐",
+              "一边",
+              "写作业"
+            ]
+          ],
+          "explanation": "Khung hành động song song: chủ ngữ + 一边 + hành động 1，一边 + hành động 2 — 一边 lặp ở đầu mỗi hành động.",
+          "id": "par-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "一边",
+              "写作业",
+              "他",
+              "一边",
+              "听音乐"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy vừa nghe nhạc vừa làm bài tập.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "音乐听"
+          ],
+          "explanation": "Khối 音乐听 đảo ngược trật tự: động từ phải đứng trước tân ngữ — 一边听音乐. Khung 一边……，一边…… của câu không sai.",
+          "id": "par-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "她",
+              "一边做饭",
+              "一边",
+              "音乐听"
+            ],
+            "sentence_zh": "她一边做饭，一边音乐听。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 她一边做饭，一边音乐听。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "这家饭馆又便宜又好吃。",
+            "这家饭馆又便宜又好吃"
+          ],
+          "explanation": "Hai thuộc tính 便宜/好吃 cùng có ở nhà hàng nên đi cặp 又……，又……; không dùng 一边 vì đây không phải hai hành động.",
+          "id": "par-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Thuộc tính song song: 又……，又……"
+          },
+          "prompt_vi": "Điền cặp từ song song để hoàn thành câu: 'Nhà hàng này vừa rẻ vừa ngon.'",
+          "prompt_zh": "这家饭馆___便宜___好吃。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "我妹妹又会唱歌，又会跳舞。",
+            "我妹妹又会唱歌，又会跳舞",
+            "她又会唱歌，又会跳舞。",
+            "她又会唱歌，又会跳舞"
+          ],
+          "explanation": "Hai khả năng cùng có ở một người nên dùng 又……，又……; mỗi 又 đứng ngay trước cụm động từ của mình.",
+          "id": "par-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Khung: 又……，又……; 'biết (kỹ năng)' nói 会， hát là 唱歌， nhảy là 跳舞。"
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Em gái tôi vừa biết hát vừa biết nhảy.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Mẫu 1 — 又……，又……: 又 lặp trước mỗi thành phần; thành phần sau 又 là tính từ hoặc động từ （又大又干净；又唱又跳）. Dùng để liệt kê hai thuộc tính/việc cùng có ở cùng một chủ thể. 2) Mẫu 2 — 一边……，一边……: 一边 đứng trước mỗi động từ hành động; hai hành động phải diễn ra thật sự đồng thời và cùng một chủ thể （一边走，一边聊天）. 3) Không dùng: 一边 không đi với tính từ chỉ thuộc tính — thuộc tính dùng 又……，又…… （她又高又漂亮， không nói 她一边高一边漂亮）. 4) Phân biệt: 又 đứng một mình với nghĩa 'lại/nữa' thuộc nhóm phó từ riêng, không phải mẫu của bài này; ở đây 又 luôn đi thành cặp.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "complex-parallel",
+      "objective": "Sau bài này, người học nói được hai thuộc tính cùng có ở một người/vật bằng 又……，又…… và hai hành động diễn ra đồng thời bằng 一边……，一边……, đồng thời phân biệt đúng hai mẫu với nhau.",
+      "pattern": "又 + Tính từ/Động từ，又 + Tính từ/Động từ • 一边 + Hành động 1，一边 + Hành động 2",
+      "quick_memory": "Cùng lúc: thuộc tính → 又…又…; hai hành động song song → 一边…一边…. 一边 không ôm tính từ.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-6 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về câu phức song song （又……，又…… và 一边……，一边……) theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-43 （并列复句： 又……，又……; 一边……，一边……) trong catalogue dự án từ đề cương thi 11/2025.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Câu phức song song: hai việc/thuộc tính cùng lúc （又……，又……; 一边……，一边……）",
+      "when_to_use": "Ví dụ: 她一边听音乐，一边做饭。 — hai hành động cùng diễn ra một lúc, ngang hàng nhau. Bài này gộp hai mẫu vì cùng một mục tiêu 'hai thứ cùng lúc': 又……，又…… liệt kê hai thuộc tính (hoặc hai việc) cùng có; 一边……，一边…… dành cho hai HÀNH ĐỘNG đang diễn ra song song. Khác 着 chỉ hành động kèm theo (bài zhe-accompanying): ở mẫu đó hành động 1 là tư thế/nền kèm theo cho hành động chính, hai hành động không ngang hàng như ở đây. Khác kể thứ tự （先……，然后……, bài complex-sequence): ở đó việc này xong mới đến việc kia, không cùng lúc."
+    }
+  ],
+  "schema_version": 1
+}
