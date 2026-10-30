@@ -160,8 +160,10 @@
     {
       "id": "OFF-H3-25",
       "title_vi": "Cụm cố định HSK3 (在……看来, 不一会儿, 不A不B, 看来/看起来/看上去, 一般来说, 不怎么样, 除了……, 从……起, 一……也/都+不/没……, 对……来说, 一点儿也不)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "partial",
+      "lesson_ids": [
+        "complex-compact"
+      ]
     },
     {
       "id": "OFF-H3-26",
@@ -179,26 +181,36 @@
       "id": "OFF-H3-28",
       "title_vi": "Kết quả bổ ngữ dạng 2 (到/住/走/上)",
       "status": "covered",
-      "lesson_ids": ["result-complement", "result-complement-2"],
+      "lesson_ids": [
+        "result-complement",
+        "result-complement-2"
+      ],
       "note": "Bài cũ dạy 完/好/懂/错; thiếu 到/住/走/上."
     },
     {
       "id": "OFF-H3-29",
       "title_vi": "Xu hướng bổ ngữ nghĩa dẫn申 (kết quả/bắt đầu/tiếp tục)",
       "status": "covered",
-      "lesson_ids": ["direction-complement", "direction-complement-2"]
+      "lesson_ids": [
+        "direction-complement",
+        "direction-complement-2"
+      ]
     },
     {
       "id": "OFF-H3-30",
       "title_vi": "Khả năng bổ ngữ dạng 1 (động từ+得/不+động/tính từ)",
       "status": "covered",
-      "lesson_ids": ["potential-complement-1"]
+      "lesson_ids": [
+        "potential-complement-1"
+      ]
     },
     {
       "id": "OFF-H3-31",
       "title_vi": "Mức độ bổ ngữ dạng 1 (tính từ+得很; 极了/坏了)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "degree-complement-1"
+      ]
     },
     {
       "id": "OFF-H3-32",
@@ -209,8 +221,11 @@
     {
       "id": "OFF-H3-33",
       "title_vi": "Câu hỏi phản vấn dạng 1 (不是……吗？)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "rhetorical-question"
+      ],
+      "note": "Bài rhetorical-question dạy thêm 怎么……呢？ và 谁……呢？ (mức nhận biết) ngoài exemplar 不是……吗？ của mục này; vẫn phủ đúng phạm vi phản vấn HSK3."
     },
     {
       "id": "OFF-H3-34",
@@ -252,20 +267,28 @@
       "id": "OFF-H3-38",
       "title_vi": "存现句 dạng 3 (xuất hiện/biến mất)",
       "status": "covered",
-      "lesson_ids": ["cunxian-chu", "cunxian-appearance"]
+      "lesson_ids": [
+        "cunxian-chu",
+        "cunxian-appearance"
+      ]
     },
     {
       "id": "OFF-H3-39",
       "title_vi": "是……的句 dạng 2 (nhấn mạnh quan điểm/thái độ người nói)",
       "status": "covered",
-      "lesson_ids": ["shi-de-emphasis", "shi-de-attitude"],
+      "lesson_ids": [
+        "shi-de-emphasis",
+        "shi-de-attitude"
+      ],
       "note": "Bài cũ dạy dạng HSK2 (thời gian/địa điểm/cách thức/người thực hiện)."
     },
     {
       "id": "OFF-H3-40",
       "title_vi": "Trùng động句 (chủ ngữ+động từ+tân ngữ+động từ+bổ ngữ)",
       "status": "covered",
-      "lesson_ids": ["verb-repetition-sentence"]
+      "lesson_ids": [
+        "verb-repetition-sentence"
+      ]
     },
     {
       "id": "OFF-H3-41",
@@ -288,8 +311,10 @@
     {
       "id": "OFF-H3-44",
       "title_vi": "Câu phức递进 (不但……，而且……)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "complex-progressive"
+      ]
     },
     {
       "id": "OFF-H3-45",
@@ -304,13 +329,18 @@
       "id": "OFF-H3-46",
       "title_vi": "Câu phức giả thiết (如果……，就……)",
       "status": "covered",
-      "lesson_ids": ["complex-hypothesis"]
+      "lesson_ids": [
+        "complex-hypothesis"
+      ]
     },
     {
       "id": "OFF-H3-47",
       "title_vi": "Câu phức điều kiện (……的话，就……; 只有……，才……; 只要……，就……)",
       "status": "covered",
-      "lesson_ids": ["complex-hypothesis", "complex-condition"]
+      "lesson_ids": [
+        "complex-hypothesis",
+        "complex-condition"
+      ]
     },
     {
       "id": "OFF-H3-48",
@@ -321,8 +351,10 @@
     {
       "id": "OFF-H3-49",
       "title_vi": "Câu phức紧缩 (……了……(就)……)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "complex-compact"
+      ]
     },
     {
       "id": "OFF-H3-50",

@@ -45,6 +45,18 @@ nhóm con của một vài phó từ ghi chú "chưa chắc chắn".
   với docs/official-catalogue-hsk3-hsk4.json. (Các dòng mốc trước
   đây gộp giới từ 把/被 vào nhóm câu 把/被 đã có nên số "một phần"
   ở mốc cũ nhỏ hơn 1; trạng thái hiện tại lấy theo catalogue.)
+- Cập nhật lô HSK3-4 (30/10/2026): thêm 4 mục đã có — câu phức
+  递进 （不但……，而且……; bài complex-progressive), câu phức 紧缩
+  (bài complex-compact: mẫu phủ định tuyệt đối 一……也/都+不/没……
+  và mẫu nén hai hành động ……了……就……), mức độ bổ ngữ dạng 1
+  (bài degree-complement-1), câu hỏi phản vấn dạng 1 (bài
+  rhetorical-question). Cụm cố định HSK3 (OFF-H3-25) chuyển từ
+  thiếu sang một phần: cụm 一……也/都+不/没…… trong giỏ của mục
+  này nay đã có bài complex-compact, các cụm còn lại vẫn thiếu.
+  Sau lô HSK3-4, HSK3: 16 đã có, 3 một phần （虽然……，可是……;
+  giới từ 把/被; cụm cố định HSK3), 31 thiếu — tổng vẫn 50 mục
+  nhóm, khớp từng mục với catalogue. Danh sách đầy đủ các mục
+  còn thiếu/một phần và mức ưu tiên: xem mục 2b.
 - Không cần sửa cấp độ cho 34 bài cũ: chưa phát hiện bài nào dạy sai
   cấp (các bài HSK1–2 không dạy nội dung HSK3–4; riêng zhe-continuation
   đã ghi rõ nghĩa kèm theo của 着 thuộc HSK3 và cố ý không dạy).
@@ -63,15 +75,124 @@ nhóm con của một vài phó từ ghi chú "chưa chắc chắn".
   当然/其实/终于/才, 不必/不用), giới từ 为/向/为了/根据/关于,
   liên từ 或/或者/只有/只要/不但/而且/如果/可是/然后/的话,
   động bổ đoản ngữ dạng 2, đồng vị đoản ngữ, tứ tự cách, số lượng
-  trùng điệp, cụm cố định và mẫu cố định HSK3, chủ ngữ bằng đoản
-  ngữ, mức độ bổ ngữ dạng 1, số lượng bổ ngữ dạng 3, câu hỏi phản
-  vấn, và hầu hết câu phức HSK3 (承接, lựa chọn, song song, 递进,
-  mục đích, 紧缩) cùng 概数 dạng 2. (Xu hướng bổ ngữ nghĩa dẫn申,
-  khả năng bổ ngữ dạng 1, 存现句 dạng 3, trùng động句 và câu phức
-  giả thiết/điều kiện đã có bài riêng sau các lô HSK3-2/HSK3-3 —
-  xem mục 1.)
-- Một phần: chỉ còn 虽然……，可是…… (xem mục 1). Kết quả bổ ngữ
-  dạng 2 và 是……的句 dạng 2 đã đủ dạng sau các lô HSK3-2/HSK3-3.
+  trùng điệp, mẫu cố định HSK3, chủ ngữ bằng đoản ngữ, số lượng
+  bổ ngữ dạng 3, và các câu phức HSK3 còn lại (承接, lựa chọn,
+  song song, mục đích) cùng 概数 dạng 2. (Xu hướng bổ ngữ nghĩa
+  dẫn申, khả năng bổ ngữ dạng 1, 存现句 dạng 3, trùng động句 và
+  câu phức giả thiết/điều kiện đã có bài riêng sau các lô
+  HSK3-2/HSK3-3; câu phức 递进, câu phức 紧缩, mức độ bổ ngữ
+  dạng 1 và câu hỏi phản vấn dạng 1 đã có bài riêng ở lô HSK3-4
+  — xem mục 1 và danh sách ưu tiên ở mục 2b.)
+- Một phần: 虽然……，可是……; giới từ 把/被; cụm cố định HSK3
+  (mới phủ cụm 一……也/都+不/没…… qua bài complex-compact).
+  Kết quả bổ ngữ dạng 2 và 是……的句 dạng 2 đã đủ dạng sau các
+  lô HSK3-2/HSK3-3.
+
+## 2b. HSK3 còn thiếu sau lô HSK3-4 — ưu tiên và lý do để lại
+
+Sau lô HSK3-4 còn 34/50 mục nhóm HSK3 chưa phủ đủ (31 thiếu +
+3 một phần), liệt kê đầy đủ dưới đây theo catalogue. Đây là căn
+cứ để chọn các lô HSK3 tiếp theo và để quyết định việc chuyển
+sang HSK4 sau này; tài liệu này không tự tuyên bố chuyển cấp,
+và không mục nào trong danh sách được coi là đã phủ.
+
+### Ưu tiên cao cho lô kế tiếp
+- OFF-H3-41 Câu phức 承接 （先……，再/然后……): nền yi-jiu-tight
+  và phó từ thứ tự đã có; tần suất giao tiếp và thi cao; bài tập
+  xếp câu/chọn đáp án chấm chắc.
+- OFF-H3-43 Câu phức song song （又……，又……; 一边……，一边……):
+  mẫu ngắn, nền đủ, hay gặp trong nghe/đọc HSK3; phủ luôn phần
+  lõi của OFF-H3-16.
+- OFF-H3-42 Câu phức lựa chọn （或者……，或者……;
+  一会儿……，一会儿……): mở rộng tự nhiên từ bài hai-shi-choice
+  （还是/或者） đã học; tần suất cao.
+- OFF-H3-48 Câu phức mục đích （为了……): giá trị thi cao, mẫu
+  ngắn dễ chấm; đồng thời phủ phần 为了 của OFF-H3-20.
+- OFF-H3-04 Năng nguyện （需要/该/应该/愿意/得）: nhóm từ-ngữ
+  pháp tần suất rất cao trong đề HSK3; nền modal-xiang-yao và
+  modal-hui-neng-keyi đã sẵn.
+- OFF-H3-32 Số lượng bổ ngữ dạng 3 (khoảng cách từ lúc kết thúc
+  hành động đến thời điểm nói): dạng câu đặc trưng hay ra đề
+  HSK3; nền lượng từ và cách nói thời gian đã có.
+
+### Ưu tiên trung bình
+- OFF-H3-07 Nghi vấn 怎样: mở rộng từ question-words và
+  zenme-question; cần phân biệt kỹ 怎样/怎么样/怎么 đã học.
+- OFF-H3-09 Nhân xưng 别人/咱们: cụm nhỏ, dễ dạy; nên gộp chung
+  một bài với OFF-H3-10.
+- OFF-H3-10 Chỉ định 别的/其他: gộp với OFF-H3-09 thành một bài
+  đại từ/chỉ định mở rộng.
+- OFF-H3-11 Lượng từ HSK3: danh sách dài; cần chọn lọc theo tần
+  suất trước khi soạn, khó phủ hết trong một bài.
+- OFF-H3-12 Phó từ mức độ （更/特别/挺/有些/越/极）: tần suất
+  cao nhưng là nhóm từ rời; 更 đã chạm ở bi-comparison-2; cân
+  nhắc gộp mẫu 越……越…… (đang xếp ở OFF-H3-26) vào bài này.
+- OFF-H3-13 Phó từ phạm vi （一块儿/一共/只/到处/只是）: nhóm
+  từ rời, giá trị thi vừa; nên dạy theo cụm tình huống.
+- OFF-H3-14 Phó từ thời gian （马上/先/一会儿/刚/刚刚/一直）:
+  tần suất cao, hỗ trợ tốt cho OFF-H3-41; các từ nghĩa gần nhau
+  cần nhiều ví dụ phân biệt.
+- OFF-H3-15 Phó từ tần suất （总/总是/又/常常）: nhóm từ rời;
+  又 cần phân biệt với 又……又…… của OFF-H3-43.
+- OFF-H3-17 Phó từ tình thái （大概/必须/差不多/一定/好像/
+  几乎）: giá trị thi cao nhưng nghĩa trừu tượng, biến thể đáp
+  án khó khóa chặt khi chấm tự động.
+- OFF-H3-18 Phó từ ngữ khí （当然/其实/终于/才）: 才 đã xuất
+  hiện ở complex-condition với nghĩa điều kiện khác; cần bài
+  phân biệt đa nghĩa cẩn thận.
+- OFF-H3-19 Phủ định 不必/不用: cụm nhỏ; gộp vào bài OFF-H3-04
+  khi làm năng nguyện.
+- OFF-H3-50 概数 dạng 2 （大概; hai số kề nhau): mục nhỏ, nền
+  số đếm đã có; dễ làm bài ngắn hoặc gộp với OFF-H3-32.
+
+### Để lại (kèm lý do)
+- OFF-H3-01 Tiền tố 老—: phạm vi hẹp, năng suất tạo từ thấp ở
+  HSK3; để gộp vào một bài cấu tạo từ sau này.
+- OFF-H3-02 Hậu tố —家/—子/—员: thiên về từ vựng phái sinh,
+  ít mẫu câu để luyện; làm cùng OFF-H3-01 khi có bài cấu tạo từ.
+- OFF-H3-03 Phương vị （东/南/西/北/北方/东方/南方/西方/中间）:
+  nền location-nouns mới phủ phương vị cơ bản; phần này thiên
+  từ vựng phương hướng, để khi làm bài phương vị tổng hợp.
+- OFF-H3-05 Ly hợp từ động tân式 （放假/见面/结婚/洗澡）: bài
+  separable-verbs (HSK2) đã dạy khái niệm và cách tách; mục này
+  chủ yếu mở rộng danh sách từ, cần rà soát trùng trước khi soạn.
+- OFF-H3-06 Ly hợp từ động bổ式 （离开/完成/分开）: dễ lẫn ranh
+  giới với bổ ngữ kết quả đã có; cần rà soát ranh giới trước.
+- OFF-H3-08 Nghi vấn dùng không hỏi （任指/不定指）: trừu
+  tượng, khó chấm bằng bài tập đóng hiện có; chờ thiết kế dạng
+  bài phù hợp.
+- OFF-H3-16 Phó từ liên kết 一边: phần lõi 一边……，一边……
+  sẽ phủ qua OFF-H3-43; 一边 dùng độc lập giá trị thấp, không
+  cần bài riêng.
+- OFF-H3-20 Giới từ （为/向/为了/根据/关于）: 为了 sẽ phủ qua
+  OFF-H3-48; 根据/关于 thiên về văn viết, để sau.
+- OFF-H3-21 Giới từ 把/被 (MỘT PHẦN): đã phủ nghĩa tác nhân/bị
+  tác động trong câu 把/被; các nghĩa giới từ còn lại giá trị
+  thêm thấp — bổ sung khi rà soát hai bài cũ thay vì bài mới.
+- OFF-H3-22 Giỏ liên từ （或/或者; 只有/只要; 不但/而且; 如果;
+  可是; 然后; 的话）: không làm bài riêng — các cặp chính đã
+  hoặc sẽ phủ qua từng bài câu phức; 或/或者 đơn lẻ đã có ở
+  hai-shi-choice.
+- OFF-H3-23 Động bổ đoản ngữ dạng 2: khái niệm bao trùm, nguy
+  cơ dạy trùng các bài bổ ngữ kết quả/xu hướng/khả năng đã có;
+  cần quyết định ranh giới trước khi soạn.
+- OFF-H3-24 Đồng vị đoản ngữ; tứ tự cách; số lượng trùng điệp:
+  ba chủ điểm rời nhau, tứ tự cách thiên về từ vựng; không gộp
+  thành một bài tốt được.
+- OFF-H3-25 Cụm cố định HSK3 (MỘT PHẦN): mới phủ cụm
+  一……也/都+不/没…… (bài complex-compact); khoảng mười cụm
+  còn lại rời nhau, nên phủ dần khi gặp bài liên quan thay vì
+  một bài "giỏ cụm".
+- OFF-H3-26 Mẫu cố định HSK3: các mẫu rời nhau; riêng
+  越……越…… là ứng viên tốt để gộp vào bài OFF-H3-12 hoặc
+  một bài nhỏ riêng ở lô sau (catalogue xếp mẫu này ở đây,
+  không thuộc mục 紧缩句， nên không đưa vào complex-compact).
+- OFF-H3-27 Chủ ngữ bằng đoản ngữ; đa định ngữ: trừu tượng,
+  giá trị thi trực tiếp thấp ở HSK3 và khó chấm; để sau cùng
+  của cấp.
+- OFF-H3-45 Câu phức 转折 (MỘT PHẦN): chỉ còn biến thể
+  可是 thay 但是； bài HSK2 đã dạy cặp chính — bổ sung bằng
+  sửa nhỏ bài cũ khi rà soát, không tốn một slot bài mới.
 
 ## 3. HSK4 — các mục đáng chú ý
 - Thiếu toàn bộ ở mức thành bài riêng: 敢, 各/各位/各种/任何/此,

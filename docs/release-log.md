@@ -132,6 +132,30 @@ Chưa có bản phát hành nào.
   thành verified sau khi kiểm tra trực tiếp bản gốc （几/多少 thuộc
   nhóm đại từ để hỏi HSK1).
 
+- 2026-10-30 — Lô HSK3-4 + rà soát tính tuyệt đối (build 20261030-hsk3d4):
+  4 bài HSK3 mới — complex-progressive （不但……，而且……, OFF-H3-44),
+  complex-compact （紧缩句: 一……也/都…… + ……了就……, OFF-H3-49, đồng
+  thời OFF-H3-25 → một phần), degree-complement-1 （得很/极了/坏了,
+  OFF-H3-31), rhetorical-question （不是……吗？; 怎么……呢？, OFF-H3-33).
+  Tổng 51 bài / 248 bài tập (HSK3: 16 bài). Ánh xạ HSK3 sau lô: 16 đã
+  có / 3 một phần / 31 thiếu; tài liệu ánh xạ thêm mục 2b liệt kê đủ 34
+  mục còn thiếu/một phần kèm ưu tiên và lý do để lại (căn cứ quyết định
+  chuyển HSK4, chưa tự chuyển cấp). Rà soát tính tuyệt đối 4 bài HSK3-3:
+  shi-de-attitude phân biệt rõ "cần 的 để giữ mẫu khi đã mở 是" với
+  "bỏ cả khung （他一定会来。) vẫn là câu hợp lệ"; cunxian-appearance sửa
+  mâu thuẫn nội bộ — bỏ khẳng định "bắt buộc có 了" (với bổ ngữ xu hướng
+  kép 进来/出来 câu trọn không cần 了； công thức nay ghi (了));
+  verb-repetition-sentence ghi rõ dạng rút gọn tồn tại trong khẩu ngữ;
+  direction-complement-2 soi lại không cần sửa. QA hai vòng: vòng 1 ĐẠT
+  CÓ ĐIỀU KIỆN (Q-1 bài rút gọn thiếu bài tập cho mẫu 2 → đổi
+  compact-ex2; Q-2 prog-ex4 thiếu biến thể 还 → đã thêm; H-1..H-3),
+  vòng 2 ĐẠT 5/5. Harness local 19/19. CI: file .github/workflows/ci.yml
+  đã soạn và kiểm chứng (mọi lệnh/đường dẫn/phiên bản Chrome 156.0.8078.80
+  đều tồn tại và tải được), nhưng quyền ghi file workflow qua API bị
+  GitHub chặn 403 — chờ Hoa thêm thủ công qua giao diện web; cổng chất
+  lượng hiện tại vẫn là validator + test + harness + QA độc lập tại chỗ.
+  Audio TTS thiết bị thật vẫn not_run; các bài mới là đã rà soát nội bộ.
+
 - 2026-10-30 — Lô HSK3-3 (build 20261030-hsk3c3): 4 bài HSK3 mới —
   cunxian-appearance （存现句 dạng 3: xuất hiện/biến mất, OFF-H3-38),
   shi-de-attitude （是……的句 dạng 2: nhấn thái độ/quan điểm,
