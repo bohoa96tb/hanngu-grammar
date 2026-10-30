@@ -132,6 +132,38 @@ Chưa có bản phát hành nào.
   thành verified sau khi kiểm tra trực tiếp bản gốc （几/多少 thuộc
   nhóm đại từ để hỏi HSK1).
 
+- 2026-10-30 — Lô HSK3-8 (build 20261030-hsk3h8): 4 bài mới —
+  approx-numbers-1 (HSK2, OFF-H2-61 — khép khoảng trống nền số
+  ước lượng, liên kết tiên quyết hai chiều với approx-numbers-2),
+  zenme-yang-question (OFF-H3-07), time-frame-patterns (thành
+  viên mốc thời gian của OFF-H3-26), adverbs-degree-hsk3
+  (OFF-H3-12). Tổng 68 bài / 333 bài tập (HSK1: 20, HSK2: 17,
+  HSK3: 30, HSK4: 1). Ánh xạ: HSK2 20 đã có / 15 một phần / 27
+  thiếu; HSK3 29/4/17 (mục 2b còn 21 mục chưa phủ đủ). Mọi phạm
+  vi của lô đều xác minh TRỰC QUAN từ PDF gốc (trang in 388–391)
+  theo chỉ đạo của Hoa sau vụ lệch hàng: bắt thêm 3 sai lệch của
+  bản trích xuất — (1) 一会儿……，一会儿…… thuộc 并列复句 chứ
+  không phải 选择复句 → OFF-H3-42 chỉ còn 或者 (vẫn covered),
+  OFF-H3-43 đủ 3 thành viên (thay thế cách gán của lô HSK3-5/6);
+  (2) OFF-H3-07 thu hẹp đúng phạm vi thật ("怎样+动词" đặc chỉ);
+  (3) OFF-H3-12 có 8 thành viên — bản cũ thiếu 还. Rà bài đã
+  phát hành approx-numbers-2 theo trang 391: đề cương ghi hai
+  cách độc lập (1) 大概, (2) hai số kề nhau — bài vốn không ép
+  dùng đồng thời; đã viết tường minh tính độc lập. QA độc lập
+  ĐẠT toàn bộ (tự render và đối chiếu trang 388–391), 3 điểm
+  Hoàn thiện đã áp dụng, phúc tra 3/3. KÈM SỬA LỖI KỸ THUẬT:
+  điều tra hiện tượng kẹt "Đang tải bài học…" (nghiệm thu lô
+  HSK3-7) bằng 3 kịch bản tái hiện — tải mới bình thường; mạng
+  chậm chờ 41 giây vì tải tuần tự 65 file (không treo); file
+  404 đã có banner + nút thử lại từ trước; KẾT NỐI TREO là lỗi
+  xác nhận được (fetch không timeout → tải vô hạn, không thông
+  báo) → đã sửa tối thiểu: timeout 15 giây cho mọi fetch dữ
+  liệu, đi vào đúng đường lỗi sẵn có (ISSUE-LOAD-STALL-01).
+  Hiện tượng live ngày 30/10 không tái hiện nguyên trạng ở
+  local nên KHÔNG kết luận nguyên nhân — giữ trạng thái theo
+  dõi. CI hai job là điều kiện merge bắt buộc. Audio TTS thiết
+  bị thật vẫn not_run; các bài mới là đã rà soát nội bộ.
+
 - 2026-10-30 — Lô HSK3-7 (build 20261030-hsk3g7): 4 bài mới —
   pronouns-others （别人/咱们/别的/其他, OFF-H3-09+10),
   adverbs-time-hsk3 （马上/先/刚/刚刚/一直, OFF-H3-14),

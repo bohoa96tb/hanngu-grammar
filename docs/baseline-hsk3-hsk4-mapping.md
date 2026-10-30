@@ -135,9 +135,8 @@ nhóm con của một vài phó từ ghi chú "chưa chắc chắn".
 ## 2. HSK3 — các mục đáng chú ý
 - Thiếu toàn bộ ở mức thành bài riêng: tiền tố 老—, hậu tố
   —家/—子/—员, phương vị mở rộng,
-  ly hợp từ hai loại, 怎样 và nghi vấn dùng không hỏi,
-  lượng từ HSK3, hầu hết phó từ HSK3 (更/特别/挺/有些/越/
-  极, 一块儿/一共/只/到处/只是,
+  ly hợp từ hai loại, nghi vấn dùng không hỏi,
+  lượng từ HSK3, hầu hết phó từ HSK3 (一块儿/一共/只/到处/只是,
   总/总是/又/常常, 一边, 大概/必须/差不多/一定/好像/几乎,
   当然/其实/终于/才), giới từ 为/向/为了/根据/关于,
   liên từ 或/或者/只有/只要/不但/而且/如果/可是/然后/的话,
@@ -154,22 +153,28 @@ nhóm con của một vài phó từ ghi chú "chưa chắc chắn".
   一会儿……，一会儿…… đã có bài riêng ở lô HSK3-6; đại từ
   mở rộng 别人/咱们/别的/其他, phó từ thời gian
   马上/先/刚/刚刚/一直, phủ định 不必/不用 và 概数 dạng 2
-  đã có bài riêng ở lô HSK3-7 — xem
-  mục 1 và danh sách ưu tiên ở mục 2b.)
+  đã có bài riêng ở lô HSK3-7; câu hỏi đặc chỉ
+  怎样+动词, phó từ mức độ HSK3 và mẫu mốc thời gian
+  （在）……以前/以后/前/后 đã có bài riêng ở lô HSK3-8
+  — xem mục 1 và danh sách ưu tiên ở mục 2b.)
 - Một phần: 虽然……，可是……; giới từ 把/被; cụm cố định HSK3
   (mới phủ cụm 一……也/都+不/没…… qua bài complex-compact);
-  mẫu cố định HSK3 (mới phủ 越……越……/越来越…… qua bài
-  yue-patterns). Câu phức lựa chọn (OFF-H3-42) đã phủ đủ từ
-  lô HSK3-6 theo sắp xếp xuyên cấp ghi ở mục 1. Kết quả bổ
+  mẫu cố định HSK3 (đã phủ 越……越……/越来越…… qua bài
+  yue-patterns và （在）……以前/以后/前/后 qua bài
+  time-frame-patterns ở lô HSK3-8; còn X什么（啊）). Câu
+  phức lựa chọn (OFF-H3-42) đã phủ đủ theo sắp xếp xuyên
+  cấp ghi ở mục 1 (gán thành viên đã sửa lại ở "Sửa đối
+  chiếu 2026-10-30 (lần 2)" trong mục 1). Kết quả bổ
   ngữ dạng 2 và 是……的句 dạng 2 đã đủ dạng sau các lô
   HSK3-2/HSK3-3.
 
-## 2b. HSK3 còn thiếu sau lô HSK3-7 — ưu tiên và lý do để lại
+## 2b. HSK3 còn thiếu sau lô HSK3-8 — ưu tiên và lý do để lại
 
-Sau lô HSK3-7 còn 23/50 mục nhóm HSK3 chưa phủ đủ (19 thiếu +
+Sau lô HSK3-8 còn 21/50 mục nhóm HSK3 chưa phủ đủ (17 thiếu +
 4 một phần), liệt kê đầy đủ dưới đây theo catalogue. (Sau lô
-HSK3-6 còn 28 mục; lô HSK3-7 phủ đủ thêm OFF-H3-09, OFF-H3-10,
-OFF-H3-14, OFF-H3-19 và OFF-H3-50.) Đây là căn
+HSK3-7 còn 23 mục; lô HSK3-8 phủ đủ thêm OFF-H3-07 và
+OFF-H3-12, phủ thêm một thành viên của OFF-H3-26, và khép
+khoảng trống nền OFF-H2-61 ở HSK2.) Đây là căn
 cứ để chọn các lô HSK3 tiếp theo và để quyết định việc chuyển
 sang HSK4 sau này; tài liệu này không tự tuyên bố chuyển cấp,
 và không mục nào trong danh sách được coi là đã phủ.
@@ -184,14 +189,8 @@ và không mục nào trong danh sách được coi là đã phủ.
   trên danh sách dưới đây.)
 
 ### Ưu tiên trung bình
-- OFF-H3-07 Nghi vấn 怎样: mở rộng từ question-words và
-  zenme-question; cần phân biệt kỹ 怎样/怎么样/怎么 đã học.
 - OFF-H3-11 Lượng từ HSK3: danh sách dài; cần chọn lọc theo tần
   suất trước khi soạn, khó phủ hết trong một bài.
-- OFF-H3-12 Phó từ mức độ （更/特别/挺/有些/越/极）: tần suất
-  cao nhưng là nhóm từ rời; 更 đã chạm ở bi-comparison-2; mẫu
-  越……越…… từng cân nhắc gộp vào đây đã được dạy riêng ở
-  bài yue-patterns (xếp theo OFF-H3-26, lô HSK3-6).
 - OFF-H3-13 Phó từ phạm vi （一块儿/一共/只/到处/只是）: nhóm
   từ rời, giá trị thi vừa; nên dạy theo cụm tình huống.
 - OFF-H3-15 Phó từ tần suất （总/总是/又/常常）: nhóm từ rời;
@@ -203,12 +202,13 @@ và không mục nào trong danh sách được coi là đã phủ.
   hiện ở complex-condition với nghĩa điều kiện khác; cần bài
   phân biệt đa nghĩa cẩn thận.
 - OFF-H3-26 Mẫu cố định HSK3 (MỘT PHẦN): bài yue-patterns
-  (lô HSK3-6) đã phủ 越……越……/越来越……; còn lại trong
-  giỏ: （在）……以前/以后/前/后 và X什么（啊） chưa dạy
-  thành bài — hai mẫu rời nhau, phủ dần khi gặp bài liên
-  quan; 在……上/下/中 đã phủ cơ bản qua location-nouns và
-  该……了 qua modal-verbs-hsk3 nên không tính là phần
-  thiếu thực chất của mục này nữa.
+  (lô HSK3-6) đã phủ 越……越……/越来越……, bài
+  time-frame-patterns (lô HSK3-8) đã phủ
+  （在）……以前/以后/前/后; còn lại trong giỏ chỉ còn
+  X什么（啊） chưa dạy thành bài; 在……上/下/中 đã phủ
+  cơ bản qua location-nouns và 该……了 qua
+  modal-verbs-hsk3 nên không tính là phần thiếu thực
+  chất của mục này nữa.
 
 ### Để lại (kèm lý do)
 - OFF-H3-01 Tiền tố 老—: phạm vi hẹp, năng suất tạo từ thấp ở
