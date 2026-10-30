@@ -132,6 +132,26 @@ Chưa có bản phát hành nào.
   thành verified sau khi kiểm tra trực tiếp bản gốc （几/多少 thuộc
   nhóm đại từ để hỏi HSK1).
 
+- 2026-10-30 — PR KỸ THUẬT hiệu năng tải (build 20261030-perf1,
+  tách riêng khỏi lô nội dung): chuyển tải file bài từ tuần tự
+  sang song song có giới hạn LOAD_CONCURRENCY = 8 (chọn bằng đo
+  thử: mức 4 = 20,1 giây, mức 8 = 19,5 giây, mức 16 = 19,5 giây
+  ở mạng chậm 400ms/~50KB/s — cổ chai chuyển sang băng thông).
+  Kết quả ghép theo chỉ số manifest nên thứ tự bài không đổi.
+  Đo trước/sau cùng điều kiện local (72 bài): mạng chậm 46,4 →
+  19,4 giây; tải mới 0,93 → 0,75 giây; lỗi console 0. Sửa thêm
+  một khe hở timeout có thật mà yêu cầu của Hoa đã chỉ đúng:
+  bản sửa ở lô HSK3-8 hủy bộ đếm giờ ngay khi có headers nên
+  một kết nối treo GIỮA BODY vẫn tải vô hạn — nay timeout bao
+  phủ tới khi đọc xong body, quá 15 giây thì hủy request thật;
+  kịch bản treo-body nay kết thúc bằng banner + nút thử lại ở
+  ~15,3 giây (QA độc lập tự đo lại toàn bộ ma trận, khớp).
+  Đường lỗi thiếu dữ liệu/nút thử lại giữ nguyên — không bỏ
+  bài im lặng. Phân biệt rõ: hai lỗi trên là lỗi đã đo và sửa
+  ở local; hiện tượng live ở build 20261030-hsk3g7 vẫn chưa
+  xác định nguyên nhân, giữ theo dõi trong ISSUE-LOAD-STALL-01.
+  Không đổi dữ liệu bài, ID bài hay tiến độ học.
+
 - 2026-10-30 — Lô HSK3-8 (build 20261030-hsk3h8): 4 bài mới —
   approx-numbers-1 (HSK2, OFF-H2-61 — khép khoảng trống nền số
   ước lượng, liên kết tiên quyết hai chiều với approx-numbers-2),

@@ -868,7 +868,7 @@ function render() {
 // bản cũ từ bộ nhớ đệm sau khi app.js mới đã chạy. Lưu ý: tham số này chỉ
 // có tác dụng khi app.js mới đã được tải; nó không chữa được app.js cũ
 // còn trong bộ nhớ đệm (xem docs/decisions.md D20).
-const BUILD_VERSION = "20261030-hsk3h8";
+const BUILD_VERSION = "20261030-perf1";
 const DEBUG = new URLSearchParams(location.search).get("debug") === "1";
 let debugInfo = null;
 
@@ -927,33 +927,64 @@ async function fetchData(url) {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
   try {
-    return await fetch(url, { signal: ctrl.signal });
+    const r = await fetch(url, { signal: ctrl.signal });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    // Đọc thân (body) PHẢI nằm trong cùng hạn chót: fetch() chỉ resolve
+    // khi headers về, nên nếu hủy bộ đếm giờ ngay tại đây thì một body
+    // bị treo giữa chừng sẽ lọt qua và .json() treo vĩnh viễn (đã tái
+    // hiện — xem docs/reviews/loading-perf-optimization.md). Khi quá
+    // hạn, abort() hủy thật request/body đang đọc dở.
+    const data = await r.json();
+    return { status: r.status, data };
   } finally {
     clearTimeout(timer);
   }
 }
 
+// Tải shard SONG SONG CÓ GIỚI HẠN (trước đây tải tuần tự: trên mạng
+// chậm, độ trễ của 70+ request bị cộng dồn — đo được ~46 giây cho 72
+// bài). Mức đồng thời được chốt bằng đo thử cùng điều kiện mạng chậm
+// ở các mức 4/8/16 (xem docs/reviews/loading-perf-optimization.md).
+// Kết quả được ghép lại theo đúng thứ tự manifest bằng chỉ số, không
+// phụ thuộc file nào tải xong trước; shard lỗi vẫn bị đếm vào
+// failedShards để hiện banner tải thiếu như cũ — không âm thầm bỏ bài
+// rồi báo tải đầy đủ.
+const LOAD_CONCURRENCY = 8;
 async function loadLessons() {
   const sources = [];
   let failedShards = 0;
   const manifestUrl = `data/lessons-manifest.json?v=${BUILD_VERSION}`;
   try {
-    const mr = await fetchData(manifestUrl);
-    if (!mr.ok) throw new Error("HTTP " + mr.status);
-    const m = await mr.json();
-    sources.push({ url: manifestUrl, status: mr.status, count: (m.shards || []).length, error: null });
+    const mRes = await fetchData(manifestUrl);
+    const m = mRes.data;
+    const shardPaths = m.shards || [];
+    sources.push({ url: manifestUrl, status: mRes.status, count: shardPaths.length, error: null });
+    const perShard = new Array(shardPaths.length).fill(null);
+    let nextIndex = 0;
+    async function shardWorker() {
+      while (nextIndex < shardPaths.length) {
+        const i = nextIndex;
+        nextIndex += 1;
+        const url = `${shardPaths[i]}?v=${BUILD_VERSION}`;
+        try {
+          const r = await fetchData(url);
+          perShard[i] = { url, status: r.status, count: (r.data.lessons || []).length, error: null, lessons: r.data.lessons || [] };
+        } catch (e) {
+          perShard[i] = { url, status: "lỗi", count: null, error: String(e && e.message ? e.message : e), lessons: null };
+        }
+      }
+    }
+    const workers = [];
+    for (let k = 0; k < Math.min(LOAD_CONCURRENCY, shardPaths.length); k += 1) workers.push(shardWorker());
+    await Promise.all(workers);
     const all = [];
-    for (const s of (m.shards || [])) {
-      const url = `${s}?v=${BUILD_VERSION}`;
-      try {
-        const r = await fetchData(url);
-        if (!r.ok) throw new Error("HTTP " + r.status);
-        const shard = await r.json();
-        sources.push({ url, status: r.status, count: (shard.lessons || []).length, error: null });
-        all.push(...(shard.lessons || []));
-      } catch (e) {
+    for (const s of perShard) {
+      if (s.lessons) {
+        sources.push({ url: s.url, status: s.status, count: s.count, error: null });
+        all.push(...s.lessons);
+      } else {
         failedShards += 1;
-        sources.push({ url, status: "lỗi", count: null, error: String(e && e.message ? e.message : e) });
+        sources.push({ url: s.url, status: "lỗi", count: null, error: s.error });
       }
     }
     const scriptEl = document.querySelector('script[src*="app.js"]');
