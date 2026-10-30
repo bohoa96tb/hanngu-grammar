@@ -18,7 +18,7 @@
           "wrong_or_risky": "桌子上放着书。"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -168,14 +168,17 @@
         }
       ],
       "formula_notes": "1) Vị trí: 着 đứng ngay sau động từ chỉ trạng thái (放, 站, 种, 挂…), không đứng cuối câu. 2) Cần có sẵn: danh từ cuối câu thường kèm số lượng (一本书, 一个人); nói trơ danh từ nghe cụt. 3) Không dùng: mẫu này không dùng 有; khác mẫu tồn hiện 处所 + 有 + 数量 + 名词 và khác 着 chỉ trạng thái nói chung.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 2,
       "id": "cunxian-chu",
       "objective": "Sau bài này, người học dùng mẫu存现 dạng nơi chốn + động từ + 着 + danh từ để nói ở một nơi có vật hoặc người nào đang ở trạng thái đó.",
       "pattern": "Nơi chốn + Động từ + 着 + (Số lượng +) Danh từ",
-      "quick_memory": "Nơi nào đang có gì (trạng thái): nơi chốn + động từ + 着 + số lượng + danh từ.",
+      "quick_memory": "Nơi nào đang có gì: động từ dính 着 ngay sau nó, cuối câu cần số lượng + danh từ — và không dùng 有.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 09 từ danh mục HSK1–2 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 09 từ danh mục HSK1–2 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thay mục Nhớ nhanh theo rà soát std2 (audit §1.3)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

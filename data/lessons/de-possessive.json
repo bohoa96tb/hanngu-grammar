@@ -13,7 +13,7 @@
           "wrong_or_risky": "我的妈妈 (trong câu nói hàng ngày)"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "easy",
       "examples": [
         {
@@ -132,6 +132,10 @@
         }
       ],
       "formula_notes": "1) Vị trí: phần sở hữu/định ngữ + 的 + danh từ. 2) Mở rộng: quan hệ thân thuộc gần (mẹ, nhà) thường lược 的: 我妈妈. 3) Không dùng: sau động từ dùng 得 (bổ ngữ), trước động từ dùng 地 (trạng ngữ) — không phải 的.",
+      "hsk_evidence": {
+        "note": "Bước phân biệt có nhắc 得 và 地 (thuộc HSK2) chỉ để tránh nhầm ba chữ gần giống, không dạy cách dùng của chúng.",
+        "status": "partial"
+      },
       "hsk_level": 1,
       "id": "de-possessive",
       "objective": "Sau bài này, người học nối được người sở hữu với vật sở hữu bằng 的 và không nhầm 的 với 得, 地.",
@@ -139,7 +143,7 @@
       "quick_memory": "Của ai/cái gì: để 的 giữa phần mô tả và danh từ. Người thân gần thì hay bỏ 的.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence ở trạng thái partial (bước phân biệt có nhắc 得/地 thuộc HSK2)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

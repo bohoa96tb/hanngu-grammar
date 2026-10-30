@@ -18,7 +18,7 @@
           "wrong_or_risky": "书被我放在桌子上了。(khi muốn nói chủ động 'tôi đặt sách lên bàn')"
         }
       ],
-      "content_version": 3,
+      "content_version": 4,
       "difficulty": "hard",
       "examples": [
         {
@@ -166,6 +166,9 @@
         }
       ],
       "formula_notes": "1) Vị trí: 把 đứng trước tân ngữ; tân ngữ đứng trước động từ. 2) Cần có sẵn: động từ sau tân ngữ phải kèm thành phần kết quả/bổ ngữ (在/到 + nơi chốn, bổ ngữ kết quả, bổ ngữ xu hướng), không đứng trơ một mình. 3) Phân biệt: chủ ngữ là người chủ động thực hiện, khác câu bị động với 被.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 3,
       "id": "ba-sentence-1",
       "objective": "Sau bài này, người học dùng câu chữ 把 để đưa tân ngữ lên trước động từ khi muốn nhấn mạnh việc xử lý hoặc kết quả tác động lên tân ngữ, phân biệt với câu bị động dùng 被.",
@@ -173,7 +176,7 @@
       "quick_memory": "Xử lý vật gì ra sao: 把 đưa tân ngữ lên trước động từ, và động từ không được đứng trơ.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 10 từ danh mục HSK3 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 10 từ danh mục HSK3 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

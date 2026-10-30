@@ -18,7 +18,7 @@
           "wrong_or_risky": "Trả lời câu hỏi 还是 bằng 是。"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -158,6 +158,9 @@
         }
       ],
       "formula_notes": "1) Vị trí: Phương án 1 + 还是 + Phương án 2? 2) Trả lời: chọn một phương án, không trả lời 是/不是. 3) Không dùng: 或者 chỉ dùng trong câu trần thuật, không dùng để hỏi lựa chọn.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 2,
       "id": "hai-shi-choice",
       "objective": "Sau bài này, người học đặt được câu hỏi lựa chọn bằng 还是, không dùng 吗 và không nhầm với 或者.",
@@ -165,7 +168,7 @@
       "quick_memory": "Hỏi chọn một trong hai → 还是. Câu kể lựa chọn thì dùng 或者, không dùng 还是.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

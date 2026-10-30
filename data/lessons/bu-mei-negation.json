@@ -18,7 +18,7 @@
           "wrong_or_risky": "我没忙。 (muốn nói 'Tôi không bận')"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -158,6 +158,9 @@
         }
       ],
       "formula_notes": "1) 不: đặt trước động từ/tính từ cho hiện tại, tương lai, thói quen (我不喝茶, 我不忙). 2) 没: đặt trước động từ cho việc đã qua nhưng chưa xảy ra (他昨天没去学校). 3) 没有 + danh từ: không có (我没有哥哥). 4) Không dùng: không nói 不有; 没 có thể đứng một mình thay 没有 trước động từ.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 1,
       "id": "bu-mei-negation",
       "objective": "Sau bài này, người học chọn đúng 不 hay 没 theo thời gian và loại từ, và không dùng 不 có với 有.",
@@ -165,7 +168,7 @@
       "quick_memory": "Chưa từng/chưa làm xong → 没; thói quen, hiện tại, tính chất → 不. Riêng 有 chỉ đi với 没.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [
