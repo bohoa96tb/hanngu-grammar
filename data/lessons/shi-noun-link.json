@@ -1,5 +1,4 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
       "confusions": [
@@ -14,7 +13,7 @@
           "wrong_or_risky": "我是学校。 (muốn nói 'Tôi ở trường')"
         }
       ],
-      "content_version": 1,
+      "content_version": 2,
       "difficulty": "easy",
       "examples": [
         {
@@ -65,6 +64,7 @@
           ],
           "explanation": "Chủ ngữ 我 + 是 + danh từ 学生. Không thêm từ nào giữa 是 và danh từ ở câu cơ bản này.",
           "id": "shi-ex1",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "我是学生。",
@@ -83,6 +83,7 @@
           ],
           "explanation": "Phủ định của 是 là 不是, đặt ngay trước 是: 他不是老师.",
           "id": "shi-ex2",
+          "is_open_ended": false,
           "payload": {
             "hint_vi": "Dùng 不是."
           },
@@ -100,6 +101,7 @@
           ],
           "explanation": "Thứ tự cố định: chủ ngữ → 是 → danh từ. Đảo thành 老师是我 sẽ đổi nghĩa/vô nghĩa trong ngữ cảnh này.",
           "id": "shi-ex3",
+          "is_open_ended": false,
           "payload": {
             "tokens": [
               "老师",
@@ -117,6 +119,7 @@
           ],
           "explanation": "Từ ý muốn nói 'Cô ấy là bác sĩ': chủ ngữ 她 + 是 + danh từ 医生.",
           "id": "shi-ex4",
+          "is_open_ended": false,
           "payload": {
             "hint_vi": "Bắt đầu bằng 她."
           },
@@ -124,14 +127,15 @@
           "type": "fill"
         }
       ],
-      "formula_notes": "Phủ định: 不是 + danh từ. Câu hỏi: ...是...吗? Ví dụ: 你是学生吗? Thành phần sau 是 bắt buộc là danh từ hoặc cụm danh từ.",
+      "formula_notes": "1) Cần có sẵn: sau 是 bắt buộc là danh từ hoặc cụm danh từ. 2) Phủ định: 不是 + danh từ. 3) Câu hỏi: thêm 吗 ở cuối (你是学生吗？).",
       "hsk_level": 1,
       "id": "shi-noun-link",
       "objective": "Sau bài này, người học nói được 'A là B' khi B là người, vật hoặc thân phận, và không dùng nhầm 是 trước tính từ.",
       "pattern": "Danh từ 1 + 是 + Danh từ 2",
+      "quick_memory": "Là ai/cái gì thì dùng 是 nối hai danh từ. Nói tính chất hay vị trí thì không dùng 是.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki (Connecting nouns with shi), kiểm tra phủ định 不是 và phân biệt 是/很/在. Không khẳng định có giáo viên/người bản ngữ duyệt.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki (Connecting nouns with shi), kiểm tra phủ định 不是 và phân biệt 是/很/在. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [
@@ -144,5 +148,6 @@
       "title_vi": "是: nối hai danh từ (A là B)",
       "when_to_use": "Khi muốn xác định 'A là ai/cái gì', tức hai bên là cùng một người/vật/thân phận. Không dùng 是 để nói tính chất (cao, bận, mệt) và không dùng để nói vị trí."
     }
-  ]
+  ],
+  "schema_version": 1
 }

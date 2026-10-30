@@ -1,19 +1,28 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "bu-mei-negation",
-      "title_vi": "不 và 没: hai cách phủ định",
-      "pattern": "不 + Động từ/Tính từ (hiện tại, tương lai, thói quen) • 没(有) + Động từ (đã qua) / 没有 + Danh từ",
-      "hsk_level": 1,
+      "confusions": [
+        {
+          "explanation": "Phủ định của 有 luôn là 没有, không dùng 不有.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我不有哥哥。"
+        },
+        {
+          "explanation": "不去 nói về ý định/thói quen, không nói hành động hôm qua đã không xảy ra. Đã qua dùng 没: 我昨天没去学校.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我昨天不去学校。 (muốn nói hôm qua đã không đi học)"
+        },
+        {
+          "explanation": "Tính chất dùng 不: 我不忙. 没 dùng cho động từ đã qua và cho 有, không phủ định tính từ.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我没忙。 (muốn nói 'Tôi không bận')"
+        }
+      ],
+      "content_version": 2,
       "difficulty": "medium",
-      "objective": "Sau bài này, người học chọn đúng 不 hay 没 theo thời gian và loại từ, và không dùng 不 có với 有.",
-      "when_to_use": "Phủ định thói quen, hiện tại, tương lai và tính chất: dùng 不. Phủ định hành động đã qua và phủ định 有: dùng 没/没有. Chọn sai sẽ đổi thời gian hoặc thành câu sai.",
-      "formula_notes": "不 + Động từ/Tính từ: 我不喝茶, 我不忙. 没 + Động từ (đã qua): 他昨天没去学校. 没有 + Danh từ (không có): 我没有哥哥. Không dùng 不有. 没 có thể đứng một mình thay 没有 trước động từ.",
       "examples": [
         {
-          "zh": "我不喝茶。",
-          "vi": "Tôi không uống trà.",
+          "from_vietnamese_intent": true,
           "pinyin": "Wǒ bù hē chá.",
           "tokens": [
             "我",
@@ -21,11 +30,11 @@
             "喝",
             "茶"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Tôi không uống trà.",
+          "zh": "我不喝茶。"
         },
         {
-          "zh": "他昨天没去学校。",
-          "vi": "Hôm qua anh ấy đã không đi học.",
+          "from_vietnamese_intent": false,
           "pinyin": "Tā zuótiān méi qù xuéxiào.",
           "tokens": [
             "他",
@@ -34,42 +43,29 @@
             "去",
             "学校"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Hôm qua anh ấy đã không đi học.",
+          "zh": "他昨天没去学校。"
         },
         {
-          "zh": "我没有哥哥。",
-          "vi": "Tôi không có anh trai.",
+          "from_vietnamese_intent": false,
           "pinyin": "Wǒ méiyǒu gēge.",
           "tokens": [
             "我",
             "没有",
             "哥哥"
           ],
-          "from_vietnamese_intent": false
-        }
-      ],
-      "confusions": [
-        {
-          "wrong_or_risky": "我不有哥哥。",
-          "verdict": "sai_ngu_phap",
-          "explanation": "Phủ định của 有 luôn là 没有, không dùng 不有."
-        },
-        {
-          "wrong_or_risky": "我昨天不去学校。 (muốn nói hôm qua đã không đi học)",
-          "verdict": "doi_nghia",
-          "explanation": "不去 nói về ý định/thói quen, không nói hành động hôm qua đã không xảy ra. Đã qua dùng 没: 我昨天没去学校."
-        },
-        {
-          "wrong_or_risky": "我没忙。 (muốn nói 'Tôi không bận')",
-          "verdict": "sai_ngu_phap",
-          "explanation": "Tính chất dùng 不: 我不忙. 没 dùng cho động từ đã qua và cho 有, không phủ định tính từ."
+          "vi": "Tôi không có anh trai.",
+          "zh": "我没有哥哥。"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "没"
+          ],
+          "explanation": "Hành động đã qua dùng 没: 他昨天没去学校.",
           "id": "bu-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn từ đúng: 'Hôm qua anh ấy ___ đi học.'",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "没",
@@ -78,55 +74,44 @@
               "在"
             ]
           },
-          "accepted_answers": [
-            "没"
-          ],
-          "explanation": "Hành động đã qua dùng 没: 他昨天没去学校."
+          "prompt_vi": "Chọn từ đúng: 'Hôm qua anh ấy ___ đi học.'",
+          "type": "choice"
         },
         {
+          "accepted_answers": [
+            "我没有钱。",
+            "我没有钱"
+          ],
+          "explanation": "Phủ định của 有 là 没有: 没有 + 钱.",
           "id": "bu-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Tôi không có chị gái.'",
-          "prompt_zh": "我___姐姐。",
+          "is_open_ended": false,
           "payload": {
             "hint_vi": "Phủ định của 有."
           },
-          "accepted_answers": [
-            "我没有姐姐。",
-            "我没有姐姐"
-          ],
-          "explanation": "没有 + danh từ."
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Tôi không có tiền.'",
+          "prompt_zh": "我___钱。",
+          "type": "fill"
         },
         {
+          "accepted_answers": [
+            "不"
+          ],
+          "explanation": "Lỗi ở 不: phủ định của 有 là 没有. Sửa thành: 他没有书。",
           "id": "bu-ex3",
-          "type": "error_spot",
-          "prompt_vi": "Câu sau sai ở khối nào? 他不有书。",
+          "is_open_ended": false,
           "payload": {
-            "sentence_zh": "他不有书。",
             "options": [
               "他",
               "不",
               "有",
               "书"
-            ]
+            ],
+            "sentence_zh": "他不有书。"
           },
-          "accepted_answers": [
-            "不"
-          ],
-          "explanation": "Lỗi ở 不: phủ định của 有 là 没有. Sửa thành: 他没有书。"
+          "prompt_vi": "Câu sau sai ở khối nào? 他不有书。",
+          "type": "error_spot"
         },
         {
-          "id": "bu-ex4",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu đúng (chú ý: có thể có hơn một thứ tự đúng).",
-          "payload": {
-            "tokens": [
-              "昨天",
-              "我",
-              "没",
-              "去"
-            ]
-          },
           "accepted_answers": [
             [
               "我",
@@ -141,35 +126,58 @@
               "去"
             ]
           ],
-          "explanation": "Từ chỉ thời gian 昨天 có thể đứng trước hoặc sau chủ ngữ, nhưng 没 phải đứng trước động từ 去."
+          "explanation": "Từ chỉ thời gian 昨天 có thể đứng trước hoặc sau chủ ngữ, nhưng 没 phải đứng trước động từ 去.",
+          "id": "bu-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "昨天",
+              "我",
+              "没",
+              "去"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu đúng (chú ý: có thể có hơn một thứ tự đúng).",
+          "type": "order"
         },
         {
+          "accepted_answers": [
+            "我昨天没买书。",
+            "我昨天没买书",
+            "昨天我没买书。",
+            "昨天我没买书"
+          ],
+          "explanation": "Từ ý muốn nói 'Tôi hôm qua không mua sách': 我昨天 + 没 + 买书.",
           "id": "bu-ex5",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tôi hôm qua không mua sách.' (viết bằng chữ Hán)",
+          "is_open_ended": false,
           "payload": {
             "hint_vi": "Bắt đầu bằng 我昨天."
           },
-          "accepted_answers": [
-            "我昨天没买书。",
-            "我昨天没买书"
-          ],
-          "explanation": "Từ ý muốn nói 'Tôi hôm qua không mua sách': 我昨天 + 没 + 买书."
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tôi hôm qua không mua sách.' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
+      "formula_notes": "1) 不: đặt trước động từ/tính từ cho hiện tại, tương lai, thói quen (我不喝茶, 我不忙). 2) 没: đặt trước động từ cho việc đã qua nhưng chưa xảy ra (他昨天没去学校). 3) 没有 + danh từ: không có (我没有哥哥). 4) Không dùng: không nói 不有; 没 có thể đứng một mình thay 没有 trước động từ.",
+      "hsk_level": 1,
+      "id": "bu-mei-negation",
+      "objective": "Sau bài này, người học chọn đúng 不 hay 没 theo thời gian và loại từ, và không dùng 不 có với 有.",
+      "pattern": "不 + Động từ/Tính từ (hiện tại, tương lai, thói quen) • 没(有) + Động từ (đã qua) / 没有 + Danh từ",
+      "quick_memory": "Chưa từng/chưa làm xong → 没; thói quen, hiện tại, tính chất → 不. Riêng 有 chỉ đi với 没.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "cgw",
-          "note": "Chủ đề A1/A2 theo Chinese Grammar Wiki; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề A1/A2 theo Chinese Grammar Wiki; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "cgw"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
-      }
+      "title_vi": "不 và 没: hai cách phủ định",
+      "when_to_use": "Phủ định thói quen, hiện tại, tương lai và tính chất: dùng 不. Phủ định hành động đã qua và phủ định 有: dùng 没/没有. Chọn sai sẽ đổi thời gian hoặc thành câu sai."
     }
-  ]
+  ],
+  "schema_version": 1
 }

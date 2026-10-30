@@ -1,52 +1,61 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "question-words",
-      "title_vi": "Từ để hỏi: hỏi mà không đảo trật tự",
-      "pattern": "Từ để hỏi đứng đúng vị trí thành phần bị hỏi",
-      "hsk_level": 1,
+      "confusions": [
+        {
+          "explanation": "Từ để hỏi không chuyển lên đầu câu như tiếng Anh. Giữ đúng vị trí: 这是什么？",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "什么这是？"
+        },
+        {
+          "explanation": "Câu đã có từ để hỏi thì không thêm 吗: 你是谁？",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "你是谁吗？"
+        },
+        {
+          "explanation": "多少 dùng cho số lớn hoặc chưa rõ. Hỏi số nhỏ dưới 10, dùng 几: 几个学生？",
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "多少个学生？ (muốn hỏi lớp có 3 học sinh)"
+        }
+      ],
+      "content_version": 2,
       "difficulty": "medium",
-      "objective": "Sau bài này, người học hỏi được bằng 什么, 谁, 哪儿, 几, 多少 mà không đảo trật tự câu như tiếng Anh.",
-      "when_to_use": "Khi muốn hỏi một thông tin chưa biết. Từ để hỏi đứng đúng chỗ của thành phần bị hỏi trong câu trần thuật, không chuyển lên đầu câu.",
-      "formula_notes": "什么 (cái gì), 谁 (ai), 哪儿 (đâu), 几 (mấy, số nhỏ + lượng từ), 多少 (bao nhiêu, số lớn hoặc chưa rõ). Câu hỏi có từ để hỏi thì không thêm 吗. Từ chỉ thời gian có thể đứng trước hoặc sau chủ ngữ.",
       "examples": [
         {
-          "zh": "这是什么？",
-          "vi": "Đây là cái gì?",
+          "from_vietnamese_intent": true,
           "pinyin": "Zhè shì shénme?",
           "tokens": [
             "这",
             "是",
             "什么"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Đây là cái gì?",
+          "zh": "这是什么？"
         },
         {
-          "zh": "他是谁？",
-          "vi": "Anh ấy là ai?",
+          "from_vietnamese_intent": false,
           "pinyin": "Tā shì shéi?",
           "tokens": [
             "他",
             "是",
             "谁"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Anh ấy là ai?",
+          "zh": "他是谁？"
         },
         {
-          "zh": "你去哪儿？",
-          "vi": "Bạn đi đâu?",
+          "from_vietnamese_intent": false,
           "pinyin": "Nǐ qù nǎr?",
           "tokens": [
             "你",
             "去",
             "哪儿"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Bạn đi đâu?",
+          "zh": "你去哪儿？"
         },
         {
-          "zh": "这件衣服多少钱？",
-          "vi": "Bộ quần áo này bao nhiêu tiền?",
+          "from_vietnamese_intent": false,
           "pinyin": "Zhè jiàn yīfu duōshao qián?",
           "tokens": [
             "这",
@@ -55,31 +64,18 @@
             "多少",
             "钱"
           ],
-          "from_vietnamese_intent": false
-        }
-      ],
-      "confusions": [
-        {
-          "wrong_or_risky": "什么这是？",
-          "verdict": "sai_ngu_phap",
-          "explanation": "Từ để hỏi không chuyển lên đầu câu như tiếng Anh. Giữ đúng vị trí: 这是什么？"
-        },
-        {
-          "wrong_or_risky": "你是谁吗？",
-          "verdict": "sai_ngu_phap",
-          "explanation": "Câu đã có từ để hỏi thì không thêm 吗: 你是谁？"
-        },
-        {
-          "wrong_or_risky": "多少个学生？ (muốn hỏi lớp có 3 học sinh)",
-          "verdict": "thay_duoc_co_dieu_kien",
-          "explanation": "多少 dùng cho số lớn hoặc chưa rõ. Hỏi số nhỏ dưới 10, dùng 几: 几个学生？"
+          "vi": "Bộ quần áo này bao nhiêu tiền?",
+          "zh": "这件衣服多少钱？"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "这是什么？"
+          ],
+          "explanation": "什么 đứng đúng vị trí danh từ bị hỏi, không thêm 吗.",
           "id": "qw-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để hỏi 'Đây là cái gì?'.",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "这是什么？",
@@ -88,37 +84,27 @@
               "这是吗什么？"
             ]
           },
-          "accepted_answers": [
-            "这是什么？"
-          ],
-          "explanation": "什么 đứng đúng vị trí danh từ bị hỏi, không thêm 吗."
+          "prompt_vi": "Chọn câu đúng để hỏi 'Đây là cái gì?'.",
+          "type": "choice"
         },
         {
+          "accepted_answers": [
+            "你去哪儿？",
+            "你去哪儿",
+            "你去哪里？",
+            "你去哪里"
+          ],
+          "explanation": "哪儿/哪里 đứng sau động từ 去, đúng vị trí nơi đến.",
           "id": "qw-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Bạn đi đâu?'",
-          "prompt_zh": "你去___？",
+          "is_open_ended": false,
           "payload": {
             "hint_vi": "Từ hỏi nơi chốn."
           },
-          "accepted_answers": [
-            "你去哪儿？",
-            "你去哪儿"
-          ],
-          "explanation": "哪儿 đứng sau động từ 去, đúng vị trí nơi đến."
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Bạn đi đâu?'",
+          "prompt_zh": "你去___？",
+          "type": "fill"
         },
         {
-          "id": "qw-ex3",
-          "type": "order",
-          "prompt_vi": "Xếp các khối thành câu hỏi đúng (chú ý: có thể có hơn một thứ tự đúng).",
-          "payload": {
-            "tokens": [
-              "昨天",
-              "你",
-              "去",
-              "哪儿"
-            ]
-          },
           "accepted_answers": [
             [
               "你",
@@ -133,35 +119,56 @@
               "哪儿"
             ]
           ],
-          "explanation": "Từ chỉ thời gian 昨天 có thể đứng trước hoặc sau chủ ngữ; 哪儿 đứng cuối, sau động từ."
+          "explanation": "Từ chỉ thời gian 昨天 có thể đứng trước hoặc sau chủ ngữ; 哪儿 đứng cuối, sau động từ.",
+          "id": "qw-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "昨天",
+              "你",
+              "去",
+              "哪儿"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu hỏi đúng (chú ý: có thể có hơn một thứ tự đúng).",
+          "type": "order"
         },
         {
-          "id": "qw-ex4",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Anh ấy là ai?' (viết bằng chữ Hán)",
-          "payload": {
-            "hint_vi": "Bắt đầu bằng 他."
-          },
           "accepted_answers": [
             "他是谁？",
             "他是谁"
           ],
-          "explanation": "Từ ý muốn nói 'Anh ấy là ai?': 他 + 是 + 谁."
+          "explanation": "Từ ý muốn nói 'Anh ấy là ai?': 他 + 是 + 谁.",
+          "id": "qw-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 他."
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Anh ấy là ai?' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
+      "formula_notes": "1) Vị trí: từ để hỏi đứng đúng vị trí của thành phần bị hỏi. 2) Chọn từ: 什么 cái gì, 谁 ai, 哪儿 đâu, 几 mấy (kỳ vọng số nhỏ, kèm lượng từ), 多少 bao nhiêu (không kỳ vọng khoảng số). 3) Không dùng: đã có từ để hỏi thì không thêm 吗. 4) Mở rộng: từ chỉ thời gian đứng trước hoặc sau chủ ngữ đều được.",
+      "hsk_level": 1,
+      "id": "question-words",
+      "objective": "Sau bài này, người học hỏi được bằng 什么, 谁, 哪儿, 几, 多少 mà không đảo trật tự câu như tiếng Anh.",
+      "pattern": "Từ để hỏi đứng đúng vị trí thành phần bị hỏi",
+      "quick_memory": "Từ để hỏi đứng ngay chỗ của đáp án. Đã có từ để hỏi thì không thêm 吗 cuối câu.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "cgw",
-          "note": "Chủ đề A1/A2 theo Chinese Grammar Wiki; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề A1/A2 theo Chinese Grammar Wiki; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "cgw"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
-      }
+      "title_vi": "Từ để hỏi: hỏi mà không đảo trật tự",
+      "when_to_use": "Khi muốn hỏi một thông tin chưa biết. Từ để hỏi đứng đúng chỗ của thành phần bị hỏi trong câu trần thuật, không chuyển lên đầu câu."
     }
-  ]
+  ],
+  "schema_version": 1
 }

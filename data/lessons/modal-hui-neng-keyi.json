@@ -1,19 +1,23 @@
 {
-  "schema_version": 1,
   "lessons": [
     {
-      "id": "modal-hui-neng-keyi",
-      "title_vi": "会, 能, 可以: ba cách nói 'có thể'",
-      "pattern": "会/能/可以 + Động từ",
-      "hsk_level": 1,
+      "confusions": [
+        {
+          "explanation": "能 nói khả năng theo điều kiện, còn kỹ năng đã học dùng 会: 我会说中文. Trong nhiều ngữ cảnh 能 nghe được, nhưng 会 mới nói đúng ý 'đã học được'.",
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "我能说中文。 (muốn nói 'Tôi biết nói tiếng Trung' vì đã học)"
+        },
+        {
+          "explanation": "会 không nói sự cho phép. Hỏi được phép dùng 可以: 这里可以拍照吗？",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "这里会拍照吗？ (muốn hỏi có được phép chụp ảnh không)"
+        }
+      ],
+      "content_version": 3,
       "difficulty": "medium",
-      "objective": "Sau bài này, người học phân biệt được 会 (kỹ năng đã học), 能 (khả năng/điều kiện) và 可以 (cho phép) trong câu đơn giản.",
-      "when_to_use": "Khi muốn nói ai biết làm gì (kỹ năng), ai có khả năng làm gì trong hoàn cảnh nào, hoặc việc gì được phép. Ba từ này đứng trước động từ chính, không đứng một mình thay động từ.",
-      "formula_notes": "会 + Động từ: kỹ năng đã học được (我会说中文). 能 + Động từ: khả năng do điều kiện cho phép hoặc sức khỏe (他能开车). 可以 + Động từ: được phép hoặc khả thi (这里可以拍照吗？). Phủ định: 不会, 不能, 不可以.",
       "examples": [
         {
-          "zh": "我会说中文。",
-          "vi": "Tôi biết nói tiếng Trung.",
+          "from_vietnamese_intent": true,
           "pinyin": "Wǒ huì shuō Zhōngwén.",
           "tokens": [
             "我",
@@ -21,22 +25,22 @@
             "说",
             "中文"
           ],
-          "from_vietnamese_intent": true
+          "vi": "Tôi biết nói tiếng Trung.",
+          "zh": "我会说中文。"
         },
         {
-          "zh": "他能开车。",
-          "vi": "Anh ấy có thể lái xe.",
+          "from_vietnamese_intent": false,
           "pinyin": "Tā néng kāichē.",
           "tokens": [
             "他",
             "能",
             "开车"
           ],
-          "from_vietnamese_intent": false
+          "vi": "Anh ấy có thể lái xe.",
+          "zh": "他能开车。"
         },
         {
-          "zh": "这里可以拍照吗？",
-          "vi": "Ở đây có thể chụp ảnh không?",
+          "from_vietnamese_intent": false,
           "pinyin": "Zhèlǐ kěyǐ pāizhào ma?",
           "tokens": [
             "这里",
@@ -44,98 +48,103 @@
             "拍照",
             "吗"
           ],
-          "from_vietnamese_intent": false
-        }
-      ],
-      "confusions": [
-        {
-          "wrong_or_risky": "我能说中文。 (muốn nói 'Tôi biết nói tiếng Trung' vì đã học)",
-          "verdict": "thay_duoc_co_dieu_kien",
-          "explanation": "能 nói khả năng theo điều kiện, còn kỹ năng đã học dùng 会: 我会说中文. Trong nhiều ngữ cảnh 能 nghe được, nhưng 会 mới nói đúng ý 'đã học được'."
-        },
-        {
-          "wrong_or_risky": "这里会拍照吗？ (muốn hỏi có được phép chụp ảnh không)",
-          "verdict": "doi_nghia",
-          "explanation": "会 không nói sự cho phép. Hỏi được phép dùng 可以: 这里可以拍照吗？"
+          "vi": "Ở đây có thể chụp ảnh không?",
+          "zh": "这里可以拍照吗？"
         }
       ],
       "exercises": [
         {
+          "accepted_answers": [
+            "我会说中文。"
+          ],
+          "explanation": "Kỹ năng đã học dùng 会, đứng trước động từ 说.",
           "id": "mo-ex1",
-          "type": "choice",
-          "prompt_vi": "Chọn câu đúng để nói 'Tôi biết nói tiếng Trung' (kỹ năng đã học).",
+          "is_open_ended": false,
           "payload": {
             "options": [
               "我会说中文。",
-              "我能说中文。",
+              "我说能中文。",
               "我可以说中文。",
               "我说会中文。"
             ]
           },
-          "accepted_answers": [
-            "我会说中文。"
-          ],
-          "explanation": "Kỹ năng đã học dùng 会, đứng trước động từ 说."
+          "prompt_vi": "Chọn câu đúng để nói 'Tôi biết nói tiếng Trung' (kỹ năng đã học).",
+          "type": "choice"
         },
         {
+          "accepted_answers": [
+            "这里可以拍照吗？",
+            "这里可以拍照吗",
+            "这里能拍照吗？",
+            "这里能拍照吗"
+          ],
+          "explanation": "Hỏi được phép dùng 可以. (能 cũng nghe được trong ngữ cảnh này, nhưng đáp án mẫu dùng 可以.)",
           "id": "mo-ex2",
-          "type": "fill",
-          "prompt_vi": "Điền câu hoàn chỉnh: 'Ở đây có thể chụp ảnh không?'",
-          "prompt_zh": "这里___拍照吗？",
+          "is_open_ended": false,
           "payload": {
             "hint_vi": "Hỏi sự cho phép."
           },
-          "accepted_answers": [
-            "这里可以拍照吗？",
-            "这里可以拍照吗"
-          ],
-          "explanation": "Hỏi được phép dùng 可以."
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Ở đây có thể chụp ảnh không?'",
+          "prompt_zh": "这里___拍照吗？",
+          "type": "fill"
         },
         {
+          "accepted_answers": [
+            "会"
+          ],
+          "explanation": "Lỗi ở vị trí 会: động từ năng nguyện đứng trước động từ chính. Sửa thành: 我会说中文。",
           "id": "mo-ex3",
-          "type": "error_spot",
-          "prompt_vi": "Câu sau sai ở khối nào? 我说会中文。",
+          "is_open_ended": false,
           "payload": {
-            "sentence_zh": "我说会中文。",
             "options": [
               "我",
               "说",
               "会",
               "中文"
-            ]
+            ],
+            "sentence_zh": "我说会中文。"
           },
-          "accepted_answers": [
-            "会"
-          ],
-          "explanation": "Lỗi ở vị trí 会: động từ năng nguyện đứng trước động từ chính. Sửa thành: 我会说中文。"
+          "prompt_vi": "Câu sau sai ở khối nào? 我说会中文。",
+          "type": "error_spot"
         },
         {
+          "accepted_answers": [
+            "他能开车。",
+            "他能开车",
+            "他会开车。",
+            "他会开车"
+          ],
+          "explanation": "Từ ý muốn nói 'Anh ấy có thể lái xe': cả hai đáp án đều được nhận — 他能开车 (có thể nhờ điều kiện/khả năng cho phép) và 他会开车 (có thể vì đã học được kỹ năng lái xe). Nghĩa tiếng Việt 'có thể' gồm cả hai ý này; nhấn kỹ năng đã học thì dùng 会, nhấn khả năng theo điều kiện thì dùng 能.",
           "id": "mo-ex4",
-          "type": "fill",
-          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Anh ấy có thể lái xe.' (viết bằng chữ Hán)",
+          "is_open_ended": false,
           "payload": {
             "hint_vi": "Bắt đầu bằng 他."
           },
-          "accepted_answers": [
-            "他能开车。",
-            "他能开车"
-          ],
-          "explanation": "Từ ý muốn nói 'Anh ấy có thể lái xe': 他 + 能 + 开车."
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Anh ấy có thể lái xe.' (viết bằng chữ Hán)",
+          "type": "fill"
         }
       ],
+      "formula_notes": "1) Vị trí: cả ba đứng ngay trước động từ. 2) 会: kỹ năng đã học (我会说中文). 3) 能: làm được nhờ điều kiện/sức khỏe (他能开车). 4) 可以: được phép, khả thi (这里可以拍照吗？). 5) Phủ định: 不会 / 不能 / 不可以.",
+      "hsk_level": 1,
+      "id": "modal-hui-neng-keyi",
+      "objective": "Sau bài này, người học phân biệt được 会 (kỹ năng đã học), 能 (khả năng/điều kiện) và 可以 (cho phép) trong câu đơn giản.",
+      "pattern": "会/能/可以 + Động từ",
+      "quick_memory": "Chọn theo lý do: học được → 会; có điều kiện nên làm được → 能; được phép → 可以.",
+      "review": {
+        "date": "2026-10-29",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
       "sources": [
         {
-          "source_id": "cgw",
-          "note": "Chủ đề A1/A2 theo Chinese Grammar Wiki; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn."
+          "note": "Chủ đề A1/A2 theo Chinese Grammar Wiki; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn.",
+          "source_id": "cgw"
         }
       ],
       "status": "published",
-      "content_version": 1,
-      "review": {
-        "reviewer": "quy-trinh-ra-soat-noi-bo",
-        "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt."
-      }
+      "title_vi": "会, 能, 可以: ba cách nói 'có thể'",
+      "when_to_use": "Khi muốn nói ai biết làm gì (kỹ năng), ai có khả năng làm gì trong hoàn cảnh nào, hoặc việc gì được phép. Ba từ này đứng trước động từ chính, không đứng một mình thay động từ."
     }
-  ]
+  ],
+  "schema_version": 1
 }
