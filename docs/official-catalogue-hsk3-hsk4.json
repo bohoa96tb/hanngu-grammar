@@ -61,14 +61,20 @@
     {
       "id": "OFF-H3-09",
       "title_vi": "Nhân xưng 别人/咱们",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "pronouns-others"
+      ],
+      "note": "Bài pronouns-others phủ 别人/咱们, gộp chung một bài với OFF-H3-10 vì cùng một mục tiêu 'người khác / thứ khác'."
     },
     {
       "id": "OFF-H3-10",
       "title_vi": "Chỉ định 别的/其他",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "pronouns-others"
+      ],
+      "note": "Bài pronouns-others phủ 别的/其他, gộp chung một bài với OFF-H3-09 vì cùng một mục tiêu 'người khác / thứ khác'."
     },
     {
       "id": "OFF-H3-11",
@@ -92,8 +98,11 @@
     {
       "id": "OFF-H3-14",
       "title_vi": "Phó từ thời gian 马上/先/一会儿/刚/刚刚/一直",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "adverbs-time-hsk3"
+      ],
+      "note": "Bài adverbs-time-hsk3 phủ 马上/先/刚/刚刚/一直. Thành viên 一会儿 đã phủ từ trước: vai lượng thời gian 'một lát' gặp trong các bài cũ và mẫu luân phiên 一会儿……，一会儿…… ở bài alternating-actions."
     },
     {
       "id": "OFF-H3-15",
@@ -122,8 +131,11 @@
     {
       "id": "OFF-H3-19",
       "title_vi": "Phủ định 不必/不用",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "negation-bubi-buyong"
+      ],
+      "note": "Bài negation-bubi-buyong dạy riêng 不必/不用; trước đó bài modal-verbs-hsk3 mới nhắc hai từ này để tránh lỗi phủ định của 得 (děi), chưa dạy thành bài."
     },
     {
       "id": "OFF-H3-20",
@@ -376,8 +388,11 @@
     {
       "id": "OFF-H3-50",
       "title_vi": "概数 dạng 2 (大概; hai số kề nhau)",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "approx-numbers-2"
+      ],
+      "note": "Bài approx-numbers-2 chỉ phủ 大概 ở vai trò ước lượng số lượng và mẫu hai số kề nhau. Vai trò phó từ tình thái (phỏng đoán) của 大概 thuộc OFF-H3-17 — bài này không dạy và không tính phủ mục đó."
     }
   ],
   "hsk4": [
@@ -517,48 +532,54 @@
     },
     {
       "id": "OFF-H4-23",
-      "title_vi": "Câu phủ định kép (不是……，而是……; phủ định kép nhấn mạnh)",
+      "title_vi": "Câu phủ định kép (dùng phủ định kép để nhấn mạnh)",
       "status": "missing",
-      "lesson_ids": []
+      "lesson_ids": [],
+      "note": "Sửa đối chiếu 2026-10-30: kiểm trực quan trang in 394 xác nhận mục phủ định kép chỉ có nội dung 'dùng phủ định kép để nhấn mạnh'; mẫu 不是……，而是…… thuộc mục câu phức song song OFF-H4-24, đã bỏ khỏi tiêu đề mục này."
     },
     {
       "id": "OFF-H4-24",
-      "title_vi": "Câu phức song song HSK4 (一方面……，另一方面……; 首先……，其次……; 既……，又/也……)",
+      "title_vi": "Câu phức song song HSK4 （不是……，而是……; 既……，又/也……; 一方面……，另一方面……)",
       "status": "missing",
-      "lesson_ids": []
+      "lesson_ids": [],
+      "note": "Sửa đối chiếu 2026-10-30: kiểm trực quan trang in 394 — 不是……，而是…… thuộc mục song song (trước ghi nhầm ở OFF-H4-23); 首先……，其次…… thuộc mục tiếp nối OFF-H4-25, đã bỏ khỏi tiêu đề mục này."
     },
     {
       "id": "OFF-H4-25",
-      "title_vi": "Câu phức承接 HSK4 (首先……，然后……; ……，于是……)",
+      "title_vi": "Câu phức承接 HSK4 （首先……，其次……; 首先……，然后……; ……，于是……)",
       "status": "missing",
-      "lesson_ids": []
+      "lesson_ids": [],
+      "note": "Sửa đối chiếu 2026-10-30: kiểm trực quan trang in 394 bổ sung thành viên 首先……，其次…… (trước ghi nhầm ở OFF-H4-24)."
     },
     {
       "id": "OFF-H4-26",
-      "title_vi": "Câu phức递进 HSK4 (不仅/不光……，还/而且……; ……,甚至……; ……，并且……)",
+      "title_vi": "Câu phức递进 HSK4 （不仅/不光……，还/而且……; ……，甚至……; ……，并且……; 连……也/都……，……更……)",
       "status": "missing",
-      "lesson_ids": []
+      "lesson_ids": [],
+      "note": "Sửa đối chiếu 2026-10-30: kiểm trực quan trang in 394 xác nhận 连……也/都……，……更…… là thành viên thứ tư của mục tiến triển (trước đây bị trích xuất text gắn nhầm sang mục lựa chọn OFF-H4-27)."
     },
     {
       "id": "OFF-H4-27",
-      "title_vi": "Câu phức lựa chọn HSK4 (不是……，就是……; 连……也/都……，……更……)",
-      "status": "partial",
+      "title_vi": "Câu phức lựa chọn HSK4 （不是……，就是……)",
+      "status": "covered",
       "lesson_ids": [
         "complex-choice"
       ],
-      "note": "Mới phủ thành viên 不是……，就是…… qua bài complex-choice (bài nay xếp ở cấp HSK4 từ lô HSK3-6). Thành viên 连……也/都……，……更…… chưa dạy."
+      "note": "Kiểm trực quan trang in 394 của đề cương gốc (2026-10-30): mục lựa chọn HSK4 chỉ có đúng một thành viên 不是……，就是……, bài complex-choice dạy đủ nên phủ toàn bộ mục. Nhận định ở lô HSK3-6 rằng mục này còn thiếu 连……也/都……，……更…… là do lỗi lệch hàng khi trích xuất text （连…… thuộc mục tiến triển OFF-H4-26), nay hủy bỏ."
     },
     {
       "id": "OFF-H4-28",
-      "title_vi": "Câu phức转折 HSK4 (尽管……，但是/可是……; ……，然而……; ……，不过……)",
+      "title_vi": "Câu phức转折 HSK4 （尽管……，但是/可是……; ……，然而……; ……，不过……; ……X是X，就是/不过……)",
       "status": "missing",
-      "lesson_ids": []
+      "lesson_ids": [],
+      "note": "Sửa đối chiếu 2026-10-30: kiểm trực quan trang in 394 bổ sung thành viên ……X是X，就是/不过…… (trước ghi nhầm ở OFF-H4-29)."
     },
     {
       "id": "OFF-H4-29",
-      "title_vi": "Câu phức giả thiết HSK4 (……X是X，就是/不过……; 要是……，就……; 要是……，(就)……，否则……)",
+      "title_vi": "Câu phức giả thiết HSK4 （……，否则……; 要是……，就……; 要是……，（就）……，否则……)",
       "status": "missing",
-      "lesson_ids": []
+      "lesson_ids": [],
+      "note": "Sửa đối chiếu 2026-10-30: kiểm trực quan trang in 394 — mục giả thiết chỉ gồm ba mẫu với 否则/要是； mẫu ……X是X，就是/不过…… thuộc mục转折 OFF-H4-28, đã bỏ khỏi tiêu đề mục này."
     },
     {
       "id": "OFF-H4-30",

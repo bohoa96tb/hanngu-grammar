@@ -18,7 +18,7 @@
           "wrong_or_risky": "他不是很忙吗？(bị tưởng là mẫu lựa chọn của bài này)"
         }
       ],
-      "content_version": 3,
+      "content_version": 4,
       "difficulty": "medium",
       "examples": [
         {
@@ -208,8 +208,8 @@
       ],
       "formula_notes": "1) Mẫu 1 — suy đoán chắc chắn: 不是 + khả năng A，就是 + khả năng B; người nói tin chắc sự việc rơi vào một trong hai khả năng, thường là hai khả năng đối lập hoặc cùng một nhóm nhỏ （不是忘了，就是没听见）. 2) Mẫu 2 — nêu khả năng trung tính: 或者 + A，或者 + B; chỉ liệt kê hai khả năng/phương án, chưa nghiêng về bên nào. 或者 cũng dùng đơn lẻ trong câu trần thuật （你喝茶或者咖啡都可以）. 3) Không dùng: câu trần thuật không dùng 还是 để nối hai phương án — 还是 dành cho câu hỏi lựa chọn (bài hai-shi-choice). 4) Phân biệt: 不是……吗？ có 吗 ở cuối là phản vấn (hỏi để khẳng định); ở bài này 不是 đi cặp với 就是 và câu kết thúc bằng dấu chấm.",
       "hsk_evidence": {
-        "note": "Khung chính 不是……，就是…… thuộc HSK4 trong đề cương nên bài xếp ở HSK4; phần 或者……，或者…… thuộc HSK3, dạy kèm trong cùng bài để đối chiếu hai cách nói 'một trong hai'.",
-        "status": "partial"
+        "note": "Khung 不是……，就是…… là toàn bộ mục câu phức lựa chọn HSK4 theo kiểm trực quan trang 394 của đề cương gốc (2026-10-30); phần 或者……，或者…… thuộc HSK3, dạy kèm trong cùng bài để đối chiếu.",
+        "status": "verified"
       },
       "hsk_level": 4,
       "id": "complex-choice",
@@ -218,7 +218,7 @@
       "quick_memory": "Một trong hai: đoán chắc → 不是……就是……; trung tính → 或者……或者……. Còn 还是 chỉ dành cho câu hỏi.",
       "review": {
         "date": "2026-10-30",
-        "notes": "Soạn mới lô HSK3-5 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Cập nhật lô HSK3-6 30/10/2026 theo chỉ đạo của Hoa: đổi cấp hiển thị của bài từ HSK3 sang HSK4 vì khung chính 不是……，就是…… đã xác minh thuộc bảng HSK4; vị trí trong manifest chuyển xuống cuối (đầu khối HSK4); catalogue HSK4 OFF-H4-27 ghi một phần qua bài này, catalogue HSK3 OFF-H3-42 không tính 不是……，就是…… vào phần phủ HSK3.",
+        "notes": "Soạn mới lô HSK3-5 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Cập nhật lô HSK3-6 30/10/2026 theo chỉ đạo của Hoa: đổi cấp hiển thị của bài từ HSK3 sang HSK4 vì khung chính 不是……，就是…… đã xác minh thuộc bảng HSK4; vị trí trong manifest chuyển xuống cuối (đầu khối HSK4); catalogue HSK4 OFF-H4-27 ghi một phần qua bài này, catalogue HSK3 OFF-H3-42 không tính 不是……，就是…… vào phần phủ HSK3. Cập nhật lô HSK3-7 30/10/2026: kiểm trực quan trang in 394 của đề cương gốc xác nhận mục lựa chọn HSK4 chỉ có một thành viên 不是……，就是…… (mẫu 连……也/都……，……更…… thuộc mục tiến triển, trước đây bị trích xuất text gắn lệch hàng); hsk_evidence của bài chuyển từ partial sang verified, OFF-H4-27 chuyển từ một phần sang đã có.",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [
@@ -227,7 +227,7 @@
           "source_id": "cgw"
         },
         {
-          "note": "Phạm vi đối chiếu từ đề cương thi 11/2025: khung 不是……，就是…… thuộc mục câu phức lựa chọn HSK4 (OFF-H4-27) — đây là khung chính nên bài xếp ở cấp HSK4 từ lô HSK3-6; khung 或者……，或者…… thuộc mục HSK3 (OFF-H3-42) và được dạy kèm trong cùng bài; thành viên HSK4 còn lại 连……也/都……，……更…… chưa dạy.",
+          "note": "Phạm vi đối chiếu từ đề cương thi 11/2025: khung 不是……，就是…… là thành viên duy nhất của mục câu phức lựa chọn HSK4 (OFF-H4-27) theo kiểm trực quan trang in 394 ngày 2026-10-30 — bài phủ đủ mục này; khung 或者……，或者…… thuộc mục HSK3 (OFF-H3-42) và được dạy kèm trong cùng bài.",
           "source_id": "hsk-official"
         }
       ],

@@ -132,6 +132,33 @@ Chưa có bản phát hành nào.
   thành verified sau khi kiểm tra trực tiếp bản gốc （几/多少 thuộc
   nhóm đại từ để hỏi HSK1).
 
+- 2026-10-30 — Lô HSK3-7 (build 20261030-hsk3g7): 4 bài mới —
+  pronouns-others （别人/咱们/别的/其他, OFF-H3-09+10),
+  adverbs-time-hsk3 （马上/先/刚/刚刚/一直, OFF-H3-14),
+  negation-bubi-buyong （不必/不用, OFF-H3-19), approx-numbers-2
+  （大概 + hai số kề nhau, OFF-H3-50). Tổng 64 bài / 313 bài tập
+  (HSK1: 20, HSK2: 16, HSK3: 27, HSK4: 1). Ánh xạ: HSK3 27 đã có /
+  4 một phần / 19 thiếu (mục 2b còn 23 mục chưa phủ đủ); HSK4
+  1/0/33. SỬA ĐỐI CHIẾU QUAN TRỌNG cùng lô: kiểm TRỰC QUAN trang
+  in 394 của PDF đề cương gốc (theo yêu cầu của Hoa) xác nhận bản
+  trích xuất text trước đây LỆCH HÀNG ở khối câu phức HSK4 —
+  连……也/都……，……更…… thuộc 递进复句 (không phải lựa chọn);
+  选择复句 chỉ có 不是……，就是……. Đã sửa 7 mục catalogue
+  (OFF-H4-23 đến H4-29): OFF-H4-27 → covered và hsk_evidence của
+  complex-choice → verified (hủy nhận định "còn thiếu 连…" của
+  lô HSK3-6); OFF-H4-26 nhận lại mẫu 连…; các mẫu 不是……，而是……,
+  首先……，其次……, ……X是X…… trả về đúng mục. QA độc lập tự xem
+  lại ảnh trang 394 và xác nhận toàn bộ, không phát hiện lệch
+  thêm trên cùng trang. Phần còn lại của các bảng vẫn dựa trên
+  trích xuất text — rủi ro tương tự chưa loại trừ, thuộc xác
+  minh sâu P01-02. Phát hiện phụ: OFF-H2-61 （概数 几/多) vẫn
+  missing — số ước lượng cấp dưới chưa có bài, bài mới đã ghi
+  ranh giới trung thực, để lại cho lô sau. QA nội dung đạt có
+  điều kiện → sửa A-1 (confusion về 刚刚 dạy sai vị trí trước
+  cụm thời gian xác định), A-2, P-1 → phúc tra 3/3 đạt. CI hai
+  job là điều kiện merge bắt buộc. Audio TTS thiết bị thật vẫn
+  not_run; các bài mới là đã rà soát nội bộ.
+
 - 2026-10-30 — Lô HSK3-6 (build 20261030-hsk3f6): 4 bài mới —
   complex-parallel （并列复句， OFF-H3-43), modal-verbs-hsk3 （能愿
   需要/该/应该/愿意/得， OFF-H3-04), alternating-actions

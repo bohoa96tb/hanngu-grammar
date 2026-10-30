@@ -1,0 +1,230 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Mẫu hai số kề nhau bắt buộc hai số LIÊN TIẾP （七八、八九、两三）. 七 và 九 cách nhau một số nên không thành mẫu; nói 七八个人 mới đúng.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "来了七九个人。"
+        },
+        {
+          "explanation": "大概 đứng TRƯỚC toàn bộ cụm số lượng: 大概二十块钱。Chen 大概 vào giữa số và lượng từ như câu này là sai vị trí.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "这件衣服二十大概块钱。"
+        },
+        {
+          "explanation": "大概 chỉ dùng khi ước lượng. Hóa đơn, bảng giá, giờ tàu chạy là nơi cần số chính xác — ghi 'khoảng một trăm tệ' trên hóa đơn là không đúng văn phong và gây tranh cãi khi thanh toán.",
+          "verdict": "khac_van_phong",
+          "wrong_or_risky": "发票上写：大概一百块。(hóa đơn ghi 'khoảng một trăm tệ')"
+        }
+      ],
+      "content_version": 1,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Jīntiān dàgài yǒu èrshí ge rén lái cānjiā huódòng.",
+          "tokens": [
+            "今天",
+            "大概",
+            "有",
+            "二十",
+            "个",
+            "人",
+            "来",
+            "参加",
+            "活动"
+          ],
+          "vi": "Hôm nay có khoảng hai mươi người đến tham gia hoạt động.",
+          "zh": "今天大概有二十个人来参加活动。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhè běn shū dàgài wǔshí kuài qián.",
+          "tokens": [
+            "这本",
+            "书",
+            "大概",
+            "五十",
+            "块",
+            "钱"
+          ],
+          "vi": "Cuốn sách này giá khoảng năm mươi tệ.",
+          "zh": "这本书大概五十块钱。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒmen zài Běijīng zhù le qībā tiān.",
+          "tokens": [
+            "我们",
+            "在",
+            "北京",
+            "住",
+            "了",
+            "七八",
+            "天"
+          ],
+          "vi": "Chúng tôi ở Bắc Kinh khoảng bảy tám ngày.",
+          "zh": "我们在北京住了七八天。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ děng le liǎngsān ge xiǎoshí.",
+          "tokens": [
+            "我",
+            "等",
+            "了",
+            "两三",
+            "个",
+            "小时"
+          ],
+          "vi": "Tôi đã đợi khoảng hai ba tiếng.",
+          "zh": "我等了两三个小时。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Cóng wǒ jiā dào xuéxiào dàgài yào èrshí fēnzhōng.",
+          "tokens": [
+            "从",
+            "我家",
+            "到",
+            "学校",
+            "大概",
+            "要",
+            "二十",
+            "分钟"
+          ],
+          "vi": "Từ nhà tôi đến trường mất khoảng hai mươi phút.",
+          "zh": "从我家到学校大概要二十分钟。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "教室里大概有三十个学生。"
+          ],
+          "explanation": "大概 đứng trước 有/cụm số lượng và mẫu số kề nhau phải liên tiếp. Phương án 2 chen 大概 sau lượng từ, phương án 3 chen vào giữa số và lượng từ, phương án 4 dùng 七九 không kề nhau.",
+          "id": "apx-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "教室里大概有三十个学生。",
+              "教室里有三十个大概学生。",
+              "教室里有三十大概个学生。",
+              "教室里大概有七九个学生。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Trong lớp có khoảng ba mươi học sinh.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "我们",
+              "在",
+              "上海",
+              "玩",
+              "了",
+              "三四",
+              "天"
+            ]
+          ],
+          "explanation": "Ba và bốn là hai số kề nhau: 三四天 = khoảng ba bốn ngày, đứng sau động từ 玩了。",
+          "id": "apx-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "三四",
+              "我们",
+              "天",
+              "在",
+              "上海",
+              "了",
+              "玩"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Chúng tôi chơi ở Thượng Hải khoảng ba bốn ngày.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "五七"
+          ],
+          "explanation": "Hai số trong mẫu ước lượng phải KỀ nhau: năm-sáu （五六） hoặc sáu-bảy （六七）; 五七 cách nhau một số nên sai. Sửa: 他买了五六个苹果。",
+          "id": "apx-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他",
+              "买",
+              "了",
+              "五七",
+              "个",
+              "苹果"
+            ],
+            "sentence_zh": "他买了五七个苹果。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 他买了五七个苹果。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "大概"
+          ],
+          "explanation": "Ước lượng độ dài bằng 大概 đứng trước cụm số lượng 十公里： 这条路大概有十公里。",
+          "id": "apx-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Từ ước lượng 'khoảng/chừng' đứng trước cụm số lượng."
+          },
+          "prompt_vi": "Điền từ ước lượng để hoàn thành câu: 'Con đường này dài khoảng mười cây số.'",
+          "prompt_zh": "这条路___有十公里。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "我等了四五分钟。",
+            "我等了四五分钟"
+          ],
+          "explanation": "'Khoảng bốn năm phút' là hai số kề nhau 四五 + lượng từ 分钟： 我等了四五分钟。",
+          "id": "apx-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng mẫu hai số kề nhau: 四五 + 分钟。"
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Tôi đã đợi khoảng bốn năm phút.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Mẫu 1 — 大概： đứng ngay trước cụm số lượng cần ước lượng （大概二十个人；大概五十块钱）; câu có động từ 有 thì 大概 thường đứng trước 有. 2) Mẫu 2 — hai số kề nhau: Số + Số liên tiếp ngay sau + Lượng từ （七八天；两三个小时）; hai số phải liên tiếp, không chen từ khác vào giữa. 3) Không dùng: không đặt 大概 sau số/lượng từ, không ghép hai số cách nhau （七九）; nơi cần số chính xác (hóa đơn, giờ giấc chính thức) không dùng cách nói ước lượng. 4) Phân biệt: 大概 trong bài này chỉ ước lượng SỐ LƯỢNG; 大概 còn có vai trò phó từ phỏng đoán ('chắc là') thuộc mục phó từ tình thái — bài này không dạy vai trò đó.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "approx-numbers-2",
+      "objective": "Sau bài này, người học nói được số lượng ước lượng kiểu 'khoảng/chừng' bằng 大概 đặt trước cụm số lượng và bằng mẫu hai số kề nhau （七八天、两三个小时）.",
+      "pattern": "大概 + Số + Lượng từ (+ Danh từ) • Số + Số kề + Lượng từ (+ Danh từ)",
+      "quick_memory": "Khoảng bao nhiêu? → 大概 đứng trước số, hoặc hai số kề nhau dính liền: 七八天、两三天。Số phải liên tiếp!",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-7 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về số ước lượng （大概 và mẫu hai số kề nhau) theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-50 （概数 dạng 2: 大概; hai số kề nhau) trong catalogue dự án từ đề cương thi 11/2025; bài này chỉ lấy 大概 ở vai trò ước lượng số lượng — vai trò phó từ tình thái (phỏng đoán) của 大概 thuộc OFF-H3-17, không thuộc bài này.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Số ước lượng dạng 2: khoảng / chừng （大概 + số lượng; hai số kề nhau）",
+      "when_to_use": "Khi không biết hoặc không cần con số chính xác: nói 'khoảng/chừng' về số người, giá tiền, thời gian, độ dài. Hai cách của bài này: đặt 大概 trước cụm số lượng （大概二十个人）, hoặc ghép hai số kề nhau （七八天）. Phạm vi bài chỉ gồm hai cách này: mẫu ước lượng cấp dưới với 多/几 (mục OFF-H2-61 trong catalogue) chưa có bài riêng trong dự án — bạn mới gặp 几/多少 trong câu hỏi 'mấy/bao nhiêu' (bài question-words) — nên bài này không dựa vào chúng, chỉ cần số đếm và lượng từ đã học. 大概 với nghĩa phỏng đoán 'chắc là…' là một vai trò khác, thuộc bài phó từ tình thái sau này."
+    }
+  ],
+  "schema_version": 1
+}

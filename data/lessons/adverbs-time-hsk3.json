@@ -1,0 +1,221 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "一直 cần hành động/trạng thái có độ kéo dài (mưa, học, chờ). 到家 là điểm kết thúc chớp nhoáng — 'vừa về đến nhà' phải dùng 刚： 他刚到家。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他一直到家了。(ý muốn nói 'anh ấy vừa về đến nhà')"
+        },
+        {
+          "explanation": "Phó từ thời gian của bài này đứng SAU chủ ngữ, ngay trước động từ: 他先去学校。Đặt 先 trước chủ ngữ như tiếng Việt là sai vị trí.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "先他去学校，我去银行。"
+        },
+        {
+          "explanation": "Sai ở vị trí của 刚刚： khi câu có cụm thời gian xác định, cụm thời gian đứng trước, còn 刚/刚刚 đặt ngay sau nó, sát động từ: 他三天前刚回来。 Lưu ý lỗi không nằm ở chỗ 'đã ba ngày thì không còn vừa mới' — 刚/刚刚 không có mốc phút cố định, độ 'mới' là tương đối theo cảm nhận của người nói (so với kỳ nghỉ dài, về được ba ngày vẫn là vừa mới). Đừng lẫn với 刚才： 刚才 là danh từ chỉ 'lúc nãy', đứng ở vị trí trạng ngữ thời gian — khác vai với 刚/刚刚 đứng ngay trước động từ.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他刚刚三天前回来。"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Nǐ děng yíxià, wǒ mǎshàng jiù lái.",
+          "tokens": [
+            "你",
+            "等",
+            "一下",
+            "，",
+            "我",
+            "马上",
+            "就",
+            "来"
+          ],
+          "vi": "Bạn đợi một chút, tôi đến ngay đây.",
+          "zh": "你等一下，我马上就来。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒmen xiān chīfàn, ránhòu qù kàn diànyǐng.",
+          "tokens": [
+            "我们",
+            "先",
+            "吃饭",
+            "，",
+            "然后",
+            "去",
+            "看",
+            "电影"
+          ],
+          "vi": "Chúng ta ăn cơm trước, rồi đi xem phim.",
+          "zh": "我们先吃饭，然后去看电影。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā gāng xiàkè, hái méi huí jiā.",
+          "tokens": [
+            "他",
+            "刚",
+            "下课",
+            "，",
+            "还",
+            "没",
+            "回家"
+          ],
+          "vi": "Anh ấy vừa tan học, chưa về nhà.",
+          "zh": "他刚下课，还没回家。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Fēijī gānggāng qǐfēi.",
+          "tokens": [
+            "飞机",
+            "刚刚",
+            "起飞"
+          ],
+          "vi": "Máy bay vừa mới cất cánh.",
+          "zh": "飞机刚刚起飞。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Zuótiān wǎnshang yìzhí xià yǔ.",
+          "tokens": [
+            "昨天晚上",
+            "一直",
+            "下雨"
+          ],
+          "vi": "Tối qua trời mưa liên tục suốt.",
+          "zh": "昨天晚上一直下雨。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "我马上就来，等我一分钟。"
+          ],
+          "explanation": "Việc sắp xảy ra ngay sau lúc nói dùng 马上。刚/刚刚 là 'vừa mới' (đã xảy ra), 先 là thứ tự bước, 一直 là kéo dài — đều ngược hướng thời gian của câu này.",
+          "id": "adv-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我马上就来，等我一分钟。",
+              "我刚刚就来，等我一分钟。",
+              "我先就来，等我一分钟。",
+              "我一直就来，等我一分钟。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Tôi đến ngay đây, đợi tôi một phút.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "他",
+              "刚",
+              "买",
+              "的",
+              "新手机"
+            ]
+          ],
+          "explanation": "刚 đứng ngay trước động từ 买： 他刚买的新手机 — điện thoại vừa mới mua.",
+          "id": "adv-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "刚",
+              "他",
+              "买",
+              "的",
+              "新手机"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành cụm: 'chiếc điện thoại mới anh ấy vừa mua'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "一下"
+          ],
+          "explanation": "一下 chỉ lượng thời gian rất ngắn ('một lát'), mâu thuẫn với 一直 (kéo dài liên tục). Chỉ cần bỏ đúng khối 一下， phần còn lại giữ nguyên: 他一直看了电视。Khối 一直 trong câu gốc không sai.",
+          "id": "adv-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他",
+              "一直",
+              "看",
+              "了",
+              "一下",
+              "电视"
+            ],
+            "sentence_zh": "他一直看了一下电视。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 他一直看了一下电视。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "马上"
+          ],
+          "explanation": "Phim sắp bắt đầu ngay (tương lai rất gần tính từ lúc nói) nên dùng 马上： 电影马上开始了。",
+          "id": "adv-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "'Sắp… rồi' cho việc ngay trước mắt: dùng phó từ chỉ tương lai rất gần."
+          },
+          "prompt_vi": "Điền phó từ để hoàn thành câu: 'Phim sắp bắt đầu rồi, chúng ta đi nhanh thôi.'",
+          "prompt_zh": "电影___开始了，我们快走吧。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "他刚到家。",
+            "他刚到家",
+            "他刚刚到家。",
+            "他刚刚到家"
+          ],
+          "explanation": "'Vừa mới về đến nhà' dùng 刚 hoặc 刚刚； cả hai đều chấp nhận vì gần như đồng nghĩa, chỉ khác mức nhấn.",
+          "id": "adv-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "'Vừa mới' dùng 刚 hoặc 刚刚， đặt ngay trước động từ."
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Anh ấy vừa mới về đến nhà.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Vị trí: cả năm từ đứng sau chủ ngữ, ngay trước động từ （我马上就来；他刚到；她一直学习）; nếu câu có cụm thời gian xác định như 三天前， cụm đó đứng trước phó từ: 他三天前刚回来. 2) Chọn từ — hướng thời gian: sắp xảy ra → 马上； đã vừa xảy ra → 刚/刚刚； kéo dài liên tục → 一直； thứ tự bước → 先. 3) Phân biệt: 刚 và 刚刚 gần như đồng nghĩa 'vừa mới'; 刚刚 thường nhấn mạnh hơn một chút và nghe trọn vẹn hơn trong văn viết — không có ranh giới thời lượng cứng giữa hai từ. 4) Không dùng: 一直 chỉ đi với hành động/trạng thái có độ kéo dài; động từ chỉ điểm kết thúc chớp nhoáng không đi với 一直. 5) Phân biệt: 刚才 là 'vừa nãy' — từ chỉ thời điểm, đứng ở vị trí trạng ngữ thời gian （刚才他来过）, khác 刚/刚刚 đứng ngay trước động từ để nhấn 'vừa mới'.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "adverbs-time-hsk3",
+      "objective": "Sau bài này, người học kể chuyện và nói về trạng thái đúng mạch thời gian: việc sắp xảy ra ngay （马上）, thứ tự trước-sau （先）, việc vừa mới xảy ra （刚/刚刚） và việc kéo dài liên tục （一直）.",
+      "pattern": "Chủ ngữ + 马上/先/刚/刚刚/一直 + Động từ (cụm)",
+      "quick_memory": "Sắp ngay → 马上； bước trước → 先； vừa mới → 刚/刚刚； kéo dài mãi → 一直. Tất cả đứng trước động từ.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-7 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về các phó từ thời gian 马上/先/刚/刚刚/一直 theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-14 （马上/先/一会儿/刚/刚刚/一直） trong catalogue dự án từ đề cương thi 11/2025; bài này phủ năm phó từ còn lại của mục — thành viên 一会儿 đã phủ từ trước ở vai lượng thời gian và mẫu luân phiên (bài alternating-actions).",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Phó từ thời gian HSK3: ngay / trước / vừa mới / liên tục （马上 / 先 / 刚 / 刚刚 / 一直）",
+      "when_to_use": "Năm phó từ này đều đứng trước động từ để chốt mạch thời gian của câu chuyện: 马上 cho việc sắp xảy ra ngay sau lúc nói; 先 cho bước làm trước (khung đầy đủ 先……，然后…… đã học ở bài complex-sequence); 刚 và 刚刚 đều là 'vừa mới' — khoảng ngắn tính đến hiện tại, ngắn dài là tương đối theo ngữ cảnh chứ không có mốc phút cố định; 一直 cho việc/trạng thái kéo dài không ngừng từ trước tới một mốc. Lưu ý: 一会儿 'một lát' là lượng thời gian (bài alternating-actions), không nằm trong năm từ của bài này."
+    }
+  ],
+  "schema_version": 1
+}

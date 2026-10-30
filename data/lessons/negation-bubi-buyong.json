@@ -1,0 +1,235 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "不用抽烟 nghĩa là 'không cần hút thuốc', không phải lời cấm. Muốn cấm phải dùng 不要/别 (bài bu-yao-prohibition): 别抽烟！/ 不要抽烟！",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "不用抽烟！(ý muốn cấm: 'Đừng hút thuốc!')"
+        },
+        {
+          "explanation": "不必来只 nghĩa là 'không cần đến' (được phép vắng), không khẳng định người đó sẽ không đến. Muốn khẳng định chắc chắn ai đó không đến phải dùng cách khác, ví dụ 他明天不会来。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "明天他不必来开会。(bị hiểu là 'ngày mai anh ấy chắc chắn không đến họp')"
+        },
+        {
+          "explanation": "Câu này bị hiểu thành lời cấm trang trọng 'không được phép đi mua đồ' vì 不得 là 'không được phép' trong quy định （不得入内）. Nghĩa 'không cần phải' phải dùng 不用/不必： 我不用去买东西。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我不得去买东西。(ý muốn nói 'tôi không cần đi mua đồ')"
+        }
+      ],
+      "content_version": 1,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Míngtiān shì xīngqītiān, nǐ búyòng zǎoqǐ.",
+          "tokens": [
+            "明天",
+            "是",
+            "星期天",
+            "，",
+            "你",
+            "不用",
+            "早起"
+          ],
+          "vi": "Ngày mai là chủ nhật, bạn không cần dậy sớm.",
+          "zh": "明天是星期天，你不用早起。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhè jiàn shì nǐ búbì dānxīn, wǒ lái chǔlǐ.",
+          "tokens": [
+            "这件事",
+            "你",
+            "不必",
+            "担心",
+            "，",
+            "我",
+            "来",
+            "处理"
+          ],
+          "vi": "Việc này bạn không cần lo, để tôi xử lý.",
+          "zh": "这件事你不必担心，我来处理。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Búyòng xiè, zhè shì wǒ yīnggāi zuò de.",
+          "tokens": [
+            "不用",
+            "谢",
+            "，",
+            "这",
+            "是",
+            "我",
+            "应该",
+            "做",
+            "的"
+          ],
+          "vi": "Không cần cảm ơn đâu, đó là việc tôi nên làm.",
+          "zh": "不用谢，这是我应该做的。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Lù bù yuǎn, wǒmen búyòng zuò chē, zǒuzhe qù ba.",
+          "tokens": [
+            "路",
+            "不远",
+            "，",
+            "我们",
+            "不用",
+            "坐车",
+            "，",
+            "走着",
+            "去",
+            "吧"
+          ],
+          "vi": "Đường không xa, chúng ta không cần đi xe, đi bộ đi.",
+          "zh": "路不远，我们不用坐车，走着去吧。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Nǐ búbì děng wǒ, wǒ jīntiān huílai de hěn wǎn.",
+          "tokens": [
+            "你",
+            "不必",
+            "等",
+            "我",
+            "，",
+            "我",
+            "今天",
+            "回来",
+            "得",
+            "很",
+            "晚"
+          ],
+          "vi": "Bạn không cần đợi tôi đâu, hôm nay tôi về rất muộn.",
+          "zh": "你不必等我，我今天回来得很晚。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "你不用买票，免费。"
+          ],
+          "explanation": "Đề yêu cầu nghĩa 'không cần phải' nên dùng 不用. 不要 ở đây đọc thành lời cấm/kiêng ('đừng mua'), 不得 là cấm trang trọng, phương án cuối lạc chủ đề hút thuốc.",
+          "id": "neg-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "你不用买票，免费。",
+              "你不要买票，免费。",
+              "你不得买票，免费。",
+              "你不必抽烟，免费。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Bạn không cần phải mua vé đâu, vào cửa miễn phí.' （免费 = miễn phí)",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "你",
+              "不必",
+              "等",
+              "我"
+            ]
+          ],
+          "explanation": "不必 đứng sau chủ ngữ, ngay trước động từ 等： 你不必等我。",
+          "id": "neg-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "等",
+              "你",
+              "我",
+              "不必"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Bạn không cần đợi tôi.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "不得"
+          ],
+          "explanation": "Ý của câu là 'không cần đi học' (vì được nghỉ), phải dùng 不用/不必. 不得 là 'không được phép' trong quy định trang trọng nên sai nghĩa ở đây.",
+          "id": "neg-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我",
+              "不得",
+              "去",
+              "学校",
+              "了"
+            ],
+            "sentence_zh": "我不得去学校了，因为今天放假。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 我不得去学校了，因为今天放假。(ý muốn nói: tôi không cần đi học nữa vì hôm nay được nghỉ)",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "不用",
+            "不必"
+          ],
+          "explanation": "Trả lời 'không cần mang' dùng 不用 (khẩu ngữ) hoặc 不必 (trang trọng hơn) đều đúng: 你不用带。/ 你不必带。",
+          "id": "neg-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Điền từ mang nghĩa 'không cần phải' — có hai đáp án được chấp nhận."
+          },
+          "prompt_vi": "Điền từ để hoàn thành câu trả lời: 'Hôm nay không mưa, bạn không cần mang ô.'",
+          "prompt_zh": "A：我用不用带伞？B：今天不下雨，你___带。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "这件小事你不用担心。",
+            "这件小事你不用担心",
+            "这件小事你不必担心。",
+            "这件小事你不必担心"
+          ],
+          "explanation": "'Không cần lo' dùng 不用 hoặc 不必 đều được; 不必 trang trọng hơn một chút nhưng vẫn đúng ở câu này.",
+          "id": "neg-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Khung: 这件小事 + 你 + 不用/不必 + 担心。"
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Việc nhỏ này bạn không cần lo.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Vị trí: 不用/不必 đứng sau chủ ngữ, ngay trước động từ （你不用早起；她不必等我）. 2) Chọn từ: 不用 là cách nói khẩu ngữ phổ biến hằng ngày; 不必 trang trọng hơn, hay gặp trong văn viết, thông báo và lời khuyên lịch sự — nghĩa cốt lõi 'không cần phải' như nhau. 3) Phân biệt: 'không cần phải' KHÁC 'cấm' — cấm dùng 不要/别 (bài bu-yao-prohibition); cũng khác 不得 (trang trọng, 'không được phép' trong quy định). 4) Mở rộng: cụm xã giao cố định 不用谢 = 'không cần cảm ơn / không có gì', đáp lại lời cảm ơn.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "negation-bubi-buyong",
+      "objective": "Sau bài này, người học nói được 'không cần phải làm gì' bằng 不用 và 不必, phân biệt rõ với lời cấm （不要/别） và với 不得 trang trọng.",
+      "pattern": "Chủ ngữ + 不用/不必 + Động từ (cụm)",
+      "quick_memory": "Không cần phải → 不用 (nói thường) / 不必 (trang trọng). Cấm là việc khác: 不要/别； không được phép: 不得。",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-7 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về phủ định 不必/不用 theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-19 （不必/不用） trong catalogue dự án từ đề cương thi 11/2025; bài này tiếp nối bài modal-verbs-hsk3 — ở đó 不用/不必 mới được nhắc để tránh lỗi phủ định của 得 (děi), ở đây mới dạy thành bài riêng.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Phủ định: không cần phải （不必 / 不用）",
+      "when_to_use": "Khi muốn nói một việc KHÔNG cần thiết phải làm: người nghe được phép không làm, chứ không bị cấm làm. 不用 là cách nói thường ngày; 不必 cùng nghĩa nhưng trang trọng hơn, hợp với văn viết và lời khuyên lịch sự. Bài này học tiếp ngay sau bài modal-verbs-hsk3: ở đó bạn đã gặp 不用/不必 như cách nói đúng của 'không cần phải' khi phủ định 得 (děi); ở đây hai từ này được dạy thành bài riêng với vị trí và cách phân biệt với 不要/别 (cấm) và 不得 (không được phép)."
+    }
+  ],
+  "schema_version": 1
+}
