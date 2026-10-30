@@ -105,6 +105,25 @@ nhóm con của một vài phó từ ghi chú "chưa chắc chắn".
   1 một phần, 33 thiếu — tổng vẫn 34 mục nhóm; cả hai khớp
   từng mục với catalogue. Số bài theo cấp sau lô: HSK1 20,
   HSK2 16, HSK3 23, HSK4 1 (tổng 60 bài).
+- Cập nhật lô HSK3-7 (30/10/2026, gồm sửa đối chiếu khối
+  câu phức HSK4 theo bằng chứng trực quan — chi tiết ở
+  mục 3): thêm 5 mục đã có — nhân xưng 别人/咱们 và chỉ
+  định 别的/其他 (gộp một bài pronouns-others), phó từ
+  thời gian 马上/先/刚/刚刚/一直 (bài adverbs-time-hsk3;
+  thành viên 一会儿 đã phủ từ trước ở vai lượng thời gian
+  và mẫu luân phiên), phủ định 不必/不用 (bài
+  negation-bubi-buyong), 概数 dạng 2 (bài
+  approx-numbers-2; chỉ vai ước lượng số lượng của 大概,
+  vai phỏng đoán thuộc OFF-H3-17, không tính phủ). Đồng
+  thời OFF-H4-27 chuyển từ một phần sang ĐÃ CÓ sau khi
+  kiểm trực quan trang in 394 xác nhận mục lựa chọn HSK4
+  chỉ có một thành viên 不是……，就是…… (xem mục 3);
+  hsk_evidence của bài complex-choice chuyển từ partial
+  sang verified. Sau lô HSK3-7, HSK3: 27 đã có, 4 một
+  phần, 19 thiếu — tổng vẫn 50 mục nhóm; HSK4: 1 đã có,
+  0 một phần, 33 thiếu — tổng vẫn 34 mục nhóm; cả hai
+  khớp từng mục với catalogue. Số bài theo cấp sau lô:
+  HSK1 20, HSK2 16, HSK3 27, HSK4 1 (tổng 64 bài).
 - Không cần sửa cấp độ cho 34 bài cũ: chưa phát hiện bài nào dạy sai
   cấp (các bài HSK1–2 không dạy nội dung HSK3–4; riêng zhe-continuation
   đã ghi rõ nghĩa kèm theo của 着 thuộc HSK3 và cố ý không dạy).
@@ -116,15 +135,15 @@ nhóm con của một vài phó từ ghi chú "chưa chắc chắn".
 ## 2. HSK3 — các mục đáng chú ý
 - Thiếu toàn bộ ở mức thành bài riêng: tiền tố 老—, hậu tố
   —家/—子/—员, phương vị mở rộng,
-  ly hợp từ hai loại, 怎样 và nghi vấn dùng không hỏi, 别人/咱们,
-  别的/其他, lượng từ HSK3, hầu hết phó từ HSK3 (更/特别/挺/有些/越/
-  极, 一块儿/一共/只/到处/只是, 马上/先/一会儿/刚/刚刚/一直,
+  ly hợp từ hai loại, 怎样 và nghi vấn dùng không hỏi,
+  lượng từ HSK3, hầu hết phó từ HSK3 (更/特别/挺/有些/越/
+  极, 一块儿/一共/只/到处/只是,
   总/总是/又/常常, 一边, 大概/必须/差不多/一定/好像/几乎,
-  当然/其实/终于/才, 不必/不用), giới từ 为/向/为了/根据/关于,
+  当然/其实/终于/才), giới từ 为/向/为了/根据/关于,
   liên từ 或/或者/只有/只要/不但/而且/如果/可是/然后/的话,
   động bổ đoản ngữ dạng 2, đồng vị đoản ngữ, tứ tự cách, số lượng
   trùng điệp, mẫu cố định HSK3, chủ ngữ bằng đoản ngữ, và
-  câu phức HSK3 còn lại cùng 概数 dạng 2. (Xu hướng bổ ngữ nghĩa
+  câu phức HSK3 còn lại. (Xu hướng bổ ngữ nghĩa
   dẫn申, khả năng bổ ngữ dạng 1, 存现句 dạng 3, trùng động句 và
   câu phức giả thiết/điều kiện đã có bài riêng sau các lô
   HSK3-2/HSK3-3; câu phức 递进, câu phức 紧缩, mức độ bổ ngữ
@@ -132,7 +151,10 @@ nhóm con của một vài phó từ ghi chú "chưa chắc chắn".
   câu phức 承接, câu phức lựa chọn, câu phức mục đích và số
   lượng bổ ngữ dạng 3 đã có bài riêng ở lô HSK3-5; câu phức
   song song, năng nguyện HSK3 và mẫu luân phiên
-  一会儿……，一会儿…… đã có bài riêng ở lô HSK3-6 — xem
+  一会儿……，一会儿…… đã có bài riêng ở lô HSK3-6; đại từ
+  mở rộng 别人/咱们/别的/其他, phó từ thời gian
+  马上/先/刚/刚刚/一直, phủ định 不必/不用 và 概数 dạng 2
+  đã có bài riêng ở lô HSK3-7 — xem
   mục 1 và danh sách ưu tiên ở mục 2b.)
 - Một phần: 虽然……，可是……; giới từ 把/被; cụm cố định HSK3
   (mới phủ cụm 一……也/都+不/没…… qua bài complex-compact);
@@ -142,12 +164,12 @@ nhóm con của một vài phó từ ghi chú "chưa chắc chắn".
   ngữ dạng 2 và 是……的句 dạng 2 đã đủ dạng sau các lô
   HSK3-2/HSK3-3.
 
-## 2b. HSK3 còn thiếu sau lô HSK3-6 — ưu tiên và lý do để lại
+## 2b. HSK3 còn thiếu sau lô HSK3-7 — ưu tiên và lý do để lại
 
-Sau lô HSK3-6 còn 28/50 mục nhóm HSK3 chưa phủ đủ (24 thiếu +
+Sau lô HSK3-7 còn 23/50 mục nhóm HSK3 chưa phủ đủ (19 thiếu +
 4 một phần), liệt kê đầy đủ dưới đây theo catalogue. (Sau lô
-HSK3-5 còn 31 mục; lô HSK3-6 phủ đủ thêm OFF-H3-43, OFF-H3-04
-và OFF-H3-42, phủ một phần OFF-H3-26.) Đây là căn
+HSK3-6 còn 28 mục; lô HSK3-7 phủ đủ thêm OFF-H3-09, OFF-H3-10,
+OFF-H3-14, OFF-H3-19 và OFF-H3-50.) Đây là căn
 cứ để chọn các lô HSK3 tiếp theo và để quyết định việc chuyển
 sang HSK4 sau này; tài liệu này không tự tuyên bố chuyển cấp,
 và không mục nào trong danh sách được coi là đã phủ.
@@ -164,10 +186,6 @@ và không mục nào trong danh sách được coi là đã phủ.
 ### Ưu tiên trung bình
 - OFF-H3-07 Nghi vấn 怎样: mở rộng từ question-words và
   zenme-question; cần phân biệt kỹ 怎样/怎么样/怎么 đã học.
-- OFF-H3-09 Nhân xưng 别人/咱们: cụm nhỏ, dễ dạy; nên gộp chung
-  một bài với OFF-H3-10.
-- OFF-H3-10 Chỉ định 别的/其他: gộp với OFF-H3-09 thành một bài
-  đại từ/chỉ định mở rộng.
 - OFF-H3-11 Lượng từ HSK3: danh sách dài; cần chọn lọc theo tần
   suất trước khi soạn, khó phủ hết trong một bài.
 - OFF-H3-12 Phó từ mức độ （更/特别/挺/有些/越/极）: tần suất
@@ -176,9 +194,6 @@ và không mục nào trong danh sách được coi là đã phủ.
   bài yue-patterns (xếp theo OFF-H3-26, lô HSK3-6).
 - OFF-H3-13 Phó từ phạm vi （一块儿/一共/只/到处/只是）: nhóm
   từ rời, giá trị thi vừa; nên dạy theo cụm tình huống.
-- OFF-H3-14 Phó từ thời gian （马上/先/一会儿/刚/刚刚/一直）:
-  tần suất cao, hỗ trợ tốt cho OFF-H3-41; các từ nghĩa gần nhau
-  cần nhiều ví dụ phân biệt.
 - OFF-H3-15 Phó từ tần suất （总/总是/又/常常）: nhóm từ rời;
   又 cần phân biệt với 又……又…… của OFF-H3-43.
 - OFF-H3-17 Phó từ tình thái （大概/必须/差不多/一定/好像/
@@ -187,11 +202,6 @@ và không mục nào trong danh sách được coi là đã phủ.
 - OFF-H3-18 Phó từ ngữ khí （当然/其实/终于/才）: 才 đã xuất
   hiện ở complex-condition với nghĩa điều kiện khác; cần bài
   phân biệt đa nghĩa cẩn thận.
-- OFF-H3-19 Phủ định 不必/不用: cụm nhỏ; bài modal-verbs-hsk3
-  (lô HSK3-6) mới nhắc 不用/不必 để tránh lỗi phủ định của
-  得 (děi), chưa dạy thành bài — mục này vẫn để lại.
-- OFF-H3-50 概数 dạng 2 （大概; hai số kề nhau): mục nhỏ, nền
-  số đếm đã có; dễ làm bài ngắn riêng ở lô sau.
 - OFF-H3-26 Mẫu cố định HSK3 (MỘT PHẦN): bài yue-patterns
   (lô HSK3-6) đã phủ 越……越……/越来越……; còn lại trong
   giỏ: （在）……以前/以后/前/后 và X什么（啊） chưa dạy
@@ -253,6 +263,33 @@ và không mục nào trong danh sách được coi là đã phủ.
   连……也/都……，……更…… chưa dạy). Đây là bài HSK4 đầu
   tiên của dự án, đến từ việc sửa cấp bài cũ chứ không phải
   một lô soạn HSK4 riêng; 33/34 mục nhóm HSK4 vẫn thiếu.
+- Cập nhật lô HSK3-7 (30/10/2026): sau sửa đối chiếu ở
+  đoạn dưới, OFF-H4-27 chuyển từ MỘT PHẦN sang ĐÃ CÓ —
+  bài complex-choice phủ đủ thành viên duy nhất của mục
+  lựa chọn HSK4. HSK4 nay: 1 đã có, 0 một phần, 33 thiếu.
+- **Sửa đối chiếu 2026-10-30 (kiểm trực quan trang in
+  394):** Manager đã tải PDF đề cương gốc từ
+  chinesetest.cn và đọc TRỰC QUAN trang in 394 (phần
+  bảng câu phức HSK4), phát hiện bản trích xuất text
+  trước đây đã gắn LỆCH HÀNG một số mẫu sang mục kề bên.
+  Các sửa đã áp vào catalogue: (1) 连……也/都……，……更……
+  thuộc mục TIẾN TRIỂN (OFF-H4-26), không thuộc lựa
+  chọn — OFF-H4-27 chỉ còn 不是……，就是…… và đạt
+  ĐÃ CÓ; (2) 不是……，而是…… thuộc mục SONG SONG
+  (OFF-H4-24), không thuộc phủ định kép (OFF-H4-23 chỉ
+  còn nội dung 'dùng phủ định kép để nhấn mạnh');
+  (3) 首先……，其次…… thuộc mục TIẾP NỐI (OFF-H4-25),
+  không thuộc song song; (4) ……X是X，就是/不过……
+  thuộc mục CHUYỂN HƯỚNG (OFF-H4-28), không thuộc giả
+  thiết (OFF-H4-29 chỉ còn ba mẫu 否则/要是）. Hệ quả:
+  nhận định "OFF-H4-27 còn thiếu 连……" ghi ở lô HSK3-6
+  là sai do lỗi trích xuất và đã hủy bỏ. Ghi chú trung
+  thực về phạm vi: việc kiểm trực quan này mới bao phủ
+  trang in 394 (khối 复句 HSK4 và lân cận); PHẦN CÒN
+  LẠI của bảng HSK4 và các cấp khác vẫn dựa trên bản
+  trích xuất text ngày 2026-09-25 — rủi ro lệch hàng
+  tương tự chưa được loại trừ và thuộc phần xác minh
+  sâu của P01-02 sau này.
 - Thiếu toàn bộ ở mức thành bài riêng: 敢, 各/各位/各种/任何/此,
   lượng từ HSK4, phó từ HSK4 (十分/更加/稍/稍微/尤其/多么,
   共/全/光/仅/仅仅/至少, 按时/从来/赶紧/赶快/已/忽然/将/将要/从/
@@ -262,7 +299,8 @@ và không mục nào trong danh sách được coi là đã phủ.
   thán từ, tứ tự cách, cụm và mẫu cố định HSK4, mức độ bổ ngữ dạng
   2, khả năng bổ ngữ dạng 2, câu hỏi phản vấn dạng 2, 把字句 dạng 2,
   被动句 dạng 2 (dùng 叫/让), 兼语句 dạng 2, 比较句 dạng 3 (不如;
-  跟……相比), câu phủ định kép, và toàn bộ câu phức HSK4 cùng 概数
+  跟……相比), câu phủ định kép, và toàn bộ câu phức HSK4 trừ câu
+  phức lựa chọn (đã có), cùng 概数
   dạng 3 và cách nói số (thập phân, phân số, phần trăm, bội số).
 
 ## 4. Danh sách chọn đợt sau (HSK3–4, theo thứ tự ưu tiên sư phạm)
