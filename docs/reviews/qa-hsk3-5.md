@@ -145,3 +145,16 @@ chưa nghiệm thu (AUD-TTS-01 not_run).
 
 ### C1. OFF-H3-42 （
 ...[truncated 8772 chars]
+
+---
+
+> **Ghi chú xử lý của Manager (2026-10-30, theo chỉ đạo của Hoa):**
+> File này bị cụt khi ghi trong phiên HSK3-5 — nội dung còn nguyên tới đầu
+> mục C1 (phán quyết OFF-H3-42), phần còn lại (C1 tiếp theo, C2, C3 và
+> phần kiểm tra hệ thống) KHÔNG còn bản lưu nào để khôi phục nguyên văn
+> và không được dựng lại. Các phán quyết và quyết định của vòng 1 được
+> ghi đầy đủ tại: báo cáo vòng 2 `docs/reviews/qa-hsk3-5-round2.md`
+> (mục A đối chiếu từng phán quyết vòng 1), nhật ký phát hành
+> `docs/release-log.md` (mục lô HSK3-5) và `docs/checkpoint.json`.
+> Khi trích dẫn kết quả QA của lô HSK3-5, dùng các nguồn đó; không coi
+> phần thiếu của file này là bằng chứng.

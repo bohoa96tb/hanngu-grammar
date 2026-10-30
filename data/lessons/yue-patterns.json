@@ -1,0 +1,215 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Khung 越来越…… tự nó đã mang nghĩa mức độ tăng dần, không chen 很 vào giữa: 天气越来越冷。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "天气越来越很冷。"
+        },
+        {
+          "explanation": "Sau 越 phải là động từ hoặc tính từ, không đặt danh từ 书 ngay sau 越. Nói đúng: 我越看书越喜欢。 （看 là động từ đứng sau 越）.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我越书越喜欢。"
+        },
+        {
+          "explanation": "Ghép lẫn hai mẫu: 越来越…… đứng một mình một vế （她唱歌越来越好听）, còn hai vế thì dùng 越……越…… （她越唱越好听）. Không lồng hai khung vào nhau.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "她越来越唱歌越好听。"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Hànyǔ yuè xué yuè yǒu yìsi.",
+          "tokens": [
+            "汉语",
+            "越",
+            "学",
+            "越",
+            "有",
+            "意思"
+          ],
+          "vi": "Tiếng Trung càng học càng thú vị.",
+          "zh": "汉语越学越有意思。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā yuè pǎo yuè kuài.",
+          "tokens": [
+            "他",
+            "越",
+            "跑",
+            "越",
+            "快"
+          ],
+          "vi": "Anh ấy càng chạy càng nhanh.",
+          "zh": "他越跑越快。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tiānqì yuèláiyuè lěng le.",
+          "tokens": [
+            "天气",
+            "越来越",
+            "冷",
+            "了"
+          ],
+          "vi": "Thời tiết ngày càng lạnh.",
+          "zh": "天气越来越冷了。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Tā de Hànyǔ yuèláiyuè hǎo.",
+          "tokens": [
+            "她的",
+            "汉语",
+            "越来越",
+            "好"
+          ],
+          "vi": "Tiếng Trung của cô ấy ngày càng tốt.",
+          "zh": "她的汉语越来越好。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒmen yuè liáo yuè kāixīn.",
+          "tokens": [
+            "我们",
+            "越",
+            "聊",
+            "越",
+            "开心"
+          ],
+          "vi": "Chúng tôi càng nói chuyện càng vui.",
+          "zh": "我们越聊越开心。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "越练习，发音越准。"
+          ],
+          "explanation": "Hai vế ăn khớp nhau nên dùng 越……越……: 越练习 (vế điều kiện) + 发音越准 (vế kết quả). Câu 2 thiếu 越 thứ hai; câu 3 đặt 越 sau động từ; câu 4 dùng 越来越 sai mẫu.",
+          "id": "yue-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "越练习，发音越准。",
+              "越练习，发音很准。",
+              "练习越，发音越准。",
+              "越来越练习，发音准。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Càng luyện tập, phát âm càng chuẩn.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "她",
+              "越",
+              "唱",
+              "越",
+              "好听"
+            ]
+          ],
+          "explanation": "Cùng một chủ ngữ: chủ ngữ đứng đầu, sau đó 越 + động từ （唱）, 越 + tính từ （好听）.",
+          "id": "yue-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "越",
+              "她",
+              "唱",
+              "越",
+              "好听"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Cô ấy càng hát càng hay.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "很"
+          ],
+          "explanation": "很 không được chen vào khung 越来越……; bỏ 很: 天气越来越冷。",
+          "id": "yue-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "天气",
+              "越来越",
+              "很",
+              "冷"
+            ],
+            "sentence_zh": "天气越来越很冷。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 天气越来越很冷。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "汉语越难，我越喜欢学。",
+            "汉语越难，我越喜欢学"
+          ],
+          "explanation": "Hai chủ ngữ khác nhau: 汉语越难 (vế điều kiện) và 我越喜欢学 — chủ ngữ 我 đứng sau 越 thứ hai, trước động từ 喜欢。",
+          "id": "yue-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Khung: 越……，越……; chủ ngữ của vế hai （我） đứng sau 越 thứ hai."
+          },
+          "prompt_vi": "Điền cặp từ để hoàn thành câu hai chủ ngữ khác nhau: 'Tiếng Trung càng khó, tôi càng thích học.'",
+          "prompt_zh": "汉语___难，我___喜欢学。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "奶奶的身体越来越好。",
+            "奶奶的身体越来越好",
+            "奶奶身体越来越好。",
+            "奶奶身体越来越好"
+          ],
+          "explanation": "'Ngày càng tốt' là thay đổi tăng dần theo thời gian ở một vế nên dùng 越来越好， không cần vế 越…… thứ hai.",
+          "id": "yue-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Thay đổi theo thời gian, một vế: 越来越……; 'bà' nói 奶奶， 'sức khỏe' nói 身体。"
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Sức khỏe của bà ngày càng tốt.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Mẫu 1 — 越……越……: sau mỗi 越 là động từ hoặc tính từ, không phải danh từ （越学越难；越跑越快）. Cùng một chủ ngữ thì chủ ngữ đứng trước 越 đầu tiên （他越说越生气）; khác chủ ngữ thì chủ ngữ hai đứng sau 越 thứ hai （汉语越难，我越喜欢学）. 2) Mẫu 2 — 越来越……: chỉ một vế, sau 越来越 là động từ/tính từ chỉ thay đổi tăng dần theo thời gian （天气越来越冷；她的汉语越来越好）; không thêm một vế 越…… nữa phía sau. 3) Không dùng: trong khung 越…… không chen 很/非常 vào trước tính từ của vế kết quả — mức độ đã do chính khung 越…… mang (lỗi thật thường gặp: *越跑很快 — phải nói 越跑越快； *天气越来越很冷 — phải nói 天气越来越冷； 很 không đứng được trong khung 越……越…… hay sau 越来越）.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "yue-patterns",
+      "objective": "Sau bài này, người học nói được 'càng A càng B' bằng 越……越…… và 'ngày càng…' bằng 越来越……, đặt đúng thành phần sau mỗi chữ 越.",
+      "pattern": "越 + Động từ/Tính từ，越 + Động từ/Tính từ • 越来越 + Động từ/Tính từ",
+      "quick_memory": "Càng A càng B → 越…越… （sau 越 là động/tính từ); ngày càng → 越来越… một mình. Khung 越 không chứa 很。",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-6 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về mẫu 越……越…… và 越来越…… theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-26 （ mẫu cố định HSK3) trong catalogue dự án từ đề cương thi 11/2025; bài này chỉ phủ thành viên 越……越…… （kèm 越来越……) của giỏ, các thành viên còn lại giữ nguyên trạng thái trong catalogue.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Mẫu cố định: càng… càng… （越……越…… / 越来越……）",
+      "when_to_use": "Ví dụ: 汉语越学越有意思。 — mức độ của vế sau tăng theo vế trước: học càng nhiều, càng thấy thú vị. Bài này chỉ lấy một mục tiêu 越……越…… （kèm dạng một vế 越来越……) trong giỏ mẫu cố định HSK3; các mẫu khác trong cùng giỏ — （在）……以前/以后/前/后， X什么（啊）, 该……了 — chưa dạy thành bài ở đây （在……上/下 đã phủ cơ bản qua bài location-nouns ở cấp dưới; mẫu 该……了 được dạy trong bài modal-verbs-hsk3). 越来越…… chỉ cần một vế và luôn nói về thay đổi theo thời gian; 越……越…… cần hai vế ăn khớp nhau."
+    }
+  ],
+  "schema_version": 1
+}

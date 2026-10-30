@@ -1,0 +1,227 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Ở đây 一会儿 đứng một mình sau động từ, nghĩa là 'nghỉ một lát' — chỉ lượng thời gian. Mẫu luân phiên phải có 一会儿 đi thành cặp trước hai hành động/trạng thái.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "我休息一会儿。(bị tưởng là mẫu luân phiên của bài này)"
+        },
+        {
+          "explanation": "Khung chuẩn phải đủ cặp 一会儿……，一会儿……: thiếu 一会儿 thứ hai thì vế sau chưa trọn khung luân phiên. Trong khẩu ngữ, khi ngữ cảnh đã rõ, người ta đôi khi lược 一会儿 thứ hai; nhưng mẫu đầy đủ mới là chuẩn để luyện và nhận biết, nhất là khi làm bài: 他一会儿看书，一会儿听音乐。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他一会儿看书，听音乐。"
+        },
+        {
+          "explanation": "Khung 一会儿……，一会儿…… khẳng định cả hai việc đều xảy ra luân phiên, không dùng để nêu khả năng chưa chọn. Chưa biết đi đâu thì dùng 或者……，或者…… (bài complex-choice).",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他一会儿去北京，一会儿去上海。(ý muốn nói 'hoặc đi Bắc Kinh hoặc đi Thượng Hải, chưa biết')"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā yíhuìr kàn shū, yíhuìr tīng yīnyuè.",
+          "tokens": [
+            "他",
+            "一会儿",
+            "看书",
+            "，",
+            "一会儿",
+            "听",
+            "音乐"
+          ],
+          "vi": "Anh ấy lúc đọc sách, lúc nghe nhạc.",
+          "zh": "他一会儿看书，一会儿听音乐。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Tiānqì yíhuìr rè, yíhuìr lěng.",
+          "tokens": [
+            "天气",
+            "一会儿",
+            "热",
+            "，",
+            "一会儿",
+            "冷"
+          ],
+          "vi": "Thời tiết lúc nóng, lúc lạnh.",
+          "zh": "天气一会儿热，一会儿冷。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Háizi yíhuìr kū, yíhuìr xiào.",
+          "tokens": [
+            "孩子",
+            "一会儿",
+            "哭",
+            "，",
+            "一会儿",
+            "笑"
+          ],
+          "vi": "Đứa bé lúc khóc, lúc cười.",
+          "zh": "孩子一会儿哭，一会儿笑。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā yíhuìr zuòzhe, yíhuìr zhànzhe, děng de hěn zháojí.",
+          "tokens": [
+            "她",
+            "一会儿",
+            "坐着",
+            "，",
+            "一会儿",
+            "站着",
+            "，",
+            "等得很着急"
+          ],
+          "vi": "Cô ấy lúc ngồi, lúc đứng, chờ đến sốt ruột.",
+          "zh": "她一会儿坐着，一会儿站着，等得很着急。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Dìdi yíhuìr wánr shǒujī, yíhuìr kàn diànshì.",
+          "tokens": [
+            "弟弟",
+            "一会儿",
+            "玩儿",
+            "手机",
+            "，",
+            "一会儿",
+            "看",
+            "电视"
+          ],
+          "vi": "Em trai lúc chơi điện thoại, lúc xem tivi.",
+          "zh": "弟弟一会儿玩儿手机，一会儿看电视。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "今天的天气一会儿下雨，一会儿晴。"
+          ],
+          "explanation": "Mưa và nắng thay phiên nhau trong ngày nên dùng 一会儿……，一会儿……. 或者 là nêu khả năng (bài complex-choice), 一边 là đồng thời (bài complex-parallel), câu 4 thiếu hẳn 一会儿 và 晴 của vế hai.",
+          "id": "alt-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "今天的天气一会儿下雨，一会儿晴。",
+              "今天的天气或者下雨，或者晴。",
+              "今天的天气一边下雨，一边晴。",
+              "今天的天气一会儿下雨晴。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Thời tiết hôm nay lúc mưa lúc nắng.' (nắng = 晴）",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "她",
+              "一会儿",
+              "写字",
+              "一会儿",
+              "画画儿"
+            ]
+          ],
+          "explanation": "Khung luân phiên: chủ ngữ + 一会儿 + việc 1，一会儿 + việc 2 — 一会儿 phải lặp ở đầu mỗi vế.",
+          "id": "alt-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "一会儿",
+              "画画儿",
+              "她",
+              "写字",
+              "一会儿"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Cô ấy lúc viết chữ, lúc vẽ tranh.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "或者"
+          ],
+          "explanation": "或者 thuộc khung lựa chọn 或者……，或者……, không ghép được vào khung luân phiên. Sửa 或者 thành 一会儿: 他一会儿看书，一会儿听音乐。",
+          "id": "alt-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他",
+              "一会儿",
+              "看书",
+              "或者",
+              "听音乐"
+            ],
+            "sentence_zh": "他一会儿看书，或者听音乐。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 他一会儿看书，或者听音乐。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "孩子一会儿哭，一会儿笑。",
+            "孩子一会儿哭，一会儿笑"
+          ],
+          "explanation": "Khóc và cười thay phiên nhau nên đi cặp 一会儿……，一会儿……; cả hai 一会儿 đều không thiếu được.",
+          "id": "alt-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Khung luân phiên: 一会儿……，一会儿……"
+          },
+          "prompt_vi": "Điền cặp từ luân phiên để hoàn thành câu: 'Em bé lúc khóc, lúc cười.'",
+          "prompt_zh": "孩子___哭，___笑。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "他一会儿工作，一会儿休息。",
+            "他一会儿工作，一会儿休息",
+            "他一会儿工作一会儿休息。",
+            "他一会儿工作一会儿休息"
+          ],
+          "explanation": "Làm việc và nghỉ ngơi thay phiên nhau trong cùng một khoảng thời gian nên dùng khung luân phiên, đủ cả hai 一会儿.",
+          "id": "alt-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Khung: 一会儿……，一会儿……; 'làm việc' nói 工作， 'nghỉ ngơi' nói 休息。"
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Anh ấy lúc làm việc, lúc nghỉ ngơi.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Vị trí: 一会儿 lặp lại trước mỗi hành động/trạng thái; chủ ngữ chung đứng đầu câu （他一会儿看书，一会儿听音乐）. 2) Cần có sẵn: phải đủ cả hai 一会儿 và hai thành viên phải thay phiên nhau được trong cùng một khoảng thời gian (việc làm, thời tiết, cảm xúc đều dùng được: 一会儿热，一会儿冷）. 3) Phân biệt: 一会儿 đơn lẻ sau động từ （休息一会儿） là lượng thời gian 'một lát', không phải mẫu luân phiên; chỉ khi 一会儿 đi thành cặp trước hai hành động/trạng thái mới là mẫu của bài này.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "alternating-actions",
+      "objective": "Sau bài này, người học dùng được khung 一会儿……，一会儿…… để nói một người/vật cứ thay phiên giữa hai hành động hoặc trạng thái trong cùng một khoảng thời gian.",
+      "pattern": "一会儿 + Hành động/Trạng thái 1，一会儿 + Hành động/Trạng thái 2",
+      "quick_memory": "Lúc này lúc kia, đổi qua đổi lại → 一会儿…，一会儿…. Nhớ: phải đủ một cặp, việc nào cũng thật sự xảy ra.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-6 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về mẫu luân phiên 一会儿……，一会儿…… theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-42 （选择复句 HSK3: 或者……，或者……; 一会儿……，一会儿……) trong catalogue dự án từ đề cương thi 11/2025; bài này phủ thành viên 一会儿……，一会儿…… còn thiếu của mục đó.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Mẫu luân phiên: lúc… lúc… （一会儿……，一会儿……）",
+      "when_to_use": "Ví dụ: 孩子一会儿哭，一会儿笑。 — đứa bé cứ lúc khóc lúc cười, đổi qua đổi lại liên tục. Khung này nói về sự LUÂN PHIÊN theo thời gian: cả hai việc đều thật sự xảy ra, chỉ là không cùng một lúc. Khác 一边……，一边…… (bài complex-parallel): mẫu đó là hai hành động diễn ra ĐỒNG THỜI. Khác 或者……，或者…… (bài complex-choice): mẫu đó nêu hai khả năng để chọn/suy đoán, không nói việc nào đã xảy ra. 一会儿 đứng một mình （休息一会儿） nghĩa là 'một lát' — khác hẳn mẫu luân phiên ở bài này."
+    }
+  ],
+  "schema_version": 1
+}
