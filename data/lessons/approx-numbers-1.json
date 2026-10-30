@@ -1,0 +1,224 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Mẫu 3 phải đủ Số + Lượng từ + 多： 三个多小时. Thiếu lượng từ 个 chen giữa số và 多 thì không thành mẫu.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他学了三多小时中文。"
+        },
+        {
+          "explanation": "Muốn nói 'hơn mười người' thì 多 phải đứng TRƯỚC lượng từ: 十多个人 (mẫu 2). Đặt 多 ở cuối cụm như câu này không thuộc mẫu nào của bài.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "今天来了十个人多。"
+        },
+        {
+          "explanation": "二十多个人 chỉ nói HƠN 20 (từ 21 đến 29), không bao gồm 20 trở xuống. Muốn nói 'khoảng 20, trên dưới đều được' thì dùng cách ở bài approx-numbers-2: 大概二十个人。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "二十多个人。(bị hiểu là 'chừng hai mươi người, có thể ít hơn cũng được')"
+        }
+      ],
+      "content_version": 1,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ mǎi le jǐ ge píngguǒ.",
+          "tokens": [
+            "我",
+            "买",
+            "了",
+            "几个",
+            "苹果"
+          ],
+          "vi": "Tôi mua vài quả táo.",
+          "zh": "我买了几个苹果。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Jīntiān lái le shí duō ge xuéshēng.",
+          "tokens": [
+            "今天",
+            "来",
+            "了",
+            "十多",
+            "个",
+            "学生"
+          ],
+          "vi": "Hôm nay có hơn chục học sinh đến.",
+          "zh": "今天来了十多个学生。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā děng le sān ge duō xiǎoshí.",
+          "tokens": [
+            "他",
+            "等",
+            "了",
+            "三",
+            "个",
+            "多",
+            "小时"
+          ],
+          "vi": "Anh ấy đã đợi hơn ba tiếng.",
+          "zh": "他等了三个多小时。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Zhè běn shū jǐshí kuài qián.",
+          "tokens": [
+            "这本",
+            "书",
+            "几十",
+            "块",
+            "钱"
+          ],
+          "vi": "Cuốn sách này giá vài chục tệ.",
+          "zh": "这本书几十块钱。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒmen bān yǒu èrshí duō ge xuéshēng.",
+          "tokens": [
+            "我们",
+            "班",
+            "有",
+            "二十多",
+            "个",
+            "学生"
+          ],
+          "vi": "Lớp chúng tôi có hơn hai mươi học sinh.",
+          "zh": "我们班有二十多个学生。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "她买了几本书。"
+          ],
+          "explanation": "Mẫu 1: 几 + lượng từ 本 + danh từ 书. Các phương án còn lại sai vị trí của 几 hoặc thiếu lượng từ.",
+          "id": "apx1-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "她买了几本书。",
+              "她买了几书本。",
+              "她买书了几本。",
+              "她买了本书几。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Cô ấy mua vài cuốn sách.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "他",
+              "等",
+              "了",
+              "两",
+              "个",
+              "多",
+              "小时"
+            ]
+          ],
+          "explanation": "Mẫu 3: Số + Lượng từ + 多 — 两 + 个 + 多 + 小时 = hơn hai tiếng một chút, đứng sau động từ 等了。",
+          "id": "apx1-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "小时",
+              "他",
+              "等",
+              "了",
+              "两",
+              "个",
+              "多"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy đã đợi hơn hai tiếng.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "多"
+          ],
+          "explanation": "Khối sai là 多： muốn nói 'hơn ba mươi người' thì 多 đứng trước lượng từ — 三十多个人 (mẫu 2).",
+          "id": "apx1-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我们",
+              "班",
+              "有",
+              "三十",
+              "个",
+              "人",
+              "多"
+            ],
+            "sentence_zh": "我们班有三十个人多。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 我们班有三十个人多。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "多"
+          ],
+          "explanation": "十多块钱 = hơn mười tệ (chưa tới hai mươi): 多 chen giữa số tròn 十 và lượng từ 块。",
+          "id": "apx1-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Từ 'hơn' đứng giữa số tròn và lượng từ."
+          },
+          "prompt_vi": "Điền từ còn thiếu để nói 'hơn mười tệ'.",
+          "prompt_zh": "这件衣服十___块钱。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "盒子里有几十支笔。",
+            "盒子里有几十支笔"
+          ],
+          "explanation": "几十 = vài chục; cụm đầy đủ: 盒子里有几十支笔。",
+          "id": "apx1-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "'Vài chục' nói 几十； bút dùng lượng từ 支。"
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Trong hộp có vài chục cây bút.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Mẫu 1 — 几 + Lượng từ (+ Danh từ): 几个/几本书 = 'vài'; 几 còn đi với chục/trăm thành 几十/几百 (vài chục/vài trăm): 几十个人. 2) Mẫu 2 — Số tròn + 多 + Lượng từ: 多 chen giữa số tròn （十、二十、一百…) và lượng từ: 十多个，二十多块； nghĩa là hơn số tròn đó, chưa tới mốc tròn tiếp theo. 3) Mẫu 3 — Số + Lượng từ + 多: 多 đứng sau lượng từ: 三个多小时，五块多钱； nghĩa là hơn đúng con số đã nói một ít. 4) Phân biệt: 多 trước lượng từ neo vào số TRÒN （二十多个人 = 21–29 người); 多 sau lượng từ neo vào số ĐÃ NÓI （三个多小时 = 3 tiếng + một ít); hai vị trí không thay nhau được.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 2,
+      "id": "approx-numbers-1",
+      "objective": "Sau bài này, người học nói được số lượng ước lượng kiểu 'vài/mấy' và 'hơn X một chút' bằng ba mẫu của dạng 1: 几 + lượng từ, Số tròn + 多 + lượng từ, Số + lượng từ + 多.",
+      "pattern": "几 + Lượng từ • Số tròn + 多 + Lượng từ • Số + Lượng từ + 多",
+      "quick_memory": "Ước lượng gần: 几 = vài; số tròn + 多 + lượng từ = hơn mốc tròn; số + lượng từ + 多 = hơn số đó một ít.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-8 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF-H2-61) và đề cương thi HSK 11/2025, phạm vi xác minh TRỰC QUAN tại trang in 388 (khối 数的表达法） thay cho bản trích xuất text; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về 概数表达法1 （几 nói số ước lượng; Số+多+Lượng từ; Số+Lượng từ+多) theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H2-61 （概数表达法1) trong catalogue dự án từ đề cương thi 11/2025, xác minh trực quan trang in 388 ngày 2026-10-30: ba dòng (1) dùng 几 nói số ước lượng, (2) Số+多+Lượng từ, (3) Số+Lượng từ+多. Bài này là nền tiên quyết cho bài approx-numbers-2 (OFF-H3-50) ở HSK3.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Số ước lượng dạng 1: vài / hơn một chút （几 + lượng từ; Số + 多 + lượng từ; Số + lượng từ + 多）",
+      "when_to_use": "Khi con số chỉ cần nói phỏng chừng ở mức gần: 'vài cái, vài chục' hoặc 'hơn mười người, hơn ba tiếng'. Ba mẫu: (1) 几 + lượng từ = vài/mấy （几个，几十）; (2) Số tròn + 多 + lượng từ = hơn số tròn đó nhưng chưa tới mốc tròn kế tiếp （十多个人 = hơn 10 người, chưa đến 20); (3) Số + lượng từ + 多 = hơn đúng con số đã nói một ít （三个多小时 = hơn 3 tiếng một chút). Đây là bài nền của chuỗi số ước lượng: lên HSK3, bài approx-numbers-2 dạy tiếp hai cách khác （大概 và hai số kề nhau). Lưu ý: 几 trong bài này dùng để NÓI số ước lượng; 几 dùng để HỎI 'mấy' đã học ở bài question-words."
+    }
+  ],
+  "schema_version": 1
+}

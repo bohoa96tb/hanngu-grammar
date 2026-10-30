@@ -30,8 +30,9 @@ Trạng thái dùng trong tài liệu này:
 - HSK2 còn thiếu ở mức thành bài riêng: 自己, 指示 mở rộng, tính từ
   trùng điệp, lượng từ mở rộng, phó từ mở rộng (多/好/最,
   已经/有时/快/快要/正/常/经常, 别, 就), giới từ 从/往/跟, 兼语句,
-  存现句2, 是字句2, 有字句2, 状态补语, 数量补语2, 概数, 序数 dạng
-  数词+量词, và A了A trong động từ trùng điệp.
+  存现句2, 是字句2, 有字句2, 状态补语, 数量补语2, 序数 dạng
+  数词+量词, và A了A trong động từ trùng điệp. （概数 dạng 1 đã
+  có bài từ lô HSK3-8 — xem dòng cập nhật bên dưới.)
 - Cập nhật vòng sửa QA lô HSK3-5 (30/10/2026): OFF-H2-43
   （ 数量补语 dạng 2) chuyển từ THIẾU sang MỘT PHẦN nhờ bài
   quantity-complement-objects (chi tiết ở mục 3). Cùng vòng sửa
@@ -39,6 +40,18 @@ Trạng thái dùng trong tài liệu này:
   dạng 3 (OFF-H3-32) trong đề cương là "thời gian đã trôi qua
   kể từ khi hành động kết thúc", nay đã có bài riêng
   time-since-completion ở HSK3 (xem tài liệu ánh xạ HSK3–4).
+- Cập nhật lô HSK3-8 (30/10/2026): OFF-H2-61 （概数 dạng 1:
+  几; 数词 + 多 + 量词; 数词 + 量词 + 多) chuyển từ THIẾU
+  sang ĐÃ CÓ nhờ bài approx-numbers-1 — được soạn bổ sung
+  ở HSK2 vì là kiến thức nền của bài approx-numbers-2
+  (HSK3); phạm vi của mục đã xác minh TRỰC QUAN tại trang
+  in 388 của PDF đề cương gốc (khối 数的表达法）, liên kết
+  tiên quyết thể hiện qua thứ tự manifest và nhắc chéo
+  trong hai bài (dự án không có trường dữ liệu tiên quyết
+  riêng). Sau lô này, HSK2: 20 đã có, 15 một phần, 27
+  thiếu — tổng vẫn 62 mục nhóm, khớp từng mục với
+  docs/official-catalogue-hsk1-hsk2.json. HSK1 không đổi:
+  25 đã có, 10 một phần, 17 thiếu (52 mục nhóm).
 - Nhắc lại theo yêu cầu đối chiếu: số mục nhóm trong tài liệu này là
   cách chia của dự án để đối chiếu, KHÔNG phải số mục chính thức
   trong đề cương (đề cương không đánh số từng điểm vi mô) và KHÔNG
@@ -195,7 +208,10 @@ Trạng thái dùng trong tài liệu này:
 - 经历态 (过): ĐÃ CÓ (guo-experience).
 - 持续态 (着: trạng thái): ĐÃ CÓ (zhe-continuation); nghĩa 动作持续:
   MỘT PHẦN, chưa tách rõ.
-- 概数 (几; 数词 + 多 + 量词; 数词 + 量词 + 多): THIẾU.
+- 概数 (几; 数词 + 多 + 量词; 数词 + 量词 + 多): ĐÃ CÓ
+  (approx-numbers-1, lô HSK3-8 30/10/2026; phạm vi xác minh
+  trực quan trang in 388 của đề cương gốc; bài là nền tiên
+  quyết cho approx-numbers-2 ở HSK3).
 - 序数 dạng 数词 + 量词: THIẾU.
 
 ## 4. Danh sách chọn đợt sau (theo thứ tự ưu tiên sư phạm, không phải thứ tự đề cương)

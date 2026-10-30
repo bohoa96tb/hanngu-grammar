@@ -18,7 +18,7 @@
           "wrong_or_risky": "他一会儿去北京，一会儿去上海。(ý muốn nói 'hoặc đi Bắc Kinh hoặc đi Thượng Hải, chưa biết')"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -214,7 +214,7 @@
           "source_id": "cgw"
         },
         {
-          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-42 （选择复句 HSK3: 或者……，或者……; 一会儿……，一会儿……) trong catalogue dự án từ đề cương thi 11/2025; bài này phủ thành viên 一会儿……，一会儿…… còn thiếu của mục đó.",
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-43 （并列复句 HSK3: 一会儿……，一会儿……; 又……，又……; 一边……，一边……) trong catalogue dự án từ đề cương thi 11/2025. Kiểm trực quan trang in 391 (sửa đối chiếu 2026-10-30, lần 2): 一会儿……，一会儿…… là thành viên đầu của mục song song 并列复句， không thuộc mục lựa chọn 选择复句 (gán cũ ở các lô trước do trích xuất text lệch hàng). Bài này phủ thành viên 一会儿……，一会儿……; hai thành viên còn lại do bài complex-parallel dạy.",
           "source_id": "hsk-official"
         }
       ],

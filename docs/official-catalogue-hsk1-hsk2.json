@@ -855,8 +855,11 @@
     {
       "id": "OFF-H2-61",
       "title_vi": "概数 几/数词+多+量词/数词+量词+多",
-      "status": "missing",
-      "lesson_ids": []
+      "status": "covered",
+      "lesson_ids": [
+        "approx-numbers-1"
+      ],
+      "note": "Phạm vi đã xác minh trực quan trang in 388 (30/10/2026): 概数表达法1 có ba dòng — (1) dùng 几 nói số ước lượng, (2) Số+多+Lượng từ, (3) Số+Lượng từ+多. Bài approx-numbers-1 (lô HSK3-8) phủ đủ cả ba; bài này là nền tiên quyết cho bài approx-numbers-2 (OFF-H3-50) ở HSK3 — liên kết qua thứ tự manifest và nhắc chéo trong hai bài (dự án không có trường dữ liệu tiên quyết riêng)."
     },
     {
       "id": "OFF-H2-62",

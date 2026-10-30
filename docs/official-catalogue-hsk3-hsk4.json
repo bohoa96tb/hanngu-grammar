@@ -48,9 +48,12 @@
     },
     {
       "id": "OFF-H3-07",
-      "title_vi": "Nghi vấn 怎样 và câu hỏi 怎样+động từ",
-      "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Câu hỏi đặc chỉ với 怎样+动词",
+      "status": "covered",
+      "lesson_ids": [
+        "zenme-yang-question"
+      ],
+      "note": "Phạm vi đã xác minh trực quan trang in 391 (30/10/2026): hàng 疑问句 (nhóm 句类) chỉ có một dòng “怎样+动词”的特指问句 — đó là toàn bộ phạm vi của mục này (tựa cũ 'Nghi vấn 怎样 và câu hỏi 怎样+动词' rộng hơn phạm vi thật, nay thu hẹp). Từ 怎样 trong danh sách từ để hỏi ở bảng từ loại (trang in 389) thuộc phạm vi từ loại, không thuộc mục kiểu câu này. Bài zenme-yang-question (lô HSK3-8) phủ mục này, trên nền phân biệt 怎么/怎么样 đã học ở cấp dưới."
     },
     {
       "id": "OFF-H3-08",
@@ -84,10 +87,14 @@
     },
     {
       "id": "OFF-H3-12",
-      "title_vi": "Phó từ mức độ 更/特别/挺/有些/越/极 (và 比较)",
-      "status": "missing",
-      "lesson_ids": [],
-      "note": "Nhóm con trong bản trích có chỗ nhòe."
+      "title_vi": "Phó từ mức độ (比较/还/更/特别/挺/有些/越/极)",
+      "status": "covered",
+      "lesson_ids": [
+        "adverbs-degree-hsk3",
+        "bi-comparison-2",
+        "yue-patterns"
+      ],
+      "note": "Phạm vi đã xác minh trực quan trang in 389 (30/10/2026): hàng 程度副词 có đủ 8 thành viên — 比较、还、更、特别、挺、有些、越、极 (ghi cũ thiếu 还 và chú 'nhòe', nay thay thế bằng bằng chứng trực quan). Bài adverbs-degree-hsk3 (lô HSK3-8) dạy trọng tâm các từ chưa có bài: 比较/特别/挺/有些/极; 更 và 还 ở vai mức độ sau 比 đã dạy ở bài bi-comparison-2, 越 đã dạy qua mẫu 越……越…… ở bài yue-patterns — bài mới chỉ xử lý ranh giới/phân biệt cho các từ đó."
     },
     {
       "id": "OFF-H3-13",
@@ -184,9 +191,10 @@
       "title_vi": "Mẫu cố định HSK3 ((在)……以前/以后/前/后, 越……越……, X什么(啊), 在……上/下/中, 该……了)",
       "status": "partial",
       "lesson_ids": [
-        "yue-patterns"
+        "yue-patterns",
+        "time-frame-patterns"
       ],
-      "note": "Mới phủ thành viên 越……越…… （kèm 越来越……) qua bài yue-patterns. Thành viên 在……上/下/中 đã phủ cơ bản qua bài location-nouns ở cấp dưới. Chưa dạy thành bài: （在）……以前/以后/前/后 và X什么（啊）; mẫu 该……了 được dạy trong bài modal-verbs-hsk3 (mục OFF-H3-04) chứ không tính vào bài của mục này."
+      "note": "Đã phủ: 越……越…… （kèm 越来越……) qua bài yue-patterns; （在）……以前/以后/前/后 qua bài time-frame-patterns (lô HSK3-8). Chưa dạy thành bài: X什么（啊） — mục vẫn MỘT PHẦN. Thành viên 在……上/下/中 đã phủ cơ bản qua bài location-nouns ở cấp dưới; mẫu 该……了 được dạy trong bài modal-verbs-hsk3 (mục OFF-H3-04) chứ không tính vào bài của mục này. Các thành viên của giỏ đã xác minh trực quan ở khối 固定格式, trang in 390."
     },
     {
       "id": "OFF-H3-27",
@@ -319,21 +327,22 @@
     },
     {
       "id": "OFF-H3-42",
-      "title_vi": "Câu phức lựa chọn (或者……，或者……; 一会儿……，一会儿……)",
+      "title_vi": "Câu phức lựa chọn (或者……，或者……)",
       "status": "covered",
       "lesson_ids": [
-        "complex-choice",
-        "alternating-actions"
+        "complex-choice"
       ],
-      "note": "Đã phủ đủ hai thành viên HSK3, sắp xếp xuyên cấp: 或者……，或者…… do bài complex-choice dạy (bài này nay xếp ở cấp HSK4 vì khung chính của nó thuộc HSK4), 一会儿……，一会儿…… do bài alternating-actions dạy. Khung 不是……，就是…… trong bài complex-choice thuộc bảng HSK4, KHÔNG tính vào phủ HSK3."
+      "note": "Sửa đối chiếu 2026-10-30 (lần 2, kiểm trực quan trang in 391): mục 选择复句 ở HSK3 chỉ có một thành viên 或者……，或者…… — mẫu 一会儿……，一会儿…… thuộc mục 并列复句 (OFF-H3-43), không thuộc mục này; cách gán ở lô HSK3-5/HSK3-6 là do trích xuất text lệch hàng, nay thay thế. Mục này phủ đủ qua 或者……，或者…… do bài complex-choice dạy (bài xếp ở cấp HSK4 vì khung chính 不是……，就是…… của nó thuộc HSK4; khung đó KHÔNG tính vào phủ HSK3). Số mục đã phủ của HSK3 không đổi."
     },
     {
       "id": "OFF-H3-43",
-      "title_vi": "Câu phức song song (又……，又……; 一边……，一边……)",
+      "title_vi": "Câu phức song song (一会儿……，一会儿……; 又……，又……; 一边……，一边……)",
       "status": "covered",
       "lesson_ids": [
-        "complex-parallel"
-      ]
+        "complex-parallel",
+        "alternating-actions"
+      ],
+      "note": "Sửa đối chiếu 2026-10-30 (lần 2, kiểm trực quan trang in 391): mục 并列复句 có ba thành viên — 一会儿……，一会儿…… (hàng đầu của mục), 又……，又…… và 一边……，一边……. Đã phủ đủ: 又……，又……/一边……，一边…… qua bài complex-parallel, 一会儿……，一会儿…… qua bài alternating-actions. Trước đây 一会儿……，一会儿…… bị gán nhầm sang mục lựa chọn OFF-H3-42 (lô HSK3-5/HSK3-6) do trích xuất text lệch hàng."
     },
     {
       "id": "OFF-H3-44",
