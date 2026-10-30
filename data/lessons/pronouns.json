@@ -18,7 +18,7 @@
           "wrong_or_risky": "Dùng 他 cho mọi người được nhắc tới khi viết"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -137,6 +137,9 @@
         }
       ],
       "formula_notes": "1) Chỉ định: 这/那 + (Lượng từ) + Danh từ; số nhiều dùng 这些/那些 + Danh từ. 2) Nhân xưng: 我/你/他/她/我们/你们/他们/她们. 3) Lưu ý: 他 và 她 đọc giống nhau, viết khác nhau theo giới tính người được nhắc.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 1,
       "id": "pronouns",
       "objective": "Sau bài này, người học dùng được 这/那 chỉ vật gần/xa, 这些/那些 chỉ số nhiều và đại từ nhân xưng đúng ngôi, không nhầm gần/xa.",
@@ -144,7 +147,7 @@
       "quick_memory": "Này/kia: 这/那 + lượng từ + danh từ. Anh ấy/cô ấy viết khác (他/她) nhưng đọc giống nhau.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

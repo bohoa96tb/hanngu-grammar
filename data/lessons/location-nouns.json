@@ -18,7 +18,7 @@
           "wrong_or_risky": "猫在门里。(khi muốn nói 'ngoài cửa')"
         }
       ],
-      "content_version": 2,
+      "content_version": 4,
       "difficulty": "medium",
       "examples": [
         {
@@ -56,6 +56,20 @@
           ],
           "vi": "Con mèo ở ngoài cửa.",
           "zh": "猫在门外。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ de jiā zài xuéxiào qiánbiān.",
+          "tokens": [
+            "我",
+            "的",
+            "家",
+            "在",
+            "学校",
+            "前边"
+          ],
+          "vi": "Nhà tôi ở phía trước trường.",
+          "zh": "我的家在学校前边。"
         }
       ],
       "exercises": [
@@ -135,7 +149,11 @@
         {
           "accepted_answers": [
             "狗在门前。",
-            "狗在门前"
+            "狗在门前",
+            "狗在门前面。",
+            "狗在门前面",
+            "狗在门前边。",
+            "狗在门前边"
           ],
           "explanation": "Con chó ở trước cửa: 狗 + 在 + 门 + 前。",
           "id": "locnoun-ex5",
@@ -146,9 +164,33 @@
           },
           "prompt_vi": "Tự đặt câu cho tình huống mới: 'Con chó ở trước cửa' (viết bằng chữ Hán)",
           "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "我的家在学校前边。",
+            "我的家在学校前边",
+            "我的家在学校前面。",
+            "我的家在学校前面",
+            "我家在学校前边。",
+            "我家在学校前边",
+            "我家在学校前面。",
+            "我家在学校前面"
+          ],
+          "explanation": "Phía trước đặt sau danh từ nơi chốn, nói bằng 前边 hoặc 前面 đều đúng: 学校前边 / 学校前面. Dạng đầy đủ 我的家 và dạng lược 的 (我家) cũng đều được nhận.",
+          "id": "locnoun-ex6",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 前边."
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Nhà tôi ở phía trước trường học.' (viết bằng chữ Hán)",
+          "prompt_zh": "我的家在学校___。",
+          "type": "fill"
         }
       ],
-      "formula_notes": "1) Vị trí: phương vị từ đứng SAU danh từ nơi chốn (桌子上 trên bàn, 学校里 trong trường). 2) Mở rộng: có thể thêm 在 ở trước (在桌子上). 3) Phân biệt: 里 là bên trong, 外 là bên ngoài.",
+      "formula_notes": "1) Vị trí: phương vị từ đứng SAU danh từ nơi chốn (桌子上 trên bàn, 学校里 trong trường). 2) Mở rộng: có thể thêm 在 ở trước (在桌子上). 3) Phân biệt: 里 là bên trong, 外 là bên ngoài. 4) Dạng ghép 边: 前 và 后 ghép với 边 thành 前边/后边 — đây là dạng từ của chính 前/后, vẫn đứng sau danh từ nơi chốn (学校前边).",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 1,
       "id": "location-nouns",
       "objective": "Sau bài này, người học dùng phương vị từ sau danh từ chỉ nơi chốn để nói vật hoặc người ở đâu một cách chính xác.",
@@ -156,7 +198,7 @@
       "quick_memory": "Phương vị đi sau danh từ nơi chốn: bàn + 上 = trên bàn. Nói ngược thứ tự là sai.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: nhận chủ điểm 边 (chỉ 前边/后边) từ bài prefix-suffix theo D26: thêm bước công thức về dạng ghép 边, ví dụ 学校前边 và bài tập locnoun-ex6 (nội dung của prefix-ex5 cũ)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

@@ -13,7 +13,7 @@
           "wrong_or_risky": "这里会拍照吗？ (muốn hỏi có được phép chụp ảnh không)"
         }
       ],
-      "content_version": 3,
+      "content_version": 4,
       "difficulty": "medium",
       "examples": [
         {
@@ -125,6 +125,9 @@
         }
       ],
       "formula_notes": "1) Vị trí: cả ba đứng ngay trước động từ. 2) 会: kỹ năng đã học (我会说中文). 3) 能: làm được nhờ điều kiện/sức khỏe (他能开车). 4) 可以: được phép, khả thi (这里可以拍照吗？). 5) Phủ định: 不会 / 不能 / 不可以.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
       "hsk_level": 1,
       "id": "modal-hui-neng-keyi",
       "objective": "Sau bài này, người học phân biệt được 会 (kỹ năng đã học), 能 (khả năng/điều kiện) và 可以 (cho phép) trong câu đơn giản.",
@@ -132,7 +135,7 @@
       "quick_memory": "Chọn theo lý do: học được → 会; có điều kiện nên làm được → 能; được phép → 可以.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [

@@ -1,0 +1,152 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "了 cuối câu đánh dấu tình huống đã đổi so với trước. Thói quen vẫn lặp lại đều ở hiện tại không phải thay đổi mới nên không thêm 了: 他每天七点起床。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他每天七点起床了。 (muốn nói thói quen “anh ấy ngày nào cũng dậy lúc bảy giờ”)"
+        },
+        {
+          "explanation": "Chỉ khi tình huống thật sự khác trước mới dùng 了 cuối câu. “Tôi đã mua sách rồi” nói việc làm xong — đó là 了 sau động từ (我买了书), không phải lúc nào cũng là 了 cuối câu.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "Dùng 了 cuối câu cho mọi câu tiếng Việt có “đã … rồi”."
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ è le.",
+          "tokens": [
+            "我",
+            "饿",
+            "了"
+          ],
+          "vi": "Tôi đói rồi. (trước đó chưa đói, giờ đã đói)",
+          "zh": "我饿了。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ huì shuō Zhōngwén le.",
+          "tokens": [
+            "我",
+            "会",
+            "说",
+            "中文",
+            "了"
+          ],
+          "vi": "Tôi biết nói tiếng Trung rồi. (trước đó chưa biết, giờ đã biết)",
+          "zh": "我会说中文了。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Tiān hēi le.",
+          "tokens": [
+            "天",
+            "黑",
+            "了"
+          ],
+          "vi": "Trời tối rồi. (trước đó trời còn sáng, giờ đã tối)",
+          "zh": "天黑了。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "我饿了。",
+            "我饿了"
+          ],
+          "explanation": "Tính từ + 了 cuối câu nói trạng thái đã đổi: từ chưa đói thành đói.",
+          "id": "le-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Thêm 了 cuối câu."
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Tôi đói rồi.'",
+          "prompt_zh": "我饿___。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "下雨了。",
+            "下雨了",
+            "天下雨了。",
+            "天下雨了"
+          ],
+          "explanation": "Trời chuyển từ không mưa sang mưa là tình huống đã đổi: 下雨 + 了 cuối câu.",
+          "id": "le2-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Tình huống vừa đổi: dùng 下雨 + 了 cuối câu."
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Trời mưa rồi.' (viết bằng chữ Hán)",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "了"
+          ],
+          "explanation": "Câu nói thói quen lặp lại mỗi ngày ở hiện tại — tình huống không đổi mới, nên không thêm 了 cuối câu. Câu đúng: 他每天六点起床。",
+          "id": "le2-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他",
+              "每天",
+              "六点",
+              "起床",
+              "了"
+            ],
+            "sentence_zh": "他每天六点起床了。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 他每天六点起床了。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "我会说中文了。"
+          ],
+          "explanation": "Trong 我会说中文了, 了 đứng cuối câu và nói tình trạng đã đổi: trước chưa biết, giờ đã biết. Ba câu còn lại đặt 了 ngay sau động từ, nói việc đã hoàn thành.",
+          "id": "le2-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我买了这本书。",
+              "我会说中文了。",
+              "他昨天去了北京。",
+              "我喝了一杯水。"
+            ]
+          },
+          "prompt_vi": "Câu nào dùng 了 ở cuối câu để nói tình trạng ĐÃ ĐỔI, không phải 了 sau động từ nói việc đã hoàn thành?",
+          "type": "choice"
+        }
+      ],
+      "formula_notes": "1) Vị trí: 了 đứng ở cuối câu, sau tính từ hoặc sau cả cụm động từ (我饿了; 我会说中文了). 2) Cần có sẵn: một tình huống trước đó khác bây giờ để đối chiếu ngầm — không có sự đổi khác thì không dùng. 3) Không dùng: không thêm 了 cho thói quen vẫn lặp lại đều ở hiện tại (他每天六点起床, không phải 起床了).",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 1,
+      "id": "le-sentence-final-change",
+      "objective": "Sau bài này, người học dùng được 了 ở cuối câu để nói một tình huống bây giờ đã khác trước, và phân biệt được với 了 ngay sau động từ (việc đã hoàn thành).",
+      "pattern": "Câu + 了 (cuối câu)",
+      "quick_memory": "Bây giờ có khác trước không? Khác rồi thì chốt 了 ở cuối câu — trước chưa biết, giờ đã biết rồi.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Chuẩn hóa std2 30/10/2026: bài mới tách từ le-completion-change theo D26, chỉ dạy 了 cuối câu (đổi trạng thái). Bài tập le-ex2 chuyển nguyên trạng từ bài cũ và giữ nguyên ID có chủ ý để bảo toàn lịch sử attempts của người học. Rà soát nội bộ theo Chinese Grammar Wiki (Change of state with le); không khẳng định có giáo viên/người bản ngữ duyệt.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "了2 đổi trạng thái (Change of state with le): 了 cuối câu đánh dấu tình huống hiện tại đã đổi so với trước.",
+          "source_id": "cgw"
+        }
+      ],
+      "status": "published",
+      "title_vi": "了 cuối câu: tình trạng đã đổi khác",
+      "when_to_use": "Dùng 了 ở cuối câu khi một tình huống bây giờ đã đổi so với trước: trước chưa đói nay đã đói, trước chưa biết nay đã biết, trời đang sáng nay đã tối. 了 ở đây không nói một hành động đã làm xong — nó đánh dấu “bây giờ đã … rồi”."
+    }
+  ],
+  "schema_version": 1
+}

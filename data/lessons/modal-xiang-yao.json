@@ -18,7 +18,7 @@
           "wrong_or_risky": "Dùng 要 để xin phép trong mọi trường hợp"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -154,6 +154,10 @@
         }
       ],
       "formula_notes": "1) Vị trí: 想/要 đứng trước động từ. 2) Chọn từ: 想 nhẹ hơn, thiên về mong muốn; 要 mạnh hơn, gần với quyết tâm/nhu cầu, còn dùng khi việc sắp xảy ra. 3) Không dùng: 想 + người thường hiểu là “nhớ”, không phải “muốn làm gì”.",
+      "hsk_evidence": {
+        "note": "Công thức có nhắc nghĩa 'sắp xảy ra' của 要 — mẫu đầy đủ thuộc HSK2 và chưa được dạy ở bài này.",
+        "status": "partial"
+      },
       "hsk_level": 1,
       "id": "modal-xiang-yao",
       "objective": "Sau bài này, người học dùng 想/要 + động từ để nói muốn làm gì và phân biệt 想 (muốn, nhẹ hơn) với 要 (muốn/cần, quyết tâm hơn).",
@@ -161,7 +165,7 @@
       "quick_memory": "Muốn nhẹ nhàng, chưa quyết → 想. Muốn mạnh, sắp làm thật → 要. Cả hai đứng trước động từ.",
       "review": {
         "date": "2026-10-29",
-        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01.",
+        "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence ở trạng thái partial (công thức có nhắc nghĩa sắp xảy ra của 要, mẫu đầy đủ thuộc HSK2)",
         "reviewer": "quy-trinh-ra-soat-noi-bo"
       },
       "sources": [
