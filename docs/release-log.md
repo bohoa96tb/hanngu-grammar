@@ -144,6 +144,5 @@ Chưa có bản phát hành nào.
   thành fill giữ nguyên id; H-1..H-3: sửa dính chữ trong công thức
   cunxian-appearance, thêm biến thể hợp lệ cho cx3-ex5, bổ sung
   phân biệt 唱得起来 trong lời giải dir2-ex1), vòng 2 ĐẠT cả 5
-  điểm. Harness trình duyệt local 19/19. Ánh xạ HSK3 sau lô: 12 đã
-  có / 1 một phần / 37 thiếu trên 50 mục nhóm. Audio TTS thiết bị
+  điểm. Harness trình duyệt local 19/19. Ánh xạ HSK3 sau lô: 12 đã có / 2 một phần / 36 thiếu trên 50 mục nhóm. Audio TTS thiết bị
   thật vẫn not_run (AUD-TTS-01); các bài mới là đã rà soát nội bộ.

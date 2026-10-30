@@ -184,7 +184,7 @@
       "depends_on": [
         "P06-01"
       ],
-      "evidence": "Một phần: 8/50 mục nhóm HSK3 đã có bài (cập nhật chi tiết ở baseline-hsk3-hsk4-mapping.md); tiếp tục theo catalogue.",
+      "evidence": "Lô 08–10 (HSK1–3 nền) + HSK3-2 + HSK3-3: 47 bài đã rà soát nội bộ (HSK1: 20, HSK2: 15, HSK3: 12), 228 bài tập. Mới nhất — HSK3-3 (PR #11, build 20261030-hsk3c3): cunxian-appearance, shi-de-attitude, direction-complement-2, verb-repetition-sentence. Ánh xạ HSK3: 12 đã có / 2 một phần / 36 thiếu (50 mục nhóm). Audio thật vẫn not_run nên chưa bài nào đạt toàn bộ tiêu chí.",
       "files": [],
       "id": "P07-01",
       "inputs": "Baseline khóa",

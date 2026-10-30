@@ -75,7 +75,7 @@
   ],
   "latest_verified_commit": "8c88c2b84dd607a74dce23d20f6c8988e94bc978",
   "next_actions": [
-    "Lô HSK3 tiếp theo theo catalogue: 存现句 dạng 3, 是……的 dạng 2, trùng động câu, xu hướng bổ ngữ dạng 2 （引申用法), câu紧缩 HSK3 — chọn tối đa 4 bài theo điều kiện tiên quyết.",
+    "Phủ tiếp HSK3 (36 mục nhóm còn thiếu): ưu tiên câu phức còn lại （承接/选择/并列/递进/目的/紧缩复句), bổ ngữ mức độ dạng 1, bổ ngữ số lượng dạng 3, câu hỏi phản vấn, 概数 dạng 2 — chọn tối đa 4 bài theo điều kiện tiên quyết; sau HSK3 là HSK4 (34 mục nhóm, chưa có bài nào).",
     "Sau khi HSK3 phủ đủ các mục chính: chuyển sang HSK4 theo bản đồ baseline-hsk3-hsk4-mapping.md.",
     "P01-02 phần xác minh sâu (hash bản trích, điểm vi mô, quyền phân phối) — không chặn lô nội dung.",
     "AUD-TTS-01: nghiệm thu audio trên thiết bị thật."
@@ -185,5 +185,6 @@
       "result": "ĐẠT: 43 bài/208 bài tập; unittest 9/9; FSRS 7/7; harness 19/19; QA-HSK3-2 vòng 2 ĐẠT; live build 20261030-hsk3b2 đủ 43/43, potential-complement-1 làm bài đúng, complex-condition đủ A–F, adverbs-du-ye đủ 7 bài tập."
     }
   ],
-  "working_tree_state": "hsk3_batch2_merged_and_live_verified"
+  "working_tree_state": "hsk3_batch2_merged_and_live_verified",
+  "last_completed_batch": "Lô HSK3-3 (2026-10-30): PR #11 merge 8e30774c, build 20261030-hsk3c3, 47 bài/228 bài tập (HSK3: 12 bài). 4 bài mới (đã rà soát nội bộ): cunxian-appearance （存现句 dạng 3, OFF-H3-38), shi-de-attitude （是……的 dạng 2, OFF-H3-39), direction-complement-2 （趋向补语 dạng 2 nghĩa mở rộng, OFF-H3-29), verb-repetition-sentence （重动句, OFF-H3-40). Ánh xạ HSK3 sau lô: 12 đã có / 2 một phần （虽然……，可是……; giới từ 把/被) / 36 thiếu trên 50 mục nhóm — catalogue JSON đã đồng bộ từng mục. QA 2 vòng: vòng 1 ĐẠT CÓ ĐIỀU KIỆN (Q-1 công thức phải ghi tường minh 是 lược được khi có từ khẳng định mạnh, 的 không lược được; Q-2 error_spot cho lỗi THIẾU 的 không có tiền lệ trong 37 error_spot của dự án → đổi shide2-ex4 sang fill giữ id; H-1..H-3); vòng 2 ĐẠT 5/5. Harness local 19/19. Ghi chú quy trình: GitHub MCP hiện không có công cụ trạng thái CI; repo không có workflow kiểm tra riêng trên Actions (chỉ Pages build) — cổng chất lượng là validator + unit test + harness local + QA độc lập, đã chạy đủ. TTS thiết bị thật vẫn not_run. Nghiệm thu live ĐẠT ngay lần tải đầu: build 20261030-hsk3c3, 47/47 bài, bài trùng động đủ A–F + làm bài đúng, câu quy tắc lược 是/的 hiển thị đúng trong bài 是……的 dạng 2."
 }
