@@ -40,6 +40,20 @@ class TestValidator(unittest.TestCase):
         bad["lessons"][0].pop("quick_memory", None)
         self.assertTrue(check(bad, Path("x")))
 
+    def test_published_without_hsk_evidence_fails(self):
+        bad = copy.deepcopy(DATA)
+        les = next(l for l in bad["lessons"] if l["status"] == "published")
+        les.pop("hsk_evidence", None)
+        errors = check(bad, Path("x"))
+        self.assertTrue(any("hsk_evidence" in e for e in errors))
+
+    def test_partial_hsk_evidence_without_note_fails(self):
+        bad = copy.deepcopy(DATA)
+        les = next(l for l in bad["lessons"] if l["status"] == "published")
+        les["hsk_evidence"] = {"status": "partial"}
+        errors = check(bad, Path("x"))
+        self.assertTrue(any("hsk_evidence" in e and "note" in e for e in errors))
+
     def test_unstepped_formula_notes_fails(self):
         bad = copy.deepcopy(DATA)
         bad["lessons"][0]["formula_notes"] = "Đoạn văn liền không chia bước."
