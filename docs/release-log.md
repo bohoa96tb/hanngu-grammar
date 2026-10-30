@@ -77,3 +77,22 @@ Chưa có bản phát hành nào.
   voiceschanged, dòng cảnh báo bền vững trong bài học, bảng chẩn đoán
   phân biệt chưa tải xong với không có giọng. Nghiệm thu qa-06 xác
   nhận build voicewarn live đủ 28 bài ở profile mới.
+
+- 2026-10-30 — Lô chuẩn hóa std1 (PR #7, nhánh batch-std1, merge
+  298576ff, build 20261030-std1): nội dung — sửa lỗi chấm sai bi-ex4
+  (key 比 → 不) và toàn bộ lỗi đáp án/biến thể theo rà soát ND-01, thêm
+  mục F Nhớ nhanh (quick_memory) và công thức chia bước cho 38/38 bài,
+  is_open_ended cho 182 bài tập, gán lại độ khó (3 bài hard), thêm
+  prefix-ex5; QA vòng 1 bắt thêm lỗi dạy sai vị trí 更 (bi-comparison)
+  đã sửa ở ND-03. Giao diện — chấm bài chọn → Kiểm tra → khóa/Làm lại
+  cho choice/fill/order, design tokens + badge HSK/độ khó riêng, prefs
+  Pinyin/nghĩa/tốc độ lưu bền, TTS có trạng thái và chống phát sau khi
+  bấm Dừng, banner lỗi tải/tiến trình hỏng, mục A–F, điều hướng bài
+  trước/sau, Ôn tập khóa tự đánh giá tới khi đối chiếu và hiện Nhớ
+  nhanh. Validator nâng quy tắc (ĐẠT 38 bài/182 bài tập), unittest 7/7,
+  FSRS 7/7. Nghiệm thu live sau merge: đạt bước 1–6 (debug 38/38, luồng
+  học/chấm/lưu/ôn trên bài ma-question, tiến trình cũ đọc đúng). Chưa
+  kiểm tra: console (not_run), bề rộng 390px bằng trình duyệt thật
+  (not_run, mới kiểm tĩnh CSS), audio thiết bị thật (not_run,
+  AUD-TTS-01). Rollback: revert merge 298576ff hoặc triển khai lại từ
+  f6e505b1.

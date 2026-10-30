@@ -169,7 +169,7 @@
       "depends_on": [
         "P05-01"
       ],
-      "evidence": "38 bài, 181 bài tập, validator ĐẠT. Lô 10 (4 bài HSK3: ba-sentence-1, bei-passive-1, zhe-accompanying, bi-comparison-2) đã rà soát nội bộ, chờ đẩy và nghiệm thu live. Các bài là đã rà soát nội bộ, CHƯA đạt toàn bộ tiêu chí vì audio chưa nghiệm thu.",
+      "evidence": "38 bài, 182 bài tập sau lô chuẩn hóa std1 (PR #7, merge 298576ff, build 20261030-std1 đã nghiệm thu live). Các bài là đã rà soát nội bộ + chuẩn hóa A–F, CHƯA đạt toàn bộ tiêu chí vì audio chưa nghiệm thu.",
       "files": [],
       "id": "P06-01",
       "inputs": "Baseline khóa",
@@ -255,6 +255,20 @@
       "title": "Nghiệm thu audio TTS: giọng zh-CN, phát/dừng, thiếu giọng",
       "status": "in_progress",
       "evidence": "TTS trình duyệt là phương án TẠM THỜI, chưa mặc nhiên đáp ứng yêu cầu audio tạo trước trong đặc tả. Build voicewarn2 đã nghiệm thu live 34 bài (qa-07): dòng cảnh báo thiếu giọng zh ĐÃ hiển thị sẵn trong phần Ví dụ (đúng nội dung cảnh báo), đạt yêu cầu hiển thị thông báo thay vì âm thầm dùng giọng mặc định. Hộp thoại cảnh báo khi bấm Nghe mẫu thì KHÔNG quan sát được trong vòng kiểm tra (nguyên nhân chưa xác định, có thể do khung kiểm tra xử lý hộp thoại) — ghi là chưa quan sát được, không khẳng định đã hoạt động. Nghe thực tế, phát/dừng và thiếu giọng trên thiết bị thật vẫn not_run cho cả 34 bài. Không đánh dấu bài đạt toàn bộ tiêu chí khi audio chưa nghiệm thu."
+    },
+    {
+      "id": "STD-01",
+      "status": "done",
+      "title": "Chuẩn hóa toàn bộ nội dung và giao diện (chuẩn A–F, design system, chấm bài)",
+      "evidence": "PR #7 merge 298576ff; QA-01 vòng 1 chưa đạt (4 lỗi) → sửa ND-03/CODE-02 → QA-02 ĐẠT; nghiệm thu live build 20261030-std1 đạt bước 1–6 (xem docs/reviews/qa-std1.md, docs/reviews/standardization-2026-10-30.md). Console và bề rộng 390px live: not_run.",
+      "files": [
+        "app.js",
+        "styles.css",
+        "index.html",
+        "data/lessons/*.json",
+        "scripts/validate.py",
+        "docs/schema.md"
+      ]
     }
   ]
 }

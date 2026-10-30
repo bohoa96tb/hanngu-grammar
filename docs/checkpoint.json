@@ -27,7 +27,7 @@
     "styles.css",
     "tests/test_validator.py"
   ],
-  "code_base_commit": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
+  "code_base_commit": "298576ff20c7b2d552d665707c9188e1271b32b3",
   "completed_task_ids": [
     "P00-01",
     "P01-01",
@@ -44,11 +44,12 @@
     "baseline_items": 50,
     "draft_lessons": 0,
     "reviewed_lessons": 0,
-    "published_lessons": 24
+    "published_lessons": 38,
+    "exercises": 182
   },
   "github": {
     "connect_url": "https://agent.meta.ai/connectors/connect/github",
-    "head_verified": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
+    "head_verified": "298576ff20c7b2d552d665707c9188e1271b32b3",
     "initial_commit": "86f65bbe639c7af96afe316eb8a26b228092a0eb",
     "owner": "bohoa96tb",
     "pages_enabled": true,
@@ -72,19 +73,20 @@
     "Ôn tập FSRS thật, luyện nói, chấm phát âm, đồng bộ, đăng nhập chưa làm (backlog).",
     "Luyện nói P04-02 chưa kiểm tra mic/thu âm trên trình duyệt thật."
   ],
-  "latest_verified_commit": "fd8799247ae6ea8abdca29c4a4f9196d78bf1dc5",
+  "latest_verified_commit": "298576ff20c7b2d552d665707c9188e1271b32b3",
   "next_actions": [
-    "Đẩy lô 10 + qa-07 (nhánh batch10-qa07 → PR → merge), rồi nghiệm thu live bản 38 bài ở profile mới (trọng tâm: đếm 38, mở 1 bài mới, trắc nghiệm đúng).",
-    "Sau đó: đối chiếu HSK5–6 cho P01-02, hoặc lô HSK3 tiếp theo (câu phức HSK3, kết quả bổ ngữ dạng 2, khả năng bổ ngữ dạng 1).",
-    "AUD-TTS-01: nghiệm thu audio trên thiết bị thật; cơ chế hộp thoại cảnh báo giọng vẫn chưa quan sát được (qa-07)."
+    "Lô tách bài (theo D25): le-completion-change → 2 bài, prefix-suffix → 2 bài, complex-suiran-yinwei → 2 bài (giữ ID/tien trình theo quy tắc đã ghi).",
+    "Hoặc tiếp tục P01-02: đối chiếu HSK5–6, sau đó lô HSK3 tiếp theo (câu phức, kết quả bổ ngữ dạng 2, khả năng bổ ngữ dạng 1).",
+    "Bổ sung bài tập còn thiếu: shi-de (nơi chốn/phủ định), modal-hui-neng-keyi (order/đối chiếu cặp), question-words (sản sinh 几/多少), jianyu (让).",
+    "AUD-TTS-01: nghiệm thu audio trên thiết bị thật."
   ],
   "pending_review_ids": [],
   "phase": "P06",
   "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
-  "resume_notes": "Lô 10 xong, chờ đẩy: 4 bài HSK3 mới (ba-sentence-1, bei-passive-1, zhe-accompanying, bi-comparison-2), tổng 38 bài / 181 bài tập, validator ĐẠT. Đối chiếu HSK3–4 xong (HSK3: 4/4/42; HSK4: tất cả thiếu); HSK5–6 chưa đối chiếu. qa-07 + checkpoint local từ phiên trước cũng nằm trong lần đẩy này. Điểm dừng: lô 10 xong; tiếp theo là nghiệm thu live 38 bài rồi đối chiếu HSK5–6 hoặc lô HSK3 tiếp theo.",
+  "resume_notes": "Lô chuẩn hóa std1 XONG: PR #7 (nhánh batch-std1) đã merge, merge commit 298576ff, build 20261030-std1 đã nghiệm thu live (bảng ?debug=1: 38/38, mọi nguồn 200; luồng danh mục → bài ma-question A–F → chọn/Kiểm tra/Làm lại → hoàn thành giữ sau tải lại → Ôn lại khóa rate tới khi đối chiếu, ghi FSRS Good đúng). Tiến trình cũ từ bản trước (bài 是 hoàn thành 29/10 + lịch sử ôn) đọc đúng trên build mới. QA: vòng 1 CHƯA ĐẠT (4 lỗi) → ND-03/CODE-02 sửa → QA vòng 2 ĐẠT. Console = not_run (công cụ không đọc được console), kiểm tra bề rộng 390px trên trình duyệt thật = not_run (chỉ kiểm tĩnh CSS), TTS thiết bị thật = not_run (AUD-TTS-01).",
   "schema_version": 1,
   "spec_version": "1.0",
-  "updated_at": "2026-10-29",
+  "updated_at": "2026-10-30",
   "verification_results": [
     {
       "command": "python3 scripts/validate.py",
@@ -157,7 +159,15 @@
     {
       "command": "API main (manifest/shards/app.js) + text fetch Pages (manifest, hsk2) + 3 vòng trình duyệt",
       "result": "Main và cây file Pages: 24 bài đúng. Giao diện: 18 bài sau cả cache-bust và hard refresh tới 06:10 UTC. Live 24 bài CHƯA xác minh."
+    },
+    {
+      "command": "python3 scripts/validate.py (quy tắc mới D25); python3 -m unittest; node --test tests/test_fsrs.mjs; node --check app.js",
+      "result": "ĐẠT: 38 bài, 182 bài tập; unittest 7/7; FSRS 7/7; JS_OK. QA-02 vòng 2 ĐẠT (docs/reviews/qa-std1.md)."
+    },
+    {
+      "command": "browser live https://bohoa96tb.github.io/hanngu-grammar/?debug=1 sau merge 298576ff",
+      "result": "ĐẠT bước 1–6: build 20261030-std1, 38/38 published, badge HSK/độ khó, Tiếp tục học, bài ma-question đủ A–F + Nhớ nhanh + nav trước/sau, chọn→Kiểm tra→Làm lại đúng, hoàn thành giữ sau tải lại, Ôn lại khóa rate tới khi đối chiếu và hiện Nhớ nhanh. Bước 7 (390px) not_run — công cụ không đổi được kích thước cửa sổ; console not_run."
     }
   ],
-  "working_tree_state": "batch10_ready_for_branch_pr"
+  "working_tree_state": "std1_merged_and_live_verified"
 }
