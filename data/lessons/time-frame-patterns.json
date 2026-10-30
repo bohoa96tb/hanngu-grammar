@@ -1,0 +1,227 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "以前/以后 phải đứng SAU mốc, không đứng trước: 吃饭以前，我去食堂 (trước khi ăn, tôi đi căng-tin).",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我以前吃饭去食堂。"
+        },
+        {
+          "explanation": "以后 không đứng trước mốc. Nói 'ba ngày sau' thì mốc đứng trước: 三天以后，我就回来.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "以后三天，我就回来。"
+        },
+        {
+          "explanation": "以前 chỉ mốc thời gian. Nói vị trí 'đứng trước cửa' thì dùng từ phương vị đã học ở bài location-nouns: 我站在门前面。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我站在门以前。"
+        }
+      ],
+      "content_version": 1,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Chīfàn yǐqián, wǒ xiān xǐshǒu.",
+          "tokens": [
+            "吃饭",
+            "以前",
+            "我",
+            "先",
+            "洗手"
+          ],
+          "vi": "Trước khi ăn, tôi rửa tay trước.",
+          "zh": "吃饭以前，我先洗手。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Xiàkè yǐhòu, wǒmen yìqǐ qù chīfàn.",
+          "tokens": [
+            "下课",
+            "以后",
+            "我们",
+            "一起",
+            "去",
+            "吃饭"
+          ],
+          "vi": "Sau giờ học, chúng tôi cùng đi ăn.",
+          "zh": "下课以后，我们一起去吃饭。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Sān tiān qián, wǒ qù le Shànghǎi.",
+          "tokens": [
+            "三天",
+            "前",
+            "我",
+            "去",
+            "了",
+            "上海"
+          ],
+          "vi": "Ba ngày trước, tôi đã đi Thượng Hải.",
+          "zh": "三天前，我去了上海。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zài lái Zhōngguó yǐqián, tā bú huì shuō Zhōngwén.",
+          "tokens": [
+            "在",
+            "来",
+            "中国",
+            "以前",
+            "他",
+            "不",
+            "会",
+            "说",
+            "中文"
+          ],
+          "vi": "Trước khi đến Trung Quốc, anh ấy không biết nói tiếng Trung.",
+          "zh": "在来中国以前，他不会说中文。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Shuìjiào qián, wǒ kàn le bàn ge xiǎoshí shū.",
+          "tokens": [
+            "睡觉",
+            "前",
+            "我",
+            "看",
+            "了",
+            "半个",
+            "小时",
+            "书"
+          ],
+          "vi": "Trước khi ngủ, tôi đọc sách nửa tiếng.",
+          "zh": "睡觉前，我看了半个小时书。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "下班以后，我去买菜。"
+          ],
+          "explanation": "Khung mốc = mốc 下班 + 以后， đứng trước phần việc chính 我去买菜. Các phương án còn lại đặt 以后 sai phía hoặc chen vào giữa câu.",
+          "id": "tfp-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "下班以后，我去买菜。",
+              "以后下班，我去买菜。",
+              "我去买菜下班以后。",
+              "下班我以后去买菜。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Sau khi tan làm, tôi đi chợ mua rau.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "她",
+              "睡觉",
+              "前",
+              "听",
+              "音乐"
+            ]
+          ],
+          "explanation": "Chủ ngữ đứng trước khung mốc cũng được: 她 + 睡觉前 + 听音乐 — mốc 睡觉 + 前， việc chính theo sau.",
+          "id": "tfp-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "前",
+              "睡觉",
+              "音乐",
+              "她",
+              "听"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Trước khi ngủ, cô ấy nghe nhạc.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "以后"
+          ],
+          "explanation": "Khối sai là 以后： nó phải đứng sau mốc — 上课以后，我给你打电话 (sau khi vào học, tôi gọi cho bạn).",
+          "id": "tfp-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "以后",
+              "上课",
+              "我",
+              "给",
+              "你",
+              "打电话"
+            ],
+            "sentence_zh": "以后上课，我给你打电话。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 以后上课，我给你打电话。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "前",
+            "以前"
+          ],
+          "explanation": "Sau mốc thời gian 一年， dùng 前 (gọn) hoặc 以前 đều đúng: 一年前 / 一年以前。",
+          "id": "tfp-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Sau mốc thời gian dùng dạng hai chữ hoặc dạng gọn một chữ đều được."
+          },
+          "prompt_vi": "Điền từ còn thiếu để nói 'một năm trước': 'Một năm ___, tôi bắt đầu học tiếng Trung.'",
+          "prompt_zh": "一年___，我开始学中文。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "看电影以后，我们回家了。",
+            "看电影以后，我们回家了",
+            "看完电影以后，我们回家了。",
+            "看完电影以后，我们回家了"
+          ],
+          "explanation": "Mốc là cụm hành động 看电影 nên chốt bằng 以后： 看电影以后，我们回家了。",
+          "id": "tfp-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Mốc là cả một việc （看电影） nên dùng 以后 đặt sau mốc."
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Sau khi xem phim, chúng tôi về nhà.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Cấu tạo: Mốc + 以前/以后/前/后. 以前/以后 đi được sau mốc dài (cụm hành động, cụm ngắn): 吃饭以后，他回来以前. 2) Dạng gọn: 前/后 hay theo sau từ chỉ thời gian hoặc mốc ngắn: 三天前，一年后，下课后. 3) Vị trí: khung mốc đứng trước phần việc chính; chủ ngữ chung có thể đứng trước khung （她睡觉前听音乐） hoặc sau khung （睡觉前，她听音乐）; có 在 mở đầu khung thì sắc thái trang trọng hơn một chút: 在来中国以前，他不会说中文. 4) Phân biệt: 以前/以后 trong bài này chỉ mốc THỜI GIAN; nói vị trí 'trước/sau' trong không gian thì dùng 前面/后边 đã học ở bài location-nouns.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "time-frame-patterns",
+      "objective": "Sau bài này, người học neo được một việc 'trước/sau' một mốc thời gian hoặc một việc khác bằng khung （在）……以前/以后/前/后.",
+      "pattern": "(在) + Mốc + 以前/以后/前/后，…",
+      "quick_memory": "Neo mốc: Mốc + 以前/以后 (mốc dài), Mốc + 前/后 (gọn). Khung đứng trước việc chính, hậu tố luôn sau mốc.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-8 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF-H3-26) và đề cương thi HSK 11/2025, phạm vi xác minh TRỰC QUAN tại trang in 390 (khối 固定格式） thay cho bản trích xuất text; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về khung mốc thời gian （在）……以前/以后/前/后 theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi đối chiếu mục OFF-H3-26 trong catalogue dự án từ đề cương thi 11/2025: bài này phủ thành viên （在）……以前/以后/前/后, xác minh trực quan ở khối 固定格式 trang in 390 ngày 2026-10-30. Thành viên X什么（啊） của cùng mục chưa dạy nên mục vẫn ở trạng thái một phần.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Mẫu mốc thời gian: trước / sau… （（在）……以前/以后/前/后）",
+      "when_to_use": "Khi cần nói một việc xảy ra trước hay sau một mốc: trước khi ăn （吃饭以前）, sau giờ học （下课以后）, ba ngày trước （三天前）. Phần nằm trong dấu …… (gọi là 'mốc') có thể là từ chỉ thời gian, một hành động, hay một cụm ngắn. Khung này là trạng ngữ thời gian, đứng trước phần việc chính. Mẫu thuộc giỏ mẫu cố định HSK3 (mục OFF-H3-26): thành viên 越……越…… đã có bài riêng yue-patterns, thành viên X什么（啊） để sau — bài này chỉ dạy mẫu mốc thời gian."
+    }
+  ],
+  "schema_version": 1
+}

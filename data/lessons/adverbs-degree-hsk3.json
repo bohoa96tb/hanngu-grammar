@@ -1,0 +1,216 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Ý khen thì 有些 không hợp: 有些 （hơi) thường đi với điều chưa như ý （有些贵，有些小）. Muốn khen áo đẹp, nói 这件衣服挺漂亮的 hoặc 比较漂亮。",
+          "verdict": "kem_tu_nhien",
+          "wrong_or_risky": "这件衣服有些漂亮。"
+        },
+        {
+          "explanation": "极 + tính từ là văn viết trang trọng, không phải khẩu ngữ thường ngày. Nói thường ngày thì dùng bổ ngữ …极了 （他高极了, đã học ở bài degree-complement-1) hoặc 特别/挺： 他特别高。",
+          "verdict": "khac_van_phong",
+          "wrong_or_risky": "他极高。"
+        },
+        {
+          "explanation": "Trong khung so sánh A + 比 + B, từ chỉ 'hơn' phải là 更 hoặc 还 (bài bi-comparison-2): 哥哥比弟弟更高/还高. 特别 không đứng ở vị trí này.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "哥哥比弟弟特别高。"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhè jiàn yīfu bǐjiào guì.",
+          "tokens": [
+            "这件",
+            "衣服",
+            "比较",
+            "贵"
+          ],
+          "vi": "Cái áo này khá đắt.",
+          "zh": "这件衣服比较贵。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Jīntiān tèbié rè.",
+          "tokens": [
+            "今天",
+            "特别",
+            "热"
+          ],
+          "vi": "Hôm nay đặc biệt nóng.",
+          "zh": "今天特别热。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā tǐng gāo de.",
+          "tokens": [
+            "他",
+            "挺",
+            "高",
+            "的"
+          ],
+          "vi": "Anh ấy cao phết đấy.",
+          "zh": "他挺高的。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒ yǒuxiē lèi, xiǎng xiūxi yíxià.",
+          "tokens": [
+            "我",
+            "有些",
+            "累",
+            "想",
+            "休息",
+            "一下"
+          ],
+          "vi": "Tôi hơi mệt, muốn nghỉ một lát.",
+          "zh": "我有些累，想休息一下。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Zhège dìfang tǐng ānjìng de.",
+          "tokens": [
+            "这个",
+            "地方",
+            "挺",
+            "安静",
+            "的"
+          ],
+          "vi": "Chỗ này khá yên tĩnh đấy.",
+          "zh": "这个地方挺安静的。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "这道菜特别好吃。"
+          ],
+          "explanation": "特别 đứng ngay trước tính từ để nhấn mạnh nổi bật. 有些 mang sắc thái 'hơi/chưa ưng' nên không hợp ý khen; 极 trước tính từ là văn viết và phương án 3 còn sai trật tự.",
+          "id": "adg-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "这道菜特别好吃。",
+              "这道菜有些好吃。",
+              "这道菜极好吃在。",
+              "特别这道菜好吃。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để khen 'Món này đặc biệt ngon.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "她挺漂亮的。"
+          ],
+          "explanation": "Khẩu ngữ khen người thì dùng 挺……的. 极漂亮 là văn viết; 有些漂亮 nghe như hơi chê; phương án 4 sai trật tự.",
+          "id": "adg-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "她挺漂亮的。",
+              "她极漂亮。",
+              "她有些漂亮。",
+              "她比较漂亮的在。"
+            ]
+          },
+          "prompt_vi": "Chọn câu tự nhiên nhất trong khẩu ngữ để nói 'Cô ấy khá xinh.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "我",
+              "有些",
+              "累",
+              "想",
+              "早点儿",
+              "睡"
+            ]
+          ],
+          "explanation": "有些 đứng ngay trước tính từ 累： 我有些累，想早点儿睡。",
+          "id": "adg-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "想",
+              "有些",
+              "我",
+              "睡",
+              "早点儿",
+              "累"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Tôi hơi mệt, muốn ngủ sớm một chút.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "挺"
+          ],
+          "explanation": "Khối sai là 挺： sau 比 chỉ dùng 更/还 để nói 'hơn' — 弟弟比我还高 / 弟弟比我更高. 挺 không đứng trong khung so sánh.",
+          "id": "adg-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "弟弟",
+              "比",
+              "我",
+              "挺",
+              "高"
+            ],
+            "sentence_zh": "弟弟比我挺高。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 弟弟比我挺高。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "比较"
+          ],
+          "explanation": "比较远 = khá xa: 比较 là phó từ mức độ trung tính trong nhóm của bài này.",
+          "id": "adg-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Từ chỉ mức độ 'khá' hay dùng khi nhận xét trung tính, không khen không chê."
+          },
+          "prompt_vi": "Điền phó từ mức độ 'khá/tương đối' (sắc thái trung tính) để hoàn thành câu: 'Con đường này ___ xa, chúng ta đi xe nhé.'",
+          "prompt_zh": "这条路___远，我们坐车去吧。",
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Vị trí: cả nhóm đứng ngay trước tính từ: 比较大，特别热，挺贵，有些累. 2) Chọn từ — 比较/特别: 比较 nói mức độ 'khá' một cách trung tính, hay gặp khi nhận xét, đánh giá; 特别 nhấn mạnh sự nổi bật khác thường: 特别好吃 = ngon đặc biệt. 3) Chọn từ — 挺/有些: 挺 là khẩu ngữ, cuối câu hay thêm 的 （挺好的）; 有些 là 'hơi', thường đi với tính từ mang ý chưa như mong muốn và cuối câu không thêm 的. 4) Phân biệt: chỉ 'hơn' trong so sánh thì dùng 更/还 sau 比 (bài bi-comparison-2); mức độ cao vút kiểu …极了 là bổ ngữ đứng sau tính từ (bài degree-complement-1); 极 đặt trước tính từ chỉ thuộc văn viết trang trọng.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "adverbs-degree-hsk3",
+      "objective": "Sau bài này, người học diễn đạt được các sắc thái mức độ 'khá, đặc biệt, rất (khẩu ngữ), hơi' bằng 比较/特别/挺/有些, nhận biết đúng vị trí của 极, và không nhầm với 更/还/越 đã học ở bài khác.",
+      "pattern": "Chủ ngữ + 比较/特别/挺/有些/极（văn viết） + Tính từ",
+      "quick_memory": "Khá → 比较； nổi bật → 特别； rất (nói thân mật) → 挺……的； hơi (chưa ưng) → 有些. 'Hơn' chừa cho 更/还 sau 比.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-8 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF-H3-12) và đề cương thi HSK 11/2025, phạm vi xác minh TRỰC QUAN tại trang in 389 (hàng 程度副词， đủ 8 thành viên — bản ghi cũ thiếu 还） thay cho bản trích xuất text; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về các phó từ mức độ 比较/特别/挺/有些/极 theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-12 trong catalogue dự án từ đề cương thi 11/2025, xác minh trực quan trang in 389 ngày 2026-10-30: hàng 程度副词 có đủ 8 thành viên 比较、还、更、特别、挺、有些、越、极. Bài này dạy trọng tâm 5 từ chưa có bài; 更/还/越 chỉ phân biệt vì đã dạy ở bài bi-comparison-2 và yue-patterns.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Phó từ mức độ HSK3: khá / đặc biệt / rất (khẩu ngữ) / hơi （比较/特别/挺/有些/极（văn viết））",
+      "when_to_use": "Khi tính từ cần sắc thái mức độ tinh tế hơn 很/非常/太 đã học ở cấp dưới: 比较 = khá/tương đối, trung tính; 特别 = đặc biệt, nổi bật hơn hẳn; 挺 = rất, giọng khẩu ngữ thân mật, thường đi cặp với 的 ở cuối câu （挺……的）; 有些 = hơi, thường dùng với điều chưa như ý （有些累，有些贵）; 极 trong khẩu ngữ chủ yếu xuất hiện ở mẫu …极了 (bổ ngữ mức độ đã học ở bài degree-complement-1), còn 极 đứng trước tính từ （极好） là văn viết trang trọng. Các từ 更/还 ở vai 'hơn' đã dạy ở bài bi-comparison-2 và mẫu 越……越…… ở bài yue-patterns — bài này chỉ phân biệt, không dạy lại."
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,212 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "怎么样 không đứng trước động từ để hỏi cách làm. Hỏi cách đi học thì dùng 怎么 hoặc 怎样： 你怎么去学校？/ 你怎样去学校？",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "你怎么样去学校？"
+        },
+        {
+          "explanation": "怎样 phải đứng ngay trước cụm động từ; có chủ ngữ thì chủ ngữ đứng trước 怎样： 你怎样去学校？",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "怎样你去学校？"
+        },
+        {
+          "explanation": "Rủ rê/hỏi ý kiến thì mẫu chuẩn đã học là đặt 怎么样 ở cuối câu: 我们一起去看电影，怎么样？ 怎样 đứng một mình cuối câu nghe không tự nhiên trong tình huống này.",
+          "verdict": "kem_tu_nhien",
+          "wrong_or_risky": "我们一起去看电影，怎样？(ý muốn rủ và hỏi ý kiến bạn)"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zěnyàng xuéhǎo Zhōngwén?",
+          "tokens": [
+            "怎样",
+            "学好",
+            "中文"
+          ],
+          "vi": "Làm thế nào để học tốt tiếng Trung?",
+          "zh": "怎样学好中文？"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhè dào cài zěnyàng zuò?",
+          "tokens": [
+            "这道",
+            "菜",
+            "怎样",
+            "做"
+          ],
+          "vi": "Món này làm thế nào?",
+          "zh": "这道菜怎样做？"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zěnyàng cái néng jìzhù zhème duō Hànzì?",
+          "tokens": [
+            "怎样",
+            "才能",
+            "记住",
+            "这么",
+            "多",
+            "汉字"
+          ],
+          "vi": "Làm thế nào mới nhớ được nhiều chữ Hán thế này?",
+          "zh": "怎样才能记住这么多汉字？"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Qǐngwèn, zěnyàng qù huǒchēzhàn?",
+          "tokens": [
+            "请问",
+            "怎样",
+            "去",
+            "火车站"
+          ],
+          "vi": "Cho hỏi, muốn đến ga tàu thì đi thế nào?",
+          "zh": "请问，怎样去火车站？"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Zhè jiàn shì zěnyàng jiějué?",
+          "tokens": [
+            "这件",
+            "事",
+            "怎样",
+            "解决"
+          ],
+          "vi": "Việc này giải quyết thế nào?",
+          "zh": "这件事怎样解决？"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "这句话怎样用中文说？"
+          ],
+          "explanation": "怎样 đứng ngay trước cụm động từ 用中文说. 怎么样 không mở đầu câu hỏi cách làm; các phương án còn lại sai trật tự.",
+          "id": "zyq-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "这句话怎样用中文说？",
+              "怎么样这句话用中文说？",
+              "这句话怎样了用中文说？",
+              "怎样这句话说用中文？"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để hỏi 'Câu này nói bằng tiếng Trung thế nào?'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "今天天气怎么样？"
+          ],
+          "explanation": "Hỏi tình hình thì dùng 怎么样 ở cuối câu (đã học ở HSK1). 怎样/怎么 + động từ là hỏi cách làm một việc, không khớp câu hỏi về thời tiết.",
+          "id": "zyq-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "今天天气怎么样？",
+              "今天天气怎样做？",
+              "今天怎样天气？",
+              "今天天气怎么去？"
+            ]
+          },
+          "prompt_vi": "Chọn câu hỏi đúng ý 'Hôm nay thời tiết thế nào?'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "怎样",
+              "才能",
+              "学",
+              "好",
+              "中文"
+            ]
+          ],
+          "explanation": "Khung hay gặp của 怎样： 怎样 + 才能 + động từ — hỏi cách đạt một kết quả.",
+          "id": "zyq-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "才能",
+              "怎样",
+              "学",
+              "中文",
+              "好"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Làm thế nào mới học tốt được tiếng Trung?'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "怎么样"
+          ],
+          "explanation": "Khối sai là 怎么样： nó không đứng trước động từ. Sửa thành 你怎么去图书馆？ hoặc 你怎样去图书馆？",
+          "id": "zyq-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "你",
+              "怎么样",
+              "去",
+              "图书馆"
+            ],
+            "sentence_zh": "你怎么样去图书馆？"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 你怎么样去图书馆？",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "怎样"
+          ],
+          "explanation": "怎样才能……? là khung hỏi cách đạt kết quả: 'làm thế nào mới thi tốt HSK3 được?'. Ngoài khung bài này, câu hỏi dùng 怎么才能……? cũng đúng trong tiếng Trung thật — chỉ khác mẫu 怎样+động từ đang luyện, nên ở đây chỉ nhận 怎样.",
+          "id": "zyq-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Từ hỏi đứng ngay trước cụm động từ, khác từ hỏi tình hình ở cuối câu."
+          },
+          "prompt_vi": "Điền từ hỏi 'làm thế nào' (giọng trang trọng, hay đi với 才能） để hoàn thành câu: '___才能考好HSK3?'",
+          "prompt_zh": "___才能考好HSK3？",
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Vị trí: 怎样 đứng ngay trước cụm động từ được hỏi, chủ ngữ (nếu có) đứng trước 怎样: 怎样去机场？/ 你怎样去学校？ 2) Cách dùng: 怎样 + động từ thường hỏi cách đạt một kết quả, hay kết hợp 才能/能： 怎样才能学好中文？; trả lời bằng cách nêu các bước làm. 3) Phân biệt: 怎么 + động từ là khẩu ngữ, hỏi cách làm cụ thể thường ngày （你怎么去学校？); 怎样 + động từ trang trọng hơn, hỏi quy trình/cách đạt kết quả — trong câu hỏi cách làm đơn giản, hai mẫu nhiều khi thay nhau được. 4) Phân biệt: 怎么样 KHÔNG đứng trước động từ để hỏi cách làm; nó đứng cuối câu hoặc làm vị ngữ để hỏi tình hình/ý kiến （天气怎么样？/ 这件衣服怎么样？).",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "zenme-yang-question",
+      "objective": "Sau bài này, người học hỏi được 'làm thế nào để…' bằng 怎样 đặt trước cụm động từ, và chọn đúng giữa 怎样 / 怎么 / 怎么样 theo điều mình muốn hỏi.",
+      "pattern": "怎样 + Cụm động từ …?",
+      "quick_memory": "Hỏi 'làm sao để…' → 怎样 + động từ. Cách làm thường ngày → 怎么. Hỏi tình hình/ý kiến → 怎么样 ở cuối câu.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-8 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF-H3-07) và đề cương thi HSK 11/2025, phạm vi xác minh TRỰC QUAN tại trang in 391 (hàng 疑问句） thay cho bản trích xuất text; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về câu hỏi với 怎样/怎么/怎么样 theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-07 trong catalogue dự án từ đề cương thi 11/2025, xác minh trực quan trang in 391 ngày 2026-10-30: hàng 疑问句 (nhóm 句类） chỉ có một dòng '“怎样+动词”的特指问句' — đó là toàn bộ phạm vi của mục này.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Câu hỏi cách làm với 怎样+động từ (phân biệt 怎么 / 怎么样）",
+      "when_to_use": "Khi muốn hỏi CÁCH LÀM một việc theo hướng quy trình hoặc cách đạt một kết quả: 怎样学好中文？(làm thế nào để học tốt tiếng Trung?). 怎样 + động từ thiên về văn viết và câu hỏi 'làm sao để đạt được…', hay đi cùng 才能/能. Nền đã học ở HSK1 (bài zenme-question): 怎么 + động từ hỏi cách làm thường ngày trong khẩu ngữ, 怎么样 ở cuối câu hỏi tình hình/ý kiến. Bài này không dạy lại hai mẫu đó — chỉ thêm 怎样 và luyện chọn giữa ba từ."
+    }
+  ],
+  "schema_version": 1
+}
