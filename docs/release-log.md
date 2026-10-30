@@ -131,3 +131,19 @@ Chưa có bản phát hành nào.
   cấp ở mức mục nhóm (251 mục). question-words đổi hsk_evidence
   thành verified sau khi kiểm tra trực tiếp bản gốc （几/多少 thuộc
   nhóm đại từ để hỏi HSK1).
+
+- 2026-10-30 — Lô HSK3-3 (build 20261030-hsk3c3): 4 bài HSK3 mới —
+  cunxian-appearance （存现句 dạng 3: xuất hiện/biến mất, OFF-H3-38),
+  shi-de-attitude （是……的句 dạng 2: nhấn thái độ/quan điểm,
+  OFF-H3-39), direction-complement-2 （趋向补语 dạng 2: nghĩa mở
+  rộng 起来/下去/出来, OFF-H3-29), verb-repetition-sentence
+  （重动句, OFF-H3-40). Tổng 47 bài / 228 bài tập. QA hai vòng:
+  vòng 1 ĐẠT CÓ ĐIỀU KIỆN (Q-1: công thức shi-de-attitude ghi
+  tường minh 是 lược được khi có từ khẳng định mạnh như 一定, riêng
+  的 không lược được; Q-2: đổi shide2-ex4 từ error_spot "thiếu 的"
+  thành fill giữ nguyên id; H-1..H-3: sửa dính chữ trong công thức
+  cunxian-appearance, thêm biến thể hợp lệ cho cx3-ex5, bổ sung
+  phân biệt 唱得起来 trong lời giải dir2-ex1), vòng 2 ĐẠT cả 5
+  điểm. Harness trình duyệt local 19/19. Ánh xạ HSK3 sau lô: 12 đã
+  có / 1 một phần / 37 thiếu trên 50 mục nhóm. Audio TTS thiết bị
+  thật vẫn not_run (AUD-TTS-01); các bài mới là đã rà soát nội bộ.

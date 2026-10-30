@@ -1,0 +1,240 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Mẫu xuất hiện/biến mất bắt buộc có 了 sau bổ ngữ: 门口走进来一个人。Thiếu 了, câu mất ý thay đổi vừa xảy ra và nghe chưa trọn.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "门口走进一个人。"
+        },
+        {
+          "explanation": "Người/vật xuất hiện đứng cuối câu sau số lượng, nơi chốn đứng đầu câu: 门口走进来一个人。Không đặt 一个人 lên đầu như chủ ngữ thông thường trong mẫu này.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "一个人走进来门口。"
+        },
+        {
+          "explanation": "Có 有 là câu tồn tại tĩnh 'trên bàn có một quyển sách'. Muốn nói biến mất phải dùng động từ chỉ mất mát: 桌子上的书少了一本。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "桌子上有了一本书。 (muốn nói sách trên bàn vừa bị lấy mất một quyển)"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Ménkǒu zǒu jìn lái yí gè rén.",
+          "tokens": [
+            "门口",
+            "走",
+            "进来",
+            "一",
+            "个",
+            "人"
+          ],
+          "vi": "Ở cửa có một người bước vào.",
+          "zh": "门口走进来一个人。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Bān lǐ xīn lái le yí wèi lǎoshī.",
+          "tokens": [
+            "班里",
+            "新",
+            "来",
+            "了",
+            "一",
+            "位",
+            "老师"
+          ],
+          "vi": "Lớp có một cô giáo mới chuyển đến.",
+          "zh": "班里新来了一位老师。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhuōzi shang de shū shǎo le yì běn.",
+          "tokens": [
+            "桌子上",
+            "的",
+            "书",
+            "少",
+            "了",
+            "一",
+            "本"
+          ],
+          "vi": "Sách trên bàn thiếu mất một quyển.",
+          "zh": "桌子上的书少了一本。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Qiánbāo lǐ diū le èrbǎi kuài qián.",
+          "tokens": [
+            "钱包",
+            "里",
+            "丢",
+            "了",
+            "二百",
+            "块",
+            "钱"
+          ],
+          "vi": "Trong ví mất hai trăm tệ.",
+          "zh": "钱包里丢了二百块钱。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Yuànzi lǐ pǎo chū lái yì zhī xiǎogǒu.",
+          "tokens": [
+            "院子",
+            "里",
+            "跑",
+            "出来",
+            "一",
+            "只",
+            "小狗"
+          ],
+          "vi": "Từ trong sân chạy ra một con chó nhỏ.",
+          "zh": "院子里跑出来一只小狗。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "教室里走出来一个学生。"
+          ],
+          "explanation": "Xuất hiện: nơi chốn + động từ + bổ ngữ + 了 + số lượng + danh từ. Không chen 有 vào mẫu biến động, và số lượng (一个) đứng trước danh từ, không đứng sau.",
+          "id": "cx3-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "教室里走出来一个学生。",
+              "教室里有走出来一个学生。",
+              "一个学生走出来教室里。",
+              "教室里走出来学生一个。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Trong phòng học có một học sinh đi ra' (vừa xuất hiện ra ngoài).",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "钱包",
+              "里",
+              "的",
+              "钱",
+              "少",
+              "了",
+              "一",
+              "百",
+              "块"
+            ]
+          ],
+          "explanation": "Thứ tự: nơi chốn (钱包里的钱) → động từ chỉ mất mát (少) → 了 → số lượng (一百块).",
+          "id": "cx3-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "一",
+              "百",
+              "块",
+              "钱包",
+              "里",
+              "的",
+              "钱",
+              "少",
+              "了"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Tiền trong ví thiếu mất một trăm tệ.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "学校里新来了一位老师。",
+            "学校里新来了一位老师"
+          ],
+          "explanation": "Xuất hiện: 学校里 + 新来 + 了 + 一位 + 老师 — số lượng đứng sau 了, trước danh từ.",
+          "id": "cx3-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng 一位。",
+            "prompt_zh": "学校里新来了___老师。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Trường học có một thầy giáo mới đến.'",
+          "prompt_zh": null,
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "有"
+          ],
+          "explanation": "Muốn nói biến mất phải dùng động từ chỉ mất mát như 少: 桌子上的书少了一本。Có chỉ hợp với câu tồn tại tĩnh.",
+          "id": "cx3-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "桌子上",
+              "的",
+              "书",
+              "有",
+              "了",
+              "一",
+              "本"
+            ],
+            "sentence_zh": "桌子上的书有了一本。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào nếu muốn nói 'Sách trên bàn thiếu mất một quyển'? 桌子上的书有了一本。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "钱包里丢了一百块钱。",
+            "钱包里丢了一百块钱",
+            "钱包里丢了一百元。",
+            "钱包里丢了一百元",
+            "钱包里丢了一百块。",
+            "钱包里丢了一百块"
+          ],
+          "explanation": "Biến mất: nơi chốn + 丢 + 了 + số lượng + danh từ. Nói tiền bằng 块钱 hay 元 đều được.",
+          "id": "cx3-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 钱包里, dùng 丢。",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Trong ví mất một trăm tệ.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Vị trí: Nơi chốn + Động từ + Bổ ngữ + 了 + Số lượng + Danh từ — người/vật mới xuất hiện hay vừa mất đứng ở cuối câu, sau số lượng (门口走进来一个人). 2) Xuất hiện: động từ đi kèm bổ ngữ xu hướng như 进来/出来, hoặc động từ chỉ sự đến như 来: 走进来, 跑出来, 新来了一位老师. 3) Biến mất: dùng động từ chỉ mất mát như 少 (thiếu mất), 丢 (mất), 走 (bỏ đi): 桌子上的书少了一本, 钱包里丢了二百块钱. 4) Không dùng: không dùng 有 cho biến động — Có chỉ nói tồn tại tĩnh (桌子上有一本书 là 'trên bàn có một quyển sách', không nói sách vừa bị lấy mất). 5) Phân biệt: khác tồn hiện tĩnh (cunxian-chu) ở chỗ bắt buộc có 了 và động từ chỉ thay đổi; nơi chốn không thay đổi gì thì không dùng mẫu này.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "cunxian-appearance",
+      "objective": "Sau bài này, người học nói được ở một nơi vừa xuất hiện thêm hoặc vừa biến mất người/vật nào đó bằng mẫu tồn hiện biến động, phân biệt với câu tồn hiện tĩnh đã học (有/在/着).",
+      "pattern": "Nơi chốn + Động từ + Bổ ngữ (xu hướng/kết quả) + 了 + Số lượng + Danh từ",
+      "quick_memory": "Có gì xuất hiện hay vừa mất? Nơi chốn mở đầu, động từ + 了 ở giữa, người/vật thay đổi chốt cuối sau số lượng.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-3 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-38 và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập trong cùng bài. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về câu tồn hiện biến động (xuất hiện/biến mất) theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-38 (存现句 dạng 3: xuất hiện/biến mất) trong catalogue dự án từ đề cương thi 11/2025.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Tồn hiện dạng 3: xuất hiện và biến mất",
+      "when_to_use": "Ví dụ: đang ngồi trong lớp thì có người mới bước vào — 班里新来了一位老师。 Câu này không tả trạng thái tĩnh 'ở đó có gì' mà báo một thay đổi vừa xảy ra: người/vật mới xuất hiện, hoặc người/vật vừa biến mất (桌子上的书少了一本。). Khác bài tồn hiện HSK2 (cunxian-chu): bài cũ nói tồn tại tĩnh bằng 有/在/着 + số lượng + danh từ, không có biến động; dạng này bắt buộc có động từ chỉ thay đổi kèm bổ ngữ (走进来, 新来, 少, 丢) và 了, người/vật thay đổi đứng cuối câu sau số lượng."
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,4 +1,4 @@
-# Đối chiếu danh mục chính thức HSK3–4 với 34 bài hiện có (P01-02, phần HSK3–4)
+# Đối chiếu danh mục chính thức HSK3–4 với các bài hiện có (P01-02, phần HSK3–4)
 
 Nguồn: 语法大纲 trong đề cương thi HSK 3.0 (2025-11 发布, 2026-07
 实施), phần HSK3 bắt đầu tr.389, HSK4 tr.392. Văn bản dùng để đối
@@ -25,10 +25,33 @@ nhóm con của một vài phó từ ghi chú "chưa chắc chắn".
 - Lô 10 chọn 4 mục HSK3 lớn nhất, đủ điều kiện rà soát đầy đủ:
   把字句 dạng 1, 被动句 dạng 1, 着 chỉ hành động kèm theo, 比较句
   dạng 2. Sau lô 10, HSK3 còn 46 mục nhóm thiếu/một phần.
+- Cập nhật lô HSK3-2 (build 20261030-hsk3b2, ghi bổ sung vào tài
+  liệu này khi đối chiếu lại): thêm 4 mục đã có — kết quả bổ ngữ
+  dạng 2 (chuyển từ một phần; bài result-complement-2 dạy
+  到/住/走/上), khả năng bổ ngữ dạng 1, câu phức giả thiết
+  （如果……，就……; ……的话）, câu phức điều kiện （只有……，才……;
+  只要……，就……). Sau lô HSK3-2, HSK3: 8 đã có, 2 một phần
+  （是……的句 dạng 2; 虽然……，可是……), 40 thiếu.
+- Cập nhật lô HSK3-3 (build 20261030-hsk3c3): thêm 4 mục đã có —
+  存现句 dạng 3 (bài cunxian-appearance; cấu trúc 存现句 nay đủ
+  dạng 1–2 ở bài HSK2 cunxian-chu và dạng 3), 是……的句 dạng 2
+  (bài shi-de-attitude; chuyển từ một phần, cấu trúc nay đủ dạng 1
+  ở HSK2 và dạng 2), xu hướng bổ ngữ dạng 2 — nghĩa dẫn申 (bài
+  direction-complement-2; đủ nghĩa hướng thật ở bài HSK2 và nghĩa
+  mở rộng kết quả/bắt đầu/tiếp tục), trùng động句 (bài
+  verb-repetition-sentence). Sau lô HSK3-3, HSK3: 12 đã có, 2 một
+  phần （虽然……，可是……; giới từ 把/被 — mới phủ nghĩa tác
+  nhân/bị tác động), 36 thiếu — tổng vẫn 50 mục nhóm, khớp từng mục
+  với docs/official-catalogue-hsk3-hsk4.json. (Các dòng mốc trước
+  đây gộp giới từ 把/被 vào nhóm câu 把/被 đã có nên số "một phần"
+  ở mốc cũ nhỏ hơn 1; trạng thái hiện tại lấy theo catalogue.)
 - Không cần sửa cấp độ cho 34 bài cũ: chưa phát hiện bài nào dạy sai
   cấp (các bài HSK1–2 không dạy nội dung HSK3–4; riêng zhe-continuation
   đã ghi rõ nghĩa kèm theo của 着 thuộc HSK3 và cố ý không dạy).
-- P01-02 vẫn in_progress vì HSK5–6 chưa đối chiếu.
+- P01-02 ở mức mục nhóm: ĐÃ đối chiếu đủ 6 cấp (251 mục nhóm, hoàn
+  tất 2026-10-30 với bản đồ HSK5–6). Phần xác minh sâu (điểm vi mô,
+  hash bản crawl, quyền phân phối) vẫn mở và không đồng nghĩa đã
+  biên soạn/phủ đủ 251 mục.
 
 ## 2. HSK3 — các mục đáng chú ý
 - Thiếu toàn bộ ở mức thành bài riêng: tiền tố 老—, hậu tố
@@ -41,13 +64,14 @@ nhóm con của một vài phó từ ghi chú "chưa chắc chắn".
   liên từ 或/或者/只有/只要/不但/而且/如果/可是/然后/的话,
   động bổ đoản ngữ dạng 2, đồng vị đoản ngữ, tứ tự cách, số lượng
   trùng điệp, cụm cố định và mẫu cố định HSK3, chủ ngữ bằng đoản
-  ngữ, xu hướng bổ ngữ nghĩa dẫn申, khả năng bổ ngữ dạng 1, mức độ
-  bổ ngữ dạng 1, số lượng bổ ngữ dạng 3, câu hỏi phản vấn, 存现句
-  dạng 3, trùng động句, và hầu hết câu phức HSK3 (承接, lựa chọn,
-  song song, 递进, giả thiết, điều kiện, mục đích, 紧缩) cùng 概数
-  dạng 2.
-- Một phần: kết quả bổ ngữ dạng 2, 是……的句 dạng 2,
-  虽然……，可是…… (xem mục 1).
+  ngữ, mức độ bổ ngữ dạng 1, số lượng bổ ngữ dạng 3, câu hỏi phản
+  vấn, và hầu hết câu phức HSK3 (承接, lựa chọn, song song, 递进,
+  mục đích, 紧缩) cùng 概数 dạng 2. (Xu hướng bổ ngữ nghĩa dẫn申,
+  khả năng bổ ngữ dạng 1, 存现句 dạng 3, trùng động句 và câu phức
+  giả thiết/điều kiện đã có bài riêng sau các lô HSK3-2/HSK3-3 —
+  xem mục 1.)
+- Một phần: chỉ còn 虽然……，可是…… (xem mục 1). Kết quả bổ ngữ
+  dạng 2 và 是……的句 dạng 2 đã đủ dạng sau các lô HSK3-2/HSK3-3.
 
 ## 3. HSK4 — các mục đáng chú ý
 - Thiếu toàn bộ ở mức thành bài riêng: 敢, 各/各位/各种/任何/此,

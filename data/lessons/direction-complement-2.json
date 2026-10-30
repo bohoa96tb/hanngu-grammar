@@ -1,0 +1,217 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Không có di chuyển nào cả: 起来 sau 唱 nghĩa là bắt đầu hát. Chỉ khi động từ chỉ di chuyển và có hướng thật mới đọc theo nghĩa hướng của bài HSK2.",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他唱起来了。 (bị hiểu là 'anh ấy hát rồi đi lên')"
+        },
+        {
+          "explanation": "下去 chỉ gắn với việc đang làm dở để nói tiếp tục. Việc chưa bắt đầu thì không dùng 下去; muốn rủ bắt đầu hát thì dùng 起来: 大家唱起来吧。",
+          "verdict": "thieu_ngu_canh",
+          "wrong_or_risky": "明天我们唱下去吧。 (bữa tiệc còn chưa bắt đầu)"
+        },
+        {
+          "explanation": "Đánh giá bề ngoài dùng mẫu cố định 看起来: 他看起来很累。看出来 là 'nhìn ra được điều gì đó' và cần người nhận ra: 我看出来他很累。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他看出来很累。 (muốn nói 'anh ấy trông rất mệt')"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Dàjiā yìqǐ chàng qǐ lái.",
+          "tokens": [
+            "大家",
+            "一起",
+            "唱",
+            "起来"
+          ],
+          "vi": "Mọi người cùng hát lên.",
+          "zh": "大家一起唱起来。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tiānqì rè qǐ lái le.",
+          "tokens": [
+            "天气",
+            "热",
+            "起来",
+            "了"
+          ],
+          "vi": "Trời bắt đầu nóng lên rồi.",
+          "zh": "天气热起来了。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Qǐng nǐ shuō xià qu.",
+          "tokens": [
+            "请",
+            "你",
+            "说",
+            "下去"
+          ],
+          "vi": "Mời bạn nói tiếp đi.",
+          "zh": "请你说下去。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ kàn chū lái le, tā hěn lèi.",
+          "tokens": [
+            "我",
+            "看",
+            "出来",
+            "了",
+            "，",
+            "他",
+            "很",
+            "累"
+          ],
+          "vi": "Tôi nhận ra rồi, anh ấy rất mệt.",
+          "zh": "我看出来了，他很累。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā kàn qǐ lái hěn niánqīng.",
+          "tokens": [
+            "他",
+            "看起来",
+            "很",
+            "年轻"
+          ],
+          "vi": "Anh ấy trông rất trẻ.",
+          "zh": "他看起来很年轻。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "大家唱起来了。"
+          ],
+          "explanation": "Bắt đầu một hành động mới dùng 起来. 下去 là tiếp tục việc đang làm; 上来 ở đây vẫn mang nghĩa hướng di chuyển thật. Còn 唱得起来 là bổ ngữ khả năng ('có hát lên được' — như 唱得动, thuộc bài khả năng bổ ngữ), không diễn đạt nghĩa 'bắt đầu hát' của câu này.",
+          "id": "dir2-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "大家唱起来了。",
+              "大家唱下去了。",
+              "大家唱上来了。",
+              "大家唱得起来。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Mọi người bắt đầu hát lên.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "请说下去，我听着呢。",
+            "请说下去，我听着呢"
+          ],
+          "explanation": "Việc đang diễn ra cứ tiếp tục: 说 + 下去.",
+          "id": "dir2-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Tiếp tục nói: dùng 下去。",
+            "prompt_zh": "请说___，我听着呢。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Cứ nói tiếp đi, tôi đang nghe đây.'",
+          "prompt_zh": null,
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            [
+              "我",
+              "想",
+              "出来",
+              "了"
+            ]
+          ],
+          "explanation": "想 + 出来 = nghĩ ra được; 了 chốt ở cuối câu.",
+          "id": "dir2-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "了",
+              "我",
+              "想",
+              "出来"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Tôi nghĩ ra rồi.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "得"
+          ],
+          "explanation": "看起来 là mẫu cố định, không chen 得: 他看起来很累。得 chỉ chen trong khả năng bổ ngữ kiểu 看得出来。",
+          "id": "dir2-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他",
+              "看",
+              "得",
+              "起来",
+              "很",
+              "累"
+            ],
+            "sentence_zh": "他看得起来很累。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 他看得起来很累。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "天气冷起来了。",
+            "天气冷起来了",
+            "天冷起来了。",
+            "天冷起来了"
+          ],
+          "explanation": "Trạng thái bắt đầu thay đổi: tính từ + 起来 + 了 nói sự bắt đầu của trạng thái mới.",
+          "id": "dir2-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Dùng tính từ 冷 + 起来 + 了。",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Trời lạnh lên rồi.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) 起来: Động từ/Tính từ + 起来 = bắt đầu và tiếp diễn một hành động hoặc trạng thái mới: 唱起来 (bắt đầu hát), 热起来 (trời bắt đầu nóng). 2) 下去: Động từ + 下去 = tiếp tục việc đang làm: 说下去 (nói tiếp), 坚持下去 (kiên trì tiếp). Chỉ dùng cho việc đã bắt đầu rồi. 3) 出来: Động từ + 出来 = điều gì lộ ra, được nhận ra hoặc nghĩ ra: 看出来 (nhìn ra được), 想出来 (nghĩ ra được). 4) Mẫu cố định: 看起来 + tính từ = trông có vẻ…: 他看起来很累。 Học nguyên mẫu này để nhận biết, đừng tách 看起来 ra dịch từng chữ. 5) Phân biệt: cùng một cụm 起来/下去/出来 — nếu có di chuyển thật thì là nghĩa hướng (bài HSK2); không có di chuyển thì đọc theo nghĩa mở rộng của bài này.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "direction-complement-2",
+      "objective": "Sau bài này, người học hiểu và dùng bổ ngữ xu hướng với nghĩa bóng: 起来 = bắt đầu (唱起来), 下去 = tiếp tục (说下去), 出来 = nhận ra/biểu lộ (看出来), khi không có di chuyển thật.",
+      "pattern": "Động từ/Tính từ + 起来 / 下去 / 出来",
+      "quick_memory": "Không di chuyển mà vẫn 起来/下去/出来? 起来 là bắt đầu, 下去 là tiếp tục, 出来 là lộ ra, nhận ra.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-3 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-29 và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập trong cùng bài. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về nghĩa mở rộng của bổ ngữ xu hướng theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-29 (趋向补语 nghĩa mở rộng: kết quả/bắt đầu/tiếp tục) trong catalogue dự án từ đề cương thi 11/2025.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Bổ ngữ xu hướng dạng 2: nghĩa mở rộng (起来/下去/出来)",
+      "when_to_use": "Ví dụ: 大家一起唱起来。 — không ai 'đi lên' cả; 起来 ở đây nghĩa là bắt đầu hát và không khí rộ lên. Đây là nghĩa mở rộng của bổ ngữ xu hướng: 起来 nói một hành động/trạng thái bắt đầu và tiếp diễn, 下去 nói việc đang làm cứ tiếp tục, 出来 nói điều gì đó lộ ra hoặc được nhận ra. Khác bài direction-complement (HSK2): bài cũ là di chuyển thật trong không gian (进来, 上去); bài này không có di chuyển, động từ đi kèm cũng không còn là động từ chuyển động nữa."
+    }
+  ],
+  "schema_version": 1
+}

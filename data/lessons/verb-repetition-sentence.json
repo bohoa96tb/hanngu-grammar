@@ -1,0 +1,226 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "看看书 là trùng điệp (看 + 看): 'xem sách một lát, thử xem' — không có bổ ngữ và không có tân ngữ chen giữa. Câu trùng động phải đủ: động từ + tân ngữ + động từ + bổ ngữ (他看书看得很快)。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他看看书。 (bị tưởng là câu trùng động nên phải có bổ ngữ)"
+        },
+        {
+          "explanation": "得 không gắn ngay sau tân ngữ 话 được. Phải lặp động từ rồi mới gắn bổ ngữ: 他说话说得很快。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他说话得很快。"
+        },
+        {
+          "explanation": "Nói gọn thế này nghe thiếu nhịp và dễ bị hiểu lệch; dạng đầy đủ của câu trùng động lặp lại động từ: 她看书看累了。",
+          "verdict": "kem_tu_nhien",
+          "wrong_or_risky": "她看书累了。 (muốn nói 'cô ấy đọc sách đến mệt')"
+        }
+      ],
+      "content_version": 1,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Tā shuōhuà shuō de hěn kuài.",
+          "tokens": [
+            "他",
+            "说话",
+            "说",
+            "得",
+            "很",
+            "快"
+          ],
+          "vi": "Anh ấy nói chuyện rất nhanh.",
+          "zh": "他说话说得很快。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā kànshū kàn lèi le.",
+          "tokens": [
+            "她",
+            "看书",
+            "看",
+            "累",
+            "了"
+          ],
+          "vi": "Cô ấy đọc sách đến mệt.",
+          "zh": "她看书看累了。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ xiězì xiě de shǒu dōu suān le.",
+          "tokens": [
+            "我",
+            "写字",
+            "写",
+            "得",
+            "手",
+            "都",
+            "酸",
+            "了"
+          ],
+          "vi": "Tôi viết chữ đến mỏi cả tay.",
+          "zh": "我写字写得手都酸了。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā xué Zhōngwén xué de hěn hǎo.",
+          "tokens": [
+            "他",
+            "学",
+            "中文",
+            "学",
+            "得",
+            "很",
+            "好"
+          ],
+          "vi": "Anh ấy học tiếng Trung rất tốt.",
+          "zh": "他学中文学得很好。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Háizimen chànggē chàng de hěn gāoxìng.",
+          "tokens": [
+            "孩子们",
+            "唱歌",
+            "唱",
+            "得",
+            "很",
+            "高兴"
+          ],
+          "vi": "Bọn trẻ hát rất vui.",
+          "zh": "孩子们唱歌唱得很高兴。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "她唱歌唱得很好。"
+          ],
+          "explanation": "Động từ 唱 đã có tân ngữ 歌; muốn gắn 得 phải lặp 唱: 唱歌唱得很好。Không gắn 得 ngay sau tân ngữ.",
+          "id": "vrep-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "她唱歌唱得很好。",
+              "她唱歌得很好。",
+              "她唱得歌很好。",
+              "她唱歌很好得。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Cô ấy hát rất hay.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "他",
+              "写字",
+              "写",
+              "得",
+              "很",
+              "好看"
+            ]
+          ],
+          "explanation": "Thứ tự: chủ ngữ → động từ + tân ngữ (写字) → động từ lặp (写) → 得 → bổ ngữ.",
+          "id": "vrep-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "很",
+              "好看",
+              "他",
+              "写字",
+              "写",
+              "得"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy viết chữ rất đẹp.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "我学中文学得很好。",
+            "我学中文学得很好"
+          ],
+          "explanation": "学 đã có tân ngữ 中文, lặp 学 rồi gắn 得 + 很好.",
+          "id": "vrep-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bổ ngữ là 很好。",
+            "prompt_zh": "我学中文学得___。"
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Tôi học tiếng Trung rất tốt.'",
+          "prompt_zh": null,
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "得"
+          ],
+          "explanation": "得 bị đặt ngay sau tân ngữ 话. Phải lặp động từ: 他说话说得很快。",
+          "id": "vrep-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他",
+              "说话",
+              "得",
+              "很",
+              "快"
+            ],
+            "sentence_zh": "他说话得很快。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 他说话得很快。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "他吃饭吃得很快。",
+            "他吃饭吃得很快"
+          ],
+          "explanation": "吃饭 đã chiếm chỗ sau 吃; lặp 吃 để gắn bổ ngữ: 他吃饭吃得很快。",
+          "id": "vrep-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Bắt đầu bằng 他吃饭, lặp 吃 rồi gắn 得很快。",
+            "prompt_zh": null
+          },
+          "prompt_vi": "Tự đặt câu cho tình huống mới: 'Anh ấy ăn cơm rất nhanh.' (viết bằng chữ Hán)",
+          "prompt_zh": null,
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Vị trí: động từ xuất hiện hai lần — lần đầu mang tân ngữ, lần hai mang bổ ngữ: 说话 + 说得很快. 2) Cần có sẵn: bổ ngữ gắn sau động từ lặp, thường là 得 + cụm tính từ (说得很快) hoặc bổ ngữ kết quả/trạng thái (看累了). 3) Không dùng: không gắn bổ ngữ ngay sau tân ngữ — không nói 他说话得很快. 4) Phân biệt: khác trùng điệp động từ (verb-reduplication) — trùng điệp lặp để nói thử/nhẹ (看看, 说一说) và không có tân ngữ chen giữa; trùng động lặp vì tân ngữ đã chiếm chỗ sau động từ lần đầu.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "verb-repetition-sentence",
+      "objective": "Sau bài này, người học đặt được câu trùng động: khi động từ đã có tân ngữ mà vẫn cần bổ ngữ (得 + trạng thái, bổ ngữ kết quả), thì lặp lại động từ rồi mới gắn bổ ngữ.",
+      "pattern": "Chủ ngữ + Động từ + Tân ngữ + Động từ + Bổ ngữ",
+      "quick_memory": "Động từ đã kẹt tân ngữ mà vẫn cần bổ ngữ? Lặp lại động từ một lần nữa, rồi gắn bổ ngữ sau nó.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-3 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-40 và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập trong cùng bài. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về câu trùng động theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi và cấp độ đối chiếu mục OFF-H3-40 (重动句: chủ ngữ + động từ + tân ngữ + động từ + bổ ngữ) trong catalogue dự án từ đề cương thi 11/2025.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Câu trùng động: lặp động từ để thêm bổ ngữ",
+      "when_to_use": "Ví dụ: muốn nhận xét 'anh ấy nói nhanh' — động từ 说 đã mang tân ngữ 话, không gắn 得 ngay sau 话 được, nên lặp 说: 他说话说得很快。 Mẫu này dùng khi một động từ vừa mang tân ngữ, vừa cần một bổ ngữ trạng thái/kết quả đi kèm. Điều kiện nền: đã học bổ ngữ trạng thái với 得 (bài state-complement-de) và động từ ly hợp (bài separable-verbs) — nhiều câu trùng động quen thuộc đi với động từ ly hợp như 说话, 看书, 写字, 吃饭."
+    }
+  ],
+  "schema_version": 1
+}
