@@ -6,9 +6,24 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-from validate import check, load_data  # noqa: E402
+from validate import check, load_data, validate_curriculum  # noqa: E402
 
 DATA = load_data()
+
+
+def make_valid_curriculum():
+    """CUR-02: dựng curriculum hợp lệ TỪ dữ liệu thật (nhóm các bài
+    published theo đúng hsk_level của chúng, giữ thứ tự trong dữ liệu),
+    để test không phụ thuộc trạng thái nhất thời của file thật."""
+    levels = {str(k): [] for k in range(1, 7)}
+    for les in DATA["lessons"]:
+        if les["status"] == "published":
+            levels[str(les["hsk_level"])].append(les["id"])
+    return {"schema_version": 1, "levels": levels, "requires": {}}
+
+
+def global_order(cur):
+    return [lid for k in ("1", "2", "3", "4", "5", "6") for lid in cur["levels"][k]]
 
 
 class TestValidator(unittest.TestCase):
@@ -119,6 +134,44 @@ class TestValidator(unittest.TestCase):
         for e in bad["lessons"][0]["examples"]:
             e["from_vietnamese_intent"] = False
         self.assertTrue(check(bad, Path("x")))
+
+
+class TestCurriculum(unittest.TestCase):
+    """CUR-02 (D28): validate_curriculum cho data/curriculum.json."""
+
+    def test_valid_curriculum_passes(self):
+        cur = make_valid_curriculum()
+        self.assertEqual(validate_curriculum(cur, DATA["lessons"]), [])
+
+    def test_curriculum_missing_published_lesson_fails(self):
+        cur = make_valid_curriculum()
+        les = next(l for l in DATA["lessons"] if l["status"] == "published")
+        cur["levels"][str(les["hsk_level"])].remove(les["id"])
+        errors = validate_curriculum(cur, DATA["lessons"])
+        self.assertTrue(any("curriculum" in e and les["id"] in e for e in errors), errors)
+
+    def test_curriculum_wrong_level_fails(self):
+        cur = make_valid_curriculum()
+        les = next(l for l in DATA["lessons"]
+                   if l["status"] == "published" and l["hsk_level"] != 1)
+        cur["levels"][str(les["hsk_level"])].remove(les["id"])
+        cur["levels"]["1"].append(les["id"])
+        errors = validate_curriculum(cur, DATA["lessons"])
+        self.assertTrue(any("curriculum" in e and les["id"] in e for e in errors), errors)
+
+    def test_curriculum_requires_after_dependent_fails(self):
+        cur = make_valid_curriculum()
+        order = global_order(cur)
+        first, last = order[0], order[-1]
+        cur["requires"] = {first: [last]}
+        errors = validate_curriculum(cur, DATA["lessons"])
+        self.assertTrue(any("curriculum" in e and "đứng trước" in e for e in errors), errors)
+
+    def test_curriculum_unknown_id_fails(self):
+        cur = make_valid_curriculum()
+        cur["levels"]["1"].append("id-khong-ton-tai-nay")
+        errors = validate_curriculum(cur, DATA["lessons"])
+        self.assertTrue(any("curriculum" in e and "id lạ" in e for e in errors), errors)
 
 
 if __name__ == "__main__":

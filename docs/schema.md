@@ -44,6 +44,40 @@ khi tách file.
 - `is_open_ended`: luôn `false` trong v1. Bài mở (viết/nói tự do) có rubric riêng,
   sẽ thêm ở schema v2, không chấm bằng so sánh chuỗi.
 
+## Curriculum (`data/curriculum.json`) — CUR-02/D28 (2026-10-31)
+
+Thứ tự học chính thức của giáo trình, tách khỏi manifest (thứ tự tải) và
+khỏi ID bài (ổn định). Định dạng:
+
+```json
+{
+  "schema_version": 1,
+  "note": "…",
+  "levels": { "1": ["<lessonId>", "…"], "2": [], "3": [], "4": [], "5": [], "6": [] },
+  "requires": { "<lessonId>": ["<prereqLessonId>", "…"] }
+}
+```
+
+- `levels[k]` là danh sách id bài của cấp k **theo thứ tự học**. Số hiển
+  thị “Bài NN” của một bài = vị trí (1-based, đệm 0 thành 2 chữ số) của
+  nó trong danh sách của cấp của nó; thứ tự toàn cục (cho điều hướng
+  Bài trước/Bài sau) = nối các danh sách 1→6. Chèn một bài mới có thể
+  làm đổi số hiển thị của các bài sau nó trong cùng cấp, nhưng không
+  đổi ID, tiến độ, thẻ ôn hay liên kết đã lưu.
+- `requires[id]` chỉ ghi bài tiên quyết khi có bằng chứng phụ thuộc
+  thật; mọi tiên quyết phải đứng trước bài phụ thuộc trong thứ tự
+  toàn cục.
+- Validator (`validate_curriculum` trong `scripts/validate.py`) yêu cầu
+  file **phải tồn tại** và kiểm tra: `levels` có đủ khóa `"1"`..`"6"`;
+  mọi bài `published` xuất hiện đúng một lần và ở đúng cấp theo
+  `hsk_level` của bài; không id lạ trong `levels`/`requires`;
+  `requires` không tự trỏ, đích phải tồn tại và đứng trước bài phụ
+  thuộc. Lỗi mở đầu bằng `curriculum:`.
+- Khác với validator, **giao diện có fallback**: nếu app không tải được
+  `curriculum.json`, app dùng thứ tự manifest (nhóm theo cấp) và ghi
+  trạng thái vào bảng debug — fallback này chỉ áp dụng cho giao diện,
+  không áp dụng cho validator.
+
 ## Quy tắc validator (`scripts/validate.py`)
 
 1. JSON hợp lệ, `schema_version == 1`.
@@ -58,3 +92,4 @@ khi tách file.
 7. Bài `published` phải có `review` đầy đủ và `sources` không rỗng.
 8. `confusions[].verdict` phải thuộc danh sách cho phép.
 9. `related_ids` (tùy chọn, REL-01 — 2026-10-31): khi có mặt phải là danh sách các chuỗi, không trùng, tối đa 4 phần tử, không chứa id của chính bài, mọi id phải tồn tại, đối xứng hai chiều, và bài `published` chỉ trỏ tới bài `published`.
+10. `data/curriculum.json` (CUR-02/D28 — 2026-10-31): file bắt buộc phải tồn tại; xem mục Curriculum ở trên.

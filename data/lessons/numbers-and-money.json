@@ -1,0 +1,215 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Trước lượng từ, số 2 phải đọc 两: 两个人、两本书 mới đúng. 二 chỉ dùng khi đọc dãy số, đếm số hoặc trong số ghép như 十二、二十。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "二个人、二本书。"
+        },
+        {
+          "explanation": "Số đếm 11–19 không thêm 一 trước 十; dạng chuẩn là 十五。一十五 chỉ xuất hiện trong cách đọc ngày âm lịch đặc biệt, không dùng khi đếm thông thường.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "一十五 (nói số 15)。"
+        },
+        {
+          "explanation": "Đơn vị tiền chỉ chọn một: 三块 (nói hằng ngày) hoặc 三元 (trang trọng), không ghép 元 và 块 với nhau.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "这本书三元块。"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "easy",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒ èrshísān suì.",
+          "tokens": [
+            "我",
+            "二十三",
+            "岁"
+          ],
+          "vi": "Tôi 23 tuổi.",
+          "zh": "我二十三岁。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhè běn shū shíwǔ kuài.",
+          "tokens": [
+            "这",
+            "本",
+            "书",
+            "十五",
+            "块"
+          ],
+          "vi": "Cuốn sách này 15 đồng.",
+          "zh": "这本书十五块。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Liǎng gè píngguǒ bā kuài.",
+          "tokens": [
+            "两",
+            "个",
+            "苹果",
+            "八",
+            "块"
+          ],
+          "vi": "Hai quả táo giá 8 đồng.",
+          "zh": "两个苹果八块。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ zhù èr líng wǔ hào fángjiān.",
+          "tokens": [
+            "我",
+            "住",
+            "二",
+            "零",
+            "五",
+            "号",
+            "房间"
+          ],
+          "vi": "Tôi ở phòng số 205.",
+          "zh": "我住二零五号房间。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "四十七"
+          ],
+          "explanation": "Số hai chữ số đọc: số chục + 十 + số lẻ → 四十 + 七 = 四十七. (七十四 là 74.)",
+          "id": "num-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "四十七",
+              "十四七",
+              "七十四",
+              "四十七十"
+            ]
+          },
+          "prompt_vi": "Chọn cách đọc đúng của số 47.",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "这件衣服多少钱？"
+          ],
+          "explanation": "Mẫu hỏi giá: món đồ (chủ ngữ) + 多少钱？ để ở cuối câu.",
+          "id": "num-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "这件衣服多少钱？",
+              "这件衣服多少人？",
+              "多少钱这件衣服？",
+              "这件衣服钱多少？"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để hỏi giá một cái áo.",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "这本书二十块。",
+            "这本书二十块",
+            "二十块。",
+            "二十块",
+            "二十",
+            "这本书二十块钱。",
+            "这本书二十块钱",
+            "二十块钱。",
+            "二十块钱"
+          ],
+          "explanation": "Giá tiền: số + 块 → 二十块.",
+          "id": "num-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Số 20 là 二十, đặt trước 块."
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Cuốn sách này 20 đồng.'",
+          "prompt_zh": "这本书___块。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            [
+              "这",
+              "件",
+              "衣服",
+              "多少",
+              "钱"
+            ]
+          ],
+          "explanation": "Thứ tự: 这件衣服 (món đồ) + 多少钱 (bao nhiêu tiền).",
+          "id": "num-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "钱",
+              "这",
+              "多少",
+              "件",
+              "衣服"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu hỏi giá: 'Cái áo này bao nhiêu tiền?'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "两个苹果十块。",
+            "两个苹果十块",
+            "两个苹果，十块。",
+            "两个苹果，十块",
+            "两个苹果十块钱。",
+            "两个苹果十块钱",
+            "两个苹果，十块钱。",
+            "两个苹果，十块钱"
+          ],
+          "explanation": "两个苹果 (hai quả táo, dùng 两 trước lượng từ 个) + 十块 (mười đồng).",
+          "id": "num-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Số 2 trước 个 dùng 两; giá 10 đồng là 十块."
+          },
+          "prompt_vi": "Tự viết câu cho tình huống mới: 'Hai quả táo, mười đồng.'",
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Cấu tạo: số 0–10 là 零一二三四五六七八九十. 2) Số chục: 11–19 là 十 + số lẻ (十五 = 15); 20, 30… là số lẻ + 十 (二十 = 20); 45 là 四十五. 3) Phân biệt: 二 dùng khi đọc dãy số và đếm số (二月, 二零五); 两 dùng TRƯỚC lượng từ (两个人, 两本书, 两块钱). 4) Tiền: hỏi giá bằng “…多少钱？”; trả lời bằng số + 块 (nói) hoặc 元 (viết/trang trọng); 角/毛 là phần lẻ nhỏ hơn 1 元 (五角 = 五毛), bài này chỉ cần nhận biết. 5) Mở rộng: 100 đọc là 一百; trong dãy số như số điện thoại, 一 thường đọc là yāo cho khỏi nhầm với 七 — chỉ cần biết, chưa cần dùng.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 1,
+      "id": "numbers-and-money",
+      "objective": "Sau bài này, người học đọc được số 0–100, biết khi nào dùng 二 và khi nào dùng 两, và hỏi – trả lời được giá tiền đơn giản.",
+      "pattern": "Số hai chữ số: X + 十 + X · Hỏi giá: …多少钱?",
+      "quick_memory": "Đọc dãy số thì 二, đứng trước lượng từ thì 两. Hỏi giá: 多少钱？ Trả lời: số + 块.",
+      "related_ids": [
+        "measure-words"
+      ],
+      "review": {
+        "date": "2026-10-31",
+        "notes": "Soạn mới lô HSK1-A (2026-10-31): khép OFF-H1-12 + OFF-H1-51. Tự rà cấu tạo số 0–100, phân biệt 二/两, mẫu hỏi giá và từng đáp án/biến thể trước khi bàn giao QA độc lập. Không khẳng định có giáo viên/người bản ngữ duyệt.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Số từ và cách nói số tiền thuộc HSK1 trong đề cương thi HSK 3.0; tương ứng mục OFF-H1-12 và OFF-H1-51 trong danh mục đối chiếu của dự án.",
+          "source_id": "hsk-official"
+        },
+        {
+          "note": "Tham khảo cách tổ chức chủ đề số từ và tiền ở mức A1 của Chinese Grammar Wiki; toàn bộ câu ví dụ tự soạn mới bằng tiếng Việt.",
+          "source_id": "cgw"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Số và tiền: đếm số, hỏi giá",
+      "when_to_use": "Khi đếm dãy số (tuổi, số phòng, số điện thoại) và khi mua bán: hỏi món đồ bao nhiêu tiền và nói giá. Giá tiền nói bằng số + 元 (trang trọng, trên hoá đơn) hoặc 块 (nói hằng ngày)."
+    }
+  ],
+  "schema_version": 1
+}

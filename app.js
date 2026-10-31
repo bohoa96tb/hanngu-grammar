@@ -274,6 +274,87 @@ function stopSpeak() {
 
 function lessonById(id) { return lessons.find((l) => l.id === id); }
 
+// --- CUR-02 (D28, 2026-10-31): thứ tự giáo trình chính thức ---
+// data/curriculum.json là dữ liệu riêng về THỨ TỰ HỌC: levels["1".."6"]
+// là danh sách id theo thứ tự học của từng cấp, requires[id] là các bài
+// tiên quyết. Số "Bài NN" của một bài = vị trí (1-based) trong danh sách
+// của cấp của nó; thứ tự toàn cục = nối các cấp 1→6. ID bài, manifest
+// (thứ tự tải) và tiến độ không phụ thuộc vào thứ tự này. Nếu không tải
+// được curriculum.json, giao diện FALLBACK về thứ tự manifest (nhóm theo
+// cấp của bài) để người học vẫn học bình thường — trạng thái được ghi
+// vào debugInfo.curriculumStatus, không hiện banner lỗi mới.
+let curriculumData = null;
+let curriculumStatus = "chưa tải";
+let _orderInfo = null;
+
+function pad2(n) { return String(n).padStart(2, "0"); }
+
+// Bỏ dấu thanh khỏi pinyin (và mọi chuỗi đã lowercase): āáǎà→a … ǖǘǚǜ→ü.
+// Dùng chung cho chỉ mục tìm kiếm và truy vấn của người học (G-02), để
+// gõ "gao" hay "gāo" đều khớp, gõ tiếng Việt không dấu cũng khớp.
+const TONE_MAP = {
+  ā: "a", á: "a", ǎ: "a", à: "a", ē: "e", é: "e", ě: "e", è: "e",
+  ī: "i", í: "i", ǐ: "i", ì: "i", ō: "o", ó: "o", ǒ: "o", ò: "o",
+  ū: "u", ú: "u", ǔ: "u", ù: "u", ǖ: "ü", ǘ: "ü", ǚ: "ü", ǜ: "ü",
+  Ā: "a", Á: "a", Ǎ: "a", À: "a", Ē: "e", É: "e", Ě: "e", È: "e",
+  Ī: "i", Í: "i", Ǐ: "i", Ì: "i", Ō: "o", Ó: "o", Ǒ: "o", Ò: "o",
+  Ū: "u", Ú: "u", Ǔ: "u", Ù: "u", Ǖ: "ü", Ǘ: "ü", Ǚ: "ü", Ǜ: "ü", Ü: "ü",
+};
+function stripTones(s) {
+  return String(s).replace(/[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜĀÁǍÀĒÉĚÈĪÍǏÌŌÓǑÒŪÚǓÙǕǗǙǛÜ]/g, (ch) => TONE_MAP[ch] || ch);
+}
+function normSearch(s) { return stripTones(String(s).toLowerCase()); }
+
+// Bản đồ id -> {level, num, total, gidx}: num là số Bài trong cấp, total
+// là số bài published của cấp, gidx là vị trí trong thứ tự toàn cục.
+function computeOrderInfo() {
+  const info = new Map();
+  let g = 0;
+  if (curriculumData && curriculumData.levels) {
+    for (const lv of [1, 2, 3, 4, 5, 6]) {
+      const ids = (curriculumData.levels[String(lv)] || []).filter((id) => lessonById(id));
+      ids.forEach((id, idx) => info.set(id, { level: lv, num: idx + 1, total: ids.length, gidx: g++ }));
+    }
+    // Bài published chưa có trong curriculum (dữ liệu lệch — validator sẽ
+    // báo lỗi): xếp nối tiếp cuối cấp của chính bài theo thứ tự manifest
+    // để giao diện vẫn chạy, không mất bài khỏi lộ trình.
+    const nextNum = {}; const totals = {};
+    for (const v of info.values()) { nextNum[v.level] = v.num; totals[v.level] = v.total; }
+    for (const l of lessons) {
+      if (info.has(l.id)) continue;
+      const lv = l.hsk_level;
+      const num = (nextNum[lv] || 0) + 1;
+      nextNum[lv] = num; totals[lv] = (totals[lv] || 0) + 1;
+      info.set(l.id, { level: lv, num, total: 0, gidx: g++ });
+    }
+    for (const v of info.values()) v.total = totals[v.level] || v.total;
+  } else {
+    // Fallback: nhóm theo cấp của bài, thứ tự manifest trong cấp.
+    for (const lv of [1, 2, 3, 4, 5, 6]) {
+      const ls = lessons.filter((l) => l.hsk_level === lv);
+      ls.forEach((l, idx) => info.set(l.id, { level: lv, num: idx + 1, total: ls.length, gidx: g++ }));
+    }
+  }
+  return info;
+}
+function orderInfo() {
+  if (!_orderInfo) _orderInfo = computeOrderInfo();
+  return _orderInfo;
+}
+function curriculumOrderedLessons() {
+  const info = orderInfo();
+  return [...lessons].sort((a, b) => info.get(a.id).gidx - info.get(b.id).gidx);
+}
+function lessonLabel(l) {
+  const oi = orderInfo().get(l.id);
+  return oi ? `HSK ${l.hsk_level} · Bài ${pad2(oi.num)}` : `HSK ${l.hsk_level}`;
+}
+function requiresOf(les) {
+  const req = (curriculumData && curriculumData.requires) || {};
+  const ids = Array.isArray(req[les.id]) ? req[les.id] : [];
+  return ids.map((rid) => lessonById(rid)).filter(Boolean);
+}
+
 function lessonProgressText(l) {
   const total = l.exercises.length;
   if (progress.completedLessons.includes(l.id)) return "✓ Đã hoàn thành";
@@ -295,13 +376,48 @@ function renderHome() {
   const app = document.getElementById("app");
   const params = new URLSearchParams(location.hash.split("?")[1] || "");
   const level = params.get("level") || "all";
-  const q = (params.get("q") || "").toLowerCase();
+  // G-02 (CUR-02): truy vấn và chỉ mục đều chuẩn hóa bằng normSearch
+  // (lowercase + bỏ dấu thanh) — tìm được bằng chữ Hán, pinyin có dấu
+  // hoặc bỏ dấu ("gao"/"gāo"), và tiếng Việt có dấu hoặc không dấu.
+  const q = normSearch(params.get("q") || "");
   const filtered = lessons.filter((l) => {
     if (level !== "all" && String(l.hsk_level) !== level) return false;
     if (!q) return true;
-    const hay = [l.title_vi, l.pattern, ...l.examples.map((e) => e.zh + " " + e.vi)].join(" ").toLowerCase();
+    const hay = normSearch([l.title_vi, l.pattern, l.objective, l.when_to_use, l.quick_memory || "",
+      ...l.examples.map((e) => `${e.zh} ${e.vi} ${e.pinyin || ""}`)].join(" "));
     return hay.includes(q);
   });
+  // CUR-02: danh mục nhóm theo cấp theo thứ tự curriculum. Đang lọc một
+  // cấp thì chỉ hiện cấp đó; đang tìm kiếm thì chỉ hiện cấp còn bài khớp
+  // (số Bài NN giữ nguyên số gốc trong cấp, không đánh số lại).
+  const info = orderInfo();
+  const totalByLevel = {};
+  lessons.forEach((l) => { totalByLevel[l.hsk_level] = (totalByLevel[l.hsk_level] || 0) + 1; });
+  const searching = q.length > 0;
+  const visibleLevels = [1, 2, 3, 4, 5, 6].filter((lv) => {
+    if (level !== "all") return String(lv) === level;
+    if (searching) return filtered.some((l) => l.hsk_level === lv);
+    return true;
+  });
+  const cardHTML = (l) => {
+    const reqs = requiresOf(l);
+    return `
+      <article class="card">
+        <p class="badges"><span class="badge badge-hsk">${esc(lessonLabel(l))}</span> <span class="badge badge-diff">Độ khó: ${difficultyLabel(l.difficulty)}</span></p>
+        <h3><a href="#/lesson/${l.id}">${esc(l.title_vi)}</a></h3>
+        <p><span class="zh">${esc(l.pattern)}</span></p>
+        <p>${esc(l.objective)}</p>
+        ${reqs.length ? `<p class="note">Tiên quyết: ${reqs.map((r) => esc(r.title_vi)).join(", ")}</p>` : ""}
+        <p class="note">${lessonProgressText(l)}</p>
+      </article>`;
+  };
+  const groupsHTML = visibleLevels.map((lv) => {
+    const inLevel = filtered.filter((l) => l.hsk_level === lv)
+      .sort((a, b) => info.get(a.id).gidx - info.get(b.id).gidx);
+    const body = inLevel.length ? inLevel.map(cardHTML).join("")
+      : `<div class="card"><p>Chưa có bài — đang biên soạn theo đề cương.</p></div>`;
+    return `<section class="level-group"><h3>HSK ${lv} <span class="note">(${totalByLevel[lv] || 0} bài)</span></h3>${body}</section>`;
+  }).join("");
   const cont = continueLesson();
   let dueCount = 0;
   try { dueCount = SRS.dueCards(progress, lessons, new Date()).filter((x) => x.isDue).length; } catch (e) { dueCount = 0; }
@@ -316,21 +432,14 @@ function renderHome() {
     </section>
     <p class="note">Bản thử nghiệm: ${lessons.length} bài mẫu. Tìm kiếm mở được bài trực tiếp; không cần học hết bài ôn mới được học bài mới.</p>
     <form class="card" id="searchForm" role="search">
-      <label for="q">Tìm kiếm (tiếng Việt, chữ Hán hoặc công thức)</label>
-      <input id="q" type="search" value="${esc(params.get("q") || "")}" placeholder="Ví dụ: 比, so sánh, 是">
+      <label for="q">Tìm kiếm (chữ Hán, Pinyin hoặc tiếng Việt)</label>
+      <input id="q" type="search" value="${esc(params.get("q") || "")}" placeholder="Ví dụ: 比, bi, gao, so sánh">
       <div class="filters btn-row" role="group" aria-label="Lọc theo cấp">
         ${["all", "1", "2", "3", "4", "5", "6"].map((lv) => `<button type="button" class="${level === lv ? "" : "secondary"}" data-level="${lv}" aria-pressed="${level === lv}">${lv === "all" ? "Tất cả" : "HSK " + lv}</button>`).join("")}
       </div>
       <p><button type="submit" id="searchBtn">Tìm</button></p>
     </form>
-    ${filtered.length ? filtered.map((l) => `
-      <article class="card">
-        <p class="badges"><span class="badge badge-hsk">HSK ${l.hsk_level}</span> <span class="badge badge-diff">Độ khó: ${difficultyLabel(l.difficulty)}</span></p>
-        <h3><a href="#/lesson/${l.id}">${esc(l.title_vi)}</a></h3>
-        <p><span class="zh">${esc(l.pattern)}</span></p>
-        <p>${esc(l.objective)}</p>
-        <p class="note">${lessonProgressText(l)}</p>
-      </article>`).join("") : `<div class="card"><p>Không tìm thấy bài phù hợp với bộ lọc hiện tại. Thử từ khác hoặc xóa bộ lọc.</p><p><button type="button" class="secondary" id="clearFiltersBtn">Xóa bộ lọc</button></p></div>`}
+    ${filtered.length ? groupsHTML : `<div class="card"><p>Không tìm thấy bài phù hợp với bộ lọc hiện tại. Thử từ khác hoặc xóa bộ lọc.</p><p><button type="button" class="secondary" id="clearFiltersBtn">Xóa bộ lọc</button></p></div>`}
     <div class="card">
       <h3>Tiến trình của bạn (chỉ trên thiết bị này)</h3>
       <p>Đã hoàn thành ${progress.completedLessons.length}/${lessons.length} bài mẫu.</p>
@@ -409,9 +518,14 @@ function renderLesson(id) {
   const les = lessonById(id);
   const app = document.getElementById("app");
   if (!les) { app.innerHTML = "<p>Không tìm thấy bài học.</p><p><a href='#/'>Về danh mục</a></p>"; return; }
-  const idxAll = lessons.findIndex((l) => l.id === id);
-  const prev = idxAll > 0 ? lessons[idxAll - 1] : null;
-  const next = idxAll >= 0 && idxAll < lessons.length - 1 ? lessons[idxAll + 1] : null;
+  // CUR-02: Bài trước/Bài sau theo THỨ TỰ CURRICULUM toàn cục (bài cuối
+  // của một cấp nối sang bài đầu cấp kế tiếp), không theo thứ tự manifest.
+  const ordered = curriculumOrderedLessons();
+  const idxAll = ordered.findIndex((l) => l.id === id);
+  const prev = idxAll > 0 ? ordered[idxAll - 1] : null;
+  const next = idxAll >= 0 && idxAll < ordered.length - 1 ? ordered[idxAll + 1] : null;
+  const oi = orderInfo().get(id);
+  const reqLessons = requiresOf(les);
   const quick = les.examples && les.examples.length ? les.examples[0] : null;
   // REL-01: bài liên quan — giữ thứ tự trong related_ids, bỏ qua id không
   // tồn tại trong danh sách đã lọc published (lessons) mà không lỗi; vắng/
@@ -424,9 +538,11 @@ function renderLesson(id) {
     <section class="card card-hero">
       <p class="badges"><span class="badge badge-hsk">HSK ${les.hsk_level}</span> <span class="badge badge-diff">Độ khó: ${difficultyLabel(les.difficulty)}</span></p>
       <h2>${esc(les.title_vi)}</h2>
+      ${oi ? `<p class="hero-number">HSK ${les.hsk_level} · Bài ${pad2(oi.num)}/${oi.total}</p>` : ""}
       <p class="hero-pattern zh">${esc(les.pattern)}</p>
       <p class="hero-objective"><strong>Mục tiêu:</strong> ${esc(les.objective)}</p>
     </section>
+    ${reqLessons.length ? `<section class="card"><h3>Cần học trước</h3>${reqLessons.map((r) => `<p><a href="#/lesson/${esc(r.id)}">${esc(lessonLabel(r))} — ${esc(r.title_vi)}</a></p>`).join("")}</section>` : ""}
     <section class="card"><h3>A. Dùng khi nào</h3><p>${esc(les.when_to_use)}</p>
       ${quick ? `<p class="note"><strong>Ví dụ nhanh:</strong></p>${exampleHTML(quick)}` : ""}
     </section>
@@ -471,9 +587,9 @@ function renderLesson(id) {
       ${hskEvidenceHTML(les)}
     </div>
     <nav class="lesson-nav" aria-label="Điều hướng bài học">
-      ${prev ? `<a class="nav-link" href="#/lesson/${prev.id}">← Bài trước: ${esc(prev.title_vi)}</a>` : `<span class="nav-link disabled" aria-disabled="true">← Bài trước</span>`}
+      ${prev ? `<a class="nav-link" href="#/lesson/${prev.id}">← Bài trước: ${esc(lessonLabel(prev))} — ${esc(prev.title_vi)}</a>` : `<span class="nav-link disabled" aria-disabled="true">← Bài trước</span>`}
       <a class="nav-link" href="#/">Danh mục</a>
-      ${next ? `<a class="nav-link" href="#/lesson/${next.id}">Bài sau: ${esc(next.title_vi)} →</a>` : `<span class="nav-link disabled" aria-disabled="true">Bài sau →</span>`}
+      ${next ? `<a class="nav-link" href="#/lesson/${next.id}">Bài sau: ${esc(lessonLabel(next))} — ${esc(next.title_vi)} →</a>` : `<span class="nav-link disabled" aria-disabled="true">Bài sau →</span>`}
     </nav>`;
   // Điều khiển hiển thị: chỉ ẩn/hiện trong DOM theo prefs, KHÔNG vẽ lại
   // trang (giữ vị trí cuộn, chữ đang gõ và câu xếp từ đang làm dở).
@@ -875,7 +991,7 @@ function render() {
 // bản cũ từ bộ nhớ đệm sau khi app.js mới đã chạy. Lưu ý: tham số này chỉ
 // có tác dụng khi app.js mới đã được tải; nó không chữa được app.js cũ
 // còn trong bộ nhớ đệm (xem docs/decisions.md D20).
-const BUILD_VERSION = "20261031-rel1";
+const BUILD_VERSION = "20261031-cur1";
 const DEBUG = new URLSearchParams(location.search).get("debug") === "1";
 let debugInfo = null;
 
@@ -889,7 +1005,7 @@ function renderDebug() {
     `<li>${esc(s.url)} — trạng thái: ${esc(String(s.status))}, số bài: ${s.count ?? "—"}${s.error ? `, lỗi: ${esc(s.error)}` : ""}</li>`).join("");
   sec.innerHTML = `<h2>Chẩn đoán tải dữ liệu (chỉ hiện khi ?debug=1)</h2>
     <p>Phiên bản build: ${esc(debugInfo.build)} · Script: ${esc(debugInfo.scriptUrl)} · Service worker: ${esc(debugInfo.swState)} · Cache Storage: ${esc(debugInfo.cacheNames)} · Giọng zh-CN: ${esc(debugInfo.zhVoices)}</p>
-    <p>Tổng số bài đã tải: ${debugInfo.totalLoaded} · Sau khi lọc published: ${debugInfo.publishedCount} · Số bài đã hoàn thành (chỉ số lượng): ${debugInfo.completedCount}</p>
+    <p>Tổng số bài đã tải: ${debugInfo.totalLoaded} · Sau khi lọc published: ${debugInfo.publishedCount} · Số bài đã hoàn thành (chỉ số lượng): ${debugInfo.completedCount} · Lộ trình: ${esc(debugInfo.curriculumStatus || "không rõ")}</p>
     <ul>${rows}</ul>
     <p>Không hiển thị bí mật hay dữ liệu cá nhân trong bảng này.</p>`;
   app.prepend(sec);
@@ -962,6 +1078,31 @@ async function loadLessons() {
   let failedShards = 0;
   const manifestUrl = `data/lessons-manifest.json?v=${BUILD_VERSION}`;
   try {
+    // CUR-02: tải thêm lộ trình chính thức. Lỗi/thiếu file KHÔNG chặn
+    // việc học: curriculumData giữ null và giao diện fallback về thứ tự
+    // manifest (xem computeOrderInfo); trạng thái ghi vào biến debug.
+    const curriculumUrl = `data/curriculum.json?v=${BUILD_VERSION}`;
+    try {
+      const cRes = await fetchData(curriculumUrl);
+      const c = cRes.data;
+      if (!c || typeof c !== "object" || !c.levels || typeof c.levels !== "object") {
+        throw new Error("định dạng curriculum.json không hợp lệ");
+      }
+      curriculumData = {
+        levels: c.levels,
+        requires: (c.requires && typeof c.requires === "object") ? c.requires : {},
+      };
+      curriculumStatus = "đã tải data/curriculum.json";
+      sources.push({
+        url: curriculumUrl, status: cRes.status,
+        count: Object.values(c.levels).reduce((n, a) => n + (Array.isArray(a) ? a.length : 0), 0),
+        error: null,
+      });
+    } catch (e) {
+      curriculumData = null;
+      curriculumStatus = "không tải được curriculum.json — dùng thứ tự manifest";
+      sources.push({ url: curriculumUrl, status: "lỗi", count: null, error: String(e && e.message ? e.message : e) });
+    }
     const mRes = await fetchData(manifestUrl);
     const m = mRes.data;
     const shardPaths = m.shards || [];
@@ -1004,9 +1145,11 @@ async function loadLessons() {
       totalLoaded: all.length,
       publishedCount: all.filter((l) => l.status === "published").length,
       completedCount: progress.completedLessons.length,
+      curriculumStatus,
       sources,
     };
     lessons = all.filter((l) => l.status === "published");
+    _orderInfo = null;
     // Lỗi từng phần không còn bị nuốt im lặng: render() sẽ chèn banner
     // role="alert" kèm nút thử tải lại ở đầu trang.
     loadErrorInfo = failedShards > 0 ? { missing: failedShards } : null;
@@ -1014,6 +1157,7 @@ async function loadLessons() {
     debugInfo = {
       build: BUILD_VERSION, scriptUrl: "app.js", swState: "không rõ", cacheNames: "không rõ", zhVoices: "không rõ",
       totalLoaded: 0, publishedCount: 0, completedCount: progress.completedLessons.length,
+      curriculumStatus,
       sources: [{ url: manifestUrl, status: "lỗi", count: null, error: String(e && e.message ? e.message : e) }],
     };
     throw e;

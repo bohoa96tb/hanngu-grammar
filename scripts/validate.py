@@ -185,6 +185,76 @@ def check(data, path) -> list[str]:
     return errors
 
 
+CURRICULUM_PATH = ROOT / "data" / "curriculum.json"
+LEVEL_KEYS = ("1", "2", "3", "4", "5", "6")
+
+
+def validate_curriculum(cur, lessons) -> list[str]:
+    """CUR-02 (D28, 2026-10-31): kiểm tra data/curriculum.json — thứ tự
+    học chính thức. Mọi bài published phải xuất hiện đúng một lần, ở
+    đúng cấp của nó; không id lạ; requires phải tồn tại, không tự trỏ,
+    và mọi tiên quyết phải đứng TRƯỚC bài phụ thuộc trong thứ tự toàn
+    cục (nối các cấp 1→6)."""
+    errors: list[str] = []
+    if not isinstance(cur, dict):
+        return ["curriculum: nội dung phải là một object"]
+    levels = cur.get("levels")
+    if not isinstance(levels, dict):
+        return ["curriculum: thiếu trường levels (phải là object)"]
+    by_id = {}
+    for les in lessons:
+        if isinstance(les.get("id"), str) and les["id"] not in by_id:
+            by_id[les["id"]] = les
+    for key in LEVEL_KEYS:
+        if key not in levels:
+            errors.append(f"curriculum: levels thiếu khóa '{key}'")
+        elif not isinstance(levels[key], list):
+            errors.append(f"curriculum: levels['{key}'] phải là danh sách id bài")
+    # Vị trí toàn cục: nối levels 1→6 theo thứ tự.
+    pos: dict = {}
+    gidx = 0
+    for key in LEVEL_KEYS:
+        ids = levels.get(key)
+        if not isinstance(ids, list):
+            continue
+        for lid in ids:
+            if lid in pos:
+                errors.append(f"curriculum: bài {lid} xuất hiện hơn một lần trong levels")
+            pos[lid] = gidx
+            gidx += 1
+            les = by_id.get(lid)
+            if les is None:
+                errors.append(f"curriculum: id lạ trong levels: {lid}")
+            elif str(les.get("hsk_level")) != key:
+                errors.append(f"curriculum: bài {lid} nằm trong levels['{key}'] "
+                              f"nhưng hsk_level của bài là {les.get('hsk_level')}")
+    for les in lessons:
+        if les.get("status") == "published" and les.get("id") not in pos:
+            errors.append(f"curriculum: bài published {les.get('id')} chưa có trong levels")
+    req = cur.get("requires", {})
+    if not isinstance(req, dict):
+        errors.append("curriculum: requires phải là object ánh xạ id -> danh sách id tiên quyết")
+        req = {}
+    for lid, pres in req.items():
+        if lid not in by_id:
+            errors.append(f"curriculum: requires chứa id lạ: {lid}")
+            continue
+        if not isinstance(pres, list):
+            errors.append(f"curriculum: requires của bài {lid} phải là danh sách id")
+            continue
+        for pre in pres:
+            if pre == lid:
+                errors.append(f"curriculum: bài {lid} không được tự làm tiên quyết của chính mình")
+            elif pre not in by_id:
+                errors.append(f"curriculum: tiên quyết của bài {lid} không tồn tại: {pre}")
+            elif pre not in pos:
+                errors.append(f"curriculum: tiên quyết {pre} của bài {lid} chưa có trong levels")
+            elif lid in pos and pos[pre] >= pos[lid]:
+                errors.append(f"curriculum: tiên quyết {pre} của bài {lid} phải đứng trước "
+                              f"bài {lid} trong thứ tự toàn cục")
+    return errors
+
+
 def main(argv) -> int:
     path = Path(argv[1]) if len(argv) > 1 else DEFAULT
     try:
@@ -193,6 +263,17 @@ def main(argv) -> int:
         print(f"LỖI: không đọc được {path}: {exc}")
         return 1
     errors = check(data, path)
+    # CUR-02 (D28): data/curriculum.json là file BẮT BUỘC từ nay — thiếu
+    # file là lỗi (khác với giao diện, nơi thiếu file chỉ fallback).
+    if not CURRICULUM_PATH.exists():
+        errors.append("curriculum: thiếu file data/curriculum.json "
+                      "(bắt buộc từ CUR-02/D28 — giao diện fallback không áp dụng cho validator)")
+    else:
+        try:
+            cur = json.loads(CURRICULUM_PATH.read_text(encoding="utf-8"))
+            errors.extend(validate_curriculum(cur, data["lessons"]))
+        except Exception as exc:  # noqa: BLE001
+            errors.append(f"curriculum: không đọc được data/curriculum.json: {exc}")
     if errors:
         print(f"KHÔNG ĐẠT ({len(errors)} lỗi) — {path}")
         for err in errors:

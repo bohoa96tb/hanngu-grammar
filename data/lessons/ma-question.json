@@ -13,7 +13,7 @@
           "wrong_or_risky": "你忙不忙吗？ (muốn hỏi 'Bạn có bận không?')"
         }
       ],
-      "content_version": 3,
+      "content_version": 4,
       "difficulty": "easy",
       "examples": [
         {
@@ -136,6 +136,9 @@
       "objective": "Sau bài này, người học đặt được câu hỏi có/không bằng 吗 và trả lời mà không lặp lại 吗.",
       "pattern": "Câu trần thuật + 吗?",
       "quick_memory": "Hỏi có/không: lấy câu trần thuật, thêm 吗 ở cuối. Đã có từ để hỏi thì không thêm 吗.",
+      "related_ids": [
+        "questions-affirmative-negative"
+      ],
       "review": {
         "date": "2026-10-29",
         "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",

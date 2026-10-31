@@ -18,7 +18,7 @@
           "wrong_or_risky": "三个书。"
         }
       ],
-      "content_version": 3,
+      "content_version": 4,
       "difficulty": "medium",
       "examples": [
         {
@@ -155,6 +155,9 @@
       "objective": "Sau bài này, người học đếm được người, sách, quần áo bằng lượng từ đúng và dùng 两 thay 二 trước lượng từ.",
       "pattern": "Số + Lượng từ + Danh từ",
       "quick_memory": "Giữa số và danh từ luôn có lượng từ: sách → 本, áo → 件, dùng chung → 个. Số 2 đọc 两, không đọc 二.",
+      "related_ids": [
+        "numbers-and-money"
+      ],
       "review": {
         "date": "2026-10-29",
         "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thay mục Nhớ nhanh theo rà soát std2 (audit §1.3)",

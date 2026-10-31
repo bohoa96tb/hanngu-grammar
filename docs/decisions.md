@@ -320,3 +320,39 @@ docs/research/feature-gap-matrix.md (kiểm chứng trực tiếp cùng ngày).
    (e5933c2c) sau khi Manager kiểm chứng CI 2/2 trực tiếp trên
    trang PR (run 41053571119) — lần kẹt merge ở phiên 30/10 là
    khóa ghi phía công cụ, không phải lỗi nội dung/CI.
+
+## D28 — Giáo trình có thứ tự chính thức (curriculum order) + kiểm kê hợp nhất (2026-10-31)
+
+Căn cứ: chỉ đạo của Hoa ngày 31/10/2026 (xây dựng giáo trình ngữ pháp
+HSK1–HSK6 hoàn chỉnh, đánh số bài theo cấp, chủ động bổ sung bài thiếu).
+
+1. Thứ tự học là DỮ LIỆU RIÊNG: `data/curriculum.json` gồm, theo từng
+   cấp 1–6, danh sách id bài theo thứ tự học và trường `requires`
+   (bài tiên quyết, chỉ ghi khi có bằng chứng phụ thuộc thật). Số hiển
+   thị "Bài NN" của một cấp = vị trí trong danh sách của cấp đó. ID
+   bài, manifest (thứ tự tải) và tiến độ/FSRS không đổi; chèn bài mới
+   chỉ đổi số hiển thị của các bài sau nó trong cùng cấp.
+2. Validator bắt buộc: mọi bài published xuất hiện đúng một lần trong
+   danh sách của đúng cấp của nó; không id lạ; requires phải tồn tại
+   và đứng TRƯỚC bài phụ thuộc trong thứ tự toàn cục (cấp thấp hơn,
+   hoặc cùng cấp ở vị trí sớm hơn); số thứ tự suy ra liên tục 1..n.
+3. UI: danh mục nhóm theo 6 cấp (cấp chưa có bài ghi rõ "đang biên
+   soạn", không bịa số), mỗi thẻ hiện "HSK n · Bài NN"; trang bài hiện
+   số bài và điều hướng Bài trước/Bài sau THEO curriculum (không theo
+   manifest); bài có requires hiện mục "Cần học trước" có link. Tìm
+   kiếm mở rộng sang pinyin (có dấu và bỏ dấu) của ví dụ + objective +
+   when_to_use (khép G-02 của feature-gap-matrix).
+4. Kiểm kê hợp nhất ở docs/curriculum-inventory.md, dịch trạng thái
+   catalogue sang thang của chủ dự án: covered → COMPLETE (ở mức mục
+   nhóm), partial → PARTIAL, missing → MISSING; NEEDS_VERIFICATION áp
+   cho toàn bộ phần xác minh sâu P01-02 còn mở (điểm vi mô, rủi ro
+   lệch hàng ngoài các khối đã kiểm trực quan) — không đánh dấu cấp
+   nào "hoàn thành" chỉ từ số bài.
+5. Thứ tự trong cấp theo nguyên tắc: nền tảng/trật tự câu cơ bản →
+   câu hỏi/phủ định → thời/thể → cấu trúc đặc biệt → phân biệt/so
+   sánh đặt sau khi từng cấu trúc đã học. Thứ tự cụ thể và lý do ghi
+   trong docs/curriculum-inventory.md; thay đổi thứ tự sau này sửa
+   curriculum.json, không sửa id/manifest.
+6. Lộ trình hoàn thiện theo cấp: HSK1 trước (27 mục nhóm partial/
+   missing trong 52), rồi HSK2 (42/62), HSK3 (18/50), HSK4–6. Mỗi lô
+   nội dung tối đa ~4 bài như quy ước cũ, qua đủ cổng QA/CI/live.

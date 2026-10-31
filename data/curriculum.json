@@ -1,0 +1,141 @@
+{
+ "schema_version": 1,
+ "note": "Thứ tự học chính thức theo cấp; số Bài NN = vị trí trong danh sách của cấp. requires: id bài tiên quyết phải đứng trước (validator kiểm tra).",
+ "levels": {
+  "1": [
+   "shi-noun-link",
+   "pronouns",
+   "de-possessive",
+   "he-connecting",
+   "hen-adj-predicate",
+   "ma-question",
+   "question-words",
+   "questions-affirmative-negative",
+   "zenme-question",
+   "measure-words",
+   "numbers-and-money",
+   "time-expressions",
+   "location-nouns",
+   "you-existence",
+   "zai-progress",
+   "bu-mei-negation",
+   "bu-yao-prohibition",
+   "modal-hui-neng-keyi",
+   "modal-xiang-yao",
+   "adverbs-du-ye",
+   "le-completion-change",
+   "le-sentence-final-change",
+   "prefix-suffix",
+   "separable-verbs"
+  ],
+  "2": [
+   "guo-experience",
+   "zhe-continuation",
+   "state-complement-de",
+   "result-complement",
+   "direction-complement",
+   "quantity-complement-objects",
+   "bi-comparison",
+   "approx-numbers-1",
+   "hai-shi-choice",
+   "why-question",
+   "shi-de-emphasis",
+   "gei-double-object",
+   "jianyu-qing-jiao-rang",
+   "cunxian-chu",
+   "verb-reduplication",
+   "yi-jiu-tight",
+   "complex-suiran-yinwei"
+  ],
+  "3": [
+   "pronouns-others",
+   "modal-verbs-hsk3",
+   "negation-bubi-buyong",
+   "adverbs-time-hsk3",
+   "adverbs-frequency-hsk3",
+   "adverbs-scope-hsk3",
+   "adverbs-degree-hsk3",
+   "adverbs-mood-hsk3",
+   "result-complement-2",
+   "potential-complement-1",
+   "degree-complement-1",
+   "direction-complement-2",
+   "verb-repetition-sentence",
+   "time-since-completion",
+   "zhe-accompanying",
+   "cunxian-appearance",
+   "ba-sentence-1",
+   "bei-passive-1",
+   "shi-de-attitude",
+   "bi-comparison-2",
+   "approx-numbers-2",
+   "zenme-yang-question",
+   "rhetorical-question",
+   "complex-sequence",
+   "complex-parallel",
+   "alternating-actions",
+   "complex-progressive",
+   "complex-hypothesis",
+   "complex-condition",
+   "complex-purpose",
+   "complex-compact",
+   "yue-patterns",
+   "time-frame-patterns",
+   "fixed-pattern-shenme"
+  ],
+  "4": [
+   "complex-choice"
+  ],
+  "5": [],
+  "6": []
+ },
+ "requires": {
+  "le-sentence-final-change": [
+   "le-completion-change"
+  ],
+  "bi-comparison-2": [
+   "bi-comparison"
+  ],
+  "result-complement-2": [
+   "result-complement"
+  ],
+  "potential-complement-1": [
+   "result-complement",
+   "state-complement-de"
+  ],
+  "direction-complement-2": [
+   "direction-complement"
+  ],
+  "cunxian-appearance": [
+   "cunxian-chu"
+  ],
+  "shi-de-attitude": [
+   "shi-de-emphasis"
+  ],
+  "approx-numbers-2": [
+   "approx-numbers-1"
+  ],
+  "zenme-yang-question": [
+   "zenme-question"
+  ],
+  "complex-choice": [
+   "hai-shi-choice"
+  ],
+  "degree-complement-1": [
+   "state-complement-de"
+  ],
+  "zhe-accompanying": [
+   "zhe-continuation"
+  ],
+  "verb-repetition-sentence": [
+   "state-complement-de",
+   "separable-verbs"
+  ],
+  "time-since-completion": [
+   "quantity-complement-objects"
+  ],
+  "time-expressions": [
+   "numbers-and-money"
+  ]
+ }
+}
