@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-from validate import check, load_data, validate_curriculum  # noqa: E402
+from validate import check, load_data, validate_applied, validate_curriculum  # noqa: E402
 
 DATA = load_data()
 
@@ -172,6 +172,56 @@ class TestCurriculum(unittest.TestCase):
         cur["levels"]["1"].append("id-khong-ton-tai-nay")
         errors = validate_curriculum(cur, DATA["lessons"])
         self.assertTrue(any("curriculum" in e and "id lạ" in e for e in errors), errors)
+
+
+class TestApplied(unittest.TestCase):
+    """APP-01: học liệu đọc/nghe vận dụng trong data/applied/."""
+
+    def _doc(self):
+        p = (Path(__file__).resolve().parent.parent
+             / "data" / "applied" / "shi-noun-link.json")
+        return json.loads(p.read_text(encoding="utf-8"))
+
+    def _ids(self):
+        return {les["id"] for les in DATA["lessons"]
+                if les["status"] == "published"}
+
+    def test_real_pilot_file_passes(self):
+        errors = validate_applied(self._doc(), self._ids(), "shi-noun-link")
+        self.assertEqual(errors, [], errors)
+
+    def test_external_without_link_only_fails(self):
+        doc = self._doc()
+        doc["reading"]["material"]["rights"]["status"] = "reuse_allowed"
+        errors = validate_applied(doc, self._ids(), "shi-noun-link")
+        self.assertTrue(any("link_only" in e for e in errors), errors)
+
+    def test_unverified_playback_fails(self):
+        doc = self._doc()
+        doc["reading"]["material"]["audio"]["verified_playback"] = False
+        errors = validate_applied(doc, self._ids(), "shi-noun-link")
+        self.assertTrue(any("verified_playback" in e for e in errors), errors)
+
+    def test_shared_with_separate_listening_material_fails(self):
+        doc = self._doc()
+        doc["listening"]["material"] = copy.deepcopy(
+            doc["reading"]["material"])
+        errors = validate_applied(doc, self._ids(), "shi-noun-link")
+        self.assertTrue(any("dùng chung" in e for e in errors), errors)
+
+    def test_all_answers_same_position_fails(self):
+        doc = self._doc()
+        for act in ("reading", "listening"):
+            for q in doc[act]["questions"]:
+                q["answer"] = 0
+        errors = validate_applied(doc, self._ids(), "shi-noun-link")
+        self.assertTrue(any("một vị trí" in e for e in errors), errors)
+
+    def test_unknown_lesson_fails(self):
+        doc = self._doc()
+        doc["lesson_id"] = "bai-khong-ton-tai"
+        errors = validate_applied(doc, self._ids(), "bai-khong-ton-tai")
+        self.assertTrue(any("không tồn tại" in e for e in errors), errors)
 
 
 if __name__ == "__main__":
