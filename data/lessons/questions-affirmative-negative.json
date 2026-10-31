@@ -1,0 +1,212 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Câu hỏi chính phản đã tự chứa ý hỏi nên không thêm 吗 ở cuối (xem bài 吗). Chỉ chọn một kiểu: 你去不去？ hoặc 你去吗？",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "你去不去吗？"
+        },
+        {
+          "explanation": "Câu đã có từ để hỏi (什么) thì hỏi thẳng theo bài từ để hỏi: 你买什么？ Không gắn thêm đuôi chính phản.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "你买什么不买？"
+        },
+        {
+          "explanation": "Câu hỏi chính phản trả lời bằng chính vị ngữ: 忙。 hoặc 不忙。Chỉ câu hỏi mà vị ngữ là 是 mới trả lời 是/不是。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "Trả lời '你忙不忙？' bằng '是。'"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Nǐ qù bù qù xuéxiào?",
+          "tokens": [
+            "你",
+            "去",
+            "不",
+            "去",
+            "学校"
+          ],
+          "vi": "Bạn có đến trường không?",
+          "zh": "你去不去学校？"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā máng bù máng?",
+          "tokens": [
+            "他",
+            "忙",
+            "不",
+            "忙"
+          ],
+          "vi": "Anh ấy có bận không?",
+          "zh": "他忙不忙？"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Nǐ hē chá bù hē?",
+          "tokens": [
+            "你",
+            "喝",
+            "茶",
+            "不",
+            "喝"
+          ],
+          "vi": "Bạn có uống trà không?",
+          "zh": "你喝茶不喝？"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Nǐ yǒu méiyǒu qián?",
+          "tokens": [
+            "你",
+            "有",
+            "没有",
+            "钱"
+          ],
+          "vi": "Bạn có tiền không?",
+          "zh": "你有没有钱？"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "你是不是老师？"
+          ],
+          "explanation": "Động từ 是 lặp quanh 不: 是 + 不 + 是; cuối câu không thêm 吗。",
+          "id": "qan-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "你是不是老师？",
+              "你是老师不？",
+              "你是不是老师吗？",
+              "不你是不是老师？"
+            ]
+          },
+          "prompt_vi": "Chọn câu hỏi đúng: 'Bạn có phải là giáo viên không?'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "忙。"
+          ],
+          "explanation": "Trả lời câu hỏi chính phản bằng chính tính từ của câu hỏi: 忙。 (phủ định thì 不忙。).",
+          "id": "qan-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "忙。",
+              "是。",
+              "吗。",
+              "不吗。"
+            ]
+          },
+          "prompt_vi": "Chọn cách trả lời đúng cho câu hỏi '他忙不忙？'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "你去不去？",
+            "你去不去",
+            "去不去？",
+            "去不去"
+          ],
+          "explanation": "Mẫu chính phản của 去: 去 + 不 + 去。",
+          "id": "qan-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Động từ 去 lặp quanh 不."
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Bạn có đi không?'",
+          "prompt_zh": "你___？",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            [
+              "你",
+              "喝",
+              "不",
+              "喝",
+              "茶"
+            ],
+            [
+              "你",
+              "喝",
+              "茶",
+              "不",
+              "喝"
+            ]
+          ],
+          "explanation": "Cả hai thứ tự đều đúng: 你喝不喝茶 (động từ lặp quanh 不, tân ngữ ở cuối) và 你喝茶不喝 (tân ngữ chen giữa, mẫu đã gặp ở ví dụ của bài).",
+          "id": "qan-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "茶",
+              "喝",
+              "你",
+              "不",
+              "喝"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu hỏi: 'Bạn có uống trà không?'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "你有没有钱？",
+            "你有没有钱",
+            "有没有钱？",
+            "有没有钱"
+          ],
+          "explanation": "Với 有, dạng chính phản là 有没有, không dùng *有不有。",
+          "id": "qan-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Riêng 有 dùng dạng 有没有."
+          },
+          "prompt_vi": "Tự đặt câu hỏi cho tình huống mới: hỏi bạn 'Bạn có tiền không?' bằng mẫu chính phản.",
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Cấu tạo: lặp vị ngữ quanh 不 — 去不去, 是不是, 忙不忙, 好不好. 2) Tân ngữ: thường để tân ngữ ở cuối (你喝不喝茶？); cũng gặp mẫu động từ + tân ngữ + 不 + động từ (你喝茶不喝？) — bài này chỉ cần nhận biết mẫu thứ hai. 3) Trả lời: lặp chính vị ngữ — khẳng định nói nguyên động từ/tính từ (去。/忙。), phủ định thêm 不 (不去。/不忙。); chỉ khi vị ngữ là 是 mới trả lời 是/不是. 4) Không dùng: cuối câu KHÔNG thêm 吗; riêng 有 không dùng *有不有 mà dùng 有没有.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 1,
+      "id": "questions-affirmative-negative",
+      "objective": "Sau bài này, người học đặt được câu hỏi có/không bằng cách lặp động từ hoặc tính từ quanh 不 (đi không đi, bận không bận) và trả lời đúng cách.",
+      "pattern": "Động từ/Tính từ + 不 + Động từ/Tính từ (+ Tân ngữ)",
+      "quick_memory": "Hỏi chính phản: lặp vị ngữ quanh 不 — 去不去、忙不忙. Đã hỏi kiểu này thì bỏ 吗 ở cuối.",
+      "related_ids": [
+        "ma-question",
+        "question-words"
+      ],
+      "review": {
+        "date": "2026-10-31",
+        "notes": "Soạn mới lô HSK1-A (2026-10-31): khép OFF-H1-38. Tự rà cấu tạo V不V, hai vị trí tân ngữ, cách trả lời và từng đáp án/biến thể trước khi bàn giao QA độc lập. Không khẳng định có giáo viên/người bản ngữ duyệt.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Câu hỏi chính phản thuộc HSK1 trong đề cương thi HSK 3.0; tương ứng mục OFF-H1-38 trong danh mục đối chiếu của dự án.",
+          "source_id": "hsk-official"
+        },
+        {
+          "note": "Tham khảo bài câu hỏi chính-phản (affirmative-negative question) ở mức A1 của Chinese Grammar Wiki; toàn bộ câu ví dụ tự soạn mới bằng tiếng Việt.",
+          "source_id": "cgw"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Câu hỏi chính phản: V + 不 + V",
+      "when_to_use": "Khi muốn hỏi xác nhận một hành động hay tính chất mà không dùng 吗: hai kiểu hỏi có nghĩa như nhau, mỗi câu chỉ chọn một kiểu. Thường gặp trong giao tiếp thân mật, hỏi trực tiếp."
+    }
+  ],
+  "schema_version": 1
+}

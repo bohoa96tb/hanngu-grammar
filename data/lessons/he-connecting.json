@@ -1,0 +1,211 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "和 không nối hai cụm động từ. Sửa: 我想喝茶，也想吃面包。 hoặc tách hai câu.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我想喝茶和吃面包。"
+        },
+        {
+          "explanation": "Sau 和 phải là danh từ hoặc đại từ, không phải động từ. Muốn nói 'Tôi và anh ấy đi học': 我和他去学校。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我和去学校。 (dịch từng chữ 'Tôi và đi học')"
+        },
+        {
+          "explanation": "和 không nối hai mệnh đề. Nói hai câu riêng: 下雨了，我在家。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "下雨和我在家。 (nối hai câu bằng 和)"
+        }
+      ],
+      "content_version": 1,
+      "difficulty": "easy",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒ hé tā shì tóngxué.",
+          "tokens": [
+            "我",
+            "和",
+            "他",
+            "是",
+            "同学"
+          ],
+          "vi": "Tôi và anh ấy là bạn cùng lớp.",
+          "zh": "我和他是同学。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ xǐhuan chá hé kāfēi.",
+          "tokens": [
+            "我",
+            "喜欢",
+            "茶",
+            "和",
+            "咖啡"
+          ],
+          "vi": "Tôi thích trà và cà phê.",
+          "zh": "我喜欢茶和咖啡。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Zhuōzi shang yǒu yì běn shū hé yí gè běnzi.",
+          "tokens": [
+            "桌子",
+            "上",
+            "有",
+            "一",
+            "本",
+            "书",
+            "和",
+            "一",
+            "个",
+            "本子"
+          ],
+          "vi": "Trên bàn có một cuốn sách và một quyển vở.",
+          "zh": "桌子上有一本书和一个本子。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Māma hé bàba dōu zài jiā.",
+          "tokens": [
+            "妈妈",
+            "和",
+            "爸爸",
+            "都",
+            "在",
+            "家"
+          ],
+          "vi": "Bố và mẹ đều ở nhà.",
+          "zh": "妈妈和爸爸都在家。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "我和你都是学生。"
+          ],
+          "explanation": "和 đứng giữa hai đại từ: 我 + 和 + 你, cả cụm làm chủ ngữ.",
+          "id": "he-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我和你都是学生。",
+              "我你是和学生。",
+              "和我你是学生。",
+              "我是和你学生。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng: 'Tôi và bạn đều là học sinh.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "我喜欢茶和咖啡。"
+          ],
+          "explanation": "Chỉ câu đầu dùng 和 đúng: nối hai danh từ 茶 và 咖啡. Các câu còn lại dùng 和 nối hành động hoặc nối câu.",
+          "id": "he-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我喜欢茶和咖啡。",
+              "我想喝茶和吃面包。",
+              "下雨和我在家。",
+              "我和去学校。"
+            ]
+          },
+          "prompt_vi": "Chọn câu ĐÚNG ngữ pháp.",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "妈妈和爸爸都是老师。",
+            "妈妈和爸爸都是老师",
+            "妈妈和爸爸"
+          ],
+          "explanation": "Cụm chủ ngữ: 妈妈 + 和 + 爸爸。",
+          "id": "he-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Nối 妈妈 và 爸爸 bằng 和."
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Mẹ và bố đều là giáo viên.'",
+          "prompt_zh": "___都是老师。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            [
+              "妈妈",
+              "和",
+              "爸爸",
+              "在",
+              "家"
+            ]
+          ],
+          "explanation": "Thứ tự: 妈妈 + 和 + 爸爸 (chủ ngữ) + 在 + 家。",
+          "id": "he-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "家",
+              "和",
+              "在",
+              "妈妈",
+              "爸爸"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Mẹ và bố ở nhà.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "和"
+          ],
+          "explanation": "Lỗi ở 和: không nối hai hành động. Sửa thành: 我想喝茶，也想吃面包。",
+          "id": "he-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "想",
+              "喝茶",
+              "和",
+              "吃面包"
+            ],
+            "sentence_zh": "我想喝茶和吃面包。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 我想喝茶和吃面包。",
+          "type": "error_spot"
+        }
+      ],
+      "formula_notes": "1) Vị trí: 和 đứng giữa hai danh từ hoặc cụm danh từ (我和他, 茶和咖啡). 2) Vai trò: cả cụm A + 和 + B làm chủ ngữ (我和他都是学生) hoặc tân ngữ (我喜欢茶和咖啡). 3) Không dùng: 和 không nối hai động từ, hai cụm động từ hay hai câu như 'and' — không nói *我想喝茶和吃面包; hãy tách thành hai câu hoặc dùng 也 nối ý. 4) Phân biệt: 跟 cũng có nghĩa gần 'và/cùng' trong một số mẫu của HSK2 — ở bài này chỉ dùng 和 cho danh từ.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 1,
+      "id": "he-connecting",
+      "objective": "Sau bài này, người học nối được hai danh từ hoặc cụm danh từ bằng 和 để làm chủ ngữ hoặc tân ngữ, và tránh dùng 和 để nối hai hành động.",
+      "pattern": "Danh từ 1 + 和 + Danh từ 2",
+      "quick_memory": "和 chỉ nối danh từ với danh từ. Thấy hai hành động thì tách câu ra, đừng nối bằng 和.",
+      "review": {
+        "date": "2026-10-31",
+        "notes": "Soạn mới lô HSK1-A (2026-10-31): khép OFF-H1-24. Tự rà phạm vi của 和 (chỉ nối danh từ/cụm), các câu sai mẫu và từng đáp án/biến thể trước khi bàn giao QA độc lập. Không khẳng định có giáo viên/người bản ngữ duyệt.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Liên từ nối từ/cụm 和 thuộc HSK1 trong đề cương thi HSK 3.0; tương ứng mục OFF-H1-24 trong danh mục đối chiếu của dự án.",
+          "source_id": "hsk-official"
+        },
+        {
+          "note": "Tham khảo bài nối danh từ bằng 和 ở mức A1 của Chinese Grammar Wiki; toàn bộ câu ví dụ tự soạn mới bằng tiếng Việt.",
+          "source_id": "cgw"
+        }
+      ],
+      "status": "published",
+      "title_vi": "和: nối 'và' cho danh từ",
+      "when_to_use": "Khi liệt kê hai người hoặc hai vật đi cùng nhau trong cùng một cụm: 'tôi và bạn', 'trà và cà phê'. 和 chỉ nối từ/cụm ngang hàng, không nối hai câu."
+    }
+  ],
+  "schema_version": 1
+}
