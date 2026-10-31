@@ -4,7 +4,7 @@
  ],
  "blocked_items": [],
  "changed_files": [],
- "code_base_commit": "e5933c2cd55a93ec523fd6dd26cd0ccc70605004",
+ "code_base_commit": "82cf11e48e7ebee2c0d4a84e050f66eaa1acc2dc",
  "completed_task_ids": [
   "P00-01",
   "P01-01",
@@ -50,16 +50,17 @@
   "Ôn tập FSRS thật, luyện nói, chấm phát âm, đồng bộ, đăng nhập chưa làm (backlog).",
   "Luyện nói P04-02 chưa kiểm tra mic/thu âm trên trình duyệt thật."
  ],
- "latest_verified_commit": "e5933c2cd55a93ec523fd6dd26cd0ccc70605004",
+ "latest_verified_commit": "82cf11e48e7ebee2c0d4a84e050f66eaa1acc2dc",
  "next_actions": [
-  "Lô pilot REL-01 'Bài liên quan' (từ benchmark 31/10): thêm related_ids đối xứng vào schema/validator/render, điền cho các họ bài có bằng chứng, QA độc lập từng cặp, PR riêng, CI 2/2, merge, nghiệm thu live, cập nhật checkpoint.",
-  "Sau pilot: tiếp tục HSK3 còn 18 mục chưa phủ đủ (mục 2b) — để lại OFF-H3-11 lượng từ (cần vòng chọn lọc tần suất) và OFF-H3-17 tình thái (cần thiết kế bài phân biệt sắc thái); rồi HSK4 theo mapping.",
-  "Vẫn mở: AUD-TTS-01 audio thiết bị thật not_run; P01-02 xác minh sâu toàn bộ bảng còn lại (ris lệch hàng ngoài các khối đã kiểm trực quan); ISSUE-LOAD-STALL-01 theo dõi (monitoring); branch protection do Hoa bật chọn 2 check CI; GitHub Issues đang trống — ISSUE-LOAD-STALL-01 hiện chỉ theo dõi trong task-board."
+  "Lô UI P1 tiếp theo theo feature-gap-matrix: G-02 tìm kiếm theo pinyin (mở rộng chỉ mục tìm kiếm sang pinyin của ví dụ + objective/when_to_use) và G-06 nhóm danh mục theo cấp HSK — một lô riêng, harness mở rộng.",
+  "Tiếp tục nội dung HSK3: còn 18 mục chưa phủ đủ (mục 2b) — OFF-H3-11 lượng từ (cần vòng chọn lọc tần suất) và OFF-H3-17 tình thái (cần thiết kế bài phân biệt sắc thái) để lại theo quyết định trước; rồi HSK4 theo mapping.",
+  "Backlog Hoàn thiện từ QA REL-01: cặp modal-verbs-hsk3↔state-complement-de là cặp yếu nhất (qua chữ 得 đa âm) — rà lại ở lô nội dung sau; thêm ca âm tính vào harness cho bài không có related_ids; thêm 2 unit test thường trực (trùng phần tử, published→draft).",
+  "Vẫn mở: AUD-TTS-01 audio thiết bị thật not_run; P01-02 xác minh sâu; ISSUE-LOAD-STALL-01 monitoring (hiện tượng hsk3g7 chưa rõ nguyên nhân; hai lần nghiệm thu live 31/10 đều tải vài giây, không kẹt — chỉ là quan sát); branch protection do Hoa bật; GitHub Issues đang trống."
  ],
  "pending_review_ids": [],
  "phase": "P06",
  "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
- "resume_notes": "HSK3-9 XONG và đã nghiệm thu live (72/72, build 20261030-hsk3i9, merge e5933c2c). Đang làm pilot REL-01 'Bài liên quan' theo benchmark 31/10 (docs/research/). TTS thiết bị thật vẫn not_run; các bài là đã rà soát nội bộ.",
+ "resume_notes": "REL-01 XONG và nghiệm thu live đạt (build 20261031-rel1). Lô tiếp theo đề xuất: G-02+G-06 (UI/tìm kiếm) hoặc tiếp tục phủ HSK3 theo checkpoint. TTS thiết bị thật vẫn not_run.",
  "schema_version": 1,
  "spec_version": "1.0",
  "updated_at": "2026-10-31",
@@ -163,8 +164,12 @@
   {
    "command": "GitHub PR #19 checks (trang PR) + merge_pull_request + browser live ?debug=1 sau merge e5933c2c",
    "result": "CI 2/2 success trên head d80ab07d (run 41053571119); merge e5933c2c; live build 20261030-hsk3i9 72/72 sau 75s chờ triển khai + 1 lần tải lại; bài mới làm đúng, tiến độ lần làm giữ sau tải lại; harness local bản 72 bài PASS 19/19 (31/10)."
+  },
+  {
+   "command": "PR #20 checks (trang PR) + merge + browser live ?debug=1 sau merge 82cf11e4; harness local node tests/browser-check.mjs",
+   "result": "CI 2/2 success trên head aa5ba2eb (run 41171492974: Validator 11s, harness 22s); merge 82cf11e4; live build 20261031-rel1 72/72; Bài liên quan hai chiều cặp 了 + ba→bei đúng; adverbs-du-ye không hiện mục trống; harness local 20/20 PASS."
   }
  ],
- "working_tree_state": "main đã đồng bộ ở e5933c2c (merge PR #19). Workspace local đang có: bộ tài liệu nghiên cứu benchmark (docs/research/grammar-platform-benchmark.md, docs/research/feature-gap-matrix.md) + cập nhật docs/source-register.json (thêm Yoyo/Mandarin Bean) và lô pilot REL-01 'Bài liên quan' đang triển khai — sẽ đi PR riêng, không đẩy thẳng main.",
- "last_completed_batch": "Lô HSK3-9 (XONG 2026-10-31): PR #19 merge e5933c2c, build 20261030-hsk3i9, 72 bài/353 bài tập (HSK1 20, HSK2 17, HSK3 34, HSK4 1). CI 2/2 xanh trên head d80ab07d (workflow run 41053571119: Validator 9s, harness 22s — kiểm chứng trực tiếp trên trang PR ngày 31/10 sau khi lần merge ở phiên trước bị kẹt khóa ghi phía công cụ). QA HSK3-9 đạt sau phúc tra 5/5 (xem release-log). Nghiệm thu live ĐẠT 31/10: lần đầu còn bản perf1/68 do Pages chưa triển khai xong; chờ 75s + tải lại → build hsk3i9, 72/72, mọi shard 200, 4 bài mới đủ, adverbs-mood-hsk3 đủ A–F và làm đúng bài 1, lần làm giữ sau tải lại, adverbs-time-hsk3 hiện đúng dòng đối chiếu 'một phần' về 才 (OFF-H3-14). Tải live lần này vài giây, không kẹt, không banner lỗi — chỉ là quan sát thêm cho ISSUE-LOAD-STALL-01 (vẫn monitoring, hiện tượng hsk3g7 chưa rõ nguyên nhân)."
+ "working_tree_state": "main đã đồng bộ ở 82cf11e4 (merge PR #20). Workspace local khớp main cho các file của REL-01; không còn thay đổi dở.",
+ "last_completed_batch": "Pilot REL-01 'Bài liên quan' (XONG 2026-10-31): PR #20 merge 82cf11e4, build 20261031-rel1. related_ids đối xứng cho 37 bài/29 cặp (mỗi cặp có bằng chứng trong dữ liệu; 8 cặp ứng viên bị loại có lý do — docs/reviews/rel01-pairs.md); validator thêm quy tắc related_ids + 5 unit test (14/14); harness 20/20 gồm kiểm tra related-lessons mới. QA độc lập PASS (tự mở 22/29 cặp, đối chiếu 3 file với main, đột biến validator; 0 lỗi chặn, 3 Hoàn thiện vào backlog). CI 2/2 xanh trên head aa5ba2eb (run 41171492974). Nghiệm thu live ĐẠT: sau 75s chờ triển khai + tải lại → build rel1, 72/72; Bài liên quan hiện đúng hai chiều ở cặp 了, ba-sentence-1 trỏ bei-passive-1, bài không có liên kết (adverbs-du-ye) không hiện mục trống; làm bài ba-sentence-1 đúng và lần làm giữ sau tải lại. Kèm theo trong PR #20: bộ nghiên cứu benchmark 3 nền tảng docs/research/ + source-register (thêm Yoyo/Mandarin Bean) + quyết định D27. Nội dung học không đổi: vẫn 72 bài/353 bài tập."
 }

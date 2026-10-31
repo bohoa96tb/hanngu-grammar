@@ -132,6 +132,31 @@ Chưa có bản phát hành nào.
   thành verified sau khi kiểm tra trực tiếp bản gốc （几/多少 thuộc
   nhóm đại từ để hỏi HSK1).
 
+- 2026-10-31 — Pilot REL-01 "Bài liên quan" (PR #20, merge
+  82cf11e4, build 20261031-rel1): từ nghiên cứu benchmark ba
+  nền tảng cùng ngày (docs/research/grammar-platform-
+  benchmark.md + feature-gap-matrix.md; quyết định D27). Thêm
+  trường tùy chọn related_ids vào bài học và mục "Bài liên
+  quan" trong trang bài (học theo nguyên lý liên kết Similar
+  to/See also của Chinese Grammar Wiki, không sao chép nội
+  dung): 37 bài có liên kết, 29 cặp đối xứng, mỗi cặp có
+  bằng chứng quan hệ trong dữ liệu thật (báo cáo
+  docs/reviews/rel01-pairs.md; 8 cặp ứng viên bị loại có lý
+  do). Validator thêm quy tắc related_ids (danh sách chuỗi,
+  không trùng, tối đa 4, không tự trỏ, đích tồn tại và
+  published, đối xứng) + 5 unit test (14/14); harness thêm
+  kiểm tra related-lessons, đạt 20/20. QA độc lập PASS
+  (docs/reviews/qa-rel01.md): tự mở 22/29 cặp, đối chiếu 3
+  file với main (chỉ thêm related_ids + content_version +1),
+  tự tạo đột biến thử validator; 0 lỗi chặn, 3 ghi chú Hoàn
+  thiện vào backlog. CI 2/2 xanh trên head aa5ba2eb (run
+  41171492974). Nghiệm thu live ĐẠT: bản mới về sau 75 giây
+  chờ triển khai + 1 lần tải lại; liên kết hai chiều ở cặp
+  了 hiển thị đúng, ba-sentence-1 trỏ bei-passive-1, bài
+  không có liên kết không hiện mục trống, làm bài đúng và
+  tiến độ giữ sau tải lại. Không đổi nội dung học, ID bài
+  hay bài tập: vẫn 72 bài / 353 bài tập.
+
 - 2026-10-31 — Hoàn tất phát hành lô HSK3-9 (bổ sung cho mục
   ngay dưới): PR #19 đã merge — merge commit e5933c2c. Lần
   merge ở phiên 30/10 bị kẹt do khóa ghi phía công cụ GitHub

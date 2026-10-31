@@ -299,9 +299,9 @@
   {
    "id": "REL-01",
    "title": "Pilot 'Bài liên quan': related_ids đối xứng + render trong trang bài (từ benchmark CGW 31/10)",
-   "status": "in_progress",
+   "status": "done",
    "depends_on": [],
-   "evidence": "docs/research/grammar-platform-benchmark.md mục 1.3/1.4; docs/research/feature-gap-matrix.md G-01. Hiện trạng trước pilot: renderLesson chỉ có Bài trước/Bài sau theo manifest; schema không có trường quan hệ.",
+   "evidence": "docs/research/grammar-platform-benchmark.md mục 1.3/1.4; docs/research/feature-gap-matrix.md G-01. Hiện trạng trước pilot: renderLesson chỉ có Bài trước/Bài sau theo manifest; schema không có trường quan hệ. || HOÀN TẤT 2026-10-31: PR #20 merge 82cf11e4, build 20261031-rel1; 37 bài/29 cặp; QA độc lập PASS (docs/reviews/qa-rel01.md); CI 2/2 run 41171492974; harness 20/20; nghiệm thu live đạt (liên kết hai chiều cặp 了, ba→bei, bài không liên kết không hiện mục trống, tiến độ giữ sau tải lại).",
    "files": [
     "app.js",
     "index.html",
