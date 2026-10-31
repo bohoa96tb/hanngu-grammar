@@ -18,7 +18,7 @@
           "wrong_or_risky": "这本书怎么？"
         }
       ],
-      "content_version": 3,
+      "content_version": 4,
       "difficulty": "medium",
       "examples": [
         {
@@ -160,6 +160,9 @@
       "objective": "Sau bài này, người học hỏi cách thức bằng 怎么 + động từ và hỏi ý kiến hoặc tình hình bằng 怎么样 ở cuối câu.",
       "pattern": "怎么 + Động từ? • ……怎么样?",
       "quick_memory": "Hỏi cách làm → 怎么 + động từ. Hỏi “thế nào” → để 怎么样 ở cuối câu.",
+      "related_ids": [
+        "zenme-yang-question"
+      ],
       "review": {
         "date": "2026-10-29",
         "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 09 từ danh mục HSK1–2 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",

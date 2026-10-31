@@ -18,7 +18,7 @@
           "wrong_or_risky": "这件事是我的知道。 (muốn nói 'chuyện này tôi có biết')"
         }
       ],
-      "content_version": 3,
+      "content_version": 4,
       "difficulty": "medium",
       "examples": [
         {
@@ -198,6 +198,9 @@
       "objective": "Sau bài này, người học dùng 是……的 để khẳng định thái độ và sự chắc chắn của mình về một việc (sẽ đến, có biết, nhất định giúp), phân biệt với dạng 1 nhấn chi tiết của việc đã xảy ra.",
       "pattern": "Chủ ngữ + 是 + Cụm động từ + 的",
       "quick_memory": "Đã mở 是 thì phải có 的 chốt cuối cho trọn khung; bỏ cả khung （他一定会来） vẫn đúng, chỉ bớt chắc nịch.",
+      "related_ids": [
+        "shi-de-emphasis"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-3 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-39 và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập trong cùng bài. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
