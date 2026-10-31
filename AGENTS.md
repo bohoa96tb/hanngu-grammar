@@ -29,3 +29,6 @@ Quy tắc ngắn gọn:
   READING_LISTENING_CHECKPOINT. Nếu Hoa chỉ nói "tiếp tục" → dùng
   nhiệm vụ đang hoạt động trong `docs/checkpoint.json`; không tự
   chuyển luồng từ biên soạn ngữ pháp sang đọc/nghe.
+
+## Bài học kỹ thuật (2026-10-31, pilot đọc/nghe)
+- Sau MỖI lần đẩy file lên GitHub phải đọc lại và đối chiếu byte với bản local trước khi mở PR. Đã xảy ra: create_or_update_file với app.js (~94K ký tự) báo thành công nhưng nội dung trên nhánh không đổi (PR #24 phải sửa bằng PR #25). push_files với payload JSON ensure_ascii=False là đường đã kiểm chứng cho file lớn; giữ mỗi payload dưới ~110KB.
