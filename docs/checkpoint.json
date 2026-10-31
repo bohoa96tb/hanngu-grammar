@@ -4,7 +4,7 @@
  ],
  "blocked_items": [],
  "changed_files": [],
- "code_base_commit": "e92d22a11ad58d8e91ba968a4522c0318df594d6",
+ "code_base_commit": "e5933c2cd55a93ec523fd6dd26cd0ccc70605004",
  "completed_task_ids": [
   "P00-01",
   "P01-01",
@@ -21,8 +21,8 @@
   "baseline_items": 50,
   "draft_lessons": 0,
   "reviewed_lessons": 0,
-  "published_lessons": 43,
-  "exercises": 208
+  "published_lessons": 72,
+  "exercises": 353
  },
  "github": {
   "connect_url": "https://agent.meta.ai/connectors/connect/github",
@@ -50,18 +50,19 @@
   "Ôn tập FSRS thật, luyện nói, chấm phát âm, đồng bộ, đăng nhập chưa làm (backlog).",
   "Luyện nói P04-02 chưa kiểm tra mic/thu âm trên trình duyệt thật."
  ],
- "latest_verified_commit": "e92d22a11ad58d8e91ba968a4522c0318df594d6",
+ "latest_verified_commit": "e5933c2cd55a93ec523fd6dd26cd0ccc70605004",
  "next_actions": [
-  "Lô HSK3-9 (nội dung đã soạn xong ở local, 72 bài — chờ QA độc lập rồi phát hành): 4 bài fixed-pattern-shenme (khép OFF-H3-26), adverbs-frequency-hsk3 (H3-15), adverbs-scope-hsk3 (H3-13 — sửa catalogue: giỏ có 6 từ gồm 就）, adverbs-mood-hsk3 (H3-18 — giỏ có 就⁴). Việc kèm theo khi QA/sửa: quyết định Manager về OFF-H3-14 — hàng phó từ thời gian trang in 389 có 7 thành viên gồm 才¹ (nghĩa thời gian) mà catalogue chỉ ghi 6; bổ sung 才¹ vào title và xét lại trạng thái covered → partial (nghĩa này chưa bài nào dạy), cập nhật số đếm HSK3 tương ứng (dự kiến 32/4/14, chưa phủ đủ 18 mục). Sau HSK3-9, HSK3 còn 2 mục lớn để lại: OFF-H3-11 lượng từ (cần vòng chọn lọc tần suất) và OFF-H3-17 tình thái (cần thiết kế bài phân biệt sắc thái).",
-  "Vẫn mở: branch protection do Hoa bật (chọn 2 check CI); AUD-TTS-01 audio thiết bị thật not_run; P01-02 xác minh sâu toàn bộ bảng còn lại; ISSUE-LOAD-STALL-01 theo dõi hiện tượng live."
+  "Lô pilot REL-01 'Bài liên quan' (từ benchmark 31/10): thêm related_ids đối xứng vào schema/validator/render, điền cho các họ bài có bằng chứng, QA độc lập từng cặp, PR riêng, CI 2/2, merge, nghiệm thu live, cập nhật checkpoint.",
+  "Sau pilot: tiếp tục HSK3 còn 18 mục chưa phủ đủ (mục 2b) — để lại OFF-H3-11 lượng từ (cần vòng chọn lọc tần suất) và OFF-H3-17 tình thái (cần thiết kế bài phân biệt sắc thái); rồi HSK4 theo mapping.",
+  "Vẫn mở: AUD-TTS-01 audio thiết bị thật not_run; P01-02 xác minh sâu toàn bộ bảng còn lại (ris lệch hàng ngoài các khối đã kiểm trực quan); ISSUE-LOAD-STALL-01 theo dõi (monitoring); branch protection do Hoa bật chọn 2 check CI; GitHub Issues đang trống — ISSUE-LOAD-STALL-01 hiện chỉ theo dõi trong task-board."
  ],
  "pending_review_ids": [],
  "phase": "P06",
  "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
- "resume_notes": "Lô HSK3-2 XONG: PR #10 merge 8c88c2b8, build 20261030-hsk3b2, nghiệm thu live đạt (43/43, 4 bài mới mở và làm bài đúng, dòng đối chiếu HSK3 hiển thị). Tổng 43 bài/208 bài tập: HSK1 20, HSK2 15, HSK3 8. QA 2 vòng (vòng 1 đạt có điều kiện — Q-1 diễn đạt tuyệt đối về lược 就 — đã sửa cùng H-1..H-7; vòng 2 ĐẠT). Lưu ý nghiệm thu: lần kiểm live đầu chạy ~1 phút sau merge nên còn bản cũ do Pages chưa triển khai xong + cache; kiểm lại sau khi có bản mới thì đạt — khi nghiệm thu phải chờ Pages và tải lại. TTS thiết bị thật vẫn not_run; các bài mới là đã rà soát nội bộ.",
+ "resume_notes": "HSK3-9 XONG và đã nghiệm thu live (72/72, build 20261030-hsk3i9, merge e5933c2c). Đang làm pilot REL-01 'Bài liên quan' theo benchmark 31/10 (docs/research/). TTS thiết bị thật vẫn not_run; các bài là đã rà soát nội bộ.",
  "schema_version": 1,
  "spec_version": "1.0",
- "updated_at": "2026-10-30",
+ "updated_at": "2026-10-31",
  "verification_results": [
   {
    "command": "python3 scripts/validate.py",
@@ -158,8 +159,12 @@
   {
    "command": "python3 scripts/validate.py; unittest; FSRS; harness local; browser live sau merge 8c88c2b8",
    "result": "ĐẠT: 43 bài/208 bài tập; unittest 9/9; FSRS 7/7; harness 19/19; QA-HSK3-2 vòng 2 ĐẠT; live build 20261030-hsk3b2 đủ 43/43, potential-complement-1 làm bài đúng, complex-condition đủ A–F, adverbs-du-ye đủ 7 bài tập."
+  },
+  {
+   "command": "GitHub PR #19 checks (trang PR) + merge_pull_request + browser live ?debug=1 sau merge e5933c2c",
+   "result": "CI 2/2 success trên head d80ab07d (run 41053571119); merge e5933c2c; live build 20261030-hsk3i9 72/72 sau 75s chờ triển khai + 1 lần tải lại; bài mới làm đúng, tiến độ lần làm giữ sau tải lại; harness local bản 72 bài PASS 19/19 (31/10)."
   }
  ],
- "working_tree_state": "Đã đồng bộ main ở e92d22a1 cho PR kỹ thuật (app.js/index.html perf1 + 2 báo cáo + release-log + task-board/checkpoint của Manager). Workspace local còn thay đổi NỘI DUNG của lô HSK3-9 chưa đẩy (4 bài mới + manifest + catalogue + mapping) — sẽ đi PR riêng ngay sau QA.",
- "last_completed_batch": "PR KỸ THUẬT hiệu năng tải (2026-10-30, XONG TRƯỚC lô HSK3-9 theo chỉ đạo Hoa): PR #18 merge e92d22a1, build 20261030-perf1. Thay đổi app.js duy nhất: loadLessons tải shard song song giới hạn LOAD_CONCURRENCY=8 (đo thử: 4=20,1s; 8=19,5s; 16=19,5s ở mạng chậm — chọn 8), ghép theo chỉ số manifest; fetchData giữ timeout 15s tới khi đọc xong body (sửa khe hở: bản HSK3-8 hủy timer ở headers → treo body = tải vô hạn). Đo cùng điều kiện (72 bài local): mạng chậm 46,4→19,4s; treo-body từ vô hạn → banner ở ~15,3s; 404/hang-headers/thứ tự/đường lỗi giữ nguyên đúng. QA độc lập ĐẠT, tự đo khớp (chậm 19,3s). CI 2/2 xanh trên head 3a6be73. Nghiệm thu live: build perf1, 68/68 (nội dung HSK3-9 chưa phát hành), đầu/cuối đúng manifest, lọc HSK2 = 17; lần mở đầu gặp bản cũ do cache Pages, tải lại ra bản mới. ISSUE-LOAD-STALL-01 chuyển trạng thái monitoring: hai lỗi đã đo đã sửa+phát hành; hiện tượng live build hsk3g7 vẫn chưa rõ nguyên nhân. Nội dung không đổi đợt này: vẫn 68 bài/333 bài tập trên live."
+ "working_tree_state": "main đã đồng bộ ở e5933c2c (merge PR #19). Workspace local đang có: bộ tài liệu nghiên cứu benchmark (docs/research/grammar-platform-benchmark.md, docs/research/feature-gap-matrix.md) + cập nhật docs/source-register.json (thêm Yoyo/Mandarin Bean) và lô pilot REL-01 'Bài liên quan' đang triển khai — sẽ đi PR riêng, không đẩy thẳng main.",
+ "last_completed_batch": "Lô HSK3-9 (XONG 2026-10-31): PR #19 merge e5933c2c, build 20261030-hsk3i9, 72 bài/353 bài tập (HSK1 20, HSK2 17, HSK3 34, HSK4 1). CI 2/2 xanh trên head d80ab07d (workflow run 41053571119: Validator 9s, harness 22s — kiểm chứng trực tiếp trên trang PR ngày 31/10 sau khi lần merge ở phiên trước bị kẹt khóa ghi phía công cụ). QA HSK3-9 đạt sau phúc tra 5/5 (xem release-log). Nghiệm thu live ĐẠT 31/10: lần đầu còn bản perf1/68 do Pages chưa triển khai xong; chờ 75s + tải lại → build hsk3i9, 72/72, mọi shard 200, 4 bài mới đủ, adverbs-mood-hsk3 đủ A–F và làm đúng bài 1, lần làm giữ sau tải lại, adverbs-time-hsk3 hiện đúng dòng đối chiếu 'một phần' về 才 (OFF-H3-14). Tải live lần này vài giây, không kẹt, không banner lỗi — chỉ là quan sát thêm cho ISSUE-LOAD-STALL-01 (vẫn monitoring, hiện tượng hsk3g7 chưa rõ nguyên nhân)."
 }

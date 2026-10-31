@@ -132,6 +132,27 @@ Chưa có bản phát hành nào.
   thành verified sau khi kiểm tra trực tiếp bản gốc （几/多少 thuộc
   nhóm đại từ để hỏi HSK1).
 
+- 2026-10-31 — Hoàn tất phát hành lô HSK3-9 (bổ sung cho mục
+  ngay dưới): PR #19 đã merge — merge commit e5933c2c. Lần
+  merge ở phiên 30/10 bị kẹt do khóa ghi phía công cụ GitHub
+  ("equivalent connector write already running"); ngày 31/10
+  Manager kiểm chứng lại CI trực tiếp trên trang PR — cả hai
+  job xanh trên head mới nhất d80ab07d (workflow run
+  41053571119, "All checks have passed") — rồi merge thành
+  công ngay lần thử đầu. Nghiệm thu live ĐẠT: lần mở đầu còn
+  bản perf1/68 bài do Pages chưa triển khai xong (không phải
+  lỗi tải); chờ 75 giây + tải lại → build 20261030-hsk3i9,
+  72/72 bài, mọi shard 200; adverbs-mood-hsk3 đủ A–F, dòng
+  đối chiếu verified hiển thị, làm đúng bài tập 1 và lần làm
+  giữ sau tải lại; adverbs-time-hsk3 hiện đúng dòng đối chiếu
+  "một phần" về 才 (OFF-H3-14). Tải live lần này mất vài
+  giây, không kẹt, không banner lỗi — ghi vào hồ sơ theo
+  dõi ISSUE-LOAD-STALL-01 như một quan sát thuận lợi; hiện
+  tượng ở build hsk3g7 vẫn chưa rõ nguyên nhân, issue giữ
+  trạng thái monitoring. Cùng ngày: hoàn thành nghiên cứu
+  benchmark 3 nền tảng (docs/research/) và bắt đầu pilot
+  REL-01 "Bài liên quan".
+
 - 2026-10-30 — Lô HSK3-9 (build 20261030-hsk3i9, nhánh
   batch-hsk3-9): 4 bài HSK3 mới — fixed-pattern-shenme (mẫu cố
   định X什么（啊）; khép nốt OFF-H3-26 → đã phủ), adverbs-
