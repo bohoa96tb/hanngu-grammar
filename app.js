@@ -148,12 +148,13 @@ function hskEvidenceHTML(les) {
   }
   return "";
 }
-// Một hàng ví dụ dùng chung cho mục A (ví dụ nhanh) và mục C: chữ Hán + nút
-// nghe/dừng cạnh câu, Pinyin và nghĩa Việt ẩn/hiện bằng thuộc tính hidden
-// theo prefs (không vẽ lại trang khi đổi).
+// Một hàng ví dụ (UX pilot 2026-10-31): chữ Hán + MỘT nút nghe/dừng nhỏ
+// duy nhất (bấm để nghe, bấm lần nữa để dừng — trạng thái qua class
+// .speaking và ký hiệu ▶/■), Pinyin và nghĩa Việt ẩn/hiện theo prefs
+// (không vẽ lại trang khi đổi). Không còn nút Dừng riêng chiếm diện tích.
 function exampleHTML(e) {
   return `<div class="example">
-    <p class="zh example-zh"><span>${esc(e.zh)}</span><span class="btn-row"><button type="button" data-speak="${esc(e.zh)}" aria-label="Nghe câu tiếng Trung">▶ Nghe</button><button type="button" class="secondary" data-stop>■ Dừng</button></span></p>
+    <p class="zh example-zh"><span>${esc(e.zh)}</span><button type="button" class="speak-btn" data-speak="${esc(e.zh)}" aria-label="Nghe câu tiếng Trung này">▶</button></p>
     ${e.pinyin ? `<p class="pinyin" ${prefs.showPinyin ? "" : "hidden"}>${esc(e.pinyin)}</p>` : ""}
     <p class="example-vi" ${prefs.showMeaning ? "" : "hidden"}>${esc(e.vi)}</p>
   </div>`;
@@ -230,7 +231,7 @@ async function speak(text, btn) {
   if (btn) {
     if (!btn.dataset.label) btn.dataset.label = btn.textContent;
     btn.classList.add("speaking");
-    btn.textContent = "Đang đọc…";
+    btn.textContent = btn.classList.contains("speak-btn") ? "■" : "Đang đọc…";
     btn.setAttribute("aria-busy", "true");
     currentSpeakBtn = btn;
   }
@@ -366,100 +367,148 @@ function lessonProgressText(l) {
 // Bài tiếp tục học: bài đang học dở (đã có lượt làm, chưa hoàn thành) đầu
 // tiên theo thứ tự danh mục; nếu không có thì bài chưa hoàn thành đầu tiên.
 function continueLesson() {
-  const inProgress = lessons.find((l) => !progress.completedLessons.includes(l.id)
+  // UX pilot: "Tiếp tục học" đi theo THỨ TỰ CURRICULUM (không theo thứ
+  // tự manifest như trước): bài đang học dở đầu tiên trong lộ trình;
+  // nếu không có thì bài chưa hoàn thành đầu tiên trong lộ trình.
+  const ordered = curriculumOrderedLessons();
+  const inProgress = ordered.find((l) => !progress.completedLessons.includes(l.id)
     && l.exercises.some((ex) => progress.attempts[ex.id]));
   if (inProgress) return inProgress;
-  return lessons.find((l) => !progress.completedLessons.includes(l.id)) || null;
+  return ordered.find((l) => !progress.completedLessons.includes(l.id)) || null;
 }
 
 function renderHome() {
   const app = document.getElementById("app");
   const params = new URLSearchParams(location.hash.split("?")[1] || "");
   const level = params.get("level") || "all";
+  const statusFilter = params.get("st") || "all";
   // G-02 (CUR-02): truy vấn và chỉ mục đều chuẩn hóa bằng normSearch
   // (lowercase + bỏ dấu thanh) — tìm được bằng chữ Hán, pinyin có dấu
   // hoặc bỏ dấu ("gao"/"gāo"), và tiếng Việt có dấu hoặc không dấu.
   const q = normSearch(params.get("q") || "");
+  const lessonStatus = (l) => {
+    if (progress.completedLessons.includes(l.id)) return "done";
+    return l.exercises.some((ex) => progress.attempts[ex.id]) ? "doing" : "new";
+  };
   const filtered = lessons.filter((l) => {
     if (level !== "all" && String(l.hsk_level) !== level) return false;
+    if (statusFilter !== "all" && lessonStatus(l) !== statusFilter) return false;
     if (!q) return true;
     const hay = normSearch([l.title_vi, l.pattern, l.objective, l.when_to_use, l.quick_memory || "",
       ...l.examples.map((e) => `${e.zh} ${e.vi} ${e.pinyin || ""}`)].join(" "));
     return hay.includes(q);
   });
-  // CUR-02: danh mục nhóm theo cấp theo thứ tự curriculum. Đang lọc một
-  // cấp thì chỉ hiện cấp đó; đang tìm kiếm thì chỉ hiện cấp còn bài khớp
-  // (số Bài NN giữ nguyên số gốc trong cấp, không đánh số lại).
+  // CUR-02 + UX pilot: danh mục nhóm theo cấp theo thứ tự curriculum,
+  // mỗi cấp có thanh tiến độ riêng; hàng bài GỌN (số bài, tên, một dòng
+  // mô tả, trạng thái) thay cho thẻ lớn lặp mục tiêu đầy đủ. Đang lọc
+  // một cấp thì chỉ hiện cấp đó; đang tìm/lọc thì chỉ hiện cấp còn bài
+  // khớp (số Bài NN giữ nguyên số gốc trong cấp, không đánh số lại).
   const info = orderInfo();
   const totalByLevel = {};
-  lessons.forEach((l) => { totalByLevel[l.hsk_level] = (totalByLevel[l.hsk_level] || 0) + 1; });
-  const searching = q.length > 0;
+  const doneByLevel = {};
+  lessons.forEach((l) => {
+    totalByLevel[l.hsk_level] = (totalByLevel[l.hsk_level] || 0) + 1;
+    if (progress.completedLessons.includes(l.id)) doneByLevel[l.hsk_level] = (doneByLevel[l.hsk_level] || 0) + 1;
+  });
+  const filtering = q.length > 0 || statusFilter !== "all";
   const visibleLevels = [1, 2, 3, 4, 5, 6].filter((lv) => {
     if (level !== "all") return String(lv) === level;
-    if (searching) return filtered.some((l) => l.hsk_level === lv);
+    if (filtering) return filtered.some((l) => l.hsk_level === lv);
     return true;
   });
-  const cardHTML = (l) => {
+  const statusShort = (l) => {
+    const st = lessonStatus(l);
+    if (st === "done") return `<span class="row-status done">✓ Đã xong</span>`;
+    if (st === "doing") {
+      const attempted = l.exercises.filter((ex) => progress.attempts[ex.id]).length;
+      return `<span class="row-status doing">◐ Đang học ${attempted}/${l.exercises.length}</span>`;
+    }
+    return `<span class="row-status new">○ Chưa học</span>`;
+  };
+  const rowHTML = (l) => {
+    const oi = info.get(l.id);
     const reqs = requiresOf(l);
     return `
-      <article class="card">
-        <p class="badges"><span class="badge badge-hsk">${esc(lessonLabel(l))}</span> <span class="badge badge-diff">Độ khó: ${difficultyLabel(l.difficulty)}</span></p>
-        <h3><a href="#/lesson/${l.id}">${esc(l.title_vi)}</a></h3>
-        <p><span class="zh">${esc(l.pattern)}</span></p>
-        <p>${esc(l.objective)}</p>
-        ${reqs.length ? `<p class="note">Tiên quyết: ${reqs.map((r) => esc(r.title_vi)).join(", ")}</p>` : ""}
-        <p class="note">${lessonProgressText(l)}</p>
+      <article class="card lesson-row">
+        <a class="row-main" href="#/lesson/${l.id}">
+          <span class="row-num">Bài ${oi ? pad2(oi.num) : ""}</span>
+          <span class="row-text">
+            <span class="row-title">${esc(l.title_vi)}</span>
+            <span class="row-desc">${esc(l.pattern)} · ${esc(l.objective)}</span>
+            ${reqs.length ? `<span class="row-req">Cần học trước: ${reqs.map((r) => esc(r.title_vi)).join(", ")}</span>` : ""}
+          </span>
+          ${statusShort(l)}
+        </a>
       </article>`;
   };
   const groupsHTML = visibleLevels.map((lv) => {
     const inLevel = filtered.filter((l) => l.hsk_level === lv)
       .sort((a, b) => info.get(a.id).gidx - info.get(b.id).gidx);
-    const body = inLevel.length ? inLevel.map(cardHTML).join("")
+    const total = totalByLevel[lv] || 0;
+    const done = doneByLevel[lv] || 0;
+    const pct = total ? Math.round((done / total) * 100) : 0;
+    const body = inLevel.length ? inLevel.map(rowHTML).join("")
       : `<div class="card"><p>Chưa có bài — đang biên soạn theo đề cương.</p></div>`;
-    return `<section class="level-group"><h3>HSK ${lv} <span class="note">(${totalByLevel[lv] || 0} bài)</span></h3>${body}</section>`;
+    return `<section class="level-group"><h3>HSK ${lv} <span class="note">(${total} bài)</span></h3>
+      <div class="level-progress"><div class="progress-track" role="progressbar" aria-label="Tiến độ HSK ${lv}" aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${done}"><div class="progress-fill" style="width:${pct}%"></div></div><span class="note">${done}/${total} bài đã xong</span></div>
+      ${body}</section>`;
   }).join("");
   const cont = continueLesson();
+  const totalDone = progress.completedLessons.length;
+  const totalPct = lessons.length ? Math.round((totalDone / lessons.length) * 100) : 0;
   let dueCount = 0;
   try { dueCount = SRS.dueCards(progress, lessons, new Date()).filter((x) => x.isDue).length; } catch (e) { dueCount = 0; }
   app.innerHTML = `
     <h2>Danh mục bài học</h2>
     <section class="card continue-card">
-      <h3>Tiếp tục học</h3>
-      ${cont ? `<p><a href="#/lesson/${cont.id}"><strong>${esc(cont.title_vi)}</strong></a></p>
-      <p class="note">${esc(cont.objective)}</p>
+      <div class="continue-head"><h3>Tiếp tục học</h3><span class="note">Đã xong ${totalDone}/${lessons.length} bài</span></div>
+      <div class="progress-track" role="progressbar" aria-label="Tiến độ toàn bộ" aria-valuemin="0" aria-valuemax="${lessons.length}" aria-valuenow="${totalDone}"><div class="progress-fill" style="width:${totalPct}%"></div></div>
+      ${cont ? `<p class="continue-next"><a href="#/lesson/${cont.id}"><strong>${esc(lessonLabel(cont))} — ${esc(cont.title_vi)}</strong></a></p>
       <p><a class="btn-link" href="#/lesson/${cont.id}">Học tiếp bài này</a></p>` : `<p>✓ Bạn đã hoàn thành tất cả bài hiện có.</p>`}
       ${dueCount > 0 ? `<p>Số thẻ đến hạn ôn: <strong>${dueCount}</strong> — <a href="#/review">Đi ôn ngay</a></p>` : `<p class="note">Chưa có thẻ nào đến hạn ôn.</p>`}
     </section>
-    <p class="note">Bản thử nghiệm: ${lessons.length} bài mẫu. Tìm kiếm mở được bài trực tiếp; không cần học hết bài ôn mới được học bài mới.</p>
-    <form class="card" id="searchForm" role="search">
+    <form class="card search-card" id="searchForm" role="search">
       <label for="q">Tìm kiếm (chữ Hán, Pinyin hoặc tiếng Việt)</label>
       <input id="q" type="search" value="${esc(params.get("q") || "")}" placeholder="Ví dụ: 比, bi, gao, so sánh">
       <div class="filters btn-row" role="group" aria-label="Lọc theo cấp">
         ${["all", "1", "2", "3", "4", "5", "6"].map((lv) => `<button type="button" class="${level === lv ? "" : "secondary"}" data-level="${lv}" aria-pressed="${level === lv}">${lv === "all" ? "Tất cả" : "HSK " + lv}</button>`).join("")}
       </div>
-      <p><button type="submit" id="searchBtn">Tìm</button></p>
+      <div class="btn-row">
+        <label for="statusSel">Trạng thái
+          <select id="statusSel">
+            <option value="all" ${statusFilter === "all" ? "selected" : ""}>Tất cả</option>
+            <option value="new" ${statusFilter === "new" ? "selected" : ""}>Chưa học</option>
+            <option value="doing" ${statusFilter === "doing" ? "selected" : ""}>Đang học</option>
+            <option value="done" ${statusFilter === "done" ? "selected" : ""}>Đã xong</option>
+          </select>
+        </label>
+        <button type="submit" id="searchBtn">Tìm</button>
+      </div>
     </form>
     ${filtered.length ? groupsHTML : `<div class="card"><p>Không tìm thấy bài phù hợp với bộ lọc hiện tại. Thử từ khác hoặc xóa bộ lọc.</p><p><button type="button" class="secondary" id="clearFiltersBtn">Xóa bộ lọc</button></p></div>`}
-    <div class="card">
-      <h3>Tiến trình của bạn (chỉ trên thiết bị này)</h3>
+    <details class="card">
+      <summary><strong>Dữ liệu tiến trình (chỉ trên thiết bị này)</strong></summary>
       <p>Đã hoàn thành ${progress.completedLessons.length}/${lessons.length} bài mẫu.</p>
       <button type="button" id="exportBtn" class="secondary">Xuất tiến trình (JSON)</button>
       <label for="importFile">Nhập tiến trình (sẽ hỏi xác nhận trước khi ghi đè)</label>
       <input id="importFile" type="file" accept=".json,application/json">
       <div id="importMsg"></div>
       <p class="note">Ôn tập dùng thư viện FSRS thật (ts-fsrs 5.4.2, xem trang Ôn lại). Mốc thời gian lưu UTC (ISO); “hôm nay” tính theo múi giờ của thiết bị bạn.</p>
-    </div>`;
-  const searchForm = document.getElementById("searchForm");
-  searchForm.addEventListener("submit", (ev) => {
-    ev.preventDefault();
+    </details>`;
+  const goSearch = () => {
     const v = document.getElementById("q").value;
-    location.hash = `#/?level=${level}&q=${encodeURIComponent(v)}`;
-    if ((params.get("q") || "") === v) render();
-  });
+    const st = document.getElementById("statusSel").value;
+    location.hash = `#/?level=${level}&st=${st}&q=${encodeURIComponent(v)}`;
+    if ((params.get("q") || "") === v && (params.get("st") || "all") === st) render();
+  };
+  const searchForm = document.getElementById("searchForm");
+  searchForm.addEventListener("submit", (ev) => { ev.preventDefault(); goSearch(); });
+  document.getElementById("statusSel").onchange = goSearch;
   document.querySelectorAll("[data-level]").forEach((b) => {
     b.onclick = () => {
       const v = document.getElementById("q").value;
-      location.hash = `#/?level=${b.dataset.level}&q=${encodeURIComponent(v)}`;
+      const st = document.getElementById("statusSel").value;
+      location.hash = `#/?level=${b.dataset.level}&st=${st}&q=${encodeURIComponent(v)}`;
     };
   });
   const clearBtn = document.getElementById("clearFiltersBtn");
@@ -487,31 +536,43 @@ function renderHome() {
 function exerciseHTML(les, ex, idx) {
   const done = progress.attempts[ex.id];
   const payload = ex.payload || {};
-  const hint = payload.hint_vi ? String(payload.hint_vi) : "";
   let body = "";
   if (ex.type === "choice" || ex.type === "error_spot") {
     if (ex.type === "error_spot") body += `<p class="zh">${esc(payload.sentence_zh || "")}</p><p>Chọn khối sai:</p>`;
     body += `<div class="btn-row options" role="group" aria-label="Lựa chọn đáp án">${(payload.options || []).map((o) => `<button type="button" class="secondary opt-btn" data-opt="${esc(o)}" aria-pressed="false">${esc(o)}</button>`).join("")}</div>
       <p class="btn-row"><button type="button" data-check="${ex.id}">Kiểm tra</button><button type="button" class="secondary" data-retry="${ex.id}" hidden>Làm lại</button></p>`;
   } else if (ex.type === "fill") {
+    // UX pilot: KHÔNG hiển thị hint_vi sẵn ở bài fill nữa — trước đây
+    // dòng "Mẫu cần dùng: ..." lộ gần như đáp án trước khi người học
+    // trả lời. Gợi ý chỉ hiện khi bấm nút "Gợi ý" (và được ghi nhận).
     const pzh = payload.prompt_zh || ex.prompt_zh || "";
-    body = `${pzh ? `<p class="zh">${esc(pzh)}</p>` : ""}${hint ? `<p class="note">Mẫu cần dùng: ${esc(hint)}</p>` : ""}
+    body = `${pzh ? `<p class="zh">${esc(pzh)}</p>` : ""}
       <label class="sr-only" for="fill-${ex.id}">Đáp án</label>
       <input type="text" id="fill-${ex.id}" placeholder="Viết bằng chữ Hán" autocomplete="off">
       <p class="btn-row"><button type="button" data-fill="${ex.id}">Kiểm tra</button><button type="button" class="secondary" data-retry="${ex.id}" hidden>Làm lại</button></p>`;
   } else if (ex.type === "order") {
-    body = `<p>Chạm hoặc dùng phím để chọn từng khối theo thứ tự đúng; bấm vào khối đã xếp để gỡ ra.</p>
+    body = `<p class="note">Chạm các khối theo thứ tự đúng; chạm khối đã xếp để gỡ ra.</p>
       <div class="btn-row" id="order-pick-${ex.id}" role="group" aria-label="Khối từ để xếp">${(payload.tokens || []).map((t, i) => `<button type="button" class="token" data-idx="${i}" data-tok="${esc(t)}">${esc(t)}</button>`).join("")}</div>
       <p>Câu của bạn:</p>
       <div class="btn-row order-built" id="order-built-${ex.id}"></div>
       <p class="btn-row"><button type="button" data-order="${ex.id}">Kiểm tra</button><button type="button" class="secondary" data-clear-order="${ex.id}">Làm lại</button></p>`;
   }
-  return `<section class="card exercise" id="ex-${ex.id}">
-    <h4>Bài ${idx + 1} <span class="chip">${esc(stageLabel(les, ex))}</span></h4><p>${esc(ex.prompt_vi)}</p>${body}
-    <p><button type="button" class="secondary" data-hint="${ex.id}">Xin gợi ý (sẽ ghi nhận là đã xem gợi ý)</button></p>
+  return `<section class="exercise" id="ex-${ex.id}">
+    <p class="ex-meta"><span class="chip">${esc(stageLabel(les, ex))}</span>${done ? `<span class="note">Lần gần nhất: ${done.lastCorrect ? "✓ Đúng" : "✗ Chưa đúng"}</span>` : ""}</p>
+    <p class="ex-prompt">${esc(ex.prompt_vi)}</p>${body}
+    <p><button type="button" class="secondary hint-btn" data-hint="${ex.id}">Gợi ý</button></p>
     <div id="hint-${ex.id}"></div>
-    <div id="fb-${ex.id}">${done ? `<div class="feedback ${done.lastCorrect ? "ok" : "bad"}">Lần làm gần nhất: ${done.lastCorrect ? "✓ Đúng" : "✗ Chưa đúng"}</div>` : ""}</div>
+    <div id="fb-${ex.id}"></div>
   </section>`;
+}
+
+// Công thức trực quan: tách mẫu theo dấu "+" thành các ô thành phần
+// nối bằng dấu + lớn, để người học thấy cấu trúc câu thay vì một dòng
+// chữ dài. Mẫu không có "+" thì hiện một ô duy nhất.
+function formulaChipsHTML(pattern) {
+  const parts = String(pattern || "").split("+").map((s) => s.trim()).filter((s) => s);
+  if (!parts.length) return "";
+  return `<div class="formula-chips" aria-label="Công thức: ${esc(pattern)}">${parts.map((p) => `<span class="fchip">${esc(p)}</span>`).join(`<span class="fplus" aria-hidden="true">+</span>`)}</div>`;
 }
 
 function renderLesson(id) {
@@ -526,42 +587,86 @@ function renderLesson(id) {
   const next = idxAll >= 0 && idxAll < ordered.length - 1 ? ordered[idxAll + 1] : null;
   const oi = orderInfo().get(id);
   const reqLessons = requiresOf(les);
-  const quick = les.examples && les.examples.length ? les.examples[0] : null;
   // REL-01: bài liên quan — giữ thứ tự trong related_ids, bỏ qua id không
   // tồn tại trong danh sách đã lọc published (lessons) mà không lỗi; vắng/
   // rỗng/không còn id hợp lệ thì không render mục (không hiện thẻ trống).
   const related = (Array.isArray(les.related_ids) ? les.related_ids : [])
     .map((rid) => lessonById(rid))
     .filter(Boolean);
+  const attemptedCount = les.exercises.filter((ex) => progress.attempts[ex.id]).length;
+  const lessonState = progress.completedLessons.includes(id)
+    ? `<span class="chip chip-state done">✓ Đã hoàn thành</span>`
+    : attemptedCount > 0
+      ? `<span class="chip chip-state doing">◐ Đang học · đã làm ${attemptedCount}/${les.exercises.length} bài tập</span>`
+      : `<span class="chip chip-state new">○ Chưa học</span>`;
+  const secChips = [
+    ["sec-quick", "Hiểu nhanh"],
+    ["sec-formula", "Công thức"],
+    ["sec-examples", "Ví dụ"],
+    ...(les.confusions && les.confusions.length ? [["sec-confuse", "Dễ nhầm"]] : []),
+    ["sec-practice", "Luyện tập"],
+    ["speak-section", "Luyện nói"],
+    ...(les.quick_memory ? [["sec-memory", "Nhớ nhanh"]] : []),
+  ];
   app.innerHTML = `
-    <p><a href="#/">← Danh mục</a></p>
+    <p class="crumb"><a href="#/">← Danh mục</a></p>
     <section class="card card-hero">
-      <p class="badges"><span class="badge badge-hsk">HSK ${les.hsk_level}</span> <span class="badge badge-diff">Độ khó: ${difficultyLabel(les.difficulty)}</span></p>
+      <p class="badges"><span class="badge badge-hsk">HSK ${les.hsk_level}</span> <span class="badge badge-diff">Độ khó: ${difficultyLabel(les.difficulty)}</span> ${lessonState}</p>
       <h2>${esc(les.title_vi)}</h2>
       ${oi ? `<p class="hero-number">HSK ${les.hsk_level} · Bài ${pad2(oi.num)}/${oi.total}</p>` : ""}
-      <p class="hero-pattern zh">${esc(les.pattern)}</p>
-      <p class="hero-objective"><strong>Mục tiêu:</strong> ${esc(les.objective)}</p>
+      ${formulaChipsHTML(les.pattern)}
     </section>
+    <nav class="section-nav" aria-label="Các mục trong bài">
+      ${secChips.map(([sid, label]) => `<button type="button" class="sec-chip" data-goto="${sid}">${label}</button>`).join("")}
+    </nav>
     ${reqLessons.length ? `<section class="card"><h3>Cần học trước</h3>${reqLessons.map((r) => `<p><a href="#/lesson/${esc(r.id)}">${esc(lessonLabel(r))} — ${esc(r.title_vi)}</a></p>`).join("")}</section>` : ""}
-    <section class="card"><h3>A. Dùng khi nào</h3><p>${esc(les.when_to_use)}</p>
-      ${quick ? `<p class="note"><strong>Ví dụ nhanh:</strong></p>${exampleHTML(quick)}` : ""}
+    <section class="card" id="sec-quick">
+      <h3>Hiểu nhanh</h3>
+      <p>${esc(les.when_to_use)}</p>
+      <p class="objective-line"><strong>Mục tiêu:</strong> ${esc(les.objective)}</p>
     </section>
-    <section class="card"><h3>B. Cách đặt câu</h3><p class="zh">${esc(les.pattern)}</p>${formulaStepsHTML(les.formula_notes)}</section>
-    <section class="card">
-      <h3>C. Ví dụ</h3>
+    <section class="card" id="sec-formula">
+      <h3>Công thức</h3>
+      ${formulaChipsHTML(les.pattern)}
+      ${formulaStepsHTML(les.formula_notes)}
+    </section>
+    <section class="card" id="sec-examples">
+      <h3>Ví dụ</h3>
       <div class="lesson-controls btn-row" role="group" aria-label="Điều khiển hiển thị và tốc độ đọc">
         <button type="button" class="secondary" id="pinyinBtn" aria-pressed="${prefs.showPinyin}">${prefs.showPinyin ? "Ẩn Pinyin" : "Hiện Pinyin"}</button>
         <button type="button" class="secondary" id="meaningBtn" aria-pressed="${prefs.showMeaning}">${prefs.showMeaning ? "Ẩn nghĩa Việt" : "Hiện nghĩa Việt"}</button>
         <label for="rateSel">Tốc độ đọc <select id="rateSel"><option value="0.7">0.7×</option><option value="1">1×</option><option value="1.25">1.25×</option></select></label>
       </div>
-      <p class="note">Âm thanh tiếng Trung chỉ đọc câu tiếng Trung; phần giảng tiếng Việt không trộn vào track này. Giọng đọc là giọng tổng hợp của trình duyệt.</p>
+      <p class="note">Giọng đọc là giọng tổng hợp (TTS) của trình duyệt, chỉ đọc câu tiếng Trung.</p>
       <p id="voiceNote" class="voice-note" role="status"></p>
       ${les.examples.map((e) => exampleHTML(e)).join("")}
     </section>
-    ${les.confusions && les.confusions.length ? `<section class="card"><h3>D. Dễ nhầm</h3>${les.confusions.map((c) => `<div class="confusion"><p><strong>${esc(c.wrong_or_risky)}</strong> <span class="chip chip-verdict">${esc(VERDICT_LABELS[c.verdict] || c.verdict || "")}</span></p><p>${esc(c.explanation)}</p></div>`).join("")}</section>` : ""}
+    ${les.confusions && les.confusions.length ? `<section class="card" id="sec-confuse"><h3>Dễ nhầm</h3>
+      <p class="note">Bấm vào từng câu để xem vì sao sai hoặc dễ nhầm.</p>
+      ${les.confusions.map((c) => `<details class="confusion"><summary><strong>${esc(c.wrong_or_risky)}</strong> <span class="chip chip-verdict">${esc(VERDICT_LABELS[c.verdict] || c.verdict || "")}</span></summary><p>${esc(c.explanation)}</p></details>`).join("")}
+    </section>` : ""}
+    <section class="card" id="sec-practice">
+      <h3>Luyện tập</h3>
+      <div class="player-head">
+        <span id="playerPos">Câu 1/${les.exercises.length}</span>
+        <span id="playerDone" class="note"></span>
+      </div>
+      <div class="progress-track" role="progressbar" aria-label="Tiến độ luyện tập" aria-valuemin="0" aria-valuemax="${les.exercises.length}" aria-valuenow="0" id="playerTrack"><div class="progress-fill" id="playerBar" style="width:0%"></div></div>
+      ${les.exercises.map((ex, i) => exerciseHTML(les, ex, i)).join("")}
+      <div class="btn-row player-nav">
+        <button type="button" class="secondary" id="playerPrev">← Câu trước</button>
+        <button type="button" id="playerNext">Câu tiếp theo →</button>
+      </div>
+      <div id="playerSummary" hidden></div>
+    </section>
     <section class="card" id="speak-section">
       <h3>Luyện nói</h3>
-      <p>1. Nghe mẫu &nbsp;→&nbsp; 2. Đọc đuổi theo mẫu và thu âm &nbsp;→&nbsp; 3. Nghe lại bản thu, tự đối chiếu với mẫu &nbsp;→&nbsp; 4. Tự nói một câu mới theo tình huống bên dưới.</p>
+      <ol class="steps" aria-label="Luồng luyện nói">
+        <li class="step current" data-step="1">1. Nghe mẫu</li>
+        <li class="step" data-step="2">2. Thu âm</li>
+        <li class="step" data-step="3">3. Nghe lại</li>
+        <li class="step" data-step="4">4. Tự đánh giá</li>
+      </ol>
       <label for="speakSel">Chọn câu mẫu để luyện</label>
       <select id="speakSel">${les.examples.map((e, i) => `<option value="${i}">${esc(e.zh)} — ${esc(e.vi)}</option>`).join("")}</select>
       <p class="btn-row">
@@ -571,26 +676,44 @@ function renderLesson(id) {
         <button type="button" id="speakPlayBtn" class="secondary" ${speakingBlobUrl ? "" : "disabled"}>▶ Nghe lại bản thu</button>
         <button type="button" id="speakClearBtn" class="secondary" ${speakingBlobUrl ? "" : "disabled"}>Xóa bản thu</button>
       </p>
-      <p id="speakStatus" class="note">Chưa có bản thu. Bản thu không được chấm điểm tự động và không gửi đi đâu.</p>
-      <p><strong>Tự nói theo tình huống:</strong> Dùng công thức <span class="zh">${esc(les.pattern)}</span> để tự nói một câu mới về bản thân (không cần viết ra, có thể thu âm để nghe lại).</p>
-      <p class="note">Nếu trình duyệt từ chối microphone hoặc thiết bị không có mic, bạn vẫn học được toàn bộ phần còn lại của bài: nghe mẫu, đọc đuổi không thu âm và tự nói theo tình huống.</p>
+      <p id="speakStatus" class="note">Chưa có bản thu.</p>
+      <p><strong>Tự đánh giá sau khi nghe lại:</strong></p>
+      <p class="btn-row" role="group" aria-label="Tự đánh giá phát âm">
+        <button type="button" class="secondary" data-selfrate="Chưa giống mẫu — nên thu lại một lần nữa">Chưa giống mẫu</button>
+        <button type="button" class="secondary" data-selfrate="Khá giống mẫu — tiếp tục luyện thêm">Khá giống</button>
+        <button type="button" class="secondary" data-selfrate="Giống mẫu — tốt, hãy tự nói một câu mới">Giống mẫu</button>
+      </p>
+      <p><strong>Tự nói theo tình huống:</strong> dùng mẫu câu của bài này để tự nói một câu mới về bản thân (không cần viết ra, có thể thu âm để nghe lại).</p>
+      <details>
+        <summary>Trợ giúp &amp; lưu ý kỹ thuật</summary>
+        <p class="note">Bản thu chỉ ở trong trang này: không lưu, không gửi đi đâu và không được chấm điểm tự động — bạn tự nghe lại và đối chiếu với mẫu. Nếu trình duyệt từ chối microphone hoặc thiết bị không có mic, bạn vẫn học được toàn bộ phần còn lại của bài: nghe mẫu, đọc đuổi không thu âm và tự nói theo tình huống. Giọng mẫu là giọng tổng hợp (TTS) của trình duyệt, không phải người bản ngữ.</p>
+      </details>
     </section>
-    <section><h3>E. Luyện tập</h3><p class="note">Làm theo thứ tự: Nhận biết → Đặt đúng vị trí → Tự dùng. Với câu chọn đáp án: chọn trước rồi bấm “Kiểm tra” — chọn chưa bị tính lượt cho tới khi kiểm tra. Lời giải chỉ hiện sau khi bạn kiểm tra; xin gợi ý chỉ hiện gợi ý, không lộ lời giải, và sẽ được ghi nhận là đã xem gợi ý.</p>
-    ${les.exercises.map((ex, i) => exerciseHTML(les, ex, i)).join("")}</section>
-    ${les.quick_memory ? `<section class="card card-memory"><h3>F. Nhớ nhanh</h3><p>${esc(les.quick_memory)}</p></section>` : ""}
+    ${les.quick_memory ? `<section class="card card-memory" id="sec-memory"><h3>F. Nhớ nhanh</h3><p>${esc(les.quick_memory)}</p></section>` : ""}
     ${related.length ? `<section class="card"><h3>Bài liên quan</h3>${related.map((r) => `<p><a href="#/lesson/${esc(r.id)}"><span class="badge badge-hsk">HSK ${esc(String(r.hsk_level))}</span> ${esc(r.title_vi)}</a></p>`).join("")}</section>` : ""}
     <div class="card">
       <button type="button" id="completeBtn">${progress.completedLessons.includes(id) ? "✓ Đã hoàn thành — đánh dấu lại" : "Đánh dấu đã hoàn thành bài này"}</button>
       <button type="button" class="secondary" id="reportBtn">Báo lỗi bài học</button>
       <p id="reportText" class="note"></p>
-      <p class="note">Nguồn: ${les.sources.map((s) => esc(s.source_id) + " — " + esc(s.note)).join("; ")}. Rà soát: ${esc(les.review ? les.review.reviewer + ", " + les.review.date : "chưa rà soát")}. Phiên bản nội dung: ${les.content_version}.</p>
-      ${hskEvidenceHTML(les)}
+      <details>
+        <summary>Nguồn và thông tin kiểm chứng</summary>
+        <p class="note">Nguồn: ${les.sources.map((s) => esc(s.source_id) + " — " + esc(s.note)).join("; ")}. Rà soát: ${esc(les.review ? les.review.reviewer + ", " + les.review.date : "chưa rà soát")}. Phiên bản nội dung: ${les.content_version}.</p>
+        ${hskEvidenceHTML(les)}
+      </details>
     </div>
     <nav class="lesson-nav" aria-label="Điều hướng bài học">
       ${prev ? `<a class="nav-link" href="#/lesson/${prev.id}">← Bài trước: ${esc(lessonLabel(prev))} — ${esc(prev.title_vi)}</a>` : `<span class="nav-link disabled" aria-disabled="true">← Bài trước</span>`}
       <a class="nav-link" href="#/">Danh mục</a>
       ${next ? `<a class="nav-link" href="#/lesson/${next.id}">Bài sau: ${esc(lessonLabel(next))} — ${esc(next.title_vi)} →</a>` : `<span class="nav-link disabled" aria-disabled="true">Bài sau →</span>`}
     </nav>`;
+  // Điều hướng trong bài: nút cuộn tới mục (không dùng href="#..." vì
+  // app định tuyến bằng hash — đổi hash sẽ bị hiểu là chuyển trang).
+  document.querySelectorAll("[data-goto]").forEach((b) => {
+    b.onclick = () => {
+      const el = document.getElementById(b.dataset.goto);
+      if (el) el.scrollIntoView({ block: "start" });
+    };
+  });
   // Điều khiển hiển thị: chỉ ẩn/hiện trong DOM theo prefs, KHÔNG vẽ lại
   // trang (giữ vị trí cuộn, chữ đang gõ và câu xếp từ đang làm dở).
   const pinyinBtn = document.getElementById("pinyinBtn");
@@ -611,8 +734,10 @@ function renderLesson(id) {
   rateSel.value = String(prefs.speechRate);
   rateSel.onchange = (e) => { prefs.speechRate = parseFloat(e.target.value); savePrefs(); };
   updateVoiceNote();
-  document.querySelectorAll("[data-speak]").forEach((b) => { b.onclick = () => speak(b.dataset.speak, b); });
-  document.querySelectorAll("[data-stop]").forEach((b) => { b.onclick = stopSpeak; });
+  // Nút nghe/dừng hợp nhất: bấm khi đang đọc (class .speaking) = dừng.
+  document.querySelectorAll("[data-speak]").forEach((b) => {
+    b.onclick = () => { if (b.classList.contains("speaking")) stopSpeak(); else speak(b.dataset.speak, b); };
+  });
   // Luyện nói P04-02: thu âm bằng MediaRecorder của trình duyệt, phát lại bằng
   // thẻ audio tạm; không chấm điểm, không lưu, không gửi bản thu đi đâu.
   const speakStatus = document.getElementById("speakStatus");
@@ -622,7 +747,17 @@ function renderLesson(id) {
   const playBtn = document.getElementById("speakPlayBtn");
   const clearBtn = document.getElementById("speakClearBtn");
   const setSpeakStatus = (t) => { if (speakStatus) speakStatus.textContent = t; };
-  document.getElementById("speakSampleBtn").onclick = (ev) => speak(les.examples[Number(speakSel.value)].zh, ev.currentTarget);
+  const setStep = (n) => {
+    document.querySelectorAll("#speak-section .step").forEach((s) => {
+      s.classList.toggle("current", Number(s.dataset.step) === n);
+    });
+  };
+  document.getElementById("speakSampleBtn").onclick = (ev) => {
+    const b = ev.currentTarget;
+    if (b.classList.contains("speaking")) { stopSpeak(); return; }
+    setStep(1);
+    speak(les.examples[Number(speakSel.value)].zh, b);
+  };
   recordBtn.onclick = async () => {
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || !("MediaRecorder" in window)) {
       setSpeakStatus("Trình duyệt này không hỗ trợ thu âm. Bạn vẫn có thể nghe mẫu và đọc đuổi không thu âm.");
@@ -641,6 +776,7 @@ function renderLesson(id) {
         if (speakingBlobUrl) URL.revokeObjectURL(speakingBlobUrl);
         speakingBlobUrl = URL.createObjectURL(new Blob(speakingChunks, { type: speakingRecorder.mimeType || "audio/webm" }));
         playBtn.disabled = false; clearBtn.disabled = false;
+        setStep(3);
         setSpeakStatus("Đã thu xong. Bấm “Nghe lại bản thu” để tự đối chiếu với mẫu — không có chấm điểm tự động.");
       };
       speakingRecorder.start();
@@ -648,6 +784,7 @@ function renderLesson(id) {
       recordBtn.disabled = true; stopBtn.disabled = false;
       recordBtn.classList.add("recording");
       recordBtn.textContent = "● Đang thu…";
+      setStep(2);
       setSpeakStatus("Đang thu… Hãy đọc đuổi theo câu mẫu, rồi bấm “Dừng thu”.");
     } catch (e) {
       setSpeakStatus("Không truy cập được microphone (bị từ chối hoặc không có mic). Bạn vẫn học được phần còn lại: nghe mẫu, đọc đuổi không thu âm và tự nói theo tình huống.");
@@ -656,13 +793,17 @@ function renderLesson(id) {
   stopBtn.onclick = () => {
     if (speakingRecorder && speakingRecording) { speakingRecorder.stop(); speakingRecording = false; recordBtn.disabled = false; stopBtn.disabled = true; }
   };
-  playBtn.onclick = () => { if (speakingBlobUrl) new Audio(speakingBlobUrl).play().catch(() => setSpeakStatus("Không phát được bản thu trên trình duyệt này.")); };
+  playBtn.onclick = () => { if (speakingBlobUrl) { setStep(3); new Audio(speakingBlobUrl).play().catch(() => setSpeakStatus("Không phát được bản thu trên trình duyệt này.")); } };
   clearBtn.onclick = () => {
     if (speakingBlobUrl) URL.revokeObjectURL(speakingBlobUrl);
     speakingBlobUrl = null; speakingChunks = [];
     playBtn.disabled = true; clearBtn.disabled = true;
+    setStep(1);
     setSpeakStatus("Đã xóa bản thu. Chưa có bản thu.");
   };
+  document.querySelectorAll("[data-selfrate]").forEach((b) => {
+    b.onclick = () => { setStep(4); setSpeakStatus("Tự đánh giá: " + b.dataset.selfrate + " (chỉ ghi trong trang này, không phải điểm máy chấm)."); };
+  });
   document.getElementById("completeBtn").onclick = () => {
     if (!progress.completedLessons.includes(id)) progress.completedLessons.push(id);
     saveProgress(); render();
@@ -672,6 +813,51 @@ function renderLesson(id) {
     document.getElementById("reportText").textContent = text + "(hãy sao chép dòng này kèm mô tả lỗi của bạn khi gửi phản hồi)";
     if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
   };
+  // --- Trình luyện tập từng câu (UX pilot) ---
+  // Mọi câu vẫn nằm trong DOM (giữ nguyên id ex-/fb-/hint- và toàn bộ cơ
+  // chế chấm, ghi attempts/hints như trước); trình chỉ ẩn/hiện từng câu,
+  // cập nhật vị trí + thanh tiến độ và dựng TỔNG KẾT từ attempts thật.
+  // Không đổi khóa tiến độ, FSRS hay lịch sử làm bài.
+  const exSecs = les.exercises.map((ex) => document.getElementById("ex-" + ex.id)).filter(Boolean);
+  const posEl = document.getElementById("playerPos");
+  const doneEl = document.getElementById("playerDone");
+  const barEl = document.getElementById("playerBar");
+  const trackEl = document.getElementById("playerTrack");
+  const prevBtn = document.getElementById("playerPrev");
+  const nextBtn = document.getElementById("playerNext");
+  const summaryEl = document.getElementById("playerSummary");
+  const doneCount = () => les.exercises.filter((ex) => progress.attempts[ex.id]).length;
+  let cur = les.exercises.findIndex((ex) => !progress.attempts[ex.id]);
+  if (cur < 0) cur = 0;
+  function buildSummary() {
+    const wrong = les.exercises.map((ex, i) => ({ ex, i }))
+      .filter(({ ex }) => !(progress.attempts[ex.id] && progress.attempts[ex.id].lastCorrect));
+    const right = les.exercises.length - wrong.length;
+    summaryEl.innerHTML = `<div class="feedback ${wrong.length ? "" : "ok"}">
+      <p><strong>Tổng kết lượt luyện:</strong> đúng ở lần gần nhất <strong>${right}/${les.exercises.length}</strong> câu. Tiến độ đã lưu tự động trên thiết bị này; khi sẵn sàng, hãy bấm “Đánh dấu đã hoàn thành bài này” ở cuối trang để đưa bài vào lịch ôn FSRS.</p>
+      ${wrong.length ? `<p><strong>Câu cần ôn lại:</strong></p>${wrong.map(({ ex, i }) => `<p><button type="button" class="secondary" data-gotoex="${i}">Câu ${i + 1}: ${esc(ex.prompt_vi)}</button></p>`).join("")}` : `<p>✓ Tất cả các câu đều đúng ở lần làm gần nhất.</p>`}
+    </div>`;
+    summaryEl.hidden = false;
+    summaryEl.querySelectorAll("[data-gotoex]").forEach((b) => {
+      b.onclick = () => { cur = Number(b.dataset.gotoex); summaryEl.hidden = true; showCur(); document.getElementById("sec-practice").scrollIntoView({ block: "start" }); };
+    });
+  }
+  function showCur() {
+    exSecs.forEach((s, j) => { s.hidden = j !== cur; });
+    if (posEl) posEl.textContent = `Câu ${cur + 1}/${les.exercises.length}`;
+    const dc = doneCount();
+    if (doneEl) doneEl.textContent = `Đã làm ${dc}/${les.exercises.length} câu`;
+    if (barEl) barEl.style.width = `${les.exercises.length ? Math.round((dc / les.exercises.length) * 100) : 0}%`;
+    if (trackEl) trackEl.setAttribute("aria-valuenow", String(dc));
+    if (prevBtn) prevBtn.disabled = cur === 0;
+    if (nextBtn) nextBtn.textContent = cur === les.exercises.length - 1 ? "Xem tổng kết" : "Câu tiếp theo →";
+  }
+  if (prevBtn) prevBtn.onclick = () => { if (cur > 0) { cur -= 1; summaryEl.hidden = true; showCur(); } };
+  if (nextBtn) nextBtn.onclick = () => {
+    if (cur < les.exercises.length - 1) { cur += 1; summaryEl.hidden = true; showCur(); }
+    else { buildSummary(); summaryEl.scrollIntoView({ block: "nearest" }); }
+  };
+  showCur();
   // Chấm bài: chọn đáp án và kiểm tra là hai bước riêng (trừ fill/order vốn
   // đã có nút Kiểm tra riêng). Lời giải chỉ hiện sau khi kiểm tra.
   les.exercises.forEach((ex) => {
@@ -683,6 +869,8 @@ function renderLesson(id) {
       progress.attempts[ex.id] = { correct: prev.correct + (correct ? 1 : 0), total: prev.total + 1, lastCorrect: correct, hintUsed: !!progress.hints[ex.id] };
       saveProgress();
       fb().innerHTML = `<div class="feedback ${correct ? "ok" : "bad"}" role="status">${correct ? "✓ Đúng rồi." : "✗ Chưa đúng."} ${extraHTML || ""} ${esc(ex.explanation)}</div>`;
+      showCur();
+      if (doneCount() === les.exercises.length) { buildSummary(); }
     };
     const retryBtn = secEl.querySelector("[data-retry]");
     if (ex.type === "choice" || ex.type === "error_spot") {
@@ -824,7 +1012,7 @@ function renderLesson(id) {
       progress.hints[ex.id] = true; saveProgress();
       const hint = ex.payload && ex.payload.hint_vi ? String(ex.payload.hint_vi) : "";
       const box = document.getElementById("hint-" + ex.id);
-      if (box) box.innerHTML = `<div class="feedback" role="status">${hint ? `Gợi ý: ${esc(hint)}` : "Bài này không có gợi ý riêng — hãy xem lại mục B. Cách đặt câu ở trên."} (Đã ghi nhận: bạn đã xem gợi ý.)</div>`;
+      if (box) box.innerHTML = `<div class="feedback" role="status">${hint ? `Gợi ý: ${esc(hint)}` : "Bài này không có gợi ý riêng — hãy xem lại mục Công thức ở trên."} (Đã ghi nhận: bạn đã xem gợi ý.)</div>`;
     };
   });
 }
@@ -991,7 +1179,7 @@ function render() {
 // bản cũ từ bộ nhớ đệm sau khi app.js mới đã chạy. Lưu ý: tham số này chỉ
 // có tác dụng khi app.js mới đã được tải; nó không chữa được app.js cũ
 // còn trong bộ nhớ đệm (xem docs/decisions.md D20).
-const BUILD_VERSION = "20261031-cur1";
+const BUILD_VERSION = "20261031-ui1";
 const DEBUG = new URLSearchParams(location.search).get("debug") === "1";
 let debugInfo = null;
 
