@@ -18,7 +18,7 @@
           "wrong_or_risky": "这件衣服漂亮坏了。"
         }
       ],
-      "content_version": 1,
+      "content_version": 2,
       "difficulty": "medium",
       "examples": [
         {
@@ -186,6 +186,10 @@
       "objective": "Sau bài này, người học gắn được ba đuôi mức độ cố định sau tính từ: 得很 (rất), 极了 (cực kỳ) và 坏了 (đến mức quá sức, thường là tệ/mệt), và phân biệt chúng với bổ ngữ trạng thái đã học.",
       "pattern": "Tính từ + 得很 • Tính từ + 极了 • Tính từ/Động từ tâm lý + 坏了",
       "quick_memory": "Đuôi mức độ đóng: tính từ+得很 (rất), +极了 (cực kỳ), +坏了 (quá sức, thường tệ). Luôn đứng sau tính từ.",
+      "related_ids": [
+        "state-complement-de",
+        "adverbs-degree-hsk3"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-4 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",

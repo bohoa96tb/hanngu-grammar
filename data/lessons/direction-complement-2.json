@@ -18,7 +18,7 @@
           "wrong_or_risky": "他看出来很累。 (muốn nói 'anh ấy trông rất mệt')"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -193,6 +193,9 @@
       "objective": "Sau bài này, người học hiểu và dùng bổ ngữ xu hướng với nghĩa bóng: 起来 = bắt đầu (唱起来), 下去 = tiếp tục (说下去), 出来 = nhận ra/biểu lộ (看出来), khi không có di chuyển thật.",
       "pattern": "Động từ/Tính từ + 起来 / 下去 / 出来",
       "quick_memory": "Không di chuyển mà vẫn 起来/下去/出来? 起来 là bắt đầu, 下去 là tiếp tục, 出来 là lộ ra, nhận ra.",
+      "related_ids": [
+        "direction-complement"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-3 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-29 và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập trong cùng bài. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",

@@ -18,7 +18,7 @@
           "wrong_or_risky": "如果有钱，我就买这辆车。 (muốn nói 'chỉ khi có đủ tiền tôi mới mua, không có tiền là không mua')"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -214,6 +214,10 @@
       "objective": "Sau bài này, người học nói được câu giả định 'nếu… thì…' bằng hai mẫu 如果……，就…… và ……的话，就……, biết 的话 đứng cuối vế điều kiện và không quên 就 ở vế kết quả.",
       "pattern": "如果……，就…… • ……的话，就……",
       "quick_memory": "Nếu… thì…: vế điều kiện mở bằng 如果 hoặc chốt bằng 的话, vế kết quả có 就 đứng đầu (mẫu chuẩn của bài).",
+      "related_ids": [
+        "complex-condition",
+        "adverbs-scope-hsk3"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-2 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-46 và OFF-H3-47 (phần 的话), diễn giải theo Chinese Grammar Wiki, bài viết mới bằng tiếng Việt, không sao chép nguyên văn nguồn ngoài; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật. Sửa vòng 2 theo QA-HSK3-2 30/10/2026: confusion 1 đổi verdict sang thay_duoc_co_dieu_kien và viết lại lời giải (Q-1 — 就 có thể lược trong giao tiếp thật, bài dạy mẫu chuẩn đầy đủ); quick_memory bỏ chữ 'luôn'; confusion 3 đổi ví dụ 只有有钱 thành 只有钱够了 (H-1); chyp-ex5 thêm biến thể 我周末不忙的话，我就去看你。 (H-3); sửa typo dính chữ trong lời giải chyp-ex4 (H-7).",
