@@ -46,6 +46,9 @@ nav a { display: inline-flex; align-items: center; min-height: var(--tap); paddi
 /* Thẻ và khối */
 .card { border: 1px solid var(--line); border-radius: var(--radius); padding: var(--space-3); margin: var(--space-3) 0; background: var(--surface); }
 .card-hero { border: 2px solid var(--accent); }
+.hero-number { font-weight: 700; margin: var(--space-1, 4px) 0; }
+.level-group { margin-top: var(--space-3, 16px); }
+.level-group > h3 { margin-bottom: var(--space-2); }
 .hero-pattern { font-size: 1.6rem; margin: var(--space-2) 0; }
 .hero-objective { font-size: 1.05rem; }
 .card-memory { border-color: var(--accent); background: var(--token-bg); }
