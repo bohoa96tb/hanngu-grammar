@@ -2,7 +2,7 @@
 // Chạy: node tests/browser-check.mjs [baseURL] [reportPath]
 // Mặc định baseURL = http://127.0.0.1:8901/ (cần máy chủ tĩnh chạy ở thư mục dự án).
 // Kiểm tra: tràn ngang ở 360/390/768/1280, lỗi console, thao tác bàn phím,
-// nút nghe/dừng (trạng thái, không khẳng định nghe được âm thanh), luồng làm bài
+// nút nghe/dừng hợp nhất (trạng thái, không khẳng định nghe được âm thanh), luồng làm bài
 // và lưu tiến độ sau tải lại. Kết quả là JSON; exit 1 nếu có kiểm tra "fail".
 // GIỚI HẠN MÔI TRƯỜNG (ghi 30/10/2026): trên VM của Muse, Chromium này chỉ tải
 // được địa chỉ localhost — proxy ra ngoài chặn CONNECT của nó
@@ -163,7 +163,7 @@ async function main() {
   await navigate("#/lesson/ma-question");
   const hasSections = await evaluate(`(() => {
     const t = document.querySelector("#app").innerText;
-    return { a: t.includes("Dùng khi nào"), f: t.includes("Nhớ nhanh"), nav: t.includes("Bài sau") };
+    return { a: t.includes("Hiểu nhanh"), f: t.includes("Nhớ nhanh"), nav: t.includes("Bài sau") };
   })()`);
   record("lesson-sections", hasSections.a && hasSections.f && hasSections.nav ? "pass" : "fail", JSON.stringify(hasSections));
 
@@ -205,8 +205,7 @@ async function main() {
     btn.click();
     await new Promise((r) => setTimeout(r, 350));
     const mid = { label: btn.textContent, speaking: btn.classList.contains("speaking") };
-    const stop = document.querySelector("[data-stop]");
-    if (stop) stop.click();
+    btn.click(); // UX pilot: nút nghe/dừng hợp nhất — bấm lần nữa để dừng
     await new Promise((r) => setTimeout(r, 150));
     const after = { label: btn.textContent, speaking: btn.classList.contains("speaking") };
     const vn = document.getElementById("voiceNote");

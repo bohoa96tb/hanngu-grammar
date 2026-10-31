@@ -128,3 +128,93 @@ input.input-bad { border: 2px solid var(--error); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* === UX pilot 2026-10-31: design tokens mở rộng + thành phần mới ===
+   Mobile-first. Màu giữ hệ teal hiện có để nhất quán; bổ sung thang
+   chữ, font Hán tự, bóng đổ nhẹ, và các thành phần: hàng danh mục gọn,
+   thanh tiến độ, ô công thức, nút nghe nhỏ, điều hướng mục trong bài,
+   trình luyện tập từng câu, các bước luyện nói. */
+:root {
+  --font-zh: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --ink-soft: #334155;
+  --fill-soft: #f1f5f9;
+  --shadow: 0 1px 3px rgba(15, 23, 42, .08);
+  --fchip-1: #ecfdf5;
+  --fchip-2: #eff6ff;
+  --fchip-3: #fffbeb;
+  --fchip-4: #fdf2f8;
+  --fs-small: .92rem;
+  --fs-zh: 1.35rem;
+}
+header h1 { font-size: 1.55rem; }
+.zh { font-family: var(--font-zh); }
+.crumb { margin: var(--space-2) 0 0; }
+.objective-line { color: var(--ink-soft); }
+
+/* Hàng danh mục gọn */
+.lesson-row { padding: 0; margin: var(--space-2) 0; box-shadow: var(--shadow); }
+.row-main { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2) var(--space-3); min-height: 56px; color: var(--ink); text-decoration: none; }
+.row-num { flex: 0 0 auto; font-weight: 700; color: var(--accent); font-size: var(--fs-small); white-space: nowrap; }
+.row-text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; }
+.row-title { font-weight: 600; }
+.row-desc { color: var(--text-muted); font-size: var(--fs-small); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.row-req { color: var(--warn); font-size: var(--fs-small); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.row-status { flex: 0 0 auto; font-size: var(--fs-small); font-weight: 600; white-space: nowrap; }
+.row-status.done { color: var(--success); }
+.row-status.doing { color: var(--warn); }
+.row-status.new { color: var(--text-muted); }
+.continue-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-2); }
+.continue-head h3 { margin: 0; }
+.continue-next { font-size: 1.05rem; }
+.level-progress { display: flex; align-items: center; gap: var(--space-2); margin: 0 0 var(--space-2); }
+.level-progress .progress-track { flex: 1 1 auto; }
+.search-card label { margin-top: 0; }
+
+/* Thanh tiến độ */
+.progress-track { height: 10px; border-radius: 999px; background: var(--fill-soft); border: 1px solid var(--line); overflow: hidden; margin: var(--space-2) 0; }
+.progress-fill { height: 100%; background: var(--accent); border-radius: 999px; }
+
+/* Điều hướng mục trong bài (nút cuộn, không che nội dung) */
+.section-nav { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-3) 0 0; }
+.sec-chip { min-height: 40px; padding: 6px 12px; background: var(--surface); color: var(--accent); border: 1px solid var(--line); border-radius: 999px; font-weight: 600; box-shadow: var(--shadow); }
+
+/* Ô công thức */
+.formula-chips { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin: var(--space-2) 0; }
+.fchip { font-family: var(--font-zh); font-size: 1.15rem; font-weight: 600; padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--line); background: var(--fchip-1); }
+.fchip:nth-of-type(2) { background: var(--fchip-2); }
+.fchip:nth-of-type(3) { background: var(--fchip-3); }
+.fchip:nth-of-type(4) { background: var(--fchip-4); }
+.fplus { font-size: 1.25rem; font-weight: 700; color: var(--text-muted); }
+.card-hero .formula-chips .fchip { font-size: 1.3rem; }
+
+/* Nút nghe nhỏ: một nút duy nhất, bấm lại để dừng */
+.speak-btn { flex: 0 0 auto; width: 44px; height: 44px; min-height: 44px; padding: 0; border-radius: 999px; font-size: 1rem; }
+.speak-btn.speaking { background: var(--warn); border-color: var(--warn); }
+
+/* Khối dễ nhầm dạng mở rộng */
+details.confusion { padding: var(--space-2) 0; }
+details.confusion summary { cursor: pointer; min-height: 40px; display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-2); }
+details > summary { cursor: pointer; font-weight: 600; padding: var(--space-1) 0; }
+.chip-state.done { background: var(--success-bg); border-color: var(--success); }
+.chip-state.doing { background: var(--warn-bg); border-color: var(--warn); }
+
+/* Trình luyện tập từng câu */
+.player-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-2); font-weight: 700; }
+#sec-practice .progress-track { margin-top: var(--space-1); }
+.exercise { padding: var(--space-2) 0; }
+.ex-meta { display: flex; gap: var(--space-2); align-items: center; margin: 0 0 var(--space-1); }
+.ex-prompt { font-size: 1.05rem; font-weight: 600; margin-top: 0; }
+.player-nav { justify-content: space-between; margin-top: var(--space-3); }
+.hint-btn { min-height: 40px; }
+#playerSummary { margin-top: var(--space-3); }
+
+/* Các bước luyện nói */
+.steps { display: flex; flex-wrap: wrap; gap: var(--space-2); list-style: none; margin: var(--space-2) 0; padding: 0; }
+.step { padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--fill-soft); color: var(--text-muted); font-size: var(--fs-small); font-weight: 600; }
+.step.current { background: var(--selected-bg); border-color: var(--accent); color: var(--ink); }
+
+@media (max-width: 420px) {
+  .row-main { gap: var(--space-2); padding: var(--space-2); }
+  .row-desc { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  .card-hero .formula-chips .fchip { font-size: 1.15rem; }
+}
