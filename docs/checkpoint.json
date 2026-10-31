@@ -4,7 +4,7 @@
  ],
  "blocked_items": [],
  "changed_files": [],
- "code_base_commit": "82cf11e48e7ebee2c0d4a84e050f66eaa1acc2dc",
+ "code_base_commit": "cfd1117045002c47a61fe0b81e72e0ed6a192278",
  "completed_task_ids": [
   "P00-01",
   "P01-01",
@@ -18,11 +18,25 @@
   "P09-01"
  ],
  "content_counts": {
-  "baseline_items": 50,
-  "draft_lessons": 0,
-  "reviewed_lessons": 0,
-  "published_lessons": 72,
-  "exercises": 353
+  "lessons_total": 76,
+  "lessons_published": 76,
+  "exercises_total": 373,
+  "per_level_lessons": {
+   "HSK1": 24,
+   "HSK2": 17,
+   "HSK3": 34,
+   "HSK4": 1,
+   "HSK5": 0,
+   "HSK6": 0
+  },
+  "official_catalogue_coverage_group_items": {
+   "HSK1": "31 da co / 10 mot phan / 11 thieu (52)",
+   "HSK2": "20/15/27 (62)",
+   "HSK3": "32/4/14 (50)",
+   "HSK4": "1/0/33 (34)",
+   "HSK5": "0/0/31 (31)",
+   "HSK6": "0/0/22 (22)"
+  }
  },
  "github": {
   "connect_url": "https://agent.meta.ai/connectors/connect/github",
@@ -50,17 +64,16 @@
   "Ôn tập FSRS thật, luyện nói, chấm phát âm, đồng bộ, đăng nhập chưa làm (backlog).",
   "Luyện nói P04-02 chưa kiểm tra mic/thu âm trên trình duyệt thật."
  ],
- "latest_verified_commit": "82cf11e48e7ebee2c0d4a84e050f66eaa1acc2dc",
+ "latest_verified_commit": "cfd1117045002c47a61fe0b81e72e0ed6a192278",
  "next_actions": [
-  "Lô UI P1 tiếp theo theo feature-gap-matrix: G-02 tìm kiếm theo pinyin (mở rộng chỉ mục tìm kiếm sang pinyin của ví dụ + objective/when_to_use) và G-06 nhóm danh mục theo cấp HSK — một lô riêng, harness mở rộng.",
-  "Tiếp tục nội dung HSK3: còn 18 mục chưa phủ đủ (mục 2b) — OFF-H3-11 lượng từ (cần vòng chọn lọc tần suất) và OFF-H3-17 tình thái (cần thiết kế bài phân biệt sắc thái) để lại theo quyết định trước; rồi HSK4 theo mapping.",
-  "Backlog Hoàn thiện từ QA REL-01: cặp modal-verbs-hsk3↔state-complement-de là cặp yếu nhất (qua chữ 得 đa âm) — rà lại ở lô nội dung sau; thêm ca âm tính vào harness cho bài không có related_ids; thêm 2 unit test thường trực (trùng phần tử, published→draft).",
-  "Vẫn mở: AUD-TTS-01 audio thiết bị thật not_run; P01-02 xác minh sâu; ISSUE-LOAD-STALL-01 monitoring (hiện tượng hsk3g7 chưa rõ nguyên nhân; hai lần nghiệm thu live 31/10 đều tải vài giây, không kẹt — chỉ là quan sát); branch protection do Hoa bật; GitHub Issues đang trống."
+  "Lô HSK1-B (theo docs/curriculum-inventory.md §4): các mục A bổ sung vào bài có sẵn — OFF-H1-09+11 (pronouns: hệ thống nhân xưng + 有的/有些), H1-13+14 (measure-words: thêm lượng từ chuyên dụng + 杯 mượn), H1-16+47 (hen/adverbs-du-ye: 真/有点儿 + câu phức sóng đôi ở mức câu), H1-43 （存现 chuẩn vào you-existence), H1-33/34/37 (bổ sung nhỏ hen/shi/question-words) — và bài mới B: 对 giới từ, 呢/吧 trợ từ, 连动句, cầu khiến+cảm thán gộp; 喂 lồng ghép (A). Sau HSK1-B: phúc tra điều kiện hoàn thành HSK1 (độ phủ + QA), trừ OFF-H1-44 khép ở giai đoạn HSK2.",
+  "Lô UI còn lại theo feature-gap-matrix: G-06 đã khép một phần nhờ nhóm cấp (CUR-02); còn G-03 (giải thích từng phương án nhiễu) P2, G-07 hub họ cấu trúc P2, G-08 trích dẫn nguồn theo bài P2. Ghi chú QA CUR-02: continueLesson vẫn theo thứ tự manifest — cân nhắc chuyển sang curriculum ở lô UI sau.",
+  "Vẫn mở: AUD-TTS-01 not_run; P01-02 xác minh sâu; ISSUE-LOAD-STALL-01 monitoring; GitHub Issues trống; branch protection do Hoa bật."
  ],
  "pending_review_ids": [],
  "phase": "P06",
  "project_root": "~/workspace/hanngu-grammar (local, chưa push)",
- "resume_notes": "REL-01 XONG và nghiệm thu live đạt (build 20261031-rel1). Lô tiếp theo đề xuất: G-02+G-06 (UI/tìm kiếm) hoặc tiếp tục phủ HSK3 theo checkpoint. TTS thiết bị thật vẫn not_run.",
+ "resume_notes": "Đợt giáo trình CUR + HSK1-A XONG, live build 20261031-cur1 (76 bài). Tiếp tục = lô HSK1-B theo inventory §4 (đọc docs/curriculum-inventory.md trước khi soạn). TTS thiết bị thật vẫn not_run.",
  "schema_version": 1,
  "spec_version": "1.0",
  "updated_at": "2026-10-31",
@@ -168,8 +181,12 @@
   {
    "command": "PR #20 checks (trang PR) + merge + browser live ?debug=1 sau merge 82cf11e4; harness local node tests/browser-check.mjs",
    "result": "CI 2/2 success trên head aa5ba2eb (run 41171492974: Validator 11s, harness 22s); merge 82cf11e4; live build 20261031-rel1 72/72; Bài liên quan hai chiều cặp 了 + ba→bei đúng; adverbs-du-ye không hiện mục trống; harness local 20/20 PASS."
+  },
+  {
+   "command": "PR #21 checks (trang PR) + merge + browser live ?debug=1 sau merge cfd11170; harness local",
+   "result": "CI 2/2 success trên head b28081a9 (run 41173937714: Validator 15s, harness 26s); merge cfd11170; live build 20261031-cur1 76/76 + curriculum.json 200; 6 nhóm cấp đúng số; số bài và tiên quyết hiển thị đúng; tiến độ cũ giữ nguyên dưới số mới; harness local 24/24 PASS."
   }
  ],
- "working_tree_state": "main đã đồng bộ ở 82cf11e4 (merge PR #20). Workspace local khớp main cho các file của REL-01; không còn thay đổi dở.",
- "last_completed_batch": "Pilot REL-01 'Bài liên quan' (XONG 2026-10-31): PR #20 merge 82cf11e4, build 20261031-rel1. related_ids đối xứng cho 37 bài/29 cặp (mỗi cặp có bằng chứng trong dữ liệu; 8 cặp ứng viên bị loại có lý do — docs/reviews/rel01-pairs.md); validator thêm quy tắc related_ids + 5 unit test (14/14); harness 20/20 gồm kiểm tra related-lessons mới. QA độc lập PASS (tự mở 22/29 cặp, đối chiếu 3 file với main, đột biến validator; 0 lỗi chặn, 3 Hoàn thiện vào backlog). CI 2/2 xanh trên head aa5ba2eb (run 41171492974). Nghiệm thu live ĐẠT: sau 75s chờ triển khai + tải lại → build rel1, 72/72; Bài liên quan hiện đúng hai chiều ở cặp 了, ba-sentence-1 trỏ bei-passive-1, bài không có liên kết (adverbs-du-ye) không hiện mục trống; làm bài ba-sentence-1 đúng và lần làm giữ sau tải lại. Kèm theo trong PR #20: bộ nghiên cứu benchmark 3 nền tảng docs/research/ + source-register (thêm Yoyo/Mandarin Bean) + quyết định D27. Nội dung học không đổi: vẫn 72 bài/353 bài tập."
+ "working_tree_state": "main đã đồng bộ ở cfd11170 (merge PR #21). Workspace local khớp main cho các file của đợt; không còn thay đổi dở.",
+ "last_completed_batch": "Giáo trình có thứ tự CUR-01/02 + HSK1-A (XONG 2026-10-31): PR #21 merge cfd11170, build 20261031-cur1. Kiểm kê hợp nhất docs/curriculum-inventory.md (251 mục nhóm 6 cấp, thang COMPLETE/PARTIAL/MISSING + NEEDS_VERIFICATION tầng sâu). data/curriculum.json: thứ tự học chính thức — sắp xếp lại 72 bài theo sư phạm (cặp 了 xuống HSK1 Bài 21–22; ba/bei xuống HSK3 17–18), 14 bài có requires (16 cạnh, có bằng chứng); UI: danh mục nhóm 6 cấp + nhãn HSK n · Bài NN + mục Cần học trước + Bài trước/sau theo curriculum + tìm kiếm pinyin/objective/when_to_use (khép G-02); fallback manifest khi curriculum lỗi (QA kiểm bằng chặn 404); validator validate_curriculum + 5 test; harness 24/24. HSK1-A: 4 bài mới numbers-and-money (Bài 11), time-expressions (Bài 12), he-connecting (Bài 04), questions-affirmative-negative (Bài 08) — khép OFF-H1-12/51/52/15/24/38; HSK1 catalogue 31/10/11. Tổng 76 bài/373 bài tập. QA: mã PASS (đột biến validator 3/3 bị bắt); nội dung PASS sau sửa nhỏ (4 Quan trọng đã sửa: biến thể num-ex3/qan-ex4 hai thứ tự/ví dụ 年·分/nhiễu tim-ex1 + số liệu inventory) và phúc tra đạt. CI 2/2 run 41173937714 trên head b28081a9. Nghiệm thu live ĐẠT: build cur1 76/76, 6 nhóm cấp 24/17/34/1/0/0, Bài 11/12/22 đúng, Cần học trước của potential-complement-1 trỏ đúng 2 bài HSK2, điền 二十 ở num-ex3 chấm Đúng, HỒI QUY TIẾN ĐỘ: 3 bài đã hoàn thành giữ nguyên trạng thái dưới SỐ MỚI (Bài 01/06/22), 3 thẻ đến hạn ôn còn nguyên."
 }

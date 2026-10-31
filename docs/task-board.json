@@ -184,7 +184,7 @@
    "depends_on": [
     "P06-01"
    ],
-   "evidence": "64 bài sau HSK3-7 → 68 bài đã rà soát nội bộ sau HSK3-8 (HSK1: 20, HSK2: 17, HSK3: 30, HSK4: 1), 333 bài tập. Mới nhất — HSK3-8 (PR #17, build 20261030-hsk3h8, CI 2/2 xanh trên commit mới nhất trước merge): approx-numbers-1 (HSK2), zenme-yang-question, time-frame-patterns, adverbs-degree-hsk3 + sửa đối chiếu trực quan (H3-42/43, H3-07, H3-12) + sửa lỗi treo tải trong app.js. Ánh xạ: HSK2 20/15/27; HSK3 29 đã có / 4 một phần / 17 thiếu; HSK4 1/0/33. Audio thật vẫn not_run. || Cập nhật 2026-10-31: HSK3-9 XONG — tổng 72 bài/353 bài tập (HSK1 20, HSK2 17, HSK3 34, HSK4 1); PR #19 merge e5933c2c, CI 2/2 run 41053571119, nghiệm thu live đạt build 20261030-hsk3i9. Ánh xạ HSK3: 32 đã phủ / 4 một phần / 14 thiếu (còn 18 mục chưa phủ đủ, mục 2b).",
+   "evidence": "64 bài sau HSK3-7 → 68 bài đã rà soát nội bộ sau HSK3-8 (HSK1: 20, HSK2: 17, HSK3: 30, HSK4: 1), 333 bài tập. Mới nhất — HSK3-8 (PR #17, build 20261030-hsk3h8, CI 2/2 xanh trên commit mới nhất trước merge): approx-numbers-1 (HSK2), zenme-yang-question, time-frame-patterns, adverbs-degree-hsk3 + sửa đối chiếu trực quan (H3-42/43, H3-07, H3-12) + sửa lỗi treo tải trong app.js. Ánh xạ: HSK2 20/15/27; HSK3 29 đã có / 4 một phần / 17 thiếu; HSK4 1/0/33. Audio thật vẫn not_run. || Cập nhật 2026-10-31: HSK3-9 XONG — tổng 72 bài/353 bài tập (HSK1 20, HSK2 17, HSK3 34, HSK4 1); PR #19 merge e5933c2c, CI 2/2 run 41053571119, nghiệm thu live đạt build 20261030-hsk3i9. Ánh xạ HSK3: 32 đã phủ / 4 một phần / 14 thiếu (còn 18 mục chưa phủ đủ, mục 2b). || Cập nhật 2026-10-31 (CUR-02): G-02 đã khép (tìm kiếm pinyin/objective/when_to_use trong PR #21); G-06 khép một phần (nhóm danh mục theo cấp); REL-01 và CUR-01 done.",
    "files": [],
    "id": "P07-01",
    "inputs": "Baseline khóa",
@@ -311,6 +311,14 @@
     "docs/schema.md",
     "data/lessons/*.json"
    ]
+  },
+  {
+   "id": "CUR-01",
+   "title": "Thứ tự giáo trình chính thức (curriculum) + giao diện lộ trình + HSK1-A",
+   "owner": "Manager",
+   "priority": "P1",
+   "status": "done",
+   "evidence": "PR #21 merge cfd11170, build 20261031-cur1 (2026-10-31): data/curriculum.json + kiểm kê docs/curriculum-inventory.md + D28; UI nhóm 6 cấp/Bài NN/tiên quyết/tìm pinyin; 4 bài HSK1 mới khép 6 mục (HSK1 31/10/11); QA mã PASS + QA nội dung PASS sau sửa nhỏ; CI 2/2 run 41173937714; harness 24/24; nghiệm thu live đạt gồm hồi quy tiến độ dưới số mới."
   }
  ]
 }

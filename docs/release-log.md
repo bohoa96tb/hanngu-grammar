@@ -132,6 +132,44 @@ Chưa có bản phát hành nào.
   thành verified sau khi kiểm tra trực tiếp bản gốc （几/多少 thuộc
   nhóm đại từ để hỏi HSK1).
 
+- 2026-10-31 — Giáo trình có thứ tự + lô HSK1-A (PR #21,
+  merge cfd11170, build 20261031-cur1): theo chỉ đạo xây
+  dựng giáo trình hoàn chỉnh và quyết định D28. (1) Thứ tự
+  học chính thức data/curriculum.json: sắp xếp lại 72 bài
+  hiện có theo quan hệ kiến thức (không đổi ID/manifest/
+  tiến độ): cặp 了 xuống HSK1 Bài 21–22, ba/bei xuống HSK3
+  Bài 17–18, 5 bài phó từ HSK3 thành khối; 14 bài có
+  requires (16 cạnh tiên quyết có bằng chứng trong dữ
+  liệu). Validator thêm validate_curriculum (phủ đủ, đúng
+  cấp, tiên quyết đứng trước) + 5 unit test; kiểm kê hợp
+  nhất cả 6 cấp ở docs/curriculum-inventory.md (251 mục
+  nhóm; thang COMPLETE/PARTIAL/MISSING, tầng sâu vẫn
+  NEEDS_VERIFICATION). (2) Giao diện: danh mục nhóm theo 6
+  cấp (HSK5/6 ghi "đang biên soạn"), nhãn "HSK n · Bài NN"
+  trên thẻ và trang bài, mục "Cần học trước", Bài trước/
+  sau theo curriculum (nối qua ranh giới cấp), tìm kiếm mở
+  rộng sang pinyin của ví dụ + objective + when_to_use
+  (khép G-02); lỗi tải curriculum thì dự phòng về thứ tự
+  manifest (QA kiểm bằng chặn 404 thật). Harness 24/24.
+  (3) HSK1-A: 4 bài mới — he-connecting （和， Bài 04),
+  questions-affirmative-negative (chính phản, Bài 08),
+  numbers-and-money (số và tiền, Bài 11), time-expressions
+  (thời gian, Bài 12; tiên quyết: bài Số) — khép 6 mục
+  MISSING OFF-H1-12/51/52/15/24/38; HSK1 đạt 31 covered /
+  10 partial / 11 missing trong 52 mục nhóm. Tổng dự án:
+  76 bài / 373 bài tập. QA: mã PASS (đột biến validator
+  3/3 bị bắt, tìm kiếm thử thêm bǐ/钱/thời gian); nội dung
+  PASS sau sửa nhỏ (thêm biến thể điền 二十 và dạng
+  钱, nhận cả hai thứ tự câu chính phản, thêm ví dụ
+  年/phút cho bài thời gian, thay nhiễu gây tranh cãi) và
+  phúc tra đạt. CI 2/2 xanh trên head b28081a9 (run
+  41173937714). Nghiệm thu live ĐẠT: 6 nhóm cấp đúng số
+  24/17/34/1/0/0, số bài hiển thị đúng, điền đáp án
+  "二十" được chấm đúng, và tiến độ của 3 bài đã hoàn
+  thành từ trước giữ nguyên dưới số bài mới (Bài 01/06/
+  22), 3 thẻ đến hạn ôn còn nguyên — đổi thứ tự không làm
+  mất tiến độ.
+
 - 2026-10-31 — Pilot REL-01 "Bài liên quan" (PR #20, merge
   82cf11e4, build 20261031-rel1): từ nghiên cứu benchmark ba
   nền tảng cùng ngày (docs/research/grammar-platform-
