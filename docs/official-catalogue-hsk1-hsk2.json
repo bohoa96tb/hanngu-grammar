@@ -1,871 +1,883 @@
 {
-  "schema_version": 1,
   "edition": {
-    "id": "hsk-exam-syllabus-2025-11",
-    "source": "hsk-official",
-    "section": "语法大纲 HSK1 (tr.382) và HSK2 (tr.386)",
     "crawl_date": "2026-09-25",
-    "note": "Diễn giải bằng tiếng Việt của dự án, không sao chép nguyên văn bảng hay câu ví dụ của đề cương (quyền phân phối chưa xác minh). Bố cục bảng trong bản trích bị nhòe ở một số hàng nên nhóm con của một vài phó từ ghi chú chưa chắc chắn. Danh mục nhóm của dự án giữ riêng."
+    "id": "hsk-exam-syllabus-2025-11",
+    "note": "Diễn giải bằng tiếng Việt của dự án, không sao chép nguyên văn bảng hay câu ví dụ của đề cương (quyền phân phối chưa xác minh). Bố cục bảng trong bản trích bị nhòe ở một số hàng nên nhóm con của một vài phó từ ghi chú chưa chắc chắn. Danh mục nhóm của dự án giữ riêng.",
+    "section": "语法大纲 HSK1 (tr.382) và HSK2 (tr.386)",
+    "source": "hsk-official"
   },
   "hsk1": [
     {
       "id": "OFF-H1-01",
-      "title_vi": "Tiền tố 小—/第—",
-      "status": "covered",
       "lesson_ids": [
         "prefix-suffix"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Tiền tố 小—/第—"
     },
     {
       "id": "OFF-H1-02",
-      "title_vi": "Hậu tố —们/—边",
-      "status": "covered",
       "lesson_ids": [
         "prefix-suffix"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Hậu tố —们/—边"
     },
     {
       "id": "OFF-H1-03",
-      "title_vi": "Phương vị danh từ 上/下/里/外/前/后",
-      "status": "covered",
       "lesson_ids": [
         "location-nouns"
       ],
-      "note": "Bài mới lô 08, đã rà soát nội bộ."
+      "note": "Bài mới lô 08, đã rà soát nội bộ.",
+      "status": "covered",
+      "title_vi": "Phương vị danh từ 上/下/里/外/前/后"
     },
     {
       "id": "OFF-H1-04",
-      "title_vi": "Năng nguyện 会/能/可以",
-      "status": "covered",
       "lesson_ids": [
         "modal-hui-neng-keyi"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Năng nguyện 会/能/可以"
     },
     {
       "id": "OFF-H1-05",
-      "title_vi": "Năng nguyện 想/要",
-      "status": "covered",
       "lesson_ids": [
         "modal-xiang-yao"
       ],
-      "note": "Bài mới lô 08, đã rà soát nội bộ."
+      "note": "Bài mới lô 08, đã rà soát nội bộ.",
+      "status": "covered",
+      "title_vi": "Năng nguyện 想/要"
     },
     {
       "id": "OFF-H1-06",
-      "title_vi": "Ly hợp từ (看病/睡觉/说话/上课/下课/上班/下班/生病)",
-      "status": "covered",
       "lesson_ids": [
         "separable-verbs"
       ],
-      "note": "Bài mới lô 09, đã rà soát nội bộ."
+      "note": "Bài mới lô 09, đã rà soát nội bộ.",
+      "status": "covered",
+      "title_vi": "Ly hợp từ (看病/睡觉/说话/上课/下课/上班/下班/生病)"
     },
     {
       "id": "OFF-H1-07",
-      "title_vi": "Nghi vấn 什么/谁",
-      "status": "covered",
       "lesson_ids": [
         "question-words"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Nghi vấn 什么/谁"
     },
     {
       "id": "OFF-H1-08",
-      "title_vi": "Nghi vấn 怎么/怎么样",
-      "status": "covered",
       "lesson_ids": [
         "zenme-question"
       ],
-      "note": "Bài mới lô 09, đã rà soát nội bộ."
+      "note": "Bài mới lô 09, đã rà soát nội bộ.",
+      "status": "covered",
+      "title_vi": "Nghi vấn 怎么/怎么样"
     },
     {
       "id": "OFF-H1-09",
-      "title_vi": "Nhân xưng (hệ thống)",
-      "status": "partial",
       "lesson_ids": [
         "pronouns"
       ],
-      "note": "Công thức nhắc tới nhưng ví dụ chưa dạy hệ thống."
+      "note": "Công thức nhắc tới nhưng ví dụ chưa dạy hệ thống.",
+      "status": "partial",
+      "title_vi": "Nhân xưng (hệ thống)"
     },
     {
       "id": "OFF-H1-10",
-      "title_vi": "Chỉ định 这/那/这儿/那儿/这里/那里/这些/那些/这个/那个",
-      "status": "covered",
       "lesson_ids": [
         "pronouns"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Chỉ định 这/那/这儿/那儿/这里/那里/这些/那些/这个/那个"
     },
     {
       "id": "OFF-H1-11",
-      "title_vi": "Chỉ định 有的/有些",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Chỉ định 有的/有些"
     },
     {
       "id": "OFF-H1-12",
-      "title_vi": "Số từ",
-      "status": "missing",
-      "lesson_ids": []
+      "lesson_ids": [
+        "numbers-and-money"
+      ],
+      "status": "covered",
+      "title_vi": "Số từ"
     },
     {
       "id": "OFF-H1-13",
-      "title_vi": "Lượng từ chuyên dụng HSK1",
-      "status": "partial",
       "lesson_ids": [
         "measure-words"
       ],
-      "note": "Ví dụ mới dạy 本/件."
+      "note": "Ví dụ mới dạy 本/件.",
+      "status": "partial",
+      "title_vi": "Lượng từ chuyên dụng HSK1"
     },
     {
       "id": "OFF-H1-14",
-      "title_vi": "Lượng từ mượn 杯",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Lượng từ mượn 杯"
     },
     {
       "id": "OFF-H1-15",
-      "title_vi": "Lượng từ thời lượng 日/号/岁/点/分/年/天",
-      "status": "missing",
-      "lesson_ids": []
+      "lesson_ids": [
+        "time-expressions"
+      ],
+      "status": "covered",
+      "title_vi": "Lượng từ thời lượng 日/号/岁/点/分/年/天"
     },
     {
       "id": "OFF-H1-16",
-      "title_vi": "Phó từ mức độ 非常/很/太/真/有点儿",
-      "status": "partial",
       "lesson_ids": [
         "hen-adj-predicate",
         "adverbs-du-ye"
       ],
-      "note": "Thiếu 真/有点儿."
+      "note": "Thiếu 真/有点儿.",
+      "status": "partial",
+      "title_vi": "Phó từ mức độ 非常/很/太/真/有点儿"
     },
     {
       "id": "OFF-H1-17",
-      "title_vi": "Phó từ phạm vi 都",
-      "status": "covered",
       "lesson_ids": [
         "adverbs-du-ye"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Phó từ phạm vi 都"
     },
     {
       "id": "OFF-H1-18",
-      "title_vi": "Phó từ thời gian 在/正在",
-      "status": "covered",
       "lesson_ids": [
         "zai-progress"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Phó từ thời gian 在/正在"
     },
     {
       "id": "OFF-H1-19",
-      "title_vi": "Phó từ 还/再/也",
-      "status": "covered",
       "lesson_ids": [
         "adverbs-du-ye"
       ],
-      "note": "Nhóm con chưa chắc chắn do bảng trích bị nhòe."
+      "note": "Nhóm con chưa chắc chắn do bảng trích bị nhòe.",
+      "status": "covered",
+      "title_vi": "Phó từ 还/再/也"
     },
     {
       "id": "OFF-H1-20",
-      "title_vi": "Phủ định 不/没(有)",
-      "status": "covered",
       "lesson_ids": [
         "bu-mei-negation"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Phủ định 不/没(有)"
     },
     {
       "id": "OFF-H1-21",
-      "title_vi": "Phủ định 不要",
-      "status": "covered",
       "lesson_ids": [
         "bu-yao-prohibition"
       ],
-      "note": "Bài mới lô 09, đã rà soát nội bộ."
+      "note": "Bài mới lô 09, đã rà soát nội bộ.",
+      "status": "covered",
+      "title_vi": "Phủ định 不要"
     },
     {
       "id": "OFF-H1-22",
-      "title_vi": "Giới từ chỉ thời gian/nơi chốn 在",
-      "status": "covered",
       "lesson_ids": [
         "zai-progress"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Giới từ chỉ thời gian/nơi chốn 在"
     },
     {
       "id": "OFF-H1-23",
-      "title_vi": "Giới từ chỉ đối tượng 对",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Giới từ chỉ đối tượng 对"
     },
     {
       "id": "OFF-H1-24",
-      "title_vi": "Liên từ nối từ/cụm 和",
-      "status": "missing",
-      "lesson_ids": []
+      "lesson_ids": [
+        "he-connecting"
+      ],
+      "status": "covered",
+      "title_vi": "Liên từ nối từ/cụm 和"
     },
     {
       "id": "OFF-H1-25",
-      "title_vi": "Trợ từ kết cấu 的",
-      "status": "covered",
       "lesson_ids": [
         "de-possessive"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Trợ từ kết cấu 的"
     },
     {
       "id": "OFF-H1-26",
-      "title_vi": "Trợ từ động thái 了",
-      "status": "covered",
       "lesson_ids": [
         "le-completion-change"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Trợ từ động thái 了"
     },
     {
       "id": "OFF-H1-27",
-      "title_vi": "Ngữ khí 吗",
-      "status": "covered",
       "lesson_ids": [
         "ma-question"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Ngữ khí 吗"
     },
     {
       "id": "OFF-H1-28",
-      "title_vi": "Ngữ khí 呢/吧",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Ngữ khí 呢/吧"
     },
     {
       "id": "OFF-H1-29",
-      "title_vi": "Thán từ 喂",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Thán từ 喂"
     },
     {
       "id": "OFF-H1-30",
-      "title_vi": "Loại cụm (联合/偏正/动宾/主谓/数量/介宾/方位)",
-      "status": "missing",
       "lesson_ids": [],
-      "note": "Kiến thức cấu trúc, chưa thành bài riêng."
+      "note": "Kiến thức cấu trúc, chưa thành bài riêng.",
+      "status": "missing",
+      "title_vi": "Loại cụm (联合/偏正/动宾/主谓/数量/介宾/方位)"
     },
     {
       "id": "OFF-H1-31",
-      "title_vi": "Thành phần câu",
-      "status": "missing",
       "lesson_ids": [],
-      "note": "Chưa thành bài riêng."
+      "note": "Chưa thành bài riêng.",
+      "status": "missing",
+      "title_vi": "Thành phần câu"
     },
     {
       "id": "OFF-H1-32",
-      "title_vi": "Động từ làm vị ngữ",
-      "status": "covered",
       "lesson_ids": [
         "shi-noun-link",
         "zai-progress"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Động từ làm vị ngữ"
     },
     {
       "id": "OFF-H1-33",
-      "title_vi": "Tính từ làm vị ngữ",
-      "status": "partial",
       "lesson_ids": [
         "hen-adj-predicate"
       ],
-      "note": "Dạng có 很."
+      "note": "Dạng có 很.",
+      "status": "partial",
+      "title_vi": "Tính từ làm vị ngữ"
     },
     {
       "id": "OFF-H1-34",
-      "title_vi": "Danh từ làm vị ngữ",
-      "status": "partial",
       "lesson_ids": [
         "shi-noun-link"
-      ]
+      ],
+      "status": "partial",
+      "title_vi": "Danh từ làm vị ngữ"
     },
     {
       "id": "OFF-H1-35",
-      "title_vi": "Câu không chủ vị đầy đủ",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Câu không chủ vị đầy đủ"
     },
     {
       "id": "OFF-H1-36",
-      "title_vi": "Câu hỏi có/không",
-      "status": "covered",
       "lesson_ids": [
         "ma-question"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Câu hỏi có/không"
     },
     {
       "id": "OFF-H1-37",
-      "title_vi": "Câu hỏi đặc chỉ",
-      "status": "partial",
       "lesson_ids": [
         "question-words"
-      ]
+      ],
+      "status": "partial",
+      "title_vi": "Câu hỏi đặc chỉ"
     },
     {
       "id": "OFF-H1-38",
-      "title_vi": "Câu hỏi chính phản",
-      "status": "missing",
-      "lesson_ids": []
+      "lesson_ids": [
+        "questions-affirmative-negative"
+      ],
+      "status": "covered",
+      "title_vi": "Câu hỏi chính phản"
     },
     {
       "id": "OFF-H1-39",
-      "title_vi": "Câu cầu khiến",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Câu cầu khiến"
     },
     {
       "id": "OFF-H1-40",
-      "title_vi": "Câu cảm thán",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Câu cảm thán"
     },
     {
       "id": "OFF-H1-41",
-      "title_vi": "是字句 dạng đồng nhất/loại thuộc",
-      "status": "covered",
       "lesson_ids": [
         "shi-noun-link"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "是字句 dạng đồng nhất/loại thuộc"
     },
     {
       "id": "OFF-H1-42",
-      "title_vi": "有字句 dạng sở hữu",
-      "status": "covered",
       "lesson_ids": [
         "you-existence"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "有字句 dạng sở hữu"
     },
     {
       "id": "OFF-H1-43",
-      "title_vi": "存现句 dạng 处所+有+数量+名词",
-      "status": "partial",
       "lesson_ids": [
         "you-existence"
       ],
-      "note": "Chưa dạy mẫu chuẩn."
+      "note": "Chưa dạy mẫu chuẩn.",
+      "status": "partial",
+      "title_vi": "存现句 dạng 处所+有+数量+名词"
     },
     {
       "id": "OFF-H1-44",
-      "title_vi": "双宾语句 dạng chung (không 给)",
-      "status": "partial",
       "lesson_ids": [
         "gei-double-object"
       ],
-      "note": "Bài hiện có dạy dạng 给 (HSK2)."
+      "note": "Bài hiện có dạy dạng 给 (HSK2).",
+      "status": "partial",
+      "title_vi": "双宾语句 dạng chung (không 给)"
     },
     {
       "id": "OFF-H1-45",
-      "title_vi": "连动句",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "连动句"
     },
     {
       "id": "OFF-H1-46",
-      "title_vi": "Câu phức không liên từ",
+      "lesson_ids": [],
       "status": "partial",
-      "lesson_ids": []
+      "title_vi": "Câu phức không liên từ"
     },
     {
       "id": "OFF-H1-47",
-      "title_vi": "Câu phức并列 ……，也……/……，还……",
-      "status": "partial",
       "lesson_ids": [
         "adverbs-du-ye"
       ],
-      "note": "Mới dạy ở cấp từ."
+      "note": "Mới dạy ở cấp từ.",
+      "status": "partial",
+      "title_vi": "Câu phức并列 ……，也……/……，还……"
     },
     {
       "id": "OFF-H1-48",
-      "title_vi": "Thể hoàn thành/đổi trạng thái (了)",
-      "status": "covered",
       "lesson_ids": [
         "le-completion-change"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Thể hoàn thành/đổi trạng thái (了)"
     },
     {
       "id": "OFF-H1-49",
-      "title_vi": "Thể tiến hành 在/正在(+呢)",
-      "status": "covered",
       "lesson_ids": [
         "zai-progress"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Thể tiến hành 在/正在(+呢)"
     },
     {
       "id": "OFF-H1-50",
-      "title_vi": "序数 第+数词",
-      "status": "covered",
       "lesson_ids": [
         "prefix-suffix"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "序数 第+数词"
     },
     {
       "id": "OFF-H1-51",
-      "title_vi": "Cách nói số tiền",
-      "status": "missing",
-      "lesson_ids": []
+      "lesson_ids": [
+        "numbers-and-money"
+      ],
+      "status": "covered",
+      "title_vi": "Cách nói số tiền"
     },
     {
       "id": "OFF-H1-52",
-      "title_vi": "Cách nói thời gian (năm/tháng/ngày/thứ; giờ)",
-      "status": "missing",
-      "lesson_ids": []
+      "lesson_ids": [
+        "time-expressions"
+      ],
+      "status": "covered",
+      "title_vi": "Cách nói thời gian (năm/tháng/ngày/thứ; giờ)"
     }
   ],
   "hsk2": [
     {
       "id": "OFF-H2-01",
-      "title_vi": "Hậu tố —面",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Hậu tố —面"
     },
     {
       "id": "OFF-H2-02",
-      "title_vi": "Phương vị 左/右",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Phương vị 左/右"
     },
     {
       "id": "OFF-H2-03",
-      "title_vi": "Động từ trùng điệp AA/A一A/ABAB",
-      "status": "partial",
       "lesson_ids": [
         "verb-reduplication"
       ],
-      "note": "Thiếu A了A."
+      "note": "Thiếu A了A.",
+      "status": "partial",
+      "title_vi": "Động từ trùng điệp AA/A一A/ABAB"
     },
     {
       "id": "OFF-H2-04",
-      "title_vi": "Năng nguyện 可能",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Năng nguyện 可能"
     },
     {
       "id": "OFF-H2-05",
-      "title_vi": "Ly hợp từ 帮忙/游泳/跳舞/跑步",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Ly hợp từ 帮忙/游泳/跳舞/跑步"
     },
     {
       "id": "OFF-H2-06",
-      "title_vi": "Nghi vấn 为什么",
-      "status": "covered",
       "lesson_ids": [
         "why-question"
       ],
-      "note": "Bài mới lô 08, đã rà soát nội bộ."
+      "note": "Bài mới lô 08, đã rà soát nội bộ.",
+      "status": "covered",
+      "title_vi": "Nghi vấn 为什么"
     },
     {
       "id": "OFF-H2-07",
-      "title_vi": "Nhân xưng 自己",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Nhân xưng 自己"
     },
     {
       "id": "OFF-H2-08",
-      "title_vi": "Chỉ định 那么/那样/这么/这样/每",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Chỉ định 那么/那样/这么/这样/每"
     },
     {
       "id": "OFF-H2-09",
-      "title_vi": "Tính từ trùng điệp AA/AABB",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Tính từ trùng điệp AA/AABB"
     },
     {
       "id": "OFF-H2-10",
-      "title_vi": "Số từ 万/好多/多",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Số từ 万/好多/多"
     },
     {
       "id": "OFF-H2-11",
-      "title_vi": "Lượng từ 条/位/间/名/包/次",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Lượng từ 条/位/间/名/包/次"
     },
     {
       "id": "OFF-H2-12",
-      "title_vi": "Phó từ mức độ 多/好/最",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Phó từ mức độ 多/好/最"
     },
     {
       "id": "OFF-H2-13",
-      "title_vi": "Phó từ 一起/已经/有时/快/快要/正/常/经常",
-      "status": "missing",
       "lesson_ids": [],
-      "note": "Nhóm con chưa chắc chắn do bảng trích bị nhòe."
+      "note": "Nhóm con chưa chắc chắn do bảng trích bị nhòe.",
+      "status": "missing",
+      "title_vi": "Phó từ 一起/已经/有时/快/快要/正/常/经常"
     },
     {
       "id": "OFF-H2-14",
-      "title_vi": "Phủ định 别",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Phủ định 别"
     },
     {
       "id": "OFF-H2-15",
-      "title_vi": "Liên kết 再/都 (HSK2)",
-      "status": "covered",
       "lesson_ids": [
         "adverbs-du-ye"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Liên kết 再/都 (HSK2)"
     },
     {
       "id": "OFF-H2-16",
-      "title_vi": "Liên kết 就",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Liên kết 就"
     },
     {
       "id": "OFF-H2-17",
-      "title_vi": "Liên kết 还是",
-      "status": "covered",
       "lesson_ids": [
         "hai-shi-choice"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Liên kết 还是"
     },
     {
       "id": "OFF-H2-18",
-      "title_vi": "Giới từ 从/往",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Giới từ 从/往"
     },
     {
       "id": "OFF-H2-19",
-      "title_vi": "Giới từ 给 (hướng/đối tượng)",
-      "status": "partial",
       "lesson_ids": [
         "gei-double-object"
       ],
-      "note": "Mới dạy dạng hai tân ngữ."
+      "note": "Mới dạy dạng hai tân ngữ.",
+      "status": "partial",
+      "title_vi": "Giới từ 给 (hướng/đối tượng)"
     },
     {
       "id": "OFF-H2-20",
-      "title_vi": "Giới từ 比",
-      "status": "covered",
       "lesson_ids": [
         "bi-comparison"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Giới từ 比"
     },
     {
       "id": "OFF-H2-21",
-      "title_vi": "Giới từ 跟",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Giới từ 跟"
     },
     {
       "id": "OFF-H2-22",
-      "title_vi": "Liên từ nối từ 跟",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Liên từ nối từ 跟"
     },
     {
       "id": "OFF-H2-23",
-      "title_vi": "Liên từ nối phân câu 虽然/因为/所以",
-      "status": "covered",
       "lesson_ids": [
         "complex-suiran-yinwei"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Liên từ nối phân câu 虽然/因为/所以"
     },
     {
       "id": "OFF-H2-24",
-      "title_vi": "Liên từ nối phân câu 但/但是/那",
-      "status": "partial",
       "lesson_ids": [
         "complex-suiran-yinwei"
       ],
-      "note": "但是 mới ở vế sau của 虽然."
+      "note": "但是 mới ở vế sau của 虽然.",
+      "status": "partial",
+      "title_vi": "Liên từ nối phân câu 但/但是/那"
     },
     {
       "id": "OFF-H2-25",
-      "title_vi": "Trợ từ 的",
-      "status": "covered",
       "lesson_ids": [
         "de-possessive"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Trợ từ 的"
     },
     {
       "id": "OFF-H2-26",
-      "title_vi": "Trợ từ 过",
-      "status": "covered",
       "lesson_ids": [
         "guo-experience"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Trợ từ 过"
     },
     {
       "id": "OFF-H2-27",
-      "title_vi": "Trợ từ 着",
-      "status": "partial",
       "lesson_ids": [
         "zhe-continuation"
       ],
-      "note": "Mới dạy nghĩa trạng thái."
+      "note": "Mới dạy nghĩa trạng thái.",
+      "status": "partial",
+      "title_vi": "Trợ từ 着"
     },
     {
       "id": "OFF-H2-28",
-      "title_vi": "Trợ từ 得",
-      "status": "partial",
       "lesson_ids": [],
-      "note": "Chưa có bài riêng."
+      "note": "Chưa có bài riêng.",
+      "status": "partial",
+      "title_vi": "Trợ từ 得"
     },
     {
       "id": "OFF-H2-29",
-      "title_vi": "Trợ từ 地",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Trợ từ 地"
     },
     {
       "id": "OFF-H2-30",
-      "title_vi": "Ngữ khí 呢",
-      "status": "partial",
       "lesson_ids": [
         "zai-progress"
-      ]
+      ],
+      "status": "partial",
+      "title_vi": "Ngữ khí 呢"
     },
     {
       "id": "OFF-H2-31",
-      "title_vi": "Ngữ khí 吧/啊",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Ngữ khí 吧/啊"
     },
     {
       "id": "OFF-H2-32",
-      "title_vi": "Động bổ đoản ngữ",
-      "status": "covered",
       "lesson_ids": [
         "result-complement",
         "direction-complement"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Động bổ đoản ngữ"
     },
     {
       "id": "OFF-H2-33",
-      "title_vi": "的字短语",
-      "status": "partial",
       "lesson_ids": [
         "de-possessive"
-      ]
+      ],
+      "status": "partial",
+      "title_vi": "的字短语"
     },
     {
       "id": "OFF-H2-34",
-      "title_vi": "连谓短语/兼语短语",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "连谓短语/兼语短语"
     },
     {
       "id": "OFF-H2-35",
-      "title_vi": "什么的",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "什么的"
     },
     {
       "id": "OFF-H2-36",
-      "title_vi": "固定格式 要/快要/就要……了",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "固定格式 要/快要/就要……了"
     },
     {
       "id": "OFF-H2-37",
-      "title_vi": "还是……吧 (đề nghị)",
-      "status": "partial",
       "lesson_ids": [
         "hai-shi-choice"
       ],
-      "note": "Mới dạy 还是 hỏi lựa chọn."
+      "note": "Mới dạy 还是 hỏi lựa chọn.",
+      "status": "partial",
+      "title_vi": "还是……吧 (đề nghị)"
     },
     {
       "id": "OFF-H2-38",
-      "title_vi": "Danh từ đoản ngữ làm vị ngữ/受事主语/都……了",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Danh từ đoản ngữ làm vị ngữ/受事主语/都……了"
     },
     {
       "id": "OFF-H2-39",
-      "title_vi": "Định ngữ bằng động từ/chủ vị đoản ngữ",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Định ngữ bằng động từ/chủ vị đoản ngữ"
     },
     {
       "id": "OFF-H2-40",
-      "title_vi": "Kết quả bổ ngữ 错/懂/好/会/完",
-      "status": "partial",
       "lesson_ids": [
         "result-complement"
       ],
-      "note": "Thiếu 会."
+      "note": "Thiếu 会.",
+      "status": "partial",
+      "title_vi": "Kết quả bổ ngữ 错/懂/好/会/完"
     },
     {
       "id": "OFF-H2-41",
-      "title_vi": "Xu hướng bổ ngữ đơn/phức",
-      "status": "partial",
       "lesson_ids": [
         "direction-complement"
-      ]
+      ],
+      "status": "partial",
+      "title_vi": "Xu hướng bổ ngữ đơn/phức"
     },
     {
       "id": "OFF-H2-42",
-      "title_vi": "Trạng thái bổ ngữ (động từ+得+tính từ)",
-      "status": "covered",
       "lesson_ids": [
         "state-complement-de"
       ],
-      "note": "Bài mới lô 09, đã rà soát nội bộ."
+      "note": "Bài mới lô 09, đã rà soát nội bộ.",
+      "status": "covered",
+      "title_vi": "Trạng thái bổ ngữ (động từ+得+tính từ)"
     },
     {
       "id": "OFF-H2-43",
-      "title_vi": "Số lượng bổ ngữ dạng 2",
-      "status": "partial",
       "lesson_ids": [
         "quantity-complement-objects"
       ],
-      "note": "Bài quantity-complement-objects phủ phần vị trí của bổ ngữ thời lượng/tần suất (nền khi không có tân ngữ + ba trường hợp khi có tân ngữ); phần tính từ + số lượng của dạng 2 chưa dạy."
+      "note": "Bài quantity-complement-objects phủ phần vị trí của bổ ngữ thời lượng/tần suất (nền khi không có tân ngữ + ba trường hợp khi có tân ngữ); phần tính từ + số lượng của dạng 2 chưa dạy.",
+      "status": "partial",
+      "title_vi": "Số lượng bổ ngữ dạng 2"
     },
     {
       "id": "OFF-H2-44",
-      "title_vi": "Chủ vị làm vị ngữ",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Chủ vị làm vị ngữ"
     },
     {
       "id": "OFF-H2-45",
-      "title_vi": "Câu hỏi lựa chọn 还是",
-      "status": "covered",
       "lesson_ids": [
         "hai-shi-choice"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "Câu hỏi lựa chọn 还是"
     },
     {
       "id": "OFF-H2-46",
-      "title_vi": "Câu cầu khiến 别",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "Câu cầu khiến 别"
     },
     {
       "id": "OFF-H2-47",
-      "title_vi": "是字句 dạng giải thích/đặc trưng",
-      "status": "partial",
       "lesson_ids": [
         "shi-noun-link"
       ],
-      "note": "Bài hiện có dạy dạng HSK1."
+      "note": "Bài hiện có dạy dạng HSK1.",
+      "status": "partial",
+      "title_vi": "是字句 dạng giải thích/đặc trưng"
     },
     {
       "id": "OFF-H2-48",
-      "title_vi": "有字句 dạng đạt được",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "有字句 dạng đạt được"
     },
     {
       "id": "OFF-H2-49",
-      "title_vi": "存现句 dạng 处所+动词+着+名词",
-      "status": "covered",
       "lesson_ids": [
         "cunxian-chu"
       ],
-      "note": "Bài mới lô 09, đã rà soát nội bộ."
+      "note": "Bài mới lô 09, đã rà soát nội bộ.",
+      "status": "covered",
+      "title_vi": "存现句 dạng 处所+动词+着+名词"
     },
     {
       "id": "OFF-H2-50",
-      "title_vi": "比较句",
-      "status": "partial",
       "lesson_ids": [
         "bi-comparison"
       ],
-      "note": "Thiếu dạng 有/没有B这么/那么 và động từ+得+比."
+      "note": "Thiếu dạng 有/没有B这么/那么 và động từ+得+比.",
+      "status": "partial",
+      "title_vi": "比较句"
     },
     {
       "id": "OFF-H2-51",
-      "title_vi": "是……的句",
-      "status": "covered",
       "lesson_ids": [
         "shi-de-emphasis"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "是……的句"
     },
     {
       "id": "OFF-H2-52",
-      "title_vi": "兼语句 请/叫/让",
-      "status": "covered",
       "lesson_ids": [
         "jianyu-qing-jiao-rang"
       ],
-      "note": "Bài mới lô 09, đã rà soát nội bộ."
+      "note": "Bài mới lô 09, đã rà soát nội bộ.",
+      "status": "covered",
+      "title_vi": "兼语句 请/叫/让"
     },
     {
       "id": "OFF-H2-53",
-      "title_vi": "双宾语句 dạng 给",
-      "status": "covered",
       "lesson_ids": [
         "gei-double-object"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "双宾语句 dạng 给"
     },
     {
       "id": "OFF-H2-54",
-      "title_vi": "选择复句 （是）……，还是……",
-      "status": "partial",
       "lesson_ids": [
         "hai-shi-choice"
       ],
-      "note": "Bài hiện có là câu hỏi, chưa dạy复句."
+      "note": "Bài hiện có là câu hỏi, chưa dạy复句.",
+      "status": "partial",
+      "title_vi": "选择复句 （是）……，还是……"
     },
     {
       "id": "OFF-H2-55",
-      "title_vi": "转折复句 虽然……，但是……",
-      "status": "covered",
       "lesson_ids": [
         "complex-suiran-yinwei"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "转折复句 虽然……，但是……"
     },
     {
       "id": "OFF-H2-56",
-      "title_vi": "紧缩复句 一……就……",
-      "status": "covered",
       "lesson_ids": [
         "yi-jiu-tight"
       ],
-      "note": "Bài mới lô 08, đã rà soát nội bộ."
+      "note": "Bài mới lô 08, đã rà soát nội bộ.",
+      "status": "covered",
+      "title_vi": "紧缩复句 一……就……"
     },
     {
       "id": "OFF-H2-57",
-      "title_vi": "因果复句 因为……，所以……",
-      "status": "covered",
       "lesson_ids": [
         "complex-suiran-yinwei"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "因果复句 因为……，所以……"
     },
     {
       "id": "OFF-H2-58",
-      "title_vi": "经历态 过",
-      "status": "covered",
       "lesson_ids": [
         "guo-experience"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "经历态 过"
     },
     {
       "id": "OFF-H2-59",
-      "title_vi": "持续态 着 (trạng thái)",
-      "status": "covered",
       "lesson_ids": [
         "zhe-continuation"
-      ]
+      ],
+      "status": "covered",
+      "title_vi": "持续态 着 (trạng thái)"
     },
     {
       "id": "OFF-H2-60",
-      "title_vi": "持续态 着 (动作持续)",
-      "status": "partial",
       "lesson_ids": [
         "zhe-continuation"
       ],
-      "note": "Chưa tách rõ."
+      "note": "Chưa tách rõ.",
+      "status": "partial",
+      "title_vi": "持续态 着 (动作持续)"
     },
     {
       "id": "OFF-H2-61",
-      "title_vi": "概数 几/数词+多+量词/数词+量词+多",
-      "status": "covered",
       "lesson_ids": [
         "approx-numbers-1"
       ],
-      "note": "Phạm vi đã xác minh trực quan trang in 388 (30/10/2026): 概数表达法1 có ba dòng — (1) dùng 几 nói số ước lượng, (2) Số+多+Lượng từ, (3) Số+Lượng từ+多. Bài approx-numbers-1 (lô HSK3-8) phủ đủ cả ba; bài này là nền tiên quyết cho bài approx-numbers-2 (OFF-H3-50) ở HSK3 — liên kết qua thứ tự manifest và nhắc chéo trong hai bài (dự án không có trường dữ liệu tiên quyết riêng)."
+      "note": "Phạm vi đã xác minh trực quan trang in 388 (30/10/2026): 概数表达法1 có ba dòng — (1) dùng 几 nói số ước lượng, (2) Số+多+Lượng từ, (3) Số+Lượng từ+多. Bài approx-numbers-1 (lô HSK3-8) phủ đủ cả ba; bài này là nền tiên quyết cho bài approx-numbers-2 (OFF-H3-50) ở HSK3 — liên kết qua thứ tự manifest và nhắc chéo trong hai bài (dự án không có trường dữ liệu tiên quyết riêng).",
+      "status": "covered",
+      "title_vi": "概数 几/数词+多+量词/数词+量词+多"
     },
     {
       "id": "OFF-H2-62",
-      "title_vi": "序数 dạng 数词+量词",
+      "lesson_ids": [],
       "status": "missing",
-      "lesson_ids": []
+      "title_vi": "序数 dạng 数词+量词"
     }
-  ]
+  ],
+  "schema_version": 1
 }

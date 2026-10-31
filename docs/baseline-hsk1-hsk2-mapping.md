@@ -52,6 +52,16 @@ Trạng thái dùng trong tài liệu này:
   thiếu — tổng vẫn 62 mục nhóm, khớp từng mục với
   docs/official-catalogue-hsk1-hsk2.json. HSK1 không đổi:
   25 đã có, 10 một phần, 17 thiếu (52 mục nhóm).
+- Cập nhật lô HSK1-A (31/10/2026): 4 bài HSK1 mới khép 6 mục
+  nhóm — numbers-and-money (OFF-H1-12 số từ + OFF-H1-51 cách
+  nói số tiền), time-expressions (OFF-H1-52 cách nói thời gian
+  + OFF-H1-15 lượng từ thời lượng), he-connecting (OFF-H1-24
+  liên từ 和), questions-affirmative-negative (OFF-H1-38 câu
+  hỏi chính phản) — cả 6 mục chuyển từ THIẾU sang ĐÃ CÓ. Sau
+  lô này, HSK1: 31 đã có, 10 một phần, 11 thiếu (52 mục nhóm),
+  khớp từng mục với docs/official-catalogue-hsk1-hsk2.json
+  (đếm lại trực tiếp từ catalogue sau khi sửa). HSK2 không
+  đổi: 20 đã có, 15 một phần, 27 thiếu (62 mục nhóm).
 - Nhắc lại theo yêu cầu đối chiếu: số mục nhóm trong tài liệu này là
   cách chia của dự án để đối chiếu, KHÔNG phải số mục chính thức
   trong đề cương (đề cương không đánh số từng điểm vi mô) và KHÔNG
@@ -72,10 +82,11 @@ Trạng thái dùng trong tài liệu này:
   ví dụ chưa dạy hệ thống bộ nhân xưng).
 - Chỉ định 这/那/这儿/那儿/这里/那里/这些/那些/这个/那个:
   ĐÃ CÓ ở mức chính (pronouns); 有的/有些: THIẾU.
-- Số từ: THIẾU (chưa có bài số,序数 đã có riêng ở dưới,钱数,时间).
+- Số từ: ĐÃ CÓ (numbers-and-money; 序数 đã có riêng ở dưới;
+  钱数/时间 xem hai mục ở cuối mục này).
 - Lượng từ chuyên dụng 本/个/家/口/块/件/只/元: MỘT PHẦN
   (measure-words mới dạy 本/件 qua ví dụ); mượn 杯: THIẾU;
-  thời lượng 日/号/岁/点/分/年/天: THIẾU.
+  thời lượng 日/号/岁/点/分/年/天: ĐÃ CÓ (time-expressions).
 - Mức độ 非常/很/太/真/有点儿: MỘT PHẦN (hen dạy 很; adverbs-du-ye
   nhắc 很/非常/太; 真/有点儿 chưa dạy).
 - Phạm vi 都: ĐÃ CÓ (adverbs-du-ye).
@@ -85,7 +96,7 @@ Trạng thái dùng trong tài liệu này:
 - Phủ định 不/没(有): ĐÃ CÓ (bu-mei-negation); 不要: THIẾU.
 - Giới từ chỉ thời gian/nơi chốn 在: ĐÃ CÓ (zai-progress).
 - Giới từ chỉ đối tượng 对: THIẾU.
-- Liên từ nối từ/cụm 和: THIẾU ở mức bài riêng.
+- Liên từ nối từ/cụm 和: ĐÃ CÓ (he-connecting).
 - Trợ từ kết cấu 的: ĐÃ CÓ (de-possessive).
 - Trợ từ động thái 了: ĐÃ CÓ (le-completion-change).
 - Ngữ khí 吗: ĐÃ CÓ (ma-question); 呢/吧: THIẾU.
@@ -103,7 +114,7 @@ Trạng thái dùng trong tài liệu này:
 ### Loại câu và câu đặc biệt
 - Câu hỏi có/không: ĐÃ CÓ (ma-question).
 - Câu hỏi đặc chỉ: MỘT PHẦN (question-words).
-- Câu hỏi chính phản: THIẾU.
+- Câu hỏi chính phản: ĐÃ CÓ (questions-affirmative-negative).
 - Câu cầu khiến: THIẾU (liên quan 不要 ở trên).
 - Câu cảm thán: THIẾU.
 - 是字句 dạng đồng nhất/loại thuộc: ĐÃ CÓ (shi-noun-link).
@@ -121,8 +132,8 @@ Trạng thái dùng trong tài liệu này:
 - Thể hoàn thành và thể đổi trạng thái (了): ĐÃ CÓ (le).
 - Thể tiến hành 在/正在 (+ 呢): ĐÃ CÓ (zai-progress, có ví dụ 呢).
 - 序数 第 + 数词: ĐÃ CÓ (prefix-suffix).
-- Cách nói số tiền: THIẾU. Cách nói thời gian (năm/tháng/ngày/thứ;
-  giờ): THIẾU.
+- Cách nói số tiền: ĐÃ CÓ (numbers-and-money). Cách nói thời
+  gian (năm/tháng/ngày/thứ; giờ): ĐÃ CÓ (time-expressions).
 
 ## 3. HSK2 — đối chiếu từng mục
 ### Từ loại và ngữ tố
