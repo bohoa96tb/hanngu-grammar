@@ -301,6 +301,103 @@ async function main() {
     record("related-lessons", "fail", JSON.stringify(related).slice(0, 220));
   }
 
+  // --- F. CUR-02: lộ trình curriculum + tìm kiếm pinyin (data-driven) ---
+  // Kỳ vọng được TÍNH từ dữ liệu thật trên server (manifest + shards +
+  // curriculum.json), không hardcode thứ tự cụ thể: harness vẫn đúng khi
+  // Agent Nội dung sắp xếp lại curriculum.
+  let curData = null;
+  let publishedIds = [];
+  try {
+    curData = await (await fetch(BASE + "data/curriculum.json")).json();
+    const manifest = await (await fetch(BASE + "data/lessons-manifest.json")).json();
+    for (const rel of manifest.shards) {
+      const shard = await (await fetch(BASE + rel)).json();
+      for (const l of shard.lessons) if (l.status === "published") publishedIds.push(l.id);
+    }
+  } catch (e) {
+    record("curriculum-data-load", "fail", String(e && e.message ? e.message : e));
+  }
+  if (curData && publishedIds.length) {
+    const lvKeys = ["1", "2", "3", "4", "5", "6"];
+    const curOrder = lvKeys.flatMap((k) => curData.levels[k] || []);
+    const numOf = (id) => {
+      for (const k of lvKeys) {
+        const i = (curData.levels[k] || []).indexOf(id);
+        if (i >= 0) return { level: k, num: i + 1 };
+      }
+      return null;
+    };
+    // F1. Trang chủ: đủ 6 nhóm cấp, tổng thẻ bài = số bài published,
+    // thẻ đầu tiên của HSK1 mang nhãn "Bài 01".
+    await navigate("#/");
+    const homeGroups = await evaluate(`(() => {
+      const groups = [...document.querySelectorAll(".level-group")];
+      const first = groups.length ? groups[0].querySelector("article") : null;
+      return {
+        groupCount: groups.length,
+        headers: groups.map((g) => { const h = g.querySelector("h3"); return h ? h.textContent.trim() : ""; }),
+        cards: document.querySelectorAll("#app article.card").length,
+        firstCardText: first ? first.innerText.slice(0, 120) : "",
+      };
+    })()`);
+    record("home-level-groups",
+      homeGroups.groupCount === 6 && lvKeys.every((k, i) => homeGroups.headers[i] && homeGroups.headers[i].startsWith("HSK " + (i + 1)))
+        && homeGroups.cards === publishedIds.length && homeGroups.firstCardText.includes("Bài 01")
+        ? "pass" : "fail",
+      JSON.stringify({ groups: homeGroups.groupCount, cards: homeGroups.cards, expectedCards: publishedIds.length, first: homeGroups.firstCardText.replace(/\n/g, " ").slice(0, 60) }));
+
+    // F2. Số bài + điều hướng theo curriculum: le-completion-change.
+    const probeId = "le-completion-change";
+    const probeInfo = numOf(probeId);
+    const probeIdx = curOrder.indexOf(probeId);
+    const expectedNext = probeIdx >= 0 && probeIdx < curOrder.length - 1 ? curOrder[probeIdx + 1] : null;
+    await navigate(`#/lesson/${probeId}`);
+    const lessonNav = await evaluate(`(() => {
+      const hero = document.querySelector(".card-hero");
+      const navLinks = [...document.querySelectorAll(".lesson-nav a.nav-link")];
+      const next = navLinks.find((a) => a.textContent.includes("Bài sau"));
+      return { heroText: hero ? hero.innerText : "", nextHref: next ? next.getAttribute("href") : null };
+    })()`);
+    const pad = (n) => String(n).padStart(2, "0");
+    record("lesson-number-nav",
+      probeInfo && lessonNav.heroText.includes(`Bài ${pad(probeInfo.num)}`)
+        && (!expectedNext || lessonNav.nextHref === `#/lesson/${expectedNext}`)
+        ? "pass" : "fail",
+      JSON.stringify({ expectedNum: probeInfo ? pad(probeInfo.num) : null, expectedNext, nextHref: lessonNav.nextHref }));
+
+    // F3. Tìm kiếm pinyin: "gao" (bỏ dấu của gāo) ra bi-comparison;
+    // "so sanh" (tiếng Việt bỏ dấu) ra ít nhất một bài so sánh.
+    await navigate("#/?q=gao");
+    const searchGao = await evaluate(`(() => [...document.querySelectorAll('#app article a[href^="#/lesson/"]')].map((a) => a.getAttribute("href")))()`);
+    await navigate("#/?q=so%20sanh");
+    const searchSoSanh = await evaluate(`(() => [...document.querySelectorAll('#app article a[href^="#/lesson/"]')].map((a) => a.getAttribute("href")))()`);
+    record("search-pinyin",
+      searchGao.includes("#/lesson/bi-comparison")
+        && (searchSoSanh.includes("#/lesson/bi-comparison") || searchSoSanh.includes("#/lesson/bi-comparison-2"))
+        ? "pass" : "fail",
+      JSON.stringify({ gaoHits: searchGao.length, gaoHasBi: searchGao.includes("#/lesson/bi-comparison"), soSanhHits: searchSoSanh.length }));
+
+    // F4. Tiên quyết: bài đầu tiên có requires trong curriculum phải hiện
+    // mục "Cần học trước" chứa link tới tiên quyết đầu tiên của nó.
+    const reqEntry = Object.entries(curData.requires || {}).find(([, pres]) => Array.isArray(pres) && pres.length);
+    if (!reqEntry) {
+      record("prereq-display", "pass", "SKIP — curriculum.json hiện chưa có requires nào");
+    } else {
+      const [depId, pres] = reqEntry;
+      await navigate(`#/lesson/${depId}`);
+      const prereq = await evaluate(`(() => {
+        const sec = [...document.querySelectorAll("#app section")].find((s) => {
+          const h = s.querySelector("h3");
+          return h && h.textContent.trim() === "Cần học trước";
+        });
+        const link = sec ? sec.querySelector('a[href="#/lesson/${pres[0]}"]') : null;
+        return { hasSection: !!sec, hasLink: !!link };
+      })()`);
+      record("prereq-display", prereq.hasSection && prereq.hasLink ? "pass" : "fail",
+        JSON.stringify({ depId, firstPrereq: pres[0], ...prereq }));
+    }
+  }
+
   // --- E. Lỗi console trong toàn bộ phiên ---
   record("console-errors", consoleErrors.length === 0 ? "pass" : "fail", consoleErrors.length ? consoleErrors.slice(0, 5).join(" | ") : "0 lỗi console/exception trong các trang đã mở");
 
