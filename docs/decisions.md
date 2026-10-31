@@ -415,3 +415,26 @@ từ nguồn uy tín. Quyết định triển khai pilot 3 bài (01/16/21):
    chỉ có 了 đổi trạng thái cho bài Động từ+了, và chọn "Mother's
    Day" (vừa sức HSK1) thay cho bài 6 lần 了 nhưng từ vựng nặng —
    chi tiết: docs/research/applied-materials-pilot.md.
+
+## D31 — Quy chuẩn bền vững Bài đọc & Bài nghe (2026-10-31)
+Hoa phê duyệt chính sách nguồn học liệu đầy đủ và yêu cầu lưu
+thành quy tắc bền vững trong repo (không hỏi lại mỗi phiên):
+1. Văn bản quy chuẩn: `docs/READING_LISTENING_STANDARD.md`; tiến
+   độ riêng của luồng: `docs/READING_LISTENING_CHECKPOINT.md`;
+   AGENTS.md đã trỏ tới hai tài liệu này. D31 MỞ RỘNG D30: giữ
+   nguyên cơ chế data/applied + progress.applied + mục cuối bài.
+2. Nguồn nguyên bài ưu tiên Storybooks (kiểm giấy phép TỪNG tài
+   nguyên — văn bản/dịch/ảnh/audio; ưu tiên CC BY; chỉ ghi giọng
+   người thật khi có căn cứ). Nghe câu theo ngữ pháp: thử
+   hsk-sentences-audio sau kiểm toán tách bạch giấy phép mã
+   nguồn/dataset/audio, luôn gắn nhãn "Giọng tổng hợp". Mandarin
+   Bean và nguồn không rõ quyền: giữ `link_only` như D30.
+3. Thiếu học liệu phù hợp thì ghi "Chưa có bài phù hợp" + lý do
+   trong checkpoint của luồng, không lấp chỗ bằng bài quá khó/
+   sai cấu trúc; được biên soạn bài mới + TTS với nhãn rõ ràng.
+4. Điều hướng phiên: "tiếp tục phần đọc/nghe" → checkpoint của
+   luồng; chỉ nói "tiếp tục" → checkpoint chung (luồng ngữ pháp),
+   không tự chuyển luồng.
+5. Pilot theo quy chuẩn mới phải chứng minh hai luồng trong app
+   (nguyên bài có quyền sử dụng + nghe câu có dịch Việt/nhãn
+   giọng) rồi dừng chờ Hoa duyệt kết quả thực tế mới mở rộng.
