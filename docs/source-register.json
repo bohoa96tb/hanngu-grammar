@@ -1,110 +1,130 @@
 {
- "note": "Giấy phép mã nguồn repo không bao phủ dữ liệu sao chép. Dịch/rút gọn/diễn đạt lại không xóa nghĩa vụ giấy phép của nội dung phái sinh. Không khẳng định an toàn pháp lý tuyệt đối.",
- "schema_version": 1,
- "sources": [
-  {
-   "accessed_at": "2026-10-29",
-   "distribution_allowed": "unknown",
-   "document": "Đề cương thi HSK 3.0 (công bố 15/11/2025, theo nguồn thứ cấp)",
-   "id": "hsk-official",
-   "license": "Chưa xác minh — không sao chép danh sách đề cương gốc vào repo",
-   "name": "HSK — Chinese Testing International",
-   "notes": "Phạm vi đã xác minh theo tài liệu gốc; quyền phân phối chưa xác minh (xem scope/distribution verification). Số liệu 70/148/244/339/409/459 là cách đếm của nguồn thứ cấp, không phải số thứ tự trong tài liệu gốc.",
-   "owner": "Chinese Testing International",
-   "scope": "Xác định phạm vi và phân cấp HSK1-6 cho baseline toàn diện",
-   "url": "https://www.chinesetest.cn/HSK",
-   "verification_status": "scope_verified_distribution_not_verified",
-   "version_checked": "新版HSK考试大纲, 2025-11 发布, 2026-07 实施, 中外语言交流合作中心",
-   "scope_verification": {
-    "status": "verified",
-    "method": "Text fetch toàn văn PDF từ link Examination Syllabus trên chinesetest.cn, 2026-10-29",
-    "evidence": "Bìa: 2025-11 发布, 中外语言交流合作中心 发布, 2026-07 实施; mục lục 语法大纲 tr.382–400; đã đọc 语法大纲 HSK1–6 (dòng 12970 tới cuối tài liệu)."
-   },
-   "distribution_verification": {
-    "status": "not_verified",
-    "method": "Chưa tìm thấy tuyên bố giấy phép cho phép sao chép trong tài liệu",
-    "consequence": "Repo KHÔNG chứa PDF gốc, KHÔNG chứa bảng gốc nguyên văn, KHÔNG sao chép câu ví dụ của đề cương; baseline là diễn đạt lại bằng tiếng Việt kèm tham chiếu."
-   }
-  },
-  {
-   "accessed_at": "2026-10-31",
-   "distribution_allowed": "conditional_attribution_noncommercial_sharealike",
-   "document": "Chinese Grammar Wiki",
-   "id": "cgw",
-   "license": "CC BY-NC-SA 3.0 (theo đặc tả §14; cần xác minh lại trên trang giấy phép trước khi phát hành thương mại)",
-   "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
-   "name": "Chinese Grammar Wiki (AllSet Learning)",
-   "owner": "AllSet Learning",
-   "pages_used": [
-    "https://resources.allsetlearning.com/chinese/grammar/Connecting_nouns_with_%22shi%22",
-    "https://resources.allsetlearning.com/chinese/grammar/%E6%AF%94%E5%AD%97%E5%8F%A5",
-    "https://resources.allsetlearning.com/chinese/grammar/ASGAGDCQ",
-    "https://resources.allsetlearning.com/gramwiki/?title=Change_of_state_with_%22le%22&",
-    "https://resources.allsetlearning.com/chinese/grammar/Main_Page",
-    "https://resources.allsetlearning.com/chinese/grammar/A1_grammar_points",
-    "https://resources.allsetlearning.com/chinese/grammar/Expressing_completion_with_le",
-    "https://resources.allsetlearning.com/chinese/grammar/Uses_of_le"
-   ],
-   "scope": "Tham khảo giải thích, ví dụ, đối chiếu + nguyên lý tổ chức (liên kết Similar to/See also, trang hub từ khóa); bài soạn mới bằng tiếng Việt, không sao chép nguyên văn",
-   "url": "https://resources.allsetlearning.com/chinese/grammar/",
-   "verification_status": "verified_pages_read_directly_2026-10-31",
-   "version_checked": "Đọc trực tiếp 2026-10-31: Main_Page (2,125 articles; A1 40/A2 99/B1 143/B2 154/C1 69), A1_grammar_points, Expressing_completion_with_le, Uses_of_le. Giấy phép CC BY-NC-SA ghi tại trang; hanngu chỉ học nguyên lý tổ chức, không sao chép nội dung.",
-   "notes": "Tham khảo giải thích cho 12 bài mẫu HSK1–2; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn. Các trang CGW cụ thể cho 9 bài mới chưa được đối chiếu từng trang trong phiên này — ánh xạ ghi là tạm thời."
-  },
-  {
-   "accessed_at": null,
-   "distribution_allowed": "unknown",
-   "document": "CC-CEDICT",
-   "id": "cc-cedict",
-   "license": "CC BY-SA 4.0 (cần xác minh lại trước khi dùng)",
-   "name": "CC-CEDICT",
-   "owner": "CC-CEDICT project",
-   "scope": "Kiểm chứng cách đọc và nghĩa khi cần; định nghĩa Trung-Anh KHÔNG phải bản dịch tiếng Việt đã duyệt",
-   "url": "https://www.mdbg.net/chinese/dictionary?page=cc-cedict",
-   "verification_status": "not_used_yet",
-   "version_checked": "Chưa dùng trong phiên này"
-  },
-  {
-   "accessed_at": "2026-10-29",
-   "distribution_allowed": "MIT (vendored, kèm LICENSE)",
-   "document": "ts-fsrs",
-   "id": "ts-fsrs",
-   "license": "MIT (cần xác minh lại khi khóa phiên bản)",
-   "name": "ts-fsrs (open-spaced-repetition)",
-   "owner": "open-spaced-repetition",
-   "scope": "Thư viện SRS sẽ dùng ở P05; KHÔNG dùng công thức tự chế mang tên FSRS",
-   "url": "https://github.com/open-spaced-repetition/ts-fsrs",
-   "verification_status": "verified_version_locked",
-   "version_checked": "ts-fsrs 5.4.2, MIT, dist/index.mjs vendored nguyên văn ngày 2026-10-29; API next/repeat/Rating/State đã kiểm tra bằng node --test tests/test_fsrs.mjs (7 passed)"
-  },
-  {
-   "id": "yoyochinese-benchmark",
-   "name": "Yoyo Chinese",
-   "owner": "Yoyo Chinese Inc.",
-   "document": "Website + trung tâm hướng dẫn chính thức (benchmark UX)",
-   "url": "https://www.yoyochinese.com/",
-   "accessed_at": "2026-10-31",
-   "license": "Nội dung thương mại bản quyền — chỉ tham khảo nguyên lý UX/lộ trình, không sao chép bài giảng/video/audio",
-   "distribution_allowed": "not_applicable_reference_only",
-   "verification_status": "verified_pages_read_directly_2026-10-31",
-   "version_checked": "Đọc trực tiếp 2026-10-31: trang chủ (Watch/Practice/Quiz, 1000+ video), guides.yoyochinese.com lesson-pages-practice-quiz (toggle hiện/ẩn + lưu mặc định, audio 2 tốc độ, quiz 10 câu), beginner-conversational-chinese (208 lessons/60 units). Interactive Pinyin Chart: URL cũ 404; URL hiện tại .../pinyin-chart-table đã kiểm bằng trình duyệt thật (lưới 409 âm, bấm ô phát âm theo 4 thanh; video cần đăng ký — chưa kiểm chứng).",
-   "scope": "Benchmark trải nghiệm học: cấu trúc bài, toggle hiển thị, tốc độ audio, quiz và phản hồi",
-   "notes": "Không đăng ký, không mua gói. Chỉ học nguyên lý; không dùng nội dung bản quyền."
-  },
-  {
-   "id": "mandarinbean-benchmark",
-   "name": "Mandarin Bean",
-   "owner": "Mandarin Bean",
-   "document": "Website grammar points (benchmark bài tập/phản hồi)",
-   "url": "https://mandarinbean.com/grammar-points/",
-   "accessed_at": "2026-10-31",
-   "license": "Nội dung bản quyền (miễn phí một phần, premium trả phí) — chỉ tham khảo nguyên lý tổ chức/chấm bài, không sao chép",
-   "distribution_allowed": "not_applicable_reference_only",
-   "verification_status": "verified_via_real_browser_2026-10-31_text_fetch_blocked_by_bot_check",
-   "version_checked": "Text fetch bị trang kiểm tra tự động chặn; trình duyệt thật 2026-10-31 vào được: /grammar-points/ (Grammar Hubs theo chủ đề + All Grammar Points 初/中/高 + bộ lọc Level) và bài miễn phí /le/ (Explanation 2 vai của 了, 7 câu TRUE/FALSE miễn phí, chấm cả loạt qua View Results, giải thích cho mọi câu + Correct version). Premium 42 câu/bài chưa kiểm chứng (không trả phí).",
-   "scope": "Benchmark: tổ chức bài tập, cơ chế chấm, giải thích đúng/sai",
-   "notes": "Không đăng ký, không mua premium, không vượt cơ chế bảo vệ (phiên trình duyệt thường được chấp nhận)."
-  }
- ],
- "updated_at": "2026-10-31"
+  "note": "Giấy phép mã nguồn repo không bao phủ dữ liệu sao chép. Dịch/rút gọn/diễn đạt lại không xóa nghĩa vụ giấy phép của nội dung phái sinh. Không khẳng định an toàn pháp lý tuyệt đối.",
+  "schema_version": 1,
+  "sources": [
+    {
+      "accessed_at": "2026-10-29",
+      "distribution_allowed": "unknown",
+      "document": "Đề cương thi HSK 3.0 (công bố 15/11/2025, theo nguồn thứ cấp)",
+      "id": "hsk-official",
+      "license": "Chưa xác minh — không sao chép danh sách đề cương gốc vào repo",
+      "name": "HSK — Chinese Testing International",
+      "notes": "Phạm vi đã xác minh theo tài liệu gốc; quyền phân phối chưa xác minh (xem scope/distribution verification). Số liệu 70/148/244/339/409/459 là cách đếm của nguồn thứ cấp, không phải số thứ tự trong tài liệu gốc.",
+      "owner": "Chinese Testing International",
+      "scope": "Xác định phạm vi và phân cấp HSK1-6 cho baseline toàn diện",
+      "url": "https://www.chinesetest.cn/HSK",
+      "verification_status": "scope_verified_distribution_not_verified",
+      "version_checked": "新版HSK考试大纲, 2025-11 发布, 2026-07 实施, 中外语言交流合作中心",
+      "scope_verification": {
+        "status": "verified",
+        "method": "Text fetch toàn văn PDF từ link Examination Syllabus trên chinesetest.cn, 2026-10-29",
+        "evidence": "Bìa: 2025-11 发布, 中外语言交流合作中心 发布, 2026-07 实施; mục lục 语法大纲 tr.382–400; đã đọc 语法大纲 HSK1–6 (dòng 12970 tới cuối tài liệu)."
+      },
+      "distribution_verification": {
+        "status": "not_verified",
+        "method": "Chưa tìm thấy tuyên bố giấy phép cho phép sao chép trong tài liệu",
+        "consequence": "Repo KHÔNG chứa PDF gốc, KHÔNG chứa bảng gốc nguyên văn, KHÔNG sao chép câu ví dụ của đề cương; baseline là diễn đạt lại bằng tiếng Việt kèm tham chiếu."
+      }
+    },
+    {
+      "accessed_at": "2026-10-31",
+      "distribution_allowed": "conditional_attribution_noncommercial_sharealike",
+      "document": "Chinese Grammar Wiki",
+      "id": "cgw",
+      "license": "CC BY-NC-SA 3.0 (theo đặc tả §14; cần xác minh lại trên trang giấy phép trước khi phát hành thương mại)",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "name": "Chinese Grammar Wiki (AllSet Learning)",
+      "owner": "AllSet Learning",
+      "pages_used": [
+        "https://resources.allsetlearning.com/chinese/grammar/Connecting_nouns_with_%22shi%22",
+        "https://resources.allsetlearning.com/chinese/grammar/%E6%AF%94%E5%AD%97%E5%8F%A5",
+        "https://resources.allsetlearning.com/chinese/grammar/ASGAGDCQ",
+        "https://resources.allsetlearning.com/gramwiki/?title=Change_of_state_with_%22le%22&",
+        "https://resources.allsetlearning.com/chinese/grammar/Main_Page",
+        "https://resources.allsetlearning.com/chinese/grammar/A1_grammar_points",
+        "https://resources.allsetlearning.com/chinese/grammar/Expressing_completion_with_le",
+        "https://resources.allsetlearning.com/chinese/grammar/Uses_of_le"
+      ],
+      "scope": "Tham khảo giải thích, ví dụ, đối chiếu + nguyên lý tổ chức (liên kết Similar to/See also, trang hub từ khóa); bài soạn mới bằng tiếng Việt, không sao chép nguyên văn",
+      "url": "https://resources.allsetlearning.com/chinese/grammar/",
+      "verification_status": "verified_pages_read_directly_2026-10-31",
+      "version_checked": "Đọc trực tiếp 2026-10-31: Main_Page (2,125 articles; A1 40/A2 99/B1 143/B2 154/C1 69), A1_grammar_points, Expressing_completion_with_le, Uses_of_le. Giấy phép CC BY-NC-SA ghi tại trang; hanngu chỉ học nguyên lý tổ chức, không sao chép nội dung.",
+      "notes": "Tham khảo giải thích cho 12 bài mẫu HSK1–2; bài soạn mới bằng tiếng Việt, không sao chép nguyên văn. Các trang CGW cụ thể cho 9 bài mới chưa được đối chiếu từng trang trong phiên này — ánh xạ ghi là tạm thời."
+    },
+    {
+      "accessed_at": null,
+      "distribution_allowed": "unknown",
+      "document": "CC-CEDICT",
+      "id": "cc-cedict",
+      "license": "CC BY-SA 4.0 (cần xác minh lại trước khi dùng)",
+      "name": "CC-CEDICT",
+      "owner": "CC-CEDICT project",
+      "scope": "Kiểm chứng cách đọc và nghĩa khi cần; định nghĩa Trung-Anh KHÔNG phải bản dịch tiếng Việt đã duyệt",
+      "url": "https://www.mdbg.net/chinese/dictionary?page=cc-cedict",
+      "verification_status": "not_used_yet",
+      "version_checked": "Chưa dùng trong phiên này"
+    },
+    {
+      "accessed_at": "2026-10-29",
+      "distribution_allowed": "MIT (vendored, kèm LICENSE)",
+      "document": "ts-fsrs",
+      "id": "ts-fsrs",
+      "license": "MIT (cần xác minh lại khi khóa phiên bản)",
+      "name": "ts-fsrs (open-spaced-repetition)",
+      "owner": "open-spaced-repetition",
+      "scope": "Thư viện SRS sẽ dùng ở P05; KHÔNG dùng công thức tự chế mang tên FSRS",
+      "url": "https://github.com/open-spaced-repetition/ts-fsrs",
+      "verification_status": "verified_version_locked",
+      "version_checked": "ts-fsrs 5.4.2, MIT, dist/index.mjs vendored nguyên văn ngày 2026-10-29; API next/repeat/Rating/State đã kiểm tra bằng node --test tests/test_fsrs.mjs (7 passed)"
+    },
+    {
+      "id": "yoyochinese-benchmark",
+      "name": "Yoyo Chinese",
+      "owner": "Yoyo Chinese Inc.",
+      "document": "Website + trung tâm hướng dẫn chính thức (benchmark UX)",
+      "url": "https://www.yoyochinese.com/",
+      "accessed_at": "2026-10-31",
+      "license": "Nội dung thương mại bản quyền — chỉ tham khảo nguyên lý UX/lộ trình, không sao chép bài giảng/video/audio",
+      "distribution_allowed": "not_applicable_reference_only",
+      "verification_status": "verified_pages_read_directly_2026-10-31",
+      "version_checked": "Đọc trực tiếp 2026-10-31: trang chủ (Watch/Practice/Quiz, 1000+ video), guides.yoyochinese.com lesson-pages-practice-quiz (toggle hiện/ẩn + lưu mặc định, audio 2 tốc độ, quiz 10 câu), beginner-conversational-chinese (208 lessons/60 units). Interactive Pinyin Chart: URL cũ 404; URL hiện tại .../pinyin-chart-table đã kiểm bằng trình duyệt thật (lưới 409 âm, bấm ô phát âm theo 4 thanh; video cần đăng ký — chưa kiểm chứng).",
+      "scope": "Benchmark trải nghiệm học: cấu trúc bài, toggle hiển thị, tốc độ audio, quiz và phản hồi",
+      "notes": "Không đăng ký, không mua gói. Chỉ học nguyên lý; không dùng nội dung bản quyền."
+    },
+    {
+      "id": "mandarinbean-benchmark",
+      "name": "Mandarin Bean",
+      "owner": "Mandarin Bean",
+      "document": "Website grammar points (benchmark bài tập/phản hồi)",
+      "url": "https://mandarinbean.com/grammar-points/",
+      "accessed_at": "2026-10-31",
+      "license": "Nội dung bản quyền (miễn phí một phần, premium trả phí) — chỉ tham khảo nguyên lý tổ chức/chấm bài, không sao chép",
+      "distribution_allowed": "not_applicable_reference_only",
+      "verification_status": "verified_via_real_browser_2026-10-31_text_fetch_blocked_by_bot_check",
+      "version_checked": "Text fetch bị trang kiểm tra tự động chặn; trình duyệt thật 2026-10-31 vào được: /grammar-points/ (Grammar Hubs theo chủ đề + All Grammar Points 初/中/高 + bộ lọc Level) và bài miễn phí /le/ (Explanation 2 vai của 了, 7 câu TRUE/FALSE miễn phí, chấm cả loạt qua View Results, giải thích cho mọi câu + Correct version). Premium 42 câu/bài chưa kiểm chứng (không trả phí).",
+      "scope": "Benchmark: tổ chức bài tập, cơ chế chấm, giải thích đúng/sai",
+      "notes": "Không đăng ký, không mua premium, không vượt cơ chế bảo vệ (phiên trình duyệt thường được chấp nhận)."
+    },
+    {
+      "id": "duchinese-benchmark",
+      "name": "Du Chinese",
+      "owner": "Du Chinese",
+      "document": "Trang chủ duchinese.net (benchmark UX đọc/tra nghĩa)",
+      "url": "https://duchinese.net/",
+      "accessed_at": "2026-10-31",
+      "license": "Nội dung bản quyền — chỉ tham khảo nguyên lý tổ chức/trình bày, không sao chép",
+      "distribution_allowed": "not_applicable_benchmark_only"
+    },
+    {
+      "id": "hellochinese-benchmark",
+      "name": "HelloChinese",
+      "owner": "HelloChinese",
+      "document": "Trang chủ hellochinese.cc (benchmark UX bài học ngắn/tiến độ)",
+      "url": "https://hellochinese.cc/",
+      "accessed_at": "2026-10-31",
+      "license": "Nội dung bản quyền — chỉ tham khảo nguyên lý tổ chức/trình bày, không sao chép",
+      "distribution_allowed": "not_applicable_benchmark_only"
+    }
+  ],
+  "updated_at": "2026-10-31"
 }
