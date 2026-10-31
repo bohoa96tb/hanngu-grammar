@@ -1,0 +1,230 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Tiếng Trung đi từ lớn đến nhỏ: tháng trước, ngày sau — 十月三十一号。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "Nói ngày tháng theo thứ tự tiếng Việt: 'ngày 31 tháng 10' → 三十一号十月。"
+        },
+        {
+          "explanation": "Cụm thời gian không đứng cuối câu: phải đặt trước động từ — 我明天去学校。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "我去学校明天。"
+        },
+        {
+          "explanation": "Một tuần chỉ có 星期一 đến 星期六; chủ nhật là 星期日 hoặc 星期天, không tồn tại 星期八。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "星期八 (nói 'thứ tám/chủ nhật' bằng cách đếm tiếp)。"
+        }
+      ],
+      "content_version": 2,
+      "difficulty": "easy",
+      "examples": [
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Jīntiān shì shí yuè sānshíyī hào, xīngqīliù.",
+          "tokens": [
+            "今天",
+            "是",
+            "十月",
+            "三十一",
+            "号",
+            "星期六"
+          ],
+          "vi": "Hôm nay là ngày 31 tháng 10, thứ Bảy.",
+          "zh": "今天是十月三十一号，星期六。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Jīnnián shì èr líng èr liù nián.",
+          "tokens": [
+            "今年",
+            "是",
+            "二零二六年"
+          ],
+          "vi": "Năm nay là năm 2026.",
+          "zh": "今年是二零二六年。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Xiànzài sān diǎn shí fēn.",
+          "tokens": [
+            "现在",
+            "三",
+            "点",
+            "十",
+            "分"
+          ],
+          "vi": "Bây giờ là ba giờ mười phút.",
+          "zh": "现在三点十分。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Xiànzài sān diǎn bàn.",
+          "tokens": [
+            "现在",
+            "三",
+            "点",
+            "半"
+          ],
+          "vi": "Bây giờ là ba giờ rưỡi.",
+          "zh": "现在三点半。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ míngtiān shàngwǔ qù xuéxiào.",
+          "tokens": [
+            "我",
+            "明天",
+            "上午",
+            "去",
+            "学校"
+          ],
+          "vi": "Sáng mai tôi đến trường.",
+          "zh": "我明天上午去学校。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ èrshí suì.",
+          "tokens": [
+            "我",
+            "二十",
+            "岁"
+          ],
+          "vi": "Tôi hai mươi tuổi.",
+          "zh": "我二十岁。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "今天星期五。"
+          ],
+          "explanation": "Thứ = 星期 + số: thứ Sáu là 星期五, đứng sau 今天。",
+          "id": "tim-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "今天星期五。",
+              "今天五星期。",
+              "今天星期是五。",
+              "今天是五星期。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng: 'Hôm nay là thứ Sáu.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "现在八点半。",
+            "现在八点半",
+            "八点半。",
+            "八点半"
+          ],
+          "explanation": "Tám giờ rưỡi: 八点半 — 点 là giờ, 半 là rưỡi.",
+          "id": "tim-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Giờ + 点 + 半 (rưỡi)."
+          },
+          "prompt_vi": "Điền câu hoàn chỉnh: 'Bây giờ là tám giờ rưỡi.'",
+          "prompt_zh": "现在___。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            [
+              "我",
+              "明天",
+              "下午",
+              "去",
+              "学校"
+            ]
+          ],
+          "explanation": "Cụm thời gian 明天下午 đứng trước động từ 去。",
+          "id": "tim-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "去",
+              "我",
+              "下午",
+              "学校",
+              "明天"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Chiều mai tôi đến trường.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "明天"
+          ],
+          "explanation": "Lỗi ở 明天: cụm thời gian phải đứng trước động từ. Sửa thành: 我明天去学校。",
+          "id": "tim-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我",
+              "去",
+              "学校",
+              "明天"
+            ],
+            "sentence_zh": "我去学校明天。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 我去学校明天。",
+          "type": "error_spot"
+        },
+        {
+          "accepted_answers": [
+            "明天是十一月五号。",
+            "明天是十一月五号",
+            "明天十一月五号。",
+            "明天十一月五号",
+            "明天是十一月五日。",
+            "明天是十一月五日",
+            "明天十一月五日。",
+            "明天十一月五日"
+          ],
+          "explanation": "Ngày mai: 明天; ngày 5 tháng 11: 十一月五号 (viết trang trọng dùng 五日 cũng đúng).",
+          "id": "tim-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Tháng trước ngày sau: 十一月 + 五号。"
+          },
+          "prompt_vi": "Tự viết câu cho tình huống mới: 'Ngày mai là ngày 5 tháng 11.'",
+          "type": "fill"
+        }
+      ],
+      "formula_notes": "1) Thứ tự: ngày tháng đi từ lớn đến nhỏ — năm, tháng, ngày, rồi thứ (khác tiếng Việt). 2) Cách nói: 日 dùng khi viết và nói trang trọng; nói hằng ngày dùng 号 (ví dụ 十月三十一号). 3) Thứ: 星期 + số 1–6; chủ nhật là 星期日 hoặc 星期天, không có 星期八. 4) Giờ: số + 点 là giờ, số + 分 là phút, 半 là rưỡi (三点半 = 3 giờ rưỡi); 差 (thiếu mấy phút nữa) chỉ nhắc ở đây, chưa luyện. 5) Vị trí: cụm thời gian đứng trước động từ (我明天去学校), không để cuối câu như tiếng Việt. 6) Câu hỏi: 现在几点？(mấy giờ), 今天几号？(ngày mấy), 今天星期几？(thứ mấy).",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 1,
+      "id": "time-expressions",
+      "objective": "Sau bài này, người học nói được hôm nay là ngày tháng nào, thứ mấy, bây giờ mấy giờ, và đặt cụm thời gian đúng vị trí trong câu.",
+      "pattern": "Năm + 年 + Tháng + 月 + Ngày + 日/号 · Số + 点 (+ 半)",
+      "quick_memory": "Ngày tháng đi từ lớn xuống nhỏ: năm, tháng, ngày, thứ. Cụm thời gian luôn đứng trước động từ.",
+      "review": {
+        "date": "2026-10-31",
+        "notes": "Soạn mới lô HSK1-A (2026-10-31): khép OFF-H1-52 + OFF-H1-15 (phần 日/号/岁/点/分/年/天 của mục lượng từ thời lượng). Tự rà thứ tự ngày tháng, vị trí cụm thời gian và từng đáp án/biến thể trước khi bàn giao QA độc lập. Không khẳng định có giáo viên/người bản ngữ duyệt.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Cách nói thời gian và lượng từ thời lượng thuộc HSK1 trong đề cương thi HSK 3.0; tương ứng mục OFF-H1-52 và OFF-H1-15 trong danh mục đối chiếu của dự án.",
+          "source_id": "hsk-official"
+        },
+        {
+          "note": "Tham khảo cách tổ chức chủ đề ngày tháng/giờ ở mức A1 của Chinese Grammar Wiki; toàn bộ câu ví dụ tự soạn mới bằng tiếng Việt.",
+          "source_id": "cgw"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Thời gian: ngày tháng, thứ, giờ",
+      "when_to_use": "Khi nói về lịch trình hằng ngày: ngày tháng, thứ trong tuần, giờ giấc và hỏi bây giờ mấy giờ. Cụm thời gian trong tiếng Trung đứng trước động từ."
+    }
+  ],
+  "schema_version": 1
+}
