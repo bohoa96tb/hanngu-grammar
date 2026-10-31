@@ -230,6 +230,8 @@ async function speak(text, btn) {
   const gen = speakGeneration;
   window.speechSynthesis.cancel();
   clearSpeakingState();
+  // APP-01 v2: bắt đầu đọc TTS thì tạm dừng audio học liệu đang phát.
+  if (typeof stopAppliedAudio === "function") stopAppliedAudio();
   if (btn) {
     if (!btn.dataset.label) btn.dataset.label = btn.textContent;
     btn.classList.add("speaking");
@@ -273,6 +275,9 @@ function stopSpeak() {
   speakGeneration += 1;
   if ("speechSynthesis" in window) window.speechSynthesis.cancel();
   clearSpeakingState();
+  // APP-01 v2: không để hai audio phát cùng lúc — dừng TTS cũng dừng
+  // audio học liệu đang phát (và ngược lại ở toggleAppliedAudio).
+  if (typeof stopAppliedAudio === "function") stopAppliedAudio();
 }
 
 function lessonById(id) { return lessons.find((l) => l.id === id); }
@@ -1032,8 +1037,221 @@ function appliedStateFor(lessonId) {
   if (!progress.applied || typeof progress.applied !== "object") progress.applied = {};
   const cur = progress.applied[lessonId] || {};
   const norm = (a) => ({ answers: (a && a.answers) || {}, done: !!(a && a.done) });
-  progress.applied[lessonId] = { reading: norm(cur.reading), listening: norm(cur.listening) };
+  progress.applied[lessonId] = { reading: norm(cur.reading), listening: norm(cur.listening), stamp: typeof cur.stamp === "string" && cur.stamp ? cur.stamp : null };
   return progress.applied[lessonId];
+}
+// Khóa nội dung của học liệu (stamp): đáp án applied lưu theo CHỈ SỐ
+// câu hỏi nên khi học liệu của một bài thay đổi nội dung thì đáp án cũ
+// sẽ gắn nhầm sang câu hỏi mới, kèm cờ hoàn thành giả. Stamp =
+// schema_version|checked_date|material_id (hoặc source_url) của học
+// liệu chính (phần Đọc). Render một bài mà stamp đã lưu KHÁC stamp
+// hiện tại -> đặt lại answers/done của bài đó rồi ghi stamp mới.
+// State CHƯA có stamp là tiến độ từ bản cũ: dữ liệu vẫn là schema 1
+// thì giữ nguyên (câu hỏi v1 không đổi từ APP-01); schema >= 2 thì
+// đặt lại vì nội dung đã thay so với v1. Chỉ đụng progress.applied
+// của đúng bài đó; tiến độ ngữ pháp/FSRS không liên quan.
+function appliedStampFor(data) {
+  const mat = (data && data.reading && data.reading.material) || {};
+  return `${(data && data.schema_version) || 1}|${(data && data.checked_date) || ""}|${mat.material_id || mat.source_url || ""}`;
+}
+function reconcileAppliedState(lessonId, data) {
+  const st = appliedStateFor(lessonId);
+  const stamp = appliedStampFor(data);
+  if (st.stamp === stamp) return st;
+  if (st.stamp || Number(data && data.schema_version) >= 2) {
+    st.reading = { answers: {}, done: false };
+    st.listening = { answers: {}, done: false };
+  }
+  st.stamp = stamp;
+  saveProgress();
+  return st;
+}
+// ===== APP-01 v2 (D31): học liệu dùng TRONG app (schema_version 2) =====
+// Truyện và audio thật nằm trong dự án (rights reuse_allowed). MỘT đối
+// tượng Audio dùng chung cho toàn mục applied: phát audio học liệu thì
+// dừng TTS (toggleAppliedAudio gọi stopSpeak) và ngược lại (stopSpeak /
+// speak dừng audio này); chuyển tab hay rời bài đều dừng. KHÔNG tự
+// phát. Trạng thái bật/tắt Pinyin/dịch/tô sáng và việc mở lời/câu chỉ
+// lưu trong phiên xem (biến nhớ), không ghi vào tiến độ học.
+let appliedView = { pinyin: true, vi: false, highlight: false };
+let appliedAudio = null;
+let appliedAudioKey = "";
+let appliedAudioRate = 1;
+const appliedListenShown = new Set();
+const appliedSpShown = new Set();
+function fmtDur(sec) {
+  const s = Math.max(0, Math.round(Number(sec) || 0));
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+}
+function getAppliedAudio() {
+  if (!appliedAudio) {
+    appliedAudio = new Audio();
+    appliedAudio.preload = "metadata";
+    ["timeupdate", "loadedmetadata", "play", "pause", "ended"].forEach((ev) =>
+      appliedAudio.addEventListener(ev, syncAppliedPlayerUI));
+  }
+  return appliedAudio;
+}
+function stopAppliedAudio() {
+  if (appliedAudio && !appliedAudio.paused) appliedAudio.pause();
+}
+function toggleAppliedAudio(src) {
+  if (!src) return;
+  const a = getAppliedAudio();
+  if (appliedAudioKey === src && !a.paused) { a.pause(); syncAppliedPlayerUI(); return; }
+  stopSpeak();
+  if (appliedAudioKey !== src) { a.src = src; appliedAudioKey = src; }
+  a.playbackRate = appliedAudioRate;
+  const p = a.play();
+  if (p && p.catch) p.catch(() => {});
+  syncAppliedPlayerUI();
+}
+function syncAppliedPlayerUI() {
+  const a = appliedAudio;
+  document.querySelectorAll("[data-ap-time]").forEach((el) => {
+    const dur = Number(el.dataset.dur) || (a && a.duration) || 0;
+    el.textContent = `${fmtDur(a ? a.currentTime : 0)} / ${fmtDur(dur)}`;
+  });
+  document.querySelectorAll("[data-ap-src-btn]").forEach((b) => {
+    const active = !!a && appliedAudioKey === b.dataset.src && !a.paused && !a.ended;
+    b.classList.toggle("speaking", active);
+    if (b.dataset.label) b.textContent = active ? "⏸ Dừng" : b.dataset.label;
+  });
+  document.querySelectorAll("[data-ap-play-main]").forEach((b) => {
+    const active = !!a && appliedAudioKey === b.dataset.src && !a.paused && !a.ended;
+    b.classList.toggle("speaking", active);
+    b.textContent = active ? "⏸ Dừng" : "▶ Phát toàn bài";
+  });
+}
+function appliedVoiceLabel(audio) {
+  if (audio && audio.voice === "human_verified") return "🎙 Giọng người thật (đã xác minh từ nguồn)";
+  if (audio && audio.voice === "synthetic") return "🗣 Giọng tổng hợp";
+  return "Loại giọng: chưa xác minh";
+}
+function appliedVocabHTML(mat) {
+  return Array.isArray(mat.vocab_support) && mat.vocab_support.length ? `<details><summary>Từ cần chú ý (${mat.vocab_support.length})</summary><ul class="applied-vocab">${mat.vocab_support.map((v) => `<li><span class="zh">${esc(v.zh)}</span> — ${esc(v.vi)}</li>`).join("")}</ul></details>` : "";
+}
+function appliedPlayerHTML(mat) {
+  const au = mat.audio || {};
+  return `<div class="applied-player">
+    <button type="button" data-ap-play-main data-src="${esc(au.file || "")}">▶ Phát toàn bài</button>
+    <button type="button" class="secondary" data-ap-restart>↺ Nghe lại</button>
+    <button type="button" class="secondary" data-ap-rate>Tốc độ: ${appliedAudioRate}×</button>
+    <span class="applied-time" data-ap-time data-dur="${Number(au.duration_sec) || 0}">${fmtDur(0)} / ${fmtDur(au.duration_sec)}</span>
+  </div>`;
+}
+function appliedTogglesHTML() {
+  const t = (key, label) => `<button type="button" class="ap-toggle${appliedView[key] ? " selected" : ""}" data-ap-toggle="${key}" aria-pressed="${appliedView[key] ? "true" : "false"}">${label}</button>`;
+  return `<div class="applied-toggles" role="group" aria-label="Bật tắt hiển thị văn bản">${t("pinyin", "Pinyin")}${t("vi", "Dịch Việt")}${t("highlight", "Tô sáng cấu trúc")}</div>`;
+}
+function appliedStoryHTML(mat) {
+  const pages = (mat.content && mat.content.pages) || [];
+  const cls = ["applied-story",
+    appliedView.pinyin ? "show-pinyin" : "",
+    appliedView.vi ? "show-vi" : "",
+    appliedView.highlight ? "show-highlight" : ""].filter(Boolean).join(" ");
+  return `<div class="${cls}" data-ap-story>
+    ${pages.map((pg, pi) => `<div class="applied-page">
+      <p class="applied-page-head"><button type="button" class="secondary" data-ap-src-btn data-src="${esc(pg.audio_file || "")}" data-label="🔊 Nghe đoạn ${pi + 1}">🔊 Nghe đoạn ${pi + 1}</button></p>
+      ${(pg.sentences || []).map((s) => `<p class="applied-sent${s.target ? " is-target" : ""}"><span class="sent-zh">${esc(s.zh)}</span><span class="sent-py">${esc(s.pinyin)}</span><span class="sent-vi">${esc(s.vi)}</span></p>`).join("")}
+    </div>`).join("")}
+  </div>`;
+}
+function appliedCreditHTML(mat) {
+  const att = mat.attribution || {};
+  const lic = mat.license || {};
+  const who = [["Văn bản", att.text_by], ["Minh họa", att.illustration_by],
+    ["Dịch tiếng Trung", att.translation_by], ["Người đọc", att.narrated_by]]
+    .filter(([, v]) => v && String(v).trim())
+    .map(([k, v]) => `${k}: ${esc(v)}`).join(" · ");
+  return `<div class="applied-credit">
+    ${who ? `<p class="note">${who}</p>` : ""}
+    ${att.note_vi ? `<p class="note">${esc(att.note_vi)}</p>` : ""}
+    <p class="note">Giấy phép văn bản: ${esc(lic.text || "")} · Giấy phép audio: ${esc(lic.audio || "")} · <a href="${esc(mat.source_url)}" target="_blank" rel="noopener">Trang nguồn ↗</a>${lic.license_url ? ` · <a href="${esc(lic.license_url)}" target="_blank" rel="noopener">Giấy phép ↗</a>` : ""}</p>
+  </div>`;
+}
+function appliedInAppCard(mat, actKey, lessonId) {
+  const isListen = actKey === "listening";
+  const shown = !isListen || appliedListenShown.has(lessonId);
+  return `<div class="applied-card applied-card-inapp">
+    <h4>${esc(mat.title_vi)}</h4>
+    ${mat.title_original ? `<p class="note">Tên gốc: ${esc(mat.title_original)}</p>` : ""}
+    <p>${esc(mat.situation_vi)}</p>
+    <p class="note">Nguồn: <strong>${esc(mat.source_name)}</strong> · ${esc(mat.length_label_vi || "")} · Thời lượng audio: ${fmtDur((mat.audio || {}).duration_sec)}</p>
+    <p class="applied-voice">${esc(appliedVoiceLabel(mat.audio))}</p>
+    <p class="applied-target">🎯 ${esc(mat.target_structure_vi)}</p>
+    ${appliedVocabHTML(mat)}
+    ${appliedPlayerHTML(mat)}
+    ${shown ? `${appliedTogglesHTML()}${appliedStoryHTML(mat)}` : `<p><button type="button" class="secondary" data-ap-reveal>Hiện lời để đối chiếu</button></p><p class="note">Lời truyện đang ẩn để bạn luyện nghe trước; trình phát ở trên vẫn dùng được khi lời đang ẩn.</p>`}
+    ${appliedCreditHTML(mat)}
+  </div>`;
+}
+function appliedExtraExternalHTML(extra) {
+  return `<div class="applied-card applied-card-extra">
+    <h4>${esc(extra.title_vi || "")}</h4>
+    ${extra.note_vi ? `<p>${esc(extra.note_vi)}</p>` : ""}
+    <p><a class="btn-link applied-open" href="${esc(extra.source_url)}" target="_blank" rel="noopener">Mở bài tại ${esc(extra.source_name || "")} ↗</a></p>
+  </div>`;
+}
+function appliedSentencePracticeHTML(sp, lessonId) {
+  const items = (sp.items || []).map((it) => {
+    const key = `${lessonId}|${it.id}`;
+    const shown = appliedSpShown.has(key);
+    return `<div class="applied-sp-item">
+      <button type="button" class="secondary" data-ap-src-btn data-src="${esc(it.audio_file || "")}" data-label="🔊 Nghe câu">🔊 Nghe câu</button>
+      <button type="button" class="secondary" data-ap-sp-reveal="${esc(it.id)}">${shown ? "Ẩn câu" : "Xem câu"}</button>
+      <div class="applied-sp-text"${shown ? "" : " hidden"}><span class="sent-zh">${esc(it.zh)}</span><span class="sent-py">${esc(it.pinyin)}</span><span class="sent-vi">${esc(it.vi)}</span></div>
+    </div>`;
+  }).join("");
+  return `<div class="applied-sentprac">
+    <h4>Luyện nghe từng câu</h4>
+    ${sp.guide_vi ? `<p class="applied-guide">${esc(sp.guide_vi)}</p>` : ""}
+    <p><span class="chip">${esc(sp.voice_label_vi || "")}</span></p>
+    ${items}
+    ${sp.license_note_vi ? `<p class="note">${esc(sp.license_note_vi)}</p>` : ""}
+    ${sp.attribution_vi ? `<p class="note">${esc(sp.attribution_vi)}</p>` : ""}
+  </div>`;
+}
+function wireAppliedV2(panel, lessonId, repaint) {
+  panel.querySelectorAll("[data-ap-toggle]").forEach((b) => {
+    b.onclick = () => { appliedView[b.dataset.apToggle] = !appliedView[b.dataset.apToggle]; repaint(); };
+  });
+  panel.querySelectorAll("[data-ap-src-btn]").forEach((b) => {
+    b.onclick = () => toggleAppliedAudio(b.dataset.src);
+  });
+  panel.querySelectorAll("[data-ap-play-main]").forEach((b) => {
+    b.onclick = () => toggleAppliedAudio(b.dataset.src);
+  });
+  const restart = panel.querySelector("[data-ap-restart]");
+  if (restart) restart.onclick = () => {
+    const main = panel.querySelector("[data-ap-play-main]");
+    if (!main) return;
+    const a = getAppliedAudio();
+    if (appliedAudioKey !== main.dataset.src) { toggleAppliedAudio(main.dataset.src); a.currentTime = 0; return; }
+    a.currentTime = 0;
+    if (a.paused) {
+      stopSpeak();
+      const p = a.play();
+      if (p && p.catch) p.catch(() => {});
+    }
+    syncAppliedPlayerUI();
+  };
+  const rate = panel.querySelector("[data-ap-rate]");
+  if (rate) rate.onclick = () => {
+    const rates = [0.75, 1, 1.25];
+    appliedAudioRate = rates[(rates.indexOf(appliedAudioRate) + 1) % rates.length];
+    if (appliedAudio) appliedAudio.playbackRate = appliedAudioRate;
+    rate.textContent = `Tốc độ: ${appliedAudioRate}×`;
+  };
+  const reveal = panel.querySelector("[data-ap-reveal]");
+  if (reveal) reveal.onclick = () => { appliedListenShown.add(lessonId); repaint(); };
+  panel.querySelectorAll("[data-ap-sp-reveal]").forEach((b) => {
+    b.onclick = () => {
+      const key = `${lessonId}|${b.dataset.apSpReveal}`;
+      if (appliedSpShown.has(key)) appliedSpShown.delete(key); else appliedSpShown.add(key);
+      repaint();
+    };
+  });
 }
 function appliedMaterialCard(mat, actKey) {
   const isListen = actKey === "listening";
@@ -1042,7 +1260,7 @@ function appliedMaterialCard(mat, actKey) {
     <p>${esc(mat.situation_vi)}</p>
     <p class="note">Nguồn: <strong>${esc(mat.source_name)}</strong> · ${esc(mat.length_label_vi)} · ${esc(mat.duration_label_vi)}</p>
     <p class="applied-target">🎯 ${esc(mat.target_structure_vi)}</p>
-    ${Array.isArray(mat.vocab_support) && mat.vocab_support.length ? `<details><summary>Từ cần chú ý (${mat.vocab_support.length})</summary><ul class="applied-vocab">${mat.vocab_support.map((v) => `<li><span class="zh">${esc(v.zh)}</span> — ${esc(v.vi)}</li>`).join("")}</ul></details>` : ""}
+    ${appliedVocabHTML(mat)}
     <p><a class="btn-link applied-open" href="${esc(mat.source_url)}" target="_blank" rel="noopener">${isListen ? "Nghe tại" : "Mở bài đọc tại"} ${esc(mat.source_name)} ↗</a></p>
     <p class="note">Nội dung và audio nằm tại trang nguồn. Câu trả lời được lưu ngay trong app nên quay lại không bị mất.</p>
   </div>`;
@@ -1056,6 +1274,8 @@ function appliedPanelHTML(data, actKey, lessonId) {
   const act = data[actKey];
   const st = appliedStateFor(lessonId)[actKey];
   const mat = act.material || data.reading.material;
+  const v2 = data.schema_version === 2;
+  const inApp = v2 && !!mat && mat.access === "in_app";
   const qs = act.questions.map((q, qi) => {
     const saved = st.answers[qi];
     return `<div class="ex applied-q" data-aq="${qi}">
@@ -1065,16 +1285,23 @@ function appliedPanelHTML(data, actKey, lessonId) {
       <div data-aq-fb>${saved ? appliedFeedbackHTML(q, saved) : ""}</div>
     </div>`;
   }).join("");
+  const sharedNote = !data.shared ? ""
+    : inApp
+      ? `<p class="note">${data.shared_note_vi ? esc(data.shared_note_vi) : "Đọc và nghe dùng cùng một truyện ngay trong app."}</p>`
+      : `<p class="note">Đọc và nghe dùng cùng một nội dung tại nguồn.${actKey === "listening" ? " Hãy nghe trước khi mở bài đọc ở tab Đọc để luyện nghe độc lập; nghe xong có thể đối chiếu lại bằng văn bản." : ""}</p>`;
   return `
-    ${data.shared ? `<p class="note">Đọc và nghe dùng cùng một nội dung tại nguồn.${actKey === "listening" ? " Hãy nghe trước khi mở bài đọc ở tab Đọc để luyện nghe độc lập; nghe xong có thể đối chiếu lại bằng văn bản." : ""}</p>` : ""}
+    ${sharedNote}
     <p class="applied-guide">${esc(act.guide_vi)}</p>
-    ${appliedMaterialCard(mat, actKey)}
+    ${inApp ? appliedInAppCard(mat, actKey, lessonId) : appliedMaterialCard(mat, actKey)}
+    ${actKey === "listening" ? (act.sentence_practice ? appliedSentencePracticeHTML(act.sentence_practice, lessonId) : (v2 ? `<p class="note applied-noprac">Chưa có phần luyện nghe câu phù hợp cho bài này.</p>` : "")) : ""}
+    ${actKey === "reading" && act.extra_external ? appliedExtraExternalHTML(act.extra_external) : ""}
     ${qs}
     ${actKey === "reading" && act.write_prompt_vi ? `<div class="applied-write"><strong>✍️ Tự viết (tùy chọn):</strong> ${esc(act.write_prompt_vi)}</div>` : ""}
     <p class="btn-row"><button type="button" class="secondary" data-applied-done="${actKey}">${st.done ? `✓ Đã ${actKey === "reading" ? "đọc" : "nghe"} xong — bấm để bỏ đánh dấu` : `Đánh dấu đã ${actKey === "reading" ? "đọc" : "nghe"} xong`}</button></p>
-    <p class="note">Đánh dấu này là TỰ XÁC NHẬN của bạn: app không theo dõi được việc học tại trang nguồn. Mở link hay bấm nghe không tự tính là đã học xong.</p>`;
+    <p class="note">${inApp ? "Đánh dấu này là TỰ XÁC NHẬN của bạn sau khi đã đọc/nghe ngay trong app." : "Đánh dấu này là TỰ XÁC NHẬN của bạn: app không theo dõi được việc học tại trang nguồn. Mở link hay bấm nghe không tự tính là đã học xong."}</p>`;
 }
 function renderApplied(slot, data, lessonId) {
+  reconcileAppliedState(lessonId, data);
   slot.innerHTML = `<section class="card" id="sec-applied">
     <h3>Đọc &amp; nghe vận dụng</h3>
     <div class="applied-tabs" role="group" aria-label="Chọn hoạt động">
@@ -1097,7 +1324,7 @@ function renderApplied(slot, data, lessonId) {
       const on = b.dataset.atab === appliedTab;
       b.classList.toggle("selected", on);
       b.setAttribute("aria-pressed", on ? "true" : "false");
-      b.onclick = () => { appliedTab = b.dataset.atab; paint(); };
+      b.onclick = () => { stopAppliedAudio(); appliedTab = b.dataset.atab; paint(); };
     });
     const panel = document.getElementById("applied-panel");
     panel.innerHTML = appliedPanelHTML(data, appliedTab, lessonId);
@@ -1132,6 +1359,8 @@ function renderApplied(slot, data, lessonId) {
     });
     const doneBtn = panel.querySelector("[data-applied-done]");
     if (doneBtn) doneBtn.onclick = () => { st.done = !st.done; saveProgress(); paint(); };
+    wireAppliedV2(panel, lessonId, paint);
+    syncAppliedPlayerUI();
   };
   paint();
 }
@@ -1309,7 +1538,7 @@ function render() {
 // bản cũ từ bộ nhớ đệm sau khi app.js mới đã chạy. Lưu ý: tham số này chỉ
 // có tác dụng khi app.js mới đã được tải; nó không chữa được app.js cũ
 // còn trong bộ nhớ đệm (xem docs/decisions.md D20).
-const BUILD_VERSION = "20261031-app1";
+const BUILD_VERSION = "20261031-rl1";
 const DEBUG = new URLSearchParams(location.search).get("debug") === "1";
 let debugInfo = null;
 
