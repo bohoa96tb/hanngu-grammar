@@ -356,3 +356,44 @@ HSK1–HSK6 hoàn chỉnh, đánh số bài theo cấp, chủ động bổ sung 
 6. Lộ trình hoàn thiện theo cấp: HSK1 trước (27 mục nhóm partial/
    missing trong 52), rồi HSK2 (42/62), HSK3 (18/50), HSK4–6. Mỗi lô
    nội dung tối đa ~4 bài như quy ước cũ, qua đủ cổng QA/CI/live.
+
+## D29 — Tái thiết kế UX/UI pilot (2026-10-31, build 20261031-ui1)
+
+Chỉ đạo của Hoa ngày 2026-10-31: nâng cấp UX/UI thực chất (không chỉ
+đổi màu/bo góc), pilot trên trang danh mục + HSK1 · Bài 01 (shi-noun-link)
++ bộ bài tập của bài đó, kiểm chứng bằng trình duyệt thật nhiều kích
+thước trước khi chuẩn hóa. Quyết định kỹ thuật:
+
+1. Renderer dùng chung được viết lại cho cả 3 bề mặt (danh mục, trang
+   bài, luyện tập) vì chúng dùng chung một renderer; phạm vi QA pilot
+   tập trung vào Bài 01 + 1 bài trung bình + 1 bài khó trước merge.
+   Không đổi: data/, schema, ID bài/bài tập, khóa tiến độ v2, FSRS
+   (srs.mjs), cơ chế ghi attempts/hints, trang Ôn lại.
+2. Danh mục: hàng gọn một dòng mô tả (cắt CSS) thay thẻ lớn; thanh
+   tiến độ theo cấp + toàn bộ; "Tiếp tục học" đi theo THỨ TỰ
+   CURRICULUM (sửa lệch cũ: trước đây quét theo thứ tự manifest); lọc
+   thêm theo trạng thái học (tham số st trên hash); xuất/nhập tiến
+   trình chuyển vào khối <details> cuối trang.
+3. Trang bài: bỏ "Ví dụ nhanh" ở mục A (trùng ví dụ 1 ở mục Ví dụ);
+   công thức hiện dạng ô thành phần tách theo "+" ở hero và mục Công
+   thức; mẫu câu đầy đủ chỉ xuất hiện ở hai chỗ đó (bỏ lần lặp thứ ba
+   trong Luyện nói); Dễ nhầm thành <details> từng câu; Nguồn/kiểm
+   chứng thành <details> cuối trang; điều hướng mục bằng nút cuộn
+   (không dùng href="#..." vì app định tuyến bằng hash).
+4. Nghe: một nút tròn 44px duy nhất cho mỗi ví dụ — bấm để nghe, bấm
+   lần nữa để dừng (class .speaking + ký hiệu ▶/■); bỏ nút Dừng riêng.
+   Tốc độ đọc/Pinyin/nghĩa vẫn là prefs dùng chung cả bài.
+5. Luyện tập: trình từng câu — mọi câu vẫn trong DOM với id và cơ chế
+   chấm cũ; trình chỉ ẩn/hiện, hiện vị trí Câu x/N, thanh tiến độ theo
+   attempts thật, và TỔNG KẾT (đúng gần nhất x/N + danh sách câu cần
+   ôn lại, bấm để nhảy tới câu) dựng từ progress.attempts. Sửa lỗi lộ
+   đáp án: bài fill KHÔNG còn in hint_vi sẵn ("Mẫu cần dùng") — gợi ý
+   chỉ hiện khi bấm nút Gợi ý và vẫn ghi nhận hints như cũ.
+6. Luyện nói: luồng 4 bước có chỉ báo bước (Nghe mẫu → Thu âm → Nghe
+   lại → Tự đánh giá); thêm nút tự đánh giá 3 mức chỉ ghi trong trang
+   (không đổi schema tiến độ); hướng dẫn kỹ thuật dài chuyển vào
+   <details> "Trợ giúp & lưu ý kỹ thuật". TTS vẫn là giọng tổng hợp,
+   audio thiết bị thật vẫn not_run (AUD-TTS-01 không đổi trạng thái).
+7. Harness tests/browser-check.mjs được cập nhật 2 điểm tương ứng
+   thiết kế mới (nhãn mục "Hiểu nhanh"; nút nghe/dừng hợp nhất) — các
+   kiểm tra còn lại giữ nguyên, 24/24 PASS trên bản local trước QA.
