@@ -18,7 +18,7 @@
           "wrong_or_risky": "他不比我高。(khi muốn khẳng định 'anh ấy thấp hơn tôi')"
         }
       ],
-      "content_version": 3,
+      "content_version": 4,
       "difficulty": "medium",
       "examples": [
         {
@@ -165,6 +165,10 @@
       "objective": "Sau bài này, người học dùng 更/还 sau 比, 一样 với 跟, và 不比 để so sánh ở mức HSK3, phân biệt 不比 (không hơn) với khẳng định thấp hơn.",
       "pattern": "A比B + 更/还 + Tính từ • A跟B + 一样 + Tính từ • A不比B + Tính từ",
       "quick_memory": "Hơn nữa dùng 更/还 sau 比; giống nhau dùng 跟…一样; 不比 chỉ là “không hơn”, chưa chắc kém.",
+      "related_ids": [
+        "bi-comparison",
+        "adverbs-degree-hsk3"
+      ],
       "review": {
         "date": "2026-10-29",
         "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 10 từ danh mục HSK3 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",

@@ -18,7 +18,7 @@
           "wrong_or_risky": "发票上写：大概一百块。(hóa đơn ghi 'khoảng một trăm tệ')"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -206,6 +206,9 @@
       "objective": "Sau bài này, người học nói được số lượng ước lượng kiểu 'khoảng/chừng' bằng 大概 đặt trước cụm số lượng và bằng mẫu hai số kề nhau （七八天、两三个小时）.",
       "pattern": "大概 + Số + Lượng từ (+ Danh từ) • Số + Số kề + Lượng từ (+ Danh từ)",
       "quick_memory": "Khoảng bao nhiêu? → 大概 đứng trước số, hoặc hai số kề nhau dính liền: 七八天、两三天。Số phải liên tiếp!",
+      "related_ids": [
+        "approx-numbers-1"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-7 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",

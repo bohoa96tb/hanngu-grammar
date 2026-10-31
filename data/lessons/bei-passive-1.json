@@ -18,7 +18,7 @@
           "wrong_or_risky": "杯子打碎了。(khi muốn nhấn mạnh bị động)"
         }
       ],
-      "content_version": 3,
+      "content_version": 4,
       "difficulty": "hard",
       "examples": [
         {
@@ -168,6 +168,9 @@
       "objective": "Sau bài này, người học dùng câu bị động với 被 để nói chủ ngữ chịu tác động của hành động, phân biệt với câu chữ 把 nói chủ động.",
       "pattern": "Chủ ngữ (chịu tác động) + 被 (+ Tác nhân) + Động từ + Thành phần khác",
       "quick_memory": "Ai chịu tác động thì làm chủ ngữ: 被 + động từ + thành phần khác; động từ không đứng trơ một mình.",
+      "related_ids": [
+        "ba-sentence-1"
+      ],
       "review": {
         "date": "2026-10-29",
         "notes": "Rà soát riêng sau lượt soạn: đối chiếu 语法大纲 trong đề cương thi HSK 11/2025 về cấp độ và phạm vi (lô 10 từ danh mục HSK3 đã xác minh); kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghe kiểm chứng trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thay mục Nhớ nhanh theo rà soát std2 (audit §1.3)",

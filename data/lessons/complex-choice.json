@@ -18,7 +18,7 @@
           "wrong_or_risky": "他不是很忙吗？(bị tưởng là mẫu lựa chọn của bài này)"
         }
       ],
-      "content_version": 4,
+      "content_version": 5,
       "difficulty": "medium",
       "examples": [
         {
@@ -216,6 +216,9 @@
       "objective": "Sau bài này, người học nói được 'một trong hai' trong câu trần thuật: suy đoán chắc chắn bằng 不是……，就是…… và nêu hai khả năng trung tính bằng 或者……，或者…….",
       "pattern": "不是 + A，就是 + B • 或者 + A，或者 + B",
       "quick_memory": "Một trong hai: đoán chắc → 不是……就是……; trung tính → 或者……或者……. Còn 还是 chỉ dành cho câu hỏi.",
+      "related_ids": [
+        "hai-shi-choice"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-5 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí. Cập nhật lô HSK3-6 30/10/2026 theo chỉ đạo của Hoa: đổi cấp hiển thị của bài từ HSK3 sang HSK4 vì khung chính 不是……，就是…… đã xác minh thuộc bảng HSK4; vị trí trong manifest chuyển xuống cuối (đầu khối HSK4); catalogue HSK4 OFF-H4-27 ghi một phần qua bài này, catalogue HSK3 OFF-H3-42 không tính 不是……，就是…… vào phần phủ HSK3. Cập nhật lô HSK3-7 30/10/2026: kiểm trực quan trang in 394 của đề cương gốc xác nhận mục lựa chọn HSK4 chỉ có một thành viên 不是……，就是…… (mẫu 连……也/都……，……更…… thuộc mục tiến triển, trước đây bị trích xuất text gắn lệch hàng); hsk_evidence của bài chuyển từ partial sang verified, OFF-H4-27 chuyển từ một phần sang đã có.",

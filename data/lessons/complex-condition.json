@@ -18,7 +18,7 @@
           "wrong_or_risky": "只有你来，我就很高兴。 (muốn nói 'chỉ cần bạn đến là tôi vui rồi')"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -191,6 +191,10 @@
       "objective": "Sau bài này, người học phân biệt và dùng đúng hai mẫu điều kiện: 只有……，才…… (chỉ khi có điều kiện duy nhất/bắt buộc thì kết quả mới xảy ra) và 只要……，就…… (chỉ cần có điều kiện đủ là kết quả xảy ra), không ghép chéo 才 và 就.",
       "pattern": "只有……，才…… • 只要……，就……",
       "quick_memory": "Chỉ một đường duy nhất mới tới → 只有…才…; hễ có điều kiện là tới ngay → 只要…就…. Đừng ghép chéo.",
+      "related_ids": [
+        "complex-hypothesis",
+        "adverbs-mood-hsk3"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-2 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-47 và OFF-H3-22, diễn giải theo Chinese Grammar Wiki, bài viết mới bằng tiếng Việt, không sao chép nguyên văn nguồn ngoài; đối chiếu hai mẫu là mục tiêu chính của bài; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật. Sửa vòng 2 theo QA-HSK3-2 30/10/2026: ccon-ex1 đổi ngữ cảnh '只有有票' thành '只有买了票，才能进去。' và chỉnh 3 phương án nhiễu/lời giải cho khớp (H-1).",
