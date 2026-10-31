@@ -50,6 +50,14 @@ def check(data, path) -> list[str]:
     if not isinstance(lessons, list) or not lessons:
         return errors + ["lessons phải là danh sách không rỗng"]
     seen_lessons, seen_ex = set(), set()
+    # REL-01 (2026-10-31): tiền xử lý bản đồ id -> bài và id -> related_ids
+    # trước vòng lặp, để kiểm tra tồn tại/đối xứng của related_ids cần nhìn
+    # toàn bộ tập bài (bài đích có thể nằm sau bài nguồn trong danh sách).
+    lesson_by_id: dict = {}
+    for _les in lessons:
+        _lid = _les.get("id")
+        if isinstance(_lid, str) and _lid not in lesson_by_id:
+            lesson_by_id[_lid] = _les
     for les in lessons:
         lid = les.get("id", "?")
         if lid in seen_lessons:
@@ -146,6 +154,34 @@ def check(data, path) -> list[str]:
                 errors.append(f"{lid}: bài published thiếu sources")
         if les.get("status") not in ("draft", "reviewed", "published"):
             errors.append(f"{lid}: status không hợp lệ")
+        # REL-01 (2026-10-31): related_ids là trường tùy chọn — bài không
+        # có trường này vẫn hợp lệ. Khi có mặt: list các str, không trùng,
+        # tối đa 4, không tự trỏ, mọi id phải tồn tại, đối xứng hai chiều,
+        # và bài published chỉ được trỏ tới bài published.
+        if "related_ids" in les:
+            rel = les.get("related_ids")
+            if not isinstance(rel, list) or not all(
+                    isinstance(x, str) for x in rel):
+                errors.append(f"{lid}: related_ids phải là danh sách các chuỗi (list các str)")
+            else:
+                if len(rel) > 4:
+                    errors.append(f"{lid}: related_ids tối đa 4 phần tử, có {len(rel)}")
+                if len(set(rel)) != len(rel):
+                    errors.append(f"{lid}: related_ids không được trùng phần tử")
+                if lid in rel:
+                    errors.append(f"{lid}: related_ids không được chứa id của chính bài")
+                for rid in rel:
+                    if rid == lid:
+                        continue
+                    target = lesson_by_id.get(rid)
+                    if target is None:
+                        errors.append(f"{lid}: related_ids chứa id không tồn tại: {rid}")
+                        continue
+                    if les.get("status") == "published" and target.get("status") != "published":
+                        errors.append(f"{lid}: related_ids trỏ tới bài chưa published: {rid}")
+                    target_rel = target.get("related_ids")
+                    if not isinstance(target_rel, list) or lid not in target_rel:
+                        errors.append(f"{lid}: related_ids không đối xứng — bài {rid} chưa liệt kê lại bài này")
     return errors
 
 
