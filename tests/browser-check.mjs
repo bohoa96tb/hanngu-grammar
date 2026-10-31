@@ -400,6 +400,30 @@ async function main() {
   // --- E. Lỗi console trong toàn bộ phiên ---
   record("console-errors", consoleErrors.length === 0 ? "pass" : "fail", consoleErrors.length ? consoleErrors.slice(0, 5).join(" | ") : "0 lỗi console/exception trong các trang đã mở");
 
+
+  // --- APP-01: Đọc & nghe vận dụng (pilot Bài 01) ---
+  await navigate("#/lesson/shi-noun-link");
+  await waitFor(async () => evaluate(`!!document.getElementById('sec-applied')`));
+  const appCard = await evaluate(`(() => { const a = document.querySelector('.applied-open'); return { ok: !!a && a.href.includes('mandarinbean.com/a-happy-day') && a.target === '_blank', src: document.getElementById('sec-applied').innerText.includes('Mandarin Bean') }; })()`);
+  record("applied-section-and-source-link", appCard.ok && appCard.src ? "pass" : "fail", JSON.stringify(appCard));
+  await evaluate(`document.querySelector('[data-aq="0"] [data-aq-opt="1"]').click()`);
+  await evaluate(`document.querySelector('[data-aq="0"] [data-aq-check]').click()`);
+  const appGrade = await evaluate(`(() => { const fb = document.querySelector('[data-aq="0"] [data-aq-fb]').textContent; const p = JSON.parse(localStorage.getItem('hanngu-progress-v2')); const a = p.applied && p.applied['shi-noun-link']; return { fbOk: fb.includes('Đúng rồi'), saved: !!a && a.reading.answers['0'] && a.reading.answers['0'].ok === true }; })()`);
+  record("applied-answer-graded-and-saved", appGrade.fbOk && appGrade.saved ? "pass" : "fail", JSON.stringify(appGrade));
+  await evaluate(`document.querySelector('[data-atab="listening"]').click()`);
+  const appTab = await evaluate(`(() => { const panel = document.getElementById('applied-panel'); return { hasQ: !!panel.querySelector('[data-aq="0"]'), hint: panel.innerText.includes('nghe trước khi mở bài đọc') }; })()`);
+  record("applied-listening-tab", appTab.hasQ && appTab.hint ? "pass" : "fail", JSON.stringify(appTab));
+  await evaluate(`document.querySelector('[data-applied-done="listening"]').click()`);
+  await evaluate(`location.reload()`);
+  await sleep(1200);
+  await waitFor(async () => evaluate(`!!document.getElementById('sec-applied')`));
+  const appPersist = await evaluate(`(() => { const p = JSON.parse(localStorage.getItem('hanngu-progress-v2')); const a = p.applied['shi-noun-link']; return a.listening.done === true && a.reading.answers['0'].ok === true; })()`);
+  record("applied-state-persists-after-reload", appPersist ? "pass" : "fail", String(appPersist));
+  await navigate("#/lesson/ma-question");
+  await sleep(1500);
+  const appAbsent = await evaluate(`!document.getElementById('sec-applied') && !!document.getElementById('sec-practice')`);
+  record("applied-absent-for-lessons-without-material", appAbsent ? "pass" : "fail", String(appAbsent));
+
   const fails = results.filter((r) => r.status === "fail");
   const report = { base: BASE, at: new Date().toISOString(), engine: "Chromium headless (CDP) tren VM cua Muse — khong phai thiet bi that", results, consoleErrors, verdict: fails.length ? "FAIL" : "PASS" };
   if (REPORT_PATH) writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2));
