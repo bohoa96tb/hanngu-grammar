@@ -255,6 +255,123 @@ def validate_curriculum(cur, lessons) -> list[str]:
     return errors
 
 
+APPLIED_DIR = ROOT / "data" / "applied"
+
+
+def _applied_material_errors(mat, where):
+    errs = []
+    if not isinstance(mat, dict):
+        return [f"{where}: material phải là object"]
+    for key in ("source_name", "title_vi", "situation_vi",
+                "target_structure_vi", "length_label_vi",
+                "duration_label_vi"):
+        if not str(mat.get(key) or "").strip():
+            errs.append(f"{where}: material thiếu {key}")
+    url = str(mat.get("source_url") or "")
+    if not url.startswith("https://"):
+        errs.append(f"{where}: material.source_url phải là URL https")
+    access = mat.get("access")
+    if access not in ("external", "embed", "in_app"):
+        errs.append(f"{where}: material.access không hợp lệ: {access}")
+    rights = mat.get("rights") or {}
+    if rights.get("status") not in ("link_only", "embed_allowed",
+                                    "reuse_allowed"):
+        errs.append(f"{where}: rights.status không hợp lệ")
+    if not str(rights.get("basis_vi") or "").strip():
+        errs.append(f"{where}: rights.basis_vi không được trống")
+    if access == "external" and rights.get("status") != "link_only":
+        errs.append(f"{where}: access=external phải đi với rights link_only")
+    audio = mat.get("audio") or {}
+    if audio.get("kind") not in ("source_page_player", "none"):
+        errs.append(f"{where}: audio.kind không hợp lệ")
+    if audio.get("voice") not in ("native_claimed_by_source", "unknown"):
+        errs.append(f"{where}: audio.voice không hợp lệ")
+    if audio.get("kind") == "source_page_player" \
+            and audio.get("verified_playback") is not True:
+        errs.append(f"{where}: có player nguồn nhưng chưa kiểm chứng phát "
+                    f"(audio.verified_playback phải là true)")
+    vocab = mat.get("vocab_support")
+    if not isinstance(vocab, list) or any(
+            not str(v.get("zh") or "").strip()
+            or not str(v.get("vi") or "").strip()
+            for v in vocab if isinstance(v, dict)) \
+            or any(not isinstance(v, dict) for v in vocab):
+        errs.append(f"{where}: vocab_support phải là danh sách {{zh, vi}}")
+    return errs
+
+
+def _applied_activity_errors(act, where, need_material):
+    errs = []
+    if not isinstance(act, dict):
+        return [f"{where}: hoạt động phải là object"]
+    if not str(act.get("guide_vi") or "").strip():
+        errs.append(f"{where}: thiếu guide_vi")
+    if need_material:
+        errs.extend(_applied_material_errors(act.get("material"), where))
+    elif act.get("material") is not None:
+        errs.append(f"{where}: dùng chung học liệu (shared) thì không khai "
+                    f"material riêng")
+    questions = act.get("questions")
+    if not isinstance(questions, list) or not 2 <= len(questions) <= 3:
+        errs.append(f"{where}: cần 2–3 câu hỏi")
+        questions = questions if isinstance(questions, list) else []
+    for i, q in enumerate(questions):
+        qw = f"{where} câu {i + 1}"
+        if not str(q.get("prompt_vi") or "").strip():
+            errs.append(f"{qw}: thiếu prompt_vi")
+        opts = q.get("options")
+        if not isinstance(opts, list) or len(opts) != 3 \
+                or len({str(o).strip() for o in opts}) != 3 \
+                or any(not str(o).strip() for o in opts):
+            errs.append(f"{qw}: cần đúng 3 phương án khác nhau, không trống")
+        if q.get("answer") not in (0, 1, 2):
+            errs.append(f"{qw}: answer phải là 0, 1 hoặc 2")
+        if not str(q.get("explain_vi") or "").strip():
+            errs.append(f"{qw}: thiếu explain_vi")
+    return errs
+
+
+def validate_applied(doc, lesson_ids, file_stem):
+    """APP-01 (2026-10-31): kiểm tra một file data/applied/<id>.json —
+    học liệu đọc/nghe vận dụng gắn với bài đã published. Chỉ kiểm tra
+    cấu trúc/quyền khai báo, không chứng minh nội dung nguồn."""
+    errs = []
+    where = f"applied/{file_stem}"
+    if not isinstance(doc, dict):
+        return [f"{where}: nội dung phải là object"]
+    if doc.get("schema_version") != 1:
+        errs.append(f"{where}: schema_version phải bằng 1")
+    lid = doc.get("lesson_id")
+    if lid != file_stem:
+        errs.append(f"{where}: lesson_id '{lid}' phải trùng tên file")
+    if lid not in lesson_ids:
+        errs.append(f"{where}: bài {lid} không tồn tại hoặc chưa published")
+    if doc.get("qa_status") not in ("internal_review", "verified"):
+        errs.append(f"{where}: qa_status không hợp lệ")
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}",
+                        str(doc.get("checked_date") or "")):
+        errs.append(f"{where}: checked_date phải dạng YYYY-MM-DD")
+    shared = doc.get("shared")
+    if not isinstance(shared, bool):
+        errs.append(f"{where}: shared phải là true/false")
+        shared = False
+    if shared and not str(doc.get("shared_note_vi") or "").strip():
+        errs.append(f"{where}: shared=true cần shared_note_vi")
+    errs.extend(_applied_activity_errors(doc.get("reading"),
+                                         f"{where} reading", True))
+    errs.extend(_applied_activity_errors(doc.get("listening"),
+                                         f"{where} listening", not shared))
+    answers = []
+    for act_key in ("reading", "listening"):
+        act = doc.get(act_key) or {}
+        for q in act.get("questions") or []:
+            if q.get("answer") in (0, 1, 2):
+                answers.append(q["answer"])
+    if len(answers) >= 4 and len(set(answers)) == 1:
+        errs.append(f"{where}: đáp án đúng dồn hết về một vị trí")
+    return errs
+
+
 def main(argv) -> int:
     path = Path(argv[1]) if len(argv) > 1 else DEFAULT
     try:
@@ -274,6 +391,36 @@ def main(argv) -> int:
             errors.extend(validate_curriculum(cur, data["lessons"]))
         except Exception as exc:  # noqa: BLE001
             errors.append(f"curriculum: không đọc được data/curriculum.json: {exc}")
+    # APP-01: data/applied/ là thư mục tùy chọn; có file thì phải đạt,
+    # và data/applied-manifest.json phải khớp đúng tập file hiện có.
+    published_ids = {les["id"] for les in data["lessons"]
+                     if les["status"] == "published"}
+    applied_files = {}
+    if APPLIED_DIR.exists():
+        for ap in sorted(APPLIED_DIR.glob("*.json")):
+            try:
+                doc = json.loads(ap.read_text(encoding="utf-8"))
+                applied_files[ap.stem] = doc
+                errors.extend(validate_applied(doc, published_ids, ap.stem))
+            except Exception as exc:  # noqa: BLE001
+                errors.append(f"applied/{ap.stem}: không đọc được: {exc}")
+    manifest_path = ROOT / "data" / "applied-manifest.json"
+    if applied_files and not manifest_path.exists():
+        errors.append("applied: có file học liệu nhưng thiếu "
+                      "data/applied-manifest.json")
+    if manifest_path.exists():
+        try:
+            man = json.loads(manifest_path.read_text(encoding="utf-8"))
+            listed = man.get("lessons")
+            if man.get("schema_version") != 1 or not isinstance(listed, list) \
+                    or len(set(listed)) != len(listed):
+                errors.append("applied-manifest: schema_version phải bằng 1 "
+                              "và lessons là danh sách id không trùng")
+            elif set(listed) != set(applied_files):
+                errors.append("applied-manifest: danh sách id không khớp "
+                              "tập file trong data/applied/")
+        except Exception as exc:  # noqa: BLE001
+            errors.append(f"applied-manifest: không đọc được: {exc}")
     if errors:
         print(f"KHÔNG ĐẠT ({len(errors)} lỗi) — {path}")
         for err in errors:

@@ -218,3 +218,17 @@ details > summary { cursor: pointer; font-weight: 600; padding: var(--space-1) 0
   .row-desc { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
   .card-hero .formula-chips .fchip { font-size: 1.15rem; }
 }
+
+/* ===== APP-01: Đọc & nghe vận dụng (2026-10-31) ===== */
+.applied-tabs { display: flex; gap: 8px; margin: 4px 0 12px; }
+.tab-btn { flex: 1; padding: 10px; border-radius: 10px; border: 1.5px solid var(--line, #d7dee8); background: var(--card, #fff); color: var(--ink, #1e293b); font-weight: 600; cursor: pointer; min-height: 44px; }
+.tab-btn.selected { border-color: var(--accent, #0f766e); background: #e6f4f1; color: var(--accent, #0f766e); }
+.applied-card { border: 1px solid var(--line, #d7dee8); border-radius: 12px; padding: 12px 14px; margin: 10px 0; background: #fbfcfe; }
+.applied-card h4 { margin: 2px 0 6px; }
+.applied-target { background: #eef6ff; border-radius: 8px; padding: 8px 10px; }
+.applied-guide { font-weight: 600; }
+.applied-vocab { margin: 6px 0 0; padding-left: 18px; }
+.applied-vocab .zh { font-family: var(--font-zh); }
+.applied-open { margin: 4px 0; }
+.applied-write { border-left: 4px solid var(--accent, #0f766e); background: #f4faf9; border-radius: 0 8px 8px 0; padding: 10px 12px; margin: 12px 0; }
+.applied-q { margin-top: 14px; }

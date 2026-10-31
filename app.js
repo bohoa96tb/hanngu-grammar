@@ -32,13 +32,15 @@ let loadErrorInfo = null;
 let loadFailed = false;
 
 function emptyProgressV2() {
-  return { version: 2, fsrsVersion: SRS.FSRS_VERSION, completedLessons: [], attempts: {}, hints: {}, cards: {}, events: [], reviewLimit: 20 };
+  return { version: 2, fsrsVersion: SRS.FSRS_VERSION, completedLessons: [], attempts: {}, hints: {}, cards: {}, events: [], reviewLimit: 20, applied: {} };
 }
 function migrateProgress(p) {
   // v1 -> v2: giữ nguyên hoàn thành/bài tập/gợi ý; thẻ FSRS bắt đầu trống.
   // Thẻ cũ không tồn tại ở v1 nên không có migration trạng thái FSRS nào.
   if (p.version === 2) {
-    return { ...emptyProgressV2(), ...p, cards: p.cards || {}, events: Array.isArray(p.events) ? p.events : [], reviewLimit: p.reviewLimit || 20 };
+    const merged = { ...emptyProgressV2(), ...p, cards: p.cards || {}, events: Array.isArray(p.events) ? p.events : [], reviewLimit: p.reviewLimit || 20 };
+    if (!merged.applied || typeof merged.applied !== "object" || Array.isArray(merged.applied)) merged.applied = {};
+    return merged;
   }
   return { ...emptyProgressV2(), completedLessons: p.completedLessons || [], attempts: p.attempts || {}, hints: p.hints || {} };
 }
@@ -285,6 +287,7 @@ function lessonById(id) { return lessons.find((l) => l.id === id); }
 // cấp của bài) để người học vẫn học bình thường — trạng thái được ghi
 // vào debugInfo.curriculumStatus, không hiện banner lỗi mới.
 let curriculumData = null;
+let appliedIds = new Set();
 let curriculumStatus = "chưa tải";
 let _orderInfo = null;
 
@@ -659,6 +662,7 @@ function renderLesson(id) {
       </div>
       <div id="playerSummary" hidden></div>
     </section>
+    <div id="applied-slot"></div>
     <section class="card" id="speak-section">
       <h3>Luyện nói</h3>
       <ol class="steps" aria-label="Luồng luyện nói">
@@ -1015,6 +1019,132 @@ function renderLesson(id) {
       if (box) box.innerHTML = `<div class="feedback" role="status">${hint ? `Gợi ý: ${esc(hint)}` : "Bài này không có gợi ý riêng — hãy xem lại mục Công thức ở trên."} (Đã ghi nhận: bạn đã xem gợi ý.)</div>`;
     };
   });
+  loadApplied(les);
+}
+
+
+// ===== APP-01: Đọc & nghe vận dụng (data/applied/<lesson-id>.json) =====
+// Học liệu thật tại nguồn ngoài (mặc định link_only, D30): app chỉ hiện
+// thẻ học liệu + câu hỏi tự biên soạn; tiến độ lưu ở progress.applied,
+// tách khỏi hoàn thành bài/FSRS. Thiếu file -> ẩn mục, không lỗi.
+let appliedTab = "reading";
+function appliedStateFor(lessonId) {
+  if (!progress.applied || typeof progress.applied !== "object") progress.applied = {};
+  const cur = progress.applied[lessonId] || {};
+  const norm = (a) => ({ answers: (a && a.answers) || {}, done: !!(a && a.done) });
+  progress.applied[lessonId] = { reading: norm(cur.reading), listening: norm(cur.listening) };
+  return progress.applied[lessonId];
+}
+function appliedMaterialCard(mat, actKey) {
+  const isListen = actKey === "listening";
+  return `<div class="applied-card">
+    <h4>${esc(mat.title_vi)}</h4>
+    <p>${esc(mat.situation_vi)}</p>
+    <p class="note">Nguồn: <strong>${esc(mat.source_name)}</strong> · ${esc(mat.length_label_vi)} · ${esc(mat.duration_label_vi)}</p>
+    <p class="applied-target">🎯 ${esc(mat.target_structure_vi)}</p>
+    ${Array.isArray(mat.vocab_support) && mat.vocab_support.length ? `<details><summary>Từ cần chú ý (${mat.vocab_support.length})</summary><ul class="applied-vocab">${mat.vocab_support.map((v) => `<li><span class="zh">${esc(v.zh)}</span> — ${esc(v.vi)}</li>`).join("")}</ul></details>` : ""}
+    <p><a class="btn-link applied-open" href="${esc(mat.source_url)}" target="_blank" rel="noopener">${isListen ? "Nghe tại" : "Mở bài đọc tại"} ${esc(mat.source_name)} ↗</a></p>
+    <p class="note">Nội dung và audio nằm tại trang nguồn. Câu trả lời được lưu ngay trong app nên quay lại không bị mất.</p>
+  </div>`;
+}
+function appliedFeedbackHTML(q, saved) {
+  return saved.ok
+    ? `<div class="feedback ok" role="status">✓ Đúng rồi. ${esc(q.explain_vi)}</div>`
+    : `<div class="feedback bad" role="status">✗ Chưa đúng. Đáp án đúng: ${esc(q.options[q.answer])}. ${esc(q.explain_vi)}</div>`;
+}
+function appliedPanelHTML(data, actKey, lessonId) {
+  const act = data[actKey];
+  const st = appliedStateFor(lessonId)[actKey];
+  const mat = act.material || data.reading.material;
+  const qs = act.questions.map((q, qi) => {
+    const saved = st.answers[qi];
+    return `<div class="ex applied-q" data-aq="${qi}">
+      <p class="ex-q">Câu ${qi + 1}. ${esc(q.prompt_vi)}</p>
+      <div class="opts" role="group" aria-label="Chọn đáp án">${q.options.map((o, oi) => `<button type="button" class="opt${saved && saved.pick === oi ? " selected" : ""}" data-aq-opt="${oi}">${esc(o)}</button>`).join("")}</div>
+      <div class="ex-actions"><button type="button" data-aq-check ${saved ? "hidden" : ""}>Kiểm tra</button><button type="button" class="secondary" data-aq-retry ${saved ? "" : "hidden"}>Làm lại câu này</button></div>
+      <div data-aq-fb>${saved ? appliedFeedbackHTML(q, saved) : ""}</div>
+    </div>`;
+  }).join("");
+  return `
+    ${data.shared ? `<p class="note">Đọc và nghe dùng cùng một nội dung tại nguồn.${actKey === "listening" ? " Hãy nghe trước khi mở bài đọc ở tab Đọc để luyện nghe độc lập; nghe xong có thể đối chiếu lại bằng văn bản." : ""}</p>` : ""}
+    <p class="applied-guide">${esc(act.guide_vi)}</p>
+    ${appliedMaterialCard(mat, actKey)}
+    ${qs}
+    ${actKey === "reading" && act.write_prompt_vi ? `<div class="applied-write"><strong>✍️ Tự viết (tùy chọn):</strong> ${esc(act.write_prompt_vi)}</div>` : ""}
+    <p class="btn-row"><button type="button" class="secondary" data-applied-done="${actKey}">${st.done ? `✓ Đã ${actKey === "reading" ? "đọc" : "nghe"} xong — bấm để bỏ đánh dấu` : `Đánh dấu đã ${actKey === "reading" ? "đọc" : "nghe"} xong`}</button></p>
+    <p class="note">Đánh dấu này là TỰ XÁC NHẬN của bạn: app không theo dõi được việc học tại trang nguồn. Mở link hay bấm nghe không tự tính là đã học xong.</p>`;
+}
+function renderApplied(slot, data, lessonId) {
+  slot.innerHTML = `<section class="card" id="sec-applied">
+    <h3>Đọc &amp; nghe vận dụng</h3>
+    <div class="applied-tabs" role="group" aria-label="Chọn hoạt động">
+      <button type="button" class="tab-btn" data-atab="reading">📖 Đọc</button>
+      <button type="button" class="tab-btn" data-atab="listening">🎧 Nghe</button>
+    </div>
+    <div id="applied-panel"></div>
+  </section>`;
+  const nav = document.querySelector(".lesson-nav");
+  if (nav && !nav.querySelector("[data-goto='sec-applied']")) {
+    const chip = document.createElement("button");
+    chip.type = "button"; chip.className = "nav-chip"; chip.dataset.goto = "sec-applied";
+    chip.textContent = "Đọc & nghe";
+    chip.onclick = () => { const t = document.getElementById("sec-applied"); if (t) t.scrollIntoView({ behavior: "smooth", block: "start" }); };
+    const speakChip = nav.querySelector("[data-goto='speak-section']");
+    nav.insertBefore(chip, speakChip || null);
+  }
+  const paint = () => {
+    slot.querySelectorAll("[data-atab]").forEach((b) => {
+      const on = b.dataset.atab === appliedTab;
+      b.classList.toggle("selected", on);
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+      b.onclick = () => { appliedTab = b.dataset.atab; paint(); };
+    });
+    const panel = document.getElementById("applied-panel");
+    panel.innerHTML = appliedPanelHTML(data, appliedTab, lessonId);
+    const act = data[appliedTab];
+    const st = appliedStateFor(lessonId)[appliedTab];
+    panel.querySelectorAll("[data-aq]").forEach((wrap) => {
+      const qi = Number(wrap.dataset.aq);
+      const q = act.questions[qi];
+      let pick = st.answers[qi] ? st.answers[qi].pick : null;
+      let graded = !!st.answers[qi];
+      const fb = wrap.querySelector("[data-aq-fb]");
+      wrap.querySelectorAll("[data-aq-opt]").forEach((b) => {
+        b.onclick = () => {
+          if (graded) return;
+          pick = Number(b.dataset.aqOpt);
+          wrap.querySelectorAll("[data-aq-opt]").forEach((x) => x.classList.toggle("selected", x === b));
+        };
+      });
+      wrap.querySelector("[data-aq-check]").onclick = () => {
+        if (pick === null || graded) { if (pick === null) fb.innerHTML = `<div class="feedback" role="status">Hãy chọn một đáp án trước.</div>`; return; }
+        const ok = pick === q.answer;
+        st.answers[qi] = { pick, ok };
+        saveProgress();
+        graded = true;
+        fb.innerHTML = appliedFeedbackHTML(q, st.answers[qi]);
+        wrap.querySelector("[data-aq-check]").hidden = true;
+        wrap.querySelector("[data-aq-retry]").hidden = false;
+      };
+      wrap.querySelector("[data-aq-retry]").onclick = () => {
+        delete st.answers[qi]; saveProgress(); paint();
+      };
+    });
+    const doneBtn = panel.querySelector("[data-applied-done]");
+    if (doneBtn) doneBtn.onclick = () => { st.done = !st.done; saveProgress(); paint(); };
+  };
+  paint();
+}
+async function loadApplied(les) {
+  const slot = document.getElementById("applied-slot");
+  if (!slot || !appliedIds.has(les.id)) return;
+  let data = null;
+  try { const res = await fetchData(`data/applied/${les.id}.json?v=${BUILD_VERSION}`); data = res.data; } catch (e) { data = null; }
+  if (!data || data.lesson_id !== les.id) return;
+  const m = location.hash.match(/#\/lesson\/([\w-]+)/);
+  if (!m || m[1] !== les.id || !document.getElementById("applied-slot")) return;
+  appliedTab = "reading";
+  renderApplied(slot, data, les.id);
 }
 
 function renderReview() {
@@ -1179,7 +1309,7 @@ function render() {
 // bản cũ từ bộ nhớ đệm sau khi app.js mới đã chạy. Lưu ý: tham số này chỉ
 // có tác dụng khi app.js mới đã được tải; nó không chữa được app.js cũ
 // còn trong bộ nhớ đệm (xem docs/decisions.md D20).
-const BUILD_VERSION = "20261031-ui1";
+const BUILD_VERSION = "20261031-app1";
 const DEBUG = new URLSearchParams(location.search).get("debug") === "1";
 let debugInfo = null;
 
@@ -1291,6 +1421,13 @@ async function loadLessons() {
       curriculumStatus = "không tải được curriculum.json — dùng thứ tự manifest";
       sources.push({ url: curriculumUrl, status: "lỗi", count: null, error: String(e && e.message ? e.message : e) });
     }
+    // APP-01: danh sách bài có học liệu đọc/nghe — tải một lần, lỗi thì
+    // coi như không bài nào có (tránh fetch 404 cho từng bài thường).
+    try {
+      const aRes = await fetchData(`data/applied-manifest.json?v=${BUILD_VERSION}`);
+      const list = aRes.data && Array.isArray(aRes.data.lessons) ? aRes.data.lessons : [];
+      appliedIds = new Set(list.filter((x) => typeof x === "string"));
+    } catch (e) { appliedIds = new Set(); }
     const mRes = await fetchData(manifestUrl);
     const m = mRes.data;
     const shardPaths = m.shards || [];

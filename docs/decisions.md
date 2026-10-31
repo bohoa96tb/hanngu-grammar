@@ -397,3 +397,21 @@ thước trước khi chuẩn hóa. Quyết định kỹ thuật:
 7. Harness tests/browser-check.mjs được cập nhật 2 điểm tương ứng
    thiết kế mới (nhãn mục "Hiểu nhanh"; nút nghe/dừng hợp nhất) — các
    kiểm tra còn lại giữ nguyên, 24/24 PASS trên bản local trước QA.
+
+## D30 — Đọc & nghe vận dụng (APP-01, 2026-10-31)
+Chỉ đạo Hoa 2026-10-31: sau mỗi bài có đọc + nghe dùng học liệu thật
+từ nguồn uy tín. Quyết định triển khai pilot 3 bài (01/16/21):
+1. Dữ liệu tách riêng `data/applied/<lesson-id>.json` (schema riêng,
+   validator `validate_applied`), app tải kèm khi mở bài; thiếu file
+   thì ẩn mục — không sửa file bài học, không đổi schema bài.
+2. Quyền: mặc định `link_only` — app chỉ hiện thẻ học liệu + nút mở
+   đúng bài tại nguồn; KHÔNG chép toàn văn/dịch/audio vào repo khi
+   chưa có căn cứ tái xuất bản. Câu hỏi/giải thích là nội dung của
+   dự án, tự biên soạn từ nội dung đã mở đọc và kiểm player thật.
+3. Tiến độ: khóa mới `progress.applied` trong v2 (mặc định {} khi
+   migrate); hoàn thành hoạt động do người học TỰ xác nhận, ghi đúng
+   bản chất ở giao diện; không đụng completed/FSRS của bài.
+4. Chọn học liệu theo CẤCH DÙNG, không theo mặt chữ: đã loại các bài
+   chỉ có 了 đổi trạng thái cho bài Động từ+了, và chọn "Mother's
+   Day" (vừa sức HSK1) thay cho bài 6 lần 了 nhưng từ vựng nặng —
+   chi tiết: docs/research/applied-materials-pilot.md.
