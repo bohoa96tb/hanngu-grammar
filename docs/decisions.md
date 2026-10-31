@@ -286,3 +286,37 @@ Hoa cho lô std2. Manager quyết:
    measure-words, verb-reduplication, why-question); không bài nào bỏ
    mục F — cả ba ứng viên yếu nhất đều có bẫy phân biệt thật và trang
    Ôn tập dùng quick_memory làm nội dung đối chiếu.
+
+## D27 — Benchmark 3 nền tảng và pilot "Bài liên quan" REL-01 (2026-10-31)
+
+Căn cứ: chỉ đạo của Hoa ngày 31/10/2026 (tự nghiên cứu Chinese Grammar
+Wiki, Yoyo Chinese, Mandarin Bean và nâng cấp hanngu-grammar) +
+docs/research/grammar-platform-benchmark.md +
+docs/research/feature-gap-matrix.md (kiểm chứng trực tiếp cùng ngày).
+
+1. Học NGUYÊN LÝ, không sao chép nội dung: liên kết bài tương tự của
+   CGW, toggle/lưu mặc định của Yoyo (hanngu đã có từ std1), giải
+   thích cho mọi câu + "câu đúng phải là" của Mandarin Bean. Không
+   dùng bài giảng, audio, video hay mã của ba trang này.
+2. Pilot được chọn: G-01 "Bài liên quan" — thêm trường tùy chọn
+   `related_ids` vào bài học. Lý do chọn: khoảng trống có bằng chứng
+   rõ nhất (trang bài hiện chỉ có Bài trước/Bài sau theo manifest,
+   schema không có trường quan hệ nào) và là thế mạnh cốt lõi của
+   CGW; chi phí thấp, không đổi ID bài/bài tập, không chạm tiến độ
+   và FSRS.
+3. Quy tắc dữ liệu của related_ids: đối xứng hai chiều, tối đa 4
+   liên kết mỗi bài, chỉ trỏ bài published có thật, và mỗi cặp phải
+   có bằng chứng quan hệ trong dữ liệu hiện hữu (phân biệt ở mục D,
+   tham chiếu chéo trong công thức/ghi chú rà soát, quan hệ dạng
+   1/dạng 2, cặp tách bài, cùng họ theo tài liệu ánh xạ) — không
+   suy diễn máy móc từ tiêu đề. Validator thực thi các quy tắc máy
+   kiểm được; tính đúng sư phạm của từng cặp do QA độc lập rà.
+4. Các khoảng trống còn lại xếp hàng theo feature-gap-matrix:
+   G-02 tìm kiếm theo pinyin + G-06 nhóm danh mục theo cấp (lô UI
+   P1 tiếp theo); G-03/G-07/G-08 là P2. AUD-TTS-01 giữ not_run;
+   ISSUE-LOAD-STALL-01 giữ monitoring — hai mục này không bị đóng
+   bởi benchmark.
+5. Ghi nhận vận hành: PR #19 (HSK3-9) đã merge ngày 31/10
+   (e5933c2c) sau khi Manager kiểm chứng CI 2/2 trực tiếp trên
+   trang PR (run 41053571119) — lần kẹt merge ở phiên 30/10 là
+   khóa ghi phía công cụ, không phải lỗi nội dung/CI.

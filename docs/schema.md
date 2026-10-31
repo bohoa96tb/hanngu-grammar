@@ -24,6 +24,7 @@ khi tách file.
 | `hsk_evidence` | có (từ lô std2 30/10/2026) | Trạng thái đối chiếu cấp HSK của chính bài: `{status: "verified" \| "partial", note?: string}`. `verified`: toàn bộ nội dung dạy nằm trong cấp đã ghi theo danh mục đối chiếu của dự án. `partial`: phần chính đúng cấp nhưng có điểm vượt cấp/chưa đủ bằng chứng — bắt buộc có `note` (20–220 ký tự, viết cho người học) nêu rõ điểm đó. App hiển thị thành dòng “Đối chiếu đề cương HSK 3.0” ở khối nguồn cuối bài. Bài published thiếu trường này là lỗi validator. |
 | `examples[]` | có, ≥2 (easy) / ≥3 (medium+) | Mỗi ví dụ: `zh`, `vi`, `pinyin` (để kiểm duyệt, UI mặc định ẩn), `tokens` (đơn vị sư phạm do biên tập quyết), `from_vietnamese_intent` (bool — ít nhất 1 ví dụ xuất phát từ ý muốn nói bằng tiếng Việt). |
 | `confusions[]` | tùy chọn | Chỉ bẫy có thật. Mỗi mục: `wrong_or_risky`, `verdict` (một trong `sai_ngu_phap`, `doi_nghia`, `khac_van_phong`, `thieu_ngu_canh`, `kem_tu_nhien`, `thay_duoc_co_dieu_kien`), `explanation`. |
+| `related_ids[]` | tùy chọn (REL-01, 2026-10-31) | Danh sách id các bài liên quan, tối đa 4 phần tử, không trùng, không chứa id của chính bài. Mọi id phải tồn tại trong tập bài; quan hệ phải đối xứng (nếu A liệt kê B thì B phải liệt kê A); nếu bài nguồn `published` thì bài đích cũng phải `published`. Bài không có trường này vẫn hợp lệ. Giao diện hiển thị thành mục “Bài liên quan” ở cuối bài (sau mục F. Nhớ nhanh), mỗi bài đích một dòng link kèm badge HSK và `title_vi`, giữ thứ tự trong danh sách; id không tồn tại trong danh sách đã lọc `published` thì bị bỏ qua khi hiển thị. |
 | `exercises[]` | có, đủ sàn theo độ khó | Xem dưới. |
 | `sources[]` | có | Mỗi nguồn: `source_id` (khớp `docs/source-register.json`), `note`. |
 | `status` | có | `draft` \| `reviewed` \| `published`. Chỉ `published` mới tính là hoàn thành. |
@@ -56,3 +57,4 @@ khi tách file.
 6. Ít nhất một ví dụ có `from_vietnamese_intent == true`.
 7. Bài `published` phải có `review` đầy đủ và `sources` không rỗng.
 8. `confusions[].verdict` phải thuộc danh sách cho phép.
+9. `related_ids` (tùy chọn, REL-01 — 2026-10-31): khi có mặt phải là danh sách các chuỗi, không trùng, tối đa 4 phần tử, không chứa id của chính bài, mọi id phải tồn tại, đối xứng hai chiều, và bài `published` chỉ trỏ tới bài `published`.
