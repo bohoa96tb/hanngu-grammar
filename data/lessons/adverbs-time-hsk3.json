@@ -190,7 +190,8 @@
       ],
       "formula_notes": "1) Vị trí: cả năm từ đứng sau chủ ngữ, ngay trước động từ （我马上就来；他刚到；她一直学习）; nếu câu có cụm thời gian xác định như 三天前， cụm đó đứng trước phó từ: 他三天前刚回来. 2) Chọn từ — hướng thời gian: sắp xảy ra → 马上； đã vừa xảy ra → 刚/刚刚； kéo dài liên tục → 一直； thứ tự bước → 先. 3) Phân biệt: 刚 và 刚刚 gần như đồng nghĩa 'vừa mới'; 刚刚 thường nhấn mạnh hơn một chút và nghe trọn vẹn hơn trong văn viết — không có ranh giới thời lượng cứng giữa hai từ. 4) Không dùng: 一直 chỉ đi với hành động/trạng thái có độ kéo dài; động từ chỉ điểm kết thúc chớp nhoáng không đi với 一直. 5) Phân biệt: 刚才 là 'vừa nãy' — từ chỉ thời điểm, đứng ở vị trí trạng ngữ thời gian （刚才他来过）, khác 刚/刚刚 đứng ngay trước động từ để nhấn 'vừa mới'.",
       "hsk_evidence": {
-        "status": "verified"
+        "note": "Phủ 6/7 thành viên phó từ thời gian HSK3 （马上/先/一会儿/刚/刚刚/一直）; còn thiếu 才¹ nghĩa thời gian 'mãi đến lúc đó mới' — chưa có bài dạy, theo dõi ở mục 2b tài liệu ánh xạ.",
+        "status": "partial"
       },
       "hsk_level": 3,
       "id": "adverbs-time-hsk3",

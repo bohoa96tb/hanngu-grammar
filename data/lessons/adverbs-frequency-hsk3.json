@@ -1,0 +1,226 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Phủ định của 常常 rút gọn: chỉ giữ một chữ 常 sau 不 — 他不常运动. Không gấp đôi thành 不常常.",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他不常常运动。"
+        },
+        {
+          "explanation": "总是 nói quy luật 'lần nào cũng vậy', không gắn với một lần cụ thể đã qua có mốc như 昨天. Một lần lặp lại cụ thể thì dùng 又： 他昨天又迟到了。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他总是昨天迟到了。"
+        },
+        {
+          "explanation": "一直 là liên tục không ngắt quãng trong một khoảng thời gian, không đếm số lần. Ý 'lần nào cũng đến muộn' phải nói 他总是迟到 hoặc 他常常迟到。",
+          "verdict": "doi_nghia",
+          "wrong_or_risky": "他一直迟到。"
+        }
+      ],
+      "content_version": 1,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā zǒngshì zuìhòu yí ge dào jiàoshì.",
+          "tokens": [
+            "他",
+            "总是",
+            "最后",
+            "一个",
+            "到",
+            "教室"
+          ],
+          "vi": "Anh ấy luôn là người đến lớp cuối cùng.",
+          "zh": "他总是最后一个到教室。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā chángcháng zhōumò qù túshūguǎn kàn shū.",
+          "tokens": [
+            "她",
+            "常常",
+            "周末",
+            "去",
+            "图书馆",
+            "看",
+            "书"
+          ],
+          "vi": "Cô ấy thường xuyên đi thư viện đọc sách vào cuối tuần.",
+          "zh": "她常常周末去图书馆看书。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Tā yòu chídào le, lǎoshī yǒudiǎnr bù gāoxìng.",
+          "tokens": [
+            "他",
+            "又",
+            "迟到",
+            "了",
+            "老师",
+            "有点儿",
+            "不",
+            "高兴"
+          ],
+          "vi": "Anh ấy lại đến muộn, thầy hơi không vui.",
+          "zh": "他又迟到了，老师有点儿不高兴。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒ zǒng wàng dài yàoshi.",
+          "tokens": [
+            "我",
+            "总",
+            "忘",
+            "带",
+            "钥匙"
+          ],
+          "vi": "Tôi cứ hay quên mang chìa khóa.",
+          "zh": "我总忘带钥匙。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā bù cháng yùndòng, suǒyǐ shēntǐ bú tài hǎo.",
+          "tokens": [
+            "他",
+            "不常",
+            "运动",
+            "所以",
+            "身体",
+            "不太",
+            "好"
+          ],
+          "vi": "Anh ấy ít vận động (không thường xuyên), nên sức khỏe không tốt lắm.",
+          "zh": "他不常运动，所以身体不太好。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "他又迟到了。"
+          ],
+          "explanation": "Việc cụ thể lặp lại lần nữa dùng 又 + …了： 他又迟到了。总是/常常 nói quy luật chung, không gắn với một lần cụ thể; 一直 là liên tục, không đếm lần.",
+          "id": "afq-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他又迟到了。",
+              "他总是迟到了。",
+              "他常常迟到昨天。",
+              "他一直迟到昨天。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Anh ấy lại đến muộn (lần nữa).'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "她常常周末去游泳。"
+          ],
+          "explanation": "Thói quen đều đặn dùng 常常 đứng trước cụm động từ. 又 là 'lại' cho một lần lặp cụ thể; phương án cuối còn sai dạng phủ định （不常）.",
+          "id": "afq-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "她常常周末去游泳。",
+              "她又周末去游泳。",
+              "她总周末是游泳。",
+              "她不常常周末去游泳。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để nói 'Cô ấy thường xuyên đi bơi vào cuối tuần.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            [
+              "他",
+              "总是",
+              "忘",
+              "带",
+              "伞"
+            ]
+          ],
+          "explanation": "Phó từ tần suất đứng sau chủ ngữ, ngay trước động từ: 他总是忘带伞。",
+          "id": "afq-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "带",
+              "伞",
+              "他",
+              "总是",
+              "忘"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Anh ấy luôn quên mang ô.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "不"
+          ],
+          "explanation": "Điền 不： 他不常运动 — phủ định của 常常 là 不常， không nói 不常常。",
+          "id": "afq-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Phủ định của 常常 rút gọn: một chữ phủ định + 常."
+          },
+          "prompt_vi": "Điền chữ còn thiếu để câu có nghĩa 'Anh ấy ít vận động (không thường xuyên vận động).'",
+          "prompt_zh": "他___常运动，身体不太好。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            "常常"
+          ],
+          "explanation": "Khối sai là 常常： sau 不 chỉ giữ một 常 — 他不常来上课。",
+          "id": "afq-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "他",
+              "不",
+              "常常",
+              "来",
+              "上课"
+            ],
+            "sentence_zh": "他不常常来上课。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 他不常常来上课。",
+          "prompt_zh": "他不常常来上课。",
+          "type": "error_spot"
+        }
+      ],
+      "formula_notes": "1) Vị trí: cả nhóm đứng ngay trước động từ: 他总是迟到。她常常去图书馆。他又来了。2) Chọn từ — 总/总是: 'luôn, lần nào cũng vậy'. 总 ngắn gọn （他总忘带伞）; 总是 đầy đủ và nhấn hơn, hay đi với nhận xét hơi phàn nàn: 他总是最后一个到。3) Chọn từ — 又: 'lại' cho việc lặp lại đã xảy ra, cuối câu thường có 了： 他又迟到了。Việc chưa xảy ra mà chỉ là dự định lặp lại trong tương lai thì dùng 再， không dùng 又. 4) Chọn từ — 常常: 'thường thường', tần suất đều đặn trung tính. Phủ định của 常常 rút gọn thành 不常： 他不常运动 — không nói 不常常. 5) Phân biệt: 又……，又…… ở bài complex-parallel là hai việc DIỄN RA ĐỒNG THỜI （他又唱歌，又跳舞）, khác hẳn 又 'lại' đứng một mình trong bài này; 一直 là kéo dài liên tục, không đếm lần.",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "adverbs-frequency-hsk3",
+      "objective": "Sau bài này, người học diễn đạt được việc xảy ra luôn luôn, lặp lại lần nữa, hoặc thường xuyên bằng 总/总是/又/常常, đặt đúng vị trí trước động từ, và không nhầm 又 'lại' với khung song song 又……，又…… đã học.",
+      "pattern": "Chủ ngữ + 总（是）/又/常常 + Động từ (cụm)",
+      "quick_memory": "Luôn → 总/总是； lại nữa (đã xảy ra) → 又 + …了； thường thường → 常常. Phủ định của 常常 là 不常.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-9 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án và đề cương thi HSK 11/2025, phạm vi xác minh TRỰC QUAN từ PDF gốc thay cho bản trích xuất text; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về các phó từ tần suất 总/总是/又/常常 theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi đối chiếu mục OFF-H3-15 trong catalogue dự án từ đề cương thi 11/2025, xác minh trực quan trang in 389 ngày 2026-10-30: hàng 频率副词 có đúng 4 thành viên 总、总是、又、常常, khớp title của mục.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Phó từ tần suất HSK3: luôn / lại / thường （总/总是/又/常常）",
+      "when_to_use": "Tổng quan: 总 và 总是 cùng nghĩa 'luôn, lần nào cũng vậy', đứng trước động từ; 总是 nhấn hơn một chút và hay mang sắc thái nhận xét, phàn nàn nhẹ （他总是迟到）. 又 ở bài này là 'lại' — một việc đã từng xảy ra nay lặp lại, thường là việc vừa xảy ra hoặc sắp nhắc tới kèm 了： 他又迟到了. 常常 là 'thường thường, thường xuyên', sắc thái trung tính, chỉ thói quen đều đặn. Ranh giới: khác 一直 ở bài adverbs-time-hsk3 — 一直 là liên tục không ngắt quãng trong một khoảng, còn nhóm này nói về số lần lặp lại; khác 再 'lại' cho việc chưa xảy ra trong tương lai (đã học ở cấp dưới)."
+    }
+  ],
+  "schema_version": 1
+}

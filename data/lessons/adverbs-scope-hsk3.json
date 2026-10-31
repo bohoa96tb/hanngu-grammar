@@ -1,0 +1,238 @@
+{
+  "lessons": [
+    {
+      "confusions": [
+        {
+          "explanation": "Câu này không sai: 只是 cũng mang nghĩa 'chỉ'. Khác biệt chỉ ở sắc thái — 只是 mềm hơn, nghe như đang giải thích; nêu giới hạn trung tính, ngắn gọn thì dùng 只： 我只喝茶。",
+          "verdict": "thay_duoc_co_dieu_kien",
+          "wrong_or_risky": "我只是喝茶，不喝咖啡。"
+        },
+        {
+          "explanation": "一共 chỉ dùng để tổng kết SỐ LƯỢNG sau khi cộng gộp, không đứng trước tính từ. Muốn khen chung thì nói 这些菜都很好吃。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "这些菜一共很好吃。"
+        },
+        {
+          "explanation": "一块儿 đòi hỏi ít nhất hai phía cùng làm; một người đơn độc （他 một mình) không dùng được. Phải có nhóm: 他们一块儿去上课。",
+          "verdict": "sai_ngu_phap",
+          "wrong_or_risky": "他一块儿去上课。"
+        }
+      ],
+      "content_version": 1,
+      "difficulty": "medium",
+      "examples": [
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Wǒ zhǐ hē chá, bù hē kāfēi.",
+          "tokens": [
+            "我",
+            "只",
+            "喝",
+            "茶",
+            "不",
+            "喝",
+            "咖啡"
+          ],
+          "vi": "Tôi chỉ uống trà, không uống cà phê.",
+          "zh": "我只喝茶，不喝咖啡。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Wǒmen yí kuàir qù ba.",
+          "tokens": [
+            "我们",
+            "一块儿",
+            "去",
+            "吧"
+          ],
+          "vi": "Chúng ta cùng nhau đi nhé.",
+          "zh": "我们一块儿去吧。"
+        },
+        {
+          "from_vietnamese_intent": true,
+          "pinyin": "Zhè cì lǚxíng yígòng huā le sānqiān kuài qián.",
+          "tokens": [
+            "这次",
+            "旅行",
+            "一共",
+            "花",
+            "了",
+            "三千",
+            "块",
+            "钱"
+          ],
+          "vi": "Chuyến đi này tổng cộng tốn ba nghìn tệ.",
+          "zh": "这次旅行一共花了三千块钱。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Jīntiān kāihuì jiù lái le wǔ ge rén.",
+          "tokens": [
+            "今天",
+            "开会",
+            "就",
+            "来",
+            "了",
+            "五",
+            "个",
+            "人"
+          ],
+          "vi": "Hôm nay họp chỉ đến có năm người.",
+          "zh": "今天开会就来了五个人。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā dàochù zhǎo tā de shǒujī.",
+          "tokens": [
+            "他",
+            "到处",
+            "找",
+            "他的",
+            "手机"
+          ],
+          "vi": "Anh ấy tìm điện thoại khắp nơi.",
+          "zh": "他到处找他的手机。"
+        },
+        {
+          "from_vietnamese_intent": false,
+          "pinyin": "Tā zhǐshì lèi le, bú shì shēngbìng.",
+          "tokens": [
+            "他",
+            "只是",
+            "累",
+            "了",
+            "不是",
+            "生病"
+          ],
+          "vi": "Anh ấy chỉ mệt thôi, chứ không phải bị ốm.",
+          "zh": "他只是累了，不是生病。"
+        }
+      ],
+      "exercises": [
+        {
+          "accepted_answers": [
+            "我们一块儿去吧。"
+          ],
+          "explanation": "一块儿 cần chủ thể nhóm: 我们一块儿去吧。一共 là tổng kết số lượng; 到处 đi vào câu này sẽ thành 'đi khắp nơi', đổi nghĩa.",
+          "id": "asc-ex1",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我们一块儿去吧。",
+              "我一块儿去吧。",
+              "我们一共去吧。",
+              "我们到处去吧。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để rủ 'Chúng ta cùng nhau đi nhé.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "我只是看看，不买。"
+          ],
+          "explanation": "Thanh minh mềm dùng 只是 + động từ lặp nhẹ: 我只是看看，不买。我到处看看 nhấn 'xem khắp nơi', khác ý 'chỉ xem thôi'; hai phương án còn lại sai cấu tạo.",
+          "id": "asc-ex2",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "我只是看看，不买。",
+              "我只看是看，不买。",
+              "我就看看不买是。",
+              "我到处看看，不买。"
+            ]
+          },
+          "prompt_vi": "Chọn câu đúng để thanh minh nhẹ 'Tôi chỉ xem thôi, không mua.'",
+          "type": "choice"
+        },
+        {
+          "accepted_answers": [
+            "一共"
+          ],
+          "explanation": "Điền 一共： 我们班一共三十个学生 — 一共 đứng trước cụm số lượng tổng.",
+          "id": "asc-ex3",
+          "is_open_ended": false,
+          "payload": {
+            "hint_vi": "Từ chỉ tổng cộng, đặt ngay trước tổng số."
+          },
+          "prompt_vi": "Điền phó từ để nói 'Lớp mình tổng cộng có 30 học sinh.'",
+          "prompt_zh": "我们班___三十个学生。",
+          "type": "fill"
+        },
+        {
+          "accepted_answers": [
+            [
+              "今天",
+              "就",
+              "来",
+              "了",
+              "五个人"
+            ]
+          ],
+          "explanation": "就 (phạm vi) đứng trước động từ, hàm ý số lượng ít hơn mong đợi: 今天就来了五个人。",
+          "id": "asc-ex4",
+          "is_open_ended": false,
+          "payload": {
+            "tokens": [
+              "就",
+              "今天",
+              "五个人",
+              "来",
+              "了"
+            ]
+          },
+          "prompt_vi": "Xếp các khối thành câu: 'Hôm nay chỉ đến có năm người.'",
+          "type": "order"
+        },
+        {
+          "accepted_answers": [
+            "只"
+          ],
+          "explanation": "Khối sai là 只： phó từ phạm vi đứng SAU chủ ngữ, trước động từ — 我只喝茶。",
+          "id": "asc-ex5",
+          "is_open_ended": false,
+          "payload": {
+            "options": [
+              "只",
+              "我",
+              "喝",
+              "茶"
+            ],
+            "sentence_zh": "只我喝茶。"
+          },
+          "prompt_vi": "Câu sau sai ở khối nào? 只我喝茶。",
+          "prompt_zh": "只我喝茶。",
+          "type": "error_spot"
+        }
+      ],
+      "formula_notes": "1) Vị trí: 只/只是/就 đứng sau chủ ngữ, trước động từ; 一块儿 đứng trước động từ （我们一块儿去）; 一共 đứng ngay trước cụm số lượng tổng （一共三十个人）; 到处 đứng trước động từ （到处找）. 2) Chọn từ — 只 vs 只是: cùng nghĩa 'chỉ'; 只 ngắn gọn, trung tính khi nêu giới hạn; 只是 mềm hơn, thường mở đầu một lời giải thích hoặc thanh minh: 我只是开玩笑，别生气。 3) Chọn từ — 就 (phạm vi): đứng trước số lượng với hàm ý 'chỉ có từng này (ít hơn tưởng)': 商店里就三个人。Đừng nhầm với 就 nối kết quả （如果……就……) — ở đó 就 không giới hạn số lượng. 4) 一块儿 vs 一起: cùng nghĩa 'cùng nhau', đều đứng trước động từ; 一块儿 là khẩu ngữ, gợi thêm ý 'chung một chỗ, cùng một lúc'; 一起 đã quen thuộc từ các bài trước. 5) Không dùng: 一共 không dùng khi chưa có gì để cộng — một con số đơn lẻ không phải tổng thì bỏ 一共 （我去过北京一次， không thêm 一共）; 到处 không có nghĩa 'mỗi' phân bổ — 'mỗi người một phần' là 每人一份， khác hẳn 到处。",
+      "hsk_evidence": {
+        "status": "verified"
+      },
+      "hsk_level": 3,
+      "id": "adverbs-scope-hsk3",
+      "objective": "Sau bài này, người học giới hạn được phạm vi bằng 只/只是 và 就 (chỉ có), rủ nhau làm chung bằng 一块儿, báo tổng số bằng 一共, và nói 'khắp nơi' bằng 到处 — mỗi từ đúng vị trí và đúng điều kiện dùng.",
+      "pattern": "Chủ ngữ + 就/只/只是 + Động từ · 一块儿 + Động từ · 一共 + Số lượng · 到处 + Động từ",
+      "quick_memory": "Chỉ → 只/只是（mềm）; chỉ có (ít) → 就 + số; cùng nhau → 一块儿; tổng → 一共; khắp nơi → 到处.",
+      "review": {
+        "date": "2026-10-30",
+        "notes": "Soạn mới lô HSK3-9 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án và đề cương thi HSK 11/2025, phạm vi xác minh TRỰC QUAN từ PDF gốc thay cho bản trích xuất text; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
+        "reviewer": "quy-trinh-ra-soat-noi-bo"
+      },
+      "sources": [
+        {
+          "note": "Diễn giải của biên tập về các phó từ phạm vi 就/一块儿/一共/只/到处/只是 theo chủ đề tương ứng trên Chinese Grammar Wiki, không sao chép nguyên văn.",
+          "source_id": "cgw"
+        },
+        {
+          "note": "Phạm vi đối chiếu mục OFF-H3-13 trong catalogue dự án từ đề cương thi 11/2025, xác minh trực quan trang in 389 ngày 2026-10-30: hàng 范围副词 có 6 thành viên 就、一块儿、一共、只、到处、只是 — bản ghi catalogue cũ thiếu 就 (nghĩa phạm vi 'chỉ có'), đã sửa title của mục theo bằng chứng trực quan này.",
+          "source_id": "hsk-official"
+        }
+      ],
+      "status": "published",
+      "title_vi": "Phó từ phạm vi HSK3: chỉ / cùng nhau / tổng cộng / khắp nơi （就/一块儿/一共/只/到处/只是）",
+      "when_to_use": "Nhóm này trả lời câu hỏi 'trong phạm vi nào': 只 = chỉ, giới hạn khách quan, đứng trước động từ （我只喝茶）; 只是 = cũng 'chỉ' nhưng mềm hơn, hay dùng để giải thích, thanh minh （我只是看看，不买）; 就 ở bài này (nghĩa phạm vi) = 'chỉ có', nhấn mạnh số lượng ÍT hơn mong đợi, đứng trước cụm số lượng （就来了五个人）; 一块儿 = cùng nhau, khẩu ngữ, gần nghĩa 一起 đã gặp trong nhiều câu mẫu — cả hai đều đứng trước động từ; 一共 = tổng cộng, chỉ dùng khi cộng gộp các phần thành một tổng; 到处 = khắp nơi, mọi chỗ （他到处找手机）. Ranh giới: 就 ở đây khác 就 nối mệnh đề kết quả trong các khung đã học （如果……就…… ở bài complex-hypothesis) và khác 就 nhấn thái độ ở bài adverbs-mood-hsk3."
+    }
+  ],
+  "schema_version": 1
+}

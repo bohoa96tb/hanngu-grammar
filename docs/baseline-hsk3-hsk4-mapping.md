@@ -124,6 +124,45 @@ nhóm con của một vài phó từ ghi chú "chưa chắc chắn".
   0 một phần, 33 thiếu — tổng vẫn 34 mục nhóm; cả hai
   khớp từng mục với catalogue. Số bài theo cấp sau lô:
   HSK1 20, HSK2 16, HSK3 27, HSK4 1 (tổng 64 bài).
+- Cập nhật lô HSK3-8 (30/10/2026; mốc ghi chính ở mục 2b):
+  thêm OFF-H3-07 （怎样+动词 đặc chỉ, bài
+  zenme-yang-question — phạm vi thu hẹp theo kiểm trực
+  quan trang in 391), OFF-H3-12 phó từ mức độ (bài
+  adverbs-degree-hsk3; kiểm trực quan trang in 389 cho
+  thấy đủ 8 thành viên — bản ghi cũ thiếu 还） và một
+  thành viên nữa của OFF-H3-26 ((在）……以前/以后/前/后,
+  bài time-frame-patterns); OFF-H3-42/43 sửa gán thành
+  viên theo trang in 391 （一会儿……，一会儿…… thuộc
+  并列） — số "đã có" không đổi. Sau lô HSK3-8, HSK3:
+  29 đã có, 4 một phần, 17 thiếu.
+- Cập nhật lô HSK3-9 (30/10/2026; soạn song song với PR
+  kỹ thuật tải dữ liệu, phát hành do Manager tích hợp
+  sau): thêm 3 mục đã có — phó từ phạm vi (bài
+  adverbs-scope-hsk3), phó từ tần suất (bài
+  adverbs-frequency-hsk3), phó từ ngữ khí (bài
+  adverbs-mood-hsk3) — và OFF-H3-26 mẫu cố định chuyển
+  từ một phần sang ĐÃ CÓ nhờ bài fixed-pattern-shenme
+  phủ thành viên cuối X什么（啊）. Cả ba hàng phó từ đều
+  xác minh trực quan ở trang in 389 và bắt thêm hai lỗi
+  ghi thiếu của catalogue: hàng 范围副词 có 6 thành
+  viên — bản ghi OFF-H3-13 cũ thiếu 就 (nghĩa phạm vi
+  "chỉ có"); hàng 语气副词 gồm cả 就 (nghĩa đánh số 4)
+  — bản ghi OFF-H3-18 cũ thiếu 就. Title của cả hai
+  mục đã sửa theo bằng chứng trực quan. Cùng lô,
+  hiệu chỉnh OFF-H3-14 (phó từ thời gian) từ ĐÃ CÓ
+  xuống MỘT PHẦN: kiểm trực quan trang in 389 cho
+  thấy hàng này có 7 thành viên gồm 才¹ (nghĩa thời
+  gian "mãi đến lúc đó mới"), bản trích xuất cũ ghi
+  thiếu; bài adverbs-time-hsk3 mới phủ 6/7 thành
+  viên, riêng 才¹ chưa có bài dạy — nhận định "đã
+  có" của lô HSK3-7 bị thay thế bởi hiệu chỉnh này
+  (chi tiết ở mục 2b). Sau lô HSK3-9, HSK3: 32 đã
+  có, 4 một phần （虽然……，可是……; giới từ 把/被;
+  cụm cố định HSK3 OFF-H3-25; phó từ thời gian
+  OFF-H3-14), 14 thiếu —
+  tổng vẫn 50 mục nhóm, khớp từng mục với catalogue.
+  Số bài theo cấp sau lô: HSK1 20, HSK2 17, HSK3 34,
+  HSK4 1 (tổng 72 bài).
 - Không cần sửa cấp độ cho 34 bài cũ: chưa phát hiện bài nào dạy sai
   cấp (các bài HSK1–2 không dạy nội dung HSK3–4; riêng zhe-continuation
   đã ghi rõ nghĩa kèm theo của 着 thuộc HSK3 và cố ý không dạy).
@@ -136,9 +175,8 @@ nhóm con của một vài phó từ ghi chú "chưa chắc chắn".
 - Thiếu toàn bộ ở mức thành bài riêng: tiền tố 老—, hậu tố
   —家/—子/—员, phương vị mở rộng,
   ly hợp từ hai loại, nghi vấn dùng không hỏi,
-  lượng từ HSK3, hầu hết phó từ HSK3 (一块儿/一共/只/到处/只是,
-  总/总是/又/常常, 一边, 大概/必须/差不多/一定/好像/几乎,
-  当然/其实/终于/才), giới từ 为/向/为了/根据/关于,
+  lượng từ HSK3, một số phó từ HSK3 còn lại (一边,
+  大概/必须/差不多/一定/好像/几乎), giới từ 为/向/为了/根据/关于,
   liên từ 或/或者/只有/只要/不但/而且/如果/可是/然后/的话,
   động bổ đoản ngữ dạng 2, đồng vị đoản ngữ, tứ tự cách, số lượng
   trùng điệp, mẫu cố định HSK3, chủ ngữ bằng đoản ngữ, và
@@ -155,26 +193,41 @@ nhóm con của một vài phó từ ghi chú "chưa chắc chắn".
   马上/先/刚/刚刚/一直, phủ định 不必/不用 và 概数 dạng 2
   đã có bài riêng ở lô HSK3-7; câu hỏi đặc chỉ
   怎样+动词, phó từ mức độ HSK3 và mẫu mốc thời gian
-  （在）……以前/以后/前/后 đã có bài riêng ở lô HSK3-8
+  （在）……以前/以后/前/后 đã có bài riêng ở lô HSK3-8;
+  phó từ phạm vi/tần suất/ngữ khí và mẫu cố định
+  X什么（啊） đã có bài riêng ở lô HSK3-9
   — xem mục 1 và danh sách ưu tiên ở mục 2b.)
 - Một phần: 虽然……，可是……; giới từ 把/被; cụm cố định HSK3
   (mới phủ cụm 一……也/都+不/没…… qua bài complex-compact);
-  mẫu cố định HSK3 (đã phủ 越……越……/越来越…… qua bài
-  yue-patterns và （在）……以前/以后/前/后 qua bài
-  time-frame-patterns ở lô HSK3-8; còn X什么（啊）). Câu
+  phó từ thời gian OFF-H3-14 (đã phủ 6/7 thành viên qua bài
+  adverbs-time-hsk3, còn thiếu 才¹ — phó từ thời gian "mãi
+  đến lúc đó mới").
+  Mẫu cố định HSK3 (OFF-H3-26) đã phủ đủ cả giỏ:
+  越……越……/越来越…… qua bài yue-patterns,
+  （在）……以前/以后/前/后 qua bài time-frame-patterns
+  (lô HSK3-8) và X什么（啊） qua bài
+  fixed-pattern-shenme (lô HSK3-9). Câu
   phức lựa chọn (OFF-H3-42) đã phủ đủ theo sắp xếp xuyên
   cấp ghi ở mục 1 (gán thành viên đã sửa lại ở "Sửa đối
   chiếu 2026-10-30 (lần 2)" trong mục 1). Kết quả bổ
   ngữ dạng 2 và 是……的句 dạng 2 đã đủ dạng sau các lô
   HSK3-2/HSK3-3.
 
-## 2b. HSK3 còn thiếu sau lô HSK3-8 — ưu tiên và lý do để lại
+## 2b. HSK3 còn thiếu sau lô HSK3-9 — ưu tiên và lý do để lại
 
-Sau lô HSK3-8 còn 21/50 mục nhóm HSK3 chưa phủ đủ (17 thiếu +
+Sau lô HSK3-9 còn 18/50 mục nhóm HSK3 chưa phủ đủ (14 thiếu +
 4 một phần), liệt kê đầy đủ dưới đây theo catalogue. (Sau lô
-HSK3-7 còn 23 mục; lô HSK3-8 phủ đủ thêm OFF-H3-07 và
-OFF-H3-12, phủ thêm một thành viên của OFF-H3-26, và khép
-khoảng trống nền OFF-H2-61 ở HSK2.) Đây là căn
+HSK3-8 còn 21 mục; lô HSK3-9 phủ đủ thêm OFF-H3-13,
+OFF-H3-15, OFF-H3-18 và thành viên cuối X什么（啊） của
+OFF-H3-26 — mục này chuyển từ một phần sang đã có; đồng
+thời OFF-H3-14 chuyển ngược từ đã có xuống một phần theo
+hiệu chỉnh ngay dưới đây.) Hiệu chỉnh OFF-H3-14 THAY THẾ
+nhận định cũ của các lô HSK3-7/HSK3-8: hai lô đó ghi phó
+từ thời gian là "đã có" dựa trên bản trích xuất ghi thiếu
+thành viên; kiểm trực quan trang in 389 (xác minh độc lập
+hai vòng ở lô HSK3-9) cho thấy hàng 时间副词 có 7 thành
+viên gồm 才¹ (nghĩa thời gian "mãi đến lúc đó mới"), và
+nghĩa đó chưa có bài nào dạy. Đây là căn
 cứ để chọn các lô HSK3 tiếp theo và để quyết định việc chuyển
 sang HSK4 sau này; tài liệu này không tự tuyên bố chuyển cấp,
 và không mục nào trong danh sách được coi là đã phủ.
@@ -189,26 +242,16 @@ và không mục nào trong danh sách được coi là đã phủ.
   trên danh sách dưới đây.)
 
 ### Ưu tiên trung bình
-- OFF-H3-11 Lượng từ HSK3: danh sách dài; cần chọn lọc theo tần
-  suất trước khi soạn, khó phủ hết trong một bài.
-- OFF-H3-13 Phó từ phạm vi （一块儿/一共/只/到处/只是）: nhóm
-  từ rời, giá trị thi vừa; nên dạy theo cụm tình huống.
-- OFF-H3-15 Phó từ tần suất （总/总是/又/常常）: nhóm từ rời;
-  又 cần phân biệt với 又……又…… của OFF-H3-43.
+- OFF-H3-11 Lượng từ HSK3: ĐỂ LẠI CHO LÔ SAU — danh sách
+  dài (trang in 389: lượng từ danh từ chuyên dùng 18 từ,
+  mượn dùng 2, động lượng 4, cộng mẫu trùng điệp); cần một
+  vòng chọn lọc theo tần suất và thiết kế chia nhóm trước
+  khi soạn, không ép phủ hết trong một bài của lô này.
 - OFF-H3-17 Phó từ tình thái （大概/必须/差不多/一定/好像/
-  几乎）: giá trị thi cao nhưng nghĩa trừu tượng, biến thể đáp
-  án khó khóa chặt khi chấm tự động.
-- OFF-H3-18 Phó từ ngữ khí （当然/其实/终于/才）: 才 đã xuất
-  hiện ở complex-condition với nghĩa điều kiện khác; cần bài
-  phân biệt đa nghĩa cẩn thận.
-- OFF-H3-26 Mẫu cố định HSK3 (MỘT PHẦN): bài yue-patterns
-  (lô HSK3-6) đã phủ 越……越……/越来越……, bài
-  time-frame-patterns (lô HSK3-8) đã phủ
-  （在）……以前/以后/前/后; còn lại trong giỏ chỉ còn
-  X什么（啊） chưa dạy thành bài; 在……上/下/中 đã phủ
-  cơ bản qua location-nouns và 该……了 qua
-  modal-verbs-hsk3 nên không tính là phần thiếu thực
-  chất của mục này nữa.
+  几乎）: ĐỂ LẠI CHO LÔ SAU — giá trị thi cao nhưng nghĩa
+  trừu tượng, biến thể đáp án khó khóa chặt khi chấm tự
+  động; cần thiết kế dạng bài nhận biết/phân biệt sắc thái
+  riêng thay vì gộp vội vào lô phó từ này.
 
 ### Để lại (kèm lý do)
 - OFF-H3-01 Tiền tố 老—: phạm vi hẹp, năng suất tạo từ thấp ở
@@ -226,6 +269,13 @@ và không mục nào trong danh sách được coi là đã phủ.
 - OFF-H3-08 Nghi vấn dùng không hỏi （任指/不定指）: trừu
   tượng, khó chấm bằng bài tập đóng hiện có; chờ thiết kế dạng
   bài phù hợp.
+- OFF-H3-14 Phó từ thời gian (MỘT PHẦN): đã phủ 6/7 thành
+  viên qua bài adverbs-time-hsk3 （马上/先/一会儿/刚/刚刚/
+  一直）; còn thiếu duy nhất 才¹ — nghĩa thời gian "mãi
+  đến lúc đó mới" （他十点才来） — khác hẳn 才 điều kiện
+  （只有……，才……) và 才 ngữ khí đã dạy ở các bài khác.
+  Phủ bằng một bài riêng về 才 thời gian hoặc mở rộng
+  bài adverbs-time-hsk3 ở lô sau.
 - OFF-H3-16 Phó từ liên kết 一边: phần lõi 一边……，一边……
   đã phủ qua OFF-H3-43 (bài complex-parallel, lô HSK3-6);
   一边 dùng độc lập giá trị thấp, không cần bài riêng.

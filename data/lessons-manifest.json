@@ -52,6 +52,8 @@
     "data/lessons/verb-repetition-sentence.json",
     "data/lessons/pronouns-others.json",
     "data/lessons/adverbs-time-hsk3.json",
+    "data/lessons/adverbs-frequency-hsk3.json",
+    "data/lessons/adverbs-scope-hsk3.json",
     "data/lessons/negation-bubi-buyong.json",
     "data/lessons/approx-numbers-2.json",
     "data/lessons/complex-progressive.json",
@@ -67,7 +69,9 @@
     "data/lessons/yue-patterns.json",
     "data/lessons/zenme-yang-question.json",
     "data/lessons/time-frame-patterns.json",
+    "data/lessons/fixed-pattern-shenme.json",
     "data/lessons/adverbs-degree-hsk3.json",
+    "data/lessons/adverbs-mood-hsk3.json",
     "data/lessons/complex-choice.json"
   ]
 }

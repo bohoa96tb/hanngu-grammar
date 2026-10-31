@@ -132,6 +132,26 @@ Chưa có bản phát hành nào.
   thành verified sau khi kiểm tra trực tiếp bản gốc （几/多少 thuộc
   nhóm đại từ để hỏi HSK1).
 
+- 2026-10-30 — Lô HSK3-9 (build 20261030-hsk3i9, nhánh
+  batch-hsk3-9): 4 bài HSK3 mới — fixed-pattern-shenme (mẫu cố
+  định X什么（啊）; khép nốt OFF-H3-26 → đã phủ), adverbs-
+  frequency-hsk3 (OFF-H3-15), adverbs-scope-hsk3 (OFF-H3-13),
+  adverbs-mood-hsk3 (OFF-H3-18). Tổng 72 bài / 353 bài tập
+  (HSK1 20, HSK2 17, HSK3 34, HSK4 1). Ánh xạ HSK3: 32 đã phủ
+  / 4 một phần / 14 thiếu — còn 18 mục chưa phủ đủ (mục 2b).
+  Ba hiệu chỉnh catalogue từ kiểm TRỰC QUAN trang in 389 (cả
+  Nội dung và QA cùng tự render): giỏ phạm vi có 6 từ — trích
+  xuất cũ thiếu 就³; giỏ ngữ khí có thêm 就⁴; và hàng phó từ
+  thời gian có 7 thành viên gồm 才¹ (nghĩa "mãi đến lúc đó
+  mới") — OFF-H3-14 hạ từ "đã phủ" xuống "một phần", bài
+  adverbs-time-hsk3 cũng chuyển bằng chứng sang một phần;
+  nhận định "đã phủ H3-14" của các lô HSK3-7/HSK3-8 (dựa trên
+  trích xuất thiếu) bị thay thế bởi hiệu chỉnh này, phần chưa
+  dạy (nghĩa thời gian của 才¹) theo dõi ở mục 2b. QA vòng 1
+  bắt lỗi khóa amd-ex4 mâu thuẫn công thức của chính bài
+  (khung 才/就+不…呢 bị khóa chỉ nhận 才) — đã viết lại bài
+  tập, phúc tra 5/5 điểm đạt.
+
 - 2026-10-30 — PR KỸ THUẬT hiệu năng tải (build 20261030-perf1,
   tách riêng khỏi lô nội dung): chuyển tải file bài từ tuần tự
   sang song song có giới hạn LOAD_CONCURRENCY = 8 (chọn bằng đo
