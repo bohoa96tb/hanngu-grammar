@@ -18,7 +18,7 @@
           "wrong_or_risky": "他穿衣服着。"
         }
       ],
-      "content_version": 5,
+      "content_version": 6,
       "difficulty": "medium",
       "examples": [
         {
@@ -156,6 +156,9 @@
       "objective": "Sau bài này, người học nói được một trạng thái đang kéo dài (cửa đang mở, đang mặc áo) bằng 着, không nhầm với 了 và 在.",
       "pattern": "Động từ + 着",
       "quick_memory": "Trạng thái đang tiếp diễn: động từ + 着. 着 dính ngay sau động từ, không đứng cuối câu.",
+      "related_ids": [
+        "cunxian-chu"
+      ],
       "review": {
         "date": "2026-10-29",
         "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26) Chuẩn hóa HSK3-2 30/10/2026: viết lại bước 2 công thức theo audit std2 §4 — 着 trong câu tồn hiện chỉ nhận biết ở bài này, mẫu đầy đủ liên kết sang bài cunxian-chu, không dạy lại nguyên mẫu 存现; giữ nguyên toàn bộ bài tập (zhe-ex3 vẫn là luyện nhận biết). Sửa vòng 2 theo QA-HSK3-2 30/10/2026: rút phần liệt kê mẫu tồn hiện trong when_to_use thành câu liên kết sang cunxian-chu, và rút lời giải zhe-ex3 thành nhắc ngắn + trỏ sang bài cunxian-chu, không phát biểu lại quy tắc thứ tự tồn hiện (H-5).",

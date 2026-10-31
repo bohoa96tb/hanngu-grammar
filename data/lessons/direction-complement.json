@@ -18,7 +18,7 @@
           "wrong_or_risky": "他来进了。"
         }
       ],
-      "content_version": 3,
+      "content_version": 4,
       "difficulty": "medium",
       "examples": [
         {
@@ -157,6 +157,9 @@
       "objective": "Sau bài này, người học dùng được bổ ngữ phương hướng để nói hướng di chuyển so với người nói, không nhầm 来 và 去.",
       "pattern": "Động từ + 上/下/进/出/回/过 + 来/去",
       "quick_memory": "Hướng đi tính từ người nói: lại gần dùng 来, ra xa dùng 去. Động từ + hướng + 来/去.",
+      "related_ids": [
+        "direction-complement-2"
+      ],
       "review": {
         "date": "2026-10-29",
         "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki và đề cương thi HSK 11/2025 (语法大纲) về cấp độ và phạm vi; kiểm tra đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",

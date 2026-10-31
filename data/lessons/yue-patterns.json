@@ -18,7 +18,7 @@
           "wrong_or_risky": "她越来越唱歌越好听。"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -191,6 +191,9 @@
       "objective": "Sau bài này, người học nói được 'càng A càng B' bằng 越……越…… và 'ngày càng…' bằng 越来越……, đặt đúng thành phần sau mỗi chữ 越.",
       "pattern": "越 + Động từ/Tính từ，越 + Động từ/Tính từ • 越来越 + Động từ/Tính từ",
       "quick_memory": "Càng A càng B → 越…越… （sau 越 là động/tính từ); ngày càng → 越来越… một mình. Khung 越 không chứa 很。",
+      "related_ids": [
+        "adverbs-degree-hsk3"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-6 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",

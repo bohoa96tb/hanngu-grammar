@@ -18,7 +18,7 @@
           "wrong_or_risky": "我们一起去看电影，怎样？(ý muốn rủ và hỏi ý kiến bạn)"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -188,6 +188,9 @@
       "objective": "Sau bài này, người học hỏi được 'làm thế nào để…' bằng 怎样 đặt trước cụm động từ, và chọn đúng giữa 怎样 / 怎么 / 怎么样 theo điều mình muốn hỏi.",
       "pattern": "怎样 + Cụm động từ …?",
       "quick_memory": "Hỏi 'làm sao để…' → 怎样 + động từ. Cách làm thường ngày → 怎么. Hỏi tình hình/ý kiến → 怎么样 ở cuối câu.",
+      "related_ids": [
+        "zenme-question"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-8 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF-H3-07) và đề cương thi HSK 11/2025, phạm vi xác minh TRỰC QUAN tại trang in 391 (hàng 疑问句） thay cho bản trích xuất text; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",

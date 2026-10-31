@@ -18,7 +18,7 @@
           "wrong_or_risky": "哥哥比弟弟特别高。"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -192,6 +192,11 @@
       "objective": "Sau bài này, người học diễn đạt được các sắc thái mức độ 'khá, đặc biệt, rất (khẩu ngữ), hơi' bằng 比较/特别/挺/有些, nhận biết đúng vị trí của 极, và không nhầm với 更/还/越 đã học ở bài khác.",
       "pattern": "Chủ ngữ + 比较/特别/挺/有些/极（văn viết） + Tính từ",
       "quick_memory": "Khá → 比较； nổi bật → 特别； rất (nói thân mật) → 挺……的； hơi (chưa ưng) → 有些. 'Hơn' chừa cho 更/还 sau 比.",
+      "related_ids": [
+        "yue-patterns",
+        "bi-comparison-2",
+        "degree-complement-1"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-8 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF-H3-12) và đề cương thi HSK 11/2025, phạm vi xác minh TRỰC QUAN tại trang in 389 (hàng 程度副词， đủ 8 thành viên — bản ghi cũ thiếu 还） thay cho bản trích xuất text; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",

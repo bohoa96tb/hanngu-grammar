@@ -18,7 +18,7 @@
           "wrong_or_risky": "我听得不懂。"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -201,6 +201,11 @@
       "objective": "Sau bài này, người học nói được một hành động có đạt kết quả hay không bằng mẫu Động từ + 得/不 + bổ ngữ kết quả (听得懂/听不懂, 看得见/看不见, 做得完/做不完), và biết khi nào không thay mẫu này bằng 能.",
       "pattern": "Động từ + 得/不 + Bổ ngữ kết quả",
       "quick_memory": "Làm được hay không: chen 得 (được) hoặc 不 (không) vào giữa động từ và kết quả: 听得懂 / 听不懂.",
+      "related_ids": [
+        "result-complement",
+        "state-complement-de",
+        "modal-hui-neng-keyi"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-2 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-30, ghi rõ điều kiện nền (bổ ngữ kết quả dạng 1 và 得 ở bài bổ ngữ trạng thái) trong when_to_use; diễn giải theo Chinese Grammar Wiki, bài viết mới bằng tiếng Việt, không sao chép nguyên văn nguồn ngoài; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật. Sửa vòng 2 theo QA-HSK3-2 30/10/2026: confusion 2 thêm câu chốt mềm hóa — câu với 不能听懂 không sai ngữ pháp, chỉ không chính xác cho ý kết quả cụ thể (H-2); giữ verdict doi_nghia.",

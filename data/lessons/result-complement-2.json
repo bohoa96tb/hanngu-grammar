@@ -18,7 +18,7 @@
           "wrong_or_risky": "他关门上了。"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -192,6 +192,9 @@
       "objective": "Sau bài này, người học dùng được bốn bổ ngữ kết quả dạng 2 — 到 (đạt đích, tìm/thấy được), 住 (giữ cố định), 走 (mang đi khỏi), 上 (đóng lại/đạt trạng thái) — và phủ định bằng 没 như dạng 1.",
       "pattern": "Động từ + 到/住/走/上",
       "quick_memory": "Đạt đích/tìm thấy → 到; giữ chặt → 住; mang đi → 走; đóng/đạt → 上. Phủ định vẫn: 没 + động từ + bổ ngữ.",
+      "related_ids": [
+        "result-complement"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-2 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-28, nối tiếp bài result-complement (dạng 1) và ghi rõ đây là dạng 2 trong when_to_use/formula; diễn giải theo Chinese Grammar Wiki, bài viết mới bằng tiếng Việt, không sao chép nguyên văn nguồn ngoài; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật. Sửa vòng 2 theo QA-HSK3-2 30/10/2026: when_to_use đổi câu chữ mức dạy của 上 từ 'nhận biết cơ bản' thành 'luyện ở mức xếp câu và nhận diện lỗi' cho khớp ví dụ 穿上 và bài tập 关上 (H-6).",

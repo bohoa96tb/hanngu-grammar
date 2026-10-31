@@ -18,7 +18,7 @@
           "wrong_or_risky": "桌子上有了一本书。 (muốn nói sách trên bàn vừa bị lấy mất một quyển)"
         }
       ],
-      "content_version": 4,
+      "content_version": 5,
       "difficulty": "medium",
       "examples": [
         {
@@ -216,6 +216,9 @@
       "objective": "Sau bài này, người học nói được ở một nơi vừa xuất hiện thêm hoặc vừa biến mất người/vật nào đó bằng mẫu tồn hiện biến động, phân biệt với câu tồn hiện tĩnh đã học (有/在/着).",
       "pattern": "Nơi chốn + Động từ + Bổ ngữ (xu hướng/kết quả) + (了) + Số lượng + Danh từ",
       "quick_memory": "Xuất hiện/biến mất: nơi chốn + động từ + bổ ngữ + số lượng — thường chốt 了； 进来/出来 thì khỏi cần.",
+      "related_ids": [
+        "cunxian-chu"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-3 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án OFF-H3-38 và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập và trùng câu giữa ví dụ và bài tập trong cùng bài. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",

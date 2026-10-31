@@ -18,7 +18,7 @@
           "wrong_or_risky": "他刚刚三天前回来。"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -198,6 +198,9 @@
       "objective": "Sau bài này, người học kể chuyện và nói về trạng thái đúng mạch thời gian: việc sắp xảy ra ngay （马上）, thứ tự trước-sau （先）, việc vừa mới xảy ra （刚/刚刚） và việc kéo dài liên tục （一直）.",
       "pattern": "Chủ ngữ + 马上/先/刚/刚刚/一直 + Động từ (cụm)",
       "quick_memory": "Sắp ngay → 马上； bước trước → 先； vừa mới → 刚/刚刚； kéo dài mãi → 一直. Tất cả đứng trước động từ.",
+      "related_ids": [
+        "adverbs-frequency-hsk3"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-7 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",

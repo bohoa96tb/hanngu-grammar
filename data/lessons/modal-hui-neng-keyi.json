@@ -13,7 +13,7 @@
           "wrong_or_risky": "这里会拍照吗？ (muốn hỏi có được phép chụp ảnh không)"
         }
       ],
-      "content_version": 4,
+      "content_version": 5,
       "difficulty": "medium",
       "examples": [
         {
@@ -133,6 +133,11 @@
       "objective": "Sau bài này, người học phân biệt được 会 (kỹ năng đã học), 能 (khả năng/điều kiện) và 可以 (cho phép) trong câu đơn giản.",
       "pattern": "会/能/可以 + Động từ",
       "quick_memory": "Chọn theo lý do: học được → 会; có điều kiện nên làm được → 能; được phép → 可以.",
+      "related_ids": [
+        "modal-xiang-yao",
+        "modal-verbs-hsk3",
+        "potential-complement-1"
+      ],
       "review": {
         "date": "2026-10-29",
         "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence (trạng thái verified theo D26)",

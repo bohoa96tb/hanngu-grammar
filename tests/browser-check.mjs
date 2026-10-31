@@ -269,7 +269,39 @@ async function main() {
   })()`);
   record("review-rating-recorded", review3.noteShown && review3.events >= 1 ? "pass" : "fail", JSON.stringify(review3));
 
-  // --- D. Lỗi console trong toàn bộ phiên ---
+  // --- D. REL-01: mục Bài liên quan (le-completion-change -> le-sentence-final-change) ---
+  // Dữ liệu related_ids do Agent Nội dung áp dụng: bài nguồn phải có mục
+  // "Bài liên quan" chứa link tới bài đích, và bấm link phải tải được bài đích.
+  await navigate("#/lesson/le-completion-change");
+  const related = await evaluate(`(() => {
+    // Chỉ tính link nằm TRONG mục "Bài liên quan": link "Bài sau" ở nav cuối
+    // trang có thể trùng href với bài đích và không được tính thay thế.
+    const sec = [...document.querySelectorAll("#app section")].find((s) => {
+      const h = s.querySelector("h3");
+      return h && h.textContent.trim() === "Bài liên quan";
+    });
+    const link = sec ? sec.querySelector('a[href="#/lesson/le-sentence-final-change"]') : null;
+    return { hasSection: !!sec, hasLink: !!link, linkText: link ? link.textContent.trim() : "" };
+  })()`);
+  if (related.hasSection && related.hasLink) {
+    await evaluate(`(() => {
+      const sec = [...document.querySelectorAll("#app section")].find((s) => {
+        const h = s.querySelector("h3");
+        return h && h.textContent.trim() === "Bài liên quan";
+      });
+      sec.querySelector('a[href="#/lesson/le-sentence-final-change"]').click();
+    })()`);
+    await sleep(500);
+    const relatedTarget = await evaluate(`(() => {
+      const h2 = document.querySelector("#app h2");
+      return { hash: location.hash, title: h2 ? h2.textContent.trim() : "" };
+    })()`);
+    record("related-lessons", relatedTarget.hash.includes("le-sentence-final-change") && relatedTarget.title.length > 0 ? "pass" : "fail", JSON.stringify({ ...related, ...relatedTarget }).slice(0, 220));
+  } else {
+    record("related-lessons", "fail", JSON.stringify(related).slice(0, 220));
+  }
+
+  // --- E. Lỗi console trong toàn bộ phiên ---
   record("console-errors", consoleErrors.length === 0 ? "pass" : "fail", consoleErrors.length ? consoleErrors.slice(0, 5).join(" | ") : "0 lỗi console/exception trong các trang đã mở");
 
   const fails = results.filter((r) => r.status === "fail");

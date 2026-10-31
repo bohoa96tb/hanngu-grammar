@@ -59,6 +59,61 @@ class TestValidator(unittest.TestCase):
         bad["lessons"][0]["formula_notes"] = "Đoạn văn liền không chia bước."
         self.assertTrue(check(bad, Path("x")))
 
+    # --- REL-01: related_ids (trường tùy chọn) ---
+    @staticmethod
+    def _without_related(data):
+        """Bản sao dữ liệu đã gỡ mọi related_ids để dựng ca kiểm tra tách biệt."""
+        for les in data["lessons"]:
+            les.pop("related_ids", None)
+        return data
+
+    @staticmethod
+    def _published(data, count=2):
+        return [l for l in data["lessons"] if l["status"] == "published"][:count]
+
+    def test_related_ids_nonexistent_target_fails(self):
+        bad = self._without_related(copy.deepcopy(DATA))
+        les = self._published(bad, 1)[0]
+        les["related_ids"] = ["id-khong-ton-tai-rel01"]
+        errors = check(bad, Path("x"))
+        self.assertTrue(any("related_ids" in e for e in errors), errors)
+
+    def test_related_ids_self_reference_fails(self):
+        bad = self._without_related(copy.deepcopy(DATA))
+        les = self._published(bad, 1)[0]
+        les["related_ids"] = [les["id"]]
+        errors = check(bad, Path("x"))
+        self.assertTrue(any("related_ids" in e for e in errors), errors)
+
+    def test_related_ids_asymmetric_fails(self):
+        bad = self._without_related(copy.deepcopy(DATA))
+        a, b = self._published(bad, 2)
+        a["related_ids"] = [b["id"]]
+        # b cố ý không liệt kê lại a -> không đối xứng
+        errors = check(bad, Path("x"))
+        self.assertTrue(any("related_ids" in e and "đối xứng" in e for e in errors), errors)
+
+    def test_related_ids_more_than_four_fails(self):
+        bad = self._without_related(copy.deepcopy(DATA))
+        published = [l for l in bad["lessons"] if l["status"] == "published"]
+        source, targets = published[0], published[1:6]
+        self.assertEqual(len(targets), 5)
+        source["related_ids"] = [t["id"] for t in targets]
+        # Giữ đối xứng + published để lỗi duy nhất còn lại là vượt quá 4.
+        for t in targets:
+            t["related_ids"] = [source["id"]]
+        errors = check(bad, Path("x"))
+        self.assertTrue(
+            any("related_ids" in e and "4" in e for e in errors), errors)
+
+    def test_related_ids_symmetric_pair_passes(self):
+        bad = self._without_related(copy.deepcopy(DATA))
+        a, b = self._published(bad, 2)
+        a["related_ids"] = [b["id"]]
+        b["related_ids"] = [a["id"]]
+        errors = check(bad, Path("x"))
+        self.assertFalse(any("related_ids" in e for e in errors), errors)
+
     def test_missing_vietnamese_intent_example_fails(self):
         bad = copy.deepcopy(DATA)
         for e in bad["lessons"][0]["examples"]:

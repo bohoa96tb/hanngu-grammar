@@ -18,7 +18,7 @@
           "wrong_or_risky": "二十多个人。(bị hiểu là 'chừng hai mươi người, có thể ít hơn cũng được')"
         }
       ],
-      "content_version": 1,
+      "content_version": 2,
       "difficulty": "medium",
       "examples": [
         {
@@ -200,6 +200,10 @@
       "objective": "Sau bài này, người học nói được số lượng ước lượng kiểu 'vài/mấy' và 'hơn X một chút' bằng ba mẫu của dạng 1: 几 + lượng từ, Số tròn + 多 + lượng từ, Số + lượng từ + 多.",
       "pattern": "几 + Lượng từ • Số tròn + 多 + Lượng từ • Số + Lượng từ + 多",
       "quick_memory": "Ước lượng gần: 几 = vài; số tròn + 多 + lượng từ = hơn mốc tròn; số + lượng từ + 多 = hơn số đó một ít.",
+      "related_ids": [
+        "approx-numbers-2",
+        "question-words"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-8 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF-H2-61) và đề cương thi HSK 11/2025, phạm vi xác minh TRỰC QUAN tại trang in 388 (khối 数的表达法） thay cho bản trích xuất text; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",

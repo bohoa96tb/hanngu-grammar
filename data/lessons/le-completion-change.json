@@ -18,7 +18,7 @@
           "wrong_or_risky": "Dịch mọi câu có 了 sang thì quá khứ tiếng Việt mà không xem ngữ cảnh."
         }
       ],
-      "content_version": 4,
+      "content_version": 5,
       "difficulty": "medium",
       "examples": [
         {
@@ -153,6 +153,10 @@
       "objective": "Sau bài này, người học dùng được 了 ngay sau động từ để nói một hành động đã hoàn thành trong khung thời gian đang xét, biết bỏ 了 khi phủ định bằng 没/没有, và không đọc nhầm 了解.",
       "pattern": "Động từ + 了 (+ Tân ngữ)",
       "quick_memory": "Việc đã xong chưa? Xong rồi thì gắn 了 ngay sau động từ; chưa làm thì dùng 没 + động từ và bỏ 了.",
+      "related_ids": [
+        "le-sentence-final-change",
+        "guo-experience"
+      ],
       "review": {
         "date": "2026-10-29",
         "notes": "Rà soát riêng sau lượt soạn: đối chiếu Chinese Grammar Wiki (Expressing completion with le; Change of state with le) và Wiktionary về đa âm 了 le/liǎo. Bài này cố ý gộp 2 cách dùng để làm mẫu 'đa cách dùng'; phiên mở rộng nên tách thành bài nhỏ theo đặc tả §5.1. Không khẳng định có giáo viên/người bản ngữ duyệt. 29/10/2026 đối chiếu đề cương chính thức: chuyển cấp từ HSK2 tạm thời sang HSK1 vì 完成态 và 变化态 đều thuộc HSK（一级）trong 语法大纲; độ khó sư phạm giữ medium. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: tách phần 了 cuối câu sang bài mới le-sentence-final-change theo D26; bài này chỉ còn 了 sau động từ (hoàn thành), thêm ví dụ hoàn thành, độ khó hard → medium, viết lại Nhớ nhanh",

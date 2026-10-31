@@ -18,7 +18,7 @@
           "wrong_or_risky": "我十点才来，所以我来晚了。"
         }
       ],
-      "content_version": 1,
+      "content_version": 2,
       "difficulty": "medium",
       "examples": [
         {
@@ -212,6 +212,10 @@
       "objective": "Sau bài này, người học thêm được thái độ của người nói vào câu: khẳng định điều hiển nhiên bằng 当然, đính chính nhẹ bằng 其实, nói việc chờ đợi lâu mới thành bằng 终于, và nhấn mạnh quả quyết bằng 才/就 ở vai ngữ khí.",
       "pattern": "Chủ ngữ + 当然/其实/终于 + Động từ · 这 + 才/就 + 是 · Chủ ngữ + 才/就 + 不/没 + Động từ + 呢",
       "quick_memory": "Hiển nhiên → 当然； đính chính → 其实； chờ lâu mới thành → 终于； quả quyết → 这才是… / 我才不…呢.",
+      "related_ids": [
+        "adverbs-scope-hsk3",
+        "complex-condition"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-9 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án và đề cương thi HSK 11/2025, phạm vi xác minh TRỰC QUAN từ PDF gốc thay cho bản trích xuất text; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",

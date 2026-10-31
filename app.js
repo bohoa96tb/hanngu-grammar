@@ -413,6 +413,12 @@ function renderLesson(id) {
   const prev = idxAll > 0 ? lessons[idxAll - 1] : null;
   const next = idxAll >= 0 && idxAll < lessons.length - 1 ? lessons[idxAll + 1] : null;
   const quick = les.examples && les.examples.length ? les.examples[0] : null;
+  // REL-01: bài liên quan — giữ thứ tự trong related_ids, bỏ qua id không
+  // tồn tại trong danh sách đã lọc published (lessons) mà không lỗi; vắng/
+  // rỗng/không còn id hợp lệ thì không render mục (không hiện thẻ trống).
+  const related = (Array.isArray(les.related_ids) ? les.related_ids : [])
+    .map((rid) => lessonById(rid))
+    .filter(Boolean);
   app.innerHTML = `
     <p><a href="#/">← Danh mục</a></p>
     <section class="card card-hero">
@@ -456,6 +462,7 @@ function renderLesson(id) {
     <section><h3>E. Luyện tập</h3><p class="note">Làm theo thứ tự: Nhận biết → Đặt đúng vị trí → Tự dùng. Với câu chọn đáp án: chọn trước rồi bấm “Kiểm tra” — chọn chưa bị tính lượt cho tới khi kiểm tra. Lời giải chỉ hiện sau khi bạn kiểm tra; xin gợi ý chỉ hiện gợi ý, không lộ lời giải, và sẽ được ghi nhận là đã xem gợi ý.</p>
     ${les.exercises.map((ex, i) => exerciseHTML(les, ex, i)).join("")}</section>
     ${les.quick_memory ? `<section class="card card-memory"><h3>F. Nhớ nhanh</h3><p>${esc(les.quick_memory)}</p></section>` : ""}
+    ${related.length ? `<section class="card"><h3>Bài liên quan</h3>${related.map((r) => `<p><a href="#/lesson/${esc(r.id)}"><span class="badge badge-hsk">HSK ${esc(String(r.hsk_level))}</span> ${esc(r.title_vi)}</a></p>`).join("")}</section>` : ""}
     <div class="card">
       <button type="button" id="completeBtn">${progress.completedLessons.includes(id) ? "✓ Đã hoàn thành — đánh dấu lại" : "Đánh dấu đã hoàn thành bài này"}</button>
       <button type="button" class="secondary" id="reportBtn">Báo lỗi bài học</button>
@@ -868,7 +875,7 @@ function render() {
 // bản cũ từ bộ nhớ đệm sau khi app.js mới đã chạy. Lưu ý: tham số này chỉ
 // có tác dụng khi app.js mới đã được tải; nó không chữa được app.js cũ
 // còn trong bộ nhớ đệm (xem docs/decisions.md D20).
-const BUILD_VERSION = "20261030-hsk3i9";
+const BUILD_VERSION = "20261031-rel1";
 const DEBUG = new URLSearchParams(location.search).get("debug") === "1";
 let debugInfo = null;
 

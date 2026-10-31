@@ -13,7 +13,7 @@
           "wrong_or_risky": "Dùng 了 cuối câu cho mọi câu tiếng Việt có “đã … rồi”."
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -132,6 +132,9 @@
       "objective": "Sau bài này, người học dùng được 了 ở cuối câu để nói một tình huống bây giờ đã khác trước, và phân biệt được với 了 ngay sau động từ (việc đã hoàn thành).",
       "pattern": "Câu + 了 (cuối câu)",
       "quick_memory": "Bây giờ có khác trước không? Khác rồi thì chốt 了 ở cuối câu — trước chưa biết, giờ đã biết rồi.",
+      "related_ids": [
+        "le-completion-change"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Chuẩn hóa std2 30/10/2026: bài mới tách từ le-completion-change theo D26, chỉ dạy 了 cuối câu (đổi trạng thái). Bài tập le-ex2 chuyển nguyên trạng từ bài cũ và giữ nguyên ID có chủ ý để bảo toàn lịch sử attempts của người học. Rà soát nội bộ theo Chinese Grammar Wiki (Change of state with le); không khẳng định có giáo viên/người bản ngữ duyệt.",
