@@ -18,7 +18,7 @@
           "wrong_or_risky": "他一块儿去上课。"
         }
       ],
-      "content_version": 1,
+      "content_version": 2,
       "difficulty": "medium",
       "examples": [
         {
@@ -214,6 +214,10 @@
       "objective": "Sau bài này, người học giới hạn được phạm vi bằng 只/只是 và 就 (chỉ có), rủ nhau làm chung bằng 一块儿, báo tổng số bằng 一共, và nói 'khắp nơi' bằng 到处 — mỗi từ đúng vị trí và đúng điều kiện dùng.",
       "pattern": "Chủ ngữ + 就/只/只是 + Động từ · 一块儿 + Động từ · 一共 + Số lượng · 到处 + Động từ",
       "quick_memory": "Chỉ → 只/只是（mềm）; chỉ có (ít) → 就 + số; cùng nhau → 一块儿; tổng → 一共; khắp nơi → 到处.",
+      "related_ids": [
+        "adverbs-mood-hsk3",
+        "complex-hypothesis"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-9 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án và đề cương thi HSK 11/2025, phạm vi xác minh TRỰC QUAN từ PDF gốc thay cho bản trích xuất text; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",

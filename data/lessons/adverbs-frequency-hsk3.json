@@ -18,7 +18,7 @@
           "wrong_or_risky": "他一直迟到。"
         }
       ],
-      "content_version": 1,
+      "content_version": 2,
       "difficulty": "medium",
       "examples": [
         {
@@ -202,6 +202,9 @@
       "objective": "Sau bài này, người học diễn đạt được việc xảy ra luôn luôn, lặp lại lần nữa, hoặc thường xuyên bằng 总/总是/又/常常, đặt đúng vị trí trước động từ, và không nhầm 又 'lại' với khung song song 又……，又…… đã học.",
       "pattern": "Chủ ngữ + 总（是）/又/常常 + Động từ (cụm)",
       "quick_memory": "Luôn → 总/总是； lại nữa (đã xảy ra) → 又 + …了； thường thường → 常常. Phủ định của 常常 là 不常.",
+      "related_ids": [
+        "adverbs-time-hsk3"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-9 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án và đề cương thi HSK 11/2025, phạm vi xác minh TRỰC QUAN từ PDF gốc thay cho bản trích xuất text; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
