@@ -190,14 +190,28 @@ class TestApplied(unittest.TestCase):
         errors = validate_applied(self._doc(), self._ids(), "shi-noun-link")
         self.assertEqual(errors, [], errors)
 
-    def test_external_without_link_only_fails(self):
+    def _v1_doc(self):
+        """Bản sao ép về hình dạng v1 (link_only): file pilot thật đã
+        lên schema v2/in_app (D31), hai test dưới đây kiểm quy tắc v1
+        nên phải tự dựng fixture v1 thay vì đột biến file thật."""
         doc = self._doc()
+        doc["schema_version"] = 1
+        mat = doc["reading"]["material"]
+        mat["access"] = "external"
+        mat["rights"] = {"status": "link_only", "basis_vi": "chỉ dẫn link"}
+        mat["audio"] = {"kind": "source_page_player",
+                        "verified_playback": True, "voice": "unknown"}
+        mat.setdefault("duration_label_vi", "Audio tại nguồn")
+        return doc
+
+    def test_external_without_link_only_fails(self):
+        doc = self._v1_doc()
         doc["reading"]["material"]["rights"]["status"] = "reuse_allowed"
         errors = validate_applied(doc, self._ids(), "shi-noun-link")
         self.assertTrue(any("link_only" in e for e in errors), errors)
 
     def test_unverified_playback_fails(self):
-        doc = self._doc()
+        doc = self._v1_doc()
         doc["reading"]["material"]["audio"]["verified_playback"] = False
         errors = validate_applied(doc, self._ids(), "shi-noun-link")
         self.assertTrue(any("verified_playback" in e for e in errors), errors)

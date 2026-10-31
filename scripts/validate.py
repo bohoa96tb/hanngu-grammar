@@ -258,19 +258,127 @@ def validate_curriculum(cur, lessons) -> list[str]:
 APPLIED_DIR = ROOT / "data" / "applied"
 
 
-def _applied_material_errors(mat, where):
+def _applied_asset_exists(rel):
+    return isinstance(rel, str) and bool(rel.strip()) \
+        and (ROOT / rel).is_file()
+
+
+def _applied_in_app_errors(mat, where):
+    """APP-01 v2 (D31): học liệu dùng TRONG app (access=in_app) — quyền
+    tái sử dụng phải đã xác minh, audio thật nằm trong assets/applied/,
+    nội dung truyện nằm ngay trong bản ghi. Chỉ kiểm tra cấu trúc/quyền
+    khai báo và sự tồn tại của file, không chứng minh nội dung nguồn."""
+    errs = []
+    rights = mat.get("rights") or {}
+    if rights.get("status") != "reuse_allowed":
+        errs.append(f"{where}: access=in_app phải đi với rights.status "
+                    f"reuse_allowed")
+    lic = mat.get("license") or {}
+    for key in ("text", "audio", "evidence"):
+        if not str(lic.get(key) or "").strip():
+            errs.append(f"{where}: license.{key} không được trống (giấy "
+                        f"phép văn bản/audio, đường dẫn bằng chứng)")
+    att = mat.get("attribution") or {}
+    for key in ("text_by", "translation_by"):
+        if not str(att.get(key) or "").strip():
+            errs.append(f"{where}: attribution.{key} không được trống")
+    audio = mat.get("audio") or {}
+    if audio.get("kind") != "in_app_file":
+        errs.append(f"{where}: audio.kind của học liệu in_app phải là "
+                    f"in_app_file")
+    if audio.get("voice") not in ("human_verified", "synthetic", "unknown"):
+        errs.append(f"{where}: audio.voice không hợp lệ: "
+                    f"{audio.get('voice')}")
+    afile = str(audio.get("file") or "")
+    if not afile.startswith("assets/applied/"):
+        errs.append(f"{where}: audio.file phải nằm trong assets/applied/")
+    elif not _applied_asset_exists(afile):
+        errs.append(f"{where}: audio.file không tồn tại trên đĩa: {afile}")
+    dur = audio.get("duration_sec")
+    if not isinstance(dur, (int, float)) or isinstance(dur, bool) \
+            or dur <= 0:
+        errs.append(f"{where}: audio.duration_sec phải là số > 0")
+    content = mat.get("content") or {}
+    pages = content.get("pages")
+    if not isinstance(pages, list) or not pages:
+        errs.append(f"{where}: content.pages cần ít nhất 1 đoạn")
+        pages = pages if isinstance(pages, list) else []
+    n_target = 0
+    for pi, page in enumerate(pages):
+        pw = f"{where} đoạn {pi + 1}"
+        if not isinstance(page, dict):
+            errs.append(f"{pw}: đoạn phải là object")
+            continue
+        pfile = str(page.get("audio_file") or "")
+        if not _applied_asset_exists(pfile):
+            errs.append(f"{pw}: audio_file không tồn tại trên đĩa: {pfile}")
+        sents = page.get("sentences")
+        if not isinstance(sents, list) or not sents:
+            errs.append(f"{pw}: cần ít nhất 1 câu")
+            sents = sents if isinstance(sents, list) else []
+        for si, sent in enumerate(sents):
+            sw = f"{pw} câu {si + 1}"
+            if not isinstance(sent, dict):
+                errs.append(f"{sw}: câu phải là object")
+                continue
+            for key in ("zh", "pinyin", "vi"):
+                if not str(sent.get(key) or "").strip():
+                    errs.append(f"{sw}: thiếu {key}")
+            if not isinstance(sent.get("target"), bool):
+                errs.append(f"{sw}: target phải là true/false")
+            elif sent["target"]:
+                n_target += 1
+    if pages and n_target < 1:
+        errs.append(f"{where}: toàn truyện cần ít nhất 1 câu chứa cấu "
+                    f"trúc mục tiêu (target=true)")
+    return errs
+
+
+def _applied_sentence_practice_errors(sp, where):
+    """APP-01 v2 (D31): luyện nghe từng câu — câu có audio riêng trong
+    dự án, nhãn giọng và ghi chú giấy phép bắt buộc."""
+    errs = []
+    if not isinstance(sp, dict):
+        return [f"{where}: sentence_practice phải là object"]
+    for key in ("voice_label_vi", "license_note_vi"):
+        if not str(sp.get(key) or "").strip():
+            errs.append(f"{where}: sentence_practice thiếu {key}")
+    items = sp.get("items")
+    if not isinstance(items, list) or len(items) < 3:
+        errs.append(f"{where}: sentence_practice cần ít nhất 3 câu")
+        items = items if isinstance(items, list) else []
+    for i, item in enumerate(items):
+        iw = f"{where} câu luyện nghe {i + 1}"
+        if not isinstance(item, dict):
+            errs.append(f"{iw}: câu phải là object")
+            continue
+        for key in ("zh", "pinyin", "vi"):
+            if not str(item.get(key) or "").strip():
+                errs.append(f"{iw}: thiếu {key}")
+        afile = str(item.get("audio_file") or "")
+        if not _applied_asset_exists(afile):
+            errs.append(f"{iw}: audio_file không tồn tại trên đĩa: {afile}")
+    return errs
+
+
+def _applied_material_errors(mat, where, version=1):
     errs = []
     if not isinstance(mat, dict):
         return [f"{where}: material phải là object"]
+    access = mat.get("access")
+    in_app_v2 = version == 2 and access == "in_app"
     for key in ("source_name", "title_vi", "situation_vi",
                 "target_structure_vi", "length_label_vi",
                 "duration_label_vi"):
+        # v2 in_app: thời lượng lấy từ audio.duration_sec (số thật),
+        # không dùng nhãn duration_label_vi của v1.
+        if in_app_v2 and key == "duration_label_vi":
+            continue
         if not str(mat.get(key) or "").strip():
             errs.append(f"{where}: material thiếu {key}")
     url = str(mat.get("source_url") or "")
     if not url.startswith("https://"):
         errs.append(f"{where}: material.source_url phải là URL https")
-    access = mat.get("access")
     if access not in ("external", "embed", "in_app"):
         errs.append(f"{where}: material.access không hợp lệ: {access}")
     rights = mat.get("rights") or {}
@@ -281,15 +389,18 @@ def _applied_material_errors(mat, where):
         errs.append(f"{where}: rights.basis_vi không được trống")
     if access == "external" and rights.get("status") != "link_only":
         errs.append(f"{where}: access=external phải đi với rights link_only")
-    audio = mat.get("audio") or {}
-    if audio.get("kind") not in ("source_page_player", "none"):
-        errs.append(f"{where}: audio.kind không hợp lệ")
-    if audio.get("voice") not in ("native_claimed_by_source", "unknown"):
-        errs.append(f"{where}: audio.voice không hợp lệ")
-    if audio.get("kind") == "source_page_player" \
-            and audio.get("verified_playback") is not True:
-        errs.append(f"{where}: có player nguồn nhưng chưa kiểm chứng phát "
-                    f"(audio.verified_playback phải là true)")
+    if in_app_v2:
+        errs.extend(_applied_in_app_errors(mat, where))
+    else:
+        audio = mat.get("audio") or {}
+        if audio.get("kind") not in ("source_page_player", "none"):
+            errs.append(f"{where}: audio.kind không hợp lệ")
+        if audio.get("voice") not in ("native_claimed_by_source", "unknown"):
+            errs.append(f"{where}: audio.voice không hợp lệ")
+        if audio.get("kind") == "source_page_player" \
+                and audio.get("verified_playback") is not True:
+            errs.append(f"{where}: có player nguồn nhưng chưa kiểm chứng "
+                        f"phát (audio.verified_playback phải là true)")
     vocab = mat.get("vocab_support")
     if not isinstance(vocab, list) or any(
             not str(v.get("zh") or "").strip()
@@ -300,17 +411,26 @@ def _applied_material_errors(mat, where):
     return errs
 
 
-def _applied_activity_errors(act, where, need_material):
+def _applied_activity_errors(act, where, need_material, version=1):
     errs = []
     if not isinstance(act, dict):
         return [f"{where}: hoạt động phải là object"]
     if not str(act.get("guide_vi") or "").strip():
         errs.append(f"{where}: thiếu guide_vi")
     if need_material:
-        errs.extend(_applied_material_errors(act.get("material"), where))
+        errs.extend(_applied_material_errors(act.get("material"), where,
+                                             version))
     elif act.get("material") is not None:
         errs.append(f"{where}: dùng chung học liệu (shared) thì không khai "
                     f"material riêng")
+    extra = act.get("extra_external")
+    if extra is not None and (not isinstance(extra, dict)
+                              or not str(extra.get("source_url") or "")
+                              .startswith("https://")):
+        errs.append(f"{where}: extra_external.source_url phải là URL https")
+    if act.get("sentence_practice") is not None:
+        errs.extend(_applied_sentence_practice_errors(
+            act.get("sentence_practice"), where))
     questions = act.get("questions")
     if not isinstance(questions, list) or not 2 <= len(questions) <= 3:
         errs.append(f"{where}: cần 2–3 câu hỏi")
@@ -333,14 +453,19 @@ def _applied_activity_errors(act, where, need_material):
 
 def validate_applied(doc, lesson_ids, file_stem):
     """APP-01 (2026-10-31): kiểm tra một file data/applied/<id>.json —
-    học liệu đọc/nghe vận dụng gắn với bài đã published. Chỉ kiểm tra
-    cấu trúc/quyền khai báo, không chứng minh nội dung nguồn."""
+    học liệu đọc/nghe vận dụng gắn với bài đã published. schema_version
+    1 = thẻ dẫn link (link_only, D30); schema_version 2 (D31) có thể
+    chứa học liệu dùng trong app (access=in_app) và luyện nghe câu.
+    Chỉ kiểm tra cấu trúc/quyền khai báo, không chứng minh nội dung
+    nguồn."""
     errs = []
     where = f"applied/{file_stem}"
     if not isinstance(doc, dict):
         return [f"{where}: nội dung phải là object"]
-    if doc.get("schema_version") != 1:
-        errs.append(f"{where}: schema_version phải bằng 1")
+    version = doc.get("schema_version")
+    if version not in (1, 2):
+        errs.append(f"{where}: schema_version phải bằng 1 hoặc 2")
+        version = 1
     lid = doc.get("lesson_id")
     if lid != file_stem:
         errs.append(f"{where}: lesson_id '{lid}' phải trùng tên file")
@@ -358,9 +483,10 @@ def validate_applied(doc, lesson_ids, file_stem):
     if shared and not str(doc.get("shared_note_vi") or "").strip():
         errs.append(f"{where}: shared=true cần shared_note_vi")
     errs.extend(_applied_activity_errors(doc.get("reading"),
-                                         f"{where} reading", True))
+                                         f"{where} reading", True, version))
     errs.extend(_applied_activity_errors(doc.get("listening"),
-                                         f"{where} listening", not shared))
+                                         f"{where} listening", not shared,
+                                         version))
     answers = []
     for act_key in ("reading", "listening"):
         act = doc.get(act_key) or {}
