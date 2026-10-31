@@ -2,6 +2,33 @@
 
 Chưa có bản phát hành nào.
 
+- 2026-10-31 — Pilot Đọc & nghe theo quy chuẩn D31 (build
+  20261031-rl1): (a) lưu quy chuẩn bền vững
+  docs/READING_LISTENING_STANDARD.md +
+  docs/READING_LISTENING_CHECKPOINT.md, AGENTS.md trỏ tới, quyết
+  định D31 trong docs/decisions.md, đăng ký 2 nguồn mới vào
+  docs/source-register.json (Storybooks/Global ASP,
+  hsk-sentences-audio); (b) bài shi-noun-link (HSK1 Bài 01) nâng
+  lên schema applied v2: truyện Storybooks 0089 和植物聊天的卡莱
+  đọc + nghe NGAY TRONG APP (CC BY 4.0 cho cả văn bản và audio;
+  ghi công Ursula Nafula / Jesse Pietersen / Vicky Liu / người
+  đọc Zhuo Sun — giọng người thật thu tại UBC Studios; audio toàn
+  bài 132,8 giây + audio từng đoạn là file thật theo trang,
+  không dùng timestamp suy đoán), bật/tắt Pinyin + dịch Việt +
+  tô sáng 2 câu 是 đích, tab Nghe ẩn lời ban đầu; (c) luyện nghe
+  từng câu: 5 câu A 是 B từ hsk-sentences-audio (CC BY-SA 4.0,
+  giọng tổng hợp CosyVoice2, nhãn "Giọng tổng hợp" rõ ràng, dịch
+  Việt của dự án phát hành CC BY-SA 4.0 cho phần này); Mandarin
+  Bean "A Happy Day" hạ xuống thẻ đọc thêm dẫn link. QA độc lập:
+  đối chiếu nguyên văn truyện 8 đoạn/18 câu, Pinyin + dịch từng
+  câu, khóa 6/6 câu hỏi, đo audio (tổng đoạn khớp toàn bài lệch
+  ~0,001 giây); vòng sửa Q-1 (khóa stamp chống đáp án tiến độ v1
+  gắn nhầm sang câu hỏi v2) + H-1/H-2, phúc tra 3/3. Harness
+  39/39. Trạng thái trung thực: qa_status của học liệu là
+  internal_review — audio đã kiểm tra bằng máy (thời lượng, tín
+  hiệu, khớp đoạn), nghe kiểm bằng tai người thật vẫn chưa thực
+  hiện (cùng giới hạn AUD-TTS-01). Mở rộng sang bài khác chờ Hoa
+  duyệt pilot này.
 - 2026-10-29 — Bản thử nghiệm local (chưa phát hành): P00–P04 với 3 bài mẫu.
   Chưa push lên GitHub vì GitHub chưa kết nối (xem checkpoint). Chưa có URL
   Pages, chưa có release ID, chưa có rollback cần thiết vì chưa phát hành gì.
