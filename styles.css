@@ -232,3 +232,27 @@ details > summary { cursor: pointer; font-weight: 600; padding: var(--space-1) 0
 .applied-open { margin: 4px 0; }
 .applied-write { border-left: 4px solid var(--accent, #0f766e); background: #f4faf9; border-radius: 0 8px 8px 0; padding: 10px 12px; margin: 12px 0; }
 .applied-q { margin-top: 14px; }
+
+/* ===== APP-01 v2 (D31): học liệu dùng trong app — trình phát, truyện, luyện câu ===== */
+.applied-voice { font-weight: 600; }
+.applied-player { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; margin: var(--space-2) 0; }
+.applied-player > * { min-width: 0; }
+.applied-time { color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.applied-toggles { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: var(--space-2) 0; }
+.ap-toggle { background: var(--surface); color: var(--ink); border-color: var(--line); }
+.ap-toggle.selected { background: var(--selected-bg); border-color: var(--accent); color: var(--ink); font-weight: 700; }
+.applied-story { margin-top: var(--space-2); }
+.applied-page { margin: var(--space-3) 0; }
+.applied-page-head { margin: 0 0 var(--space-1); }
+.applied-sent { margin: var(--space-2) 0; border-radius: var(--radius-sm); }
+.applied-story.show-highlight .applied-sent.is-target { background: var(--warn-bg); padding: var(--space-1) var(--space-2); }
+.sent-zh { display: block; font-family: var(--font-zh, inherit); font-size: 1.2rem; line-height: 1.7; overflow-wrap: break-word; }
+.sent-py { display: block; color: var(--text-muted); font-size: .95rem; }
+.sent-vi { display: block; color: var(--text-muted); }
+.applied-story:not(.show-pinyin) .sent-py { display: none; }
+.applied-story:not(.show-vi) .sent-vi { display: none; }
+.applied-credit { border-top: 1px dashed var(--line); margin-top: var(--space-3); padding-top: var(--space-2); }
+.applied-sentprac { margin: var(--space-3) 0; }
+.applied-sp-item { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; padding: var(--space-2) 0; border-top: 1px dashed var(--line); }
+.applied-sp-text { flex: 1 1 100%; min-width: 0; }
+.applied-noprac { font-style: italic; }

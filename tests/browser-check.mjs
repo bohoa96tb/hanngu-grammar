@@ -402,27 +402,125 @@ async function main() {
 
 
   // --- APP-01: Đọc & nghe vận dụng (pilot Bài 01) ---
+  // Đọc bản ghi học liệu trực tiếp từ máy chủ để rẽ nhánh theo phiên bản
+  // schema: v1 = thẻ dẫn link Mandarin Bean (D30); v2 = truyện dùng
+  // trong app + luyện nghe câu (D31). Tên 5 kiểm tra cũ giữ nguyên ở
+  // cả hai nhánh; các kiểm tra v2 ghi SKIP-pass khi dữ liệu chưa phải
+  // v2 (theo tiền lệ prereq-display ở trên).
+  let shiApplied = null;
+  try { shiApplied = await (await fetch(BASE + "data/applied/shi-noun-link.json")).json(); } catch {}
+  const shiMat = shiApplied && shiApplied.reading && shiApplied.reading.material;
+  const shiV2 = !!(shiApplied && shiApplied.schema_version === 2 && shiMat && shiMat.access === "in_app");
   await navigate("#/lesson/shi-noun-link");
   await waitFor(async () => evaluate(`!!document.getElementById('sec-applied')`));
-  const appCard = await evaluate(`(() => { const a = document.querySelector('.applied-open'); return { ok: !!a && a.href.includes('mandarinbean.com/a-happy-day') && a.target === '_blank', src: document.getElementById('sec-applied').innerText.includes('Mandarin Bean') }; })()`);
-  record("applied-section-and-source-link", appCard.ok && appCard.src ? "pass" : "fail", JSON.stringify(appCard));
-  await evaluate(`document.querySelector('[data-aq="0"] [data-aq-opt="1"]').click()`);
+  if (shiV2) {
+    const shiExtra = shiApplied.reading.extra_external || null;
+    const appCard = await evaluate(`(() => { const sec = document.getElementById('sec-applied'); const a = sec.querySelector('.applied-open'); return { src: sec.innerText.includes(${JSON.stringify(shiMat.source_name)}), hasExtra: ${shiExtra ? "true" : "false"}, extraOk: a ? a.href === ${JSON.stringify(shiExtra ? shiExtra.source_url : "")} && a.target === '_blank' : false }; })()`);
+    record("applied-section-and-source-link", appCard.src && (!appCard.hasExtra || appCard.extraOk) ? "pass" : "fail", JSON.stringify(appCard));
+    // v2: truyện hiển thị ngay trong app ở tab Đọc, kèm tiêu đề gốc.
+    const story = await evaluate(`(() => { const sec = document.getElementById('sec-applied'); const st = sec.querySelector('[data-ap-story]'); return { hasStory: !!st, title: sec.innerText.includes(${JSON.stringify(shiMat.title_original || "")}), sents: st ? st.querySelectorAll('.applied-sent').length : 0, targets: st ? st.querySelectorAll('.applied-sent.is-target').length : 0 }; })()`);
+    record("applied-v2-story-in-app", story.hasStory && story.title && story.sents > 0 && story.targets > 0 ? "pass" : "fail", JSON.stringify(story));
+    // v2: nút bật/tắt Pinyin đổi trạng thái hiển thị thật (mặc định BẬT).
+    const pyToggle = await evaluate(`(() => { const py = document.querySelector('#sec-applied .sent-py'); const before = py ? getComputedStyle(py).display : "missing"; document.querySelector('[data-ap-toggle="pinyin"]').click(); const py2 = document.querySelector('#sec-applied .sent-py'); const after = py2 ? getComputedStyle(py2).display : "missing"; return { before, after }; })()`);
+    record("applied-v2-pinyin-toggle", pyToggle.before !== "none" && pyToggle.before !== "missing" && pyToggle.after === "none" ? "pass" : "fail", JSON.stringify(pyToggle));
+  } else {
+    const appCard = await evaluate(`(() => { const a = document.querySelector('.applied-open'); return { ok: !!a && a.href.includes('mandarinbean.com/a-happy-day') && a.target === '_blank', src: document.getElementById('sec-applied').innerText.includes('Mandarin Bean') }; })()`);
+    record("applied-section-and-source-link", appCard.ok && appCard.src ? "pass" : "fail", JSON.stringify(appCard));
+    record("applied-v2-story-in-app", "pass", "SKIP — dữ liệu shi-noun-link chưa phải schema v2 in_app");
+    record("applied-v2-pinyin-toggle", "pass", "SKIP — dữ liệu shi-noun-link chưa phải schema v2 in_app");
+  }
+  const shiAns = shiApplied && shiApplied.reading && Array.isArray(shiApplied.reading.questions) && shiApplied.reading.questions[0] ? shiApplied.reading.questions[0].answer : 1;
+  await evaluate(`document.querySelector('[data-aq="0"] [data-aq-opt="${shiAns}"]').click()`);
   await evaluate(`document.querySelector('[data-aq="0"] [data-aq-check]').click()`);
   const appGrade = await evaluate(`(() => { const fb = document.querySelector('[data-aq="0"] [data-aq-fb]').textContent; const p = JSON.parse(localStorage.getItem('hanngu-progress-v2')); const a = p.applied && p.applied['shi-noun-link']; return { fbOk: fb.includes('Đúng rồi'), saved: !!a && a.reading.answers['0'] && a.reading.answers['0'].ok === true }; })()`);
   record("applied-answer-graded-and-saved", appGrade.fbOk && appGrade.saved ? "pass" : "fail", JSON.stringify(appGrade));
   await evaluate(`document.querySelector('[data-atab="listening"]').click()`);
-  const appTab = await evaluate(`(() => { const panel = document.getElementById('applied-panel'); return { hasQ: !!panel.querySelector('[data-aq="0"]'), hint: panel.innerText.includes('nghe trước khi mở bài đọc') }; })()`);
-  record("applied-listening-tab", appTab.hasQ && appTab.hint ? "pass" : "fail", JSON.stringify(appTab));
+  if (shiV2) {
+    // v2: tab Nghe ban đầu ẨN lời truyện sau nút "Hiện lời để đối chiếu".
+    const hidden = await evaluate(`(() => { const st = document.querySelector('#applied-panel [data-ap-story]'); return { storyVisible: !!st && st.offsetParent !== null, reveal: !!document.querySelector('[data-ap-reveal]') }; })()`);
+    record("applied-v2-listening-text-hidden", !hidden.storyVisible && hidden.reveal ? "pass" : "fail", JSON.stringify(hidden));
+    await evaluate(`document.querySelector('[data-ap-reveal]').click()`);
+    const shown = await evaluate(`(() => { const st = document.querySelector('#applied-panel [data-ap-story]'); return !!st && st.offsetParent !== null; })()`);
+    record("applied-v2-listening-reveal", shown ? "pass" : "fail", String(shown));
+    const appTab = await evaluate(`(() => { const panel = document.getElementById('applied-panel'); return { hasQ: !!panel.querySelector('[data-aq="0"]'), hasStory: !!panel.querySelector('[data-ap-story]') }; })()`);
+    record("applied-listening-tab", appTab.hasQ && appTab.hasStory ? "pass" : "fail", JSON.stringify(appTab));
+    // v2: khối luyện nghe câu — đúng số câu của dữ liệu (kỳ vọng 5),
+    // mỗi câu có nút nghe + nút xem câu; xem câu thì hiện văn bản.
+    const shiSp = shiApplied.listening && shiApplied.listening.sentence_practice;
+    if (shiSp) {
+      const spCheck = await evaluate(`(() => { const items = [...document.querySelectorAll('#applied-panel .applied-sp-item')]; return { n: items.length, allBtns: items.every((it) => !!it.querySelector('[data-ap-src-btn]') && !!it.querySelector('[data-ap-sp-reveal]')) }; })()`);
+      record("applied-v2-sentence-practice", spCheck.n === shiSp.items.length && shiSp.items.length === 5 && spCheck.allBtns ? "pass" : "fail", JSON.stringify(spCheck));
+      const spReveal = await evaluate(`(() => { const it = document.querySelector('#applied-panel .applied-sp-item'); const before = !!it && !it.querySelector('.applied-sp-text').hidden; it.querySelector('[data-ap-sp-reveal]').click(); const t2 = document.querySelector('#applied-panel .applied-sp-item .applied-sp-text'); return { before, after: !!t2 && !t2.hidden }; })()`);
+      record("applied-v2-sentence-reveal", !spReveal.before && spReveal.after ? "pass" : "fail", JSON.stringify(spReveal));
+    } else {
+      const note = await evaluate(`document.getElementById('applied-panel').innerText.includes('Chưa có phần luyện nghe câu phù hợp')`);
+      record("applied-v2-sentence-practice", note ? "pass" : "fail", "không có sentence_practice — thông báo thay thế: " + note);
+      record("applied-v2-sentence-reveal", "pass", "SKIP — không có sentence_practice");
+    }
+    // v2: mọi URL audio đang có trong mục applied (toàn bài, từng đoạn,
+    // từng câu luyện) phải lấy được HTTP 200 từ máy chủ. Chỉ kiểm tra
+    // đường dữ liệu/phần tử — headless không khẳng định âm thanh phát
+    // ra tiếng.
+    const srcs = await evaluate(`(() => [...new Set([...document.querySelectorAll('#sec-applied [data-src]')].map((e) => e.dataset.src).filter(Boolean))])()`);
+    let audioOk = srcs.length >= 2;
+    const statuses = {};
+    for (const s of srcs) {
+      try {
+        let r = await fetch(BASE + s, { method: "HEAD" });
+        if (r.status === 405) r = await fetch(BASE + s);
+        statuses[s] = r.status;
+        if (r.status !== 200) audioOk = false;
+      } catch { statuses[s] = "ERR"; audioOk = false; }
+    }
+    record("applied-v2-audio-urls-200", audioOk ? "pass" : "fail", JSON.stringify(statuses));
+  } else {
+    const appTab = await evaluate(`(() => { const panel = document.getElementById('applied-panel'); return { hasQ: !!panel.querySelector('[data-aq="0"]'), hint: panel.innerText.includes('nghe trước khi mở bài đọc') }; })()`);
+    record("applied-listening-tab", appTab.hasQ && appTab.hint ? "pass" : "fail", JSON.stringify(appTab));
+    for (const n of ["applied-v2-listening-text-hidden", "applied-v2-listening-reveal", "applied-v2-sentence-practice", "applied-v2-sentence-reveal", "applied-v2-audio-urls-200"]) {
+      record(n, "pass", "SKIP — dữ liệu shi-noun-link chưa phải schema v2 in_app");
+    }
+  }
   await evaluate(`document.querySelector('[data-applied-done="listening"]').click()`);
   await evaluate(`location.reload()`);
   await sleep(1200);
   await waitFor(async () => evaluate(`!!document.getElementById('sec-applied')`));
   const appPersist = await evaluate(`(() => { const p = JSON.parse(localStorage.getItem('hanngu-progress-v2')); const a = p.applied['shi-noun-link']; return a.listening.done === true && a.reading.answers['0'].ok === true; })()`);
   record("applied-state-persists-after-reload", appPersist ? "pass" : "fail", String(appPersist));
+  // Q-1 (QA pilot v2): stamp nội dung của tiến độ applied. Gieo
+  // localStorage TRƯỚC khi tải lại trang (app đọc tiến độ lúc khởi
+  // động rồi mới render) nên kết quả tất định.
+  // (i) State KHÔNG có stamp (tiến độ từ bản APP-01) kèm đáp án +
+  // done giả của bộ câu hỏi cũ: dữ liệu hiện tại là schema >= 2 thì
+  // state phải bị đặt lại (đáp án/done sạch, giao diện không hiện
+  // đáp án cũ) và được gán stamp hiện tại; dữ liệu vẫn là schema 1
+  // thì giữ nguyên, chỉ gán stamp.
+  const expectedStamp = shiApplied ? `${shiApplied.schema_version || 1}|${shiApplied.checked_date || ""}|${shiMat ? (shiMat.material_id || shiMat.source_url || "") : ""}` : "";
+  await evaluate(`(() => { const p = JSON.parse(localStorage.getItem('hanngu-progress-v2')); p.applied = p.applied || {}; p.applied['shi-noun-link'] = { reading: { answers: { '0': { pick: 0, ok: true } }, done: true }, listening: { answers: {}, done: true } }; localStorage.setItem('hanngu-progress-v2', JSON.stringify(p)); })()`);
+  await evaluate(`location.reload()`);
+  await sleep(1200);
+  await waitFor(async () => evaluate(`!!document.getElementById('sec-applied')`));
+  const stale = await evaluate(`(() => { const p = JSON.parse(localStorage.getItem('hanngu-progress-v2')); const a = p.applied['shi-noun-link']; const fb = document.querySelector('[data-aq="0"] [data-aq-fb]'); const sel = document.querySelector('[data-aq="0"] .opt.selected'); const doneBtn = document.querySelector('[data-applied-done="reading"]'); return { stamp: a.stamp, ans: Object.keys(a.reading.answers).length, rDone: a.reading.done, lDone: a.listening.done, fbEmpty: !fb || !fb.textContent.trim(), noSel: !sel, doneOff: !!doneBtn && doneBtn.textContent.includes('Đánh dấu đã đọc xong') }; })()`);
+  if (shiApplied && Number(shiApplied.schema_version) >= 2) {
+    record("applied-stamp-resets-stale-state", stale.stamp === expectedStamp && stale.ans === 0 && !stale.rDone && !stale.lDone && stale.fbEmpty && stale.noSel && stale.doneOff ? "pass" : "fail", JSON.stringify(stale));
+  } else {
+    record("applied-stamp-resets-stale-state", stale.stamp === expectedStamp && stale.ans === 1 && stale.rDone ? "pass" : "fail", "dữ liệu schema 1 — giữ nguyên tiến độ cũ, chỉ gán stamp: " + JSON.stringify(stale));
+  }
+  // (ii) State CÓ stamp đúng kèm một đáp án hợp lệ: phải được GIỮ
+  // NGUYÊN sau khi tải lại (đáp án còn trong localStorage và phản
+  // hồi "Đúng rồi" vẫn hiển thị).
+  await evaluate(`(() => { const p = JSON.parse(localStorage.getItem('hanngu-progress-v2')); p.applied['shi-noun-link'] = { reading: { answers: { '0': { pick: ${shiAns}, ok: true } }, done: true }, listening: { answers: {}, done: false }, stamp: ${JSON.stringify(expectedStamp)} }; localStorage.setItem('hanngu-progress-v2', JSON.stringify(p)); })()`);
+  await evaluate(`location.reload()`);
+  await sleep(1200);
+  await waitFor(async () => evaluate(`!!document.getElementById('sec-applied')`));
+  const kept = await evaluate(`(() => { const p = JSON.parse(localStorage.getItem('hanngu-progress-v2')); const a = p.applied['shi-noun-link']; const fb = document.querySelector('[data-aq="0"] [data-aq-fb]'); return { kept: !!a.reading.answers['0'] && a.reading.answers['0'].ok === true && a.reading.done === true, fbOk: !!fb && fb.textContent.includes('Đúng rồi') }; })()`);
+  record("applied-stamp-keeps-matching-state", kept.kept && kept.fbOk ? "pass" : "fail", JSON.stringify(kept));
   await navigate("#/lesson/ma-question");
   await sleep(1500);
   const appAbsent = await evaluate(`!document.getElementById('sec-applied') && !!document.getElementById('sec-practice')`);
   record("applied-absent-for-lessons-without-material", appAbsent ? "pass" : "fail", String(appAbsent));
+  // Lỗi console tính lại SAU toàn bộ luồng applied (mục E ở trên chạy
+  // trước khối này) — bảo đảm tương tác đọc/nghe không sinh lỗi mới.
+  record("applied-console-errors", consoleErrors.length === 0 ? "pass" : "fail", consoleErrors.length ? consoleErrors.slice(0, 5).join(" | ") : "0 lỗi console/exception sau toàn bộ luồng applied");
 
   const fails = results.filter((r) => r.status === "fail");
   const report = { base: BASE, at: new Date().toISOString(), engine: "Chromium headless (CDP) tren VM cua Muse — khong phai thiet bi that", results, consoleErrors, verdict: fails.length ? "FAIL" : "PASS" };

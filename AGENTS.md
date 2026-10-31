@@ -16,3 +16,16 @@ Quy tắc ngắn gọn:
 - Sau mỗi lô hoàn chỉnh: chạy kiểm tra, cập nhật `docs/checkpoint.json`, `docs/task-board.json`, commit (khi repo đã sẵn sàng).
 - Khi checkpoint lệch với mã nguồn: đối chiếu diff, sửa trạng thái, không reset mất việc.
 - Khi người dùng nhắn “Tiếp tục”: kiểm tra HEAD/trạng thái, đọc checkpoint + task sẵn sàng, làm ngay, không hỏi lại.
+
+## Luồng Đọc & nghe vận dụng (quyết định của Hoa, 2026-10-31)
+
+- Trước khi sửa dữ liệu/mã của phần đọc-nghe, PHẢI đọc
+  `docs/READING_LISTENING_STANDARD.md` (quy chuẩn nguồn, chọn bài,
+  giao diện, bản quyền, QA — quyết định D31) và
+  `docs/READING_LISTENING_CHECKPOINT.md` (tiến độ của luồng).
+- Quy chuẩn này là quyết định đã được phê duyệt; không hỏi lại
+  mỗi phiên.
+- "Tiếp tục phần đọc/nghe" → tiếp tục từ
+  READING_LISTENING_CHECKPOINT. Nếu Hoa chỉ nói "tiếp tục" → dùng
+  nhiệm vụ đang hoạt động trong `docs/checkpoint.json`; không tự
+  chuyển luồng từ biên soạn ngữ pháp sang đọc/nghe.

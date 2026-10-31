@@ -124,6 +124,34 @@
       "accessed_at": "2026-10-31",
       "license": "Nội dung bản quyền — chỉ tham khảo nguyên lý tổ chức/trình bày, không sao chép",
       "distribution_allowed": "not_applicable_benchmark_only"
+    },
+    {
+      "id": "storybooks-global-asp",
+      "name": "Storybooks Canada / Global Storybooks (Global ASP)",
+      "owner": "Global African Storybook Project / Storybooks Canada",
+      "document": "Truyện Mandarin (zh) + audio phòng thu; repo văn bản github.com/global-asp/global-asp, kho audio gitlab.com/global-asp/gsn-audio",
+      "url": "https://www.storybookscanada.ca/",
+      "accessed_at": "2026-10-31",
+      "license": "Theo TỪNG truyện: CC BY hoặc CC BY-NC (ghi trong chính file truyện; phiên bản 3.0/4.0 theo bảng gsn-audio). Audio thừa hưởng giấy phép của truyện gốc.",
+      "distribution_allowed": "per_story_cc_by_or_cc_by_nc_attribution_required",
+      "verification_status": "verified_survey_2026-10-31",
+      "version_checked": "Khảo sát 2026-10-31: đọc 23/79 file zh + LICENSE repo + trang Downloads + README gsn-audio (audio thu tại UBC Studios; người đọc zh: Zhuo Sun; bộ audio chỉ gồm 40 truyện). Chi tiết: docs/research/storybooks-survey.md",
+      "scope": "Nguồn ưu tiên cho bài đọc + nghe nguyên bài trong app (luồng Đọc & nghe vận dụng, D31). Pilot: truyện 0089 和植物聊天的卡莱 (CC BY 4.0) cho bài shi-noun-link.",
+      "notes": "Không mặc định cấp độ Storybooks = HSK. Ghi công bắt buộc: tác giả, họa sĩ, dịch giả (trong file truyện) + người đọc (README gsn-audio). Truyện CC BY-NC chỉ dùng trong app khi xác nhận đáp ứng điều kiện phi thương mại."
+    },
+    {
+      "id": "hsk-sentences-audio",
+      "name": "hsk-sentences-audio (no7z)",
+      "owner": "no7z (GitHub)",
+      "document": "Dataset câu HSK kèm audio tổng hợp CosyVoice2, gắn thẻ điểm ngữ pháp",
+      "url": "https://github.com/no7z/hsk-sentences-audio",
+      "accessed_at": "2026-10-31",
+      "license": "Mã nguồn MIT (LICENSE của repo); dataset dist/ gồm câu + audio: CC BY-SA 4.0 (gloss/Pinyin từ CC-CEDICT CC BY-SA 4.0; audio tổng hợp bằng CosyVoice2 Apache-2.0) — xem ATTRIBUTION.md của repo",
+      "distribution_allowed": "cc_by_sa_4_0_dataset_with_attribution_and_sharealike",
+      "verification_status": "verified_audit_2026-10-31",
+      "version_checked": "Kiểm toán 2026-10-31, ghim commit 857dfbab91027ebd97df01260e91b817cb6b4854; 4.354 câu, audio MP3 riêng từng câu 2 tốc độ; LICENSE + ATTRIBUTION.md đã lưu tại docs/research/hsk-sentences-audio-LICENSE.txt và docs/research/hsk-sentences-audio-ATTRIBUTION.md. Chi tiết: docs/research/hsk-sentences-audio-audit.md",
+      "scope": "Luyện nghe từng câu theo ngữ pháp (luồng Đọc & nghe vận dụng, D31). Bắt buộc: nhãn 'Giọng tổng hợp', tự đọc xác nhận cấu trúc từng câu (thẻ máy không tin được — mẫu 是字句 1-36 có 0 câu gắn thẻ), nghe kiểm trước phát hành, phần dẫn xuất kèm dịch Việt phát hành CC BY-SA 4.0.",
+      "notes": "Phân cấp/thẻ của repo theo GF0025-2021, lệch ~1% so với chuẩn dự án — chỉ là gợi ý tìm ứng viên, ánh xạ cuối theo catalogue của dự án."
     }
   ],
   "updated_at": "2026-10-31"
