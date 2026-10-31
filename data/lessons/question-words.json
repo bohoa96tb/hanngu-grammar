@@ -18,7 +18,7 @@
           "wrong_or_risky": "多少个学生？ (muốn hỏi lớp có 3 học sinh)"
         }
       ],
-      "content_version": 4,
+      "content_version": 5,
       "difficulty": "medium",
       "examples": [
         {
@@ -157,6 +157,9 @@
       "objective": "Sau bài này, người học hỏi được bằng 什么, 谁, 哪儿, 几, 多少 mà không đảo trật tự câu như tiếng Anh.",
       "pattern": "Từ để hỏi đứng đúng vị trí thành phần bị hỏi",
       "quick_memory": "Từ để hỏi đứng ngay chỗ của đáp án. Đã có từ để hỏi thì không thêm 吗 cuối câu.",
+      "related_ids": [
+        "approx-numbers-1"
+      ],
       "review": {
         "date": "2026-10-29",
         "notes": "Rà soát riêng sau lượt soạn: kiểm tra công thức, phủ định, phân biệt dễ nhầm và đáp án từng bài tập. Không khẳng định có giáo viên/người bản ngữ duyệt. Chuẩn hóa 30/10/2026 (ND-02): thêm Nhớ nhanh, công thức chia bước, rà lại đáp án/biến thể theo ND-01. Chuẩn hóa std2 30/10/2026: thêm trường hsk_evidence ở trạng thái partial （几/多少 chưa có mục tương ứng trong danh mục đối chiếu của dự án) Đối chiếu lại bản gốc 30/10/2026: bảng ngữ pháp HSK1 của đề cương thi HSK 3.0 liệt kê 几/多少 trong nhóm đại từ để hỏi — trạng thái đối chiếu đổi thành verified (xem docs/baseline-hsk5-hsk6-mapping.md mục 6).",

@@ -18,7 +18,7 @@
           "wrong_or_risky": "我得（de）早起。(đọc 得 thành de)"
         }
       ],
-      "content_version": 2,
+      "content_version": 3,
       "difficulty": "medium",
       "examples": [
         {
@@ -192,6 +192,11 @@
       "objective": "Sau bài này, người học phân biệt và dùng được năm động từ năng nguyện HSK3: 需要 (cần), 应该/该 (nên), 愿意 (sẵn lòng) và 得 (děi, phải) — gồm cả mẫu 该……了 'đến lúc nên… rồi'.",
       "pattern": "需要/应该/该/愿意/得（děi) + Động từ",
       "quick_memory": "Cần → 需要； nên → 应该/该 (đến lúc: 该…了）; sẵn lòng → 愿意； phải → 得 děi; không cần phải → 不用 (không dùng 不得）。",
+      "related_ids": [
+        "modal-hui-neng-keyi",
+        "modal-xiang-yao",
+        "state-complement-de"
+      ],
       "review": {
         "date": "2026-10-30",
         "notes": "Soạn mới lô HSK3-6 30/10/2026: rà soát nội bộ — đối chiếu catalogue dự án (mục OFF tương ứng) và đề cương thi HSK 11/2025 (bảng ngữ pháp) về cấp độ và phạm vi; kiểm tra đáp án/biến thể từng bài tập, trùng câu giữa ví dụ và bài tập trong cùng bài, nhất quán quy tắc giữa công thức/ví dụ/đáp án/Nhớ nhanh, và tránh kết luận tuyệt đối với câu hợp lệ ngoài mẫu đang luyện. Không khẳng định có giáo viên/người bản ngữ duyệt. Audio TTS chưa nghiệm thu trên thiết bị thật nên bài chưa đạt toàn bộ tiêu chí.",
